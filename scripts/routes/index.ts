@@ -35,6 +35,48 @@ const router = Router.of({
             headerBarStyle: { visible: true },
           }),
         }),
+        Route.of({
+            path: '/pages/pgWelcome',
+            build: buildExtender({
+              getPageClass: () => Pages.pgWelcome,
+              headerBarStyle: { visible: true },
+            }),
+        }),
+        Route.of({
+            path: '/pages/pgSignIn',
+            build: buildExtender({
+              getPageClass: () => Pages.pgSignIn,
+              headerBarStyle: { visible: true },
+            }),
+        }),
+        Route.of({
+            path: '/pages/pgNumber',
+            build: buildExtender({
+              getPageClass: () => Pages.pgNumber,
+              headerBarStyle: { visible: true },
+            }),
+        }),
+        Route.of({
+            path: '/pages/pgVerification',
+            build: buildExtender({
+              getPageClass: () => Pages.pgVerification,
+              headerBarStyle: { visible: true },
+            }),
+        }),
+        Route.of({
+            path: '/pages/pgLogin',
+            build: buildExtender({
+              getPageClass: () => Pages.pgLogin,
+              headerBarStyle: { visible: true },
+            }),
+        }),
+        Route.of({
+            path: '/pages/pgSignUp',
+            build: buildExtender({
+              getPageClass: () => Pages.pgSignUp,
+              headerBarStyle: { visible: true },
+            }),
+        }),
       ],
     }),
   ],

@@ -1,0 +1,209 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "8492-4718-26bc-e27d",
+			"initialized": true,
+			"props": {
+				"children": [
+					"ffcc-86c1-d7c3-5754",
+					"9935-0f44-a5e2-85dd",
+					"0745-b8d6-1ef0-a1db",
+					"9ac2-95e8-58d2-0a2d",
+					"a99f-9928-247a-c83c"
+				],
+				"name": "pgVerification",
+				"orientation": "PORTRAIT",
+				"parent": null,
+				"safeAreaEnabled": true
+			},
+			"type": "Page",
+			"userProps": {
+				"paddingBottom": 0,
+				"paddingLeft": 0,
+				"paddingRight": 0,
+				"paddingTop": 0,
+				"safeAreaEnabled": true
+			},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "ffcc-86c1-d7c3-5754",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "8492-4718-26bc-e27d"
+			},
+			"type": "StatusBar",
+			"userProps": {
+				"style": "DEFAULT"
+			}
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "9935-0f44-a5e2-85dd",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "8492-4718-26bc-e27d",
+				"title": "pgVerification"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgVerification",
+				"visible": false
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "0745-b8d6-1ef0-a1db",
+			"props": {
+				"children": [],
+				"name": "imageBg",
+				"parent": "8492-4718-26bc-e27d"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"image": "bg.png",
+				"imageFillType": "ASPECTFILL",
+				"left": 0,
+				"marginBottom": null,
+				"marginTop": null,
+				"right": 0,
+				"testId": "TbyQ33W2-",
+				"top": 0
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "9ac2-95e8-58d2-0a2d",
+			"props": {
+				"children": [
+					"2aaf-141a-ef53-0b66",
+					"456a-ab5d-dda3-6c5b",
+					"4ff0-fcba-b4e9-bfda"
+				],
+				"name": "flexLayout4",
+				"parent": "8492-4718-26bc-e27d",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"justifyContent": "FLEX_START",
+					"alignContent": "STRETCH",
+					"alignItems": "FLEX_START"
+				},
+				"left": 0,
+				"marginBottom": null,
+				"marginLeft": 25,
+				"marginTop": null,
+				"testId": "MXghN9hMo",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "2aaf-141a-ef53-0b66",
+			"props": {
+				"children": [],
+				"name": "imageView2",
+				"parent": "9ac2-95e8-58d2-0a2d",
+				"usePageVariable": true
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 2
+				},
+				"height": null,
+				"image": "backbtn.png",
+				"imageFillType": "TOPLEFT",
+				"marginBottom": null,
+				"marginTop": null,
+				"testId": "mSUZ3zeiw",
+				"usePageVariable": true,
+				"width": 20
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "456a-ab5d-dda3-6c5b",
+			"props": {
+				"children": [],
+				"name": "label5",
+				"parent": "9ac2-95e8-58d2-0a2d",
+				"text": "Enter your 4-digit code"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 26,
+					"bold": true,
+					"italic": false,
+					"family": "SFProText",
+					"style": "Semibold"
+				},
+				"testId": "zxfcFhKam",
+				"text": "Enter your 4-digit code",
+				"textColor": "rgba( 0, 0, 0, 1 )"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "4ff0-fcba-b4e9-bfda",
+			"props": {
+				"children": [],
+				"name": "label6",
+				"parent": "9ac2-95e8-58d2-0a2d",
+				"text": "Code"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 16,
+					"bold": true,
+					"italic": false,
+					"family": "SFProText",
+					"style": "Semibold"
+				},
+				"testId": "2i8YmmjN6",
+				"text": "Code",
+				"textColor": "rgba( 124, 124, 124, 1 )"
+			}
+		},
+		{
+			"className": ".sf-textBox",
+			"id": "a99f-9928-247a-c83c",
+			"props": {
+				"children": [],
+				"name": "textBox1",
+				"parent": "8492-4718-26bc-e27d",
+				"text": "- - -",
+				"usePageVariable": true
+			},
+			"type": "TextBox",
+			"userProps": {
+				"borderWidth": null,
+				"left": 25,
+				"testId": "ZIEpBzxPu",
+				"text": "- - -",
+				"usePageVariable": true
+			}
+		}
+	]
+}

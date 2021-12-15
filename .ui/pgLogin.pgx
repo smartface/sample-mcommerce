@@ -1,0 +1,302 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "aa9f-e1cb-2f7f-92d5",
+			"initialized": true,
+			"props": {
+				"children": [
+					"6e03-bc0b-218a-d1e2",
+					"f1b8-030b-a8b6-50f8",
+					"f711-79a1-d479-0493",
+					"9503-8d4b-931f-3afe"
+				],
+				"name": "pgLogin",
+				"orientation": "PORTRAIT",
+				"parent": null,
+				"safeAreaEnabled": true
+			},
+			"type": "Page",
+			"userProps": {
+				"paddingBottom": 0,
+				"paddingLeft": 0,
+				"paddingRight": 0,
+				"paddingTop": 0,
+				"safeAreaEnabled": true
+			},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "6e03-bc0b-218a-d1e2",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "aa9f-e1cb-2f7f-92d5"
+			},
+			"type": "StatusBar",
+			"userProps": {
+				"android": {
+					"color": "rgba( 255, 255, 255, 0 )"
+				},
+				"style": "DEFAULT"
+			}
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "f1b8-030b-a8b6-50f8",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "aa9f-e1cb-2f7f-92d5",
+				"title": "pgLogin"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgLogin",
+				"visible": false
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "f711-79a1-d479-0493",
+			"props": {
+				"children": [],
+				"name": "imageView2",
+				"parent": "aa9f-e1cb-2f7f-92d5"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"image": "bg.png",
+				"imageFillType": "ASPECTFILL",
+				"left": 0,
+				"marginBottom": null,
+				"marginTop": 1,
+				"right": 0,
+				"testId": "wcpeA6xgx",
+				"top": 0
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "9503-8d4b-931f-3afe",
+			"props": {
+				"children": [
+					"ecf9-7bb6-8155-123e",
+					"3a60-cc2c-259e-ab70",
+					"73fb-0516-a060-3970",
+					"b572-513a-69d9-501f"
+				],
+				"name": "flBg",
+				"parent": "aa9f-e1cb-2f7f-92d5",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"testId": "Xauh3YMK1",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "ecf9-7bb6-8155-123e",
+			"props": {
+				"children": [],
+				"name": "imageView3",
+				"parent": "9503-8d4b-931f-3afe"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1.5,
+					"alignSelf": "CENTER"
+				},
+				"height": "208.77",
+				"image": "logo.png",
+				"imageFillType": "BOTTOMCENTER",
+				"testId": "zw0_J-c-V",
+				"width": "373.68"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "3a60-cc2c-259e-ab70",
+			"props": {
+				"children": [],
+				"name": "label7",
+				"parent": "9503-8d4b-931f-3afe",
+				"text": "Loging"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 0.5
+				},
+				"font": {
+					"size": 26,
+					"bold": true,
+					"italic": false,
+					"family": "SFProText",
+					"style": "Semibold"
+				},
+				"marginBottom": null,
+				"marginLeft": 25,
+				"marginTop": null,
+				"testId": "ENQ28sM4T",
+				"text": "Loging",
+				"textColor": "rgba( 24, 23, 37, 1 )"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "73fb-0516-a060-3970",
+			"props": {
+				"children": [],
+				"name": "label8",
+				"parent": "9503-8d4b-931f-3afe",
+				"text": "Enter your emails and password"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 0.5
+				},
+				"font": {
+					"size": 16,
+					"bold": true,
+					"italic": false,
+					"family": "SFProText",
+					"style": "Semibold"
+				},
+				"marginBottom": null,
+				"marginLeft": 25,
+				"marginTop": null,
+				"testId": "4NLXvX9K-",
+				"text": "Enter your emails and password",
+				"textColor": "rgba( 124, 124, 124, 1 )"
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"hiddenComponent": false,
+			"id": "b572-513a-69d9-501f",
+			"props": {
+				"children": [
+					"2357-5cc8-f049-3396",
+					"530e-ea35-e6ca-1809",
+					"bdfa-6292-509e-bad0"
+				],
+				"name": "flexLayout4",
+				"parent": "9503-8d4b-931f-3afe"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 5
+				},
+				"paddingLeft": 25,
+				"paddingRight": 25,
+				"testId": "jw-epfTzH"
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "2357-5cc8-f049-3396",
+			"initialized": false,
+			"props": {
+				"children": [],
+				"name": "mtbLogin",
+				"parent": "b572-513a-69d9-501f",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"testId": "Mnb1SYj-t",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "530e-ea35-e6ca-1809",
+			"initialized": false,
+			"props": {
+				"children": [],
+				"name": "mtbPassword",
+				"parent": "b572-513a-69d9-501f",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"borderColor": "rgba( 226, 226, 226, 1 )",
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"testId": "GL-bPqCEz",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "bdfa-6292-509e-bad0",
+			"props": {
+				"children": [],
+				"name": "label5",
+				"parent": "b572-513a-69d9-501f",
+				"text": "Forgot Password?",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "SFProText",
+					"style": "Semibold"
+				},
+				"testId": "g4mLeQV5F",
+				"text": "Forgot Password?",
+				"textAlignment": "MIDRIGHT",
+				"textColor": "rgba( 24, 23, 37, 1 )",
+				"usePageVariable": true
+			}
+		}
+	]
+}

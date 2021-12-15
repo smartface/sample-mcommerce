@@ -1,0 +1,215 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "7356-6c24-0e4a-1427",
+			"initialized": true,
+			"props": {
+				"children": [
+					"f61e-6460-051c-5e0f",
+					"c9be-d152-52cc-8c62",
+					"2629-42f6-dac4-fd18",
+					"5a8b-eeb9-c4f5-7e9e",
+					"8e00-78aa-472b-5b87"
+				],
+				"name": "pgWelcome",
+				"orientation": "PORTRAIT",
+				"parent": null,
+				"safeAreaEnabled": true
+			},
+			"type": "Page",
+			"userProps": {
+				"backgroundColor": "rgba( 253, 253, 253, 1 )",
+				"flexProps": {
+					"alignItems": "STRETCH"
+				},
+				"orientation": "PORTRAIT",
+				"paddingBottom": 0,
+				"paddingLeft": 0,
+				"paddingRight": 0,
+				"paddingTop": 0,
+				"safeAreaEnabled": true
+			},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"hiddenComponent": true,
+			"id": "f61e-6460-051c-5e0f",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "7356-6c24-0e4a-1427"
+			},
+			"type": "StatusBar",
+			"userProps": {
+				"visible": false
+			}
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "c9be-d152-52cc-8c62",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "7356-6c24-0e4a-1427",
+				"title": "pgWelcome"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgWelcome",
+				"transparent": true,
+				"visible": false
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "2629-42f6-dac4-fd18",
+			"props": {
+				"children": [],
+				"name": "imageView1",
+				"parent": "7356-6c24-0e4a-1427",
+				"usePageVariable": true
+			},
+			"type": "ImageView",
+			"userProps": {
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"height": null,
+				"image": "welcome.png",
+				"imageFillType": "ASPECTFILL",
+				"left": 0,
+				"marginBottom": 0,
+				"marginTop": 0,
+				"right": 0,
+				"testId": "eOBq72Aks",
+				"top": 0,
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "5a8b-eeb9-c4f5-7e9e",
+			"props": {
+				"children": [],
+				"name": "flexLayout1",
+				"parent": "7356-6c24-0e4a-1427"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"alignItems": "CENTER",
+					"justifyContent": "CENTER",
+					"alignContent": "CENTER",
+					"flexGrow": 1
+				},
+				"height": null,
+				"marginBottom": 0,
+				"marginTop": 0,
+				"testId": "Ks01-WoDM",
+				"width": null
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "8e00-78aa-472b-5b87",
+			"props": {
+				"children": [
+					"e771-04a3-b9b3-a40a",
+					"a0e2-d99e-d2b4-ddbc",
+					"f664-6802-0481-ec51"
+				],
+				"name": "flexLayout4",
+				"parent": "7356-6c24-0e4a-1427",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"testId": "1b5nZBQQb",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "e771-04a3-b9b3-a40a",
+			"props": {
+				"children": [],
+				"name": "imageView2",
+				"parent": "8e00-78aa-472b-5b87"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"height": "143.86",
+				"image": "icon.png",
+				"imageFillType": "MIDCENTER",
+				"marginBottom": null,
+				"marginTop": null,
+				"testId": "qhw27ao24",
+				"width": "380.70"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "a0e2-d99e-d2b4-ddbc",
+			"props": {
+				"children": [],
+				"name": "label4",
+				"parent": "8e00-78aa-472b-5b87",
+				"text": "Welcome                 to our store"
+			},
+			"type": "Label",
+			"userProps": {
+				"ellipsizeMode": "WORDWRAPPING",
+				"font": {
+					"size": 48,
+					"bold": true,
+					"italic": false,
+					"family": "SFProText",
+					"style": "Semibold"
+				},
+				"height": 150,
+				"marginBottom": null,
+				"marginTop": null,
+				"maxLines": 2,
+				"testId": "CH0SPiKCX",
+				"text": "Welcome                 to our store",
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 255, 255, 255, 1 )"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "f664-6802-0481-ec51",
+			"props": {
+				"children": [],
+				"name": "label5",
+				"parent": "8e00-78aa-472b-5b87",
+				"text": "Ger your groceries in as fast as one hour"
+			},
+			"type": "Label",
+			"userProps": {
+				"font": {
+					"size": 16,
+					"bold": true,
+					"italic": false,
+					"family": "SFProText",
+					"style": "Semibold"
+				},
+				"testId": "5_s4VJDXL",
+				"text": "Ger your groceries in as fast as one hour",
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 255, 255, 255, 1 )",
+				"width": null
+			}
+		}
+	]
+}

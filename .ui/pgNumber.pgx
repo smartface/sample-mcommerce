@@ -1,0 +1,191 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "49ad-4e86-8aa1-37db",
+			"initialized": true,
+			"props": {
+				"children": [
+					"1e23-65cd-ba9a-451c",
+					"de24-5fdd-e841-2527",
+					"8685-1f79-9a59-9fcc",
+					"7965-324e-6485-6fca"
+				],
+				"name": "pgNumber",
+				"orientation": "PORTRAIT",
+				"parent": null,
+				"safeAreaEnabled": true
+			},
+			"type": "Page",
+			"userProps": {
+				"paddingBottom": null,
+				"paddingLeft": null,
+				"paddingRight": null,
+				"paddingTop": null,
+				"safeAreaEnabled": true
+			},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "1e23-65cd-ba9a-451c",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "49ad-4e86-8aa1-37db"
+			},
+			"type": "StatusBar",
+			"userProps": {
+				"android": {
+					"color": "rgba( 255, 255, 255, 0 )"
+				},
+				"style": "DEFAULT"
+			}
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "de24-5fdd-e841-2527",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "49ad-4e86-8aa1-37db",
+				"title": "pgNumber"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgNumber",
+				"visible": false
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "8685-1f79-9a59-9fcc",
+			"props": {
+				"children": [],
+				"name": "imageView2",
+				"parent": "49ad-4e86-8aa1-37db"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"height": 300,
+				"image": "bg.png",
+				"imageFillType": "ASPECTFILL",
+				"left": 0,
+				"marginBottom": null,
+				"marginTop": null,
+				"right": 0,
+				"testId": "cmXETQSvh",
+				"top": 0
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "7965-324e-6485-6fca",
+			"props": {
+				"children": [
+					"33dd-7fc1-c361-35bf",
+					"6984-cd9c-780c-8c3d",
+					"0111-e908-7141-da67"
+				],
+				"name": "flexLayout4",
+				"parent": "49ad-4e86-8aa1-37db",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"justifyContent": "FLEX_START",
+					"alignContent": "STRETCH",
+					"alignItems": "FLEX_START"
+				},
+				"marginBottom": null,
+				"marginLeft": 25,
+				"marginTop": null,
+				"testId": "MXghN9hMo",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "33dd-7fc1-c361-35bf",
+			"props": {
+				"children": [],
+				"name": "imageView2",
+				"parent": "7965-324e-6485-6fca",
+				"usePageVariable": true
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 2
+				},
+				"height": null,
+				"image": "backbtn.png",
+				"imageFillType": "TOPLEFT",
+				"marginBottom": null,
+				"marginTop": null,
+				"testId": "mSUZ3zeiw",
+				"usePageVariable": true,
+				"width": 20
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "6984-cd9c-780c-8c3d",
+			"props": {
+				"children": [],
+				"name": "label5",
+				"parent": "7965-324e-6485-6fca",
+				"text": "Enter your mobile number"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 26,
+					"bold": true,
+					"italic": false,
+					"family": "SFProText",
+					"style": "Semibold"
+				},
+				"testId": "zxfcFhKam",
+				"text": "Enter your mobile number",
+				"textColor": "rgba( 0, 0, 0, 1 )"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "0111-e908-7141-da67",
+			"props": {
+				"children": [],
+				"name": "label6",
+				"parent": "7965-324e-6485-6fca",
+				"text": "Mobile Number"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 16,
+					"bold": true,
+					"italic": false,
+					"family": "SFProText",
+					"style": "Semibold"
+				},
+				"testId": "2i8YmmjN6",
+				"text": "Mobile Number",
+				"textColor": "rgba( 124, 124, 124, 1 )"
+			}
+		}
+	]
+}
