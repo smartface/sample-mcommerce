@@ -1,0 +1,79 @@
+{
+    ".flProductItem": {
+        "height": 248,
+        "width": 173,
+        "paddingTop": 10,
+        "paddingBottom": 10,
+        "paddingLeft": 10,
+        "paddingRight": 10,
+        "backgroundColor": "${transparent}",
+        "flexProps": {
+            "flexDirection": "COLUMN",
+            "justifyContent": "CENTER",
+            "alignItems": "CENTER"
+        },
+        "&-productImage": {
+            "height": 62,
+            "width": 100
+        },
+        "&-descriptionWrapper": {
+            "height": 60,
+            "paddingTop": 5,
+            "paddingBottom": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "flexProps": {
+                "alignSelf": "STRETCH",
+                "flexDirection": "COLUMN",
+                "justifyContent": "CENTER",
+                "alignItems": "FLEX_START"
+            },
+            "&-lblProductTitle": {
+                "height": 20,
+                "width": 130,
+                "textColor": "${textDark}",
+                "font": {
+                    "size": 16,
+                    "family": "Nunito",
+                    "style": "Bold"
+                }
+            },
+            "&-lblProductDimension": {
+                "height": 20,
+                "width": 130,
+                "textColor": "${textLight}",
+                "font": {
+                    "size": 14,
+                    "family": "Nunito",
+                    "style": "Regular"
+                }
+            }
+        },
+        "&-priceButtonWrapper": {
+            "height": 60,
+            "paddingTop": 5,
+            "paddingBottom": 5,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "flexProps": {
+                "alignSelf": "STRETCH",
+                "flexDirection": "ROW",
+                "justifyContent": "SPACE_BETWEEN",
+                "alignItems": "STRETCH"
+            },
+            "&-lblProductPrice": {
+                "height": null,
+                "width": 20,
+                "textColor": "${textDark}",
+                "font": {
+                    "size": 18,
+                    "family": "Nunito",
+                    "style": "Bold"
+                },
+                "flexProps": {
+                    "flexGrow": 1
+                }
+            }
+        }
+    }
+}

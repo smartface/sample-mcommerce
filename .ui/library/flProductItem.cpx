@@ -1,0 +1,178 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flProductItem",
+			"id": "01d5-101c-69cf-19d2",
+			"props": {
+				"children": [
+					"2ebb-d84e-a4af-9a3a",
+					"cc33-e8c8-c3ae-96b7",
+					"5f66-4014-571f-d649"
+				],
+				"name": "flProductItem",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"borderColor": "rgba( 226, 226, 226, 1 )",
+				"borderRadius": 25,
+				"borderWidth": 1,
+				"flexProps": {},
+				"left": "89.11",
+				"marginTop": null,
+				"paddingBottom": 10,
+				"testId": "aPUysJA6q",
+				"top": "255.45"
+			}
+		},
+		{
+			"className": ".sf-imageView .flProductItem-productImage",
+			"id": "2ebb-d84e-a4af-9a3a",
+			"props": {
+				"children": [],
+				"name": "productImage",
+				"parent": "01d5-101c-69cf-19d2",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"image": "apple.png",
+				"imageFillType": "ASPECTFIT",
+				"testId": "MAlRAVw29",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flProductItem-descriptionWrapper",
+			"id": "cc33-e8c8-c3ae-96b7",
+			"props": {
+				"children": [
+					"70e6-3564-f75d-9727",
+					"23d9-13f0-8027-59c3"
+				],
+				"name": "flProductItemDescriptonWrapper",
+				"parent": "01d5-101c-69cf-19d2",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "N_dkJqIK1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flProductItem-descriptionWrapper-lblProductTitle",
+			"id": "70e6-3564-f75d-9727",
+			"props": {
+				"children": [],
+				"name": "lblProductTitle",
+				"parent": "cc33-e8c8-c3ae-96b7",
+				"text": "Red Apple",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "M0PAyD7Fm",
+				"text": "Red Apple",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flProductItem-descriptionWrapper-lblProductDimension",
+			"id": "23d9-13f0-8027-59c3",
+			"props": {
+				"children": [],
+				"name": "lblProductDimension",
+				"parent": "cc33-e8c8-c3ae-96b7",
+				"text": "1kg, Pieceg",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "t9hLQsYfD",
+				"text": "1kg, Pieceg",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flProductItem-priceButtonWrapper",
+			"id": "5f66-4014-571f-d649",
+			"props": {
+				"children": [
+					"a62e-1808-4b54-a612",
+					"e3ed-e858-9ba9-3033"
+				],
+				"name": "flProductPriceButtonWrapper",
+				"parent": "01d5-101c-69cf-19d2",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "n4LLWlG4H",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flProductItem-priceButtonWrapper-lblProductPrice",
+			"id": "a62e-1808-4b54-a612",
+			"props": {
+				"children": [],
+				"name": "lblProductPrice",
+				"parent": "5f66-4014-571f-d649",
+				"text": "$4.99",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"testId": "quoaSQ0qb",
+				"text": "$4.99",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".sf-button .sf-button-addToBasket",
+			"id": "e3ed-e858-9ba9-3033",
+			"props": {
+				"children": [],
+				"name": "btnAddToCard",
+				"parent": "5f66-4014-571f-d649",
+				"text": "",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"testId": "Jz6IOFngU",
+				"text": "",
+				"usePageVariable": true
+			}
+		}
+	]
+}

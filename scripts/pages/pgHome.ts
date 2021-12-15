@@ -27,4 +27,5 @@ function onShow(this: PgHome, superOnShow: () => void) {
  */
 function onLoad(this: PgHome, superOnLoad: () => void) {
 	superOnLoad();
+
 }

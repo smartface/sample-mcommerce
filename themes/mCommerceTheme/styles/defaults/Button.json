@@ -1,0 +1,117 @@
+{
+	".sf-button-main": {
+		"width": null,
+		"height": 67,
+		"touchEnabled": true,
+		"visible": true,
+		"backgroundColor": "${green}",
+		"alpha": 1,
+		"borderWidth": 0,
+		"borderRadius": 19,
+		"textColor": "#FFF9FF",
+		"textAlignment": "MIDCENTER",
+		"font": {
+			"size": 16,
+			"bold": false,
+			"italic": false,
+			"family": "Nunito"
+		},
+		"flexProps": {
+			"positionType": "RELATIVE",
+			"alignSelf": "AUTO"
+		},
+		"&-small": {
+			"width": 100
+		},
+		"&-medium": {
+			"width": 250
+		},
+		"&-large": {
+			"width": 350
+		},
+		"&-warning": {
+			"backgroundColor": "#9F6000"
+		},
+		"&-error": {
+			"backgroundColor": "#D8000C"
+		},
+		"&-success": {
+			"backgroundColor": "#4F8A10"
+		}
+	},
+	".sf-button-addToBasket": {
+		"width": 46,
+		"height": 46,
+		"touchEnabled": true,
+		"visible": true,
+		"backgroundColor": "${green}",
+		"borderRadius": 17,
+		"textColor": "#FFFFFF",
+		"textAlignment": "MIDCENTER",
+		"font": {
+			"family": "FontAwesome5FreeSolid",
+            "style": null,
+            "bold": false,
+            "italic": false,
+            "size": 20
+		},
+		"flexProps": {
+			"positionType": "RELATIVE",
+			"alignSelf": "AUTO"
+		}
+	},
+	".sf-button-router": {
+		"width": 67,
+		"height": 67,
+		"touchEnabled": true,
+		"visible": true,
+		"backgroundColor": "${green}",
+		"alpha": 1,
+		"borderRadius": 34,
+		"textColor": "#FFFFFF",
+		"textAlignment": "MIDCENTER",
+		"font": {
+			"size": 16,
+			"bold": false,
+			"italic": false,
+			"family": "SFProText",
+			"style": "Semibold"
+		},
+		"flexProps": {
+			"positionType": "RELATIVE",
+			"alignSelf": "AUTO"
+		},
+		"&-small": {
+			"width": 100
+		},
+		"&-medium": {
+			"width": 250
+		},
+		"&-large": {
+			"width": 350
+		},
+		"&-warning": {
+			"backgroundColor": "#9F6000"
+		},
+		"&-error": {
+			"backgroundColor": "#D8000C"
+		},
+		"&-success": {
+			"backgroundColor": "#4F8A10"
+		}
+	},
+	".sf": {
+		"&-button": {
+			"&-addToBasket": {
+				"font": {
+					"size": 25,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"borderRadius": 12
+			}
+		}
+	}
+}

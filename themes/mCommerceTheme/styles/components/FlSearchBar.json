@@ -1,0 +1,10 @@
+{
+    ".flSearchBar": {
+        "height": 36,
+        "backgroundColor": "${transparent}",
+        "flexProps": {
+            "flexDirection": "ROW",
+            "justifyContent": "SPACE_BETWEEN"
+        }
+    }
+}

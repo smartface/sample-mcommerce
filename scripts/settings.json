@@ -1,11 +1,12 @@
 {
 	"config": {
 		"theme": {
-			"currentTheme": "baseTheme",
+			"currentTheme": "mCommerceTheme",
 			"baseTheme": "baseTheme",
 			"themes": [
+				"defaultTheme",
 				"baseTheme",
-				"defaultTheme"
+				"mCommerceTheme"
 			]
 		},
 		"paths": {

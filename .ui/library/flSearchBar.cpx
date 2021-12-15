@@ -1,0 +1,70 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout",
+			"hiddenComponent": true,
+			"id": "c966-f33d-bf1c-9474",
+			"props": {
+				"children": [
+					"bd0b-06d0-d076-31f1"
+				],
+				"name": "flSearchBar",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 242, 243, 242, 1 )",
+				"borderRadius": 15,
+				"flexProps": {
+					"flexDirection": "ROW",
+					"justifyContent": "SPACE_BETWEEN"
+				},
+				"height": 50,
+				"left": "25",
+				"testId": "J2CceLIhb",
+				"top": "175"
+			}
+		},
+		{
+			"className": " .commerceSearchView",
+			"id": "bd0b-06d0-d076-31f1",
+			"props": {
+				"children": [],
+				"hint": "Search Store",
+				"name": "storeSearchView",
+				"parent": "c966-f33d-bf1c-9474",
+				"text": "",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "SearchView",
+			"userProps": {
+				"borderRadius": 15,
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignSelf": "AUTO",
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 17,
+					"bold": true,
+					"italic": false,
+					"family": "SFProText",
+					"style": "Semibold"
+				},
+				"height": null,
+				"hint": "Search Store",
+				"showInToolbox": false,
+				"testId": "pqA9qBw3p",
+				"text": "",
+				"textAlignment": "MIDLEFT",
+				"usePageVariable": true
+			}
+		}
+	]
+}
