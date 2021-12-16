@@ -1,10 +1,35 @@
 {
     ".flSearchBar": {
-        "height": 36,
         "backgroundColor": "${transparent}",
         "flexProps": {
             "flexDirection": "ROW",
             "justifyContent": "SPACE_BETWEEN"
+        },
+        "&-searchBar":{
+            "masksToBounds": true,
+            "touchEnabled": true,
+            "width": null,
+            "height": 52,
+            "textColor": "#181B19",
+            "borderRadius": 15,          
+            "hintTextColor": "#7C7C7C",
+            "textFieldBackgroundColor": "#F2F3F2",
+            "cursorColor": "rgba(66,107,242,1)",
+            "textAlignment": "MIDLEFT",
+            "+Device:Device.os === \"Android\"": {
+                "borderWidth": 0
+            },
+            "font": {
+                "size": 17,
+                "bold": true,
+                "italic": false,
+                "family": "SFProText",
+                "style": "Regular"
+            },
+            "flexProps": {
+                "alignSelf": "AUTO",
+                "positionType": "RELATIVE"
+            }
         }
     }
 }

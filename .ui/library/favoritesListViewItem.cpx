@@ -1,0 +1,236 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .favoritesListViewItem",
+			"id": "027b-55b9-3e16-2671",
+			"props": {
+				"children": [
+					"d992-3b47-92a4-bc35",
+					"5f56-d416-22f2-674f",
+					"6933-667e-a6fe-b093"
+				],
+				"name": "favoritesListViewItem",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {
+				"flexProps": {},
+				"left": "21.05",
+				"testId": "HRL7I3XYv",
+				"top": "402.11"
+			}
+		},
+		{
+			"className": ".sf-flexLayout .favoritesListViewItem-flFavListLeft",
+			"id": "d992-3b47-92a4-bc35",
+			"props": {
+				"children": [
+					"3528-814c-08bf-7552",
+					"fd15-abe4-a506-21ee"
+				],
+				"name": "flFavListLeft",
+				"parent": "027b-55b9-3e16-2671",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "KpZ9jI4X8",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView .favoritesListViewItem-flFavListLeft-imgFavList",
+			"id": "3528-814c-08bf-7552",
+			"props": {
+				"children": [],
+				"name": "imgFavListItem",
+				"parent": "d992-3b47-92a4-bc35",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"testId": "j5j9a9hIL",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .favoritesListViewItem-flFavListLeft-flFavListTitleDesc",
+			"id": "fd15-abe4-a506-21ee",
+			"props": {
+				"children": [
+					"e63d-e472-a56e-b00d",
+					"ed40-8323-831e-4bdc"
+				],
+				"name": "flFavListTitleDesc",
+				"parent": "d992-3b47-92a4-bc35",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"paddingLeft": 20,
+				"testId": "nvNR_gYe8",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .favoritesListViewItem-flFavListLeft-flFavListTitleDesc-lblFavListItemTitle",
+			"id": "e63d-e472-a56e-b00d",
+			"props": {
+				"children": [],
+				"name": "lblFavListItemTitle",
+				"parent": "fd15-abe4-a506-21ee",
+				"text": "lblTitle",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"ellipsizeMode": "END",
+				"height": null,
+				"maxLines": 1,
+				"testId": "dzaSJHd7X",
+				"text": "lblTitle",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .favoritesListViewItem-flFavListLeft-flFavListTitleDesc-lblFavListItemDesc",
+			"id": "ed40-8323-831e-4bdc",
+			"props": {
+				"children": [],
+				"name": "lblFavListItemDesc",
+				"parent": "fd15-abe4-a506-21ee",
+				"text": "lblDes",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"height": null,
+				"testId": "DbQRUvF8I",
+				"text": "lblDes",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .favoritesListViewItem-flFavListRight",
+			"id": "5f56-d416-22f2-674f",
+			"props": {
+				"children": [
+					"ff49-d74c-9cb4-beb7",
+					"f5ef-06c4-1ef4-9708"
+				],
+				"name": "flFavListRight",
+				"parent": "027b-55b9-3e16-2671",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "csy1tKwuV",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .favoritesListViewItem-flFavListRight-lblFavListItemPrice",
+			"id": "ff49-d74c-9cb4-beb7",
+			"props": {
+				"children": [],
+				"name": "lblFavListItemPrice",
+				"parent": "5f56-d416-22f2-674f",
+				"text": "lblPrice",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "JzAilZ0kl",
+				"text": "lblPrice",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .favoritesListViewItem-flFavListRight-lblFavListItemChevron",
+			"id": "f5ef-06c4-1ef4-9708",
+			"props": {
+				"children": [],
+				"name": "lblFavListItemChevron",
+				"parent": "5f56-d416-22f2-674f",
+				"text": "",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1,
+					"alignSelf": "AUTO"
+				},
+				"font": {
+					"size": 17,
+					"bold": false,
+					"italic": false,
+					"family": "FontAwesome5FreeSolid",
+					"style": null
+				},
+				"height": null,
+				"marginBottom": null,
+				"marginTop": null,
+				"testId": "c5Gy7Y47y",
+				"text": "",
+				"textAlignment": "MIDRIGHT",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "6933-667e-a6fe-b093",
+			"props": {
+				"children": [],
+				"name": "flexLayout3",
+				"parent": "027b-55b9-3e16-2671",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"backgroundColor": "rgba( 210, 210, 210, 1 )",
+				"bottom": 0,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"height": 1,
+				"left": 16,
+				"marginBottom": null,
+				"marginTop": null,
+				"right": 0,
+				"testId": "WmwBJOvRU",
+				"usePageVariable": true
+			}
+		}
+	]
+}

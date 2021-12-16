@@ -1,8 +1,8 @@
 {
 	"components": [
 		{
-			"className": ".sf-flexLayout",
-			"hiddenComponent": true,
+			"className": ".sf-flexLayout .flSearchBar",
+			"hiddenComponent": false,
 			"id": "c966-f33d-bf1c-9474",
 			"props": {
 				"children": [
@@ -23,13 +23,13 @@
 					"justifyContent": "SPACE_BETWEEN"
 				},
 				"height": 50,
-				"left": "25",
+				"left": "25.74",
 				"testId": "J2CceLIhb",
-				"top": "175"
+				"top": "60.40"
 			}
 		},
 		{
-			"className": " .commerceSearchView",
+			"className": " .flSearchBar-searchBar",
 			"id": "bd0b-06d0-d076-31f1",
 			"props": {
 				"children": [],

@@ -8,11 +8,9 @@
 				"children": [
 					"9eee-8878-9db7-1662",
 					"4ab0-4431-3107-8aa1",
-					"d382-aadf-4c98-38fd",
-					"1d46-d9d8-dd42-a7cf",
-					"7f27-d409-03ca-d19f",
-					"74b7-e3bf-1994-5a53",
-					"118b-02fd-b236-0787"
+					"118b-02fd-b236-0787",
+					"7dcf-d1a3-42e5-678c",
+					"a67f-d7c5-536f-b0ec"
 				],
 				"name": "pgHome",
 				"orientation": "PORTRAIT",
@@ -52,89 +50,6 @@
 			}
 		},
 		{
-			"className": ".sf-button-main",
-			"id": "d382-aadf-4c98-38fd",
-			"props": {
-				"children": [],
-				"name": "button1",
-				"parent": "0cc7-c9f0-ae49-184b",
-				"text": "button1",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"testId": "PfiGGdyUi",
-				"text": "button1",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-button-addToBasket",
-			"id": "1d46-d9d8-dd42-a7cf",
-			"props": {
-				"children": [],
-				"name": "button2",
-				"parent": "0cc7-c9f0-ae49-184b",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"testId": "g2iW3j2ba",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-button-router",
-			"id": "7f27-d409-03ca-d19f",
-			"props": {
-				"children": [],
-				"name": "button3",
-				"parent": "0cc7-c9f0-ae49-184b",
-				"text": "button3",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"testId": "sCxavXSxt",
-				"text": "button3",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout",
-			"hiddenComponent": false,
-			"id": "74b7-e3bf-1994-5a53",
-			"props": {
-				"children": [],
-				"name": "flSearchBar",
-				"parent": "0cc7-c9f0-ae49-184b",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "flSearchBar",
-				"id": "c966-f33d-bf1c-9474"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"flexDirection": 2,
-					"justifyContent": 3,
-					"positionType": 0
-				},
-				"flexProps": {
-					"flexDirection": "ROW",
-					"justifyContent": "SPACE_BETWEEN",
-					"positionType": "RELATIVE"
-				},
-				"height": 50,
-				"left": 0,
-				"testId": "J2CceLIhb",
-				"top": 0,
-				"usePageVariable": true
-			}
-		},
-		{
 			"className": ".sf-flexLayout .flProductItem",
 			"hiddenComponent": false,
 			"id": "118b-02fd-b236-0787",
@@ -164,6 +79,83 @@
 				"paddingBottom": 10,
 				"testId": "aPUysJA6q",
 				"top": 0
+			}
+		},
+		{
+			"className": ".sf-listView",
+			"id": "7dcf-d1a3-42e5-678c",
+			"props": {
+				"children": [
+					"2a0c-58a0-75d9-9db1"
+				],
+				"name": "listView1",
+				"parent": "0cc7-c9f0-ae49-184b",
+				"usePageVariable": true
+			},
+			"type": "ListView",
+			"userProps": {
+				"testId": "-qurtTiLq",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-listViewItem",
+			"hiddenComponent": false,
+			"id": "2a0c-58a0-75d9-9db1",
+			"props": {
+				"children": [],
+				"name": "favoritesListItem",
+				"parent": "7dcf-d1a3-42e5-678c"
+			},
+			"source": {
+				"page": "__library__",
+				"type": "favoritesListItem",
+				"id": "027b-55b9-3e16-2671"
+			},
+			"type": "ListViewItem",
+			"userProps": {
+				"flex": {
+					"flexDirection": 2,
+					"alignItems": 4,
+					"justifyContent": 1,
+					"alignContent": 4,
+					"flexWrap": 0,
+					"positionType": 0
+				},
+				"flexProps": {
+					"flexDirection": "ROW",
+					"alignItems": "STRETCH",
+					"justifyContent": "CENTER",
+					"alignContent": "STRETCH",
+					"flexWrap": "NOWRAP",
+					"positionType": "RELATIVE"
+				},
+				"height": "90.50",
+				"left": 0,
+				"paddingBottom": 10,
+				"paddingLeft": 10,
+				"paddingRight": 10,
+				"paddingTop": 10,
+				"testId": "HRL7I3XYv",
+				"top": 0,
+				"width": "384"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "a67f-d7c5-536f-b0ec",
+			"props": {
+				"children": [],
+				"name": "label2",
+				"parent": "0cc7-c9f0-ae49-184b",
+				"text": "label2",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "57hcq4tGv",
+				"text": "label2",
+				"usePageVariable": true
 			}
 		}
 	]
