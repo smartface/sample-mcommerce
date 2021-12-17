@@ -2,6 +2,10 @@ import PgHomeDesign from 'generated/pages/pgHome';
 import favoritesListViewItem from 'generated/my-components/FavoritesListViewItem'
 import Image from '@smartface/native/ui/image';
 import View from '@smartface/native/ui/view';
+import store from '../store/index'
+import GviProductItem from 'components/GviProductItem'
+import Application from '@smartface/native/application';
+import Color from '@smartface/native/ui/color';
 
 export default class PgHome extends PgHomeDesign {
     router:any
@@ -11,36 +15,29 @@ export default class PgHome extends PgHomeDesign {
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        this.label2.on(View.Events.Touch, () => {
-            this.router.push('/btb')
-        })
+        // this.label2.on(View.Events.Touch, () => {
+        //     this.router.push('/btb')
+        // })
     }
 
-
-    initListView() {
-        this.listView1.onRowBind = (listViewItem: favoritesListViewItem, index: number) => {
-            listViewItem.lblFavListItemTitle.text = dataSet[index].title; // Recommended way
-            listViewItem.lblFavListItemDesc.text = dataSet[index].description;
-            listViewItem.lblFavListItemPrice.text = dataSet[index].price;
-            listViewItem.imgFavListItem.image = Image.createFromFile(`images://${dataSet[index].image}`)
-        };
-        this.refreshListView();
-
-        // this.listView1.onPullRefresh = async () => {
-        //     try {
-        //         // await apiCall();
-        //         this.refreshListView();
-        //     }
-        //     finally {
-        //         this.listView1.stopRefresh();
-        //     }
-        // }
-    }
-    refreshListView() {
-        console.log('dataset', dataSet)
-        this.listView1.rowHeight = 80
-        this.listView1.itemCount = dataSet.length;
-        this.listView1.refreshData(); // This is important
+    initCategoriesGrid() {
+        const products = store.getState().products;
+        this.productsGrid.itemCount = products.length;
+        this.productsGrid.scrollBarEnabled = false;
+        this.productsGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
+            GridViewItem.gviLblProductItemTitle.text = products[index].name
+            GridViewItem.gviProductItemDesc.text = products[index].description
+            GridViewItem.gviProductItemImg.image = Image.createFromFile(`images://${products[index].image}`)
+            GridViewItem.gviProductItemPrice.text = `$${products[index].price}`
+        }
+        this.productsBestSellerGrid.itemCount = products.length;
+        this.productsBestSellerGrid.scrollBarEnabled = false;
+        this.productsBestSellerGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
+            GridViewItem.gviLblProductItemTitle.text = products[index].name
+            GridViewItem.gviProductItemDesc.text = products[index].description
+            GridViewItem.gviProductItemImg.image = Image.createFromFile(`images://${products[index].image}`)
+            GridViewItem.gviProductItemPrice.text = `$${products[index].price}`
+        }
     }
 }
 
@@ -53,6 +50,11 @@ export default class PgHome extends PgHomeDesign {
  */
 function onShow(this: PgHome, superOnShow: () => void) {
     superOnShow();
+    Application.statusBar.visible = true;
+
+
+
+
 }
 
 /**
@@ -62,18 +64,8 @@ function onShow(this: PgHome, superOnShow: () => void) {
  */
 function onLoad(this: PgHome, superOnLoad: () => void) {
     superOnLoad();
-    this.initListView();
+    this.headerBar.leftItemEnabled = false
+    this.headerBar.title = 'Maltepe, Istanbul'
+     this.initCategoriesGrid();
 
 }
-
-const dataSet = [{
-    title: "Sprite Can",
-    description: "325ml, Piece",
-    image: "sprite.png",
-    price: "$4.99",
-}, {
-    title: "Sprite Can",
-    description: "325ml, Piece",
-    image: "sprite.png",
-    price: "$4.99"
-}];

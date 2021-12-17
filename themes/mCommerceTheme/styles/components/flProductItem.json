@@ -1,16 +1,22 @@
 {
     ".flProductItem": {
-        "height": 248,
-        "width": 173,
+        "marginTop": 15,
+        "marginRight":7, 
+        "marginLeft":7, 
         "paddingTop": 10,
         "paddingBottom": 10,
         "paddingLeft": 10,
         "paddingRight": 10,
+        "borderRadius": 25,
+        "borderColor": "#E2E2E2",
+        "borderWidth": 1,
         "backgroundColor": "${transparent}",
         "flexProps": {
             "flexDirection": "COLUMN",
             "justifyContent": "CENTER",
-            "alignItems": "CENTER"
+            "alignItems": "CENTER",
+            "flexGrow": 1
+
         },
         "&-productImage": {
             "height": 62,

@@ -2,6 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .favoritesListViewItem",
+			"hiddenComponent": true,
 			"id": "027b-55b9-3e16-2671",
 			"props": {
 				"children": [
@@ -18,9 +19,9 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"left": "21.05",
+				"left": "16.30",
 				"testId": "HRL7I3XYv",
-				"top": "402.11"
+				"top": "386.96"
 			}
 		},
 		{

@@ -1,0 +1,92 @@
+{
+	"components": [
+		{
+			"className": ".sf-gridViewItem .gviCategoryItem",
+			"hiddenComponent": false,
+			"id": "8d80-6588-b9da-7b16",
+			"props": {
+				"children": [
+					"f0de-b468-57d7-7e46"
+				],
+				"name": "categoryGridViewItem",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "GridViewItem",
+			"userProps": {
+				"backgroundColor": "rgba( 67, 41, 195, 0.01 )",
+				"flexProps": {},
+				"left": "34.65",
+				"testId": "Ny1Lysucb",
+				"top": "326.73"
+			}
+		},
+		{
+			"className": ".sf-flexLayout .gviCategoryItem-flCategoryItemWrapper",
+			"id": "f0de-b468-57d7-7e46",
+			"props": {
+				"children": [
+					"b543-9e76-0d01-1767",
+					"89ce-8b2a-e014-df83"
+				],
+				"name": "flCategoryItemWrapper",
+				"parent": "8d80-6588-b9da-7b16",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "rC3J1MtVO",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView .gviCategoryItem-flCategoryItemWrapper-imgCategoryItem",
+			"hiddenComponent": false,
+			"id": "b543-9e76-0d01-1767",
+			"props": {
+				"children": [],
+				"name": "imgCategoryItem",
+				"parent": "f0de-b468-57d7-7e46",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"image": "catfruits.png",
+				"imageFillType": "ASPECTFIT",
+				"testId": "Ok7eFCQIb",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .gviCategoryItem-flCategoryItemWrapper-lblCategoryItemTitle",
+			"id": "89ce-8b2a-e014-df83",
+			"props": {
+				"children": [],
+				"name": "lblCategoryItemTitle",
+				"parent": "f0de-b468-57d7-7e46",
+				"text": "Frash Fruits & Vegetable",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"ellipsizeMode": "END",
+				"maxLines": 2,
+				"testId": "vCTv4YbYC",
+				"text": "Frash Fruits & Vegetable",
+				"textAlignment": "MIDCENTER",
+				"usePageVariable": true
+			}
+		}
+	]
+}

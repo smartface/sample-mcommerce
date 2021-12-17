@@ -28,13 +28,6 @@ const router = Router.of({
             path: '/pages',
             routes: [
                 Route.of({
-                    path: '/pages/pgHome',
-                    build: buildExtender({
-                        getPageClass: () => Pages.pgHome,
-                        headerBarStyle: { visible: true },
-                    }),
-                }),
-                Route.of({
                     path: '/pages/page1',
                     build: buildExtender({
                         getPageClass: () => Pages.Page1,
@@ -114,21 +107,21 @@ const router = Router.of({
             routes: [
                 // tab1
                 Route.of({
-                    path: "/btb/tab1/page1",
-                    build: buildExtender({ getPageClass: () => require("pages/page1").default, headerBarStyle: { visible: true } })
+                    path: "/btb/tab1/home",
+                    build: buildExtender({ getPageClass: () => require("pages/pgHome").default, headerBarStyle: { visible: true } })
                 }),
                 // tab2
                 Route.of({
-                    path: "/btb/tab2/page2",
-                    build: buildExtender({ getPageClass: () => require("pages/pgNumber").default, headerBarStyle: { visible: true } })
+                    path: "/btb/tab2/categories",
+                    build: buildExtender({ getPageClass: () => require("pages/pgCategories").default, headerBarStyle: { visible: true } })
                 }),
                 Route.of({
                     path: "/btb/tab1/page2",
                     build: buildExtender({ getPageClass: () => require("pages/pgWelcome").default, headerBarStyle: { visible: true } })
                 }),
                 Route.of({
-                    path: "/btb/tab1/page2",
-                    build: buildExtender({ getPageClass: () => require("pages/pgSignUp").default, headerBarStyle: { visible: true } })
+                    path: "/btb/tab1/favorites",
+                    build: buildExtender({ getPageClass: () => require("pages/pgFavorites").default, headerBarStyle: { visible: true } })
                 }),
                 Route.of({
                     path: "/btb/tab1/page2",

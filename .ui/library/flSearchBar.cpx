@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flSearchBar",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "c966-f33d-bf1c-9474",
 			"props": {
 				"children": [
