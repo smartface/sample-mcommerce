@@ -2,6 +2,7 @@ import PgSignInDesign from 'generated/pages/pgSignIn';
 import TextAlignment from '@smartface/native/ui/textalignment';
 import TextBox from '@smartface/native/ui/textbox';
 import View from '@smartface/native/ui/view';
+import KeyboardType from '@smartface/native/ui/keyboardtype';
 
 export default class PgSignIn extends PgSignInDesign {
     router: any
@@ -12,12 +13,35 @@ export default class PgSignIn extends PgSignInDesign {
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
-        this.lblFlag.on(View.Events.Touch, () => {
+        this.tbNumber.on(TextBox.Events.EditBegins, () => {
             this.router.push('/pages/pgNumber')
+            // this.imageView1.dispatch({
+            //     type: "updateUserStyle",
+            //     userStyle: {
+            //         visible: false,
+            //         flexGrow: 0,
+            //     }
+            // })
+            // this.flexLayout2.dispatch({
+            //     type: "updateUserStyle",
+            //     userStyle: {
+            //         flexGrow: 9,
+            //     }
+            // })
+            // this.flexLayout1.dispatch({
+            //     type: "updateUserStyle",
+            //     userStyle: {
+            //         flexGrow: 3,
+            //     }
+            // })
         })
+        // this.lblFlag.on(View.Events.Touch, () => {
+        //     this.router.push('/pages/pgNumber')
+        // })
+        this.tbNumber.keyboardType = KeyboardType.NUMBER
 	}
     initImageView() {
-        this.imageView1.rotation = -141
+        this.imgTop.rotation = -141
     }
 }
 

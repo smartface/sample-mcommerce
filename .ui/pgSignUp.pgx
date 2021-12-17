@@ -59,16 +59,18 @@
 			"id": "27ed-71ed-2b47-1aa9",
 			"props": {
 				"children": [],
-				"name": "imageView3",
+				"name": "imgBackground",
 				"parent": "85da-2fd3-8e39-c6d0"
 			},
 			"type": "ImageView",
 			"userProps": {
 				"bottom": 0,
 				"flexProps": {
-					"positionType": "ABSOLUTE"
+					"positionType": "ABSOLUTE",
+					"flexGrow": 1
 				},
-				"image": "bg.png",
+				"height": null,
+				"image": "background.png",
 				"imageFillType": "ASPECTFILL",
 				"left": 0,
 				"right": 0,
@@ -86,7 +88,7 @@
 					"ce9f-11e1-1af4-9da6",
 					"40d7-1892-4734-7a1b"
 				],
-				"name": "flBg",
+				"name": "flContainer",
 				"parent": "85da-2fd3-8e39-c6d0",
 				"usePageVariable": true
 			},
@@ -108,7 +110,7 @@
 			"id": "ce3e-3296-d0d0-537a",
 			"props": {
 				"children": [],
-				"name": "imageView3",
+				"name": "imgLogo",
 				"parent": "2040-54a0-940e-495a"
 			},
 			"type": "ImageView",
@@ -119,7 +121,7 @@
 				},
 				"height": "208.77",
 				"image": "logo.png",
-				"imageFillType": "BOTTOMCENTER",
+				"imageFillType": "NORMAL",
 				"testId": "zw0_J-c-V",
 				"width": "373.68"
 			}
@@ -129,7 +131,7 @@
 			"id": "ed74-f53c-daaf-3d2f",
 			"props": {
 				"children": [],
-				"name": "label7",
+				"name": "lblTitle",
 				"parent": "2040-54a0-940e-495a",
 				"text": "Sign Up"
 			},
@@ -142,8 +144,8 @@
 					"size": 26,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
 				"marginBottom": null,
 				"marginLeft": 25,
@@ -158,7 +160,7 @@
 			"id": "ce9f-11e1-1af4-9da6",
 			"props": {
 				"children": [],
-				"name": "label8",
+				"name": "lblText",
 				"parent": "2040-54a0-940e-495a",
 				"text": "Enter your credentials to continue"
 			},
@@ -171,8 +173,8 @@
 					"size": 16,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
 				"marginBottom": null,
 				"marginLeft": 25,
@@ -191,9 +193,12 @@
 					"9cb0-9e79-e526-4f64",
 					"efef-c8d5-44cf-b90d",
 					"8680-508c-a2b2-3977",
-					"a49d-18ac-66b0-e103"
+					"8bcf-a729-caf1-6202",
+					"5aaf-f8a9-8953-b2cc",
+					"fe91-7b0a-263b-7b5f",
+					"e333-17ee-ecf4-3517"
 				],
-				"name": "flexLayout4",
+				"name": "flForm",
 				"parent": "2040-54a0-940e-495a"
 			},
 			"type": "FlexLayout",
@@ -300,28 +305,274 @@
 			}
 		},
 		{
+			"className": ".sf-flexLayout",
+			"id": "8bcf-a729-caf1-6202",
+			"props": {
+				"children": [
+					"070a-d1bb-3c1c-d80e",
+					"a8f7-4819-e0d8-f75d"
+				],
+				"name": "flTerms",
+				"parent": "40d7-1892-4734-7a1b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW",
+					"flexGrow": 1
+				},
+				"height": null,
+				"marginBottom": null,
+				"marginTop": null,
+				"maxHeight": 36,
+				"testId": "GgtHkJR7Y",
+				"width": null
+			}
+		},
+		{
 			"className": ".sf-label",
-			"id": "a49d-18ac-66b0-e103",
+			"id": "070a-d1bb-3c1c-d80e",
 			"props": {
 				"children": [],
-				"name": "label5",
-				"parent": "40d7-1892-4734-7a1b",
-				"text": "Already have an account? Login",
+				"name": "lblTermsLeft",
+				"parent": "8bcf-a729-caf1-6202",
+				"text": "By continuing you agree to our",
 				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
+				"ellipsizeMode": "WORDWRAPPING",
+				"flexProps": {
+					"flexGrow": 4
+				},
 				"font": {
 					"size": 14,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
+				"left": 0,
+				"marginBottom": null,
+				"marginTop": null,
+				"maxLines": 2,
 				"testId": "g4mLeQV5F",
-				"text": "Already have an account? Login",
-				"textAlignment": "MIDCENTER",
-				"textColor": "rgba( 24, 23, 37, 1 )",
+				"text": "By continuing you agree to our",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 124, 124, 124, 1 )",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "a8f7-4819-e0d8-f75d",
+			"props": {
+				"children": [],
+				"name": "lblTermsRight",
+				"parent": "8bcf-a729-caf1-6202",
+				"text": "Terms of Service",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"ellipsizeMode": "WORDWRAPPING",
+				"flexProps": {
+					"flexGrow": 2
+				},
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"left": 0,
+				"marginBottom": null,
+				"marginTop": null,
+				"maxLines": 2,
+				"testId": "g4mLeQV5F",
+				"text": "Terms of Service",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 83, 177, 117, 1 )",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "5aaf-f8a9-8953-b2cc",
+			"props": {
+				"children": [
+					"eade-4475-69c0-5aee",
+					"ec96-c1f9-ba8b-f30d"
+				],
+				"name": "flPrivacy",
+				"parent": "40d7-1892-4734-7a1b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW",
+					"alignSelf": "AUTO",
+					"alignItems": "AUTO",
+					"flexGrow": 1
+				},
+				"height": null,
+				"maxHeight": 35,
+				"testId": "JW4QfG7Si",
+				"width": null
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "eade-4475-69c0-5aee",
+			"props": {
+				"children": [],
+				"name": "lblPrivacyLeft",
+				"parent": "5aaf-f8a9-8953-b2cc",
+				"text": "and "
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"marginBottom": null,
+				"marginTop": null,
+				"testId": "jSogaLSf-",
+				"text": "and ",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 124, 124, 124, 1 )"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "ec96-c1f9-ba8b-f30d",
+			"props": {
+				"children": [],
+				"name": "lblPrivacyRight",
+				"parent": "5aaf-f8a9-8953-b2cc",
+				"text": "Privacy Policy."
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 9
+				},
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"testId": "Cw8Dhn2M1",
+				"text": "Privacy Policy.",
+				"textColor": "rgba( 83, 177, 117, 1 )"
+			}
+		},
+		{
+			"className": ".sf-button .sf-button-main",
+			"id": "fe91-7b0a-263b-7b5f",
+			"props": {
+				"children": [],
+				"name": "btnSignUp",
+				"parent": "40d7-1892-4734-7a1b",
+				"text": "Sign Up"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "Sign Up"
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "e333-17ee-ecf4-3517",
+			"props": {
+				"children": [
+					"116e-9475-8284-ae76",
+					"3462-f45d-874f-b834"
+				],
+				"name": "flFooter",
+				"parent": "40d7-1892-4734-7a1b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW"
+				},
+				"height": "109.43",
+				"testId": "akadJGRFr",
+				"width": "311.32"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "116e-9475-8284-ae76",
+			"props": {
+				"children": [],
+				"name": "lblFooterLeft",
+				"parent": "e333-17ee-ecf4-3517",
+				"text": "Already have an account? ",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 5
+				},
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"left": 0,
+				"testId": "1bUa3lE81",
+				"text": "Already have an account? ",
+				"textAlignment": "MIDRIGHT",
+				"textColor": "rgba( 3, 3, 3, 1 )",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "3462-f45d-874f-b834",
+			"props": {
+				"children": [],
+				"name": "lblRouteLogin",
+				"parent": "e333-17ee-ecf4-3517",
+				"text": "Login",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 2
+				},
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"left": 0,
+				"testId": "1bUa3lE81",
+				"text": "Login",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 83, 177, 117, 1 )",
+				"top": 0,
 				"usePageVariable": true
 			}
 		}

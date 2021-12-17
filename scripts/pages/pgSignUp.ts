@@ -11,34 +11,26 @@ export default class PgSignUp extends PgSignUpDesign {
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
-        this.label5.on(View.Events.Touch, () => {
-            this.router.push("/pages/pgLogin")
+        this.lblRouteLogin.on(View.Events.Touch, () => {
+            this.router.goBack()
         })
 	}
     initMaterialTextBoxes() {
         this.mtbUsername.options = {
             hint: "Username",
-            text: "smartface"
+            //text: "smartface"
         };
         this.mtbEmail.options = {
             hint: "Email",
-            text: "username@smartface.io"
+            //text: "username@smartface.io"
         };
         this.mtbPassword.options = {
             hint: "Password",
-            text: "●●●●●●●"
+            //text: "●●●●●●●"
         };
         this.mtbPassword.materialTextBox.isPassword = true;
 
-        // this.mtbUsername.dispatch({
-        //     type: "updateUserStyle",
-        //         userStyle: {
-        //             lineColor: {
-        //                 normal: Color.GREEN,
-        //                 selected: Color.RED
-        //             }
-        //         }
-        // })
+        
         //this.mtbPassword.rightLayout = { view: this.imgShow, width: 30 };
     }
 }
@@ -50,7 +42,19 @@ export default class PgSignUp extends PgSignUpDesign {
  * @param {Object} parameters passed from Router.go function
  */
 function onShow(this: PgSignUp, superOnShow: () => void) {
-	superOnShow();
+	
+    superOnShow();
+    //@ts-ignore
+    // this.mtbUsername.materialTextBox.dispatch({
+    //     type: "updateUserStyle",
+    //     userStyle: {
+    //         lineColor: {
+    //             normal: '#7c7c7c',
+    //             selected: "#00ff54"
+
+    //         }
+    //     }         
+    // })
 }
 
 /**

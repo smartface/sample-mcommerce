@@ -1,7 +1,9 @@
 import PgLoginDesign from 'generated/pages/pgLogin';
 import ImageView from '@smartface/native/ui/imageview';
+import View from '@smartface/native/ui/view';
 
 export default class PgLogin extends PgLoginDesign {
+    router: any
 	constructor() {
         imgShow: ImageView
 		super();
@@ -10,6 +12,10 @@ export default class PgLogin extends PgLoginDesign {
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
+        this.lblRouteSignUp.on(View.Events.Touch, () => {
+            //this.router.push('/pages/pgSignUp')
+            this.router.push('/pages/pgSignUp')
+        })
         // this.imgShow = new ImageView({
         //     height: 20,
         //     image: "images://eye.png",

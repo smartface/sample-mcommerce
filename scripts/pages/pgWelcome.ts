@@ -1,7 +1,9 @@
 import PgWelcomeDesign from 'generated/pages/pgWelcome';
 import Screen from '@smartface/native/device/screen';
+import View from '@smartface/native/ui/view';
 
 export default class PgWelcome extends PgWelcomeDesign {
+    router: any
 	constructor() {
 		super();
         imgHeight: 4096
@@ -10,6 +12,10 @@ export default class PgWelcome extends PgWelcomeDesign {
 		this.onShow = onShow.bind(this, this.onShow.bind(this));
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+
+        this.btnStart.on(View.Events.Touch, () => {
+            this.router.push('/pages/pgNumber')
+        })
 	}
     initImageView() {
         // this.imageView1.top = 0

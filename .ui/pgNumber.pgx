@@ -9,7 +9,9 @@
 					"1e23-65cd-ba9a-451c",
 					"de24-5fdd-e841-2527",
 					"8685-1f79-9a59-9fcc",
-					"7965-324e-6485-6fca"
+					"7965-324e-6485-6fca",
+					"2ec9-4ddc-2440-1833",
+					"2012-80cc-00f3-1e22"
 				],
 				"name": "pgNumber",
 				"orientation": "PORTRAIT",
@@ -18,6 +20,7 @@
 			},
 			"type": "Page",
 			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"paddingBottom": null,
 				"paddingLeft": null,
 				"paddingRight": null,
@@ -51,12 +54,15 @@
 				"isRemovable": false,
 				"name": "headerBar",
 				"parent": "49ad-4e86-8aa1-37db",
-				"title": "pgNumber"
+				"title": "Merhaba"
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"title": "pgNumber",
-				"visible": false
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"title": "Merhaba",
+				"titleColor": "rgba( 144, 19, 254, 1 )",
+				"transparent": true,
+				"visible": true
 			}
 		},
 		{
@@ -64,17 +70,18 @@
 			"id": "8685-1f79-9a59-9fcc",
 			"props": {
 				"children": [],
-				"name": "imageView2",
+				"name": "imgBackground",
 				"parent": "49ad-4e86-8aa1-37db"
 			},
 			"type": "ImageView",
 			"userProps": {
 				"bottom": 0,
 				"flexProps": {
-					"positionType": "ABSOLUTE"
+					"positionType": "ABSOLUTE",
+					"flexGrow": 1
 				},
-				"height": 300,
-				"image": "bg.png",
+				"height": null,
+				"image": "background.png",
 				"imageFillType": "ASPECTFILL",
 				"left": 0,
 				"marginBottom": null,
@@ -90,22 +97,21 @@
 			"props": {
 				"children": [
 					"33dd-7fc1-c361-35bf",
-					"6984-cd9c-780c-8c3d",
-					"0111-e908-7141-da67"
+					"7700-5a68-f35e-a45f",
+					"25d2-ba43-3a7e-3509"
 				],
-				"name": "flexLayout4",
+				"name": "flHeader",
 				"parent": "49ad-4e86-8aa1-37db",
 				"usePageVariable": true
 			},
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {
-					"justifyContent": "FLEX_START",
+					"justifyContent": "SPACE_BETWEEN",
 					"alignContent": "STRETCH",
 					"alignItems": "FLEX_START"
 				},
 				"marginBottom": null,
-				"marginLeft": 25,
 				"marginTop": null,
 				"testId": "MXghN9hMo",
 				"usePageVariable": true
@@ -116,7 +122,7 @@
 			"id": "33dd-7fc1-c361-35bf",
 			"props": {
 				"children": [],
-				"name": "imageView2",
+				"name": "imgBack",
 				"parent": "7965-324e-6485-6fca",
 				"usePageVariable": true
 			},
@@ -137,10 +143,10 @@
 		},
 		{
 			"className": ".sf-label",
-			"id": "6984-cd9c-780c-8c3d",
+			"id": "7700-5a68-f35e-a45f",
 			"props": {
 				"children": [],
-				"name": "label5",
+				"name": "lblTitle",
 				"parent": "7965-324e-6485-6fca",
 				"text": "Enter your mobile number"
 			},
@@ -153,20 +159,25 @@
 					"size": 26,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
+				"left": 0,
+				"marginBottom": null,
+				"marginTop": null,
+				"minWidth": 150,
 				"testId": "zxfcFhKam",
 				"text": "Enter your mobile number",
-				"textColor": "rgba( 0, 0, 0, 1 )"
+				"textColor": "rgba( 24, 23, 37, 1 )",
+				"top": 0
 			}
 		},
 		{
 			"className": ".sf-label",
-			"id": "0111-e908-7141-da67",
+			"id": "25d2-ba43-3a7e-3509",
 			"props": {
 				"children": [],
-				"name": "label6",
+				"name": "lblText",
 				"parent": "7965-324e-6485-6fca",
 				"text": "Mobile Number"
 			},
@@ -179,12 +190,137 @@
 					"size": 16,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
+				"left": 0,
+				"minWidth": 150,
 				"testId": "2i8YmmjN6",
 				"text": "Mobile Number",
-				"textColor": "rgba( 124, 124, 124, 1 )"
+				"textColor": "rgba( 124, 124, 124, 1 )",
+				"top": 0
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "2ec9-4ddc-2440-1833",
+			"props": {
+				"children": [
+					"c846-dfa7-bb0d-32ce",
+					"dffe-436b-69b6-a1af"
+				],
+				"name": "flContainer",
+				"parent": "49ad-4e86-8aa1-37db"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "ROW"
+				},
+				"testId": "nMjwnwI42"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "c846-dfa7-bb0d-32ce",
+			"props": {
+				"children": [],
+				"name": "lblFlag",
+				"parent": "2ec9-4ddc-2440-1833",
+				"text": "🇹🇷"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 25,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"marginLeft": 25,
+				"testId": "EdEC6z9kP",
+				"text": "🇹🇷",
+				"textAlignment": "MIDCENTER"
+			}
+		},
+		{
+			"className": ".sf-textBox",
+			"id": "dffe-436b-69b6-a1af",
+			"props": {
+				"children": [],
+				"name": "tbNumber",
+				"parent": "2ec9-4ddc-2440-1833",
+				"text": "+90",
+				"usePageVariable": true
+			},
+			"type": "TextBox",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 5
+				},
+				"font": {
+					"size": 16,
+					"bold": false,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Regular"
+				},
+				"marginRight": 25,
+				"testId": "ieTrlKl3-",
+				"text": "+90",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "2012-80cc-00f3-1e22",
+			"props": {
+				"children": [
+					"21cd-590b-cdee-f5e3"
+				],
+				"name": "flFooter",
+				"parent": "49ad-4e86-8aa1-37db"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"justifyContent": "FLEX_START",
+					"alignItems": "FLEX_END",
+					"flexGrow": 4
+				},
+				"height": "169.81",
+				"testId": "fzMVgYbj3",
+				"width": "371.70"
+			}
+		},
+		{
+			"className": ".sf-button .sf-button-router",
+			"id": "21cd-590b-cdee-f5e3",
+			"props": {
+				"children": [],
+				"name": "btnRoute",
+				"parent": "2012-80cc-00f3-1e22",
+				"text": "",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"font": {
+					"size": 25,
+					"bold": false,
+					"italic": false,
+					"family": "FontAwesome5FreeSolid",
+					"style": null
+				},
+				"marginRight": 25,
+				"testId": "DBXuFg79_",
+				"text": "",
+				"usePageVariable": true
 			}
 		}
 	]

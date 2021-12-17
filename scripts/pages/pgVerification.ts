@@ -1,12 +1,25 @@
+import KeyboardType from '@smartface/native/ui/keyboardtype';
+import View from '@smartface/native/ui/view';
 import PgVerificationDesign from 'generated/pages/pgVerification';
 
 export default class PgVerification extends PgVerificationDesign {
+    router: any
 	constructor() {
 		super();
 		// Overrides super.onShow method
 		this.onShow = onShow.bind(this, this.onShow.bind(this));
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+
+        this.imgBack.on(View.Events.Touch, () => {
+            this.router.goBack();
+        })
+
+        this.btnRouter.on(View.Events.Touch, () => {
+            this.router.push('/pages/pgLogin')
+        })
+
+        this.tbCode.keyboardType = KeyboardType.NUMBER
 	}
 }
 

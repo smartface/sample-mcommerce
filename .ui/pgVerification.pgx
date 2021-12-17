@@ -10,7 +10,8 @@
 					"9935-0f44-a5e2-85dd",
 					"0745-b8d6-1ef0-a1db",
 					"9ac2-95e8-58d2-0a2d",
-					"a99f-9928-247a-c83c"
+					"a99f-9928-247a-c83c",
+					"d5b7-091a-cdf0-06b6"
 				],
 				"name": "pgVerification",
 				"orientation": "PORTRAIT",
@@ -62,16 +63,18 @@
 			"id": "0745-b8d6-1ef0-a1db",
 			"props": {
 				"children": [],
-				"name": "imageBg",
+				"name": "imgBackground",
 				"parent": "8492-4718-26bc-e27d"
 			},
 			"type": "ImageView",
 			"userProps": {
 				"bottom": 0,
 				"flexProps": {
-					"positionType": "ABSOLUTE"
+					"positionType": "ABSOLUTE",
+					"flexGrow": 1
 				},
-				"image": "bg.png",
+				"height": null,
+				"image": "background.png",
 				"imageFillType": "ASPECTFILL",
 				"left": 0,
 				"marginBottom": null,
@@ -90,7 +93,7 @@
 					"456a-ab5d-dda3-6c5b",
 					"4ff0-fcba-b4e9-bfda"
 				],
-				"name": "flexLayout4",
+				"name": "flHeader",
 				"parent": "8492-4718-26bc-e27d",
 				"usePageVariable": true
 			},
@@ -115,7 +118,7 @@
 			"id": "2aaf-141a-ef53-0b66",
 			"props": {
 				"children": [],
-				"name": "imageView2",
+				"name": "imgBack",
 				"parent": "9ac2-95e8-58d2-0a2d",
 				"usePageVariable": true
 			},
@@ -139,7 +142,7 @@
 			"id": "456a-ab5d-dda3-6c5b",
 			"props": {
 				"children": [],
-				"name": "label5",
+				"name": "lblTitle",
 				"parent": "9ac2-95e8-58d2-0a2d",
 				"text": "Enter your 4-digit code"
 			},
@@ -165,7 +168,7 @@
 			"id": "4ff0-fcba-b4e9-bfda",
 			"props": {
 				"children": [],
-				"name": "label6",
+				"name": "lblText",
 				"parent": "9ac2-95e8-58d2-0a2d",
 				"text": "Code"
 			},
@@ -191,7 +194,7 @@
 			"id": "a99f-9928-247a-c83c",
 			"props": {
 				"children": [],
-				"name": "textBox1",
+				"name": "tbCode",
 				"parent": "8492-4718-26bc-e27d",
 				"text": "- - -",
 				"usePageVariable": true
@@ -202,6 +205,77 @@
 				"left": 25,
 				"testId": "ZIEpBzxPu",
 				"text": "- - -",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "d5b7-091a-cdf0-06b6",
+			"props": {
+				"children": [
+					"8777-2fba-ba1a-8fb8",
+					"3789-482c-3270-8316"
+				],
+				"name": "flContainer",
+				"parent": "8492-4718-26bc-e27d"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW"
+				},
+				"testId": "2UoNUpnKT"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "8777-2fba-ba1a-8fb8",
+			"props": {
+				"children": [],
+				"name": "lblResend",
+				"parent": "d5b7-091a-cdf0-06b6",
+				"text": "Resend Code"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 18,
+					"bold": false,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Medium"
+				},
+				"marginLeft": 25,
+				"testId": "JmUyde_sD",
+				"text": "Resend Code",
+				"textColor": "rgba( 83, 177, 117, 1 )"
+			}
+		},
+		{
+			"className": ".sf-button .sf-button-router",
+			"id": "3789-482c-3270-8316",
+			"props": {
+				"children": [],
+				"name": "btnRouter",
+				"parent": "d5b7-091a-cdf0-06b6",
+				"text": "",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"font": {
+					"size": 25,
+					"bold": false,
+					"italic": false,
+					"family": "FontAwesome5FreeSolid",
+					"style": null
+				},
+				"marginRight": 25,
+				"testId": "jK_FdN5qg",
+				"text": "",
 				"usePageVariable": true
 			}
 		}

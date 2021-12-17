@@ -62,7 +62,7 @@
 			"id": "dba2-47c2-5c59-d3cc",
 			"props": {
 				"children": [],
-				"name": "imageView1",
+				"name": "imgTop",
 				"parent": "aa91-bda1-9596-903a",
 				"usePageVariable": true
 			},
@@ -71,7 +71,7 @@
 				"flexProps": {
 					"flexGrow": 1
 				},
-				"height": 400,
+				"height": null,
 				"image": "in.png",
 				"imageFillType": "ASPECTFILL",
 				"left": 0,
@@ -91,8 +91,9 @@
 					"802f-30c2-b166-4b30",
 					"127f-2b15-4d6a-668a"
 				],
-				"name": "flexLayout2",
-				"parent": "aa91-bda1-9596-903a"
+				"name": "flContainer",
+				"parent": "aa91-bda1-9596-903a",
+				"usePageVariable": true
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -100,7 +101,8 @@
 					"flexGrow": 1.5
 				},
 				"height": null,
-				"testId": "AzQ2nztZZ"
+				"testId": "AzQ2nztZZ",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -108,31 +110,32 @@
 			"id": "802f-30c2-b166-4b30",
 			"props": {
 				"children": [],
-				"name": "label1",
+				"name": "lblTitle",
 				"parent": "dddf-4f17-7c22-a326",
-				"text": "Get your groceries.   with nectar",
+				"text": "Get your groceries with nectar",
 				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
 				"ellipsizeMode": "WORDWRAPPING",
-				"flexProps": {},
+				"flexProps": {
+					"flexGrow": 1
+				},
 				"font": {
 					"size": 26,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
-				"height": "63.16",
+				"height": null,
 				"marginLeft": 24,
 				"maxLines": 2,
-				"maxWidth": 222,
 				"testId": "UJsCvWyNJ",
-				"text": "Get your groceries.   with nectar",
+				"text": "Get your groceries with nectar",
 				"textColor": "rgba( 3, 3, 3, 1 )",
 				"usePageVariable": true,
-				"width": "221.05"
+				"width": null
 			}
 		},
 		{
@@ -143,17 +146,20 @@
 					"2cd1-3599-6150-b6f6",
 					"69ef-c434-6688-b841"
 				],
-				"name": "flexLayout2",
-				"parent": "dddf-4f17-7c22-a326"
+				"name": "flNumber",
+				"parent": "dddf-4f17-7c22-a326",
+				"usePageVariable": true
 			},
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {
-					"flexDirection": "ROW"
+					"flexDirection": "ROW",
+					"flexGrow": 3
 				},
-				"height": "108.06",
+				"height": null,
 				"testId": "qPj9-YCPN",
-				"width": "379.03"
+				"usePageVariable": true,
+				"width": null
 			}
 		},
 		{
@@ -193,10 +199,9 @@
 			"id": "69ef-c434-6688-b841",
 			"props": {
 				"children": [],
-				"keyboardType": "PHONE",
-				"name": "textBox1",
+				"keyboardType": "NUMBER",
+				"name": "tbNumber",
 				"parent": "127f-2b15-4d6a-668a",
-				"text": "+90",
 				"usePageVariable": true
 			},
 			"type": "TextBox",
@@ -211,10 +216,9 @@
 					"family": "SFProText",
 					"style": "Regular"
 				},
-				"keyboardType": "PHONE",
+				"keyboardType": "NUMBER",
 				"marginRight": 25,
 				"testId": "wVbrFbaj0",
-				"text": "+90",
 				"usePageVariable": true
 			}
 		}

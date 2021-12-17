@@ -64,16 +64,18 @@
 			"id": "f711-79a1-d479-0493",
 			"props": {
 				"children": [],
-				"name": "imageView2",
+				"name": "imgBackground",
 				"parent": "aa9f-e1cb-2f7f-92d5"
 			},
 			"type": "ImageView",
 			"userProps": {
 				"bottom": 0,
 				"flexProps": {
-					"positionType": "ABSOLUTE"
+					"positionType": "ABSOLUTE",
+					"flexGrow": 1
 				},
-				"image": "bg.png",
+				"height": null,
+				"image": "background.png",
 				"imageFillType": "ASPECTFILL",
 				"left": 0,
 				"marginBottom": null,
@@ -93,7 +95,7 @@
 					"73fb-0516-a060-3970",
 					"b572-513a-69d9-501f"
 				],
-				"name": "flBg",
+				"name": "flContainer",
 				"parent": "aa9f-e1cb-2f7f-92d5",
 				"usePageVariable": true
 			},
@@ -113,7 +115,7 @@
 			"id": "ecf9-7bb6-8155-123e",
 			"props": {
 				"children": [],
-				"name": "imageView3",
+				"name": "imgLogo",
 				"parent": "9503-8d4b-931f-3afe"
 			},
 			"type": "ImageView",
@@ -134,7 +136,7 @@
 			"id": "3a60-cc2c-259e-ab70",
 			"props": {
 				"children": [],
-				"name": "label7",
+				"name": "lblTitle",
 				"parent": "9503-8d4b-931f-3afe",
 				"text": "Loging"
 			},
@@ -147,8 +149,8 @@
 					"size": 26,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
 				"marginBottom": null,
 				"marginLeft": 25,
@@ -163,7 +165,7 @@
 			"id": "73fb-0516-a060-3970",
 			"props": {
 				"children": [],
-				"name": "label8",
+				"name": "lblText",
 				"parent": "9503-8d4b-931f-3afe",
 				"text": "Enter your emails and password"
 			},
@@ -176,8 +178,8 @@
 					"size": 16,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
 				"marginBottom": null,
 				"marginLeft": 25,
@@ -195,9 +197,11 @@
 				"children": [
 					"2357-5cc8-f049-3396",
 					"530e-ea35-e6ca-1809",
-					"bdfa-6292-509e-bad0"
+					"bdfa-6292-509e-bad0",
+					"98b3-fdb6-61f4-2eb9",
+					"73b4-1e9e-72b6-ee15"
 				],
-				"name": "flexLayout4",
+				"name": "flForm",
 				"parent": "9503-8d4b-931f-3afe"
 			},
 			"type": "FlexLayout",
@@ -277,7 +281,7 @@
 			"id": "bdfa-6292-509e-bad0",
 			"props": {
 				"children": [],
-				"name": "label5",
+				"name": "lblForgotPassword",
 				"parent": "b572-513a-69d9-501f",
 				"text": "Forgot Password?",
 				"usePageVariable": true
@@ -288,13 +292,110 @@
 					"size": 14,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
 				"testId": "g4mLeQV5F",
 				"text": "Forgot Password?",
 				"textAlignment": "MIDRIGHT",
 				"textColor": "rgba( 24, 23, 37, 1 )",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button .sf-button-main",
+			"id": "98b3-fdb6-61f4-2eb9",
+			"props": {
+				"children": [],
+				"name": "btnLogIn",
+				"parent": "b572-513a-69d9-501f",
+				"text": "Log In"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "Log In"
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "73b4-1e9e-72b6-ee15",
+			"props": {
+				"children": [
+					"e85e-6514-edb3-f609",
+					"b60f-803f-5f9e-4650"
+				],
+				"name": "flFooter",
+				"parent": "b572-513a-69d9-501f"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW"
+				},
+				"height": "47.17",
+				"testId": "PGmVHNP2q",
+				"width": "326.42"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "e85e-6514-edb3-f609",
+			"props": {
+				"children": [],
+				"name": "lblLeft",
+				"parent": "73b4-1e9e-72b6-ee15",
+				"text": "Don’t have an account? ",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 5
+				},
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"left": 0,
+				"testId": "JYm46Rkkf",
+				"text": "Don’t have an account? ",
+				"textAlignment": "MIDRIGHT",
+				"textColor": "rgba( 24, 23, 37, 1 )",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "b60f-803f-5f9e-4650",
+			"props": {
+				"children": [],
+				"name": "lblRouteSignUp",
+				"parent": "73b4-1e9e-72b6-ee15",
+				"text": "Singup",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 3
+				},
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"left": 0,
+				"testId": "JYm46Rkkf",
+				"text": "Singup",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 83, 177, 117, 1 )",
+				"top": 0,
 				"usePageVariable": true
 			}
 		}
