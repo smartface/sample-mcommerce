@@ -53,14 +53,12 @@
 				"children": [],
 				"isRemovable": false,
 				"name": "headerBar",
-				"parent": "49ad-4e86-8aa1-37db",
-				"title": "Merhaba"
+				"parent": "49ad-4e86-8aa1-37db"
 			},
 			"type": "HeaderBar",
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"title": "Merhaba",
-				"titleColor": "rgba( 144, 19, 254, 1 )",
+				"titleColor": "rgba( 255, 255, 255, 0 )",
 				"transparent": true,
 				"visible": true
 			}
@@ -96,7 +94,6 @@
 			"id": "7965-324e-6485-6fca",
 			"props": {
 				"children": [
-					"33dd-7fc1-c361-35bf",
 					"7700-5a68-f35e-a45f",
 					"25d2-ba43-3a7e-3509"
 				],
@@ -111,34 +108,11 @@
 					"alignContent": "STRETCH",
 					"alignItems": "FLEX_START"
 				},
+				"height": 200,
 				"marginBottom": null,
 				"marginTop": null,
 				"testId": "MXghN9hMo",
 				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-imageView",
-			"id": "33dd-7fc1-c361-35bf",
-			"props": {
-				"children": [],
-				"name": "imgBack",
-				"parent": "7965-324e-6485-6fca",
-				"usePageVariable": true
-			},
-			"type": "ImageView",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 2
-				},
-				"height": null,
-				"image": "backbtn.png",
-				"imageFillType": "TOPLEFT",
-				"marginBottom": null,
-				"marginTop": null,
-				"testId": "mSUZ3zeiw",
-				"usePageVariable": true,
-				"width": 20
 			}
 		},
 		{
@@ -165,6 +139,7 @@
 				"left": 0,
 				"marginBottom": null,
 				"marginTop": null,
+				"maxHeight": 100,
 				"minWidth": 150,
 				"testId": "zxfcFhKam",
 				"text": "Enter your mobile number",
@@ -206,8 +181,7 @@
 			"id": "2ec9-4ddc-2440-1833",
 			"props": {
 				"children": [
-					"c846-dfa7-bb0d-32ce",
-					"dffe-436b-69b6-a1af"
+					"f070-b89e-b3ec-4eee"
 				],
 				"name": "flContainer",
 				"parent": "49ad-4e86-8aa1-37db"
@@ -222,57 +196,32 @@
 			}
 		},
 		{
-			"className": ".sf-label",
-			"id": "c846-dfa7-bb0d-32ce",
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "f070-b89e-b3ec-4eee",
+			"initialized": false,
 			"props": {
 				"children": [],
-				"name": "lblFlag",
+				"name": "mtbNumber",
 				"parent": "2ec9-4ddc-2440-1833",
-				"text": "🇹🇷"
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"font": {
-					"size": 25,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"marginLeft": 25,
-				"testId": "EdEC6z9kP",
-				"text": "🇹🇷",
-				"textAlignment": "MIDCENTER"
-			}
-		},
-		{
-			"className": ".sf-textBox",
-			"id": "dffe-436b-69b6-a1af",
-			"props": {
-				"children": [],
-				"name": "tbNumber",
-				"parent": "2ec9-4ddc-2440-1833",
-				"text": "+90",
 				"usePageVariable": true
 			},
-			"type": "TextBox",
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
 			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
 				"flexProps": {
-					"flexGrow": 5
+					"positionType": "RELATIVE"
 				},
-				"font": {
-					"size": 16,
-					"bold": false,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Regular"
-				},
-				"marginRight": 25,
-				"testId": "ieTrlKl3-",
-				"text": "+90",
+				"left": 0,
+				"testId": "x_F3cBMmG",
+				"top": 0,
 				"usePageVariable": true
 			}
 		},
