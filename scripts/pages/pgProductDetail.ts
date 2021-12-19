@@ -1,12 +1,14 @@
 import Application from '@smartface/native/application';
 import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
+import Image from '@smartface/native/ui/image';
 import PgProductDetailDesign from 'generated/pages/pgProductDetail';
 
 export default class PgProductDetail extends PgProductDetailDesign {
     router: any
     leftItem: HeaderBarItem
     rightItem: HeaderBarItem
+    routeData: any
 	constructor() {
 		super();
 		// Overrides super.onShow method
@@ -40,6 +42,11 @@ function onShow(this: PgProductDetail, superOnShow: () => void) {
 	superOnShow();
     Application.statusBar.visible = true;
     Application.statusBar.backgroundColor = Color.create("#F2F3F2")
+    this.productDetailPrice.text = `$${this.routeData.productPrice}`
+    this.productDetailDesc.text = this.routeData.productDescription
+    this.imgProductDetail.image = Image.createFromFile(`images://${this.routeData.productImg}`)
+    this.productDetailName.text = this.routeData.productName
+
 }
 
 /**

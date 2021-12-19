@@ -31,12 +31,33 @@ export default class PgHome extends PgHomeDesign {
         this.productsBestSellerGrid.scrollBarEnabled = false;
         this.productsBestSellerGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
             GridViewItem.gviProductItemImg.on(View.Events.Touch, () => {
-                this.router.push('/pages/pgProductDetail')
+                this.router.push('/btb/tab1/productDetail', {
+                  productName: products[index].name,
+                  productPrice: products[index].price,
+                  productDescription:products[index].description,
+                  productImg:products[index].image
+                })
             })
             GridViewItem.gviLblProductItemTitle.text = products[index].name
             GridViewItem.gviProductItemDesc.text = products[index].description
             GridViewItem.gviProductItemImg.image = Image.createFromFile(`images://${products[index].image}`)
             GridViewItem.gviProductItemPrice.text = `$${products[index].price}`
+        }
+        this.productsGrid.onItemSelected = (GridViewItem: GviProductItem, index: number) => {
+            this.router.push('/btb/tab1/productDetail', {
+                productName: products[index].name,
+                productPrice: products[index].price,
+                productDescription:products[index].description,
+                productImg:products[index].image
+              })
+        }
+        this.productsBestSellerGrid.onItemSelected = (GridViewItem: GviProductItem, index: number) => {
+            this.router.push('/btb/tab1/productDetail', {
+                productName: products[index].name,
+                productPrice: products[index].price,
+                productDescription:products[index].description,
+                productImg:products[index].image
+              })
         }
     }
 }

@@ -2,6 +2,7 @@ import PgSignUpDesign from 'generated/pages/pgSignUp';
 import Color from '@smartface/native/ui/color';
 import View from '@smartface/native/ui/view';
 import Application from '@smartface/native/application';
+import store from 'store/index';
 
 export default class PgSignUp extends PgSignUpDesign {
     router: any
@@ -14,6 +15,9 @@ export default class PgSignUp extends PgSignUpDesign {
 
         this.lblRouteLogin.on(View.Events.Touch, () => {
             this.router.goBack()
+        })
+        this.btnSignUp.on(View.Events.Touch, () => {
+            this.initUserSignup()
         })
 	}
     initMaterialTextBoxes() {
@@ -30,9 +34,26 @@ export default class PgSignUp extends PgSignUpDesign {
             //text: "●●●●●●●"
         };
         this.mtbPassword.materialTextBox.isPassword = true;
-
         
         //this.mtbPassword.rightLayout = { view: this.imgShow, width: 30 };
+    }
+    initUserSignup(){
+      let userPayload = {
+          username: null,
+          password: null,
+          email: null,
+      }
+      userPayload.email = this.mtbEmail.materialTextBox.text.trim();
+      userPayload.username = this.mtbUsername.materialTextBox.text.trim();
+      userPayload.password = this.mtbPassword.materialTextBox.text.trim(); 
+       
+      store.dispatch({
+        type: "SET_NEW_USER",
+        payload: {
+          data: userPayload
+        }
+      })
+      this.router.push('/pages/pgLogin')
     }
 }
 

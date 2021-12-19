@@ -43,6 +43,9 @@ function onShow(this: PgCategories, superOnShow: () => void) {
  */
 function onLoad(this: PgCategories, superOnLoad: () => void) {
     superOnLoad();
+    this.headerBar.leftItemEnabled = false
+    this.headerBar.title = 'Categories'
+    this.headerBar.backgroundColor = Color.WHITE;
+    this.headerBar.android.elevation = 0;
     this.initCategoriesGrid();
-    console.log('categories')
 }

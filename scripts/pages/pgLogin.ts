@@ -1,7 +1,7 @@
 import PgLoginDesign from 'generated/pages/pgLogin';
 import ImageView from '@smartface/native/ui/imageview';
 import View from '@smartface/native/ui/view';
-
+import store from 'store/index'
 export default class PgLogin extends PgLoginDesign {
     router: any
 	constructor() {
@@ -16,6 +16,10 @@ export default class PgLogin extends PgLoginDesign {
             //this.router.push('/pages/pgSignUp')
             this.router.push('/pages/pgSignUp')
         })
+        this.btnLogIn.on(View.Events.Touch, () => {
+            //this.router.push('/pages/pgSignUp')
+            this.initUserLogin()
+        })
         // this.imgShow = new ImageView({
         //     height: 20,
         //     image: "images://eye.png",
@@ -23,8 +27,6 @@ export default class PgLogin extends PgLoginDesign {
         // });
 	}
     initMaterialTextBoxes() {
-        
-
         this.mtbLogin.options = {
             hint: "Email"
         };
@@ -32,8 +34,20 @@ export default class PgLogin extends PgLoginDesign {
             hint: "Password"
         };
         this.mtbPassword.materialTextBox.isPassword = true;
-
         //this.mtbPassword.rightLayout = { view: this.imgShow, width: 30 };
+    }
+    initUserLogin(){
+         if (this.mtbLogin.materialTextBox.text && this.mtbLogin.materialTextBox.text !== '' && this.mtbPassword.materialTextBox.text && this.mtbPassword.materialTextBox.text !== '') {
+           const found = store.getState().users.find(usr => usr.email === this.mtbLogin.materialTextBox.text);
+           console.log('login found usr', found)
+           if (found) {
+               const isPasswordTrue = found.password == this.mtbPassword.materialTextBox.text
+               if (isPasswordTrue) {
+                this.router.push('/btb/tab1/home')
+               }
+           }
+    
+         }
     }
 }
 

@@ -72,11 +72,10 @@
 		"textColor": "#FFFFFF",
 		"textAlignment": "MIDCENTER",
 		"font": {
-			"size": 16,
+			"size": 20,
 			"bold": false,
 			"italic": false,
-			"family": "SFProText",
-			"style": "Semibold"
+			"family": "FontAwesome5FreeSolid"
 		},
 		"flexProps": {
 			"positionType": "RELATIVE",

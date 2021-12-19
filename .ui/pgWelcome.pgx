@@ -109,11 +109,11 @@
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 1.5,
 					"alignItems": "STRETCH",
 					"justifyContent": "FLEX_END",
 					"alignContent": "STRETCH",
-					"flexWrap": "NOWRAP"
+					"flexWrap": "NOWRAP",
+					"flexGrow": 1
 				},
 				"height": null,
 				"paddingBottom": 50,
@@ -134,14 +134,16 @@
 			"type": "ImageView",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 0.5
+					"flexGrow": 0.5,
+					"alignSelf": "CENTER"
 				},
 				"height": null,
 				"image": "iconlarge.png",
-				"imageFillType": "BOTTOMCENTER",
+				"imageFillType": "ASPECTFIT",
 				"marginBottom": null,
 				"marginTop": null,
-				"maxHeight": 100,
+				"maxHeight": 50,
+				"maxWidth": 50,
 				"testId": "qhw27ao24",
 				"width": null
 			}
@@ -172,7 +174,7 @@
 				"height": null,
 				"marginBottom": null,
 				"marginTop": null,
-				"maxHeight": 70,
+				"maxHeight": 60,
 				"maxLines": 2,
 				"testId": "CH0SPiKCX",
 				"text": "Welcome",
@@ -215,6 +217,7 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"ellipsizeMode": "MIDDLE",
 				"flexProps": {
 					"flexGrow": 0.5
 				},
@@ -227,6 +230,7 @@
 				},
 				"height": null,
 				"maxHeight": 50,
+				"maxLines": 2,
 				"testId": "5_s4VJDXL",
 				"text": "Ger your groceries in as fast as one hour",
 				"textAlignment": "MIDCENTER",

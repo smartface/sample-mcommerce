@@ -4,6 +4,7 @@ import favoritesList from 'components/FavoritesListViewItem'
 import lviFavorites from 'components/LviFavorites'
 import store from '../store/index'
 import Image from '@smartface/native/ui/image';
+import Color from '@smartface/native/ui/color';
 
 export default class PgFavorites extends PgFavoritesDesign {
 	constructor() {
@@ -15,7 +16,7 @@ export default class PgFavorites extends PgFavoritesDesign {
 	}
     initFavoriteList(){
         const products = store.getState().products;
-        this.listView1.itemCount = products.length;        
+        this.listView1.itemCount = products.length;       
         this.listView1.onRowBind = (listViewItem:lviFavorites, index: number) => {
             listViewItem.lblFavoriteItemPrice.text = `$${products[index].price}`;
             listViewItem.lblFavoriteItemTitle.text = products[index].name;
@@ -44,5 +45,9 @@ function onShow(this: PgFavorites, superOnShow: () => void) {
  */
 function onLoad(this: PgFavorites, superOnLoad: () => void) {
 	superOnLoad();
+    this.headerBar.leftItemEnabled = false
+    this.headerBar.title = 'Favorites'
+    this.headerBar.backgroundColor = Color.WHITE;
+    this.headerBar.android.elevation = 0;
     this.initFavoriteList();
 }

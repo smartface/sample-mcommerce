@@ -110,25 +110,29 @@ const initialState = {
         id: 1,
         fullName: 'Eren Kan',
         email: 'eren.kan@smartface.io',
-        password: 1234,
+        password: '1234',
     },
     {
         id: 2,
         fullName: 'Fuat Guzel',
         email: 'fuat.guzel@smartface.io',
-        password: 12345,
+        password: '12345',
+    },
+    {
+        id: 3,
+        fullName: 'Smartface',
+        email: 'smartface',
+        password: '1234',
     }]
 };
 
-const setBasket = (state = initialState, action) => {
-    const newState = Object.assign({}, state);
-
+const initAction = (state = initialState, action) => {
     switch (action.type) {
-        case "SET_BASKET":
-            return newState.basket = action.payload
+        case "SET_NEW_USER":
+            state.users.push(action.payload.data)
+            return state
         default:
             return state;
     }
 };
-
-export default createStore(setBasket);
+export default createStore(initAction);

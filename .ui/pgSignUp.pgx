@@ -25,7 +25,8 @@
 				"paddingTop": null,
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -42,7 +43,8 @@
 					"color": "rgba( 242, 243, 242, 1 )"
 				},
 				"style": "DEFAULT"
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar",
@@ -58,7 +60,8 @@
 			"userProps": {
 				"title": "pgSignUp",
 				"visible": false
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-imageView",
@@ -82,7 +85,8 @@
 				"right": 0,
 				"testId": "tv6lNzMRn",
 				"top": 0
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-flexLayout",
@@ -111,7 +115,8 @@
 				"top": 0,
 				"usePageVariable": true,
 				"width": null
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-imageView",
@@ -132,7 +137,8 @@
 				"imageFillType": "NORMAL",
 				"testId": "zw0_J-c-V",
 				"width": "373.68"
-			}
+			},
+			"degree": 2
 		},
 		{
 			"className": ".sf-label",
@@ -161,7 +167,8 @@
 				"testId": "ENQ28sM4T",
 				"text": "Sign Up",
 				"textColor": "rgba( 24, 23, 37, 1 )"
-			}
+			},
+			"degree": 2
 		},
 		{
 			"className": ".sf-label",
@@ -191,7 +198,8 @@
 				"testId": "4NLXvX9K-",
 				"text": "Enter your credentials to continue",
 				"textColor": "rgba( 124, 124, 124, 1 )"
-			}
+			},
+			"degree": 2
 		},
 		{
 			"className": ".sf-flexLayout",
@@ -219,7 +227,8 @@
 				"paddingLeft": 25,
 				"paddingRight": 25,
 				"testId": "jw-epfTzH"
-			}
+			},
+			"degree": 2
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper .sf-mtb-form",
@@ -253,7 +262,8 @@
 				"testId": "PvOO3p5kc",
 				"top": 0,
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper",
@@ -286,7 +296,8 @@
 				"testId": "Mnb1SYj-t",
 				"top": 0,
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper",
@@ -321,7 +332,8 @@
 				"testId": "GL-bPqCEz",
 				"top": 0,
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
 			"className": ".sf-flexLayout",
@@ -346,7 +358,75 @@
 				"maxHeight": 36,
 				"testId": "GgtHkJR7Y",
 				"width": null
-			}
+			},
+			"degree": 3
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "5aaf-f8a9-8953-b2cc",
+			"props": {
+				"children": [
+					"eade-4475-69c0-5aee",
+					"ec96-c1f9-ba8b-f30d"
+				],
+				"name": "flPrivacy",
+				"parent": "40d7-1892-4734-7a1b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW",
+					"alignSelf": "AUTO",
+					"alignItems": "AUTO",
+					"flexGrow": 1
+				},
+				"height": null,
+				"maxHeight": 35,
+				"testId": "JW4QfG7Si",
+				"width": null
+			},
+			"degree": 3
+		},
+		{
+			"className": ".sf-button .sf-button-main",
+			"id": "fe91-7b0a-263b-7b5f",
+			"props": {
+				"children": [],
+				"name": "btnSignUp",
+				"parent": "40d7-1892-4734-7a1b",
+				"text": "Sign Up",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "Sign Up",
+				"usePageVariable": true,
+				"testId": "eIHxsL8S_"
+			},
+			"degree": 3
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "e333-17ee-ecf4-3517",
+			"props": {
+				"children": [
+					"116e-9475-8284-ae76",
+					"3462-f45d-874f-b834"
+				],
+				"name": "flFooter",
+				"parent": "40d7-1892-4734-7a1b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW",
+					"flexGrow": 1
+				},
+				"height": null,
+				"testId": "akadJGRFr",
+				"width": null
+			},
+			"degree": 3
 		},
 		{
 			"className": ".sf-label",
@@ -381,7 +461,70 @@
 				"textColor": "rgba( 124, 124, 124, 1 )",
 				"top": 0,
 				"usePageVariable": true
-			}
+			},
+			"degree": 4
+		},
+		{
+			"className": ".sf-label",
+			"id": "eade-4475-69c0-5aee",
+			"props": {
+				"children": [],
+				"name": "lblPrivacyLeft",
+				"parent": "5aaf-f8a9-8953-b2cc",
+				"text": "and "
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 14,
+					"bold": false,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Medium"
+				},
+				"marginBottom": null,
+				"marginTop": null,
+				"testId": "jSogaLSf-",
+				"text": "and ",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 124, 124, 124, 1 )"
+			},
+			"degree": 4
+		},
+		{
+			"className": ".sf-label",
+			"id": "116e-9475-8284-ae76",
+			"props": {
+				"children": [],
+				"name": "lblFooterLeft",
+				"parent": "e333-17ee-ecf4-3517",
+				"text": "Already have an account? ",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 5
+				},
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"left": 0,
+				"testId": "1bUa3lE81",
+				"text": "Already have an account? ",
+				"textAlignment": "MIDRIGHT",
+				"textColor": "rgba( 3, 3, 3, 1 )",
+				"top": 0,
+				"usePageVariable": true
+			},
+			"degree": 4
 		},
 		{
 			"className": ".sf-label",
@@ -416,61 +559,8 @@
 				"textColor": "rgba( 83, 177, 117, 1 )",
 				"top": 0,
 				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout",
-			"id": "5aaf-f8a9-8953-b2cc",
-			"props": {
-				"children": [
-					"eade-4475-69c0-5aee",
-					"ec96-c1f9-ba8b-f30d"
-				],
-				"name": "flPrivacy",
-				"parent": "40d7-1892-4734-7a1b"
 			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexDirection": "ROW",
-					"alignSelf": "AUTO",
-					"alignItems": "AUTO",
-					"flexGrow": 1
-				},
-				"height": null,
-				"maxHeight": 35,
-				"testId": "JW4QfG7Si",
-				"width": null
-			}
-		},
-		{
-			"className": ".sf-label",
-			"id": "eade-4475-69c0-5aee",
-			"props": {
-				"children": [],
-				"name": "lblPrivacyLeft",
-				"parent": "5aaf-f8a9-8953-b2cc",
-				"text": "and "
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"font": {
-					"size": 14,
-					"bold": false,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Medium"
-				},
-				"marginBottom": null,
-				"marginTop": null,
-				"testId": "jSogaLSf-",
-				"text": "and ",
-				"textAlignment": "MIDLEFT",
-				"textColor": "rgba( 124, 124, 124, 1 )"
-			}
+			"degree": 4
 		},
 		{
 			"className": ".sf-label",
@@ -496,74 +586,8 @@
 				"testId": "Cw8Dhn2M1",
 				"text": "Privacy Policy.",
 				"textColor": "rgba( 83, 177, 117, 1 )"
-			}
-		},
-		{
-			"className": ".sf-button .sf-button-main",
-			"id": "fe91-7b0a-263b-7b5f",
-			"props": {
-				"children": [],
-				"name": "btnSignUp",
-				"parent": "40d7-1892-4734-7a1b",
-				"text": "Sign Up"
 			},
-			"type": "Button",
-			"userProps": {
-				"text": "Sign Up"
-			}
-		},
-		{
-			"className": ".sf-flexLayout",
-			"id": "e333-17ee-ecf4-3517",
-			"props": {
-				"children": [
-					"116e-9475-8284-ae76",
-					"3462-f45d-874f-b834"
-				],
-				"name": "flFooter",
-				"parent": "40d7-1892-4734-7a1b"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexDirection": "ROW",
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "akadJGRFr",
-				"width": null
-			}
-		},
-		{
-			"className": ".sf-label",
-			"id": "116e-9475-8284-ae76",
-			"props": {
-				"children": [],
-				"name": "lblFooterLeft",
-				"parent": "e333-17ee-ecf4-3517",
-				"text": "Already have an account? ",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 5
-				},
-				"font": {
-					"size": 14,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"left": 0,
-				"testId": "1bUa3lE81",
-				"text": "Already have an account? ",
-				"textAlignment": "MIDRIGHT",
-				"textColor": "rgba( 3, 3, 3, 1 )",
-				"top": 0,
-				"usePageVariable": true
-			}
+			"degree": 4
 		},
 		{
 			"className": ".sf-label",
@@ -594,7 +618,8 @@
 				"textColor": "rgba( 83, 177, 117, 1 )",
 				"top": 0,
 				"usePageVariable": true
-			}
+			},
+			"degree": 4
 		}
 	]
 }

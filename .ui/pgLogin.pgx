@@ -317,11 +317,14 @@
 				"children": [],
 				"name": "btnLogIn",
 				"parent": "b572-513a-69d9-501f",
-				"text": "Log In"
+				"text": "Log In",
+				"usePageVariable": true
 			},
 			"type": "Button",
 			"userProps": {
-				"text": "Log In"
+				"testId": "XqWNo5nDB",
+				"text": "Log In",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -333,7 +336,8 @@
 					"b60f-803f-5f9e-4650"
 				],
 				"name": "flFooter",
-				"parent": "b572-513a-69d9-501f"
+				"parent": "b572-513a-69d9-501f",
+				"usePageVariable": true
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -343,6 +347,7 @@
 				},
 				"height": "47.17",
 				"testId": "PGmVHNP2q",
+				"usePageVariable": true,
 				"width": "326.42"
 			}
 		},
