@@ -19,4 +19,5 @@ Application.onUnhandledError = function (e: UnhandledError) {
     });
 };
 
-router.push('/btb/tab1/home');
+router.push('/pages/pgWelcome');
+

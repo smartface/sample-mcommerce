@@ -20,6 +20,8 @@
                 "flexGrow": 2.5
             },
             "&-imgFavList":{
+                "maxHeight": 55,
+                "maxWidth": 55,
                 "height": null,
                 "width":null,
                 "flexProps": {
@@ -29,6 +31,7 @@
             "&-flFavListTitleDesc":{
                 "height": null,
                 "width":null,
+                "paddingLeft": 30,
                 "flexProps": {
                     "flexDirection": "COLUMN",
                     "justifyContent": "FLEX_START",
@@ -87,6 +90,9 @@
                 "textColor": "${textDark}",
                 "flexProps": {
                     "flexGrow": 1
+                },
+                "font": {
+                    "family": "FontAwesome5FreeSolid"
                 }
             }
 

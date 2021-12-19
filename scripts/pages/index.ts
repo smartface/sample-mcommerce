@@ -10,5 +10,7 @@ export { default as pgLogin } from './pgLogin';
 export { default as pgSignUp } from './pgSignUp';
 export { default as pgCategories } from './pgCategories';
 export { default as pgFavorites } from './pgFavorites';
+export { default as pgProductDetail } from './pgProductDetail';
+
 
 

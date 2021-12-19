@@ -1,6 +1,6 @@
-import GridViewItem1Design from 'generated/my-components/GridViewItem1';
+import LviFavoritesDesign from 'generated/my-components/LviFavorites';
 
-export default class GridViewItem1 extends GridViewItem1Design {
+export default class LviFavorites extends LviFavoritesDesign {
 	pageName?: string | undefined;
 	constructor(props?: any, pageName?: string) {
 		// Initalizes super class for this scope

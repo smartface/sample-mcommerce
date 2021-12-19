@@ -1,5 +1,9 @@
 import Application from '@smartface/native/application';
 import PgFavoritesDesign from 'generated/pages/pgFavorites';
+import favoritesList from 'components/FavoritesListViewItem'
+import lviFavorites from 'components/LviFavorites'
+import store from '../store/index'
+import Image from '@smartface/native/ui/image';
 
 export default class PgFavorites extends PgFavoritesDesign {
 	constructor() {
@@ -9,6 +13,17 @@ export default class PgFavorites extends PgFavoritesDesign {
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 	}
+    initFavoriteList(){
+        const products = store.getState().products;
+        this.listView1.itemCount = products.length;        
+        this.listView1.onRowBind = (listViewItem:lviFavorites, index: number) => {
+            listViewItem.lblFavoriteItemPrice.text = `$${products[index].price}`;
+            listViewItem.lblFavoriteItemTitle.text = products[index].name;
+            listViewItem.lblFavroiteItemDesc.text = products[index].description
+            listViewItem.imgFavoriteItem.image = Image.createFromFile(`images://${products[index].image}`)
+        };
+        this.listView1.refreshData();
+    }
 }
 
 /**
@@ -29,4 +44,5 @@ function onShow(this: PgFavorites, superOnShow: () => void) {
  */
 function onLoad(this: PgFavorites, superOnLoad: () => void) {
 	superOnLoad();
+    this.initFavoriteList();
 }

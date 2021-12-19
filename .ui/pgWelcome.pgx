@@ -117,8 +117,8 @@
 				},
 				"height": null,
 				"paddingBottom": 50,
-				"paddingLeft": 25,
-				"paddingRight": 25,
+				"paddingLeft": 50,
+				"paddingRight": 50,
 				"testId": "1b5nZBQQb",
 				"usePageVariable": true
 			}
@@ -163,7 +163,7 @@
 					"alignSelf": "AUTO"
 				},
 				"font": {
-					"size": 48,
+					"size": 44,
 					"bold": true,
 					"italic": false,
 					"family": "Nunito",
@@ -192,7 +192,7 @@
 			"type": "Label",
 			"userProps": {
 				"font": {
-					"size": 48,
+					"size": 44,
 					"bold": true,
 					"italic": false,
 					"family": "Nunito",
@@ -246,10 +246,15 @@
 			},
 			"type": "Button",
 			"userProps": {
+				"flexProps": {
+					"alignSelf": "CENTER"
+				},
+				"marginBottom": null,
 				"marginTop": 15,
 				"minWidth": 350,
 				"testId": "Tfvez2kjT",
 				"text": "Get Started",
+				"textAlignment": "MIDCENTER",
 				"usePageVariable": true
 			}
 		}

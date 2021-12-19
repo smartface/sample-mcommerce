@@ -28,16 +28,9 @@ const router = Router.of({
             path: '/pages',
             routes: [
                 Route.of({
-                    path: '/pages/page1',
+                    path: '/pages/pgProductDetail',
                     build: buildExtender({
-                        getPageClass: () => Pages.Page1,
-                        headerBarStyle: { visible: true },
-                    }),
-                }),
-                Route.of({
-                    path: '/pages/page2',
-                    build: buildExtender({
-                        getPageClass: () => Pages.Page2,
+                        getPageClass: () => Pages.pgProductDetail,
                         headerBarStyle: { visible: true },
                     }),
                 }),
@@ -95,6 +88,11 @@ const router = Router.of({
                     selected: Color.create("#53B175"),
                 },
                 backgroundColor: Color.create("#FFFFFF"),
+                "&-default": {
+                    "font": {
+                        "size": 11
+                    }
+                }
             }),
             items: [
                 { title: "Shop", icon: Image.createFromFile('images://tabiconhome.png')},

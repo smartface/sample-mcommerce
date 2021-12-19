@@ -15,9 +15,6 @@ export default class PgHome extends PgHomeDesign {
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        // this.label2.on(View.Events.Touch, () => {
-        //     this.router.push('/btb')
-        // })
     }
 
     initCategoriesGrid() {
@@ -33,6 +30,9 @@ export default class PgHome extends PgHomeDesign {
         this.productsBestSellerGrid.itemCount = products.length;
         this.productsBestSellerGrid.scrollBarEnabled = false;
         this.productsBestSellerGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
+            GridViewItem.gviProductItemImg.on(View.Events.Touch, () => {
+                this.router.push('/pages/pgProductDetail')
+            })
             GridViewItem.gviLblProductItemTitle.text = products[index].name
             GridViewItem.gviProductItemDesc.text = products[index].description
             GridViewItem.gviProductItemImg.image = Image.createFromFile(`images://${products[index].image}`)
@@ -66,6 +66,8 @@ function onLoad(this: PgHome, superOnLoad: () => void) {
     superOnLoad();
     this.headerBar.leftItemEnabled = false
     this.headerBar.title = 'Maltepe, Istanbul'
+    this.headerBar.backgroundColor = Color.WHITE;
+    this.headerBar.android.elevation = 0;
      this.initCategoriesGrid();
 
 }

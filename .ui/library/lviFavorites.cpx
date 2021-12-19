@@ -1,16 +1,13 @@
 {
 	"components": [
 		{
-			"className": ".sf-listViewItem .favoritesListViewItem",
-			"hiddenComponent": false,
-			"id": "027b-55b9-3e16-2671",
+			"className": ".sf-listViewItem",
+			"id": "844f-778d-a88e-c085",
 			"props": {
 				"children": [
-					"d992-3b47-92a4-bc35",
-					"5f56-d416-22f2-674f",
-					"6933-667e-a6fe-b093"
+					"d1fa-0982-fbca-7168"
 				],
-				"name": "favoritesListViewItem",
+				"name": "lviFavorites",
 				"parent": "57f4-201f-4bfc-5fc6"
 			},
 			"source": {
@@ -18,28 +15,25 @@
 			},
 			"type": "ListViewItem",
 			"userProps": {
-				"flexProps": {
-					"alignItems": "STRETCH"
-				},
-				"left": "17.33",
-				"paddingBottom": null,
-				"paddingLeft": null,
-				"paddingRight": null,
-				"paddingTop": null,
-				"testId": "HRL7I3XYv",
-				"top": "349.33"
+				"flexProps": {},
+				"height": "160.67",
+				"left": "12.67",
+				"testId": "jFkvviy6q",
+				"top": "456.67",
+				"width": "392.67"
 			}
 		},
 		{
-			"className": ".sf-flexLayout .favoritesListViewItem-flFavListLeft",
-			"id": "d992-3b47-92a4-bc35",
+			"className": ".sf-flexLayout",
+			"id": "d1fa-0982-fbca-7168",
 			"props": {
 				"children": [
-					"3528-814c-08bf-7552",
-					"fd15-abe4-a506-21ee"
+					"1de2-28a0-d7fd-a528",
+					"39cc-c0dc-ea1a-ad69",
+					"d2d1-933c-543a-2950"
 				],
-				"name": "flFavListLeft",
-				"parent": "027b-55b9-3e16-2671",
+				"name": "lviFavoritesWrapper",
+				"parent": "844f-778d-a88e-c085",
 				"usePageVariable": true
 			},
 			"source": {
@@ -47,17 +41,45 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"testId": "KpZ9jI4X8",
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "ROW"
+				},
+				"height": null,
+				"paddingBottom": 30,
+				"paddingTop": 30,
+				"testId": "CGtTj-pmP",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .favoritesListViewItem-flFavListLeft",
+			"id": "1de2-28a0-d7fd-a528",
+			"props": {
+				"children": [
+					"4183-b730-863b-9eb2",
+					"989d-03b1-51c1-1d59"
+				],
+				"name": "flFavoriteItemLeft",
+				"parent": "d1fa-0982-fbca-7168",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "ljVk5HL3f",
 				"usePageVariable": true
 			}
 		},
 		{
 			"className": ".sf-imageView .favoritesListViewItem-flFavListLeft-imgFavList",
-			"id": "3528-814c-08bf-7552",
+			"id": "4183-b730-863b-9eb2",
 			"props": {
 				"children": [],
-				"name": "imgFavListItem",
-				"parent": "d992-3b47-92a4-bc35",
+				"name": "imgFavoriteItem",
+				"parent": "1de2-28a0-d7fd-a528",
 				"usePageVariable": true
 			},
 			"source": {
@@ -66,20 +88,20 @@
 			"type": "ImageView",
 			"userProps": {
 				"imageFillType": "ASPECTFIT",
-				"testId": "j5j9a9hIL",
+				"testId": "rP-vhokHM",
 				"usePageVariable": true
 			}
 		},
 		{
 			"className": ".sf-flexLayout .favoritesListViewItem-flFavListLeft-flFavListTitleDesc",
-			"id": "fd15-abe4-a506-21ee",
+			"id": "989d-03b1-51c1-1d59",
 			"props": {
 				"children": [
-					"e63d-e472-a56e-b00d",
-					"ed40-8323-831e-4bdc"
+					"60b4-45b5-1203-510c",
+					"cc34-8bb6-2a4f-f481"
 				],
-				"name": "flFavListTitleDesc",
-				"parent": "d992-3b47-92a4-bc35",
+				"name": "flFavoriteItemDesc",
+				"parent": "1de2-28a0-d7fd-a528",
 				"usePageVariable": true
 			},
 			"source": {
@@ -87,19 +109,18 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"paddingLeft": 30,
-				"testId": "nvNR_gYe8",
+				"testId": "3uEQan6xS",
 				"usePageVariable": true
 			}
 		},
 		{
 			"className": ".sf-label .favoritesListViewItem-flFavListLeft-flFavListTitleDesc-lblFavListItemTitle",
-			"id": "e63d-e472-a56e-b00d",
+			"id": "60b4-45b5-1203-510c",
 			"props": {
 				"children": [],
-				"name": "lblFavListItemTitle",
-				"parent": "fd15-abe4-a506-21ee",
-				"text": "lblTitle",
+				"name": "lblFavoriteItemTitle",
+				"parent": "989d-03b1-51c1-1d59",
+				"text": "label1",
 				"usePageVariable": true
 			},
 			"source": {
@@ -107,22 +128,23 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"ellipsizeMode": "END",
+				"flexProps": {
+					"flexGrow": 1
+				},
 				"height": null,
-				"maxLines": 1,
-				"testId": "dzaSJHd7X",
-				"text": "lblTitle",
+				"testId": "6ghoZ6dVH",
+				"text": "label1",
 				"usePageVariable": true
 			}
 		},
 		{
 			"className": ".sf-label .favoritesListViewItem-flFavListLeft-flFavListTitleDesc-lblFavListItemDesc",
-			"id": "ed40-8323-831e-4bdc",
+			"id": "cc34-8bb6-2a4f-f481",
 			"props": {
 				"children": [],
-				"name": "lblFavListItemDesc",
-				"parent": "fd15-abe4-a506-21ee",
-				"text": "lblDes",
+				"name": "lblFavroiteItemDesc",
+				"parent": "989d-03b1-51c1-1d59",
+				"text": "label2",
 				"usePageVariable": true
 			},
 			"source": {
@@ -130,22 +152,25 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
 				"height": null,
-				"testId": "DbQRUvF8I",
-				"text": "lblDes",
+				"testId": "gvHxA3b_G",
+				"text": "label2",
 				"usePageVariable": true
 			}
 		},
 		{
 			"className": ".sf-flexLayout .favoritesListViewItem-flFavListRight",
-			"id": "5f56-d416-22f2-674f",
+			"id": "39cc-c0dc-ea1a-ad69",
 			"props": {
 				"children": [
-					"ff49-d74c-9cb4-beb7",
-					"f5ef-06c4-1ef4-9708"
+					"f161-4c45-94b8-59c3",
+					"438a-4e9e-d5fa-c2a4"
 				],
-				"name": "flFavListRight",
-				"parent": "027b-55b9-3e16-2671",
+				"name": "flFavoriteItemRight",
+				"parent": "d1fa-0982-fbca-7168",
 				"usePageVariable": true
 			},
 			"source": {
@@ -153,18 +178,23 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"testId": "csy1tKwuV",
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "ROW"
+				},
+				"height": null,
+				"testId": "ywa57Xn4B",
 				"usePageVariable": true
 			}
 		},
 		{
 			"className": ".sf-label .favoritesListViewItem-flFavListRight-lblFavListItemPrice",
-			"id": "ff49-d74c-9cb4-beb7",
+			"id": "f161-4c45-94b8-59c3",
 			"props": {
 				"children": [],
-				"name": "lblFavListItemPrice",
-				"parent": "5f56-d416-22f2-674f",
-				"text": "lblPrice",
+				"name": "lblFavoriteItemPrice",
+				"parent": "39cc-c0dc-ea1a-ad69",
+				"text": "label2",
 				"usePageVariable": true
 			},
 			"source": {
@@ -175,19 +205,19 @@
 				"flexProps": {
 					"flexGrow": 3
 				},
-				"testId": "JzAilZ0kl",
-				"text": "lblPrice",
+				"testId": "W3t2Dys8S",
+				"text": "label2",
 				"textAlignment": "MIDCENTER",
 				"usePageVariable": true
 			}
 		},
 		{
 			"className": ".sf-label .favoritesListViewItem-flFavListRight-lblFavListItemChevron",
-			"id": "f5ef-06c4-1ef4-9708",
+			"id": "438a-4e9e-d5fa-c2a4",
 			"props": {
 				"children": [],
-				"name": "lblFavListItemChevron",
-				"parent": "5f56-d416-22f2-674f",
+				"name": "lblFavoriteItemChevron",
+				"parent": "39cc-c0dc-ea1a-ad69",
 				"text": "",
 				"usePageVariable": true
 			},
@@ -196,10 +226,6 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1,
-					"alignSelf": "AUTO"
-				},
 				"font": {
 					"size": 17,
 					"bold": false,
@@ -208,9 +234,7 @@
 					"style": null
 				},
 				"height": null,
-				"marginBottom": null,
-				"marginTop": null,
-				"testId": "c5Gy7Y47y",
+				"testId": "uMwEKkfwI",
 				"text": "",
 				"textAlignment": "MIDRIGHT",
 				"usePageVariable": true
@@ -218,12 +242,11 @@
 		},
 		{
 			"className": ".sf-flexLayout",
-			"id": "6933-667e-a6fe-b093",
+			"id": "d2d1-933c-543a-2950",
 			"props": {
 				"children": [],
-				"name": "flexLayout3",
-				"parent": "027b-55b9-3e16-2671",
-				"usePageVariable": true
+				"name": "flFavoriteItemHR",
+				"parent": "d1fa-0982-fbca-7168"
 			},
 			"source": {
 				"page": "__library__"
@@ -233,15 +256,13 @@
 				"backgroundColor": "rgba( 210, 210, 210, 1 )",
 				"bottom": 0,
 				"flexProps": {
-					"positionType": "ABSOLUTE"
+					"positionType": "ABSOLUTE",
+					"flexDirection": "ROW"
 				},
 				"height": 1,
-				"left": 0,
-				"marginBottom": null,
-				"marginTop": null,
+				"left": 16,
 				"right": 0,
-				"testId": "WmwBJOvRU",
-				"usePageVariable": true
+				"testId": "2eQqAmlif"
 			}
 		}
 	]
