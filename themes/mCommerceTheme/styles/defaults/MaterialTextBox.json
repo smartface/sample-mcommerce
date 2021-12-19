@@ -66,5 +66,27 @@
     ".hidden": {
       "visible": true
     }
+  },
+  ".sf-mtb-number": {
+    "ellipsizeMode": "END",
+    "textAlignment": "MIDLEFT",
+    "textColor": "#181725",
+    "errorColor": "rgba( 255,0,0,1 )",
+    "hintTextColor": "#181725",
+    "cursorColor": "rgba( 0,161,241,1 )",
+    "selectedHintTextColor": "#ffffff",
+    "lineColor": {
+      "normal": "#E2E2E2",
+      "selected": "#7C7C7C"
+    },
+    "font": {
+      "size": 16,
+      "family": "Nunito",
+      "weight": "bold"
+    },
+    "labelsFont": {
+      "size": 18,
+      "family": "Nunito"
+    }
   }
 }

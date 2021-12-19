@@ -1,6 +1,7 @@
 import PgSignUpDesign from 'generated/pages/pgSignUp';
 import Color from '@smartface/native/ui/color';
 import View from '@smartface/native/ui/view';
+import Application from '@smartface/native/application';
 
 export default class PgSignUp extends PgSignUpDesign {
     router: any
@@ -44,6 +45,8 @@ export default class PgSignUp extends PgSignUpDesign {
 function onShow(this: PgSignUp, superOnShow: () => void) {
 	
     superOnShow();
+    Application.statusBar.visible = true;
+    Application.statusBar.backgroundColor = Color.WHITE
     //@ts-ignore
     // this.mtbUsername.materialTextBox.dispatch({
     //     type: "updateUserStyle",

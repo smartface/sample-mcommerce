@@ -25,6 +25,14 @@ export default class PgNumber extends PgNumberDesign {
         
         //this.mtbNumber.keyboardType = KeyboardType.NUMBER
 	}
+    initMaterialTextBox() {
+        this.mtbNumber.options = {
+            //hint: "+90",
+            text: "+90"
+        }
+        this.mtbNumber.materialTextBox.keyboardType = KeyboardType.NUMBER;
+        //this.mtbPassword.rightLayout = { view: this.imgShow, width: 30 };
+    }
     addHeaderWithDirectImage() {
         this.leftItem = new HeaderBarItem();
         this.leftItem.image = "images://backbtn.png";
@@ -54,5 +62,6 @@ function onShow(this: PgNumber, superOnShow: () => void) {
  */
 function onLoad(this: PgNumber, superOnLoad: () => void) {
 	superOnLoad();
+    this.initMaterialTextBox()
     this.addHeaderWithDirectImage()
 }

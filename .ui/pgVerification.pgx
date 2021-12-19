@@ -9,8 +9,8 @@
 					"ffcc-86c1-d7c3-5754",
 					"9935-0f44-a5e2-85dd",
 					"0745-b8d6-1ef0-a1db",
-					"9ac2-95e8-58d2-0a2d",
-					"a99f-9928-247a-c83c",
+					"bc97-52fe-89a2-3552",
+					"7e8d-bae5-76ba-2340",
 					"d5b7-091a-cdf0-06b6"
 				],
 				"name": "pgVerification",
@@ -49,13 +49,14 @@
 				"children": [],
 				"isRemovable": false,
 				"name": "headerBar",
-				"parent": "8492-4718-26bc-e27d",
-				"title": "pgVerification"
+				"parent": "8492-4718-26bc-e27d"
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"title": "pgVerification",
-				"visible": false
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
+				"titleColor": "rgba( 255, 255, 255, 0 )",
+				"transparent": true,
+				"visible": true
 			}
 		},
 		{
@@ -86,12 +87,11 @@
 		},
 		{
 			"className": ".sf-flexLayout",
-			"id": "9ac2-95e8-58d2-0a2d",
+			"id": "bc97-52fe-89a2-3552",
 			"props": {
 				"children": [
-					"2aaf-141a-ef53-0b66",
-					"456a-ab5d-dda3-6c5b",
-					"4ff0-fcba-b4e9-bfda"
+					"0e59-2327-6fb8-773c",
+					"1880-4a46-ac29-ee4c"
 				],
 				"name": "flHeader",
 				"parent": "8492-4718-26bc-e27d",
@@ -100,111 +100,137 @@
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {
-					"justifyContent": "FLEX_START",
-					"alignContent": "STRETCH",
-					"alignItems": "FLEX_START"
+					"justifyContent": "FLEX_END",
+					"alignContent": "FLEX_END",
+					"alignItems": "AUTO"
 				},
+				"height": 200,
 				"left": 0,
 				"marginBottom": null,
-				"marginLeft": 25,
 				"marginTop": null,
+				"paddingLeft": 25,
 				"testId": "MXghN9hMo",
 				"top": 0,
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-imageView",
-			"id": "2aaf-141a-ef53-0b66",
-			"props": {
-				"children": [],
-				"name": "imgBack",
-				"parent": "9ac2-95e8-58d2-0a2d",
-				"usePageVariable": true
-			},
-			"type": "ImageView",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 2
-				},
-				"height": null,
-				"image": "backbtn.png",
-				"imageFillType": "TOPLEFT",
-				"marginBottom": null,
-				"marginTop": null,
-				"testId": "mSUZ3zeiw",
-				"usePageVariable": true,
-				"width": 20
-			}
-		},
-		{
 			"className": ".sf-label",
-			"id": "456a-ab5d-dda3-6c5b",
+			"id": "0e59-2327-6fb8-773c",
 			"props": {
 				"children": [],
 				"name": "lblTitle",
-				"parent": "9ac2-95e8-58d2-0a2d",
+				"parent": "bc97-52fe-89a2-3552",
 				"text": "Enter your 4-digit code"
 			},
 			"type": "Label",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 1
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
 				},
 				"font": {
 					"size": 26,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
+				"left": 0,
+				"marginBottom": null,
+				"marginTop": null,
+				"maxHeight": 80,
 				"testId": "zxfcFhKam",
 				"text": "Enter your 4-digit code",
-				"textColor": "rgba( 0, 0, 0, 1 )"
+				"textColor": "rgba( 24, 23, 37, 1 )",
+				"top": 0
 			}
 		},
 		{
 			"className": ".sf-label",
-			"id": "4ff0-fcba-b4e9-bfda",
+			"id": "1880-4a46-ac29-ee4c",
 			"props": {
 				"children": [],
 				"name": "lblText",
-				"parent": "9ac2-95e8-58d2-0a2d",
+				"parent": "bc97-52fe-89a2-3552",
 				"text": "Code"
 			},
 			"type": "Label",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 1
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
 				},
 				"font": {
 					"size": 16,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
+				"left": 0,
+				"maxHeight": 40,
 				"testId": "2i8YmmjN6",
 				"text": "Code",
-				"textColor": "rgba( 124, 124, 124, 1 )"
+				"textColor": "rgba( 124, 124, 124, 1 )",
+				"top": 0
 			}
 		},
 		{
-			"className": ".sf-textBox",
-			"id": "a99f-9928-247a-c83c",
+			"className": ".sf-flexLayout",
+			"id": "7e8d-bae5-76ba-2340",
+			"props": {
+				"children": [
+					"27ad-42ae-0b35-af0d"
+				],
+				"name": "flContainer",
+				"parent": "8492-4718-26bc-e27d"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "ROW"
+				},
+				"height": null,
+				"left": 0,
+				"paddingLeft": 25,
+				"paddingRight": 25,
+				"testId": "nMjwnwI42",
+				"top": 0
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper .sf-mtb-number",
+			"hiddenComponent": false,
+			"id": "27ad-42ae-0b35-af0d",
+			"initialized": false,
 			"props": {
 				"children": [],
-				"name": "tbCode",
-				"parent": "8492-4718-26bc-e27d",
-				"text": "- - -",
+				"name": "mtbNumber",
+				"parent": "7e8d-bae5-76ba-2340",
 				"usePageVariable": true
 			},
-			"type": "TextBox",
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
 			"userProps": {
-				"borderWidth": null,
-				"left": 25,
-				"testId": "ZIEpBzxPu",
-				"text": "- - -",
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE",
+					"alignItems": "STRETCH",
+					"flexGrow": 1
+				},
+				"left": 0,
+				"marginLeft": null,
+				"marginRight": null,
+				"testId": "x_F3cBMmG",
+				"top": 0,
 				"usePageVariable": true
 			}
 		},
@@ -216,14 +242,16 @@
 					"8777-2fba-ba1a-8fb8",
 					"3789-482c-3270-8316"
 				],
-				"name": "flContainer",
+				"name": "flFooter",
 				"parent": "8492-4718-26bc-e27d"
 			},
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {
-					"flexDirection": "ROW"
+					"flexDirection": "ROW",
+					"flexGrow": 2
 				},
+				"height": 200,
 				"testId": "2UoNUpnKT"
 			}
 		},
@@ -267,7 +295,7 @@
 			"type": "Button",
 			"userProps": {
 				"font": {
-					"size": 25,
+					"size": 20,
 					"bold": false,
 					"italic": false,
 					"family": "FontAwesome5FreeSolid",

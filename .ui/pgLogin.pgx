@@ -127,6 +127,7 @@
 				"height": "208.77",
 				"image": "logo.png",
 				"imageFillType": "BOTTOMCENTER",
+				"marginBottom": 10,
 				"testId": "zw0_J-c-V",
 				"width": "373.68"
 			}
@@ -138,7 +139,7 @@
 				"children": [],
 				"name": "lblTitle",
 				"parent": "9503-8d4b-931f-3afe",
-				"text": "Loging"
+				"text": "Login"
 			},
 			"type": "Label",
 			"userProps": {
@@ -155,8 +156,9 @@
 				"marginBottom": null,
 				"marginLeft": 25,
 				"marginTop": null,
+				"maxHeight": 35,
 				"testId": "ENQ28sM4T",
-				"text": "Loging",
+				"text": "Login",
 				"textColor": "rgba( 24, 23, 37, 1 )"
 			}
 		},
@@ -209,6 +211,7 @@
 				"flexProps": {
 					"flexGrow": 5
 				},
+				"marginTop": 10,
 				"paddingLeft": 25,
 				"paddingRight": 25,
 				"testId": "jw-epfTzH"
@@ -236,7 +239,8 @@
 					"positionType": 0
 				},
 				"flexProps": {
-					"positionType": "RELATIVE"
+					"positionType": "RELATIVE",
+					"flexGrow": 0.4
 				},
 				"left": 0,
 				"testId": "Mnb1SYj-t",
@@ -268,9 +272,11 @@
 					"positionType": 0
 				},
 				"flexProps": {
-					"positionType": "RELATIVE"
+					"positionType": "RELATIVE",
+					"flexGrow": 0.4
 				},
 				"left": 0,
+				"maxHeight": 70,
 				"testId": "GL-bPqCEz",
 				"top": 0,
 				"usePageVariable": true
@@ -290,11 +296,13 @@
 			"userProps": {
 				"font": {
 					"size": 14,
-					"bold": true,
+					"bold": false,
 					"italic": false,
 					"family": "Nunito",
-					"style": "Bold"
+					"style": "Medium"
 				},
+				"marginBottom": 20,
+				"maxHeight": 25,
 				"testId": "g4mLeQV5F",
 				"text": "Forgot Password?",
 				"textAlignment": "MIDRIGHT",
@@ -330,7 +338,8 @@
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {
-					"flexDirection": "ROW"
+					"flexDirection": "ROW",
+					"flexGrow": 1
 				},
 				"height": "47.17",
 				"testId": "PGmVHNP2q",

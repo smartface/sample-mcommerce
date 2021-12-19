@@ -104,13 +104,14 @@
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {
-					"justifyContent": "SPACE_BETWEEN",
-					"alignContent": "STRETCH",
-					"alignItems": "FLEX_START"
+					"justifyContent": "FLEX_END",
+					"alignContent": "FLEX_END",
+					"alignItems": "AUTO"
 				},
 				"height": 200,
 				"marginBottom": null,
 				"marginTop": null,
+				"paddingLeft": 25,
 				"testId": "MXghN9hMo",
 				"usePageVariable": true
 			}
@@ -127,7 +128,8 @@
 			"type": "Label",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 1
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
 				},
 				"font": {
 					"size": 26,
@@ -139,8 +141,7 @@
 				"left": 0,
 				"marginBottom": null,
 				"marginTop": null,
-				"maxHeight": 100,
-				"minWidth": 150,
+				"maxHeight": 80,
 				"testId": "zxfcFhKam",
 				"text": "Enter your mobile number",
 				"textColor": "rgba( 24, 23, 37, 1 )",
@@ -159,7 +160,8 @@
 			"type": "Label",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 1
+					"flexGrow": 1,
+					"alignSelf": "STRETCH"
 				},
 				"font": {
 					"size": 16,
@@ -169,7 +171,7 @@
 					"style": "Bold"
 				},
 				"left": 0,
-				"minWidth": 150,
+				"maxHeight": 40,
 				"testId": "2i8YmmjN6",
 				"text": "Mobile Number",
 				"textColor": "rgba( 124, 124, 124, 1 )",
@@ -192,6 +194,9 @@
 					"flexGrow": 1,
 					"flexDirection": "ROW"
 				},
+				"height": null,
+				"paddingLeft": 25,
+				"paddingRight": 25,
 				"testId": "nMjwnwI42"
 			}
 		},
@@ -217,7 +222,9 @@
 					"positionType": 0
 				},
 				"flexProps": {
-					"positionType": "RELATIVE"
+					"positionType": "RELATIVE",
+					"alignItems": "STRETCH",
+					"flexGrow": 1
 				},
 				"left": 0,
 				"testId": "x_F3cBMmG",
@@ -240,7 +247,7 @@
 				"flexProps": {
 					"justifyContent": "FLEX_START",
 					"alignItems": "FLEX_END",
-					"flexGrow": 4
+					"flexGrow": 2
 				},
 				"height": "169.81",
 				"testId": "fzMVgYbj3",
@@ -260,7 +267,7 @@
 			"type": "Button",
 			"userProps": {
 				"font": {
-					"size": 25,
+					"size": 20,
 					"bold": false,
 					"italic": false,
 					"family": "FontAwesome5FreeSolid",

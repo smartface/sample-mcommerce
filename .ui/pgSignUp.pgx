@@ -18,6 +18,7 @@
 			},
 			"type": "Page",
 			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"paddingBottom": null,
 				"paddingLeft": null,
 				"paddingRight": null,
@@ -36,7 +37,12 @@
 				"parent": "85da-2fd3-8e39-c6d0"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {
+				"android": {
+					"color": "rgba( 242, 243, 242, 1 )"
+				},
+				"style": "DEFAULT"
+			}
 		},
 		{
 			"className": ".sf-headerBar",
@@ -99,6 +105,8 @@
 				},
 				"height": null,
 				"left": 0,
+				"marginBottom": null,
+				"marginTop": null,
 				"testId": "Xauh3YMK1",
 				"top": 0,
 				"usePageVariable": true,
@@ -176,9 +184,10 @@
 					"family": "Nunito",
 					"style": "Bold"
 				},
-				"marginBottom": null,
+				"marginBottom": 25,
 				"marginLeft": 25,
 				"marginTop": null,
+				"maxHeight": 35,
 				"testId": "4NLXvX9K-",
 				"text": "Enter your credentials to continue",
 				"textColor": "rgba( 124, 124, 124, 1 )"
@@ -206,13 +215,14 @@
 				"flexProps": {
 					"flexGrow": 5
 				},
+				"height": null,
 				"paddingLeft": 25,
 				"paddingRight": 25,
 				"testId": "jw-epfTzH"
 			}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper",
+			"className": ".flexLayout .materialTextBox-wrapper .sf-mtb-form",
 			"hiddenComponent": false,
 			"id": "9cb0-9e79-e526-4f64",
 			"initialized": false,
@@ -234,9 +244,12 @@
 					"positionType": 0
 				},
 				"flexProps": {
-					"positionType": "RELATIVE"
+					"positionType": "RELATIVE",
+					"flexGrow": 0.5
 				},
 				"left": 0,
+				"marginLeft": null,
+				"marginRight": null,
 				"testId": "PvOO3p5kc",
 				"top": 0,
 				"usePageVariable": true
@@ -264,9 +277,12 @@
 					"positionType": 0
 				},
 				"flexProps": {
-					"positionType": "RELATIVE"
+					"positionType": "RELATIVE",
+					"flexGrow": 0.5
 				},
 				"left": 0,
+				"marginLeft": null,
+				"marginRight": null,
 				"testId": "Mnb1SYj-t",
 				"top": 0,
 				"usePageVariable": true
@@ -296,9 +312,12 @@
 					"positionType": 0
 				},
 				"flexProps": {
-					"positionType": "RELATIVE"
+					"positionType": "RELATIVE",
+					"flexGrow": 0.5
 				},
 				"left": 0,
+				"marginLeft": null,
+				"marginRight": null,
 				"testId": "GL-bPqCEz",
 				"top": 0,
 				"usePageVariable": true
@@ -343,19 +362,19 @@
 			"userProps": {
 				"ellipsizeMode": "WORDWRAPPING",
 				"flexProps": {
-					"flexGrow": 4
+					"flexGrow": 6
 				},
 				"font": {
 					"size": 14,
-					"bold": true,
+					"bold": false,
 					"italic": false,
 					"family": "Nunito",
-					"style": "Bold"
+					"style": "Medium"
 				},
 				"left": 0,
 				"marginBottom": null,
 				"marginTop": null,
-				"maxLines": 2,
+				"maxLines": 1,
 				"testId": "g4mLeQV5F",
 				"text": "By continuing you agree to our",
 				"textAlignment": "MIDLEFT",
@@ -378,14 +397,14 @@
 			"userProps": {
 				"ellipsizeMode": "WORDWRAPPING",
 				"flexProps": {
-					"flexGrow": 2
+					"flexGrow": 4
 				},
 				"font": {
 					"size": 14,
-					"bold": true,
+					"bold": false,
 					"italic": false,
 					"family": "Nunito",
-					"style": "Bold"
+					"style": "Medium"
 				},
 				"left": 0,
 				"marginBottom": null,
@@ -440,10 +459,10 @@
 				},
 				"font": {
 					"size": 14,
-					"bold": true,
+					"bold": false,
 					"italic": false,
 					"family": "Nunito",
-					"style": "Bold"
+					"style": "Medium"
 				},
 				"marginBottom": null,
 				"marginTop": null,
@@ -465,14 +484,14 @@
 			"type": "Label",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 9
+					"flexGrow": 10
 				},
 				"font": {
 					"size": 14,
-					"bold": true,
+					"bold": false,
 					"italic": false,
 					"family": "Nunito",
-					"style": "Bold"
+					"style": "Medium"
 				},
 				"testId": "Cw8Dhn2M1",
 				"text": "Privacy Policy.",
@@ -507,11 +526,12 @@
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {
-					"flexDirection": "ROW"
+					"flexDirection": "ROW",
+					"flexGrow": 1
 				},
-				"height": "109.43",
+				"height": null,
 				"testId": "akadJGRFr",
-				"width": "311.32"
+				"width": null
 			}
 		},
 		{
