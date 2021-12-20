@@ -115,22 +115,46 @@ const router = Router.of({
                     ],
                 }),
                 // tab2
-                Route.of({
-                    path: "/btb/tab2/categories",
-                    build: buildExtender({ getPageClass: () => require("pages/pgCategories").default, headerBarStyle: { visible: true } })
+                StackRouter.of({
+                    path: "/btb/tab2",
+                    to: "/btb/tab2/categories",
+                    routes: [
+                        Route.of({
+                            path: "/btb/tab2/categories",
+                            build: buildExtender({ getPageClass: () => require("pages/pgCategories").default, headerBarStyle: { visible: true } })
+                        })
+                    ],
                 }),
-                Route.of({
-                    path: "/btb/tab3/pgWelcome",
-                    build: buildExtender({ getPageClass: () => require("pages/pgWelcome").default, headerBarStyle: { visible: true } })
+                StackRouter.of({
+                    path: "/btb/tab3",
+                    to: "/btb/tab3/pgWelcome",
+                    routes: [
+                        Route.of({
+                            path: "/btb/tab3/pgWelcome",
+                            build: buildExtender({ getPageClass: () => require("pages/pgWelcome").default, headerBarStyle: { visible: true } })
+                        })
+                    ],
                 }),
-                Route.of({
-                    path: "/btb/tab4/favorites",
-                    build: buildExtender({ getPageClass: () => require("pages/pgFavorites").default, headerBarStyle: { visible: true } })
+                StackRouter.of({
+                    path: "/btb/tab4",
+                    to: "/btb/tab4/favorites",
+                    routes: [
+                        Route.of({
+                            path: "/btb/tab4/favorites",
+                            build: buildExtender({ getPageClass: () => require("pages/pgFavorites").default, headerBarStyle: { visible: true } })
+                        })
+                    ],
                 }),
-                Route.of({
-                    path: "/btb/tab5/page2",
-                    build: buildExtender({ getPageClass: () => require("pages/pgWelcome").default, headerBarStyle: { visible: true } })
-                }),
+                StackRouter.of({
+                    path: "/btb/tab5",
+                    to: "/btb/tab5/page2",
+                    routes: [
+                        Route.of({
+                            path: "/btb/tab5/page2",
+                            build: buildExtender({ getPageClass: () => require("pages/pgWelcome").default, headerBarStyle: { visible: true } })
+                        })
+                    ],
+                })
             ]
         })
     ],
