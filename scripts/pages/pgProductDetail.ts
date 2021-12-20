@@ -1,4 +1,5 @@
 import Application from '@smartface/native/application';
+import System from '@smartface/native/device/system';
 import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
@@ -40,8 +41,11 @@ export default class PgProductDetail extends PgProductDetailDesign {
  */
 function onShow(this: PgProductDetail, superOnShow: () => void) {
 	superOnShow();
-    Application.statusBar.visible = true;
+ 
+    if (System.OS !== 'iOS') {
+          Application.statusBar.visible = true;
     Application.statusBar.backgroundColor = Color.create("#F2F3F2")
+      }
     this.productDetailPrice.text = `$${this.routeData.productPrice}`
     this.productDetailDesc.text = this.routeData.productDescription
     this.imgProductDetail.image = Image.createFromFile(`images://${this.routeData.productImg}`)

@@ -96,7 +96,8 @@
 					"a612-e4ed-01cc-cd62"
 				],
 				"name": "scrollView1",
-				"parent": "0cc7-c9f0-ae49-184b"
+				"parent": "0cc7-c9f0-ae49-184b",
+				"usePageVariable": true
 			},
 			"type": "ScrollView",
 			"userProps": {
@@ -104,7 +105,8 @@
 					"flexGrow": 1
 				},
 				"height": null,
-				"testId": "Yz8BMfHIL"
+				"testId": "Yz8BMfHIL",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -121,6 +123,7 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"flexProps": {
 					"flexGrow": 1
 				},
@@ -144,6 +147,7 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 0 )",
 				"flexProps": {
 					"flexDirection": "ROW",
 					"flexGrow": 1
@@ -220,10 +224,8 @@
 			},
 			"type": "GridView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 3
-				},
-				"height": null,
+				"backgroundColor": "rgba( 45, 12, 226, 0 )",
+				"height": 300,
 				"layoutManager": {
 					"spanCount": 1,
 					"scrollDirection": "HORIZONTAL"
@@ -254,14 +256,7 @@
 				"flex": {
 					"positionType": 0
 				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"height": null,
-				"left": 0,
-				"testId": "yW_9gIzxP",
-				"top": 0,
-				"width": null
+				"testId": "yW_9gIzxP"
 			}
 		},
 		{
@@ -377,10 +372,7 @@
 			},
 			"type": "GridView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
+				"height": 300,
 				"layoutManager": {
 					"spanCount": 1,
 					"scrollDirection": "HORIZONTAL"
@@ -411,14 +403,7 @@
 				"flex": {
 					"positionType": 0
 				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"height": null,
-				"left": 0,
-				"testId": "yW_9gIzxP",
-				"top": 0,
-				"width": null
+				"testId": "yW_9gIzxP"
 			}
 		}
 	]

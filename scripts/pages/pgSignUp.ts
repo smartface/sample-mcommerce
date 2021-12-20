@@ -3,6 +3,7 @@ import Color from '@smartface/native/ui/color';
 import View from '@smartface/native/ui/view';
 import Application from '@smartface/native/application';
 import store from 'store/index';
+import System from '@smartface/native/device/system';
 
 export default class PgSignUp extends PgSignUpDesign {
     router: any
@@ -64,10 +65,11 @@ export default class PgSignUp extends PgSignUpDesign {
  * @param {Object} parameters passed from Router.go function
  */
 function onShow(this: PgSignUp, superOnShow: () => void) {
-	
     superOnShow();
+  if (System.OS !== 'iOS') {
     Application.statusBar.visible = true;
     Application.statusBar.backgroundColor = Color.WHITE
+  }
     //@ts-ignore
     // this.mtbUsername.materialTextBox.dispatch({
     //     type: "updateUserStyle",

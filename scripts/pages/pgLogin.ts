@@ -17,8 +17,8 @@ export default class PgLogin extends PgLoginDesign {
             this.router.push('/pages/pgSignUp')
         })
         this.btnLogIn.on(View.Events.Touch, () => {
-            //this.router.push('/pages/pgSignUp')
-            this.initUserLogin()
+            this.router.push('/btb/tab1/home')
+            // this.initUserLogin()
         })
         // this.imgShow = new ImageView({
         //     height: 20,

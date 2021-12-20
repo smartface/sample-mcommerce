@@ -12,7 +12,8 @@
 					"b678-f96a-2cc7-021f",
 					"0e17-70ee-dd01-4fa8",
 					"e860-64e9-d1d6-2364",
-					"110b-2826-96c9-ac7d"
+					"110b-2826-96c9-ac7d",
+					"388a-35d9-8d5e-3e28"
 				],
 				"name": "pgProductDetail",
 				"orientation": "PORTRAIT",
@@ -458,8 +459,7 @@
 					"e015-4c4e-f851-505f",
 					"d525-b5a7-dbd3-a338",
 					"633e-3bf5-89cf-79ed",
-					"72ec-336b-907a-3abd",
-					"7a5c-e2fa-6eb9-f425"
+					"72ec-336b-907a-3abd"
 				],
 				"name": "flexLayout7",
 				"parent": "110b-2826-96c9-ac7d"
@@ -529,7 +529,7 @@
 			"type": "Label",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 7
+					"flexGrow": 5
 				},
 				"font": {
 					"size": 16,
@@ -555,11 +555,12 @@
 			"type": "ImageView",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 1
+					"flexGrow": 1,
+					"alignSelf": "CENTER"
 				},
 				"height": 50,
 				"image": "arrowdown.png",
-				"imageFillType": "TOPRIGHT",
+				"imageFillType": "MIDCENTER",
 				"maxHeight": 30,
 				"testId": "fa59FjNxJ"
 			}
@@ -695,10 +696,11 @@
 			"type": "Label",
 			"userProps": {
 				"borderColor": "rgba( 124, 124, 124, 1 )",
-				"borderRadius": 50,
+				"borderRadius": 15,
 				"borderWidth": 1,
 				"flexProps": {
-					"flexGrow": 1
+					"flexGrow": 1,
+					"alignSelf": "CENTER"
 				},
 				"font": {
 					"size": 9,
@@ -839,9 +841,10 @@
 			"type": "ImageView",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 1
+					"flexGrow": 1,
+					"alignSelf": "CENTER"
 				},
-				"height": 343,
+				"height": null,
 				"image": "star.png",
 				"maxHeight": 30,
 				"testId": "7LoLJts9o"
@@ -867,12 +870,27 @@
 			}
 		},
 		{
+			"className": ".sf-flexLayout .sticky",
+			"id": "388a-35d9-8d5e-3e28",
+			"props": {
+				"children": [
+					"c2e0-851b-08cf-798e"
+				],
+				"name": "flexLayout4",
+				"parent": "9495-c1b8-4521-aab3"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "gDzKGuCdCu"
+			}
+		},
+		{
 			"className": ".sf-button .sf-button-main",
-			"id": "7a5c-e2fa-6eb9-f425",
+			"id": "c2e0-851b-08cf-798e",
 			"props": {
 				"children": [],
 				"name": "button1",
-				"parent": "575b-2da0-07fd-27a2",
+				"parent": "388a-35d9-8d5e-3e28",
 				"text": "Add to basket"
 			},
 			"type": "Button",

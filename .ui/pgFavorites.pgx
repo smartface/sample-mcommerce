@@ -105,6 +105,9 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
 				"testId": "exfK66zt8",
 				"usePageVariable": true
 			}

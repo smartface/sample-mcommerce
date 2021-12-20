@@ -25,8 +25,7 @@
 				"paddingTop": null,
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a",
-			"degree": 0
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -43,8 +42,7 @@
 					"color": "rgba( 242, 243, 242, 1 )"
 				},
 				"style": "DEFAULT"
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-headerBar",
@@ -60,8 +58,7 @@
 			"userProps": {
 				"title": "pgSignUp",
 				"visible": false
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-imageView",
@@ -85,8 +82,7 @@
 				"right": 0,
 				"testId": "tv6lNzMRn",
 				"top": 0
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-flexLayout",
@@ -115,8 +111,7 @@
 				"top": 0,
 				"usePageVariable": true,
 				"width": null
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-imageView",
@@ -132,13 +127,12 @@
 					"flexGrow": 1.5,
 					"alignSelf": "CENTER"
 				},
-				"height": "208.77",
+				"height": null,
 				"image": "logo.png",
 				"imageFillType": "NORMAL",
 				"testId": "zw0_J-c-V",
-				"width": "373.68"
-			},
-			"degree": 2
+				"width": null
+			}
 		},
 		{
 			"className": ".sf-label",
@@ -167,8 +161,7 @@
 				"testId": "ENQ28sM4T",
 				"text": "Sign Up",
 				"textColor": "rgba( 24, 23, 37, 1 )"
-			},
-			"degree": 2
+			}
 		},
 		{
 			"className": ".sf-label",
@@ -198,8 +191,7 @@
 				"testId": "4NLXvX9K-",
 				"text": "Enter your credentials to continue",
 				"textColor": "rgba( 124, 124, 124, 1 )"
-			},
-			"degree": 2
+			}
 		},
 		{
 			"className": ".sf-flexLayout",
@@ -227,8 +219,7 @@
 				"paddingLeft": 25,
 				"paddingRight": 25,
 				"testId": "jw-epfTzH"
-			},
-			"degree": 2
+			}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper .sf-mtb-form",
@@ -262,8 +253,7 @@
 				"testId": "PvOO3p5kc",
 				"top": 0,
 				"usePageVariable": true
-			},
-			"degree": 3
+			}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper",
@@ -296,8 +286,7 @@
 				"testId": "Mnb1SYj-t",
 				"top": 0,
 				"usePageVariable": true
-			},
-			"degree": 3
+			}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper",
@@ -332,8 +321,7 @@
 				"testId": "GL-bPqCEz",
 				"top": 0,
 				"usePageVariable": true
-			},
-			"degree": 3
+			}
 		},
 		{
 			"className": ".sf-flexLayout",
@@ -350,7 +338,10 @@
 			"userProps": {
 				"flexProps": {
 					"flexDirection": "ROW",
-					"flexGrow": 1
+					"flexGrow": 1,
+					"justifyContent": "CENTER",
+					"alignContent": "CENTER",
+					"alignItems": "FLEX_START"
 				},
 				"height": null,
 				"marginBottom": null,
@@ -358,8 +349,79 @@
 				"maxHeight": 36,
 				"testId": "GgtHkJR7Y",
 				"width": null
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "070a-d1bb-3c1c-d80e",
+			"props": {
+				"children": [],
+				"name": "lblTermsLeft",
+				"parent": "8bcf-a729-caf1-6202",
+				"text": "By continuing you agree to our",
+				"usePageVariable": true
 			},
-			"degree": 3
+			"type": "Label",
+			"userProps": {
+				"ellipsizeMode": "WORDWRAPPING",
+				"flexProps": {
+					"flexGrow": 4,
+					"alignSelf": "CENTER"
+				},
+				"font": {
+					"size": 14,
+					"bold": false,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Medium"
+				},
+				"left": 0,
+				"marginBottom": null,
+				"marginTop": null,
+				"maxLines": 1,
+				"testId": "g4mLeQV5F",
+				"text": "By continuing you agree to our",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 124, 124, 124, 1 )",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "a8f7-4819-e0d8-f75d",
+			"props": {
+				"children": [],
+				"name": "lblTermsRight",
+				"parent": "8bcf-a729-caf1-6202",
+				"text": "Terms of Service",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"ellipsizeMode": "WORDWRAPPING",
+				"flexProps": {
+					"flexGrow": 4,
+					"alignSelf": "CENTER"
+				},
+				"font": {
+					"size": 14,
+					"bold": false,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Medium"
+				},
+				"left": 0,
+				"marginBottom": null,
+				"marginTop": null,
+				"maxLines": 2,
+				"testId": "g4mLeQV5F",
+				"text": "Terms of Service",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 83, 177, 117, 1 )",
+				"top": 0,
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-flexLayout",
@@ -384,85 +446,7 @@
 				"maxHeight": 35,
 				"testId": "JW4QfG7Si",
 				"width": null
-			},
-			"degree": 3
-		},
-		{
-			"className": ".sf-button .sf-button-main",
-			"id": "fe91-7b0a-263b-7b5f",
-			"props": {
-				"children": [],
-				"name": "btnSignUp",
-				"parent": "40d7-1892-4734-7a1b",
-				"text": "Sign Up",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"text": "Sign Up",
-				"usePageVariable": true,
-				"testId": "eIHxsL8S_"
-			},
-			"degree": 3
-		},
-		{
-			"className": ".sf-flexLayout",
-			"id": "e333-17ee-ecf4-3517",
-			"props": {
-				"children": [
-					"116e-9475-8284-ae76",
-					"3462-f45d-874f-b834"
-				],
-				"name": "flFooter",
-				"parent": "40d7-1892-4734-7a1b"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexDirection": "ROW",
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "akadJGRFr",
-				"width": null
-			},
-			"degree": 3
-		},
-		{
-			"className": ".sf-label",
-			"id": "070a-d1bb-3c1c-d80e",
-			"props": {
-				"children": [],
-				"name": "lblTermsLeft",
-				"parent": "8bcf-a729-caf1-6202",
-				"text": "By continuing you agree to our",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"ellipsizeMode": "WORDWRAPPING",
-				"flexProps": {
-					"flexGrow": 6
-				},
-				"font": {
-					"size": 14,
-					"bold": false,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Medium"
-				},
-				"left": 0,
-				"marginBottom": null,
-				"marginTop": null,
-				"maxLines": 1,
-				"testId": "g4mLeQV5F",
-				"text": "By continuing you agree to our",
-				"textAlignment": "MIDLEFT",
-				"textColor": "rgba( 124, 124, 124, 1 )",
-				"top": 0,
-				"usePageVariable": true
-			},
-			"degree": 4
+			}
 		},
 		{
 			"className": ".sf-label",
@@ -491,76 +475,7 @@
 				"text": "and ",
 				"textAlignment": "MIDLEFT",
 				"textColor": "rgba( 124, 124, 124, 1 )"
-			},
-			"degree": 4
-		},
-		{
-			"className": ".sf-label",
-			"id": "116e-9475-8284-ae76",
-			"props": {
-				"children": [],
-				"name": "lblFooterLeft",
-				"parent": "e333-17ee-ecf4-3517",
-				"text": "Already have an account? ",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 5
-				},
-				"font": {
-					"size": 14,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"left": 0,
-				"testId": "1bUa3lE81",
-				"text": "Already have an account? ",
-				"textAlignment": "MIDRIGHT",
-				"textColor": "rgba( 3, 3, 3, 1 )",
-				"top": 0,
-				"usePageVariable": true
-			},
-			"degree": 4
-		},
-		{
-			"className": ".sf-label",
-			"id": "a8f7-4819-e0d8-f75d",
-			"props": {
-				"children": [],
-				"name": "lblTermsRight",
-				"parent": "8bcf-a729-caf1-6202",
-				"text": "Terms of Service",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"ellipsizeMode": "WORDWRAPPING",
-				"flexProps": {
-					"flexGrow": 4
-				},
-				"font": {
-					"size": 14,
-					"bold": false,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Medium"
-				},
-				"left": 0,
-				"marginBottom": null,
-				"marginTop": null,
-				"maxLines": 2,
-				"testId": "g4mLeQV5F",
-				"text": "Terms of Service",
-				"textAlignment": "MIDLEFT",
-				"textColor": "rgba( 83, 177, 117, 1 )",
-				"top": 0,
-				"usePageVariable": true
-			},
-			"degree": 4
+			}
 		},
 		{
 			"className": ".sf-label",
@@ -586,8 +501,80 @@
 				"testId": "Cw8Dhn2M1",
 				"text": "Privacy Policy.",
 				"textColor": "rgba( 83, 177, 117, 1 )"
+			}
+		},
+		{
+			"className": ".sf-button .sf-button-main",
+			"id": "fe91-7b0a-263b-7b5f",
+			"props": {
+				"children": [],
+				"name": "btnSignUp",
+				"parent": "40d7-1892-4734-7a1b",
+				"text": "Sign Up",
+				"usePageVariable": true
 			},
-			"degree": 4
+			"type": "Button",
+			"userProps": {
+				"testId": "eIHxsL8S_",
+				"text": "Sign Up",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "e333-17ee-ecf4-3517",
+			"props": {
+				"children": [
+					"116e-9475-8284-ae76",
+					"3462-f45d-874f-b834"
+				],
+				"name": "flFooter",
+				"parent": "40d7-1892-4734-7a1b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW",
+					"justifyContent": "CENTER",
+					"flexGrow": 1,
+					"alignItems": "FLEX_START",
+					"alignContent": "CENTER"
+				},
+				"height": null,
+				"testId": "akadJGRFr",
+				"width": null
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "116e-9475-8284-ae76",
+			"props": {
+				"children": [],
+				"name": "lblFooterLeft",
+				"parent": "e333-17ee-ecf4-3517",
+				"text": "Already have an account? ",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 3
+				},
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"left": 0,
+				"testId": "1bUa3lE81",
+				"text": "Already have an account? ",
+				"textAlignment": "MIDRIGHT",
+				"textColor": "rgba( 3, 3, 3, 1 )",
+				"top": 0,
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-label",
@@ -618,8 +605,7 @@
 				"textColor": "rgba( 83, 177, 117, 1 )",
 				"top": 0,
 				"usePageVariable": true
-			},
-			"degree": 4
+			}
 		}
 	]
 }

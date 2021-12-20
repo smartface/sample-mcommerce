@@ -18,7 +18,6 @@ export default class PgHome extends PgHomeDesign {
 
     initCategoriesGrid() {
         const products = store.getState().products;
-        this.productsGrid.itemCount = products.length;
         this.productsGrid.scrollBarEnabled = false;
         this.productsGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
             GridViewItem.gviLblProductItemTitle.text = products[index].name
@@ -26,7 +25,8 @@ export default class PgHome extends PgHomeDesign {
             GridViewItem.gviProductItemImg.image = Image.createFromFile(`images://${products[index].image}`)
             GridViewItem.gviProductItemPrice.text = `$${products[index].price}`
         }
-        this.productsBestSellerGrid.itemCount = products.length;
+        this.productsGrid.itemCount = products.length;
+
         this.productsBestSellerGrid.scrollBarEnabled = false;
         this.productsBestSellerGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
             GridViewItem.gviProductItemImg.on(View.Events.Touch, () => {
@@ -42,6 +42,8 @@ export default class PgHome extends PgHomeDesign {
             GridViewItem.gviProductItemImg.image = Image.createFromFile(`images://${products[index].image}`)
             GridViewItem.gviProductItemPrice.text = `$${products[index].price}`
         }
+        this.productsBestSellerGrid.itemCount = products.length;
+
         this.productsGrid.onItemSelected = (GridViewItem: GviProductItem, index: number) => {
             this.router.push('/btb/tab1/productDetail', {
                 productName: products[index].name,
@@ -85,5 +87,6 @@ function onLoad(this: PgHome, superOnLoad: () => void) {
     // this.headerBar.backgroundColor = Color.WHITE;
     // this.headerBar.android.elevation = 0;
      this.initCategoriesGrid();
-
+    this.scrollView1.autoSizeEnabled= true;
+    this.scrollView1.layout.applyLayout
 }
