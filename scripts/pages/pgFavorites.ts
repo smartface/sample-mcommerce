@@ -1,6 +1,4 @@
-import Application from '@smartface/native/application';
 import PgFavoritesDesign from 'generated/pages/pgFavorites';
-import favoritesList from 'components/FavoritesListViewItem'
 import lviFavorites from 'components/LviFavorites'
 import store from '../store/index'
 import Image from '@smartface/native/ui/image';
@@ -35,7 +33,6 @@ export default class PgFavorites extends PgFavoritesDesign {
  */
 function onShow(this: PgFavorites, superOnShow: () => void) {
 	superOnShow();
-    this.headerBar.title = 'Favorites'
 }
 
 /**

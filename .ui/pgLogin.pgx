@@ -121,15 +121,15 @@
 			"type": "ImageView",
 			"userProps": {
 				"flexProps": {
-					"flexGrow": 1.5,
+					"flexGrow": 1,
 					"alignSelf": "CENTER"
 				},
-				"height": "208.77",
+				"height": null,
 				"image": "logo.png",
 				"imageFillType": "BOTTOMCENTER",
 				"marginBottom": 10,
 				"testId": "zw0_J-c-V",
-				"width": "373.68"
+				"width": null
 			}
 		},
 		{
@@ -345,10 +345,10 @@
 					"flexDirection": "ROW",
 					"flexGrow": 1
 				},
-				"height": "47.17",
+				"height": null,
 				"testId": "PGmVHNP2q",
 				"usePageVariable": true,
-				"width": "326.42"
+				"width": null
 			}
 		},
 		{

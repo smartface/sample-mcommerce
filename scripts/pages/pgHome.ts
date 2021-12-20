@@ -1,5 +1,4 @@
 import PgHomeDesign from 'generated/pages/pgHome';
-import favoritesListViewItem from 'generated/my-components/FavoritesListViewItem'
 import Image from '@smartface/native/ui/image';
 import View from '@smartface/native/ui/view';
 import store from '../store/index'
@@ -72,10 +71,6 @@ export default class PgHome extends PgHomeDesign {
 function onShow(this: PgHome, superOnShow: () => void) {
     superOnShow();
     Application.statusBar.visible = true;
-
-
-
-
 }
 
 /**

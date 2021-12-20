@@ -12,7 +12,6 @@ export default class PgWelcome extends PgWelcomeDesign {
 		this.onShow = onShow.bind(this, this.onShow.bind(this));
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
         this.btnStart.on(View.Events.Touch, () => {
             this.router.push('/pages/pgNumber')
         })

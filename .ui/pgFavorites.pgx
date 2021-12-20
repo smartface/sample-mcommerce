@@ -53,8 +53,9 @@
 				"children": [
 					"cf44-1739-4385-4f97"
 				],
-				"name": "flexLayout1",
-				"parent": "e27f-743b-23a5-ea3b"
+				"name": "flFavoritesList",
+				"parent": "e27f-743b-23a5-ea3b",
+				"usePageVariable": true
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -62,7 +63,8 @@
 					"flexGrow": 5
 				},
 				"height": null,
-				"testId": "fN71k5ZK6"
+				"testId": "fN71k5ZK6",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -122,7 +124,7 @@
 				"children": [
 					"838d-f202-ddc8-2b87"
 				],
-				"name": "flexLayout2",
+				"name": "flFavoritesBottomButton",
 				"parent": "e27f-743b-23a5-ea3b",
 				"usePageVariable": true
 			},

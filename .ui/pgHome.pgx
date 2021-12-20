@@ -58,7 +58,8 @@
 			"props": {
 				"children": [],
 				"name": "flSearchBar",
-				"parent": "0cc7-c9f0-ae49-184b"
+				"parent": "0cc7-c9f0-ae49-184b",
+				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__",
@@ -82,7 +83,8 @@
 				"height": 50,
 				"left": 0,
 				"testId": "J2CceLIhb",
-				"top": 0
+				"top": 0,
+				"usePageVariable": true
 			}
 		},
 		{
@@ -101,6 +103,7 @@
 				"flexProps": {
 					"flexGrow": 1
 				},
+				"height": null,
 				"testId": "Yz8BMfHIL"
 			}
 		},

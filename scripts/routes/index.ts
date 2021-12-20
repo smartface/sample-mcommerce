@@ -12,7 +12,7 @@ import TabBarItem from "@smartface/native/ui/tabbaritem";
 import Image from '@smartface/native/ui/image';
 import backClose from '@smartface/extension-utils/lib/router/back-close';
 
-backClose.setDefaultBackStyle({image: Image.createFromFile("images://backbtn.png"), hideTitle: true});
+backClose.setDefaultBackStyle({ image: Image.createFromFile("images://backbtn.png"), hideTitle: true });
 
 
 // let btbItemMessages = new TabBarItem();
@@ -85,14 +85,9 @@ const router = Router.of({
                     selected: Color.create("#53B175"),
                 },
                 backgroundColor: Color.create("#FFFFFF"),
-                "&-default": {
-                    "font": {
-                        "size": 11
-                    }
-                }
             }),
             items: [
-                { title: "Shop", icon: Image.createFromFile('images://tabiconhome.png')},
+                { title: "Shop", icon: Image.createFromFile('images://tabiconhome.png') },
                 { title: "Explore", icon: Image.createFromFile('images://tabiconexplore.png') },
                 { title: "Cart", icon: Image.createFromFile('images://tabiconcart.png') },
                 { title: "Favourite", icon: Image.createFromFile('images://tabiconfavorite.png') },
@@ -106,15 +101,14 @@ const router = Router.of({
                     to: "/btb/tab1/home",
                     routes: [
                         Route.of({
-                          path: "/btb/tab1/home",
-                          build: buildExtender({ getPageClass: () => require("pages/pgHome").default, headerBarStyle: { visible: true } })
+                            path: "/btb/tab1/home",
+                            build: buildExtender({ getPageClass: () => require("pages/pgHome").default })
                         }),
                         Route.of({
-                          path: "/btb/tab1/productDetail",
-                          build: buildExtender({ getPageClass: () => require("pages/pgProductDetail").default, headerBarStyle: { visible: true } })
-                        })
-                      ],
-                    build: buildExtender({ getPageClass: () => require("pages/pgHome").default, headerBarStyle: { visible: true } })
+                            path: "/btb/tab1/productDetail",
+                            build: buildExtender({ getPageClass: () => require("pages/pgProductDetail").default })
+                        }),
+                    ],
                 }),
                 // tab2
                 Route.of({
@@ -122,7 +116,7 @@ const router = Router.of({
                     build: buildExtender({ getPageClass: () => require("pages/pgCategories").default, headerBarStyle: { visible: true } })
                 }),
                 Route.of({
-                    path: "/btb/tab3/page2",
+                    path: "/btb/tab3/pgWelcome",
                     build: buildExtender({ getPageClass: () => require("pages/pgWelcome").default, headerBarStyle: { visible: true } })
                 }),
                 Route.of({

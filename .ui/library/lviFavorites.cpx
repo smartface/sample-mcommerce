@@ -87,6 +87,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "eggs.png",
 				"imageFillType": "ASPECTFIT",
 				"testId": "rP-vhokHM",
 				"usePageVariable": true

@@ -249,9 +249,9 @@
 					"alignItems": "FLEX_END",
 					"flexGrow": 2
 				},
-				"height": "169.81",
+				"height": null,
 				"testId": "fzMVgYbj3",
-				"width": "371.70"
+				"width": null
 			}
 		},
 		{
