@@ -1,0 +1,21 @@
+{
+	".grow": {
+		"flexProps": {
+			"flexGrow": 1
+		},
+		"height": null
+	},
+	".sticky": {
+		"flexProps": {
+			"positionType": "ABSOLUTE"
+		},
+		"bottom": 0,
+		"left": 0,
+		"right": 0,
+		"height": 100
+	},
+	".padding": {
+		"paddingLeft": 15,
+		"paddingRight": 15
+	}
+}

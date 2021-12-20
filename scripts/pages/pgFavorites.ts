@@ -3,6 +3,7 @@ import lviFavorites from 'components/LviFavorites'
 import store from '../store/index'
 import Image from '@smartface/native/ui/image';
 import Color from '@smartface/native/ui/color';
+import LviFavorites from 'components/LviFavorites';
 
 export default class PgFavorites extends PgFavoritesDesign {
 	constructor() {
@@ -14,13 +15,14 @@ export default class PgFavorites extends PgFavoritesDesign {
 	}
     initFavoriteList(){
         const products = store.getState().products;
-        this.listView1.itemCount = products.length;       
+        this.listView1.itemCount = products.length;
         this.listView1.onRowBind = (listViewItem:lviFavorites, index: number) => {
             listViewItem.lblFavoriteItemPrice.text = `$${products[index].price}`;
             listViewItem.lblFavoriteItemTitle.text = products[index].name;
             listViewItem.lblFavroiteItemDesc.text = products[index].description
             listViewItem.imgFavoriteItem.image = Image.createFromFile(`images://${products[index].image}`)
         };
+        this.listView1.onRowHeight = (index) => LviFavorites.getHeight();
         this.listView1.refreshData();
     }
 }

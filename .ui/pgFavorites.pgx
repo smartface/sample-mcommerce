@@ -8,7 +8,7 @@
 				"children": [
 					"5e52-8223-5aed-6626",
 					"23ce-fa2e-9d68-e404",
-					"64ae-252d-c685-1a9e",
+					"e97d-0545-2a49-4ba2",
 					"4dca-3168-2b63-80c9"
 				],
 				"name": "pgFavorites",
@@ -47,55 +47,30 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout",
-			"id": "64ae-252d-c685-1a9e",
+			"className": ".sf-listView .grow",
+			"id": "e97d-0545-2a49-4ba2",
 			"props": {
 				"children": [
-					"cf44-1739-4385-4f97"
-				],
-				"name": "flFavoritesList",
-				"parent": "e27f-743b-23a5-ea3b",
-				"usePageVariable": true
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 5
-				},
-				"height": null,
-				"testId": "fN71k5ZK6",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-listView",
-			"id": "cf44-1739-4385-4f97",
-			"props": {
-				"children": [
-					"acce-b346-329a-9b2c"
+					"f7f5-9741-1106-5278"
 				],
 				"name": "listView1",
-				"parent": "64ae-252d-c685-1a9e",
+				"parent": "e27f-743b-23a5-ea3b",
 				"usePageVariable": true
 			},
 			"type": "ListView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "wUI1D61Pb",
+				"testId": "wHnvwrM2N",
 				"usePageVariable": true
 			}
 		},
 		{
 			"className": ".sf-listViewItem",
 			"hiddenComponent": false,
-			"id": "acce-b346-329a-9b2c",
+			"id": "f7f5-9741-1106-5278",
 			"props": {
 				"children": [],
 				"name": "lviFavorites",
-				"parent": "cf44-1739-4385-4f97"
+				"parent": "e97d-0545-2a49-4ba2"
 			},
 			"source": {
 				"page": "__library__",
@@ -110,15 +85,15 @@
 				"flexProps": {
 					"positionType": "RELATIVE"
 				},
-				"height": "160.67",
+				"height": 160,
 				"left": 0,
 				"testId": "jFkvviy6q",
 				"top": 0,
-				"width": "392.67"
+				"width": 392
 			}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout .sticky .padding",
 			"id": "4dca-3168-2b63-80c9",
 			"props": {
 				"children": [
@@ -130,13 +105,7 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1,
-					"alignItems": "STRETCH",
-					"justifyContent": "CENTER"
-				},
-				"height": null,
-				"testId": "IaqvNMSec",
+				"testId": "exfK66zt8",
 				"usePageVariable": true
 			}
 		},

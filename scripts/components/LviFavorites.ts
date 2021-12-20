@@ -1,4 +1,6 @@
+import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 import LviFavoritesDesign from 'generated/my-components/LviFavorites';
+const originalHeight = getCombinedStyle('.lviFavorites').height;
 
 export default class LviFavorites extends LviFavoritesDesign {
 	pageName?: string | undefined;
@@ -7,4 +9,7 @@ export default class LviFavorites extends LviFavoritesDesign {
 		super(props);
 		this.pageName = pageName;
 	}
+    static getHeight(): number {
+        return originalHeight;
+    }
 }
