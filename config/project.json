@@ -1,11 +1,11 @@
 {
     "info": {
-        "name": "Smartface Helloworld Boilerplate",
-        "company": "Smartface User",
+        "name": "Smartface Sample MCommerce",
+        "company": "Smartface",
         "webSite": "https://www.smartface.io",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "runtimeVersion": "1100",
-        "description": "This is Smartface's helloworld boilerplate project. You can use Smartface Run on Device Emulator to preview your changes."
+        "description": "This is Smartface's sample mcommerce project. You can use Smartface Run on Device Emulator to preview your changes."
     },
     "config": {
         "cache": {
