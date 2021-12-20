@@ -13,7 +13,6 @@ export default class PgCategories extends PgCategoriesDesign {
     }
     initCategoriesGrid() {
         const categories = store.getState().categories;
-        this.categoriesGrid.itemCount = categories.length;
         this.categoriesGrid.scrollBarEnabled = false;
         this.categoriesGrid.onItemBind = (GridViewItem: categoriesItem, index: number) => {
             GridViewItem.flCategoryItemWrapper.borderWidth = 1
@@ -22,6 +21,7 @@ export default class PgCategories extends PgCategoriesDesign {
             GridViewItem.lblCategoryItemTitle.text = categories[index].title;
             GridViewItem.imgCategoryItem.image = Image.createFromFile(`images://${categories[index].categoryImg}`)
         }
+        this.categoriesGrid.itemCount = categories.length;
     }
 
 }
@@ -43,9 +43,9 @@ function onShow(this: PgCategories, superOnShow: () => void) {
  */
 function onLoad(this: PgCategories, superOnLoad: () => void) {
     superOnLoad();
-    this.headerBar.leftItemEnabled = false
-    this.headerBar.title = 'Categories'
-    this.headerBar.backgroundColor = Color.WHITE;
-    this.headerBar.android.elevation = 0;
+    // this.headerBar.leftItemEnabled = false
+    // this.headerBar.title = 'Categories'
+    // this.headerBar.backgroundColor = Color.WHITE;
+    // this.headerBar.android.elevation = 0;
     this.initCategoriesGrid();
 }

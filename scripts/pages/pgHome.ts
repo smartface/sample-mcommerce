@@ -80,10 +80,10 @@ function onShow(this: PgHome, superOnShow: () => void) {
  */
 function onLoad(this: PgHome, superOnLoad: () => void) {
     superOnLoad();
-    this.headerBar.leftItemEnabled = false
-    this.headerBar.title = 'Maltepe, Istanbul'
-    this.headerBar.backgroundColor = Color.WHITE;
-    this.headerBar.android.elevation = 0;
+    // this.headerBar.leftItemEnabled = false
+    // this.headerBar.title = 'Maltepe, Istanbul'
+    // this.headerBar.backgroundColor = Color.WHITE;
+    // this.headerBar.android.elevation = 0;
      this.initCategoriesGrid();
 
 }

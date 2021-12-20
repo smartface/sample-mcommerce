@@ -11,9 +11,13 @@ import Color from '@smartface/native/ui/color';
 import TabBarItem from "@smartface/native/ui/tabbaritem";
 import Image from '@smartface/native/ui/image';
 import backClose from '@smartface/extension-utils/lib/router/back-close';
-
 backClose.setDefaultBackStyle({ image: Image.createFromFile("images://backbtn.png"), hideTitle: true });
-
+backClose.dismissBuilder = () => {
+    return {
+        image: Image.createFromFile('images://tabiconuser.png'),
+        position: backClose.DismissPosition.LEFT
+    };
+};
 
 // let btbItemMessages = new TabBarItem();
 // btbItemMessages.title = "Tab2";
