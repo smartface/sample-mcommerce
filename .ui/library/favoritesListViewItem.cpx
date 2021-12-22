@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .favoritesListViewItem",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "027b-55b9-3e16-2671",
 			"props": {
 				"children": [

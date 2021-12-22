@@ -16,6 +16,8 @@
 	},
 	".padding": {
 		"paddingLeft": 15,
-		"paddingRight": 15
+		"paddingRight": 15,
+		"paddingTop": 15,
+		"paddingBottom": 15
 	}
 }

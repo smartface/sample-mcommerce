@@ -108,10 +108,22 @@ const router = Router.of({
                             path: "/btb/tab1/home",
                             build: buildExtender({ getPageClass: () => require("pages/pgHome").default })
                         }),
-                        Route.of({
+                        // Route.of({
+                        //     path: "/btb/tab1/productDetail",
+                        //     build: buildExtender({ getPageClass: () => require("pages/pgProductDetail").default })
+                        // }),
+                        StackRouter.of({
                             path: "/btb/tab1/productDetail",
-                            build: buildExtender({ getPageClass: () => require("pages/pgProductDetail").default })
+                            to: "/btb/tab1/productDetail/main",
+                            modal: true,
+                            routes: [
+                                Route.of({
+                                    path: "/btb/tab1/productDetail/main",
+                                    build: buildExtender({ getPageClass: () => require("pages/pgProductDetail").default, headerBarStyle: { visible: true } })
+                                })
+                            ],
                         }),
+                        
                     ],
                 }),
                 // tab2
@@ -147,11 +159,11 @@ const router = Router.of({
                 }),
                 StackRouter.of({
                     path: "/btb/tab5",
-                    to: "/btb/tab5/page2",
+                    to: "/btb/tab5/account",
                     routes: [
                         Route.of({
-                            path: "/btb/tab5/page2",
-                            build: buildExtender({ getPageClass: () => require("pages/pgWelcome").default, headerBarStyle: { visible: true } })
+                            path: "/btb/tab5/account",
+                            build: buildExtender({ getPageClass: () => require("pages/pgAccount").default, headerBarStyle: { visible: true } })
                         })
                     ],
                 })

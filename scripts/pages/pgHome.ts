@@ -20,27 +20,27 @@ export default class PgHome extends PgHomeDesign {
         const products = store.getState().products;
         this.productsGrid.scrollBarEnabled = false;
         this.productsGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
-            GridViewItem.gviLblProductItemTitle.text = products[index].name
-            GridViewItem.gviProductItemDesc.text = products[index].description
-            GridViewItem.gviProductItemImg.image = Image.createFromFile(`images://${products[index].image}`)
-            GridViewItem.gviProductItemPrice.text = `$${products[index].price}`
+            GridViewItem.itemTitle = products[index].name
+            GridViewItem.itemDesc = products[index].description
+            GridViewItem.itemImage = products[index].image
+            GridViewItem.itemPrice = `$${products[index].price}`
         }
         this.productsGrid.itemCount = products.length;
 
         this.productsBestSellerGrid.scrollBarEnabled = false;
         this.productsBestSellerGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
             GridViewItem.gviProductItemImg.on(View.Events.Touch, () => {
-                this.router.push('/btb/tab1/productDetail', {
+                this.router.push('/btb/tab1/productDetail/main', {
                   productName: products[index].name,
                   productPrice: products[index].price,
                   productDescription:products[index].description,
                   productImg:products[index].image
                 })
             })
-            GridViewItem.gviLblProductItemTitle.text = products[index].name
-            GridViewItem.gviProductItemDesc.text = products[index].description
-            GridViewItem.gviProductItemImg.image = Image.createFromFile(`images://${products[index].image}`)
-            GridViewItem.gviProductItemPrice.text = `$${products[index].price}`
+            GridViewItem.itemTitle = products[index].name
+            GridViewItem.itemDesc = products[index].description
+            GridViewItem.itemImage = products[index].image
+            GridViewItem.itemPrice = `$${products[index].price}`
         }
         this.productsBestSellerGrid.itemCount = products.length;
 

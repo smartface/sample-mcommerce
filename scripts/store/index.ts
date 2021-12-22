@@ -123,6 +123,46 @@ const initialState = {
         fullName: 'Smartface',
         email: 'smartface',
         password: '1234',
+    }],
+    accountMenus:[{
+        menuId: 1,
+        menuTitle: 'Orders',
+        menuLeftIcon: ''
+    },
+    {
+        menuId: 2,
+        menuTitle: 'Settings',
+        menuLeftIcon: ''
+    },
+    {
+        menuId: 3,
+        menuTitle: 'My Details',
+        menuLeftIcon:''
+    },
+    {
+        menuId: 4,
+        menuTitle: 'Payment Methods',
+        menuLeftIcon: ''
+    },
+    {
+        menuId: 5,
+        menuTitle: 'Promo Card',
+        menuLeftIcon: ''
+    },
+    {
+        menuId: 6,
+        menuTitle: 'Notifications',
+        menuLeftIcon: ''
+    },
+    {
+        menuId: 7,
+        menuTitle: 'Help',
+        menuLeftIcon: ''
+    },
+    {
+        menuId: 8,
+        menuTitle: 'About',
+        menuLeftIcon: ''
     }]
 };
 

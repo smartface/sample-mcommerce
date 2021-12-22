@@ -16,10 +16,10 @@ export default class PgCategories extends PgCategoriesDesign {
         this.categoriesGrid.scrollBarEnabled = false;
         this.categoriesGrid.onItemBind = (GridViewItem: categoriesItem, index: number) => {
             GridViewItem.flCategoryItemWrapper.borderWidth = 1
-            GridViewItem.flCategoryItemWrapper.borderColor = Color.create(categories[index].menuBorderColor)
-            GridViewItem.flCategoryItemWrapper.backgroundColor = Color.create(categories[index].menuColor)
-            GridViewItem.lblCategoryItemTitle.text = categories[index].title;
-            GridViewItem.imgCategoryItem.image = Image.createFromFile(`images://${categories[index].categoryImg}`)
+            GridViewItem.flCategoryItemWrapperBorderColor = categories[index].menuBorderColor
+            GridViewItem.flCategoryItemWrapperBackgroundColor = categories[index].menuColor
+            GridViewItem.categoryTitle = categories[index].title;
+            GridViewItem.categoryImage = categories[index].categoryImg
         }
         this.categoriesGrid.itemCount = categories.length;
     }

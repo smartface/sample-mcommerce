@@ -1,0 +1,15 @@
+{
+	"#pgAccount": {
+		"paddingBottom": 0,
+		"paddingLeft": 0,
+		"paddingRight": 0,
+		"paddingTop": 0,
+		"&-listViewAccount": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"marginTop": 0,
+			"marginBottom": 0
+		}
+	}
+}

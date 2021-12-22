@@ -6,23 +6,23 @@ import Color from '@smartface/native/ui/color';
 import LviFavorites from 'components/LviFavorites';
 
 export default class PgFavorites extends PgFavoritesDesign {
-	constructor() {
-		super();
-		// Overrides super.onShow method
-		this.onShow = onShow.bind(this, this.onShow.bind(this));
-		// Overrides super.onLoad method
-		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-	}
-    initFavoriteList(){
+    constructor() {
+        super();
+        // Overrides super.onShow method
+        this.onShow = onShow.bind(this, this.onShow.bind(this));
+        // Overrides super.onLoad method
+        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    }
+    initFavoriteList() {
         const products = store.getState().products;
-        this.listView1.itemCount = products.length;
-        this.listView1.onRowBind = (listViewItem:lviFavorites, index: number) => {
-            listViewItem.lblFavoriteItemPrice.text = `$${products[index].price}`;
-            listViewItem.lblFavoriteItemTitle.text = products[index].name;
-            listViewItem.lblFavroiteItemDesc.text = products[index].description
-            listViewItem.imgFavoriteItem.image = Image.createFromFile(`images://${products[index].image}`)
+        this.listView1.onRowBind = (listViewItem: lviFavorites, index: number) => {
+            listViewItem.itemPrice = products[index].price
+            listViewItem.itemTitle = products[index].name
+            listViewItem.itemDesc = products[index].description
+            listViewItem.itemImage = products[index].image
         };
         this.listView1.onRowHeight = (index) => LviFavorites.getHeight();
+        this.listView1.itemCount = products.length;
         this.listView1.refreshData();
     }
 }
@@ -34,7 +34,7 @@ export default class PgFavorites extends PgFavoritesDesign {
  * @param {Object} parameters passed from Router.go function
  */
 function onShow(this: PgFavorites, superOnShow: () => void) {
-	superOnShow();
+    superOnShow();
 }
 
 /**
@@ -43,7 +43,7 @@ function onShow(this: PgFavorites, superOnShow: () => void) {
  * @param {function} superOnLoad super onLoad function
  */
 function onLoad(this: PgFavorites, superOnLoad: () => void) {
-	superOnLoad();
+    superOnLoad();
     this.headerBar.leftItemEnabled = false
     this.headerBar.title = 'Favorites'
     this.headerBar.backgroundColor = Color.WHITE;

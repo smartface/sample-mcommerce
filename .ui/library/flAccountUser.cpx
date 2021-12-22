@@ -1,0 +1,143 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flAccountUser",
+			"id": "f4e3-277e-950f-74f8",
+			"props": {
+				"children": [
+					"962d-7142-fcff-fc38",
+					"2357-b1c4-5a52-30b7"
+				],
+				"name": "flAccountUser",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": "14.85",
+				"top": "135.64"
+			}
+		},
+		{
+			"className": ".sf-imageView .flAccountUser-imgUserAccount",
+			"id": "962d-7142-fcff-fc38",
+			"props": {
+				"children": [],
+				"name": "imgUserAccount",
+				"parent": "f4e3-277e-950f-74f8"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flAccountUser-flAccountRightWrapper",
+			"id": "2357-b1c4-5a52-30b7",
+			"props": {
+				"children": [
+					"5525-7f8e-944c-5f9d",
+					"4458-6e0e-621d-9029"
+				],
+				"name": "flAccountUserRightWrapper",
+				"parent": "f4e3-277e-950f-74f8",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flAccountUser-flAccountRightWrapper-flAccountRightTopWrapper",
+			"id": "5525-7f8e-944c-5f9d",
+			"props": {
+				"children": [
+					"3c09-4b0e-2322-62d6",
+					"a6dd-7535-427f-40d4"
+				],
+				"name": "flAccountTop",
+				"parent": "2357-b1c4-5a52-30b7"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-label .flAccountUser-lblAccountName",
+			"id": "3c09-4b0e-2322-62d6",
+			"props": {
+				"children": [],
+				"name": "lblAccountName",
+				"parent": "5525-7f8e-944c-5f9d",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "a6dd-7535-427f-40d4",
+			"props": {
+				"children": [],
+				"name": "lblAccountEditIcon",
+				"parent": "5525-7f8e-944c-5f9d",
+				"text": "label2",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"testId": "6CQsyavfZ",
+				"text": "label2",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "4458-6e0e-621d-9029",
+			"props": {
+				"children": [],
+				"name": "lblAccountEmail",
+				"parent": "2357-b1c4-5a52-30b7",
+				"text": "label2",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"testId": "URBRTUozX",
+				"text": "label2",
+				"usePageVariable": true
+			}
+		}
+	]
+}

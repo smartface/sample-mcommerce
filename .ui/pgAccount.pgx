@@ -1,0 +1,88 @@
+{
+	"components": [
+		{
+			"className": ".sf-page #pgAccount",
+			"id": "1f1d-7f9b-25d3-8c1b",
+			"initialized": true,
+			"props": {
+				"children": [
+					"3d32-baaa-2b3f-c691",
+					"64f0-4598-a7d6-2aa7",
+					"fc95-5a4f-f83c-ea45"
+				],
+				"name": "pgAccount",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "3d32-baaa-2b3f-c691",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "1f1d-7f9b-25d3-8c1b"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "64f0-4598-a7d6-2aa7",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "1f1d-7f9b-25d3-8c1b",
+				"title": "pgAccount"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgAccount"
+			}
+		},
+		{
+			"className": ".sf-listView #pgAccount-listViewAccount",
+			"id": "fc95-5a4f-f83c-ea45",
+			"props": {
+				"children": [
+					"f78a-1a0e-83ed-372b"
+				],
+				"name": "listViewAccount",
+				"parent": "1f1d-7f9b-25d3-8c1b",
+				"usePageVariable": true
+			},
+			"type": "ListView",
+			"userProps": {
+				"testId": "AjluqbxN0",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-listViewItem .lviAccount",
+			"hiddenComponent": false,
+			"id": "f78a-1a0e-83ed-372b",
+			"props": {
+				"children": [],
+				"name": "lviAccount",
+				"parent": "fc95-5a4f-f83c-ea45"
+			},
+			"source": {
+				"page": "__library__",
+				"type": "lviAccount",
+				"id": "7c3a-8a07-e689-a636"
+			},
+			"type": "ListViewItem",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"testId": "exKI1avGS"
+			}
+		}
+	]
+}

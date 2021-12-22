@@ -1,0 +1,61 @@
+{
+	".flAccountUser": {
+		"flexProps": {
+			"flexDirection": "ROW",
+			"flexGrow": 1
+		},
+		"paddingBottom": 10,
+		"paddingRight": 10,
+		"paddingLeft": 10,
+		"paddingTop": 10,
+		"height": 100,
+		"&-imgUserAccount": {
+			"flexProps": {
+				"alignSelf": "CENTER"
+			},
+			"height": 70,
+			"testId": "PSD2wLj0u",
+			"width": 70
+		},
+		"&-flAccountRightWrapper": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"height": null,
+			"marginLeft": 20,
+			"testId": "OE7mL7f4M",
+			"&-flAccountRightTopWrapper": {
+				"flexProps": {
+					"flexDirection": "ROW"
+				},
+				"height": 50,
+				"testId": "hFJc5ecen",
+				"&-lblAccountName": {
+					"flexProps": {
+						"flexGrow": 1
+					},
+					"height": null,
+					"testId": "FxBN6WHWO",
+					"font": {
+						"family": "Nunito",
+						"style": "Bold",
+						"bold": true,
+						"italic": false
+					}
+				}
+			}
+		},
+		"&-lblAccountName": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"bold": true,
+				"italic": false
+			},
+            "textColor": "${textDark}"
+		}
+	}
+}
