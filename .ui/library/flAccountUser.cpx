@@ -27,13 +27,16 @@
 			"props": {
 				"children": [],
 				"name": "imgUserAccount",
-				"parent": "f4e3-277e-950f-74f8"
+				"parent": "f4e3-277e-950f-74f8",
+				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {}
+			"userProps": {
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-flexLayout .flAccountUser-flAccountRightWrapper",
@@ -87,12 +90,13 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"height": null,
 				"text": "label1",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label .flAccountUser-lblAccountEditIcon",
 			"id": "a6dd-7535-427f-40d4",
 			"props": {
 				"children": [],
@@ -106,17 +110,12 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "6CQsyavfZ",
 				"text": "label2",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label .flAccountUser-lblAccountEmail",
 			"id": "4458-6e0e-621d-9029",
 			"props": {
 				"children": [],
@@ -130,11 +129,6 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "URBRTUozX",
 				"text": "label2",
 				"usePageVariable": true
 			}

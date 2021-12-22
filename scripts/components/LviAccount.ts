@@ -22,7 +22,7 @@ export default class LviAccount extends LviAccountDesign {
         return this.flAccountBottomLine.visible;
     }
     set bottomLine(value: boolean) {
-        this.flAccountTopLine.visible = value
+        this.flAccountBottomLine.visible = value
     }
     get itemTitle(): string {
         return this.lblAccountLviTitle.text;

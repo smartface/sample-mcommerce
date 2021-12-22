@@ -11,6 +11,7 @@ import Color from '@smartface/native/ui/color';
 import TabBarItem from "@smartface/native/ui/tabbaritem";
 import Image from '@smartface/native/ui/image';
 import backClose from '@smartface/extension-utils/lib/router/back-close';
+import Application from '@smartface/native/application';
 backClose.setDefaultBackStyle({ image: Image.createFromFile("images://backbtn.png"), hideTitle: true });
 backClose.dismissBuilder = () => {
     return {
@@ -172,4 +173,7 @@ const router = Router.of({
     ],
 });
 
+router.listen(() => {
+    Application.hideKeyboard();
+})
 export default router;

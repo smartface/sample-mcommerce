@@ -1,0 +1,128 @@
+{
+	"#pgWelcome": {
+		"backgroundColor": "rgba( 253, 253, 253, 1 )",
+		"flexProps": {
+			"alignItems": "STRETCH"
+		},
+		"paddingBottom": 0,
+		"paddingLeft": 0,
+		"paddingRight": 0,
+		"paddingTop": 0,
+		"&-statusbar": {
+			"visible": false
+		},
+		"&-headerbar": {
+			"transparent": true,
+			"visible": false
+		},
+		"&-imagebackground": {
+			"bottom": 0,
+			"flexProps": {
+				"positionType": "ABSOLUTE"
+			},
+			"height": null,
+			"image": "welcome.png",
+			"imageFillType": "ASPECTFILL",
+			"left": 0,
+			"marginBottom": 0,
+			"marginTop": 0,
+			"right": 0,
+			"testId": "eOBq72Aks",
+			"top": 0,
+			"width": null
+		},
+		"&-container": {
+			"flexProps": {
+				"alignItems": "STRETCH",
+				"justifyContent": "FLEX_END",
+				"alignContent": "STRETCH",
+				"flexWrap": "NOWRAP",
+				"flexGrow": 1
+			},
+			"height": null,
+			"paddingBottom": 50,
+			"paddingLeft": 50,
+			"paddingRight": 50,
+			"testId": "1b5nZBQQb"
+		},
+		"&-logo": {
+			"flexProps": {
+				"flexGrow": 0.5,
+				"alignSelf": "CENTER"
+			},
+			"height": null,
+			"image": "iconlarge.png",
+			"imageFillType": "ASPECTFIT",
+			"marginBottom": null,
+			"marginTop": null,
+			"maxHeight": 50,
+			"maxWidth": 50,
+			"testId": "qhw27ao24",
+			"width": null
+		},
+		"&-lblWelcome": {
+			"ellipsizeMode": "WORDWRAPPING",
+			"flexProps": {
+				"flexGrow": 0.75,
+				"alignSelf": "AUTO"
+			},
+			"font": {
+				"size": 44,
+				"bold": true,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Bold"
+			},
+			"height": null,
+			"marginBottom": null,
+			"marginTop": null,
+			"maxHeight": 60,
+			"maxLines": 2,
+			"testId": "CH0SPiKCX",
+			"textAlignment": "MIDCENTER",
+			"textColor": "rgba( 255, 255, 255, 1 )"
+		},
+		"&-lblStore": {
+			"font": {
+				"size": 44,
+				"bold": true,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Bold"
+			},
+			"testId": "V-XkVZMom",
+			"textAlignment": "MIDCENTER",
+			"textColor": "rgba( 255, 255, 255, 1 )"
+		},
+		"&-subtext": {
+			"ellipsizeMode": "MIDDLE",
+			"flexProps": {
+				"flexGrow": 0.5
+			},
+			"font": {
+				"size": 16,
+				"bold": true,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Bold"
+			},
+			"height": null,
+			"maxHeight": 50,
+			"maxLines": 2,
+			"testId": "5_s4VJDXL",
+			"textAlignment": "MIDCENTER",
+			"textColor": "rgba( 252, 252, 252, 0.7 )",
+			"width": null
+		},
+		"&-getstarted": {
+			"flexProps": {
+				"alignSelf": "CENTER"
+			},
+			"marginBottom": null,
+			"marginTop": 15,
+			"minWidth": 350,
+			"testId": "Tfvez2kjT",
+			"textAlignment": "MIDCENTER"
+		}
+	}
+}

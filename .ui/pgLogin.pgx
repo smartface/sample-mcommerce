@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page #pgLogin",
 			"id": "aa9f-e1cb-2f7f-92d5",
 			"initialized": true,
 			"props": {
@@ -18,16 +18,12 @@
 			},
 			"type": "Page",
 			"userProps": {
-				"paddingBottom": 0,
-				"paddingLeft": 0,
-				"paddingRight": 0,
-				"paddingTop": 0,
 				"safeAreaEnabled": true
 			},
 			"version": "0.0.1.a"
 		},
 		{
-			"className": ".sf-statusBar",
+			"className": ".sf-statusBar #pgLogin-statusbar",
 			"id": "6e03-bc0b-218a-d1e2",
 			"props": {
 				"children": [],
@@ -36,15 +32,10 @@
 				"parent": "aa9f-e1cb-2f7f-92d5"
 			},
 			"type": "StatusBar",
-			"userProps": {
-				"android": {
-					"color": "rgba( 255, 255, 255, 0 )"
-				},
-				"style": "DEFAULT"
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar #pgLogin-headerbar",
 			"id": "f1b8-030b-a8b6-50f8",
 			"props": {
 				"children": [],
@@ -55,12 +46,11 @@
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"title": "pgLogin",
-				"visible": false
+				"title": "pgLogin"
 			}
 		},
 		{
-			"className": ".sf-imageView",
+			"className": ".sf-imageView #pgLogin-imagebackground",
 			"id": "f711-79a1-d479-0493",
 			"props": {
 				"children": [],
@@ -68,25 +58,10 @@
 				"parent": "aa9f-e1cb-2f7f-92d5"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"bottom": 0,
-				"flexProps": {
-					"positionType": "ABSOLUTE",
-					"flexGrow": 1
-				},
-				"height": null,
-				"image": "background.png",
-				"imageFillType": "ASPECTFILL",
-				"left": 0,
-				"marginBottom": null,
-				"marginTop": 1,
-				"right": 0,
-				"testId": "wcpeA6xgx",
-				"top": 0
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout #pgLogin-flcontainer",
 			"id": "9503-8d4b-931f-3afe",
 			"props": {
 				"children": [
@@ -101,17 +76,12 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "Xauh3YMK1",
-				"usePageVariable": true,
-				"width": null
+				"testId": "MWUP6dCpO",
+				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-imageView",
+			"className": ".sf-imageView #pgLogin-logo",
 			"id": "ecf9-7bb6-8155-123e",
 			"props": {
 				"children": [],
@@ -119,21 +89,10 @@
 				"parent": "9503-8d4b-931f-3afe"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1,
-					"alignSelf": "CENTER"
-				},
-				"height": null,
-				"image": "logo.png",
-				"imageFillType": "BOTTOMCENTER",
-				"marginBottom": 10,
-				"testId": "zw0_J-c-V",
-				"width": null
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label #pgLogin-title",
 			"id": "3a60-cc2c-259e-ab70",
 			"props": {
 				"children": [],
@@ -143,27 +102,11 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 0.5
-				},
-				"font": {
-					"size": 26,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"marginBottom": null,
-				"marginLeft": 25,
-				"marginTop": null,
-				"maxHeight": 35,
-				"testId": "ENQ28sM4T",
-				"text": "Login",
-				"textColor": "rgba( 24, 23, 37, 1 )"
+				"text": "Login"
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label #pgLogin-text",
 			"id": "73fb-0516-a060-3970",
 			"props": {
 				"children": [],
@@ -173,26 +116,11 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 0.5
-				},
-				"font": {
-					"size": 16,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"marginBottom": null,
-				"marginLeft": 25,
-				"marginTop": null,
-				"testId": "4NLXvX9K-",
-				"text": "Enter your emails and password",
-				"textColor": "rgba( 124, 124, 124, 1 )"
+				"text": "Enter your emails and password"
 			}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout #pgLogin-flform",
 			"hiddenComponent": false,
 			"id": "b572-513a-69d9-501f",
 			"props": {
@@ -207,18 +135,10 @@
 				"parent": "9503-8d4b-931f-3afe"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 5
-				},
-				"marginTop": 10,
-				"paddingLeft": 25,
-				"paddingRight": 25,
-				"testId": "jw-epfTzH"
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper",
+			"className": ".flexLayout .materialTextBox-wrapper #pgLogin-mtbemail",
 			"hiddenComponent": false,
 			"id": "2357-5cc8-f049-3396",
 			"initialized": false,
@@ -235,21 +155,12 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"flexGrow": 0.4
-				},
-				"left": 0,
-				"testId": "Mnb1SYj-t",
-				"top": 0,
+				"testId": "cBMa7uQlv",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper",
+			"className": ".flexLayout .materialTextBox-wrapper #pgLogin-mtbpassword",
 			"hiddenComponent": false,
 			"id": "530e-ea35-e6ca-1809",
 			"initialized": false,
@@ -266,24 +177,12 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"borderColor": "rgba( 226, 226, 226, 1 )",
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"flexGrow": 0.4
-				},
-				"left": 0,
-				"maxHeight": 70,
-				"testId": "GL-bPqCEz",
-				"top": 0,
+				"testId": "TE1-YGpfO",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label #pgLogin-lblForgotPassword",
 			"id": "bdfa-6292-509e-bad0",
 			"props": {
 				"children": [],
@@ -294,19 +193,8 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"font": {
-					"size": 14,
-					"bold": false,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Medium"
-				},
-				"marginBottom": 20,
-				"maxHeight": 25,
-				"testId": "g4mLeQV5F",
+				"testId": "kmHMfpMHf",
 				"text": "Forgot Password?",
-				"textAlignment": "MIDRIGHT",
-				"textColor": "rgba( 24, 23, 37, 1 )",
 				"usePageVariable": true
 			}
 		},
@@ -322,13 +210,13 @@
 			},
 			"type": "Button",
 			"userProps": {
-				"testId": "XqWNo5nDB",
+				"testId": "LGkCVcClMB",
 				"text": "Log In",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout #pgLogin-flfooter",
 			"id": "73b4-1e9e-72b6-ee15",
 			"props": {
 				"children": [
@@ -341,18 +229,12 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"flexDirection": "ROW",
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "PGmVHNP2q",
-				"usePageVariable": true,
-				"width": null
+				"testId": "RLSTHRh4l",
+				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label #pgLogin-lblLeft",
 			"id": "e85e-6514-edb3-f609",
 			"props": {
 				"children": [],
@@ -363,27 +245,13 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 5
-				},
-				"font": {
-					"size": 14,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"left": 0,
-				"testId": "JYm46Rkkf",
+				"testId": "VmXTEX7ILv",
 				"text": "Don’t have an account? ",
-				"textAlignment": "MIDRIGHT",
-				"textColor": "rgba( 24, 23, 37, 1 )",
-				"top": 0,
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label #pgLogin-lblRouteSignUp",
 			"id": "b60f-803f-5f9e-4650",
 			"props": {
 				"children": [],
@@ -394,22 +262,8 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 3
-				},
-				"font": {
-					"size": 14,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"left": 0,
-				"testId": "JYm46Rkkf",
+				"testId": "LItobv3NmQ",
 				"text": "Singup",
-				"textAlignment": "MIDLEFT",
-				"textColor": "rgba( 83, 177, 117, 1 )",
-				"top": 0,
 				"usePageVariable": true
 			}
 		}

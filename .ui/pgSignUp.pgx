@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page #pgSignUp",
 			"id": "85da-2fd3-8e39-c6d0",
 			"initialized": true,
 			"props": {
@@ -18,17 +18,13 @@
 			},
 			"type": "Page",
 			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"paddingBottom": null,
-				"paddingLeft": null,
-				"paddingRight": null,
-				"paddingTop": null,
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
-			"className": ".sf-statusBar",
+			"className": ".sf-statusBar #pgSignUp-statusbar",
 			"id": "8b76-05f3-5f45-8c1e",
 			"props": {
 				"children": [],
@@ -37,15 +33,11 @@
 				"parent": "85da-2fd3-8e39-c6d0"
 			},
 			"type": "StatusBar",
-			"userProps": {
-				"android": {
-					"color": "rgba( 242, 243, 242, 1 )"
-				},
-				"style": "DEFAULT"
-			}
+			"userProps": {},
+			"degree": 1
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar #pgSignUp-headerbar",
 			"id": "5357-ac47-407b-a084",
 			"props": {
 				"children": [],
@@ -56,12 +48,12 @@
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"title": "pgSignUp",
-				"visible": false
-			}
+				"title": "pgSignUp"
+			},
+			"degree": 1
 		},
 		{
-			"className": ".sf-imageView",
+			"className": ".sf-imageView #pgSignUp-imagebackground",
 			"id": "27ed-71ed-2b47-1aa9",
 			"props": {
 				"children": [],
@@ -69,23 +61,11 @@
 				"parent": "85da-2fd3-8e39-c6d0"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"bottom": 0,
-				"flexProps": {
-					"positionType": "ABSOLUTE",
-					"flexGrow": 1
-				},
-				"height": null,
-				"image": "background.png",
-				"imageFillType": "ASPECTFILL",
-				"left": 0,
-				"right": 0,
-				"testId": "tv6lNzMRn",
-				"top": 0
-			}
+			"userProps": {},
+			"degree": 1
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout #pgSignUp-flcontainer",
 			"id": "2040-54a0-940e-495a",
 			"props": {
 				"children": [
@@ -100,21 +80,13 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"left": 0,
-				"marginBottom": null,
-				"marginTop": null,
-				"testId": "Xauh3YMK1",
-				"top": 0,
-				"usePageVariable": true,
-				"width": null
-			}
+				"testId": "Xv5c0KLMf",
+				"usePageVariable": true
+			},
+			"degree": 1
 		},
 		{
-			"className": ".sf-imageView",
+			"className": ".sf-imageView #pgSignUp-logo",
 			"id": "ce3e-3296-d0d0-537a",
 			"props": {
 				"children": [],
@@ -122,20 +94,11 @@
 				"parent": "2040-54a0-940e-495a"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1.5,
-					"alignSelf": "CENTER"
-				},
-				"height": null,
-				"image": "logo.png",
-				"imageFillType": "NORMAL",
-				"testId": "zw0_J-c-V",
-				"width": null
-			}
+			"userProps": {},
+			"degree": 2
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label #pgSignUp-title",
 			"id": "ed74-f53c-daaf-3d2f",
 			"props": {
 				"children": [],
@@ -145,26 +108,12 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 0.5
-				},
-				"font": {
-					"size": 26,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"marginBottom": null,
-				"marginLeft": 25,
-				"marginTop": null,
-				"testId": "ENQ28sM4T",
-				"text": "Sign Up",
-				"textColor": "rgba( 24, 23, 37, 1 )"
-			}
+				"text": "Sign Up"
+			},
+			"degree": 2
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label #pgSignUp-text",
 			"id": "ce9f-11e1-1af4-9da6",
 			"props": {
 				"children": [],
@@ -174,27 +123,12 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 0.5
-				},
-				"font": {
-					"size": 16,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"marginBottom": 25,
-				"marginLeft": 25,
-				"marginTop": null,
-				"maxHeight": 35,
-				"testId": "4NLXvX9K-",
-				"text": "Enter your credentials to continue",
-				"textColor": "rgba( 124, 124, 124, 1 )"
-			}
+				"text": "Enter your credentials to continue"
+			},
+			"degree": 2
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout #pgSignUp-flform",
 			"hiddenComponent": false,
 			"id": "40d7-1892-4734-7a1b",
 			"props": {
@@ -211,18 +145,11 @@
 				"parent": "2040-54a0-940e-495a"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 5
-				},
-				"height": null,
-				"paddingLeft": 25,
-				"paddingRight": 25,
-				"testId": "jw-epfTzH"
-			}
+			"userProps": {},
+			"degree": 2
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper .sf-mtb-form",
+			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-mtbusername",
 			"hiddenComponent": false,
 			"id": "9cb0-9e79-e526-4f64",
 			"initialized": false,
@@ -239,24 +166,13 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"borderColor": "rgba( 226, 226, 226, 1 )",
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"flexGrow": 0.5
-				},
-				"left": 0,
-				"marginLeft": null,
-				"marginRight": null,
-				"testId": "PvOO3p5kc",
-				"top": 0,
+				"testId": "EtXDr5A7B",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper",
+			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-mtbemail",
 			"hiddenComponent": false,
 			"id": "efef-c8d5-44cf-b90d",
 			"initialized": false,
@@ -273,23 +189,13 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"flexGrow": 0.5
-				},
-				"left": 0,
-				"marginLeft": null,
-				"marginRight": null,
-				"testId": "Mnb1SYj-t",
-				"top": 0,
+				"testId": "G3F5RxBq40",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper",
+			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-mtbpassword",
 			"hiddenComponent": false,
 			"id": "8680-508c-a2b2-3977",
 			"initialized": false,
@@ -306,22 +212,10 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 0 )",
-				"borderColor": "rgba( 226, 226, 226, 1 )",
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"flexGrow": 0.5
-				},
-				"left": 0,
-				"marginLeft": null,
-				"marginRight": null,
-				"testId": "GL-bPqCEz",
-				"top": 0,
-				"usePageVariable": true
-			}
+				"usePageVariable": true,
+				"testId": "HOmKRVbHg"
+			},
+			"degree": 3
 		},
 		{
 			"className": ".sf-flexLayout",
@@ -349,7 +243,78 @@
 				"maxHeight": 36,
 				"testId": "GgtHkJR7Y",
 				"width": null
-			}
+			},
+			"degree": 3
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "5aaf-f8a9-8953-b2cc",
+			"props": {
+				"children": [
+					"eade-4475-69c0-5aee",
+					"ec96-c1f9-ba8b-f30d"
+				],
+				"name": "flPrivacy",
+				"parent": "40d7-1892-4734-7a1b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW",
+					"alignSelf": "AUTO",
+					"alignItems": "AUTO",
+					"flexGrow": 1
+				},
+				"height": null,
+				"maxHeight": 35,
+				"testId": "JW4QfG7Si",
+				"width": null
+			},
+			"degree": 3
+		},
+		{
+			"className": ".sf-button .sf-button-main",
+			"id": "fe91-7b0a-263b-7b5f",
+			"props": {
+				"children": [],
+				"name": "btnSignUp",
+				"parent": "40d7-1892-4734-7a1b",
+				"text": "Sign Up",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"testId": "eIHxsL8S_",
+				"text": "Sign Up",
+				"usePageVariable": true
+			},
+			"degree": 3
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "e333-17ee-ecf4-3517",
+			"props": {
+				"children": [
+					"116e-9475-8284-ae76",
+					"3462-f45d-874f-b834"
+				],
+				"name": "flFooter",
+				"parent": "40d7-1892-4734-7a1b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW",
+					"justifyContent": "CENTER",
+					"flexGrow": 1,
+					"alignItems": "FLEX_START",
+					"alignContent": "CENTER"
+				},
+				"height": null,
+				"testId": "akadJGRFr",
+				"width": null
+			},
+			"degree": 3
 		},
 		{
 			"className": ".sf-label",
@@ -385,7 +350,70 @@
 				"textColor": "rgba( 124, 124, 124, 1 )",
 				"top": 0,
 				"usePageVariable": true
-			}
+			},
+			"degree": 4
+		},
+		{
+			"className": ".sf-label",
+			"id": "eade-4475-69c0-5aee",
+			"props": {
+				"children": [],
+				"name": "lblPrivacyLeft",
+				"parent": "5aaf-f8a9-8953-b2cc",
+				"text": "and "
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 14,
+					"bold": false,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Medium"
+				},
+				"marginBottom": null,
+				"marginTop": null,
+				"testId": "jSogaLSf-",
+				"text": "and ",
+				"textAlignment": "MIDLEFT",
+				"textColor": "rgba( 124, 124, 124, 1 )"
+			},
+			"degree": 4
+		},
+		{
+			"className": ".sf-label",
+			"id": "116e-9475-8284-ae76",
+			"props": {
+				"children": [],
+				"name": "lblFooterLeft",
+				"parent": "e333-17ee-ecf4-3517",
+				"text": "Already have an account? ",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 3
+				},
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"left": 0,
+				"testId": "1bUa3lE81",
+				"text": "Already have an account? ",
+				"textAlignment": "MIDRIGHT",
+				"textColor": "rgba( 3, 3, 3, 1 )",
+				"top": 0,
+				"usePageVariable": true
+			},
+			"degree": 4
 		},
 		{
 			"className": ".sf-label",
@@ -421,61 +449,8 @@
 				"textColor": "rgba( 83, 177, 117, 1 )",
 				"top": 0,
 				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout",
-			"id": "5aaf-f8a9-8953-b2cc",
-			"props": {
-				"children": [
-					"eade-4475-69c0-5aee",
-					"ec96-c1f9-ba8b-f30d"
-				],
-				"name": "flPrivacy",
-				"parent": "40d7-1892-4734-7a1b"
 			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexDirection": "ROW",
-					"alignSelf": "AUTO",
-					"alignItems": "AUTO",
-					"flexGrow": 1
-				},
-				"height": null,
-				"maxHeight": 35,
-				"testId": "JW4QfG7Si",
-				"width": null
-			}
-		},
-		{
-			"className": ".sf-label",
-			"id": "eade-4475-69c0-5aee",
-			"props": {
-				"children": [],
-				"name": "lblPrivacyLeft",
-				"parent": "5aaf-f8a9-8953-b2cc",
-				"text": "and "
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"font": {
-					"size": 14,
-					"bold": false,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Medium"
-				},
-				"marginBottom": null,
-				"marginTop": null,
-				"testId": "jSogaLSf-",
-				"text": "and ",
-				"textAlignment": "MIDLEFT",
-				"textColor": "rgba( 124, 124, 124, 1 )"
-			}
+			"degree": 4
 		},
 		{
 			"className": ".sf-label",
@@ -501,80 +476,8 @@
 				"testId": "Cw8Dhn2M1",
 				"text": "Privacy Policy.",
 				"textColor": "rgba( 83, 177, 117, 1 )"
-			}
-		},
-		{
-			"className": ".sf-button .sf-button-main",
-			"id": "fe91-7b0a-263b-7b5f",
-			"props": {
-				"children": [],
-				"name": "btnSignUp",
-				"parent": "40d7-1892-4734-7a1b",
-				"text": "Sign Up",
-				"usePageVariable": true
 			},
-			"type": "Button",
-			"userProps": {
-				"testId": "eIHxsL8S_",
-				"text": "Sign Up",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout",
-			"id": "e333-17ee-ecf4-3517",
-			"props": {
-				"children": [
-					"116e-9475-8284-ae76",
-					"3462-f45d-874f-b834"
-				],
-				"name": "flFooter",
-				"parent": "40d7-1892-4734-7a1b"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexDirection": "ROW",
-					"justifyContent": "CENTER",
-					"flexGrow": 1,
-					"alignItems": "FLEX_START",
-					"alignContent": "CENTER"
-				},
-				"height": null,
-				"testId": "akadJGRFr",
-				"width": null
-			}
-		},
-		{
-			"className": ".sf-label",
-			"id": "116e-9475-8284-ae76",
-			"props": {
-				"children": [],
-				"name": "lblFooterLeft",
-				"parent": "e333-17ee-ecf4-3517",
-				"text": "Already have an account? ",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 3
-				},
-				"font": {
-					"size": 14,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"left": 0,
-				"testId": "1bUa3lE81",
-				"text": "Already have an account? ",
-				"textAlignment": "MIDRIGHT",
-				"textColor": "rgba( 3, 3, 3, 1 )",
-				"top": 0,
-				"usePageVariable": true
-			}
+			"degree": 4
 		},
 		{
 			"className": ".sf-label",
@@ -605,7 +508,8 @@
 				"textColor": "rgba( 83, 177, 117, 1 )",
 				"top": 0,
 				"usePageVariable": true
-			}
+			},
+			"degree": 4
 		}
 	]
 }

@@ -1,0 +1,181 @@
+{
+	"#pgLogin": {
+		"paddingBottom": 0,
+		"paddingLeft": 0,
+		"paddingRight": 0,
+		"paddingTop": 0,
+		"&-statusbar": {
+			"android": {
+				"color": "rgba( 255, 255, 255, 0 )"
+			},
+			"style": "DEFAULT"
+		},
+		"&-headerbar": {
+			"visible": false
+		},
+		"&-imagebackground": {
+			"bottom": 0,
+			"flexProps": {
+				"positionType": "ABSOLUTE",
+				"flexGrow": 1
+			},
+			"height": null,
+			"image": "background.png",
+			"imageFillType": "ASPECTFILL",
+			"left": 0,
+			"marginBottom": null,
+			"marginTop": 1,
+			"right": 0,
+			"testId": "wcpeA6xgx",
+			"top": 0
+		},
+		"&-flcontainer": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"height": null,
+			"testId": "Xauh3YMK1",
+			"width": null
+		},
+		"&-logo": {
+			"height": null,
+			"image": "logo.png",
+			"imageFillType": "NORMAL",
+			"marginBottom": 10,
+			"testId": "zw0_J-c-V",
+			"width": 70,
+			"flexProps": {
+				"flexGrow": 1,
+				"alignSelf": "CENTER"
+			}
+		},
+		"&-title": {
+			"flexProps": {
+				"flexGrow": 0.5
+			},
+			"font": {
+				"size": 26,
+				"bold": true,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Bold"
+			},
+			"marginBottom": null,
+			"marginLeft": 25,
+			"marginTop": null,
+			"maxHeight": 35,
+			"testId": "ENQ28sM4T",
+			"textColor": "rgba( 24, 23, 37, 1 )"
+		},
+		"&-text": {
+			"flexProps": {
+				"flexGrow": 0.5
+			},
+			"font": {
+				"size": 16,
+				"bold": true,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Bold"
+			},
+			"marginBottom": null,
+			"marginLeft": 25,
+			"marginTop": null,
+			"testId": "4NLXvX9K-",
+			"textColor": "rgba( 124, 124, 124, 1 )"
+		},
+		"&-flform": {
+			"flexProps": {
+				"flexGrow": 5
+			},
+			"marginTop": 10,
+			"paddingLeft": 25,
+			"paddingRight": 25,
+			"testId": "jw-epfTzH"
+		},
+		"&-mtbemail": {
+			"flex": {
+				"positionType": 0
+			},
+			"flexProps": {
+				"positionType": "RELATIVE",
+				"flexGrow": 0.4
+			},
+			"left": 0,
+			"testId": "Mnb1SYj-t",
+			"top": 0
+		},
+		"&-mtbpassword": {
+			"backgroundColor": "rgba( 255, 255, 255, 0 )",
+			"borderColor": "rgba( 226, 226, 226, 1 )",
+			"flex": {
+				"positionType": 0
+			},
+			"flexProps": {
+				"positionType": "RELATIVE",
+				"flexGrow": 0.4
+			},
+			"left": 0,
+			"maxHeight": 70,
+			"testId": "GL-bPqCEz",
+			"top": 0
+		},
+		"&-lblForgotPassword": {
+			"font": {
+				"size": 14,
+				"bold": false,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Medium"
+			},
+			"marginBottom": 20,
+			"maxHeight": 25,
+			"testId": "g4mLeQV5F",
+			"textAlignment": "MIDRIGHT",
+			"textColor": "rgba( 24, 23, 37, 1 )"
+		},
+		"&-flfooter": {
+			"flexProps": {
+				"flexDirection": "ROW",
+				"flexGrow": 1
+			},
+			"height": null,
+			"testId": "PGmVHNP2q",
+			"width": null
+		},
+		"&-lblLeft": {
+			"flexProps": {
+				"flexGrow": 5
+			},
+			"font": {
+				"size": 14,
+				"bold": true,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Bold"
+			},
+			"left": 0,
+			"testId": "JYm46Rkkf",
+			"textAlignment": "MIDRIGHT",
+			"textColor": "rgba( 24, 23, 37, 1 )",
+			"top": 0
+		},
+		"&-lblRouteSignUp": {
+			"flexProps": {
+				"flexGrow": 3
+			},
+			"font": {
+				"size": 14,
+				"bold": true,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Bold"
+			},
+			"left": 0,
+			"testId": "JYm46Rkkf",
+			"textAlignment": "MIDLEFT",
+			"textColor": "rgba( 83, 177, 117, 1 )",
+			"top": 0
+		}
+	}
+}

@@ -100,6 +100,29 @@
 			"backgroundColor": "#4F8A10"
 		}
 	},
+    ".sf-button-logout": {
+        "width": null,
+		"height": 67,
+		"touchEnabled": true,
+		"visible": true,
+		"backgroundColor": "#F2F3F2",
+		"alpha": 1,
+		"borderWidth": 0,
+		"borderRadius": 19,
+		"textColor": "${green}",
+		"textAlignment": "MIDCENTER",
+		"font": {
+			"size": 16,
+			"bold": true,
+			"italic": false,
+			"family": "Nunito",
+            "style": "bold"
+		},
+		"flexProps": {
+			"positionType": "RELATIVE",
+			"alignSelf": "AUTO"
+		}
+    },
 	".sf": {
 		"&-button": {
 			"&-addToBasket": {

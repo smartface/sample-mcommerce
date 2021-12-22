@@ -1,0 +1,144 @@
+{
+	"#pgSignUp": {
+		"backgroundColor": "rgba( 255, 255, 255, 1 )",
+		"paddingBottom": null,
+		"paddingLeft": null,
+		"paddingRight": null,
+		"paddingTop": null,
+		"&-statusbar": {
+			"android": {
+				"color": "rgba( 242, 243, 242, 1 )"
+			},
+			"style": "DEFAULT"
+		},
+		"&-headerbar": {
+			"visible": false
+		},
+		"&-imagebackground": {
+			"bottom": 0,
+			"flexProps": {
+				"positionType": "ABSOLUTE",
+				"flexGrow": 1
+			},
+			"height": null,
+			"image": "background.png",
+			"imageFillType": "ASPECTFILL",
+			"left": 0,
+			"right": 0,
+			"testId": "tv6lNzMRn",
+			"top": 0
+		},
+		"&-flcontainer": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"height": null,
+			"left": 0,
+			"marginBottom": null,
+			"marginTop": null,
+			"testId": "Xauh3YMK1",
+			"top": 0,
+			"width": null
+		},
+		"&-logo": {
+			"height": null,
+			"image": "logo.png",
+			"imageFillType": "NORMAL",
+			"testId": "zw0_J-c-V",
+			"width": 70,
+			"flexProps": {
+				"flexGrow": 1.5,
+				"alignSelf": "CENTER"
+			}
+		},
+		"&-title": {
+			"flexProps": {
+				"flexGrow": 0.5
+			},
+			"font": {
+				"size": 26,
+				"bold": true,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Bold"
+			},
+			"marginBottom": null,
+			"marginLeft": 25,
+			"marginTop": null,
+			"testId": "ENQ28sM4T",
+			"textColor": "rgba( 24, 23, 37, 1 )"
+		},
+		"&-text": {
+			"flexProps": {
+				"flexGrow": 0.5
+			},
+			"font": {
+				"size": 16,
+				"bold": true,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Bold"
+			},
+			"marginBottom": 25,
+			"marginLeft": 25,
+			"marginTop": null,
+			"maxHeight": 35,
+			"testId": "4NLXvX9K-",
+			"textColor": "rgba( 124, 124, 124, 1 )"
+		},
+		"&-flform": {
+			"flexProps": {
+				"flexGrow": 5
+			},
+			"height": null,
+			"paddingLeft": 25,
+			"paddingRight": 25,
+			"testId": "jw-epfTzH"
+		},
+		"&-mtbusername": {
+			"borderColor": "rgba( 226, 226, 226, 1 )",
+			"flex": {
+				"positionType": 0
+			},
+			"flexProps": {
+				"positionType": "RELATIVE",
+				"flexGrow": 0.5
+			},
+			"left": 0,
+			"marginLeft": null,
+			"marginRight": null,
+			"testId": "PvOO3p5kc",
+			"top": 0
+		},
+		"&-mtbemail": {
+			"flex": {
+				"positionType": 0
+			},
+			"flexProps": {
+				"positionType": "RELATIVE",
+				"flexGrow": 0.5
+			},
+			"left": 0,
+			"marginLeft": null,
+			"marginRight": null,
+			"testId": "Mnb1SYj-t",
+			"top": 0
+		},
+		"&-mtbpassword": {
+			"backgroundColor": "rgba( 255, 255, 255, 0 )",
+			"borderColor": "rgba( 226, 226, 226, 1 )",
+			"flex": {
+				"positionType": 0
+			},
+			"flexProps": {
+				"positionType": "RELATIVE",
+				"flexGrow": 0.5
+			},
+			"left": 0,
+			"marginLeft": null,
+			"marginRight": null,
+			"testId": "GL-bPqCEz",
+			"top": 0
+		}
+	}
+}

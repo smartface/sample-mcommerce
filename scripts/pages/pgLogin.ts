@@ -42,6 +42,12 @@ export default class PgLogin extends PgLoginDesign {
            if (found) {
                const isPasswordTrue = found.password == this.mtbPassword.materialTextBox.text
                if (isPasswordTrue) {
+                store.dispatch({
+                    type: "SET_CURRENT_USER",
+                    payload: {
+                      data: found
+                    }
+                  })
                 this.router.push('/btb/tab1/home')
                }
            }

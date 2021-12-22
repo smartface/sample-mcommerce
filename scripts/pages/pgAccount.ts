@@ -1,6 +1,7 @@
 import PgAccountDesign from 'generated/pages/pgAccount';
 import store from '../store/index'
 import LviAccount from 'components/LviAccount';
+import FlAccountUser from 'components/FlAccountUser';
 export default class PgAccount extends PgAccountDesign {
 
 	constructor() {
@@ -22,6 +23,12 @@ export default class PgAccount extends PgAccountDesign {
         this.listViewAccount.itemCount = accountMenus.length;
         this.listViewAccount.refreshData();
     }
+    initAccountUser() {
+        this.flAccountUser.userName = store.getState().currentUser[0].fullName
+        this.flAccountUser.userEmail = store.getState().currentUser[0].email
+        this.flAccountUser.userEditIcon = ''
+        this.flAccountUser.userImage = store.getState().currentUser
+    }
 }
 
 /**
@@ -42,4 +49,5 @@ function onShow(this: PgAccount, superOnShow: () => void) {
 function onLoad(this: PgAccount, superOnLoad: () => void) {
 	superOnLoad();
     this.initAccountListView()
+    this.initAccountUser()
 }

@@ -111,18 +111,21 @@ const initialState = {
         fullName: 'Eren Kan',
         email: 'eren.kan@smartface.io',
         password: '1234',
+        profileImage: 'userprofilephoto.png'
     },
     {
         id: 2,
         fullName: 'Fuat Guzel',
         email: 'fuat.guzel@smartface.io',
         password: '12345',
+        profileImage: 'userprofilephoto.png'
     },
     {
         id: 3,
         fullName: 'Smartface',
         email: 'smartface',
         password: '1234',
+        profileImage: 'userprofilephoto.png'
     }],
     accountMenus:[{
         menuId: 1,
@@ -163,13 +166,17 @@ const initialState = {
         menuId: 8,
         menuTitle: 'About',
         menuLeftIcon: ''
-    }]
+    }],
+    currentUser:[]
 };
 
 const initAction = (state = initialState, action) => {
     switch (action.type) {
         case "SET_NEW_USER":
             state.users.push(action.payload.data)
+            return state
+        case "SET_CURRENT_USER":
+            state.currentUser.push(action.payload.data)
             return state
         default:
             return state;

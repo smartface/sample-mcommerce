@@ -13,9 +13,11 @@
 			"flexProps": {
 				"alignSelf": "CENTER"
 			},
-			"height": 70,
 			"testId": "PSD2wLj0u",
-			"width": 70
+			"borderRadius": 10,
+			"width": 70,
+			"height": 70,
+			"imageFillType": "NORMAL"
 		},
 		"&-flAccountRightWrapper": {
 			"flexProps": {
@@ -28,7 +30,6 @@
 				"flexProps": {
 					"flexDirection": "ROW"
 				},
-				"height": 50,
 				"testId": "hFJc5ecen",
 				"&-lblAccountName": {
 					"flexProps": {
@@ -42,7 +43,8 @@
 						"bold": true,
 						"italic": false
 					}
-				}
+				},
+				"maxHeight": 35
 			}
 		},
 		"&-lblAccountName": {
@@ -53,9 +55,35 @@
 				"family": "Nunito",
 				"style": "Bold",
 				"bold": true,
-				"italic": false
+				"italic": false,
+				"size": 20
 			},
-            "textColor": "${textDark}"
+			"textColor": "${textDark}"
+		},
+		"&-lblAccountEditIcon": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"textColor": "${green}",
+			"height": null,
+			"testId": "6CQsyavfZ",
+			"font": {
+				"family": "FontAwesome5FreeSolid",
+				"style": null,
+				"bold": false,
+				"italic": false
+			}
+		},
+		"&-lblAccountEmail": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"textColor": "${textLight}",
+			"height": null,
+			"testId": "URBRTUozX",
+			"font": {
+				"size": 16
+			}
 		}
 	}
 }
