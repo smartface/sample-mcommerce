@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviAccount",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "7c3a-8a07-e689-a636",
 			"props": {
 				"children": [
@@ -19,8 +19,8 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"left": "18",
-				"top": "158"
+				"left": "13.33",
+				"top": "244.44"
 			}
 		},
 		{

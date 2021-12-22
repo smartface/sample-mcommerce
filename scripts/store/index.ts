@@ -129,55 +129,60 @@ const initialState = {
     }],
     accountMenus:[{
         menuId: 1,
-        menuTitle: 'Orders',
+        menuTitle: 'orders',
         menuLeftIcon: ''
     },
     {
         menuId: 2,
-        menuTitle: 'Settings',
+        menuTitle: 'settings',
         menuLeftIcon: ''
     },
     {
         menuId: 3,
-        menuTitle: 'My Details',
+        menuTitle: 'myDetails',
         menuLeftIcon:''
     },
     {
         menuId: 4,
-        menuTitle: 'Payment Methods',
+        menuTitle: 'paymentMethods',
         menuLeftIcon: ''
     },
     {
         menuId: 5,
-        menuTitle: 'Promo Card',
+        menuTitle: 'promo',
         menuLeftIcon: ''
     },
     {
         menuId: 6,
-        menuTitle: 'Notifications',
+        menuTitle: 'notifications',
         menuLeftIcon: ''
     },
     {
         menuId: 7,
-        menuTitle: 'Help',
+        menuTitle: 'help',
         menuLeftIcon: ''
     },
     {
         menuId: 8,
-        menuTitle: 'About',
-        menuLeftIcon: ''
+        menuTitle: 'about',
+        menuLeftIcon: ''
     }],
     currentUser:[]
 };
 
 const initAction = (state = initialState, action) => {
     switch (action.type) {
+        case "RESET":
+            state.currentUser = [];
+            console.log('new',state)
+            return state; 
         case "SET_NEW_USER":
             state.users.push(action.payload.data)
             return state
         case "SET_CURRENT_USER":
             state.currentUser.push(action.payload.data)
             return state
+        
         default:
             return state;
     }

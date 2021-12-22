@@ -2,7 +2,11 @@ import PgAccountDesign from 'generated/pages/pgAccount';
 import store from '../store/index'
 import LviAccount from 'components/LviAccount';
 import FlAccountUser from 'components/FlAccountUser';
+import View from '@smartface/native/ui/view';
+import Application from '@smartface/native/application';
+import Data from '@smartface/native/global/data';
 export default class PgAccount extends PgAccountDesign {
+    router: any;
 
 	constructor() {
 		super();
@@ -10,6 +14,19 @@ export default class PgAccount extends PgAccountDesign {
 		this.onShow = onShow.bind(this, this.onShow.bind(this));
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+
+        this.btnLogout.on(View.Events.Touch, () => {
+            store.dispatch({
+                type: "RESET"
+              })
+              this.router.push('/pages/pgLogin')
+        })
+        this.button1.on(View.Events.Touch, () => {
+            // SMF.i18n.switchLanguage('tr');
+            Data.setStringVariable('language', 'tr');
+            Application.restart();
+        })
+
 	}
     initAccountListView() {
         const accountMenus = store.getState().accountMenus;
@@ -24,10 +41,11 @@ export default class PgAccount extends PgAccountDesign {
         this.listViewAccount.refreshData();
     }
     initAccountUser() {
+        console.log('CURRENT USER',store.getState().currentUser)
         this.flAccountUser.userName = store.getState().currentUser[0].fullName
         this.flAccountUser.userEmail = store.getState().currentUser[0].email
         this.flAccountUser.userEditIcon = ''
-        this.flAccountUser.userImage = store.getState().currentUser
+        this.flAccountUser.userImage = store.getState().currentUser[0].profileImage
     }
 }
 
@@ -39,6 +57,8 @@ export default class PgAccount extends PgAccountDesign {
  */
 function onShow(this: PgAccount, superOnShow: () => void) {
 	superOnShow();
+    this.initAccountUser()
+
 }
 
 /**
@@ -49,5 +69,4 @@ function onShow(this: PgAccount, superOnShow: () => void) {
 function onLoad(this: PgAccount, superOnLoad: () => void) {
 	superOnLoad();
     this.initAccountListView()
-    this.initAccountUser()
 }

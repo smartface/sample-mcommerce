@@ -1,12 +1,13 @@
 {
 	".lviAccount": {
-		"height": 80,
+		"height": 50,
 		"testId": "z0eTIT50X",
 		"flexProps": {},
 		"&-flAccountWrapper": {
 			"flexProps": {
 				"flexGrow": 1,
-				"flexDirection": "ROW"
+				"flexDirection": "ROW",
+				"alignItems": "CENTER"
 			},
 			"&-lblAccountLeftIcon": {
 				"font": {

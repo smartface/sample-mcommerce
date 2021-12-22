@@ -32,4 +32,5 @@ export default class FlAccountUser extends FlAccountUserDesign {
     set userImage(value: any) {
         this.imgUserAccount.image = Image.createFromFile(`images://${value}`)
     }
+    
 }

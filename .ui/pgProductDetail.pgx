@@ -57,7 +57,8 @@
 			"userProps": {
 				"backgroundColor": "rgba( 126, 211, 33, 1 )",
 				"backgroundImage": "backbtn.png",
-				"transparent": true
+				"transparent": true,
+				"visible": true
 			}
 		},
 		{

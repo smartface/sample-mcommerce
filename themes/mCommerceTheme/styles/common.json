@@ -15,8 +15,8 @@
 		"height": 100
 	},
 	".padding": {
-		"paddingLeft": 15,
-		"paddingRight": 15,
+		"paddingLeft": 25,
+		"paddingRight": 25,
 		"paddingTop": 15,
 		"paddingBottom": 15
 	}

@@ -65,7 +65,14 @@
 	".sf": {
 		"&-headerBar": {
 			"backgroundColor": "rgba( 74, 162, 226, 1 )",
-			"titleColor": "rgba( 0, 0, 0, 1 )"
+			"titleColor": "rgba( 0, 0, 0, 1 )",
+			"visible": false
+		},
+		"&-statusBar": {
+			"style": "DEFAULT",
+			"android": {
+				"color": "rgba( 255, 255, 255, 1 )"
+			}
 		}
 	}
 }

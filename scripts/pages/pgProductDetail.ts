@@ -43,7 +43,7 @@ function onShow(this: PgProductDetail, superOnShow: () => void) {
 	superOnShow();
  
     if (System.OS !== 'iOS') {
-          Application.statusBar.visible = true;
+    Application.statusBar.visible = true;
     Application.statusBar.backgroundColor = Color.create("#F2F3F2")
       }
     this.productDetailPrice.text = `$${this.routeData.productPrice}`

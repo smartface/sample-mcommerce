@@ -10,6 +10,22 @@
 			},
 			"marginTop": 0,
 			"marginBottom": 0
+		},
+		"&-flUsetTop": {
+			"height": 120,
+			"testId": "UH-f2cR5F",
+			"paddingLeft": 15,
+			"paddingRight": 15
+		},
+		"&-flBottomButton": {
+			"testId": "Z9b378u7r",
+			"flexProps": {
+				"flexGrow": 1,
+				"justifyContent": "CENTER"
+			},
+			"height": null,
+			"paddingLeft": 20,
+			"paddingRight": 20
 		}
 	}
 }

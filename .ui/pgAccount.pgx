@@ -10,7 +10,8 @@
 					"64f0-4598-a7d6-2aa7",
 					"34f9-ff0e-c9ef-6724",
 					"fc95-5a4f-f83c-ea45",
-					"3795-4ef3-5faf-0aeb"
+					"d44f-e70e-91d5-902f",
+					"7b7a-be35-a602-1625"
 				],
 				"name": "pgAccount",
 				"orientation": "PORTRAIT",
@@ -34,6 +35,7 @@
 		},
 		{
 			"className": ".sf-headerBar",
+			"hiddenComponent": true,
 			"id": "64f0-4598-a7d6-2aa7",
 			"props": {
 				"children": [],
@@ -48,7 +50,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout #pgAccount-flUsetTop",
 			"id": "34f9-ff0e-c9ef-6724",
 			"props": {
 				"children": [
@@ -60,8 +62,7 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"height": 120,
-				"testId": "UH-f2cR5F",
+				"testId": "Uil20QW3H",
 				"usePageVariable": true
 			}
 		},
@@ -107,6 +108,9 @@
 			},
 			"type": "ListView",
 			"userProps": {
+				"flexProps": {
+					"flexGrow": 4
+				},
 				"testId": "B1geQCWNo",
 				"usePageVariable": true
 			}
@@ -134,17 +138,50 @@
 			}
 		},
 		{
+			"className": ".sf-flexLayout #pgAccount-flBottomButton",
+			"id": "d44f-e70e-91d5-902f",
+			"props": {
+				"children": [
+					"dac5-d938-cfc1-c38f"
+				],
+				"name": "flBottomButton",
+				"parent": "1f1d-7f9b-25d3-8c1b"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
 			"className": ".sf-button .sf-button-logout",
-			"id": "3795-4ef3-5faf-0aeb",
+			"id": "dac5-d938-cfc1-c38f",
+			"props": {
+				"children": [],
+				"name": "btnLogout",
+				"parent": "d44f-e70e-91d5-902f",
+				"text": "Logout",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"testId": "ijwVstqGy",
+				"text": "Logout",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button",
+			"id": "7b7a-be35-a602-1625",
 			"props": {
 				"children": [],
 				"name": "button1",
 				"parent": "1f1d-7f9b-25d3-8c1b",
-				"text": "button1"
+				"text": "button1",
+				"usePageVariable": true
 			},
 			"type": "Button",
 			"userProps": {
-				"text": "button1"
+				"testId": "anJY1rcDk",
+				"text": "button1",
+				"usePageVariable": true
 			}
 		}
 	]

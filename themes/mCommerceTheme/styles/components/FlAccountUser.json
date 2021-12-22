@@ -17,18 +17,21 @@
 			"borderRadius": 10,
 			"width": 70,
 			"height": 70,
-			"imageFillType": "NORMAL"
+			"imageFillType": "ASPECTFIT"
 		},
 		"&-flAccountRightWrapper": {
 			"flexProps": {
-				"flexGrow": 1
+				"flexGrow": 1,
+				"justifyContent": "CENTER"
 			},
 			"height": null,
 			"marginLeft": 20,
 			"testId": "OE7mL7f4M",
 			"&-flAccountRightTopWrapper": {
+				"height": null,
 				"flexProps": {
-					"flexDirection": "ROW"
+					"flexDirection": "ROW",
+					"flexGrow": 1
 				},
 				"testId": "hFJc5ecen",
 				"&-lblAccountName": {
@@ -44,8 +47,12 @@
 						"italic": false
 					}
 				},
-				"maxHeight": 35
-			}
+				"maxHeight": 30,
+				"marginBottom": 0,
+				"marginTop": 0
+			},
+			"marginTop": 0,
+			"marginBottom": 0
 		},
 		"&-lblAccountName": {
 			"flexProps": {
@@ -82,8 +89,15 @@
 			"height": null,
 			"testId": "URBRTUozX",
 			"font": {
-				"size": 16
-			}
+				"size": 16,
+				"family": "Nunito",
+				"style": "Medium",
+				"bold": false,
+				"italic": false
+			},
+			"marginBottom": 0,
+			"marginTop": 0,
+			"maxHeight": 30
 		}
 	}
 }

@@ -1,6 +1,15 @@
-SMF.i18n.defineLanguage('tr', {
+SMF.i18n.defineLanguage('tr', { 
+  orders: 'Siparişlerim',
+  settings: 'Ayarlar',
+  logout: 'Çıkış Yap',
+  myDetails: 'Detaylar',
+  paymentMethods: 'Ödeme Yöntemleri',
+  promo: 'Promosyon',
+  notifications: 'Bildirimler',
   cancel: 'İptal',
   copy: 'Kopyala',
+  help: 'Yardım',
+  about: 'Hakkında',
   done: 'Yapıldı',
   copyURL: 'Adresi Kopyala',
   cut: 'Kes',
@@ -47,4 +56,5 @@ SMF.i18n.defineLanguage('tr', {
   scanFaceIDTitle: 'FaceID ile oturum aç',
   scanFaceIDMessage: 'Yüzünü tarat',
   chooseNavigationApp: 'Navigasyon uygulaması seç',
+
 });

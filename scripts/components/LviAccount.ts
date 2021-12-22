@@ -28,7 +28,8 @@ export default class LviAccount extends LviAccountDesign {
         return this.lblAccountLviTitle.text;
     }
     set itemTitle(value: string) {
-        this.lblAccountLviTitle.text = value
+        this.lblAccountLviTitle.text = global.lang[value]
+        
     }
     get leftIcon(): string {
         return this.lblAccountLeftIcon.text;

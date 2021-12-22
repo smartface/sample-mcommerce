@@ -1,4 +1,13 @@
 SMF.i18n.defineLanguage('en', {
+ orders: 'Orders',
+  settings: 'Settings',
+  logout: 'Logout',
+  myDetails: 'My Details',
+  paymentMethods: 'Payment Methods',
+  promo: 'Promotion',
+  notifications: 'Notifications',
+  help: 'Help',
+  about: 'About',
   cancel: 'Cancel',
   copy: 'Copy',
   done: 'Done',
