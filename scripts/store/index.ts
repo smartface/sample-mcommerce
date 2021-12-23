@@ -109,6 +109,7 @@ const initialState = {
     users: [{
         id: 1,
         fullName: 'Eren Kan',
+        username: 'erenkan',
         email: 'eren.kan@smartface.io',
         password: '1234',
         profileImage: 'userprofilephoto.png'
@@ -116,6 +117,7 @@ const initialState = {
     {
         id: 2,
         fullName: 'Fuat Guzel',
+        username: 'fuatguzel',
         email: 'fuat.guzel@smartface.io',
         password: '12345',
         profileImage: 'userprofilephoto.png'
@@ -123,6 +125,7 @@ const initialState = {
     {
         id: 3,
         fullName: 'Smartface',
+        username: 'smartface',
         email: 'smartface',
         password: '1234',
         profileImage: 'userprofilephoto.png'

@@ -17,6 +17,8 @@ export default class PgProductDetail extends PgProductDetailDesign {
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
         this.headerBar.title = ""
+
+        this.btnAddToBasket.text = global.lang.addToBasket
 	}
     addLeftItem() {
         this.leftItem = new HeaderBarItem();
@@ -43,7 +45,7 @@ function onShow(this: PgProductDetail, superOnShow: () => void) {
 	superOnShow();
  
     if (System.OS !== 'iOS') {
-    Application.statusBar.visible = true;
+          Application.statusBar.visible = true;
     Application.statusBar.backgroundColor = Color.create("#F2F3F2")
       }
     this.productDetailPrice.text = `$${this.routeData.productPrice}`

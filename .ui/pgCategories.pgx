@@ -13,10 +13,13 @@
 				],
 				"name": "pgCategories",
 				"orientation": "PORTRAIT",
-				"parent": null
+				"parent": null,
+				"safeAreaEnabled": true
 			},
 			"type": "Page",
-			"userProps": {},
+			"userProps": {
+				"safeAreaEnabled": true
+			},
 			"version": "0.0.1.a"
 		},
 		{
@@ -53,7 +56,8 @@
 			"props": {
 				"children": [],
 				"name": "flSearchBar",
-				"parent": "e257-a066-7008-14e9"
+				"parent": "e257-a066-7008-14e9",
+				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__",
@@ -77,7 +81,8 @@
 				"height": 50,
 				"left": 0,
 				"testId": "J2CceLIhb",
-				"top": 0
+				"top": 0,
+				"usePageVariable": true
 			}
 		},
 		{

@@ -46,5 +46,5 @@ import 'i18n/de';
 import 'i18n/en';
 import 'i18n/fi';
 import 'i18n/tr';
-
+//Data.getStringVariable('language') ? Data.getStringVariable('language') : 
 SMF.i18n.switchLanguage(Data.getStringVariable('language') ? Data.getStringVariable('language') : Device.language);

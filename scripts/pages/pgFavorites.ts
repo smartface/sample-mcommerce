@@ -12,6 +12,8 @@ export default class PgFavorites extends PgFavoritesDesign {
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+
+        this.btnAddAllToCart.text = global.lang.addAllToCart
     }
     initFavoriteList() {
         const products = store.getState().products;
@@ -35,6 +37,7 @@ export default class PgFavorites extends PgFavoritesDesign {
  */
 function onShow(this: PgFavorites, superOnShow: () => void) {
     superOnShow();
+    this.headerBar.title = global.lang.favouriteHeader
 }
 
 /**

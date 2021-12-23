@@ -1,13 +1,13 @@
 import PgWelcomeDesign from 'generated/pages/pgWelcome';
-import Screen from '@smartface/native/device/screen';
 import View from '@smartface/native/ui/view';
+import System from '@smartface/native/device/system';
+import Application from '@smartface/native/application';
+import Color from '@smartface/native/ui/color';
 
 export default class PgWelcome extends PgWelcomeDesign {
     router: any
 	constructor() {
 		super();
-        imgHeight: 4096
-        imgWidth: 2734
 		// Overrides super.onShow method
 		this.onShow = onShow.bind(this, this.onShow.bind(this));
 		// Overrides super.onLoad method
@@ -15,16 +15,10 @@ export default class PgWelcome extends PgWelcomeDesign {
         this.btnStart.on(View.Events.Touch, () => {
             this.router.push('/pages/pgNumber')
         })
+        this.lblWelcome.text = global.lang.welcomeText
+        this.lblSubtext.text = global.lang.welcomeSubText
+        this.btnStart.text = global.lang.getStarted
 	}
-    initImageView() {
-        // this.imageView1.top = 0
-        // this.imageView1.right = 0
-        // this.imageView1.bottom = 0
-        // this.imageView1.left = 0
-        //this.imageView1.width = Screen.width
-        //this.imageView1.height = Screen.height
-    }
-
 }
 
 /**
@@ -35,6 +29,10 @@ export default class PgWelcome extends PgWelcomeDesign {
  */
 function onShow(this: PgWelcome, superOnShow: () => void) {
 	superOnShow();
+    if (System.OS !== 'iOS') {
+        Application.statusBar.visible = true;
+        Application.statusBar.backgroundColor = Color.WHITE
+    }
 }
 
 /**
@@ -44,5 +42,4 @@ function onShow(this: PgWelcome, superOnShow: () => void) {
  */
 function onLoad(this: PgWelcome, superOnLoad: () => void) {
 	superOnLoad();
-    this.initImageView()
 }

@@ -38,12 +38,12 @@
 				"children": [],
 				"isRemovable": false,
 				"name": "headerBar",
-				"parent": "e27f-743b-23a5-ea3b",
-				"title": "pgFavorites"
+				"parent": "e27f-743b-23a5-ea3b"
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"title": "pgFavorites"
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"visible": true
 			}
 		},
 		{
@@ -119,13 +119,11 @@
 				"children": [],
 				"name": "btnAddAllToCart",
 				"parent": "4dca-3168-2b63-80c9",
-				"text": "Add All To Card",
 				"usePageVariable": true
 			},
 			"type": "Button",
 			"userProps": {
 				"testId": "GsVkZ-Ujf",
-				"text": "Add All To Card",
 				"usePageVariable": true
 			}
 		}

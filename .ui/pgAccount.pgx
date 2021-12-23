@@ -10,15 +10,17 @@
 					"64f0-4598-a7d6-2aa7",
 					"34f9-ff0e-c9ef-6724",
 					"fc95-5a4f-f83c-ea45",
-					"d44f-e70e-91d5-902f",
-					"7b7a-be35-a602-1625"
+					"d44f-e70e-91d5-902f"
 				],
 				"name": "pgAccount",
 				"orientation": "PORTRAIT",
-				"parent": null
+				"parent": null,
+				"safeAreaEnabled": true
 			},
 			"type": "Page",
-			"userProps": {},
+			"userProps": {
+				"safeAreaEnabled": true
+			},
 			"version": "0.0.1.a"
 		},
 		{
@@ -157,30 +159,11 @@
 				"children": [],
 				"name": "btnLogout",
 				"parent": "d44f-e70e-91d5-902f",
-				"text": "Logout",
 				"usePageVariable": true
 			},
 			"type": "Button",
 			"userProps": {
 				"testId": "ijwVstqGy",
-				"text": "Logout",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-button",
-			"id": "7b7a-be35-a602-1625",
-			"props": {
-				"children": [],
-				"name": "button1",
-				"parent": "1f1d-7f9b-25d3-8c1b",
-				"text": "button1",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"testId": "anJY1rcDk",
-				"text": "button1",
 				"usePageVariable": true
 			}
 		}

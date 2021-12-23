@@ -73,7 +73,7 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"testId": "sp7dFNsg_",
+				"testId": "CaqsSllZG",
 				"usePageVariable": true
 			}
 		},
@@ -84,11 +84,12 @@
 				"children": [],
 				"name": "lblTitle",
 				"parent": "7965-324e-6485-6fca",
-				"text": "Enter your mobile number"
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
-				"text": "Enter your mobile number"
+				"testId": "R2I0U01pLp",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -98,11 +99,12 @@
 				"children": [],
 				"name": "lblText",
 				"parent": "7965-324e-6485-6fca",
-				"text": "Mobile Number"
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
-				"text": "Mobile Number"
+				"testId": "0w8UcYPOo1",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -113,10 +115,14 @@
 					"f070-b89e-b3ec-4eee"
 				],
 				"name": "flContainer",
-				"parent": "49ad-4e86-8aa1-37db"
+				"parent": "49ad-4e86-8aa1-37db",
+				"usePageVariable": true
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"testId": "bEZGVk71sA",
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgNumber-mtbNumber",
@@ -148,10 +154,14 @@
 					"21cd-590b-cdee-f5e3"
 				],
 				"name": "flFooter",
-				"parent": "49ad-4e86-8aa1-37db"
+				"parent": "49ad-4e86-8aa1-37db",
+				"usePageVariable": true
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"testId": "uRMxR0PQBK",
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-button .sf-button-router #pgNumber-btnroute",

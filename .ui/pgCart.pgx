@@ -1,0 +1,108 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "036b-b8d7-fe5a-9b69",
+			"initialized": true,
+			"props": {
+				"children": [
+					"1594-c983-b696-ce6f",
+					"4574-8647-13e2-80d6",
+					"e838-3c9e-cc50-7be6",
+					"1ffc-7576-487c-2c4d"
+				],
+				"name": "pgCart",
+				"orientation": "PORTRAIT",
+				"parent": null,
+				"safeAreaEnabled": true
+			},
+			"type": "Page",
+			"userProps": {
+				"flexProps": {
+					"justifyContent": "SPACE_BETWEEN"
+				},
+				"safeAreaEnabled": true
+			},
+			"version": "0.0.1.a",
+			"degree": 0
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "1594-c983-b696-ce6f",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "036b-b8d7-fe5a-9b69"
+			},
+			"type": "StatusBar",
+			"userProps": {},
+			"degree": 1
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "4574-8647-13e2-80d6",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "036b-b8d7-fe5a-9b69"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"visible": true
+			},
+			"degree": 1
+		},
+		{
+			"className": ".sf-flexLayout",
+			"hiddenComponent": false,
+			"id": "e838-3c9e-cc50-7be6",
+			"props": {
+				"children": [],
+				"name": "flCart",
+				"parent": "036b-b8d7-fe5a-9b69",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flexLayout1",
+				"id": "407f-47ad-cb94-06c1"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"flexDirection": 2,
+					"positionType": 0
+				},
+				"flexProps": {
+					"flexDirection": "ROW",
+					"positionType": "RELATIVE"
+				},
+				"height": 150,
+				"left": 0,
+				"testId": "8t_Itsu-4",
+				"top": 0,
+				"usePageVariable": true
+			},
+			"degree": 1
+		},
+		{
+			"className": ".sf-button .sf-button-main",
+			"id": "1ffc-7576-487c-2c4d",
+			"props": {
+				"children": [],
+				"name": "btnGoToCheckOut",
+				"parent": "036b-b8d7-fe5a-9b69",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"usePageVariable": true,
+				"testId": "ydvrzrtz7"
+			},
+			"degree": 1
+		}
+	]
+}

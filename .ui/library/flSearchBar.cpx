@@ -54,8 +54,8 @@
 					"size": 17,
 					"bold": true,
 					"italic": false,
-					"family": "SFProText",
-					"style": "Semibold"
+					"family": "Nunito",
+					"style": "Bold"
 				},
 				"height": null,
 				"hint": "Search Store",

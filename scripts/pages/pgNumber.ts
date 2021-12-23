@@ -4,6 +4,7 @@ import KeyboardType from '@smartface/native/ui/keyboardtype';
 import Application from '@smartface/native/application';
 import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
+import System from '@smartface/native/device/system';
 
 export default class PgNumber extends PgNumberDesign {
     router: any;
@@ -15,23 +16,17 @@ export default class PgNumber extends PgNumberDesign {
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
-        // this.imgBack.on(View.Events.Touch, () => {
-        //     this.router.goBack();
-        // })
-
         this.btnRoute.on(View.Events.Touch, () => {
             this.router.push('/pages/pgVerification')
         })
-        
-        //this.mtbNumber.keyboardType = KeyboardType.NUMBER
+        this.lblTitle.text = global.lang.enterMobilNumberText
+        this.lblText.text = global.lang.mobileNumber
 	}
     initMaterialTextBox() {
         this.mtbNumber.options = {
-            //hint: "+90",
             text: "+90"
         }
         this.mtbNumber.materialTextBox.keyboardType = KeyboardType.NUMBER;
-        //this.mtbPassword.rightLayout = { view: this.imgShow, width: 30 };
     }
     addHeaderWithDirectImage() {
         this.leftItem = new HeaderBarItem();
@@ -49,10 +44,10 @@ export default class PgNumber extends PgNumberDesign {
  */
 function onShow(this: PgNumber, superOnShow: () => void) {
 	superOnShow();
-    Application.statusBar.visible = true;
-    //Application.statusBar.backgroundColor = Color.create("#000fff");
-    //this.headerbaritem.title = "Naber"
-    //this.headerBar.setLeftItem(this.headerbaritem)
+    if (System.OS !== 'iOS') {
+        Application.statusBar.visible = true;
+        Application.statusBar.backgroundColor = Color.WHITE
+    }
 }
 
 /**

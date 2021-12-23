@@ -15,7 +15,7 @@ import Application from '@smartface/native/application';
 backClose.setDefaultBackStyle({ image: Image.createFromFile("images://backbtn.png"), hideTitle: true });
 backClose.dismissBuilder = () => {
     return {
-        image: Image.createFromFile('images://tabiconuser.png'),
+        image: Image.createFromFile('images://backbtn.png'),
         position: backClose.DismissPosition.LEFT
     };
 };
@@ -92,11 +92,11 @@ const router = Router.of({
                 backgroundColor: Color.create("#FFFFFF"),
             }),
             items: [
-                { title: "Shop", icon: Image.createFromFile('images://tabiconhome.png') },
-                { title: "Explore", icon: Image.createFromFile('images://tabiconexplore.png') },
-                { title: "Cart", icon: Image.createFromFile('images://tabiconcart.png') },
-                { title: "Favourite", icon: Image.createFromFile('images://tabiconfavorite.png') },
-                { title: "Account", icon: Image.createFromFile('images://tabiconuser.png') },
+                { title: global.lang.shop, icon: Image.createFromFile('images://tabiconhome.png') },
+                { title: global.lang.explore, icon: Image.createFromFile('images://tabiconexplore.png') },
+                { title: global.lang.cart, icon: Image.createFromFile('images://tabiconcart.png') },
+                { title: global.lang.favourite, icon: Image.createFromFile('images://tabiconfavorite.png') },
+                { title: global.lang.account, icon: Image.createFromFile('images://tabiconuser.png') },
             ],
             // tab1
             routes: [
@@ -140,11 +140,11 @@ const router = Router.of({
                 }),
                 StackRouter.of({
                     path: "/btb/tab3",
-                    to: "/btb/tab3/pgWelcome",
+                    to: "/btb/tab3/cart",
                     routes: [
                         Route.of({
-                            path: "/btb/tab3/pgWelcome",
-                            build: buildExtender({ getPageClass: () => require("pages/pgWelcome").default, headerBarStyle: { visible: true } })
+                            path: "/btb/tab3/cart",
+                            build: buildExtender({ getPageClass: () => require("pages/pgCart").default, headerBarStyle: { visible: true } })
                         })
                     ],
                 }),
@@ -165,7 +165,18 @@ const router = Router.of({
                         Route.of({
                             path: "/btb/tab5/account",
                             build: buildExtender({ getPageClass: () => require("pages/pgAccount").default, headerBarStyle: { visible: true } })
-                        })
+                        }),
+                        StackRouter.of({
+                            path: "/btb/tab5/settings",
+                            to: "/btb/tab5/settings/main",
+                            modal: true,
+                            routes: [
+                                Route.of({
+                                    path: "/btb/tab5/settings/main",
+                                    build: buildExtender({ getPageClass: () => require("pages/pgUserSettings").default, headerBarStyle: { visible: true } })
+                                })
+                            ],
+                        }),
                     ],
                 })
             ]

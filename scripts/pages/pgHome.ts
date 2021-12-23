@@ -14,6 +14,11 @@ export default class PgHome extends PgHomeDesign {
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+
+        this.lblOffer.text = global.lang['exclusiveOffer']
+        this.lblOfferSeeAll.text = global.lang['seeAll']
+        this.lblBestSeller.text = global.lang['bestSeller']
+        this.lblBestSellerSeeAll.text = global.lang['seeAll']
     }
 
     initCategoriesGrid() {

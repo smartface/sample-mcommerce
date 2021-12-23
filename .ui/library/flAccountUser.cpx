@@ -2,6 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flAccountUser",
+			"hiddenComponent": true,
 			"id": "f4e3-277e-950f-74f8",
 			"props": {
 				"children": [

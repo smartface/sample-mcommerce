@@ -162,9 +162,9 @@
 			"id": "70b7-96ac-8681-bd1d",
 			"props": {
 				"children": [],
-				"name": "label1",
+				"name": "lblOffer",
 				"parent": "eeab-198d-d262-c5aa",
-				"text": "Exclusive Offer"
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
@@ -179,8 +179,8 @@
 					"style": "Bold"
 				},
 				"testId": "ie1LkcAmH",
-				"text": "Exclusive Offer",
 				"textColor": "rgba( 24, 23, 37, 1 )",
+				"usePageVariable": true,
 				"width": null
 			}
 		},
@@ -189,9 +189,9 @@
 			"id": "5972-90d9-3a43-6bf2",
 			"props": {
 				"children": [],
-				"name": "label2",
+				"name": "lblOfferSeeAll",
 				"parent": "eeab-198d-d262-c5aa",
-				"text": "See All"
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
@@ -206,9 +206,9 @@
 					"style": "Bold"
 				},
 				"testId": "HSCjAuEI3",
-				"text": "See All",
 				"textAlignment": "MIDRIGHT",
-				"textColor": "rgba( 83, 177, 117, 1 )"
+				"textColor": "rgba( 83, 177, 117, 1 )",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -310,9 +310,9 @@
 			"id": "2123-6e12-2bcb-1cee",
 			"props": {
 				"children": [],
-				"name": "label1",
+				"name": "lblBestSeller",
 				"parent": "1896-be42-865e-0f50",
-				"text": "Best Seller"
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
@@ -327,8 +327,8 @@
 					"style": "Bold"
 				},
 				"testId": "ie1LkcAmH",
-				"text": "Best Seller",
 				"textColor": "rgba( 24, 23, 37, 1 )",
+				"usePageVariable": true,
 				"width": null
 			}
 		},
@@ -337,9 +337,9 @@
 			"id": "861f-4fa5-86aa-e25f",
 			"props": {
 				"children": [],
-				"name": "label2",
+				"name": "lblBestSellerSeeAll",
 				"parent": "1896-be42-865e-0f50",
-				"text": "See All"
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
@@ -354,9 +354,9 @@
 					"style": "Bold"
 				},
 				"testId": "HSCjAuEI3",
-				"text": "See All",
 				"textAlignment": "MIDRIGHT",
-				"textColor": "rgba( 83, 177, 117, 1 )"
+				"textColor": "rgba( 83, 177, 117, 1 )",
+				"usePageVariable": true
 			}
 		},
 		{

@@ -1,3 +1,5 @@
+import Application from '@smartface/native/application';
+import System from '@smartface/native/device/system';
 import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import KeyboardType from '@smartface/native/ui/keyboardtype';
@@ -14,23 +16,21 @@ export default class PgVerification extends PgVerificationDesign {
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
-        // this.imgBack.on(View.Events.Touch, () => {
-        //     this.router.goBack();
-        // })
-
         this.btnRouter.on(View.Events.Touch, () => {
             this.router.push('/pages/pgLogin')
         })
-        //this.tbCode.keyboardType = KeyboardType.NUMBER
+
+        this.lblTitle.text = global.lang.enterdigitcode
+        this.lblText.text = global.lang.code
+        this.lblResend.text = global.lang.resendCode
 	}
     initMaterialTextBox() {
         this.mtbNumber.options = {
-            //hint: "",
-            //text: "smartface"
+            hint: "",
+            text: ""
         }
         
         this.mtbNumber.materialTextBox.keyboardType = KeyboardType.NUMBER;
-        //this.mtbPassword.rightLayout = { view: this.imgShow, width: 30 };
     }
     addHeaderWithDirectImage() {
         this.leftItem = new HeaderBarItem();
@@ -48,6 +48,10 @@ export default class PgVerification extends PgVerificationDesign {
  */
 function onShow(this: PgVerification, superOnShow: () => void) {
 	superOnShow();
+    if (System.OS !== 'iOS') {
+        Application.statusBar.visible = true;
+        Application.statusBar.backgroundColor = Color.WHITE
+    }
 }
 
 /**

@@ -2,6 +2,9 @@ import PgLoginDesign from 'generated/pages/pgLogin';
 import ImageView from '@smartface/native/ui/imageview';
 import View from '@smartface/native/ui/view';
 import store from 'store/index'
+import Application from '@smartface/native/application';
+import System from '@smartface/native/device/system';
+import Color from '@smartface/native/ui/color';
 export default class PgLogin extends PgLoginDesign {
     router: any
 	constructor() {
@@ -19,21 +22,22 @@ export default class PgLogin extends PgLoginDesign {
         this.btnLogIn.on(View.Events.Touch, () => {
              this.initUserLogin()
         })
-        // this.imgShow = new ImageView({
-        //     height: 20,
-        //     image: "images://eye.png",
-        //     imageFillType: ImageView.FillType.ASPECTFIT
-        // });
+        this.lblTitle.text = global.lang.login
+        this.lblText.text = global.lang.loginSubText
+        this.lblForgotPassword.text = global.lang.forgotPassword
+        this.btnLogIn.text = global.lang.login
+
+        this.lblLeft.text = global.lang.donthaveanaccount
+        this.lblRouteSignUp.text = global.lang.signup
 	}
     initMaterialTextBoxes() {
         this.mtbLogin.options = {
-            hint: "Email"
+            hint: global.lang.email
         };
         this.mtbPassword.options = {
-            hint: "Password"
+            hint: global.lang.password
         };
         this.mtbPassword.materialTextBox.isPassword = true;
-        //this.mtbPassword.rightLayout = { view: this.imgShow, width: 30 };
     }
     initUserLogin(){
          if (this.mtbLogin.materialTextBox.text && this.mtbLogin.materialTextBox.text !== '' && this.mtbPassword.materialTextBox.text && this.mtbPassword.materialTextBox.text !== '') {
@@ -51,7 +55,6 @@ export default class PgLogin extends PgLoginDesign {
                 this.router.push('/btb/tab1/home')
                }
            }
-    
          }
     }
 }
@@ -64,6 +67,10 @@ export default class PgLogin extends PgLoginDesign {
  */
 function onShow(this: PgLogin, superOnShow: () => void) {
 	superOnShow();
+    if (System.OS !== 'iOS') {
+        Application.statusBar.visible = true;
+        Application.statusBar.backgroundColor = Color.WHITE
+    }
 }
 
 /**

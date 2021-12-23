@@ -12,6 +12,8 @@ export { default as pgCategories } from './pgCategories';
 export { default as pgFavorites } from './pgFavorites';
 export { default as pgProductDetail } from './pgProductDetail';
 export { default as pgAccount } from './pgAccount';
+export { default as pgUserSettings } from './pgUserSettings';
+export { default as pgCart } from './pgCart'
 
 
 

@@ -5,9 +5,7 @@
 		"paddingRight": 0,
 		"paddingTop": 0,
 		"&-statusbar": {
-			"android": {
-				"color": "rgba( 255, 255, 255, 0 )"
-			},
+			"android": {},
 			"style": "DEFAULT"
 		},
 		"&-headerbar": {
@@ -45,7 +43,7 @@
 			"testId": "zw0_J-c-V",
 			"width": 70,
 			"flexProps": {
-				"flexGrow": 1,
+				"flexGrow": 1.5,
 				"alignSelf": "CENTER"
 			}
 		},

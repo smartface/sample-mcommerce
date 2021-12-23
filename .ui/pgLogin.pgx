@@ -98,11 +98,12 @@
 				"children": [],
 				"name": "lblTitle",
 				"parent": "9503-8d4b-931f-3afe",
-				"text": "Login"
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
-				"text": "Login"
+				"testId": "Hye5Ja0v_",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -112,11 +113,12 @@
 				"children": [],
 				"name": "lblText",
 				"parent": "9503-8d4b-931f-3afe",
-				"text": "Enter your emails and password"
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
-				"text": "Enter your emails and password"
+				"testId": "DFjFEbC9Yn",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -188,13 +190,11 @@
 				"children": [],
 				"name": "lblForgotPassword",
 				"parent": "b572-513a-69d9-501f",
-				"text": "Forgot Password?",
 				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
 				"testId": "kmHMfpMHf",
-				"text": "Forgot Password?",
 				"usePageVariable": true
 			}
 		},
@@ -205,13 +205,11 @@
 				"children": [],
 				"name": "btnLogIn",
 				"parent": "b572-513a-69d9-501f",
-				"text": "Log In",
 				"usePageVariable": true
 			},
 			"type": "Button",
 			"userProps": {
 				"testId": "LGkCVcClMB",
-				"text": "Log In",
 				"usePageVariable": true
 			}
 		},
@@ -229,12 +227,16 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW"
+				},
 				"testId": "RLSTHRh4l",
 				"usePageVariable": true
 			}
 		},
 		{
 			"className": ".sf-label #pgLogin-lblLeft",
+			"hiddenComponent": true,
 			"id": "e85e-6514-edb3-f609",
 			"props": {
 				"children": [],
@@ -245,13 +247,14 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"testId": "VmXTEX7ILv",
+				"testId": "tpVhjtcbD",
 				"text": "Don’t have an account? ",
 				"usePageVariable": true
 			}
 		},
 		{
 			"className": ".sf-label #pgLogin-lblRouteSignUp",
+			"hiddenComponent": true,
 			"id": "b60f-803f-5f9e-4650",
 			"props": {
 				"children": [],

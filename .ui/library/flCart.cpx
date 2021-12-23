@@ -1,0 +1,366 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout",
+			"id": "407f-47ad-cb94-06c1",
+			"props": {
+				"children": [
+					"ecce-e3b1-8dd2-947e",
+					"7e2c-61ce-b39e-7488"
+				],
+				"name": "flCart",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW"
+				},
+				"height": 150,
+				"left": "7.27",
+				"testId": "8t_Itsu-4",
+				"top": "149.09"
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "ecce-e3b1-8dd2-947e",
+			"props": {
+				"children": [],
+				"name": "imgProduct",
+				"parent": "407f-47ad-cb94-06c1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"image": "appledetail.png",
+				"imageFillType": "ASPECTFIT",
+				"testId": "XfDQCq2bR",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "7e2c-61ce-b39e-7488",
+			"props": {
+				"children": [
+					"c0ca-1653-f318-65a6",
+					"98b9-efd1-512d-9c6e",
+					"224d-4bcc-ca2e-2fd8"
+				],
+				"name": "flCartDetail",
+				"parent": "407f-47ad-cb94-06c1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 3
+				},
+				"height": null,
+				"testId": "faXwQMbW_",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "c0ca-1653-f318-65a6",
+			"props": {
+				"children": [
+					"3920-6f76-7112-af5d",
+					"2350-ca76-73d3-7b5d"
+				],
+				"name": "flexLayout1",
+				"parent": "7e2c-61ce-b39e-7488"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "ROW"
+				},
+				"height": null,
+				"maxHeight": 50,
+				"testId": "X7ApqAdS-"
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "3920-6f76-7112-af5d",
+			"props": {
+				"children": [],
+				"name": "lblProductName",
+				"parent": "c0ca-1653-f318-65a6",
+				"text": "Apple",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 3
+				},
+				"font": {
+					"size": 16,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"testId": "lmfuMkXN_",
+				"text": "Apple",
+				"textColor": "rgba( 24, 23, 37, 1 )",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "2350-ca76-73d3-7b5d",
+			"props": {
+				"children": [],
+				"name": "lblCloseIcon",
+				"parent": "c0ca-1653-f318-65a6",
+				"text": "",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 20,
+					"bold": false,
+					"italic": false,
+					"family": "FontAwesome5FreeSolid",
+					"style": null
+				},
+				"testId": "V7hXg88Aj",
+				"text": "",
+				"textAlignment": "MIDRIGHT",
+				"textColor": "rgba( 179, 179, 179, 1 )",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "98b9-efd1-512d-9c6e",
+			"props": {
+				"children": [],
+				"name": "lblProductInfo",
+				"parent": "7e2c-61ce-b39e-7488",
+				"text": "1kg, price",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"font": {
+					"size": 14,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"height": 30,
+				"testId": "DhxO3bzI2",
+				"text": "1kg, price",
+				"textColor": "rgba( 179, 179, 179, 1 )",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "224d-4bcc-ca2e-2fd8",
+			"props": {
+				"children": [
+					"c0e8-6a9f-1c9b-a81a",
+					"b425-6fdd-f1d4-29d9",
+					"dd1b-1840-ca90-85ed",
+					"0e67-c2eb-dfbf-3c15"
+				],
+				"name": "flCartBottom",
+				"parent": "7e2c-61ce-b39e-7488",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1,
+					"flexDirection": "ROW",
+					"justifyContent": "CENTER",
+					"alignContent": "STRETCH",
+					"alignItems": "CENTER"
+				},
+				"height": null,
+				"testId": "uYyO0G5Tq",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "c0e8-6a9f-1c9b-a81a",
+			"props": {
+				"children": [],
+				"name": "lblMinusIcon",
+				"parent": "224d-4bcc-ca2e-2fd8",
+				"text": "",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"borderColor": "rgba( 226, 226, 226, 1 )",
+				"borderRadius": 10,
+				"borderWidth": 1,
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 17,
+					"bold": false,
+					"italic": false,
+					"family": "FontAwesome5FreeSolid",
+					"style": null
+				},
+				"height": 40,
+				"testId": "pHaVqIRCF",
+				"text": "",
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 179, 179, 179, 1 )",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "b425-6fdd-f1d4-29d9",
+			"props": {
+				"children": [],
+				"name": "lblProductCount",
+				"parent": "224d-4bcc-ca2e-2fd8",
+				"text": "1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 17,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"height": 40,
+				"testId": "LGnWBeATD",
+				"text": "1",
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 24, 23, 37, 1 )",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "dd1b-1840-ca90-85ed",
+			"props": {
+				"children": [],
+				"name": "lblProductPlus",
+				"parent": "224d-4bcc-ca2e-2fd8",
+				"text": "",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"borderColor": "rgba( 226, 226, 226, 1 )",
+				"borderRadius": 10,
+				"borderWidth": 1,
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 17,
+					"bold": false,
+					"italic": false,
+					"family": "FontAwesome5FreeSolid",
+					"style": null
+				},
+				"height": 40,
+				"testId": "LRhISyR81",
+				"text": "",
+				"textAlignment": "MIDCENTER",
+				"textColor": "rgba( 83, 177, 117, 1 )",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "0e67-c2eb-dfbf-3c15",
+			"props": {
+				"children": [],
+				"name": "lblProductPrice",
+				"parent": "224d-4bcc-ca2e-2fd8",
+				"text": "$1.99",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 4
+				},
+				"font": {
+					"size": 18,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"height": 40,
+				"testId": "juWT9KqSV",
+				"text": "$1.99",
+				"textAlignment": "MIDRIGHT",
+				"textColor": "rgba( 24, 23, 37, 1 )",
+				"usePageVariable": true
+			}
+		}
+	]
+}

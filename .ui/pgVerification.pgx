@@ -90,10 +90,14 @@
 					"27ad-42ae-0b35-af0d"
 				],
 				"name": "flContainer",
-				"parent": "8492-4718-26bc-e27d"
+				"parent": "8492-4718-26bc-e27d",
+				"usePageVariable": true
 			},
 			"type": "FlexLayout",
-			"userProps": {},
+			"userProps": {
+				"usePageVariable": true,
+				"testId": "yIVMhDdq4"
+			},
 			"degree": 1
 		},
 		{
@@ -105,10 +109,14 @@
 					"3789-482c-3270-8316"
 				],
 				"name": "flFooter",
-				"parent": "8492-4718-26bc-e27d"
+				"parent": "8492-4718-26bc-e27d",
+				"usePageVariable": true
 			},
 			"type": "FlexLayout",
-			"userProps": {},
+			"userProps": {
+				"testId": "8B_IHCwxm",
+				"usePageVariable": true
+			},
 			"degree": 1
 		},
 		{
@@ -118,11 +126,12 @@
 				"children": [],
 				"name": "lblTitle",
 				"parent": "bc97-52fe-89a2-3552",
-				"text": "Enter your 4-digit code"
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
-				"text": "Enter your 4-digit code"
+				"testId": "zuloFww0F",
+				"usePageVariable": true
 			},
 			"degree": 2
 		},
@@ -156,11 +165,12 @@
 				"children": [],
 				"name": "lblResend",
 				"parent": "d5b7-091a-cdf0-06b6",
-				"text": "Resend Code"
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
-				"text": "Resend Code"
+				"testId": "TNAgtlBn4a",
+				"usePageVariable": true
 			},
 			"degree": 2
 		},
@@ -171,11 +181,12 @@
 				"children": [],
 				"name": "lblText",
 				"parent": "bc97-52fe-89a2-3552",
-				"text": "Code"
+				"usePageVariable": true
 			},
 			"type": "Label",
 			"userProps": {
-				"text": "Code"
+				"testId": "3FSfPnmRuo",
+				"usePageVariable": true
 			},
 			"degree": 2
 		},
@@ -191,9 +202,9 @@
 			},
 			"type": "Button",
 			"userProps": {
+				"testId": "TBBFJv9aJ",
 				"text": "",
-				"usePageVariable": true,
-				"testId": "TBBFJv9aJ"
+				"usePageVariable": true
 			},
 			"degree": 2
 		}

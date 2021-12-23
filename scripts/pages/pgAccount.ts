@@ -21,12 +21,13 @@ export default class PgAccount extends PgAccountDesign {
               })
               this.router.push('/pages/pgLogin')
         })
-        this.button1.on(View.Events.Touch, () => {
-            // SMF.i18n.switchLanguage('tr');
-            Data.setStringVariable('language', 'tr');
-            Application.restart();
-        })
+        // this.button1.on(View.Events.Touch, () => {
+        //     // SMF.i18n.switchLanguage('tr');
+        //     Data.setStringVariable('language', 'en');
+        //     Application.restart();
+        // })
 
+        this.btnLogout.text = global.lang.logout
 	}
     initAccountListView() {
         const accountMenus = store.getState().accountMenus;
@@ -36,6 +37,11 @@ export default class PgAccount extends PgAccountDesign {
             listViewItem.leftIcon = accountMenus[index].menuLeftIcon
             listViewItem.bottomLine = index == accountMenus.length - 1
         };
+        this.listViewAccount.onRowSelected = (listViewItem: LviAccount, index: number) => {
+            if(index == 1)
+            this.router.push('/btb/tab5/settings') 
+        }
+
         this.listViewAccount.onRowHeight = (index) => LviAccount.getHeight();
         this.listViewAccount.itemCount = accountMenus.length;
         this.listViewAccount.refreshData();

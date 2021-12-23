@@ -20,32 +20,35 @@ export default class PgSignUp extends PgSignUpDesign {
         this.btnSignUp.on(View.Events.Touch, () => {
             this.initUserSignup()
         })
+        this.lblTitle.text = global.lang.signup
+        this.lblText.text = global.lang.signupSubText
+        this.btnSignUp.text = global.lang.signup
+        this.lblFooterLeft.text = global.lang.alreadyhaveanaccount
+        this.lblRouteLogin.text = global.lang.login
 	}
     initMaterialTextBoxes() {
         this.mtbUsername.options = {
-            hint: "Username",
-            //text: "smartface"
+            hint: global.lang.username
         };
         this.mtbEmail.options = {
-            hint: "Email",
-            //text: "username@smartface.io"
+            hint: global.lang.email
         };
         this.mtbPassword.options = {
-            hint: "Password",
-            //text: "●●●●●●●"
+            hint: global.lang.password
         };
         this.mtbPassword.materialTextBox.isPassword = true;
-        
-        //this.mtbPassword.rightLayout = { view: this.imgShow, width: 30 };
     }
     initUserSignup(){
       let userPayload = {
+          fullName: null,
           username: null,
           password: null,
           email: null,
+          profileImage: 'userprofilephoto.png'
       }
       userPayload.email = this.mtbEmail.materialTextBox.text.trim();
       userPayload.username = this.mtbUsername.materialTextBox.text.trim();
+      userPayload.fullName = this.mtbUsername.materialTextBox.text.trim();
       userPayload.password = this.mtbPassword.materialTextBox.text.trim(); 
        
       store.dispatch({
@@ -70,17 +73,6 @@ function onShow(this: PgSignUp, superOnShow: () => void) {
     Application.statusBar.visible = true;
     Application.statusBar.backgroundColor = Color.WHITE
   }
-    //@ts-ignore
-    // this.mtbUsername.materialTextBox.dispatch({
-    //     type: "updateUserStyle",
-    //     userStyle: {
-    //         lineColor: {
-    //             normal: '#7c7c7c',
-    //             selected: "#00ff54"
-
-    //         }
-    //     }         
-    // })
 }
 
 /**
