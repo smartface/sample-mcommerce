@@ -2,6 +2,7 @@ import { createStore } from "redux";
 
 const initialState = {
     products: [{
+        id: 1,
         name: 'Sprite Can',
         description: '325ml, Price',
         price: 4.99,
@@ -9,6 +10,7 @@ const initialState = {
         categoryId: 6,
     },
     {
+        id: 2,
         name: 'Diet Coke',
         description: '325ml, Price',
         price: 1.99,
@@ -16,6 +18,7 @@ const initialState = {
         categoryId: 6,
     },
     {
+        id: 3,
         name: 'Orange Juice',
         description: '325ml, Price',
         price: 4.99,
@@ -23,6 +26,7 @@ const initialState = {
         categoryId: 6,
     },
     {
+        id: 4,
         name: 'Organic Bananas',
         description: '12kg, Price',
         price: 4.99,
@@ -30,6 +34,7 @@ const initialState = {
         categoryId: 6,
     },
     {
+        id: 5,
         name: 'Ginger',
         description: '250g, Price',
         price: 4.99,
@@ -37,6 +42,7 @@ const initialState = {
         categoryId: 6,
     },
     {
+        id: 6,
         name: 'Egg Chicken Red',
         description: '4pcs, Price',
         price: 1.99,
@@ -44,6 +50,7 @@ const initialState = {
         categoryId: 6,
     },
     {
+        id: 7,
         name: 'Beef',
         description: '1kg, Price',
         price: 4.99,
@@ -51,6 +58,7 @@ const initialState = {
         categoryId: 6,
     },
     {
+        id: 8,
         name: 'Chicken',
         description: '1kg, Price',
         price: 4.99,
@@ -105,7 +113,15 @@ const initialState = {
 
     },
     ],
-    basket: [],
+    basket: [{
+        id: 8,
+        name: 'Chicken',
+        description: '1kg, Price',
+        price: 4.99,
+        image: 'chicken.png',
+        count: 1,
+        categoryId: 6,
+    }],
     users: [{
         id: 1,
         fullName: 'Eren Kan',
@@ -130,7 +146,7 @@ const initialState = {
         password: '1234',
         profileImage: 'userprofilephoto.png'
     }],
-    accountMenus:[{
+    accountMenus: [{
         menuId: 1,
         menuTitle: 'orders',
         menuLeftIcon: ''
@@ -143,7 +159,7 @@ const initialState = {
     {
         menuId: 3,
         menuTitle: 'myDetails',
-        menuLeftIcon:''
+        menuLeftIcon: ''
     },
     {
         menuId: 4,
@@ -170,22 +186,35 @@ const initialState = {
         menuTitle: 'about',
         menuLeftIcon: ''
     }],
-    currentUser:[]
+    currentUser: []
 };
 
 const initAction = (state = initialState, action) => {
     switch (action.type) {
         case "RESET":
             state.currentUser = [];
-            console.log('new',state)
-            return state; 
+            console.log('new', state)
+            return state;
         case "SET_NEW_USER":
             state.users.push(action.payload.data)
             return state
         case "SET_CURRENT_USER":
             state.currentUser.push(action.payload.data)
             return state
-        
+        case "ADD_TO_BASKET":
+            let currentBasket = state.basket
+            if (currentBasket.some(pId => pId.id === action.payload.data.product.id)) {
+             currentBasket.map(product => {
+                 if (product.id === action.payload.data.product.id) {                     
+                     return product.count += action.payload.data.count;
+                 }
+             })
+             state.basket = currentBasket;
+            } else {
+                action.payload.data.product.count = action.payload.data.count;
+                state.basket.push(action.payload.data.product)
+            }
+            return state
         default:
             return state;
     }

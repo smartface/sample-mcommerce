@@ -73,6 +73,22 @@
 			"android": {
 				"color": "rgba( 255, 255, 255, 1 )"
 			}
+		},
+		"&-button": {
+			"&-addToBasket": {
+				"&-countplus": {},
+				"&-countminus": {
+					"borderWidth": 0
+				}
+			}
+		},
+		"&-listViewItem": {
+			"&-simple": {
+				"&-line": {
+					"left": 16,
+					"right": 16
+				}
+			}
 		}
 	}
 }

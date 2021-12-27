@@ -1,9 +1,9 @@
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
-import FlCartDesign from 'generated/my-components/FlCartItem';
 import Image from '@smartface/native/ui/image';
-const originalHeight = getCombinedStyle('.lviFavorites').height;
+import LviCartItemDesign from 'generated/my-components/LviCartItem';
+const originalHeight = getCombinedStyle('.lviCartItem').height;
 
-export default class FlCart extends FlCartDesign {
+export default class LviCartItem extends LviCartItemDesign {
 	pageName?: string | undefined;
 	constructor(props?: any, pageName?: string) {
 		// Initalizes super class for this scope
@@ -12,6 +12,7 @@ export default class FlCart extends FlCartDesign {
 	}
     static getHeight(): number {
         return originalHeight;
+        
     }
     get productName(): string {
         return this.lblProductName.text;
@@ -35,6 +36,18 @@ export default class FlCart extends FlCartDesign {
         return this.lblProductPrice.text;
     }
     set productPrice(value: string) {
-        this.lblProductPrice.text = value
+        this.lblProductPrice.text = `$${value}`
+    }
+    set productCount(value: string) {
+        this.lblProductCount.text = value
+    }
+    get productCount(): string {
+        return this.lblProductCount.text;
+    }
+    get bottomLine(): boolean {
+        return this.flCartItemBottomLine.visible;
+    }
+    set bottomLine(value: boolean) {
+        this.flCartItemBottomLine.visible = value
     }
 }

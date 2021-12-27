@@ -1,0 +1,296 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviCartItem",
+			"hiddenComponent": false,
+			"id": "9653-a462-6015-ef3e",
+			"props": {
+				"children": [
+					"35c3-e163-bec4-bb97",
+					"edfa-85f5-1097-3827"
+				],
+				"name": "lviCartItem",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {
+				"flexProps": {},
+				"left": "17.50",
+				"testId": "2CR5Jw8Wo",
+				"top": "69.50"
+			}
+		},
+		{
+			"className": ".sf-flexLayout .lviCartItem-flCartItem",
+			"id": "35c3-e163-bec4-bb97",
+			"props": {
+				"children": [
+					"6a25-ce5d-481c-14ea",
+					"f952-22fb-543b-46c7"
+				],
+				"name": "flCartItem",
+				"parent": "9653-a462-6015-ef3e",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView .lviCartItem-flCartItem-imgProduct",
+			"id": "6a25-ce5d-481c-14ea",
+			"props": {
+				"children": [],
+				"name": "imgProduct",
+				"parent": "35c3-e163-bec4-bb97",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .lviCartItem-flCartItem-flCartDetail",
+			"id": "f952-22fb-543b-46c7",
+			"props": {
+				"children": [
+					"0572-6011-46f2-93c7",
+					"4062-d3be-638d-0e7e",
+					"9bd5-61dc-e712-7eb9"
+				],
+				"name": "flCartDetail",
+				"parent": "35c3-e163-bec4-bb97",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 3
+				},
+				"marginLeft": 15,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .lviCartItem-flCartItem-flCartDetail-flCartItemHead",
+			"id": "0572-6011-46f2-93c7",
+			"props": {
+				"children": [
+					"87b3-be31-5849-7e65",
+					"22a3-dab8-93f5-71d9"
+				],
+				"name": "flCartItemHead",
+				"parent": "f952-22fb-543b-46c7"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-label .lviCartItem-lblProductName",
+			"id": "87b3-be31-5849-7e65",
+			"props": {
+				"children": [],
+				"name": "lblProductName",
+				"parent": "0572-6011-46f2-93c7",
+				"text": "Apple",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "Apple",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .lviCartItem-lblCloseIcon",
+			"id": "22a3-dab8-93f5-71d9",
+			"props": {
+				"children": [],
+				"name": "lblCloseIcon",
+				"parent": "0572-6011-46f2-93c7",
+				"text": "",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .lviCartItem-flCartItem-flCartDetail-lblProductInfo",
+			"id": "4062-d3be-638d-0e7e",
+			"props": {
+				"children": [],
+				"name": "lblProductInfo",
+				"parent": "f952-22fb-543b-46c7",
+				"text": "1kg, price",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"alignSelf": "AUTO"
+				},
+				"text": "1kg, price",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .lviCartItem-flCartItem-flCartDetail-flCartBottom",
+			"id": "9bd5-61dc-e712-7eb9",
+			"props": {
+				"children": [
+					"2d39-5a2b-559b-5a7b",
+					"4cd4-d19a-c01b-5acc",
+					"4e67-9eff-89d7-51c9",
+					"848a-4c1e-fd04-3f0a"
+				],
+				"name": "flCartBottom",
+				"parent": "f952-22fb-543b-46c7",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button .sf-button-addToBasket-countminus",
+			"id": "2d39-5a2b-559b-5a7b",
+			"props": {
+				"children": [],
+				"name": "btnCartMinus",
+				"parent": "9bd5-61dc-e712-7eb9",
+				"text": "",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"android": {
+					"elevation": 0
+				},
+				"text": "",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .lviCartItem-flCartItem-flCartDetail-flCartBottom-lblProductCount",
+			"id": "4cd4-d19a-c01b-5acc",
+			"props": {
+				"children": [],
+				"name": "lblProductCount",
+				"parent": "9bd5-61dc-e712-7eb9",
+				"text": "1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button .sf-button-addToBasket-countplus",
+			"id": "4e67-9eff-89d7-51c9",
+			"props": {
+				"children": [],
+				"name": "btnCartPlus",
+				"parent": "9bd5-61dc-e712-7eb9",
+				"text": "",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"android": {
+					"elevation": 0
+				},
+				"text": "",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .lviCartItem-flCartItem-flCartDetail-flCartBottom-lblProductPrice",
+			"id": "848a-4c1e-fd04-3f0a",
+			"props": {
+				"children": [],
+				"name": "lblProductPrice",
+				"parent": "9bd5-61dc-e712-7eb9",
+				"text": "$1.99",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"alignSelf": "AUTO"
+				},
+				"text": "$1.99",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .sf-listViewItem-simple-line",
+			"id": "edfa-85f5-1097-3827",
+			"props": {
+				"children": [],
+				"name": "flCartItemBottomLine",
+				"parent": "9653-a462-6015-ef3e",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"left": 14,
+				"right": 14,
+				"usePageVariable": true
+			}
+		}
+	]
+}

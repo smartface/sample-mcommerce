@@ -1,9 +1,9 @@
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
-import FlCartDesign from 'generated/my-components/FlCartItem';
 import Image from '@smartface/native/ui/image';
+import FlCartItemDesign from 'generated/my-components/FlCartItem';
 const originalHeight = getCombinedStyle('.lviFavorites').height;
 
-export default class FlCart extends FlCartDesign {
+export default class FlCartItem extends FlCartItemDesign {
 	pageName?: string | undefined;
 	constructor(props?: any, pageName?: string) {
 		// Initalizes super class for this scope

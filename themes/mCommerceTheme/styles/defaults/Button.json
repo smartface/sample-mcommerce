@@ -61,6 +61,52 @@
 			"alignSelf": "AUTO"
 		}
 	},
+    ".sf-button-addToBasket-countplus": {
+		"width": 45,
+		"height": 45,
+		"touchEnabled": true,
+		"visible": true,
+		"backgroundColor": "${white}",
+		"borderRadius": 17,
+        "borderWidth": 1,
+        "borderColor": "${grayBorder}",
+		"textColor": "${green}",
+		"textAlignment": "MIDCENTER",
+		"font": {
+			"family": "FontAwesome5FreeSolid",
+            "style": null,
+            "bold": false,
+            "italic": false,
+            "size": 17
+		},
+		"flexProps": {
+			"positionType": "RELATIVE",
+			"alignSelf": "AUTO"
+		}
+	},
+    ".sf-button-addToBasket-countminus": {
+		"width": 45,
+		"height": 45,
+		"touchEnabled": true,
+		"visible": true,
+		"backgroundColor": "${white}",
+		"borderRadius": 17,
+        "borderColor": "${grayLightBorder}",
+        "borderWidth": 1,
+		"textColor": "${grayTextColor}",
+		"textAlignment": "MIDCENTER",
+		"font": {
+			"family": "FontAwesome5FreeSolid",
+            "style": null,
+            "bold": false,
+            "italic": false,
+            "size": 17
+		},
+		"flexProps": {
+			"positionType": "RELATIVE",
+			"alignSelf": "AUTO"
+		}
+	},
 	".sf-button-router": {
 		"width": 67,
 		"height": 67,

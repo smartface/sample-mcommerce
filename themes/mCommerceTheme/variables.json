@@ -6,5 +6,9 @@
     "transparent": "rgba(255,255,255,0)",
     "backgroundMain": "#00A1F1",
     "genericImage": "images://smartface.png",
-    "grayBorder": "E2E2E2"
+    "grayBorder": "#E2E2E2",
+    "grayLightBorder":"#F0F0F0",
+    "grayTextColor": "#B3B3B3"
+
+
 }

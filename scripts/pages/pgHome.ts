@@ -8,6 +8,7 @@ import Color from '@smartface/native/ui/color';
 
 export default class PgHome extends PgHomeDesign {
     router:any
+
     constructor() {
         super();
         // Overrides super.onShow method
@@ -21,7 +22,7 @@ export default class PgHome extends PgHomeDesign {
         this.lblBestSellerSeeAll.text = global.lang['seeAll']
     }
 
-    initCategoriesGrid() {
+    initProductsGrid() {
         const products = store.getState().products;
         this.productsGrid.scrollBarEnabled = false;
         this.productsGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
@@ -29,23 +30,49 @@ export default class PgHome extends PgHomeDesign {
             GridViewItem.itemDesc = products[index].description
             GridViewItem.itemImage = products[index].image
             GridViewItem.itemPrice = `$${products[index].price}`
+            GridViewItem.onActionClick = function () {
+                GridViewItem.initIndicator();
+                GridViewItem.toggleIndicator(true);
+                store.dispatch({
+                    type: "ADD_TO_BASKET",
+                    payload: {
+                      data: {
+                          product: products[index],
+                          count: 1
+                      }
+                    }
+                  })
+                 setTimeout(() => {
+                    GridViewItem.toggleIndicator(false);
+                 }, 1000);
+
+            }.bind(GridViewItem);           
         }
         this.productsGrid.itemCount = products.length;
 
         this.productsBestSellerGrid.scrollBarEnabled = false;
         this.productsBestSellerGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
-            GridViewItem.gviProductItemImg.on(View.Events.Touch, () => {
-                this.router.push('/btb/tab1/productDetail/main', {
-                  productName: products[index].name,
-                  productPrice: products[index].price,
-                  productDescription:products[index].description,
-                  productImg:products[index].image
-                })
-            })
             GridViewItem.itemTitle = products[index].name
             GridViewItem.itemDesc = products[index].description
             GridViewItem.itemImage = products[index].image
             GridViewItem.itemPrice = `$${products[index].price}`
+            GridViewItem.onActionClick = function () {
+                GridViewItem.initIndicator();
+                GridViewItem.toggleIndicator(true);
+                store.dispatch({
+                    type: "ADD_TO_BASKET",
+                    payload: {
+                      data: {
+                          product: products[index],
+                          count: 1
+                      }
+                    }
+                  })
+                 setTimeout(() => {
+                    GridViewItem.toggleIndicator(false);
+                }, 1000);
+
+            }.bind(GridViewItem);   
         }
         this.productsBestSellerGrid.itemCount = products.length;
 
@@ -91,7 +118,7 @@ function onLoad(this: PgHome, superOnLoad: () => void) {
     // this.headerBar.title = 'Maltepe, Istanbul'
     // this.headerBar.backgroundColor = Color.WHITE;
     // this.headerBar.android.elevation = 0;
-     this.initCategoriesGrid();
-    this.scrollView1.autoSizeEnabled= true;
+     this.initProductsGrid();
+    this.scrollView1.autoSizeEnabled = true;
     this.scrollView1.layout.applyLayout
 }
