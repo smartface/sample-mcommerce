@@ -69,7 +69,8 @@
 					"5f25-2031-4f8e-ff3b"
 				],
 				"name": "scrollView2",
-				"parent": "9495-c1b8-4521-aab3"
+				"parent": "9495-c1b8-4521-aab3",
+				"usePageVariable": true
 			},
 			"type": "ScrollView",
 			"userProps": {
@@ -79,7 +80,8 @@
 				"height": null,
 				"marginBottom": null,
 				"marginTop": null,
-				"testId": "44iFp8F24"
+				"testId": "44iFp8F24",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -900,7 +902,8 @@
 					"c2e0-851b-08cf-798e"
 				],
 				"name": "flexLayout4",
-				"parent": "9495-c1b8-4521-aab3"
+				"parent": "9495-c1b8-4521-aab3",
+				"usePageVariable": true
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -911,7 +914,8 @@
 					"justifyContent": "CENTER"
 				},
 				"height": 80,
-				"testId": "gDzKGuCdCu"
+				"testId": "gDzKGuCdCu",
+				"usePageVariable": true
 			}
 		},
 		{

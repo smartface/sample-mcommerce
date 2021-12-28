@@ -46,7 +46,9 @@
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"title": "pgLogin"
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"title": "pgLogin",
+				"visible": true
 			}
 		},
 		{

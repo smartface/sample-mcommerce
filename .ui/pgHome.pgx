@@ -43,12 +43,12 @@
 				"children": [],
 				"isRemovable": false,
 				"name": "headerBar",
-				"parent": "0cc7-c9f0-ae49-184b",
-				"title": "pgHome"
+				"parent": "0cc7-c9f0-ae49-184b"
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"title": "pgHome"
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"visible": true
 			}
 		},
 		{

@@ -10,48 +10,47 @@ import store from 'store';
 import { isJSDocThisTag } from 'typescript';
 
 export default class PgProductDetail extends PgProductDetailDesign {
-    router: any
-    leftItem: HeaderBarItem
-    rightItem: HeaderBarItem
-    routeData: any
-	constructor() {
-		super();
-		// Overrides super.onShow method
-		this.onShow = onShow.bind(this, this.onShow.bind(this));
-		// Overrides super.onLoad method
-		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        this.headerBar.title = ""
-        this.btnAddToBasket.text = global.lang.addToBasket
-        
-	}
-    addLeftItem() {
-        this.leftItem = new HeaderBarItem();
-        this.leftItem.image = "images://backbtn.png";
-        this.leftItem.color = Color.BLACK;
-        this.headerBar.setLeftItem(this.leftItem);
-    }
-    addRightItem() {
-        this.rightItem = new HeaderBarItem();
-        this.rightItem.image = "images://share.png";
-        this.rightItem.color = Color.BLACK;
-        this.headerBar.setItems([this.rightItem]);
-    }
-    addToBasket() {
-        this.btnAddToBasket.on(Button.Events.Touch, () => {
-            console.log('Store',store.getState().products)
-            let product = store.getState().products.find(product => product.id == this.routeData.productId)
-            console.log('Product:', product)
-            store.dispatch({
-                type: "ADD_TO_BASKET",
-                payload: {
-                    data: {
-                        product: product,
-                        count: 1
-                    }
-                }
-            })
-        })
-    }
+  router: any;
+  leftItem: HeaderBarItem;
+  rightItem: HeaderBarItem;
+  routeData: any;
+  constructor() {
+    super();
+    // Overrides super.onShow method
+    this.onShow = onShow.bind(this, this.onShow.bind(this));
+    // Overrides super.onLoad method
+    this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    this.headerBar.title = '';
+    this.btnAddToBasket.text = global.lang.addToBasket;
+  }
+  addLeftItem() {
+    this.leftItem = new HeaderBarItem();
+    this.leftItem.image = 'images://backbtn.png';
+    this.leftItem.color = Color.BLACK;
+    this.headerBar.setLeftItem(this.leftItem);
+  }
+  addRightItem() {
+    this.rightItem = new HeaderBarItem();
+    this.rightItem.image = 'images://share.png';
+    this.rightItem.color = Color.BLACK;
+    this.headerBar.setItems([this.rightItem]);
+  }
+  addToBasket() {
+    this.btnAddToBasket.on(Button.Events.Touch, () => {
+      console.log('Store', store.getState().products);
+      let product = store.getState().products.find((product) => product.id == this.routeData.productId);
+      console.log('Product:', product);
+      store.dispatch({
+        type: 'ADD_TO_BASKET',
+        payload: {
+          data: {
+            product: product,
+            count: 1,
+          },
+        },
+      });
+    });
+  }
 }
 
 /**
@@ -61,20 +60,20 @@ export default class PgProductDetail extends PgProductDetailDesign {
  * @param {Object} parameters passed from Router.go function
  */
 function onShow(this: PgProductDetail, superOnShow: () => void) {
-	superOnShow();
- 
-    if (System.OS !== 'iOS') {
-          Application.statusBar.visible = true;
-    Application.statusBar.backgroundColor = Color.create("#F2F3F2")
-      }
+  superOnShow();
 
-      console.log('Router Data ', this.routeData)
+  if (System.OS !== 'iOS') {
+    Application.statusBar.visible = true;
+    Application.statusBar.backgroundColor = Color.create('#F2F3F2');
+  }
 
-    this.productDetailPrice.text = `$${this.routeData.productPrice}`
-    this.productDetailDesc.text = this.routeData.productDescription
-    this.imgProductDetail.image = Image.createFromFile(`images://${this.routeData.productImg}`)
-    this.productDetailName.text = this.routeData.productName
-    this.addToBasket()
+  console.log('Router Data ', this.routeData);
+
+  this.productDetailPrice.text = `$${this.routeData.productPrice}`;
+  this.productDetailDesc.text = this.routeData.productDescription;
+  this.imgProductDetail.image = Image.createFromFile(`images://${this.routeData.productImg}`);
+  this.productDetailName.text = this.routeData.productName;
+  this.addToBasket();
 }
 
 /**
@@ -83,7 +82,9 @@ function onShow(this: PgProductDetail, superOnShow: () => void) {
  * @param {function} superOnLoad super onLoad function
  */
 function onLoad(this: PgProductDetail, superOnLoad: () => void) {
-	superOnLoad();
-    this.addLeftItem()
-    this.addRightItem()
+  superOnLoad();
+  this.addLeftItem();
+  this.addRightItem();
+  this.scrollView2.autoSizeEnabled = true;
+  this.scrollView2.layout.applyLayout;
 }

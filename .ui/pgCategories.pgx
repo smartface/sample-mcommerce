@@ -8,7 +8,6 @@
 				"children": [
 					"ba6d-523b-3d02-2fa2",
 					"6ae8-a3a8-d05b-899c",
-					"a081-70f7-8fbe-7bbc",
 					"5282-8873-9a9d-b556"
 				],
 				"name": "pgCategories",
@@ -41,48 +40,12 @@
 				"children": [],
 				"isRemovable": false,
 				"name": "headerBar",
-				"parent": "e257-a066-7008-14e9",
-				"title": "pgCategories"
+				"parent": "e257-a066-7008-14e9"
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"title": "pgCategories"
-			}
-		},
-		{
-			"className": ".sf-flexLayout .flSearchBar",
-			"hiddenComponent": false,
-			"id": "a081-70f7-8fbe-7bbc",
-			"props": {
-				"children": [],
-				"name": "flSearchBar",
-				"parent": "e257-a066-7008-14e9",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "flSearchBar",
-				"id": "c966-f33d-bf1c-9474"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"backgroundColor": "rgba( 242, 243, 242, 1 )",
-				"borderRadius": 15,
-				"flex": {
-					"flexDirection": 2,
-					"justifyContent": 3,
-					"positionType": 0
-				},
-				"flexProps": {
-					"flexDirection": "ROW",
-					"justifyContent": "SPACE_BETWEEN",
-					"positionType": "RELATIVE"
-				},
-				"height": 50,
-				"left": 0,
-				"testId": "J2CceLIhb",
-				"top": 0,
-				"usePageVariable": true
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"visible": true
 			}
 		},
 		{

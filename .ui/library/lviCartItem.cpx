@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviCartItem",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "9653-a462-6015-ef3e",
 			"props": {
 				"children": [
@@ -18,9 +18,9 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"left": "17.50",
+				"left": "3.06",
 				"testId": "2CR5Jw8Wo",
-				"top": "69.50"
+				"top": "71.43"
 			}
 		},
 		{
@@ -57,6 +57,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "appledetail.png",
 				"usePageVariable": true
 			}
 		},
@@ -258,7 +259,6 @@
 				"children": [],
 				"name": "lblProductPrice",
 				"parent": "9bd5-61dc-e712-7eb9",
-				"text": "$1.99",
 				"usePageVariable": true
 			},
 			"source": {
@@ -269,7 +269,6 @@
 				"flexProps": {
 					"alignSelf": "AUTO"
 				},
-				"text": "$1.99",
 				"usePageVariable": true
 			}
 		},

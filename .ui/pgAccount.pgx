@@ -48,7 +48,12 @@
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"title": "pgAccount"
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"ios": {
+					"translucent": false
+				},
+				"title": "pgAccount",
+				"visible": true
 			}
 		},
 		{
