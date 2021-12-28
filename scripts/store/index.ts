@@ -210,7 +210,7 @@ const initAction = (state = initialState, action) => {
                     if(product.count >= 1) {
                         return product.count += action.payload.data.count
                     } else {
-                        delete product.count
+                        
                     }
                 }
             })
