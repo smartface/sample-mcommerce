@@ -3,7 +3,9 @@ import System from '@smartface/native/device/system';
 import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
+import View from '@smartface/native/ui/view';
 import PgProductDetailDesign from 'generated/pages/pgProductDetail';
+import store from 'store';
 
 export default class PgProductDetail extends PgProductDetailDesign {
     router: any
@@ -19,6 +21,19 @@ export default class PgProductDetail extends PgProductDetailDesign {
         this.headerBar.title = ""
 
         this.btnAddToBasket.text = global.lang.addToBasket
+        this.imgMinus.on(View.Events.Touch, () => {
+            let product = store.getState().products.find(id => id == this.routeData.productId)
+            console.log('Product:', product)
+            store.dispatch({
+                type: "ADD_TO_BASKET",
+                payload: {
+                    data: {
+                        product: product,
+                        count: 1
+                    }
+                }
+            })
+        })
 	}
     addLeftItem() {
         this.leftItem = new HeaderBarItem();
@@ -31,6 +46,9 @@ export default class PgProductDetail extends PgProductDetailDesign {
         this.rightItem.image = "images://share.png";
         this.rightItem.color = Color.BLACK;
         this.headerBar.setItems([this.rightItem]);
+    }
+    addToBasket() {
+        
     }
 
 }

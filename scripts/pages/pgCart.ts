@@ -5,28 +5,63 @@ import store from 'store';
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 
 export default class PgCart extends PgCartDesign {
-	constructor() {
-		super();
-		// Overrides super.onShow method
-		this.onShow = onShow.bind(this, this.onShow.bind(this));
-		// Overrides super.onLoad method
-		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    unsubscribe: any;
+    constructor() {
+        super();
+        // Overrides super.onShow method
+        this.onShow = onShow.bind(this, this.onShow.bind(this));
+        // Overrides super.onLoad method
+        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
         this.btnGoToCheckOut.text = global.lang.goToCheckout
-	}
+    }
+    getBasketItems() {
+        let basket = store.getState().basket;
+        return basket
+    }
+    refreshCart() {
+        const basketItems = this.getBasketItems()
+        this.lvCart.itemCount = basketItems.length;
+        this.lvCart.refreshData();
+    }
     initCartList() {
-        console.log('basket',store.getState().basket)
-        const basketItems = store.getState().basket;
+        console.log('basket', store.getState().basket)
+        const basketItems = this.getBasketItems()
         this.lvCart.onRowBind = (listViewItem: LviCartItem, index: number) => {
             listViewItem.productPrice = basketItems[index].price.toString()
             listViewItem.productName = basketItems[index].name
             listViewItem.productInfo = basketItems[index].description
             listViewItem.productImage = basketItems[index].image
             listViewItem.productCount = basketItems[index].count.toString()
+            listViewItem.onActionPlus = () => {
+                console.log(basketItems[index])
+                store.dispatch({
+                    type: "ADD_TO_BASKET",
+                    payload: {
+                        data: {
+                            product: basketItems[index],
+                            count: 1
+                        }
+                    }
+                })
+                this.refreshCart()
+            }
+            listViewItem.onActionMinus = () => {
+                console.log(basketItems[index])
+                store.dispatch({
+                    type: "ADD_TO_BASKET",
+                    payload: {
+                        data: {
+                            product: basketItems[index],
+                            count: -1
+                        }
+                    }
+                })
+                this.refreshCart()
+            }
+
         };
         this.lvCart.onRowHeight = (index) => LviCartItem.getHeight();
-        this.lvCart.itemCount = basketItems.length;
-        this.lvCart.refreshData();
     }
 }
 
@@ -37,11 +72,12 @@ export default class PgCart extends PgCartDesign {
  * @param {Object} parameters passed from Router.go function
  */
 function onShow(this: PgCart, superOnShow: () => void) {
-	superOnShow();
+    superOnShow();
     this.headerBar.title = global.lang.mycartHeader
     this.headerBar.borderVisibility = true
-    this.initCartList();
-
+    this.refreshCart();
+    // this.unsubscribe = store.subscribe(this.getBasketItems)
+    // this.unsubscribe();
 }
 
 /**
@@ -50,10 +86,9 @@ function onShow(this: PgCart, superOnShow: () => void) {
  * @param {function} superOnLoad super onLoad function
  */
 function onLoad(this: PgCart, superOnLoad: () => void) {
-	superOnLoad();
+    superOnLoad();
     this.headerBar.leftItemEnabled = false
     this.headerBar.backgroundColor = Color.WHITE;
     this.headerBar.android.elevation = 0;
     this.initCartList();
-
 }

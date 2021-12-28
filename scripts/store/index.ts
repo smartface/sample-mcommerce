@@ -205,10 +205,15 @@ const initAction = (state = initialState, action) => {
             let currentBasket = state.basket
             if (currentBasket.some(pId => pId.id === action.payload.data.product.id)) {
              currentBasket.map(product => {
-                 if (product.id === action.payload.data.product.id) {                     
-                     return product.count += action.payload.data.count;
-                 }
-             })
+                 if (product.id === action.payload.data.product.id) { 
+                    console.log('PAYLOAD: ',action.payload.data)
+                    if(product.count >= 1) {
+                        return product.count += action.payload.data.count
+                    } else {
+                        delete product.count
+                    }
+                }
+            })
              state.basket = currentBasket;
             } else {
                 action.payload.data.product.count = action.payload.data.count;

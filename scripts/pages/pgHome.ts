@@ -86,6 +86,7 @@ export default class PgHome extends PgHomeDesign {
         }
         this.productsBestSellerGrid.onItemSelected = (GridViewItem: GviProductItem, index: number) => {
             this.router.push('/btb/tab1/productDetail', {
+                productId: products[index].id,
                 productName: products[index].name,
                 productPrice: products[index].price,
                 productDescription:products[index].description,

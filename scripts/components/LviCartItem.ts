@@ -1,18 +1,29 @@
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import Button from '@smartface/native/ui/button';
 import Image from '@smartface/native/ui/image';
+import View from '@smartface/native/ui/view';
 import LviCartItemDesign from 'generated/my-components/LviCartItem';
 const originalHeight = getCombinedStyle('.lviCartItem').height;
 
 export default class LviCartItem extends LviCartItemDesign {
-	pageName?: string | undefined;
-	constructor(props?: any, pageName?: string) {
-		// Initalizes super class for this scope
-		super(props);
-		this.pageName = pageName;
-	}
+    pageName?: string | undefined;
+    _value: (...args) => void
+    _valueMinus: (...args) => void
+
+    constructor(props?: any, pageName?: string) {
+        // Initalizes super class for this scope
+        super(props);
+        this.pageName = pageName;
+        this.btnCartPlus.on(Button.Events.TouchEnded, () => {
+            this._value && this._value()
+        })
+        this.btnCartMinus.on(Button.Events.TouchEnded, () => {
+            this._valueMinus && this._valueMinus()
+        })
+    }
     static getHeight(): number {
         return originalHeight;
-        
+
     }
     get productName(): string {
         return this.lblProductName.text;
@@ -49,5 +60,18 @@ export default class LviCartItem extends LviCartItemDesign {
     }
     set bottomLine(value: boolean) {
         this.flCartItemBottomLine.visible = value
+    }
+    get onActionPlus(): (...args) => void {
+        return this._value
+    }
+    set onActionPlus(value: (...args) => void) {
+        //this.btnCartPlus.onTouchEnded = value;
+        this._value = value
+    }
+    get onActionMinus(): (...args) => void {
+        return this._valueMinus
+    }
+    set onActionMinus(value: (...args) => void) {
+        this._valueMinus = value
     }
 }

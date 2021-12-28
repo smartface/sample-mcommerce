@@ -323,8 +323,9 @@
 			"id": "ca40-c1d7-71ef-150f",
 			"props": {
 				"children": [],
-				"name": "imageView2",
-				"parent": "9076-ecc5-c085-3bee"
+				"name": "imgMinus",
+				"parent": "9076-ecc5-c085-3bee",
+				"usePageVariable": true
 			},
 			"type": "ImageView",
 			"userProps": {
@@ -337,7 +338,8 @@
 				"marginTop": 10,
 				"maxHeight": 30,
 				"maxWidth": 20,
-				"testId": "8aOgkFk7U"
+				"testId": "8aOgkFk7U",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -377,8 +379,9 @@
 			"id": "fd0f-e164-e05a-16e1",
 			"props": {
 				"children": [],
-				"name": "imageView1",
-				"parent": "9076-ecc5-c085-3bee"
+				"name": "imgPlus",
+				"parent": "9076-ecc5-c085-3bee",
+				"usePageVariable": true
 			},
 			"type": "ImageView",
 			"userProps": {
@@ -391,7 +394,8 @@
 				"marginTop": 10,
 				"maxHeight": 30,
 				"maxWidth": 20,
-				"testId": "cB5wr1bjH"
+				"testId": "cB5wr1bjH",
+				"usePageVariable": true
 			}
 		},
 		{
