@@ -8,7 +8,6 @@
 				"children": [
 					"9eee-8878-9db7-1662",
 					"4ab0-4431-3107-8aa1",
-					"57c2-3a47-bcf1-be57",
 					"c9ba-4e41-bd4b-2296"
 				],
 				"name": "pgHome",
@@ -52,13 +51,36 @@
 			}
 		},
 		{
+			"className": ".sf-scrollView",
+			"id": "c9ba-4e41-bd4b-2296",
+			"props": {
+				"children": [
+					"e621-fe3b-1930-ca9f",
+					"010a-621d-f151-f3c0",
+					"a612-e4ed-01cc-cd62"
+				],
+				"name": "scrollView1",
+				"parent": "0cc7-c9f0-ae49-184b",
+				"usePageVariable": true
+			},
+			"type": "ScrollView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"testId": "Yz8BMfHIL",
+				"usePageVariable": true
+			}
+		},
+		{
 			"className": ".sf-flexLayout .flSearchBar",
 			"hiddenComponent": false,
-			"id": "57c2-3a47-bcf1-be57",
+			"id": "e621-fe3b-1930-ca9f",
 			"props": {
 				"children": [],
 				"name": "flSearchBar",
-				"parent": "0cc7-c9f0-ae49-184b",
+				"parent": "c9ba-4e41-bd4b-2296",
 				"usePageVariable": true
 			},
 			"source": {
@@ -84,28 +106,6 @@
 				"left": 0,
 				"testId": "J2CceLIhb",
 				"top": 0,
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-scrollView",
-			"id": "c9ba-4e41-bd4b-2296",
-			"props": {
-				"children": [
-					"010a-621d-f151-f3c0",
-					"a612-e4ed-01cc-cd62"
-				],
-				"name": "scrollView1",
-				"parent": "0cc7-c9f0-ae49-184b",
-				"usePageVariable": true
-			},
-			"type": "ScrollView",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "Yz8BMfHIL",
 				"usePageVariable": true
 			}
 		},
