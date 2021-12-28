@@ -65,7 +65,7 @@ export default class PgFavorites extends PgFavoritesDesign {
     this.listView1.swipeEnabled = true;
     // this.listView1.contentInset = { top: 10, bottom: 0 };
     this.listView1.onRowCanSwipe = (index: number) => {
-      return [ListView.SwipeDirection.LEFTTORIGHT, ListView.SwipeDirection.RIGHTTOLEFT];
+      return [ListView.SwipeDirection.RIGHTTOLEFT];
     };
     this.listView1.onRowSwipe = (e: any): ListView.SwipeItem[] => {
       if (e.direction == ListView.SwipeDirection.RIGHTTOLEFT) {
