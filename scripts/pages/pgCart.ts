@@ -70,6 +70,18 @@ export default class PgCart extends PgCartDesign {
 
         this.refreshCart();
       };
+      listViewItem.onRemoveAction = () => {
+        store.dispatch({
+          type: 'REMOVE_FROM_BASKET',
+          payload: {
+            data: {
+              productId: this.basketItems[index].id,
+            },
+          },
+        });
+
+        this.refreshCart();
+      };
     };
   }
 }

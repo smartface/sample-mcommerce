@@ -1,6 +1,125 @@
 import { createStore } from 'redux';
 
 const initialState = {
+  showcaseProducts: [
+    {
+      showcaseTitle: 'Exclusive Offer',
+      showcaseLink: '/',
+      showcaseLinkText: 'See All',
+      products: [
+        {
+          id: 1,
+          name: 'Sprite Can',
+          description: '325ml, Price',
+          price: 4.99,
+          image: 'sprite.png',
+          categoryId: 6,
+        },
+        {
+          id: 2,
+          name: 'Diet Coke',
+          description: '325ml, Price',
+          price: 1.99,
+          image: 'dietcoke.png',
+          categoryId: 6,
+        },
+        {
+          id: 3,
+          name: 'Orange Juice',
+          description: '325ml, Price',
+          price: 4.99,
+          image: 'juice.png',
+          categoryId: 6,
+        },
+        {
+          id: 4,
+          name: 'Organic Bananas',
+          description: '12kg, Price',
+          price: 4.99,
+          image: 'banana.png',
+          categoryId: 6,
+        },
+        {
+          id: 5,
+          name: 'Ginger',
+          description: '250g, Price',
+          price: 4.99,
+          image: 'ginger.png',
+          categoryId: 6,
+        },
+        {
+          id: 6,
+          name: 'Egg Chicken Red',
+          description: '4pcs, Price',
+          price: 1.99,
+          image: 'eggs.png',
+          categoryId: 6,
+        },
+      ],
+    },
+    {
+      showcaseTitle: 'Best Seller',
+      showcaseLink: '/',
+      showcaseLinkText: 'See All',
+      products: [
+        {
+          id: 1,
+          name: 'Sprite Can',
+          description: '325ml, Price',
+          price: 4.99,
+          image: 'sprite.png',
+          categoryId: 6,
+        },
+        {
+          id: 4,
+          name: 'Organic Bananas',
+          description: '12kg, Price',
+          price: 4.99,
+          image: 'banana.png',
+          categoryId: 6,
+        },
+        {
+          id: 5,
+          name: 'Ginger',
+          description: '250g, Price',
+          price: 4.99,
+          image: 'ginger.png',
+          categoryId: 6,
+        },
+        {
+          id: 6,
+          name: 'Egg Chicken Red',
+          description: '4pcs, Price',
+          price: 1.99,
+          image: 'eggs.png',
+          categoryId: 6,
+        },
+      ],
+    },
+    {
+      showcaseTitle: 'Groceries',
+      showcaseLink: '/',
+      showcaseLinkText: 'See All',
+      products: [
+        {
+          id: 5,
+          name: 'Ginger',
+          description: '250g, Price',
+          price: 4.99,
+          image: 'ginger.png',
+          categoryId: 6,
+        },
+        {
+          id: 6,
+          name: 'Egg Chicken Red',
+          description: '4pcs, Price',
+          price: 1.99,
+          image: 'eggs.png',
+          categoryId: 6,
+        },
+      ],
+    },
+  ],
   products: [
     {
       id: 1,
@@ -181,6 +300,7 @@ const initialState = {
     },
   ],
   currentUser: [],
+  favorites: [],
 };
 
 const initAction = (state = initialState, action) => {
@@ -196,41 +316,37 @@ const initAction = (state = initialState, action) => {
       state.currentUser.push(action.payload.data);
       return state;
     case 'ADD_TO_BASKET':
-      let currentBasket = state.basket;
-
-      if (currentBasket.some((pId) => pId.id === action.payload.data.product.id)) {
-        console.log('includes true');
-
-        let updatedData = currentBasket.map((basketItem) =>
-          basketItem.id === action.payload.data.product.id ? { ...basketItem, count: (basketItem.count += action.payload.data.count) } : basketItem
-        );
-
-        console.log('updatedData', updatedData);
-
-        state.basket = updatedData.filter((a) => a.count > 0);
-      } else {
-        action.payload.data.product.count = action.payload.data.count;
-        state.basket.push(action.payload.data.product);
-      }
-
-      //   if (currentBasket.some((pId) => pId.id === action.payload.data.product.id)) {
-      //     currentBasket.map((product) => {
-      //       if (product.id === action.payload.data.product.id) {
-      //         product.count += action.payload.data.count;
-      //         return product;
-      //       }
-      //     });
-      //     state.basket = currentBasket.filter((product) => product.count > 0);
-      //     console.log('state.baskets', state.basket);
-      //   } else {
-      //     console.log('ELSE ');
-      //     action.payload.data.product.count = action.payload.data.count;
-      //     state.basket.push(action.payload.data.product);
-      //   }
-
+      addToBasket(state, action);
+      return state;
+    case 'REMOVE_FROM_BASKET':
+      removeFromBasket(state, action);
+    case 'ADD_TO_FAVORITES':
+      addToFavorites(state, action);
+      return state;
+    case 'REMOVE_FROM_FAVORITES':
+      removeFromFavorites(state, action);
       return state;
     default:
       return state;
   }
+};
+const addToBasket = (state, action) => {
+  let currentBasket = state.basket;
+  if (currentBasket.some((pId) => pId.id === action.payload.data.product.id)) {
+    let updatedData = currentBasket.map((basketItem) => (basketItem.id === action.payload.data.product.id ? { ...basketItem, count: (basketItem.count += action.payload.data.count) } : basketItem));
+    state.basket = updatedData.filter((a) => a.count > 0);
+  } else {
+    action.payload.data.product.count = action.payload.data.count;
+    state.basket.push(action.payload.data.product);
+  }
+};
+const removeFromBasket = (state, action) => {
+  state.basket = state.basket.filter((product) => product.id !== action.payload.data.productId);
+};
+const addToFavorites = (state, action) => {
+  state.favorites.push(action.payload.data.product);
+};
+const removeFromFavorites = (state, action) => {
+  state.favorites = state.favorites.filter((product) => product.id !== action.payload.data.productId);
 };
 export default createStore(initAction);

@@ -20,13 +20,17 @@ let btbItemCart = new TabBarItem();
 btbItemCart.title = global.lang.cart;
 btbItemCart.icon = Image.createFromFile('images://tabiconcart.png');
 store.subscribe(() => {
-  btbItemCart.badge.text = store.getState().basket.length.toString();
+  btbItemCart.badge.text = store.getState().basket && store.getState().basket.length > 0 ? store.getState().basket.reduce((total, product) => total + product.count, 0) : 0;
+  if (parseInt(btbItemCart.badge.text) === 0) {
+    btbItemCart.badge.visible = false; // default false
+  } else {
+    btbItemCart.badge.visible = true;
+  }
+  if (parseInt(btbItemCart.badge.text) > 10) {
+    btbItemCart.badge.text = '10+';
+  }
 });
 btbItemCart.badge.backgroundColor = Color.create('#53b175');
-btbItemCart.badge.visible = true; // default false
-if (parseInt(btbItemCart.badge.text) > 3) {
-  btbItemCart.badge.text = '3+';
-}
 
 const router = Router.of({
   path: '/',

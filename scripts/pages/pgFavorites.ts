@@ -10,7 +10,7 @@ import Font from '@smartface/native/ui/font';
 import View from '@smartface/native/ui/view';
 
 export default class PgFavorites extends PgFavoritesDesign {
-  favoriteProducts: Array<object> = store.getState().products;
+  favoriteProducts: any;
   constructor() {
     super();
     // Overrides super.onShow method
@@ -44,8 +44,16 @@ export default class PgFavorites extends PgFavoritesDesign {
   }
   deleteAndRefresh(e: { index: number }): void {
     let length = this.favoriteProducts.length;
-    this.favoriteProducts.splice(e.index, 1);
-    this.listView1.itemCount = this.favoriteProducts.length;
+    let removedItem = this.favoriteProducts.find((product, index) => index === e.index);
+    store.dispatch({
+      type: 'REMOVE_FROM_FAVORITES',
+      payload: {
+        data: {
+          productId: removedItem.id,
+        },
+      },
+    });
+    this.refreshFavoritesList();
     this.listView1.deleteRowRange({
       itemCount: 1,
       positionStart: e.index,
@@ -59,9 +67,12 @@ export default class PgFavorites extends PgFavoritesDesign {
       this.listView1.refreshRowRange({ itemCount: 1, positionStart: this.favoriteProducts.length - 1 });
     }
   }
-
+  refreshFavoritesList() {
+    this.favoriteProducts = store.getState().favorites;
+    this.listView1.itemCount = this.favoriteProducts.length;
+    this.listView1.refreshData();
+  }
   initFavoriteList() {
-    const products = store.getState().products;
     this.listView1.swipeEnabled = true;
     // this.listView1.contentInset = { top: 10, bottom: 0 };
     this.listView1.onRowCanSwipe = (index: number) => {
@@ -75,14 +86,13 @@ export default class PgFavorites extends PgFavoritesDesign {
         e.ios.expansionSettings.fillOnTrigger = true;
         let deleteItem = new ListView.SwipeItem();
         deleteItem.text = 'Delete';
-        deleteItem.backgroundColor = Color.create('#53B175');
+        deleteItem.backgroundColor = Color.RED;
         deleteItem.textColor = Color.create('#FFFFFF');
         deleteItem.icon = Image.createFromFile('images://cross.png');
         //@ts-ignore
         //@ts-ignore
         deleteItem.ios.isAutoHide = false;
         deleteItem.onPress = (e: any) => {
-          console.log('Delete Index : ' + e.index);
           this.deleteAndRefresh(e);
         };
         this.applyDimension(e.index, deleteItem);
@@ -91,14 +101,12 @@ export default class PgFavorites extends PgFavoritesDesign {
     };
 
     this.listView1.onRowBind = (listViewItem: lviFavorites, index: number) => {
-      listViewItem.itemPrice = products[index].price;
-      listViewItem.itemTitle = products[index].name;
-      listViewItem.itemDesc = products[index].description;
-      listViewItem.itemImage = products[index].image;
+      listViewItem.itemPrice = this.favoriteProducts[index].price;
+      listViewItem.itemTitle = this.favoriteProducts[index].name;
+      listViewItem.itemDesc = this.favoriteProducts[index].description;
+      listViewItem.itemImage = this.favoriteProducts[index].image;
     };
     this.listView1.onRowHeight = (index) => LviFavorites.getHeight();
-    this.listView1.itemCount = products.length;
-    this.listView1.refreshData();
   }
 }
 
@@ -110,6 +118,7 @@ export default class PgFavorites extends PgFavoritesDesign {
  */
 function onShow(this: PgFavorites, superOnShow: () => void) {
   superOnShow();
+  this.refreshFavoritesList();
   this.headerBar.title = global.lang.favouriteHeader;
 }
 

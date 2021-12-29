@@ -51,6 +51,31 @@ export default class PgProductDetail extends PgProductDetailDesign {
       });
     });
   }
+  addToFavorite() {
+    this.imgFavorite.on(View.Events.TouchEnded, () => {
+      if (store.getState().favorites && store.getState().favorites.length > 0 && store.getState().favorites.some((product) => product.id === this.routeData.productId)) {
+        store.dispatch({
+          type: 'REMOVE_FROM_FAVORITES',
+          payload: {
+            data: {
+              productId: this.routeData.productId,
+            },
+          },
+        });
+        this.imgFavorite.image = Image.createFromFile('images://favourite.png');
+      } else {
+        store.dispatch({
+          type: 'ADD_TO_FAVORITES',
+          payload: {
+            data: {
+              product: store.getState().products.find((product) => product.id == this.routeData.productId),
+            },
+          },
+        });
+        this.imgFavorite.image = Image.createFromFile('images://favorited.png');
+      }
+    });
+  }
 }
 
 /**
@@ -74,6 +99,12 @@ function onShow(this: PgProductDetail, superOnShow: () => void) {
   this.imgProductDetail.image = Image.createFromFile(`images://${this.routeData.productImg}`);
   this.productDetailName.text = this.routeData.productName;
   this.addToBasket();
+  this.addToFavorite();
+  if (store.getState().favorites && store.getState().favorites.length > 0 && store.getState().favorites.some((product) => product.id === this.routeData.productId)) {
+    this.imgFavorite.image = Image.createFromFile('images://favorited.png');
+  } else {
+    this.imgFavorite.image = Image.createFromFile('images://favourite.png');
+  }
 }
 
 /**

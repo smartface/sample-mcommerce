@@ -3,12 +3,13 @@ import Image from '@smartface/native/ui/image';
 import View from '@smartface/native/ui/view';
 import store from '../store/index';
 import GviProductItem from 'components/GviProductItem';
+import LviHomeProducts from 'components/LviHomeProducts';
 import Application from '@smartface/native/application';
 import Color from '@smartface/native/ui/color';
 
 export default class PgHome extends PgHomeDesign {
   router: any;
-
+  showcases: any;
   constructor() {
     super();
     // Overrides super.onShow method
@@ -16,81 +17,55 @@ export default class PgHome extends PgHomeDesign {
     // Overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
-    this.lblOffer.text = global.lang['exclusiveOffer'];
-    this.lblOfferSeeAll.text = global.lang['seeAll'];
-    this.lblBestSeller.text = global.lang['bestSeller'];
-    this.lblBestSellerSeeAll.text = global.lang['seeAll'];
+    // this.lblOffer.text = global.lang['exclusiveOffer'];
+    // this.lblOfferSeeAll.text = global.lang['seeAll'];
+    // this.lblBestSeller.text = global.lang['bestSeller'];
+    // this.lblBestSellerSeeAll.text = global.lang['seeAll'];
   }
 
-  initProductsGrid() {
-    const products = store.getState().products;
-    this.productsGrid.scrollBarEnabled = false;
-    this.productsGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
-      GridViewItem.itemTitle = products[index].name;
-      GridViewItem.itemDesc = products[index].description;
-      GridViewItem.itemImage = products[index].image;
-      GridViewItem.itemPrice = `$${products[index].price}`;
-      GridViewItem.onActionClick = function () {
-        GridViewItem.initIndicator();
-        GridViewItem.toggleIndicator(true);
-        store.dispatch({
-          type: 'ADD_TO_BASKET',
-          payload: {
-            data: {
-              product: products[index],
-              count: 1,
-            },
-          },
-        });
-        setTimeout(() => {
-          GridViewItem.toggleIndicator(false);
-        }, 1000);
-      }.bind(GridViewItem);
-    };
-    this.productsGrid.itemCount = products.length;
+  refreshShowcaseProductsGrid() {
+    this.showcases = store.getState().showcaseProducts;
+    this.listShowcases.itemCount = this.showcases.length;
+    this.listShowcases.refreshData();
+  }
+  initShowcaseProductsGrid() {
+    this.listShowcases.onRowHeight = (index) => LviHomeProducts.getHeight();
+    this.listShowcases.onRowBind = (listViewItem: LviHomeProducts, index: number) => {
+      listViewItem.showcaseTitle = this.showcases[index].showcaseTitle;
+      listViewItem.showcaseLinkText = this.showcases[index].showcaseLinkText;
+      listViewItem.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
+        GridViewItem.itemTitle = this.showcases[index].products[productIndex].name;
+        GridViewItem.itemDesc = this.showcases[index].products[productIndex].description;
+        GridViewItem.itemImage = this.showcases[index].products[productIndex].image;
+        GridViewItem.itemPrice = `$${this.showcases[index].products[productIndex].price}`;
 
-    this.productsBestSellerGrid.scrollBarEnabled = false;
-    this.productsBestSellerGrid.onItemBind = (GridViewItem: GviProductItem, index: number) => {
-      GridViewItem.itemTitle = products[index].name;
-      GridViewItem.itemDesc = products[index].description;
-      GridViewItem.itemImage = products[index].image;
-      GridViewItem.itemPrice = `$${products[index].price}`;
-      GridViewItem.onActionClick = function () {
-        GridViewItem.initIndicator();
-        GridViewItem.toggleIndicator(true);
-        store.dispatch({
-          type: 'ADD_TO_BASKET',
-          payload: {
-            data: {
-              product: products[index],
-              count: 1,
+        listViewItem.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
+          this.router.push('/btb/tab1/productDetail', {
+            productId: this.showcases[index].products[productIndex].id,
+            productName: this.showcases[index].products[productIndex].name,
+            productPrice: this.showcases[index].products[productIndex].price,
+            productDescription: this.showcases[index].products[productIndex].description,
+            productImg: this.showcases[index].products[productIndex].image,
+          });
+        };
+        GridViewItem.onActionClick = () => {
+          GridViewItem.initIndicator();
+          GridViewItem.toggleIndicator(true);
+          store.dispatch({
+            type: 'ADD_TO_BASKET',
+            payload: {
+              data: {
+                product: this.showcases[index].products[productIndex],
+                count: 1,
+              },
             },
-          },
-        });
-        setTimeout(() => {
-          GridViewItem.toggleIndicator(false);
-        }, 1000);
-      }.bind(GridViewItem);
-    };
-    this.productsBestSellerGrid.itemCount = products.length;
-
-    this.productsGrid.onItemSelected = (GridViewItem: GviProductItem, index: number) => {
-      this.router.push('/btb/tab1/productDetail', {
-        productId: products[index].id,
-        productName: products[index].name,
-        productPrice: products[index].price,
-        productDescription: products[index].description,
-        productImg: products[index].image,
-      });
-    };
-    this.productsBestSellerGrid.onItemSelected = (GridViewItem: GviProductItem, index: number) => {
-      this.router.push('/btb/tab1/productDetail', {
-        productId: products[index].id,
-        productName: products[index].name,
-        productPrice: products[index].price,
-        productDescription: products[index].description,
-        productImg: products[index].image,
-      });
+          });
+          setTimeout(() => {
+            GridViewItem.toggleIndicator(false);
+          }, 500);
+        };
+      };
+      listViewItem.gvProducts.itemCount = this.showcases[index].products.length;
     };
   }
 }
@@ -103,6 +78,7 @@ export default class PgHome extends PgHomeDesign {
  */
 function onShow(this: PgHome, superOnShow: () => void) {
   superOnShow();
+  this.refreshShowcaseProductsGrid();
   Application.statusBar.visible = true;
 }
 
@@ -113,13 +89,9 @@ function onShow(this: PgHome, superOnShow: () => void) {
  */
 function onLoad(this: PgHome, superOnLoad: () => void) {
   superOnLoad();
-  // this.headerBar.leftItemEnabled = false
-  // this.headerBar.title = 'Maltepe, Istanbul'
-  // this.headerBar.backgroundColor = Color.WHITE;
-  // this.headerBar.android.elevation = 0;
-  this.initProductsGrid();
+  this.initShowcaseProductsGrid();
   this.headerBar.title = global.lang.homeHeader;
   this.headerBar.android.elevation = 0;
-  this.scrollView1.autoSizeEnabled = true;
-  this.scrollView1.layout.applyLayout;
+  //   this.scrollView1.autoSizeEnabled = true;
+  //   this.scrollView1.layout.applyLayout;
 }

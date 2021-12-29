@@ -259,8 +259,9 @@
 			"id": "d39c-0113-3687-f017",
 			"props": {
 				"children": [],
-				"name": "imageView1",
-				"parent": "2be7-c1c3-4fe9-3d92"
+				"name": "imgFavorite",
+				"parent": "2be7-c1c3-4fe9-3d92",
+				"usePageVariable": true
 			},
 			"type": "ImageView",
 			"userProps": {
@@ -270,6 +271,7 @@
 				"height": 50,
 				"image": "favourite.png",
 				"testId": "K1olM7wsE",
+				"usePageVariable": true,
 				"width": 50
 			}
 		},
