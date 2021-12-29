@@ -66,6 +66,7 @@
 				"flexProps": {
 					"flexGrow": 3
 				},
+				"height": null,
 				"testId": "Z--GuhP9L",
 				"usePageVariable": true
 			}

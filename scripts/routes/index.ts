@@ -20,11 +20,18 @@ let btbItemCart = new TabBarItem();
 btbItemCart.title = global.lang.cart;
 btbItemCart.icon = Image.createFromFile('images://tabiconcart.png');
 store.subscribe(() => {
-  btbItemCart.badge.text = store.getState().basket && store.getState().basket.length > 0 ? store.getState().basket.reduce((total, product) => total + product.count, 0) : 0;
-  if (parseInt(btbItemCart.badge.text) === 0) {
+  btbItemCart.badge.text =
+    store.getState().basket && store.getState().basket.length > 0
+      ? store
+          .getState()
+          .basket.reduce((total, product) => total + product.count, 0)
+          .toString()
+      : '0';
+  if (btbItemCart.badge.text == '0') {
     btbItemCart.badge.visible = false; // default false
   } else {
     btbItemCart.badge.visible = true;
+    btbItemCart.badge.move(0, 0);
   }
   if (parseInt(btbItemCart.badge.text) > 10) {
     btbItemCart.badge.text = '10+';

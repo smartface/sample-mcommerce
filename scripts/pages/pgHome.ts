@@ -29,7 +29,8 @@ export default class PgHome extends PgHomeDesign {
     this.listShowcases.refreshData();
   }
   initShowcaseProductsGrid() {
-    this.listShowcases.onRowHeight = (index) => LviHomeProducts.getHeight();
+    this.listShowcases.rowHeight = 300;
+    // this.listShowcases.onRowHeight = (index) => LviHomeProducts.getHeight();
     this.listShowcases.onRowBind = (listViewItem: LviHomeProducts, index: number) => {
       listViewItem.showcaseTitle = this.showcases[index].showcaseTitle;
       listViewItem.showcaseLinkText = this.showcases[index].showcaseLinkText;

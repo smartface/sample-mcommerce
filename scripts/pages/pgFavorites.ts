@@ -45,6 +45,7 @@ export default class PgFavorites extends PgFavoritesDesign {
   deleteAndRefresh(e: { index: number }): void {
     let length = this.favoriteProducts.length;
     let removedItem = this.favoriteProducts.find((product, index) => index === e.index);
+    this.favoriteProducts.splice(e.index, 1);
     store.dispatch({
       type: 'REMOVE_FROM_FAVORITES',
       payload: {
@@ -53,19 +54,19 @@ export default class PgFavorites extends PgFavoritesDesign {
         },
       },
     });
-    this.refreshFavoritesList();
-    this.listView1.deleteRowRange({
-      itemCount: 1,
-      positionStart: e.index,
-      ios: {
-        animation: ListView.iOS.RowAnimation.FADE,
-      },
-    });
+    // this.listView1.deleteRowRange({
+    //   itemCount: 1,
+    //   positionStart: e.index,
+    //   ios: {
+    //     animation: ListView.iOS.RowAnimation.FADE,
+    //   },
+    // });
     if (System.OS == 'iOS') {
     } else {
       this.listView1.refreshRowRange({ itemCount: 1, positionStart: 0 });
       this.listView1.refreshRowRange({ itemCount: 1, positionStart: this.favoriteProducts.length - 1 });
     }
+    this.refreshFavoritesList();
   }
   refreshFavoritesList() {
     this.favoriteProducts = store.getState().favorites;
@@ -106,7 +107,7 @@ export default class PgFavorites extends PgFavoritesDesign {
       listViewItem.itemDesc = this.favoriteProducts[index].description;
       listViewItem.itemImage = this.favoriteProducts[index].image;
     };
-    this.listView1.onRowHeight = (index) => LviFavorites.getHeight();
+    this.listView1.rowHeight = 120;
   }
 }
 

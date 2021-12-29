@@ -2,6 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviHomeProducts",
+			"hiddenComponent": false,
 			"id": "7886-61eb-1fbd-6516",
 			"props": {
 				"children": [
@@ -14,7 +15,10 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {}
+			"userProps": {
+				"left": null,
+				"top": null
+			}
 		},
 		{
 			"className": ".sf-flexLayout .flProductContainer",
@@ -35,7 +39,7 @@
 				"flexProps": {
 					"flexGrow": 1
 				},
-				"height": 300,
+				"height": null,
 				"left": null,
 				"top": null
 			}
