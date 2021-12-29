@@ -1,0 +1,41 @@
+{
+	".flProductContainer": {
+		"flexProps": {},
+		"height": 300,
+		"left": "8.62",
+		"testId": "8gXp0YRzt",
+		"top": "110.34",
+		"&-flProductHeader": {
+			"flexProps": {
+				"direction": "INHERIT",
+				"flexDirection": "ROW"
+			},
+			"height": 50,
+			"testId": "UpFCsZXn6"
+		},
+		"&-gvProducts": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"height": null,
+			"layoutManager": {
+				"spanCount": 1,
+				"scrollDirection": "HORIZONTAL"
+			},
+			"testId": "x6u9wYXc7"
+		},
+		"&-gviProductItem": {
+			"flex": {
+				"positionType": 0
+			},
+			"flexProps": {
+				"positionType": "RELATIVE"
+			},
+			"height": 250,
+			"left": 0,
+			"testId": "yW_9gIzxP",
+			"top": 0,
+			"width": 174
+		}
+	}
+}

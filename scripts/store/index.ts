@@ -207,7 +207,7 @@ const initAction = (state = initialState, action) => {
 
         console.log('updatedData', updatedData);
 
-        state.basket = updatedData;
+        state.basket = updatedData.filter((a) => a.count > 0);
       } else {
         action.payload.data.product.count = action.payload.data.count;
         state.basket.push(action.payload.data.product);

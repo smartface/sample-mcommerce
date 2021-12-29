@@ -8,8 +8,7 @@
 				"children": [
 					"1594-c983-b696-ce6f",
 					"4574-8647-13e2-80d6",
-					"058b-4603-b33c-5ca6",
-					"8282-6185-462b-0447"
+					"058b-4603-b33c-5ca6"
 				],
 				"name": "pgCart",
 				"orientation": "PORTRAIT",
@@ -63,7 +62,6 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"marginBottom": 70,
 				"testId": "MvUB2U7Zx",
 				"usePageVariable": true
 			}
@@ -91,27 +89,6 @@
 				"height": 150,
 				"testId": "2CR5Jw8Wo",
 				"width": 410
-			}
-		},
-		{
-			"className": ".sf-button .sf-button-main",
-			"id": "8282-6185-462b-0447",
-			"props": {
-				"children": [],
-				"name": "btnGoToCheckOut",
-				"parent": "036b-b8d7-fe5a-9b69",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"bottom": 25,
-				"flexProps": {
-					"positionType": "ABSOLUTE"
-				},
-				"left": 20,
-				"right": 20,
-				"testId": "ydvrzrtz7",
-				"usePageVariable": true
 			}
 		}
 	]

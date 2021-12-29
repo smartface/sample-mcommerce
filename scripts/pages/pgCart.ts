@@ -1,22 +1,37 @@
 import Color from '@smartface/native/ui/color';
+import Font from '@smartface/native/ui/font';
+import Dialog from '@smartface/native/ui/dialog';
 import LviCartItem from 'components/LviCartItem';
 import PgCartDesign from 'generated/pages/pgCart';
 import store from 'store';
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 
 export default class PgCart extends PgCartDesign {
   unsubscribe: any;
   basketItems: any;
+  rightItem: HeaderBarItem;
+  myDialog = new Dialog();
   constructor() {
     super();
     // Overrides super.onShow method
     this.onShow = onShow.bind(this, this.onShow.bind(this));
     // Overrides super.onLoad method
     this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
-    this.btnGoToCheckOut.text = global.lang.goToCheckout;
+    // this.rightItem.onPress = () => {
+    //   this.myDialog.show();
+    // };
+    //this.btnGoToCheckOut.text = global.lang.goToCheckout;
+  }
+  addRightItem() {
+    this.rightItem = new HeaderBarItem();
+    this.rightItem.title = 'Select';
+    this.rightItem.font = Font.create('Nunito', 16);
+    this.rightItem.color = Color.BLACK;
+    this.headerBar.setItems([this.rightItem]);
   }
   refreshCart() {
+    this.basketItems = store.getState().basket;
     console.log('refreshCart > basket Items', this.basketItems);
     this.lvCart.itemCount = this.basketItems.length;
     this.lvCart.refreshData();
@@ -85,4 +100,5 @@ function onLoad(this: PgCart, superOnLoad: () => void) {
   this.headerBar.backgroundColor = Color.WHITE;
   this.headerBar.android.elevation = 0;
   this.initCartList();
+  this.addRightItem();
 }
