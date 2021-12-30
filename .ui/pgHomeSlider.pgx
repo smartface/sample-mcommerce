@@ -1,0 +1,68 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "6dbb-e9d2-fde1-2008",
+			"initialized": true,
+			"props": {
+				"children": [
+					"5f8a-6e8e-7e26-a747",
+					"7e73-617d-36a9-223c",
+					"59bc-eb22-264a-cb56"
+				],
+				"name": "pgHomeSlider",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "5f8a-6e8e-7e26-a747",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "6dbb-e9d2-fde1-2008"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "7e73-617d-36a9-223c",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "6dbb-e9d2-fde1-2008",
+				"title": "pgHomeSlider"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgHomeSlider"
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "59bc-eb22-264a-cb56",
+			"props": {
+				"children": [],
+				"name": "imgSliderItem",
+				"parent": "6dbb-e9d2-fde1-2008",
+				"usePageVariable": true
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"testId": "igIL-AhnY",
+				"usePageVariable": true
+			}
+		}
+	]
+}

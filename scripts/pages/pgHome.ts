@@ -6,6 +6,9 @@ import GviProductItem from 'components/GviProductItem';
 import LviHomeProducts from 'components/LviHomeProducts';
 import Application from '@smartface/native/application';
 import Color from '@smartface/native/ui/color';
+import PgHomeSlider from './pgHomeSlider';
+import SwipeView from '@smartface/native/ui/swipeview';
+import System from '@smartface/native/device/system';
 
 export default class PgHome extends PgHomeDesign {
   router: any;
@@ -22,15 +25,30 @@ export default class PgHome extends PgHomeDesign {
     // this.lblBestSeller.text = global.lang['bestSeller'];
     // this.lblBestSellerSeeAll.text = global.lang['seeAll'];
   }
-
+  initSLider() {
+    this.flHomeSlider.removeAll();
+    const swipeView = new SwipeView({
+      page: this,
+      flexGrow: 1,
+      pages: ['images://apple.png', 'images://banana.png'].map((image: string) => PgHomeSlider({ image })),
+      onPageSelected: (index: number) => {
+        console.log('index', index);
+        // this.indicatorCurrentIndex = index;
+      },
+    });
+    this.flHomeSlider.addChild(swipeView, 'swipeView', '.grow-relative');
+    if (System.OS === System.OSType.IOS) {
+      this.flHomeSlider.applyLayout();
+    }
+  }
   refreshShowcaseProductsGrid() {
     this.showcases = store.getState().showcaseProducts;
     this.listShowcases.itemCount = this.showcases.length;
     this.listShowcases.refreshData();
   }
   initShowcaseProductsGrid() {
-    this.listShowcases.rowHeight = 300;
-    // this.listShowcases.onRowHeight = (index) => LviHomeProducts.getHeight();
+    // this.listShowcases.rowHeight = 300;
+    this.listShowcases.onRowHeight = (index) => LviHomeProducts.getHeight();
     this.listShowcases.onRowBind = (listViewItem: LviHomeProducts, index: number) => {
       listViewItem.showcaseTitle = this.showcases[index].showcaseTitle;
       listViewItem.showcaseLinkText = this.showcases[index].showcaseLinkText;
@@ -91,6 +109,7 @@ function onShow(this: PgHome, superOnShow: () => void) {
 function onLoad(this: PgHome, superOnLoad: () => void) {
   superOnLoad();
   this.initShowcaseProductsGrid();
+  this.initSLider();
   this.headerBar.title = global.lang.homeHeader;
   this.headerBar.android.elevation = 0;
   //   this.scrollView1.autoSizeEnabled = true;

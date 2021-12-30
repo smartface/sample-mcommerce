@@ -8,6 +8,7 @@
 				"children": [
 					"9eee-8878-9db7-1662",
 					"4ab0-4431-3107-8aa1",
+					"6413-7fc0-a7ae-e9f6",
 					"d4e5-3968-92a3-8db0"
 				],
 				"name": "pgHome",
@@ -48,6 +49,22 @@
 			"userProps": {
 				"backgroundColor": "rgba( 255, 255, 255, 1 )",
 				"visible": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "6413-7fc0-a7ae-e9f6",
+			"props": {
+				"children": [],
+				"name": "flHomeSlider",
+				"parent": "0cc7-c9f0-ae49-184b",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"height": 120,
+				"testId": "nxOjYfT6E",
+				"usePageVariable": true
 			}
 		},
 		{
