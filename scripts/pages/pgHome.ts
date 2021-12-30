@@ -12,7 +12,7 @@ import System from '@smartface/native/device/system';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 
-type Processor = ListViewItems.ProcessorTypes.ILviHomeProducts;
+type Processor = ListViewItems.ProcessorTypes.ILviHomeProducts | ListViewItems.ProcessorTypes.ILviHomeSlider;
 
 export default class PgHome extends PgHomeDesign {
     router: any;
@@ -30,22 +30,6 @@ export default class PgHome extends PgHomeDesign {
         // this.lblBestSeller.text = global.lang['bestSeller'];
         // this.lblBestSellerSeeAll.text = global.lang['seeAll'];
     }
-    initSLider() {
-        this.flHomeSlider.removeAll();
-        const swipeView = new SwipeView({
-            page: this,
-            flexGrow: 1,
-            pages: ['images://apple.png', 'images://banana.png'].map((image: string) => PgHomeSlider({ image })),
-            onPageSelected: (index: number) => {
-                console.log('index', index);
-                // this.indicatorCurrentIndex = index;
-            }
-        });
-        this.flHomeSlider.addChild(swipeView, 'swipeView', '.grow-relative');
-        if (System.OS === System.OSType.IOS) {
-            this.flHomeSlider.applyLayout();
-        }
-    }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowHeight = onRowHeight.bind(this);
@@ -59,14 +43,23 @@ export default class PgHome extends PgHomeDesign {
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
+        const processorItems = [
+            ListViewItems.getLviHomeSlider({
+                images: ['images://apple.png', 'images://banana.png']
+            })
+        ];
         this.showcases = store.getState().showcaseProducts;
-        return this.showcases.map((showcase) => {
-            return ListViewItems.getLviHomeProducts({
-                showcaseTitle: showcase.showcaseTitle,
-                showcaseLinkText: showcase.showcaseLinkText,
-                items: showcase.products
-            });
+        this.showcases.forEach((showcase) => {
+            processorItems.push(
+                ListViewItems.getLviHomeProducts({
+                    showcaseTitle: showcase.showcaseTitle,
+                    showcaseLinkText: showcase.showcaseLinkText,
+                    items: showcase.products
+                })
+            );
         });
+
+        return processorItems;
     }
 }
 
@@ -79,7 +72,6 @@ function onShow(this: PgHome, superOnShow: () => void) {
 function onLoad(this: PgHome, superOnLoad: () => void) {
     superOnLoad();
     // this.initShowcaseProductsGrid();
-    this.initSLider();
     this.headerBar.title = global.lang.homeHeader;
     this.headerBar.android.elevation = 0;
     //   this.scrollView1.autoSizeEnabled = true;

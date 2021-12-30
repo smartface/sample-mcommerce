@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviHomeProducts",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "7886-61eb-1fbd-6516",
 			"props": {
 				"children": [
