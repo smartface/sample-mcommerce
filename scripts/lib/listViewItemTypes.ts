@@ -1,11 +1,14 @@
 import LviAccount from '../components/LviAccount';
+import LviHomeProducts from '../components/LviHomeProducts';
 
 export enum LviTypes {
-    LVI_ACCOUNT
+    LVI_ACCOUNT,
+    LVI_HOME_PRODUCTS
 }
 
 export const LviClasses = {
-    [LviTypes.LVI_ACCOUNT]: LviAccount
+    [LviTypes.LVI_ACCOUNT]: LviAccount,
+    [LviTypes.LVI_HOME_PRODUCTS]: LviHomeProducts
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -47,6 +50,7 @@ export interface IProcessed<T> {
 
 export namespace ProcessorTypes {
     export interface ILviAccount extends IProcessed<LviAccount> {}
+    export interface ILviHomeProducts extends IProcessed<LviHomeProducts> {}
 }
 
 export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAccount {
@@ -57,5 +61,16 @@ export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAcc
             borders: []
         },
         height: LviAccount.getHeight()
+    };
+}
+
+export function getLviHomeProducts(item: Partial<LviHomeProducts>): ProcessorTypes.ILviHomeProducts {
+    return {
+        type: 'LVI_HOME_PRODUCTS',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviHomeProducts.getHeight()
     };
 }

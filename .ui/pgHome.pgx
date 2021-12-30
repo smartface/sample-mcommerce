@@ -71,10 +71,8 @@
 			"className": ".sf-listView",
 			"id": "d4e5-3968-92a3-8db0",
 			"props": {
-				"children": [
-					"09f1-9590-a639-adb5"
-				],
-				"name": "listShowcases",
+				"children": [],
+				"name": "lvMain",
 				"parent": "0cc7-c9f0-ae49-184b",
 				"usePageVariable": true
 			},
@@ -86,43 +84,6 @@
 				"height": null,
 				"testId": "Z--GuhP9L",
 				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-listViewItem",
-			"hiddenComponent": false,
-			"id": "09f1-9590-a639-adb5",
-			"props": {
-				"children": [],
-				"name": "lviHomeProducts",
-				"parent": "d4e5-3968-92a3-8db0"
-			},
-			"source": {
-				"page": "__library__",
-				"type": "lviHomeProducts",
-				"id": "7886-61eb-1fbd-6516"
-			},
-			"type": "ListViewItem",
-			"userProps": {
-				"flex": {
-					"alignItems": 4,
-					"justifyContent": 1,
-					"alignContent": 2,
-					"flexWrap": 0,
-					"positionType": 0
-				},
-				"flexProps": {
-					"alignItems": "STRETCH",
-					"justifyContent": "CENTER",
-					"alignContent": "CENTER",
-					"flexWrap": "NOWRAP",
-					"positionType": "RELATIVE"
-				},
-				"height": "329.47",
-				"left": 0,
-				"testId": "Sct2y2MyI",
-				"top": 0,
-				"width": "383.16"
 			}
 		}
 	]
