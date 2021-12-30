@@ -40,6 +40,9 @@ export default class PgLogin extends PgLoginDesign {
     this.mtbPassword.materialTextBox.isPassword = true;
   }
   initUserLogin() {
+    this.mtbLogin.materialTextBox.text = 'smartface';
+    this.mtbPassword.materialTextBox.text = '1234';
+
     if (this.mtbLogin.materialTextBox.text && this.mtbLogin.materialTextBox.text !== '' && this.mtbPassword.materialTextBox.text && this.mtbPassword.materialTextBox.text !== '') {
       const found = store.getState().users.find((usr) => usr.email === this.mtbLogin.materialTextBox.text);
       console.log('login found usr', found);
@@ -83,4 +86,5 @@ function onLoad(this: PgLogin, superOnLoad: () => void) {
   this.headerBar.title = global.lang.loginHeader;
   this.headerBar.android.elevation = 0;
   this.initMaterialTextBoxes();
+  this.initUserLogin();
 }

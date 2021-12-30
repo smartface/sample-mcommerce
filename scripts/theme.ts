@@ -16,7 +16,7 @@ type ThemeListener = (themeName: string) => void;
 
 const themeListeners = new WeakMap<{}, ThemeListener>();
 const themeListenerKeys: {}[] = [];
-const ThemeService = {
+export const ThemeService = {
   onChange(listener: ThemeListener) {
     const key = {};
     themeListenerKeys.push(key);
