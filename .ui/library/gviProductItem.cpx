@@ -7,7 +7,7 @@
 			"props": {
 				"children": [
 					"d9b4-8ba5-e284-4e97",
-					"90d8-1943-66fe-a884"
+					"6477-2b35-9f70-2a57"
 				],
 				"name": "gviProductItem",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -36,7 +36,6 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"testId": "-rbJa19Vu",
 				"usePageVariable": true
 			}
 		},
@@ -205,12 +204,31 @@
 			}
 		},
 		{
-			"className": ".sf-label .gviProductItem-lblTag",
-			"id": "90d8-1943-66fe-a884",
+			"className": ".sf-flexLayout .gviProductItem-flTagWrapper",
+			"id": "6477-2b35-9f70-2a57",
+			"props": {
+				"children": [
+					"c390-bc1c-9b4b-6376"
+				],
+				"name": "flTagWrapper",
+				"parent": "d126-3ab9-070f-a586",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .gviProductItem-flTagWrapper-lblTag",
+			"id": "c390-bc1c-9b4b-6376",
 			"props": {
 				"children": [],
 				"name": "lblTag",
-				"parent": "d126-3ab9-070f-a586",
+				"parent": "6477-2b35-9f70-2a57",
 				"text": "label1",
 				"usePageVariable": true
 			},
@@ -219,6 +237,12 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"flexProps": {
+					"flexGrow": 1,
+					"positionType": "RELATIVE"
+				},
+				"height": null,
+				"testId": "P5NlWy478",
 				"text": "label1",
 				"usePageVariable": true
 			}

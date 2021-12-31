@@ -60,7 +60,7 @@ export default class GviProductItem extends GviProductItemDesign {
     }
     set itemTag(value: string) {
         if (!value) {
-            this.lblTag.visible = false
+            this.flTagWrapper.visible = false
             // this.lblTag.dispatch({
             //     type: 'updateUserStyle',
             //     userStyle: {
