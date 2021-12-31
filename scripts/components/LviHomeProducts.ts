@@ -1,7 +1,7 @@
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 import LviHomeProductsDesign from 'generated/my-components/LviHomeProducts';
 import GviProductItem from './GviProductItem';
-import store from 'store';
+import store from 'store/index';
 const originalHeight = getCombinedStyle('.lviHomeProducts').height;
 
 export default class LviHomeProducts extends LviHomeProductsDesign {
@@ -43,6 +43,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
             GridViewItem.itemPrice = `$${this.items[productIndex].price}`;
 
             this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
+                console.log('routet', this.router);
                 this.router.push('/btb/tab1/productDetail', {
                     productId: this.items[productIndex].id,
                     productName: this.items[productIndex].name,

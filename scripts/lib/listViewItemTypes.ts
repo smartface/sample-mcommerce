@@ -1,17 +1,23 @@
 import LviAccount from '../components/LviAccount';
 import LviHomeProducts from '../components/LviHomeProducts';
 import LviHomeSlider from '../components/LviHomeSlider';
+import LviCartItem from '../components/LviCartItem';
+import LviFavorites from '../components/LviFavorites';
 
 export enum LviTypes {
     LVI_ACCOUNT,
     LVI_HOME_PRODUCTS,
-    LVI_HOME_SLIDER
+    LVI_HOME_SLIDER,
+    LVI_CART_PRODUCTS,
+    LVI_FAVOURITES
 }
 
 export const LviClasses = {
     [LviTypes.LVI_ACCOUNT]: LviAccount,
     [LviTypes.LVI_HOME_PRODUCTS]: LviHomeProducts,
-    [LviTypes.LVI_HOME_SLIDER]: LviHomeSlider
+    [LviTypes.LVI_HOME_SLIDER]: LviHomeSlider,
+    [LviTypes.LVI_CART_PRODUCTS]: LviCartItem,
+    [LviTypes.LVI_FAVOURITES]: LviFavorites
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -55,6 +61,8 @@ export namespace ProcessorTypes {
     export interface ILviAccount extends IProcessed<LviAccount> {}
     export interface ILviHomeProducts extends IProcessed<LviHomeProducts> {}
     export interface ILviHomeSlider extends IProcessed<LviHomeSlider> {}
+    export interface ILviCartItem extends IProcessed<LviCartItem> {}
+    export interface ILviFavorites extends IProcessed<LviFavorites> {}
 }
 
 export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAccount {
@@ -87,5 +95,26 @@ export function getLviHomeSlider(item: Partial<LviHomeSlider>): ProcessorTypes.I
             borders: []
         },
         height: LviHomeSlider.getHeight()
+    };
+}
+
+export function getLviCartProducts(item: Partial<LviCartItem>): ProcessorTypes.ILviAccount {
+    return {
+        type: 'LVI_CART_PRODUCTS',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviCartItem.getHeight()
+    };
+}
+export function getLviFavorites(item: Partial<LviFavorites>): ProcessorTypes.ILviFavorites {
+    return {
+        type: 'LVI_FAVOURITES',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviFavorites.getHeight()
     };
 }

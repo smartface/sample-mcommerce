@@ -53,10 +53,8 @@
 			"className": ".sf-listView .grow",
 			"id": "058b-4603-b33c-5ca6",
 			"props": {
-				"children": [
-					"4b8c-bdf3-f78a-a3a6"
-				],
-				"name": "lvCart",
+				"children": [],
+				"name": "lvMain",
 				"parent": "036b-b8d7-fe5a-9b69",
 				"usePageVariable": true
 			},
@@ -64,31 +62,6 @@
 			"userProps": {
 				"testId": "MvUB2U7Zx",
 				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-listViewItem",
-			"hiddenComponent": false,
-			"id": "4b8c-bdf3-f78a-a3a6",
-			"props": {
-				"children": [],
-				"name": "lviCartItem",
-				"parent": "058b-4603-b33c-5ca6"
-			},
-			"source": {
-				"page": "__library__",
-				"type": "lviCartItem",
-				"id": "9653-a462-6015-ef3e"
-			},
-			"type": "ListViewItem",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {},
-				"height": 150,
-				"testId": "2CR5Jw8Wo",
-				"width": 410
 			}
 		}
 	]

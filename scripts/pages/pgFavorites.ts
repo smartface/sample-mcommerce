@@ -8,107 +8,142 @@ import ListView from '@smartface/native/ui/listview';
 import System from '@smartface/native/device/system';
 import Font from '@smartface/native/ui/font';
 import View from '@smartface/native/ui/view';
+import * as ListViewItems from 'lib/listViewItemTypes';
+import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/listView';
+
+type Processor = ListViewItems.ProcessorTypes.ILviFavorites | ListViewItems.ProcessorTypes.ILviFavorites;
 
 export default class PgFavorites extends PgFavoritesDesign {
-  favoriteProducts: any;
-  constructor() {
-    super();
-    // Overrides super.onShow method
-    this.onShow = onShow.bind(this, this.onShow.bind(this));
-    // Overrides super.onLoad method
-    this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    favoriteProducts: any;
+    data: Processor[];
+    constructor() {
+        super();
+        // Overrides super.onShow method
+        this.onShow = onShow.bind(this, this.onShow.bind(this));
+        // Overrides super.onLoad method
+        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
-    this.btnAddAllToCart.text = global.lang.addAllToCart;
-  }
-  applyDimension(index: number, item: any): void {
-    if (index == 0) {
-      item.android.borderTopRightRadius = 5;
-      item.android.borderTopLeftRadius = 5;
-      item.android.borderBottomLeftRadius = 5;
-      item.android.borderBottomRightRadius = 5;
-    } else if (index == store.getState().products.length - 1) {
-      item.android.borderTopRightRadius = 5;
-      item.android.borderTopLeftRadius = 5;
-      item.android.borderBottomLeftRadius = 5;
-      item.android.borderBottomRightRadius = 5;
-    } else {
-      item.android.borderTopRightRadius = 5;
-      item.android.borderTopLeftRadius = 5;
-      item.android.borderBottomLeftRadius = 5;
-      item.android.borderBottomRightRadius = 5;
+        this.btnAddAllToCart.text = global.lang.addAllToCart;
     }
-    item.android.paddingLeft = 230;
-    item.android.paddingTop = 30;
-    item.android.paddingRight = 15;
-    item.android.paddingBottom = 20;
-  }
-  deleteAndRefresh(e: { index: number }): void {
-    let length = this.favoriteProducts.length;
-    let removedItem = this.favoriteProducts.find((product, index) => index === e.index);
-    this.favoriteProducts.splice(e.index, 1);
-    store.dispatch({
-      type: 'REMOVE_FROM_FAVORITES',
-      payload: {
-        data: {
-          productId: removedItem.id,
-        },
-      },
-    });
-    // this.listView1.deleteRowRange({
-    //   itemCount: 1,
-    //   positionStart: e.index,
-    //   ios: {
-    //     animation: ListView.iOS.RowAnimation.FADE,
-    //   },
-    // });
-    if (System.OS == 'iOS') {
-    } else {
-      this.listView1.refreshRowRange({ itemCount: 1, positionStart: 0 });
-      this.listView1.refreshRowRange({ itemCount: 1, positionStart: this.favoriteProducts.length - 1 });
-    }
-    this.refreshFavoritesList();
-  }
-  refreshFavoritesList() {
-    this.favoriteProducts = store.getState().favorites;
-    this.listView1.itemCount = this.favoriteProducts.length;
-    this.listView1.refreshData();
-  }
-  initFavoriteList() {
-    this.listView1.swipeEnabled = true;
-    // this.listView1.contentInset = { top: 10, bottom: 0 };
-    this.listView1.onRowCanSwipe = (index: number) => {
-      return [ListView.SwipeDirection.RIGHTTOLEFT];
-    };
-    this.listView1.onRowSwipe = (e: any): ListView.SwipeItem[] => {
-      if (e.direction == ListView.SwipeDirection.RIGHTTOLEFT) {
-        console.log('e', e);
-        e.ios.expansionSettings.buttonIndex = 0;
-        e.ios.expansionSettings.threshold = 1.5;
-        e.ios.expansionSettings.fillOnTrigger = true;
-        let deleteItem = new ListView.SwipeItem();
-        deleteItem.text = 'Delete';
-        deleteItem.backgroundColor = Color.RED;
-        deleteItem.textColor = Color.create('#FFFFFF');
-        deleteItem.icon = Image.createFromFile('images://cross.png');
-        //@ts-ignore
-        //@ts-ignore
-        deleteItem.ios.isAutoHide = false;
-        deleteItem.onPress = (e: any) => {
-          this.deleteAndRefresh(e);
-        };
-        this.applyDimension(e.index, deleteItem);
-        return [deleteItem];
-      }
-    };
+    // applyDimension(index: number, item: any): void {
+    //     if (index == 0) {
+    //         item.android.borderTopRightRadius = 5;
+    //         item.android.borderTopLeftRadius = 5;
+    //         item.android.borderBottomLeftRadius = 5;
+    //         item.android.borderBottomRightRadius = 5;
+    //     } else if (index == store.getState().products.length - 1) {
+    //         item.android.borderTopRightRadius = 5;
+    //         item.android.borderTopLeftRadius = 5;
+    //         item.android.borderBottomLeftRadius = 5;
+    //         item.android.borderBottomRightRadius = 5;
+    //     } else {
+    //         item.android.borderTopRightRadius = 5;
+    //         item.android.borderTopLeftRadius = 5;
+    //         item.android.borderBottomLeftRadius = 5;
+    //         item.android.borderBottomRightRadius = 5;
+    //     }
+    //     item.android.paddingLeft = 230;
+    //     item.android.paddingTop = 30;
+    //     item.android.paddingRight = 15;
+    //     item.android.paddingBottom = 20;
+    // }
+    // deleteAndRefresh(e: { index: number }): void {
+    //     let length = this.favoriteProducts.length;
+    //     let removedItem = this.favoriteProducts.find((product, index) => index === e.index);
+    //     this.favoriteProducts.splice(e.index, 1);
+    //     store.dispatch({
+    //         type: 'REMOVE_FROM_FAVORITES',
+    //         payload: {
+    //             data: {
+    //                 productId: removedItem.id
+    //             }
+    //         }
+    //     });
+    //     // this.listView1.deleteRowRange({
+    //     //   itemCount: 1,
+    //     //   positionStart: e.index,
+    //     //   ios: {
+    //     //     animation: ListView.iOS.RowAnimation.FADE,
+    //     //   },
+    //     // });
+    //     if (System.OS == 'iOS') {
+    //     } else {
+    //         this.listView1.refreshRowRange({ itemCount: 1, positionStart: 0 });
+    //         this.listView1.refreshRowRange({ itemCount: 1, positionStart: this.favoriteProducts.length - 1 });
+    //     }
+    //     this.refreshFavoritesList();
+    // }
+    // refreshFavoritesList() {
+    //     this.favoriteProducts = store.getState().favorites;
+    //     this.listView1.itemCount = this.favoriteProducts.length;
+    //     this.listView1.refreshData();
+    // }
+    // initFavoriteList() {
+    //     this.listView1.swipeEnabled = true;
+    //     // this.listView1.contentInset = { top: 10, bottom: 0 };
+    //     this.listView1.onRowCanSwipe = (index: number) => {
+    //         return [ListView.SwipeDirection.RIGHTTOLEFT];
+    //     };
+    //     this.listView1.onRowSwipe = (e: any): ListView.SwipeItem[] => {
+    //         if (e.direction == ListView.SwipeDirection.RIGHTTOLEFT) {
+    //             console.log('e', e);
+    //             e.ios.expansionSettings.buttonIndex = 0;
+    //             e.ios.expansionSettings.threshold = 1.5;
+    //             e.ios.expansionSettings.fillOnTrigger = true;
+    //             let deleteItem = new ListView.SwipeItem();
+    //             deleteItem.text = 'Delete';
+    //             deleteItem.backgroundColor = Color.RED;
+    //             deleteItem.textColor = Color.create('#FFFFFF');
+    //             deleteItem.icon = Image.createFromFile('images://cross.png');
+    //             //@ts-ignore
+    //             //@ts-ignore
+    //             deleteItem.ios.isAutoHide = false;
+    //             deleteItem.onPress = (e: any) => {
+    //                 this.deleteAndRefresh(e);
+    //             };
+    //             this.applyDimension(e.index, deleteItem);
+    //             return [deleteItem];
+    //         }
+    //     };
 
-    this.listView1.onRowBind = (listViewItem: lviFavorites, index: number) => {
-      listViewItem.itemPrice = this.favoriteProducts[index].price;
-      listViewItem.itemTitle = this.favoriteProducts[index].name;
-      listViewItem.itemDesc = this.favoriteProducts[index].description;
-      listViewItem.itemImage = this.favoriteProducts[index].image;
-    };
-    this.listView1.rowHeight = 120;
-  }
+    //     this.listView1.onRowBind = (listViewItem: lviFavorites, index: number) => {
+    //         listViewItem.itemPrice = this.favoriteProducts[index].price;
+    //         listViewItem.itemTitle = this.favoriteProducts[index].name;
+    //         listViewItem.itemDesc = this.favoriteProducts[index].description;
+    //         listViewItem.itemImage = this.favoriteProducts[index].image;
+    //     };
+    //     this.listView1.rowHeight = 120;
+    // }
+
+    initListView() {
+        this.lvMain.onRowType = onRowType.bind(this);
+        this.lvMain.onRowHeight = onRowHeight.bind(this);
+        this.lvMain.onRowCreate = onRowCreate.bind(this);
+        this.lvMain.onRowBind = onRowBind.bind(this);
+        this.lvMain.onRowSwipe = onRowSwipe.bind(this);
+        this.lvMain.refreshEnabled = false;
+    }
+    refreshListView() {
+        this.data = this.processor();
+        this.lvMain.itemCount = this.data.length;
+        this.lvMain.refreshData();
+    }
+    processor(): Processor[] {
+        const processorItems = [];
+        this.favoriteProducts = store.getState().favorites;
+        this.favoriteProducts.forEach((favouritedItem) => {
+            processorItems.push(
+                ListViewItems.getLviFavorites({
+                    itemTitle: favouritedItem.name,
+                    itemDesc: favouritedItem.description,
+                    itemImage: favouritedItem.image,
+                    itemPrice: favouritedItem.price
+                })
+            );
+        });
+
+        return processorItems;
+    }
 }
 
 /**
@@ -118,9 +153,9 @@ export default class PgFavorites extends PgFavoritesDesign {
  * @param {Object} parameters passed from Router.go function
  */
 function onShow(this: PgFavorites, superOnShow: () => void) {
-  superOnShow();
-  this.refreshFavoritesList();
-  this.headerBar.title = global.lang.favouriteHeader;
+    superOnShow();
+    this.refreshListView();
+    this.headerBar.title = global.lang.favouriteHeader;
 }
 
 /**
@@ -129,10 +164,11 @@ function onShow(this: PgFavorites, superOnShow: () => void) {
  * @param {function} superOnLoad super onLoad function
  */
 function onLoad(this: PgFavorites, superOnLoad: () => void) {
-  superOnLoad();
-  this.headerBar.leftItemEnabled = false;
-  this.headerBar.title = 'Favorites';
-  this.headerBar.backgroundColor = Color.WHITE;
-  this.headerBar.android.elevation = 0;
-  this.initFavoriteList();
+    superOnLoad();
+    this.headerBar.leftItemEnabled = false;
+    this.headerBar.title = 'Favorites';
+    this.headerBar.backgroundColor = Color.WHITE;
+    this.headerBar.android.elevation = 0;
+    this.initListView();
+    this.refreshListView();
 }

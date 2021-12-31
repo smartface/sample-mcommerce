@@ -5,85 +5,117 @@ import LviCartItem from 'components/LviCartItem';
 import PgCartDesign from 'generated/pages/pgCart';
 import store from 'store';
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import * as ListViewItems from 'lib/listViewItemTypes';
+import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 
+type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
+
 export default class PgCart extends PgCartDesign {
-  unsubscribe: any;
-  basketItems: any;
-  rightItem: HeaderBarItem;
-  myDialog = new Dialog();
-  constructor() {
-    super();
-    // Overrides super.onShow method
-    this.onShow = onShow.bind(this, this.onShow.bind(this));
-    // Overrides super.onLoad method
-    this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-    // this.rightItem.onPress = () => {
-    //   this.myDialog.show();
-    // };
-    //this.btnGoToCheckOut.text = global.lang.goToCheckout;
-  }
-  addRightItem() {
-    this.rightItem = new HeaderBarItem();
-    this.rightItem.title = 'Select';
-    this.rightItem.font = Font.create('Nunito', 16);
-    this.rightItem.color = Color.BLACK;
-    this.headerBar.setItems([this.rightItem]);
-  }
-  refreshCart() {
-    this.basketItems = store.getState().basket;
-    console.log('refreshCart > basket Items', this.basketItems);
-    this.lvCart.itemCount = this.basketItems.length;
-    this.lvCart.refreshData();
-  }
-  initCartList() {
-    this.lvCart.onRowHeight = (index) => LviCartItem.getHeight();
-    this.lvCart.onRowBind = (listViewItem: LviCartItem, index: number) => {
-      listViewItem.productPrice = this.basketItems[index].price.toString();
-      listViewItem.productName = this.basketItems[index].name;
-      listViewItem.productInfo = this.basketItems[index].description;
-      listViewItem.productImage = this.basketItems[index].image;
-      listViewItem.productCount = this.basketItems[index].count.toString();
-      listViewItem.onActionPlus = () => {
-        store.dispatch({
-          type: 'ADD_TO_BASKET',
-          payload: {
-            data: {
-              product: this.basketItems[index],
-              count: 1,
-            },
-          },
+    unsubscribe: any;
+    basketItems: any;
+    rightItem: HeaderBarItem;
+    cartProducts: any;
+    data: Processor[];
+    myDialog = new Dialog();
+    constructor() {
+        super();
+        // Overrides super.onShow method
+        this.onShow = onShow.bind(this, this.onShow.bind(this));
+        // Overrides super.onLoad method
+        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+        // this.rightItem.onPress = () => {
+        //   this.myDialog.show();
+        // };
+        //this.btnGoToCheckOut.text = global.lang.goToCheckout;
+    }
+    addRightItem() {
+        this.rightItem = new HeaderBarItem();
+        this.rightItem.title = 'Select';
+        this.rightItem.font = Font.create('Nunito', 16);
+        this.rightItem.color = Color.BLACK;
+        this.headerBar.setItems([this.rightItem]);
+    }
+
+    initListView() {
+        this.lvMain.onRowType = onRowType.bind(this);
+        this.lvMain.onRowHeight = onRowHeight.bind(this);
+        this.lvMain.onRowCreate = onRowCreate.bind(this);
+        this.lvMain.onRowBind = onRowBind.bind(this);
+        this.lvMain.refreshEnabled = false;
+    }
+    refreshListView() {
+        this.data = this.processor();
+        this.lvMain.itemCount = this.data.length;
+        this.lvMain.refreshData();
+    }
+    processor(): Processor[] {
+        const processorItems = [];
+        this.cartProducts = store.getState().basket;
+        this.cartProducts.forEach((cart) => {
+            processorItems.push(
+                ListViewItems.getLviCartProducts({
+                    productName: cart.name,
+                    productInfo: cart.description,
+                    productImage: cart.image,
+                    productPrice: cart.price,
+                    productCount: cart.count,
+                    onActionPlus: () => {
+                        this.cartOperation(cart, 1);
+                        this.refreshListView();
+                    },
+                    onActionMinus: () => {
+                        this.cartOperation(cart, -1);
+                        this.refreshListView();
+                    },
+                    onRemoveAction: () => {
+                        this.cartOperation(cart, 'all');
+                        this.refreshListView();
+                    }
+                })
+            );
         });
 
-        this.refreshCart();
-      };
-      listViewItem.onActionMinus = () => {
-        store.dispatch({
-          type: 'ADD_TO_BASKET',
-          payload: {
-            data: {
-              product: this.basketItems[index],
-              count: -1,
-            },
-          },
-        });
+        return processorItems;
+    }
+    cartOperation(cart, type) {
+        switch (type) {
+            case 1:
+                return store.dispatch({
+                    type: 'ADD_TO_BASKET',
+                    payload: {
+                        data: {
+                            product: cart,
+                            count: 1
+                        }
+                    }
+                });
+                break;
+            case -1:
+                return store.dispatch({
+                    type: 'ADD_TO_BASKET',
+                    payload: {
+                        data: {
+                            product: cart,
+                            count: -1
+                        }
+                    }
+                });
+                break;
+            case 'all':
+                return store.dispatch({
+                    type: 'REMOVE_FROM_BASKET',
+                    payload: {
+                        data: {
+                            productId: cart.id
+                        }
+                    }
+                });
 
-        this.refreshCart();
-      };
-      listViewItem.onRemoveAction = () => {
-        store.dispatch({
-          type: 'REMOVE_FROM_BASKET',
-          payload: {
-            data: {
-              productId: this.basketItems[index].id,
-            },
-          },
-        });
-
-        this.refreshCart();
-      };
-    };
-  }
+            default:
+                break;
+        }
+    }
 }
 
 /**
@@ -93,12 +125,12 @@ export default class PgCart extends PgCartDesign {
  * @param {Object} parameters passed from Router.go function
  */
 function onShow(this: PgCart, superOnShow: () => void) {
-  superOnShow();
-  this.headerBar.title = global.lang.mycartHeader;
-  this.basketItems = store.getState().basket;
-  this.refreshCart();
-  // this.unsubscribe = store.subscribe(this.getBasketItems)
-  // this.unsubscribe();
+    superOnShow();
+    this.headerBar.title = global.lang.mycartHeader;
+    this.basketItems = store.getState().basket;
+    this.refreshListView();
+    // this.unsubscribe = store.subscribe(this.getBasketItems)
+    // this.unsubscribe();
 }
 
 /**
@@ -107,10 +139,11 @@ function onShow(this: PgCart, superOnShow: () => void) {
  * @param {function} superOnLoad super onLoad function
  */
 function onLoad(this: PgCart, superOnLoad: () => void) {
-  superOnLoad();
-  this.headerBar.leftItemEnabled = false;
-  this.headerBar.backgroundColor = Color.WHITE;
-  this.headerBar.android.elevation = 0;
-  this.initCartList();
-  this.addRightItem();
+    superOnLoad();
+    this.headerBar.leftItemEnabled = false;
+    this.headerBar.backgroundColor = Color.WHITE;
+    this.headerBar.android.elevation = 0;
+    this.initListView();
+    this.refreshListView();
+    this.addRightItem();
 }
