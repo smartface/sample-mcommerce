@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page.backgroundMain",
 			"id": "0cc7-c9f0-ae49-184b",
 			"initialized": true,
 			"props": {

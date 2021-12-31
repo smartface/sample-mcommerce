@@ -13,7 +13,7 @@ export default class PgWelcome extends PgWelcomeDesign {
 		// Overrides super.onLoad method
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
         this.btnStart.on(View.Events.Touch, () => {
-            this.router.push('/pages/pgNumber')
+            this.router.push('pgNumber')
         })
         this.lblWelcome.text = global.lang.welcomeText
         this.lblSubtext.text = global.lang.welcomeSubText

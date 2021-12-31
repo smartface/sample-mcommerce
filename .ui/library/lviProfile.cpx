@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviProfile",
-            "hiddenComponent": true,
+			"hiddenComponent": true,
 			"id": "21e4-9a74-e568-74d9",
 			"props": {
 				"children": [

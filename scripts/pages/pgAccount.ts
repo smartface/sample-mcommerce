@@ -9,7 +9,11 @@ import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import ListView from '@smartface/native/ui/listview';
 
-type Processor = ListViewItems.ProcessorTypes.ILviAccount;
+type Processor =
+    | ListViewItems.ProcessorTypes.ILviAccount
+    | ListViewItems.ProcessorTypes.ILviProfile
+    | ListViewItems.ProcessorTypes.ILviRow2LineButton
+    | ListViewItems.ProcessorTypes.ILviSpacer;
 
 export default class PgAccount extends PgAccountDesign {
     router: any;
@@ -43,6 +47,7 @@ export default class PgAccount extends PgAccountDesign {
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.refreshEnabled = false;
+        this.refreshListView();
     }
     refreshListView() {
         this.data = this.processor();
@@ -51,14 +56,30 @@ export default class PgAccount extends PgAccountDesign {
     }
     processor(): Processor[] {
         this.userInfo = store.getState().currentUser[0];
-        const processorItems = [
-            ListViewItems.getLviProfile({
-                userName: this.userInfo.fullName,
-                userEmail: this.userInfo.email,
-                userEditIcon: '',
-                userImage: this.userInfo.profileImage
-            })
-        ];
+        console.info('userInfo: ', this.userInfo);
+        const accountItem = this.userInfo
+            ? ListViewItems.getLviProfile({
+                  userName: this.userInfo.fullName,
+                  userEmail: this.userInfo.email,
+                  userEditIcon: '',
+                  userImage: this.userInfo.profileImage
+              })
+            : ListViewItems.getLviRow2LineButton({
+                  leftIcon: 'images://tabiconuser.png',
+                  mainButtonText: 'Log In',
+                  bottomLeftButtonText: 'Register',
+                  bottomRightButtonText: 'Forgot Password',
+                  mainOnClick: () => {
+                      this.router.push('pages/pgWelcome');
+                  },
+                  bottomLeftOnClick: () => {
+                      console.info('bottomLeftOnClick');
+                  },
+                  bottomRightOnClick: () => {
+                      console.info('bottomRightOnClick');
+                  }
+              });
+        const processorItems = [accountItem, ListViewItems.getLviSpacerItem({ className: 'small' })];
         const accountMenus = store.getState().accountMenus;
         accountMenus.forEach((menu, index) => {
             processorItems.push(
@@ -69,13 +90,17 @@ export default class PgAccount extends PgAccountDesign {
                 })
             );
         });
+        console.info('processorItems: ', processorItems);
         return processorItems;
     }
 }
 
 function onShow(this: PgAccount, superOnShow: () => void) {
     superOnShow();
-    //this.initAccountUser();
+    console.info('onShow');
+    setTimeout(() => {
+        this.refreshListView();
+    }, 500);
 }
 
 function onLoad(this: PgAccount, superOnLoad: () => void) {
@@ -83,5 +108,4 @@ function onLoad(this: PgAccount, superOnLoad: () => void) {
     this.headerBar.title = global.lang.accountHeader;
     this.headerBar.android.elevation = 0;
     this.initListView();
-    this.refreshListView();
 }

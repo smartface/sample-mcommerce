@@ -17,7 +17,7 @@ export default class PgVerification extends PgVerificationDesign {
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
         this.btnRouter.on(View.Events.Touch, () => {
-            this.router.push('/pages/pgLogin')
+            this.router.push('pgLogin')
         })
 
         this.lblTitle.text = global.lang.enterdigitcode

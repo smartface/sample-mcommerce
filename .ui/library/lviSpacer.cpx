@@ -1,0 +1,40 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviSpacer",
+			"hiddenComponent": true,
+			"id": "9221-229c-4fe2-104e",
+			"initialized": true,
+			"props": {
+				"children": [
+					"7c36-5f36-f6ca-c699"
+				],
+				"name": "lviSpacer",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {
+				"flexProps": {}
+			}
+		},
+		{
+			"className": ".sf-flexLayout .lviSpacer-dummyLayout .grow-relative",
+			"id": "7c36-5f36-f6ca-c699",
+			"props": {
+				"children": [],
+				"name": "dummyLayout",
+				"parent": "9221-229c-4fe2-104e"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "9aU5PUWG9"
+			}
+		}
+	]
+}

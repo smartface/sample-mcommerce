@@ -1,0 +1,30 @@
+{
+	".lviSpacer": {
+		"height": 30,
+		"backgroundColor": "${backgroundMain}",
+		".small": {
+			"height": 15
+		},
+		".medium": {
+			"height": 20
+		},
+		".xSmall": {
+			"height": 10
+		},
+		".xxSmall": {
+			"height": 5
+		},
+		".large": {
+			"height": 30
+		},
+		".xLarge": {
+			"height": 35
+		},
+		"&-dummyLayout": {
+			"visible": false,
+			"height": null,
+			"width": null,
+			"backgroundColor": "${backgroundMain}"
+		}
+	}
+}

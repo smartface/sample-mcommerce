@@ -4,6 +4,8 @@ import LviHomeSlider from '../components/LviHomeSlider';
 import LviCartItem from '../components/LviCartItem';
 import LviFavorites from '../components/LviFavorites';
 import LviProfile from '../components/LviProfile';
+import LviRow2LineButton from '../components/LviRow2LineButton';
+import LviSpacer from '../components/LviSpacer';
 
 export enum LviTypes {
     LVI_ACCOUNT,
@@ -11,7 +13,9 @@ export enum LviTypes {
     LVI_HOME_SLIDER,
     LVI_CART_PRODUCTS,
     LVI_FAVOURITES,
-    LVI_PROFILE
+    LVI_PROFILE,
+    LVI_ROW2_LINE_BUTTON,
+    LVI_SPACER
 }
 
 export const LviClasses = {
@@ -20,7 +24,9 @@ export const LviClasses = {
     [LviTypes.LVI_HOME_SLIDER]: LviHomeSlider,
     [LviTypes.LVI_CART_PRODUCTS]: LviCartItem,
     [LviTypes.LVI_FAVOURITES]: LviFavorites,
-    [LviTypes.LVI_PROFILE]: LviProfile
+    [LviTypes.LVI_PROFILE]: LviProfile,
+    [LviTypes.LVI_ROW2_LINE_BUTTON]: LviRow2LineButton,
+    [LviTypes.LVI_SPACER]: LviSpacer
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -67,6 +73,8 @@ export namespace ProcessorTypes {
     export interface ILviCartItem extends IProcessed<LviCartItem> {}
     export interface ILviFavorites extends IProcessed<LviFavorites> {}
     export interface ILviProfile extends IProcessed<LviProfile> {}
+    export interface ILviRow2LineButton extends IProcessed<LviRow2LineButton> {}
+    export interface ILviSpacer extends IProcessed<LviSpacer> {}
 }
 
 export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAccount {
@@ -131,5 +139,24 @@ export function getLviProfile(item: Partial<LviProfile>): ProcessorTypes.ILviPro
             borders: []
         },
         height: LviProfile.getHeight()
+    };
+}
+
+export function getLviRow2LineButton(item: Partial<LviRow2LineButton>): ProcessorTypes.ILviRow2LineButton {
+    return {
+        type: 'LVI_ROW2_LINE_BUTTON',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviRow2LineButton.getHeight()
+    };
+}
+
+export function getLviSpacerItem(item: Partial<LviSpacer>): ProcessorTypes.ILviSpacer {
+    return {
+        type: 'LVI_SPACER',
+        properties: { ...item },
+        height: LviSpacer.getHeight(item.className)
     };
 }

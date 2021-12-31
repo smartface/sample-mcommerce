@@ -17,7 +17,7 @@ export default class PgNumber extends PgNumberDesign {
 		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
         this.btnRoute.on(View.Events.Touch, () => {
-            this.router.push('/pages/pgVerification')
+            this.router.push('pgVerification')
         })
         this.lblTitle.text = global.lang.enterMobilNumberText
         this.lblText.text = global.lang.mobileNumber

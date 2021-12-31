@@ -1,0 +1,41 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviRow2LineButton .paddingHorizontal",
+			"hiddenComponent": true,
+			"id": "158b-b29b-245e-38b5",
+			"props": {
+				"children": [
+					"6a23-35d7-a2b1-f561"
+				],
+				"name": "lviRow2LineButton",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flRow2LineButton",
+			"hiddenComponent": false,
+			"id": "6a23-35d7-a2b1-f561",
+			"props": {
+				"children": [],
+				"name": "flRow2LineButton",
+				"parent": "158b-b29b-245e-38b5",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flRow2LineButton",
+				"id": "6680-6456-32b9-4718"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

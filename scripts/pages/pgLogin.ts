@@ -60,7 +60,7 @@ export default class PgLogin extends PgLoginDesign {
                             data: found
                         }
                     });
-                    this.router.push('/btb/tab1/home');
+                    this.router.dismiss();                    
                 }
             }
         }
