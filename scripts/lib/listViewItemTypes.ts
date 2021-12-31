@@ -3,13 +3,15 @@ import LviHomeProducts from '../components/LviHomeProducts';
 import LviHomeSlider from '../components/LviHomeSlider';
 import LviCartItem from '../components/LviCartItem';
 import LviFavorites from '../components/LviFavorites';
+import LviProfile from '../components/LviProfile';
 
 export enum LviTypes {
     LVI_ACCOUNT,
     LVI_HOME_PRODUCTS,
     LVI_HOME_SLIDER,
     LVI_CART_PRODUCTS,
-    LVI_FAVOURITES
+    LVI_FAVOURITES,
+    LVI_PROFILE
 }
 
 export const LviClasses = {
@@ -17,7 +19,8 @@ export const LviClasses = {
     [LviTypes.LVI_HOME_PRODUCTS]: LviHomeProducts,
     [LviTypes.LVI_HOME_SLIDER]: LviHomeSlider,
     [LviTypes.LVI_CART_PRODUCTS]: LviCartItem,
-    [LviTypes.LVI_FAVOURITES]: LviFavorites
+    [LviTypes.LVI_FAVOURITES]: LviFavorites,
+    [LviTypes.LVI_PROFILE]: LviProfile
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -63,6 +66,7 @@ export namespace ProcessorTypes {
     export interface ILviHomeSlider extends IProcessed<LviHomeSlider> {}
     export interface ILviCartItem extends IProcessed<LviCartItem> {}
     export interface ILviFavorites extends IProcessed<LviFavorites> {}
+    export interface ILviProfile extends IProcessed<LviProfile> {}
 }
 
 export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAccount {
@@ -116,5 +120,16 @@ export function getLviFavorites(item: Partial<LviFavorites>): ProcessorTypes.ILv
             borders: []
         },
         height: LviFavorites.getHeight()
+    };
+}
+
+export function getLviProfile(item: Partial<LviProfile>): ProcessorTypes.ILviProfile {
+    return {
+        type: 'LVI_PROFILE',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviProfile.getHeight()
     };
 }

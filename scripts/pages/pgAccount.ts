@@ -7,13 +7,14 @@ import Application from '@smartface/native/application';
 import Data from '@smartface/native/global/data';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
+import ListView from '@smartface/native/ui/listview';
 
 type Processor = ListViewItems.ProcessorTypes.ILviAccount;
 
 export default class PgAccount extends PgAccountDesign {
     router: any;
     data: any;
-
+    userInfo: any;
     constructor() {
         super();
         // Overrides super.onShow method
@@ -21,26 +22,19 @@ export default class PgAccount extends PgAccountDesign {
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
-        this.btnLogout.on(View.Events.Touch, () => {
-            store.dispatch({
-                type: 'RESET'
-            });
-            this.router.push('/pages/pgLogin');
-        });
+        // this.btnLogout.on(View.Events.Touch, () => {
+        //     store.dispatch({
+        //         type: 'RESET'
+        //     });
+        //     this.router.push('/pages/pgLogin');
+        // });
         // this.button1.on(View.Events.Touch, () => {
         //     // SMF.i18n.switchLanguage('tr');
         //     Data.setStringVariable('language', 'en');
         //     Application.restart();
         // })
 
-        this.btnLogout.text = global.lang.logout;
-    }
-    initAccountUser() {
-        console.log('CURRENT USER', store.getState().currentUser);
-        this.flAccountUser.userName = store.getState().currentUser[0].fullName;
-        this.flAccountUser.userEmail = store.getState().currentUser[0].email;
-        this.flAccountUser.userEditIcon = '';
-        this.flAccountUser.userImage = store.getState().currentUser[0].profileImage;
+        //this.btnLogout.text = global.lang.logout;
     }
 
     initListView() {
@@ -56,20 +50,32 @@ export default class PgAccount extends PgAccountDesign {
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
-        const accountMenus = store.getState().accountMenus;
-        return accountMenus.map((menu, index) =>
-            ListViewItems.getLviAccount({
-                itemTitle: menu.menuTitle,
-                leftIcon: menu.menuLeftIcon,
-                bottomLine: index === accountMenus.length - 1
+        this.userInfo = store.getState().currentUser[0];
+        const processorItems = [
+            ListViewItems.getLviProfile({
+                userName: this.userInfo.fullName,
+                userEmail: this.userInfo.email,
+                userEditIcon: '',
+                userImage: this.userInfo.profileImage
             })
-        );
+        ];
+        const accountMenus = store.getState().accountMenus;
+        accountMenus.forEach((menu, index) => {
+            processorItems.push(
+                ListViewItems.getLviAccount({
+                    itemTitle: menu.menuTitle,
+                    leftIcon: menu.menuLeftIcon,
+                    bottomLine: index === accountMenus.length - 1
+                })
+            );
+        });
+        return processorItems;
     }
 }
 
 function onShow(this: PgAccount, superOnShow: () => void) {
     superOnShow();
-    this.initAccountUser();
+    //this.initAccountUser();
 }
 
 function onLoad(this: PgAccount, superOnLoad: () => void) {
