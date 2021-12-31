@@ -1,0 +1,37 @@
+{
+	".gviProductItem": {
+		"flexProps": {},
+		"height": 250,
+		"left": "36.17",
+		"testId": "yW_9gIzxP",
+		"top": "52.13",
+		"width": 174,
+		"&-lblTag": {
+			"backgroundColor": "rgba( 136, 21, 236, 1 )",
+			"borderRadius": 10,
+			"ellipsizeMode": "END",
+			"flexProps": {
+				"positionType": "ABSOLUTE",
+				"alignSelf": "AUTO",
+				"flexGrow": 1
+			},
+			"font": {
+				"size": 10,
+				"bold": true,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Medium"
+			},
+			"height": 25,
+			"marginBottom": null,
+			"marginTop": null,
+			"right": 10,
+			"textAlignment": "MIDCENTER",
+			"textColor": "rgba( 255, 255, 255, 1 )",
+			"top": 10,
+			"maxWidth": 150,
+			"paddingRight": 10,
+			"paddingLeft": 10
+		}
+	}
+}

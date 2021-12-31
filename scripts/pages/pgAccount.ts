@@ -1,13 +1,9 @@
 import PgAccountDesign from 'generated/pages/pgAccount';
 import store from '../store/index';
-import LviAccount from 'components/LviAccount';
-import FlAccountUser from 'components/FlAccountUser';
-import View from '@smartface/native/ui/view';
-import Application from '@smartface/native/application';
-import Data from '@smartface/native/global/data';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
-import ListView from '@smartface/native/ui/listview';
+import HeaderBarItem from '@smartface/native/ui/headerbaritem';
+import Color from '@smartface/native/ui/color';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -19,26 +15,14 @@ export default class PgAccount extends PgAccountDesign {
     router: any;
     data: any;
     userInfo: any;
+    rightItem: HeaderBarItem;
+    onExit: (...args) => any;
     constructor() {
         super();
         // Overrides super.onShow method
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
-        // this.btnLogout.on(View.Events.Touch, () => {
-        //     store.dispatch({
-        //         type: 'RESET'
-        //     });
-        //     this.router.push('/pages/pgLogin');
-        // });
-        // this.button1.on(View.Events.Touch, () => {
-        //     // SMF.i18n.switchLanguage('tr');
-        //     Data.setStringVariable('language', 'en');
-        //     Application.restart();
-        // })
-
-        //this.btnLogout.text = global.lang.logout;
     }
 
     initListView() {
@@ -90,14 +74,38 @@ export default class PgAccount extends PgAccountDesign {
                 })
             );
         });
-        console.info('processorItems: ', processorItems);
         return processorItems;
+    }
+    addRightItem() {
+        this.rightItem = new HeaderBarItem();
+        this.rightItem.image = 'images://logouticon.png';
+        this.rightItem.color = Color.BLACK;
+        this.rightItem.onPress = () => {
+            return this.onExit();
+        };
+        this.headerBar.setItems([this.rightItem]);
+    }
+    initLogoutButton() {
+        this.onExit = () => {
+            store.dispatch({
+                type: 'LOGOUT'
+            });
+            this.refreshListView();
+        };
     }
 }
 
 function onShow(this: PgAccount, superOnShow: () => void) {
     superOnShow();
-    console.info('onShow');
+    console.log('isuserloggedin: =>', store.getState().isUserLoggedIn);
+    store.subscribe(() => {
+        if (store.getState().isUserLoggedIn) {
+            this.addRightItem();
+        } else {
+            this.headerBar.setItems([]);
+            this.layout.applyLayout();
+        }
+    });
     setTimeout(() => {
         this.refreshListView();
     }, 500);
@@ -107,5 +115,6 @@ function onLoad(this: PgAccount, superOnLoad: () => void) {
     superOnLoad();
     this.headerBar.title = global.lang.accountHeader;
     this.headerBar.android.elevation = 0;
+    this.initLogoutButton();
     this.initListView();
 }
