@@ -45,7 +45,7 @@ export default class PgHome extends PgHomeDesign {
     processor(): Processor[] {
         const processorItems = [
             ListViewItems.getLviHomeSlider({
-                images: ['images://apple.png', 'images://banana.png']
+                images: ['images://firstbanner.png', 'images://firstbanner.png']
             })
         ];
         this.showcases = store.getState().showcaseProducts;
@@ -54,7 +54,16 @@ export default class PgHome extends PgHomeDesign {
                 ListViewItems.getLviHomeProducts({
                     showcaseTitle: showcase.showcaseTitle,
                     showcaseLinkText: showcase.showcaseLinkText,
-                    items: showcase.products
+                    items: showcase.products,
+                    onProductClick: (product) => {
+                        this.router.push('/btb/tab1/productDetail', {
+                            productId: product.id,
+                            productName: product.name,
+                            productPrice: product.price,
+                            productDescription: product.description,
+                            productImg: product.image
+                        });
+                    }
                 })
             );
         });

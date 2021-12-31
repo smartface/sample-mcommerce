@@ -3,10 +3,10 @@ import LviHomeProductsDesign from 'generated/my-components/LviHomeProducts';
 import GviProductItem from './GviProductItem';
 import store from 'store/index';
 const originalHeight = getCombinedStyle('.lviHomeProducts').height;
-
+import { Router } from '@smartface/router';
 export default class LviHomeProducts extends LviHomeProductsDesign {
     pageName?: string | undefined;
-    router: any;
+    private __onProductClick: (product: any) => void;
     private __items: any[] = [];
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
@@ -35,6 +35,12 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
         this.__items = value;
         this.initGridView();
     }
+    get onProductClick(): (product: any) => void {
+        return this.__onProductClick;
+    }
+    set onProductClick(value: (product: any) => void) {
+        this.__onProductClick = value;
+    }
     private initGridView() {
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             GridViewItem.itemTitle = this.items[productIndex].name;
@@ -43,14 +49,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
             GridViewItem.itemPrice = `$${this.items[productIndex].price}`;
 
             this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
-                console.log('routet', this.router);
-                this.router.push('/btb/tab1/productDetail', {
-                    productId: this.items[productIndex].id,
-                    productName: this.items[productIndex].name,
-                    productPrice: this.items[productIndex].price,
-                    productDescription: this.items[productIndex].description,
-                    productImg: this.items[productIndex].image
-                });
+                this.onProductClick(this.items[productIndex]);
             };
             GridViewItem.onActionClick = () => {
                 GridViewItem.initIndicator();
