@@ -148,7 +148,8 @@ const initialState = {
             description: '325ml, Price',
             price: 4.99,
             image: 'sprite.png',
-            categoryId: 6
+            categoryId: 6,
+            discountTag: 'Sepette %15 indirim'
         },
         {
             id: 2,
@@ -156,7 +157,8 @@ const initialState = {
             description: '325ml, Price',
             price: 1.99,
             image: 'dietcoke.png',
-            categoryId: 6
+            categoryId: 6,
+            discountTag: 'Süper Fiyat'
         },
         {
             id: 3,
@@ -344,6 +346,7 @@ const initAction = (state = initialState, action) => {
             return state;
         case 'REMOVE_FROM_BASKET':
             removeFromBasket(state, action);
+            return state;
         case 'ADD_TO_FAVORITES':
             addToFavorites(state, action);
             return state;

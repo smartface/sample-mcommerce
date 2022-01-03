@@ -52,29 +52,37 @@ export default class PgCart extends PgCartDesign {
     processor(): Processor[] {
         const processorItems = [];
         this.cartProducts = store.getState().basket;
-        this.cartProducts.forEach((cart) => {
+        if (this.cartProducts.length === 0) {
             processorItems.push(
-                ListViewItems.getLviCartProducts({
-                    productName: cart.name,
-                    productInfo: cart.description,
-                    productImage: cart.image,
-                    productPrice: cart.price,
-                    productCount: cart.count,
-                    onActionPlus: () => {
-                        this.cartOperation(cart, 1);
-                        this.refreshListView();
-                    },
-                    onActionMinus: () => {
-                        this.cartOperation(cart, -1);
-                        this.refreshListView();
-                    },
-                    onRemoveAction: () => {
-                        this.cartOperation(cart, 'all');
-                        this.refreshListView();
-                    }
+                ListViewItems.getLviEmptyItem({
+                    emptyImage: 'images://empty_cart.png',
+                    emptyTitle: global.lang.shoppingCartIsEmpty
                 })
             );
-        });
+        } else {
+            this.cartProducts.forEach((cart) => {
+                processorItems.push(
+                    ListViewItems.getLviCartProducts({
+                        productName: cart.name,
+                        productInfo: cart.description,
+                        productImage: cart.image,
+                        productPrice: cart.price,
+                        productCount: cart.count,
+                        onActionPlus: () => {
+                            this.cartOperation(cart, 1);
+                            this.refreshListView();
+                        },
+                        onActionMinus: () => {
+                            this.cartOperation(cart, -1);
+                            this.refreshListView();
+                        },
+                        onRemoveAction: () => {
+                            this.toggleDialog(true, cart);
+                        }
+                    })
+                );
+            });
+        }
 
         return processorItems;
     }
@@ -115,6 +123,35 @@ export default class PgCart extends PgCartDesign {
             default:
                 break;
         }
+    }
+    toggleDialog(toggle: boolean, cart: any) {
+        this.flDialog.dialogTitle = 'Bu ürünü silmek istediğinizden emin misiniz?';
+        this.flDialog.btnAcceptTitle = 'Evet';
+        this.flDialog.btnDenyTitle = 'Hayır';
+        this.flDialog.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                visible: toggle
+            }
+        });
+        this.flDialog.acceptClick = () => {
+            this.cartOperation(cart, 'all');
+            this.refreshListView();
+            this.flDialog.dispatch({
+                type: 'updateUserStyle',
+                userStyle: {
+                    visible: false
+                }
+            });
+        };
+        this.flDialog.denyClick = () => {
+            this.flDialog.dispatch({
+                type: 'updateUserStyle',
+                userStyle: {
+                    visible: false
+                }
+            });
+        };
     }
 }
 

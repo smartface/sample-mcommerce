@@ -10,27 +10,27 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
     }
-    initgridview() {
-        const products = state.getState().products.filter((product) => product.categoryId === this.routeData.id);
+    initGridView() {
+        const categoryProducts = state.getState().products.filter((product) => product.categoryId === this.routeData.id);
         this.gvMain.scrollBarEnabled = false;
         this.gvMain.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
-            //GridViewItem.itemTag = products[productIndex].discountTag;
-            GridViewItem.itemTitle = products[productIndex].name;
-            GridViewItem.itemDesc = products[productIndex].description;
-            GridViewItem.itemImage = products[productIndex].image;
-            GridViewItem.itemPrice = `$${products[productIndex].price}`;
+            GridViewItem.itemTag = categoryProducts[productIndex].discountTag;
+            GridViewItem.itemTitle = categoryProducts[productIndex].name;
+            GridViewItem.itemDesc = categoryProducts[productIndex].description;
+            GridViewItem.itemImage = categoryProducts[productIndex].image;
+            GridViewItem.itemPrice = `$${categoryProducts[productIndex].price}`;
         };
-        this.gvMain.itemCount = products.length;
+        this.gvMain.itemCount = categoryProducts.length;
     }
 }
 
 function onShow(this: PgCategoryDetail, superOnShow: () => void) {
     superOnShow();
-    this.initgridview();
+    this.initGridView();
 }
 
 function onLoad(this: PgCategoryDetail, superOnLoad: () => void) {
     superOnLoad();
-    this.initgridview();
+    this.initGridView();
     this.headerBar.title = this.routeData.title;
 }

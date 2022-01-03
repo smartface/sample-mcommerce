@@ -8,8 +8,7 @@
 				"children": [
 					"5e52-8223-5aed-6626",
 					"23ce-fa2e-9d68-e404",
-					"e97d-0545-2a49-4ba2",
-					"4dca-3168-2b63-80c9"
+					"e97d-0545-2a49-4ba2"
 				],
 				"name": "pgFavorites",
 				"orientation": "PORTRAIT",
@@ -58,41 +57,6 @@
 			"type": "ListView",
 			"userProps": {
 				"testId": "wHnvwrM2N",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout .sticky .padding",
-			"id": "4dca-3168-2b63-80c9",
-			"props": {
-				"children": [
-					"838d-f202-ddc8-2b87"
-				],
-				"name": "flFavoritesBottomButton",
-				"parent": "e27f-743b-23a5-ea3b",
-				"usePageVariable": true
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"testId": "exfK66zt8",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-button .sf-button-main",
-			"id": "838d-f202-ddc8-2b87",
-			"props": {
-				"children": [],
-				"name": "btnAddAllToCart",
-				"parent": "4dca-3168-2b63-80c9",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"testId": "GsVkZ-Ujf",
 				"usePageVariable": true
 			}
 		}

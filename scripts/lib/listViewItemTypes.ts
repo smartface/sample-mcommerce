@@ -6,6 +6,7 @@ import LviFavorites from '../components/LviFavorites';
 import LviProfile from '../components/LviProfile';
 import LviRow2LineButton from '../components/LviRow2LineButton';
 import LviSpacer from '../components/LviSpacer';
+import LviEmptyItem from '../components/LviEmptyItem';
 
 export enum LviTypes {
     LVI_ACCOUNT,
@@ -15,7 +16,8 @@ export enum LviTypes {
     LVI_FAVOURITES,
     LVI_PROFILE,
     LVI_ROW2_LINE_BUTTON,
-    LVI_SPACER
+    LVI_SPACER,
+    LVI_EMPTY_ITEM
 }
 
 export const LviClasses = {
@@ -26,7 +28,8 @@ export const LviClasses = {
     [LviTypes.LVI_FAVOURITES]: LviFavorites,
     [LviTypes.LVI_PROFILE]: LviProfile,
     [LviTypes.LVI_ROW2_LINE_BUTTON]: LviRow2LineButton,
-    [LviTypes.LVI_SPACER]: LviSpacer
+    [LviTypes.LVI_SPACER]: LviSpacer,
+    [LviTypes.LVI_EMPTY_ITEM]: LviEmptyItem
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -75,6 +78,7 @@ export namespace ProcessorTypes {
     export interface ILviProfile extends IProcessed<LviProfile> {}
     export interface ILviRow2LineButton extends IProcessed<LviRow2LineButton> {}
     export interface ILviSpacer extends IProcessed<LviSpacer> {}
+    export interface ILviEmptyItem extends IProcessed<LviEmptyItem> {}
 }
 
 export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAccount {
@@ -158,5 +162,12 @@ export function getLviSpacerItem(item: Partial<LviSpacer>): ProcessorTypes.ILviS
         type: 'LVI_SPACER',
         properties: { ...item },
         height: LviSpacer.getHeight(item.className)
+    };
+}
+export function getLviEmptyItem(item: Partial<LviEmptyItem>): ProcessorTypes.ILviEmptyItem {
+    return {
+        type: 'LVI_EMPTY_ITEM',
+        properties: { ...item },
+        height: LviEmptyItem.getHeight()
     };
 }

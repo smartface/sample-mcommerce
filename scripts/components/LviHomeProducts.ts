@@ -42,7 +42,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     }
     set categoryItems(value: any[]) {
         this.__categoryItems = value;
-        this.initcategorygridview();
+        // this.initcategorygridview();
     }
     get onProductClick(): (product: any) => void {
         return this.__onProductClick;
