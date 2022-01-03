@@ -1,6 +1,6 @@
-import FlProductItem_1Design from 'generated/my-components/FlProductItem_1';
+import LviRow2ProductItemDesign from 'generated/my-components/LviRow2ProductItem';
 
-export default class FlProductItem_1 extends FlProductItem_1Design {
+export default class LviRow2ProductItem extends LviRow2ProductItemDesign {
 	pageName?: string | undefined;
 	constructor(props?: any, pageName?: string) {
 		// Initalizes super class for this scope

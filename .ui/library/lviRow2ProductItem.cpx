@@ -1,0 +1,80 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviRow2ProductItem",
+			"hiddenComponent": true,
+			"id": "c339-ec36-d7e7-39c2",
+			"props": {
+				"children": [
+					"53d3-f37b-0499-8e8c",
+					"209f-83fa-0a40-53a8"
+				],
+				"name": "lviRow2ProductItem",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-gridViewItem .gviProductItem",
+			"hiddenComponent": false,
+			"id": "53d3-f37b-0499-8e8c",
+			"props": {
+				"children": [],
+				"name": "flProductItem1",
+				"parent": "c339-ec36-d7e7-39c2",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flProductItem",
+				"id": "d126-3ab9-070f-a585"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"testId": "yKEInCyYq",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-gridViewItem .gviProductItem",
+			"hiddenComponent": false,
+			"id": "209f-83fa-0a40-53a8",
+			"props": {
+				"children": [],
+				"name": "flProductItem2",
+				"parent": "c339-ec36-d7e7-39c2",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flProductItem",
+				"id": "d126-3ab9-070f-a585"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"testId": "r_nFh_oqf",
+				"top": 0,
+				"usePageVariable": true
+			}
+		}
+	]
+}

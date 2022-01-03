@@ -2,9 +2,7 @@
 	".gviProductItem": {
 		"flexProps": {},
 		"height": 250,
-		"left": "36.17",
 		"testId": "yW_9gIzxP",
-		"top": "52.13",
 		"width": 174,
 		"&-flTagWrapper": {
 			"backgroundColor": "rgba( 136, 21, 236, 1 )",

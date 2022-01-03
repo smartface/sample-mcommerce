@@ -3,6 +3,7 @@ import Button from '@smartface/native/ui/button';
 import Image from '@smartface/native/ui/image';
 import View from '@smartface/native/ui/view';
 import GviProductItemDesign from 'generated/my-components/GviProductItem';
+import setVisibility from 'lib/setVisibility';
 import store from 'store';
 
 export default class GviProductItem extends GviProductItemDesign {
@@ -73,15 +74,15 @@ export default class GviProductItem extends GviProductItemDesign {
         }
     }
     get itemImage(): string | Image {
-        return this.gviProductItemImg.image;
+        return this.itemImage;
     }
     set itemImage(value: string | Image) {
-        this.gviProductItemImg.image = Image.createFromFile(`images://${value}`);
+        this.itemImage = value;
     }
     get itemDesc(): string {
-        return this.gviProductItemDesc.text;
+        return this.flProductItem.itemDesc;
     }
     set itemDesc(value: string) {
-        this.gviProductItemDesc.text = value;
+        this.flProductItem.itemDesc = value;
     }
 }
