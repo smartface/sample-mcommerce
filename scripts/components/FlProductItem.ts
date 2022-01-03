@@ -35,35 +35,29 @@ export default class FlProductItem extends FlProductItemDesign {
         });
     }
     get onActionClick(): Button['onTouch'] {
-        return this.btnAddToCard.onTouch;
+        return this.btnAddToBasket.onTouch;
     }
     set onActionClick(value: Button['onTouch']) {
-        this.btnAddToCard.onTouch = value;
+        this.btnAddToBasket.onTouch = value;
     }
     get itemTitle(): string {
-        return this.lblProductTitle.text;
+        return this.lblProductItemTitle.text;
     }
     set itemTitle(value: string) {
-        this.lblProductTitle.text = value;
+        this.lblProductItemTitle.text = value;
     }
     get itemPrice(): any {
-        return this.lblProductPrice.text;
+        return this.lblProductItemTitle.text;
     }
     set itemPrice(value: any) {
-        this.lblProductPrice.text = value;
+        this.lblProductItemTitle.text = value;
     }
     get itemTag(): string {
-        return this.itemTag.text;
+        return this.lblTag.text;
     }
     set itemTag(value: string) {
         if (!value) {
             this.flTagWrapper.visible = false;
-            // this.lblTag.dispatch({
-            //     type: 'updateUserStyle',
-            //     userStyle: {
-            //         visible: false
-            //     }
-            // });
         } else {
             this.lblTag.text = value;
         }
