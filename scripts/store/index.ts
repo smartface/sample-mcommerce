@@ -122,6 +122,22 @@ const initialState = {
                     image: 'eggs.png',
                     categoryId: 6
                 }
+            ],
+            categories: [
+                {
+                    id: 1,
+                    title: 'Fresh Fruits & Vegetable',
+                    menuColor: '#1053B175',
+                    menuBorderColor: '#7053B175',
+                    categoryImg: 'catfruits.png'
+                },
+                {
+                    id: 2,
+                    title: 'Cooking Oil & Ghee',
+                    menuColor: '#10F8A44C',
+                    menuBorderColor: '#70F8A44C',
+                    categoryImg: 'catoil.png'
+                }
             ]
         }
     ],

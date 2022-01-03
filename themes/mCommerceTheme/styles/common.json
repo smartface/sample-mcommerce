@@ -20,12 +20,23 @@
 		"paddingTop": 15,
 		"paddingBottom": 15
 	},
-    ".paddingVertical": {
-        "paddingTop": 15,
-        "paddingBottom": 15
-    },
-    ".paddingHorizontal": {
-        "paddingLeft": 15,
-        "paddingRight": 15
-    }
+	".paddingVertical": {
+		"paddingTop": 15,
+		"paddingBottom": 15
+	},
+	".paddingHorizontal": {
+		"paddingLeft": 15,
+		"paddingRight": 15
+	},
+	".gvMain": {
+		"testId": "ArDB7vEaS",
+		"height": null,
+		"layoutManager": {
+			"spanCount": 2,
+			"scrollDirection": "HORIZONTAL"
+		},
+		"flexProps": {
+			"flexGrow": 1
+		}
+	}
 }

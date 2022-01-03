@@ -55,6 +55,7 @@ export default class PgHome extends PgHomeDesign {
                     showcaseTitle: showcase.showcaseTitle,
                     showcaseLinkText: showcase.showcaseLinkText,
                     items: showcase.products,
+                    categoryItems: showcase.categories,
                     onProductClick: (product) => {
                         this.router.push('/btb/tab1/productDetail', {
                             productId: product.id,

@@ -12,4 +12,5 @@ export type Product = {
     price: number;
     image: string;
     categoryId: number;
+    discountTag: string;
 };

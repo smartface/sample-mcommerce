@@ -90,6 +90,20 @@ export default BottomTabBarRouter.of({
                         getPageClass: () => require('pages/pgCategories').default,
                         headerBarStyle: { visible: true }
                     })
+                }),
+                StackRouter.of({
+                    path: '/btb/tab2/categoryDetail',
+                    to: '/btb/tab2/categoryDetail/main',
+                    modal: true,
+                    routes: [
+                        Route.of({
+                            path: '/btb/tab2/categoryDetail/main',
+                            build: buildExtender({
+                                getPageClass: () => require('pages/pgCategoryDetail').default,
+                                headerBarStyle: { visible: true }
+                            })
+                        })
+                    ]
                 })
             ]
         }),

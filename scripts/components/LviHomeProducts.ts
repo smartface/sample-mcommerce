@@ -4,10 +4,12 @@ import GviProductItem from './GviProductItem';
 import store from 'store/index';
 const originalHeight = getCombinedStyle('.lviHomeProducts').height;
 import { Router } from '@smartface/router';
+import GviHomeCategoryItem from './GviHomeCategoryItem';
 export default class LviHomeProducts extends LviHomeProductsDesign {
     pageName?: string | undefined;
     private __onProductClick: (product: any) => void;
     private __items: any[] = [];
+    private __categoryItems: any[] = [];
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
         super(props);
@@ -35,12 +37,27 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
         this.__items = value;
         this.initGridView();
     }
+    get categoryItems(): any[] {
+        return this.__categoryItems;
+    }
+    set categoryItems(value: any[]) {
+        this.__categoryItems = value;
+        this.initcategorygridview();
+    }
     get onProductClick(): (product: any) => void {
         return this.__onProductClick;
     }
     set onProductClick(value: (product: any) => void) {
         this.__onProductClick = value;
     }
+    // private initcategorygridview() {
+    //     console.log('categoryItems: ', this.categoryItems);
+    //     this.gvCategoryItems.onItemBind = (GridViewItem: GviHomeCategoryItem, index: number) => {
+    //         GridViewItem.categoryName = this.categoryItems[index].title;
+    //         GridViewItem.categoryImage = this.categoryItems[index].categoryImg;
+    //     };
+    //     this.gvCategoryItems.itemCount = this.categoryItems.length;
+    // }
     private initGridView() {
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             GridViewItem.itemTag = this.items[productIndex].discountTag;
