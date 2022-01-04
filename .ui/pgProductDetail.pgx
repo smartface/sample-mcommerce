@@ -9,7 +9,8 @@
 					"a15a-7cf2-a4a9-f958",
 					"5616-03c8-f54a-9abb",
 					"f8d9-73ab-9922-ebe2",
-					"388a-35d9-8d5e-3e28"
+					"388a-35d9-8d5e-3e28",
+					"9ded-29fe-1660-25ad"
 				],
 				"name": "pgProductDetail",
 				"orientation": "PORTRAIT",
@@ -938,6 +939,32 @@
 				"testId": "NHOhfHEUD",
 				"top": 0,
 				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flAlert",
+			"hiddenComponent": false,
+			"id": "9ded-29fe-1660-25ad",
+			"props": {
+				"children": [],
+				"name": "flAlert",
+				"parent": "9495-c1b8-4521-aab3",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flAlert",
+				"id": "2828-6214-d267-443c"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"bottom": 0,
+				"left": 100,
+				"right": 100,
+				"testId": "Gy0TPpubN",
+				"top": 250,
+				"usePageVariable": true,
+				"visible": false
 			}
 		}
 	]

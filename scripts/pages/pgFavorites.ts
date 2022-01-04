@@ -22,8 +22,6 @@ export default class PgFavorites extends PgFavoritesDesign {
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
-        this.btnAddAllToCart.text = global.lang.addAllToCart;
     }
     applyDimension(index: number, item: any): void {
         if (index == 0) {
@@ -104,17 +102,25 @@ export default class PgFavorites extends PgFavoritesDesign {
     processor(): Processor[] {
         const processorItems = [];
         this.favoriteProducts = store.getState().favorites;
-        this.favoriteProducts.forEach((favouritedItem) => {
+        if (this.favoriteProducts.length === 0) {
             processorItems.push(
-                ListViewItems.getLviFavorites({
-                    itemTitle: favouritedItem.name,
-                    itemDesc: favouritedItem.description,
-                    itemImage: favouritedItem.image,
-                    itemPrice: favouritedItem.price
+                ListViewItems.getLviEmptyItem({
+                    emptyImage: 'images://empty_favorite.png',
+                    emptyTitle: global.lang.favoritesIsEmpty
                 })
             );
-        });
-
+        } else {
+            this.favoriteProducts.forEach((favouritedItem) => {
+                processorItems.push(
+                    ListViewItems.getLviFavorites({
+                        itemTitle: favouritedItem.name,
+                        itemDesc: favouritedItem.description,
+                        itemImage: favouritedItem.image,
+                        itemPrice: favouritedItem.price
+                    })
+                );
+            });
+        }
         return processorItems;
     }
 }

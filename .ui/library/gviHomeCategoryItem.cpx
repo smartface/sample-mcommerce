@@ -15,7 +15,11 @@
 				"page": "__library__"
 			},
 			"type": "GridViewItem",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": "23.40",
+				"top": "30.85"
+			}
 		},
 		{
 			"className": ".sf-flexLayout .gviHomeCategoryItem-flHomeCategoryWrapper",

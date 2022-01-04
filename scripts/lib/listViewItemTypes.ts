@@ -8,6 +8,7 @@ import LviRow2LineButton from '../components/LviRow2LineButton';
 import LviSpacer from '../components/LviSpacer';
 import LviProductItem from '../components/LviProductItem';
 import LviRow2ProductItem from '../components/LviRow2ProductItem';
+import LviEmptyItem from '../components/LviEmptyItem';
 
 export enum LviTypes {
     LVI_ACCOUNT,
@@ -19,7 +20,8 @@ export enum LviTypes {
     LVI_ROW2_LINE_BUTTON,
     LVI_SPACER,
     LVI_PRODUCT_ITEM,
-    LVI_ROW_2_PRODUCT_ITEM
+    LVI_ROW_2_PRODUCT_ITEM,
+    LVI_EMPTY_ITEM
 }
 
 export const LviClasses = {
@@ -32,8 +34,8 @@ export const LviClasses = {
     [LviTypes.LVI_ROW2_LINE_BUTTON]: LviRow2LineButton,
     [LviTypes.LVI_SPACER]: LviSpacer,
     [LviTypes.LVI_PRODUCT_ITEM]: LviProductItem,
-    [LviTypes.LVI_ROW_2_PRODUCT_ITEM]: LviRow2ProductItem
-
+    [LviTypes.LVI_ROW_2_PRODUCT_ITEM]: LviRow2ProductItem,
+    [LviTypes.LVI_EMPTY_ITEM]: LviEmptyItem
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -84,6 +86,7 @@ export namespace ProcessorTypes {
     export interface ILviSpacer extends IProcessed<LviSpacer> {}
     export interface ILviProductItem extends IProcessed<LviProductItem> {}
     export interface ILviRow2ProductItem extends IProcessed<LviRow2ProductItem> {}
+    export interface ILviEmptyItem extends IProcessed<LviEmptyItem> {}
 }
 
 export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAccount {
@@ -183,5 +186,13 @@ export function getLviRow2ProductItem(item: Partial<LviRow2ProductItem>): Proces
         type: 'LVI_ROW_2_PRODUCT_ITEM',
         properties: { ...item },
         height: LviRow2ProductItem.getHeight()
+    };
+}
+
+export function getLviEmptyItem(item: Partial<LviEmptyItem>): ProcessorTypes.ILviEmptyItem {
+    return {
+        type: 'LVI_EMPTY_ITEM',
+        properties: { ...item },
+        height: LviEmptyItem.getHeight()
     };
 }

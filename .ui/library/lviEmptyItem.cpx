@@ -1,0 +1,74 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviEmptyItem",
+			"hiddenComponent": true,
+			"id": "3de8-9719-8900-24cd",
+			"props": {
+				"children": [
+					"3bfc-886e-d940-67ef"
+				],
+				"name": "lviEmptyItem",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .lviEmptyItem-flWrapper",
+			"id": "3bfc-886e-d940-67ef",
+			"props": {
+				"children": [
+					"6122-9207-778d-00f9",
+					"715c-9a6b-3d2f-2f86"
+				],
+				"name": "flWrapper",
+				"parent": "3de8-9719-8900-24cd"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-imageView .lviEmptyItem-flWrapper-imgEmpty",
+			"id": "6122-9207-778d-00f9",
+			"props": {
+				"children": [],
+				"name": "imgEmpty",
+				"parent": "3bfc-886e-d940-67ef",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .lviEmptyItem-flWrapper-lblEmptyTitle",
+			"id": "715c-9a6b-3d2f-2f86",
+			"props": {
+				"children": [],
+				"name": "lblEmptyTitle",
+				"parent": "3bfc-886e-d940-67ef",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		}
+	]
+}
