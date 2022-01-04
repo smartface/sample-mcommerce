@@ -1,6 +1,8 @@
+import FlProductItemDesign from 'generated/my-components/FlProductItem';
 import ActivityIndicator from '@smartface/native/ui/activityindicator';
 import Button from '@smartface/native/ui/button';
-import FlProductItemDesign from 'generated/my-components/FlProductItem';
+import Image from '@smartface/native/ui/image';
+import setVisibility from 'lib/setVisibility';
 
 export default class FlProductItem extends FlProductItemDesign {
     pageName?: string | undefined;
@@ -12,8 +14,8 @@ export default class FlProductItem extends FlProductItemDesign {
     }
     initIndicator() {
         this.myActivityIndicator = new ActivityIndicator();
-        this.myActivityIndicator.android.zIndex = this.btnAddToCard.android.zIndex + 1;
-        this.flProductPriceButtonWrapper.addChild(this.myActivityIndicator, 'myActivityIndicator', '.sf-activityIndicator', {
+        this.myActivityIndicator.android.zIndex = this.btnAddToBasket.android.zIndex + 1;
+        this.flProductItemPriceButtonWrapper.addChild(this.myActivityIndicator, 'myActivityIndicator', '.sf-activityIndicator', {
             width: 30,
             height: 30,
             right: 13,
@@ -47,10 +49,10 @@ export default class FlProductItem extends FlProductItemDesign {
         this.lblProductItemTitle.text = value;
     }
     get itemPrice(): any {
-        return this.lblProductItemTitle.text;
+        return this.lblProductItemPrice.text;
     }
     set itemPrice(value: any) {
-        this.lblProductItemTitle.text = value;
+        this.lblProductItemPrice.text = value;
     }
     get itemTag(): string {
         return this.lblTag.text;
@@ -61,17 +63,24 @@ export default class FlProductItem extends FlProductItemDesign {
         } else {
             this.lblTag.text = value;
         }
+
+        this.checkIsHidden();
     }
     get itemImage(): string | Image {
-        return this.gviProductItemImg.image;
+        return this.imgProduct.image;
     }
     set itemImage(value: string | Image) {
-        this.gviProductItemImg.image = Image.createFromFile(`images://${value}`);
+        if (value) {
+            this.imgProduct.image = Image.createFromFile(`images://${value}`);
+        }
     }
     get itemDesc(): string {
-        return this.gviProductItemDesc.text;
+        return this.lblProductItemDesc.text;
     }
     set itemDesc(value: string) {
-        this.gviProductItemDesc.text = value;
+        this.lblProductItemDesc.text = value;
+    }
+    private checkIsHidden() {
+        setVisibility(this, !!this.itemTitle);
     }
 }

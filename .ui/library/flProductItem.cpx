@@ -156,7 +156,7 @@
 			"id": "aea7-9ebe-b121-5ffd",
 			"props": {
 				"children": [],
-				"name": "flProductItemPrice",
+				"name": "lblProductItemPrice",
 				"parent": "de76-7e81-c1d8-5e75",
 				"text": "label2",
 				"usePageVariable": true

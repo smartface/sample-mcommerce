@@ -15,69 +15,40 @@ export default class GviProductItem extends GviProductItemDesign {
         this.pageName = pageName;
     }
     initIndicator() {
-        this.myActivityIndicator = new ActivityIndicator();
-        this.myActivityIndicator.android.zIndex = this.gviProductItemButton.android.zIndex + 1;
-        this.gviProductItemPriceButtonWrapper.addChild(this.myActivityIndicator, 'myActivityIndicator', '.sf-activityIndicator', {
-            width: 30,
-            height: 30,
-            right: 13,
-            visible: true,
-            flexProps: {
-                positionType: 'ABSOLUTE'
-            },
-            color: '#181725'
-        });
+        this.flProductItem.initIndicator();
     }
     toggleIndicator(toggle: boolean): void {
-        console.log('toggle', toggle);
-        //@ts-ignore
-        this.myActivityIndicator.dispatch({
-            type: 'updateUserStyle',
-            userStyle: {
-                visible: toggle
-            }
-        });
+        this.flProductItem.toggleIndicator(toggle);
     }
     get onActionClick(): Button['onTouch'] {
-        return this.gviProductItemButton.onTouch;
+        return this.flProductItem.btnAddToBasket.onTouch;
     }
     set onActionClick(value: Button['onTouch']) {
-        this.gviProductItemButton.onTouch = value;
+        this.flProductItem.btnAddToBasket.onTouch = value;
     }
     get itemTitle(): string {
-        return this.gviLblProductItemTitle.text;
+        return this.flProductItem.itemTitle;
     }
     set itemTitle(value: string) {
-        this.gviLblProductItemTitle.text = value;
+        this.flProductItem.itemTitle = value;
     }
     get itemPrice(): any {
-        return this.gviProductItemPrice.text;
+        return this.flProductItem.itemPrice.text;
     }
     set itemPrice(value: any) {
-        this.gviProductItemPrice.text = value;
+        this.flProductItem.itemPrice = value;
     }
     get itemTag(): string {
-        return this.lblTag.text;
+        return this.flProductItem.itemTag;
     }
     set itemTag(value: string) {
-        if (!value) {
-            this.flTagWrapper.visible = false
-            // this.lblTag.dispatch({
-            //     type: 'updateUserStyle',
-            //     userStyle: {
-            //         visible: false
-            //     }
-            // });
-        } else {
-            this.lblTag.text = value;
-
-        }
+        this.flProductItem.itemTag = value;
     }
     get itemImage(): string | Image {
-        return this.itemImage;
+        return this.flProductItem.itemImage;
     }
     set itemImage(value: string | Image) {
-        this.itemImage = value;
+        this.flProductItem.itemImage = value;
     }
     get itemDesc(): string {
         return this.flProductItem.itemDesc;

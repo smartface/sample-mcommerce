@@ -6,6 +6,8 @@ import LviFavorites from '../components/LviFavorites';
 import LviProfile from '../components/LviProfile';
 import LviRow2LineButton from '../components/LviRow2LineButton';
 import LviSpacer from '../components/LviSpacer';
+import LviProductItem from '../components/LviProductItem';
+import LviRow2ProductItem from '../components/LviRow2ProductItem';
 
 export enum LviTypes {
     LVI_ACCOUNT,
@@ -15,7 +17,9 @@ export enum LviTypes {
     LVI_FAVOURITES,
     LVI_PROFILE,
     LVI_ROW2_LINE_BUTTON,
-    LVI_SPACER
+    LVI_SPACER,
+    LVI_PRODUCT_ITEM,
+    LVI_ROW_2_PRODUCT_ITEM
 }
 
 export const LviClasses = {
@@ -26,7 +30,10 @@ export const LviClasses = {
     [LviTypes.LVI_FAVOURITES]: LviFavorites,
     [LviTypes.LVI_PROFILE]: LviProfile,
     [LviTypes.LVI_ROW2_LINE_BUTTON]: LviRow2LineButton,
-    [LviTypes.LVI_SPACER]: LviSpacer
+    [LviTypes.LVI_SPACER]: LviSpacer,
+    [LviTypes.LVI_PRODUCT_ITEM]: LviProductItem,
+    [LviTypes.LVI_ROW_2_PRODUCT_ITEM]: LviRow2ProductItem
+
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -75,6 +82,8 @@ export namespace ProcessorTypes {
     export interface ILviProfile extends IProcessed<LviProfile> {}
     export interface ILviRow2LineButton extends IProcessed<LviRow2LineButton> {}
     export interface ILviSpacer extends IProcessed<LviSpacer> {}
+    export interface ILviProductItem extends IProcessed<LviProductItem> {}
+    export interface ILviRow2ProductItem extends IProcessed<LviRow2ProductItem> {}
 }
 
 export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAccount {
@@ -158,5 +167,21 @@ export function getLviSpacerItem(item: Partial<LviSpacer>): ProcessorTypes.ILviS
         type: 'LVI_SPACER',
         properties: { ...item },
         height: LviSpacer.getHeight(item.className)
+    };
+}
+
+export function getLviProductItem(item: Partial<LviProductItem>): ProcessorTypes.ILviProductItem {
+    return {
+        type: 'LVI_PRODUCT_ITEM',
+        properties: { ...item },
+        height: LviProductItem.getHeight()
+    };
+}
+
+export function getLviRow2ProductItem(item: Partial<LviRow2ProductItem>): ProcessorTypes.ILviRow2ProductItem {
+    return {
+        type: 'LVI_ROW_2_PRODUCT_ITEM',
+        properties: { ...item },
+        height: LviRow2ProductItem.getHeight()
     };
 }
