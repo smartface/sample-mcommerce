@@ -16,8 +16,9 @@
 			},
 			"type": "ListViewItem",
 			"userProps": {
-				"left": null,
-				"top": null
+				"flexProps": {},
+				"left": "13.48",
+				"top": "573.03"
 			}
 		},
 		{
@@ -139,10 +140,6 @@
 			},
 			"type": "GridView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": 300,
 				"usePageVariable": true
 			}
 		},

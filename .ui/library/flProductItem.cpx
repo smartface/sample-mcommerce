@@ -1,8 +1,8 @@
 {
 	"components": [
 		{
-			"className": ".sf-gridViewItem .gviProductItem",
-			"hiddenComponent": true,
+			"className": ".sf-flexLayout .flProductItem",
+			"hiddenComponent": false,
 			"id": "d126-3ab9-070f-a585",
 			"props": {
 				"children": [
@@ -19,7 +19,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout .flProductItem",
+			"className": ".sf-flexLayout .flProductItem-flProductItemWrapper",
 			"id": "d9b4-8ba5-e284-4e97",
 			"props": {
 				"children": [
@@ -40,7 +40,7 @@
 			}
 		},
 		{
-			"className": ".sf-imageView .flProductItem-productImage",
+			"className": ".sf-imageView .flProductItem-flProductItemWrapper-productImage",
 			"hiddenComponent": true,
 			"id": "ffe7-7bee-8963-1fb1",
 			"props": {
@@ -60,7 +60,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flProductItem-descriptionWrapper",
+			"className": ".sf-flexLayout .flProductItem-flProductItemWrapper-descriptionWrapper",
 			"id": "d640-f820-86e0-1294",
 			"props": {
 				"children": [
@@ -81,7 +81,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .flProductItem-descriptionWrapper-lblProductTitle",
+			"className": ".sf-label .flProductItem-flProductItemWrapper-descriptionWrapper-lblProductTitle",
 			"id": "c198-5d29-8fb1-d382",
 			"props": {
 				"children": [],
@@ -103,7 +103,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .flProductItem-descriptionWrapper-lblProductDimension",
+			"className": ".sf-label .flProductItem-flProductItemWrapper-descriptionWrapper-lblProductDimension",
 			"id": "1c8b-9490-b880-0bac",
 			"props": {
 				"children": [],
@@ -125,7 +125,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flProductItem-priceButtonWrapper",
+			"className": ".sf-flexLayout .flProductItem-flProductItemWrapper-priceButtonWrapper",
 			"id": "de76-7e81-c1d8-5e75",
 			"props": {
 				"children": [
@@ -152,7 +152,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .flProductItem-priceButtonWrapper-lblProductPrice",
+			"className": ".sf-label .flProductItem-flProductItemWrapper-priceButtonWrapper-lblProductPrice",
 			"id": "aea7-9ebe-b121-5ffd",
 			"props": {
 				"children": [],
@@ -204,7 +204,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .gviProductItem-flTagWrapper",
+			"className": ".sf-flexLayout .flProductItem-flProductItemWrapper-flTagWrapper",
 			"id": "6477-2b35-9f70-2a57",
 			"props": {
 				"children": [
@@ -223,7 +223,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .gviProductItem-flTagWrapper-lblTag",
+			"className": ".sf-label .flProductItem-flProductItemWrapper-flTagWrapper-lblTag",
 			"id": "c390-bc1c-9b4b-6376",
 			"props": {
 				"children": [],

@@ -45,7 +45,7 @@ export default class PgHome extends PgHomeDesign {
     processor(): Processor[] {
         const processorItems = [
             ListViewItems.getLviHomeSlider({
-                images: ['images://firstbanner.png', 'images://firstbanner.png']
+                images: ['images://firstbanner.png', 'images://bannerone.png']
             })
         ];
         this.showcases = store.getState().showcaseProducts;

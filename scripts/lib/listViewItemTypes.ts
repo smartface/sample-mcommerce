@@ -193,6 +193,6 @@ export function getLviEmptyItem(item: Partial<LviEmptyItem>): ProcessorTypes.ILv
     return {
         type: 'LVI_EMPTY_ITEM',
         properties: { ...item },
-        height: LviEmptyItem.getHeight()
+        height: LviEmptyItem.getScreenHeight()
     };
 }

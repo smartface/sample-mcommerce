@@ -1,4 +1,5 @@
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import Screen from '@smartface/native/device/screen';
 import LviEmptyItemDesign from 'generated/my-components/LviEmptyItem';
 
 export default class LviEmptyItem extends LviEmptyItemDesign {
@@ -11,6 +12,9 @@ export default class LviEmptyItem extends LviEmptyItemDesign {
 
     static getHeight(): number {
         return getCombinedStyle(`.lviEmptyItem`).height || 0;
+    }
+    static getScreenHeight(): number {
+        return Screen.height / 2;
     }
     get emptyTitle(): any {
         return this.lblEmptyTitle.text;

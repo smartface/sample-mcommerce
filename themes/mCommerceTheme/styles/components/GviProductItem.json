@@ -3,14 +3,14 @@
 		"flexProps": {},
 		"height": 250,
 		"testId": "yW_9gIzxP",
-		"width": 174,
+		"width": 170,
 		"&-flTagWrapper": {
 			"backgroundColor": "rgba( 136, 21, 236, 1 )",
 			"testId": "_9ziXcn4H",
 			"height": 30,
-			"top": 5,
+			"top": 0,
 			"width": 100,
-			"right": 10,
+			"right": 5,
 			"borderRadius": 10,
 			"flexProps": {
 				"flexGrow": 1,
@@ -36,6 +36,7 @@
 				"paddingRight": 10,
 				"paddingLeft": 10
 			}
-		}
+		},
+		"paddingTop": 10
 	}
 }

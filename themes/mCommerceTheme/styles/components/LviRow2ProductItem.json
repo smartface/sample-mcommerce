@@ -2,8 +2,8 @@
 	".lviRow2ProductItem": {
 		"height": 250,
 		"flexProps": {
-			"flexDirection": "ROW",
-			"justifyContent": "SPACE_AROUND"
-		}
+			"flexDirection": "ROW"
+		},
+		"width": null
 	}
 }

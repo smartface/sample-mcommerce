@@ -48,6 +48,10 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"flexProps": {
+					"flexGrow": null
+				},
+				"height": 150,
 				"usePageVariable": true
 			}
 		},
@@ -66,6 +70,9 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"flexProps": {
+					"flexGrow": null
+				},
 				"text": "label1",
 				"usePageVariable": true
 			}

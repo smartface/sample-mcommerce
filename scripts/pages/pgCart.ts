@@ -201,5 +201,5 @@ function onLoad(this: PgCart, superOnLoad: () => void) {
     this.headerBar.android.elevation = 0;
     this.initListView();
     this.refreshListView();
-    this.addRightItem();
+    // this.addRightItem();
 }
