@@ -8,6 +8,7 @@ import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyl
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
+import AlertView from '@smartface/native/ui/alertview';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -77,7 +78,25 @@ export default class PgCart extends PgCartDesign {
                             this.refreshListView();
                         },
                         onRemoveAction: () => {
-                            this.toggleDialog(true, cart);
+                            // this.toggleDialog(true, cart);
+                            alert({
+                                title: global.lang.delete,
+                                message: global.lang.sureToDelete,
+                                buttons: [
+                                    {
+                                        text: global.lang.delete,
+                                        type: AlertView.Android.ButtonType.POSITIVE,
+                                        onClick: () => {
+                                            this.cartOperation(cart, 'all');
+                                            this.refreshListView();
+                                        }
+                                    },
+                                    {
+                                        text: global.lang.cancel,
+                                        type: AlertView.Android.ButtonType.NEGATIVE
+                                    }
+                                ]
+                            });
                         }
                     })
                 );

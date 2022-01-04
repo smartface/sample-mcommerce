@@ -1,5 +1,6 @@
 SMF.i18n.defineLanguage('tr', {
     goToCheckout: 'Ödemeye Git',
+    accept: 'Kabul Et',
     homeHeader: 'Anasayfa',
     shoppingCartIsEmpty: 'Sepetinizde ürün yok',
     favoritesIsEmpty: 'Favorilerinizde bir ürün yok',

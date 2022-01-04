@@ -1,5 +1,6 @@
 SMF.i18n.defineLanguage('en', {
     goToCheckout: 'Go To Checkout',
+    accept: 'Accept',
     shoppingCartIsEmpty: 'Your shopping cart is empty',
     favoritesIsEmpty: 'There is no product in your favorites',
     homeHeader: 'Home',
