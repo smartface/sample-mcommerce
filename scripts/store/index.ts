@@ -12,6 +12,8 @@ const initialState = {
                     name: 'Sprite Can',
                     description: '325ml, Price',
                     price: 4.99,
+                    discount: 2.99,
+                    review: 4.3,
                     image: 'sprite.png',
                     discountTag: 'Sepette %15 indirim',
                     categoryId: 6

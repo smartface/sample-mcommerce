@@ -17,16 +17,16 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"left": "13.48",
-				"top": "573.03"
+				"left": "-3.57",
+				"top": "333.93"
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flProductContainer",
+			"className": ".sf-flexLayout .flProductContainer .grow",
+			"hiddenComponent": false,
 			"id": "f678-b1ba-8e32-3969",
 			"props": {
 				"children": [
-					"af9b-46fa-faec-9cd2",
 					"1357-ee6c-3b2e-7436"
 				],
 				"name": "flProductContainer",
@@ -36,96 +36,11 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"left": null,
-				"top": null
-			}
-		},
-		{
-			"className": ".sf-flexLayout .flProductContainer-flProductHeader",
-			"id": "af9b-46fa-faec-9cd2",
-			"props": {
-				"children": [
-					"ed19-fa7a-37e6-08d4",
-					"b962-3452-d23c-3e03"
-				],
-				"name": "flProductHeader",
-				"parent": "f678-b1ba-8e32-3969",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label",
-			"id": "ed19-fa7a-37e6-08d4",
-			"props": {
-				"children": [],
-				"name": "lblTitle",
-				"parent": "af9b-46fa-faec-9cd2",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 2
-				},
-				"font": {
-					"size": 20,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"testId": "YrEYk4SF3",
-				"textColor": "rgba( 24, 23, 37, 1 )",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label",
-			"id": "b962-3452-d23c-3e03",
-			"props": {
-				"children": [],
-				"name": "lblSeeAll",
-				"parent": "af9b-46fa-faec-9cd2",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"font": {
-					"size": 12,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"testId": "vjc6uzjKI",
-				"textAlignment": "MIDRIGHT",
-				"textColor": "rgba( 83, 177, 117, 1 )",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-gridView .flProductContainer-gvProducts",
+			"hiddenComponent": false,
 			"id": "1357-ee6c-3b2e-7436",
 			"props": {
 				"children": [

@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviRow2ProductItem",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "c339-ec36-d7e7-39c2",
 			"props": {
 				"children": [

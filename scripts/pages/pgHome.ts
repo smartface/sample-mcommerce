@@ -51,11 +51,21 @@ export default class PgHome extends PgHomeDesign {
         this.showcases = store.getState().showcaseProducts;
         this.showcases.forEach((showcase) => {
             processorItems.push(
-                ListViewItems.getLviHomeProducts({
+                ListViewItems.getLviShowcaseHeader({
                     showcaseTitle: showcase.showcaseTitle,
-                    showcaseLinkText: showcase.showcaseLinkText,
+                    showcaseLinkText: showcase.showcaseLinkText
+                })
+            );
+            if (showcase.categories) {
+                processorItems.push(
+                    ListViewItems.getLviHomeCategories({
+                        items: showcase.categories
+                    })
+                );
+            }
+            processorItems.push(
+                ListViewItems.getLviHomeProducts({
                     items: showcase.products,
-                    categoryItems: showcase.categories,
                     onProductClick: (product) => {
                         this.router.push('/btb/tab1/productDetail', {
                             productId: product.id,

@@ -54,6 +54,18 @@ export default class FlProductItem extends FlProductItemDesign {
     set itemPrice(value: any) {
         this.lblProductItemPrice.text = value;
     }
+    get itemReview(): any {
+        return this.lblReview.text;
+    }
+    set itemReview(value: any) {
+        this.lblReview.text = value;
+    }
+    get itemDiscountPrice(): any {
+        return this.lblPriceWithDiscount.text;
+    }
+    set itemDiscountPrice(value: any) {
+        this.lblPriceWithDiscount.text = value;
+    }
     get itemTag(): string {
         return this.lblTag.text;
     }

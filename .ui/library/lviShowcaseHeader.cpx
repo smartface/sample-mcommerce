@@ -1,0 +1,103 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviShowcaseHeader",
+			"hiddenComponent": true,
+			"id": "e452-08b3-17fd-0e31",
+			"props": {
+				"children": [
+					"6632-5457-8ba1-2b00"
+				],
+				"name": "lviShowcaseHeader",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flProductContainer-flProductHeader",
+			"id": "6632-5457-8ba1-2b00",
+			"props": {
+				"children": [
+					"0045-707c-9548-8058",
+					"9f18-d3f3-2a4d-454c"
+				],
+				"name": "flProductHeader",
+				"parent": "e452-08b3-17fd-0e31",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "0045-707c-9548-8058",
+			"props": {
+				"children": [],
+				"name": "lblTitle",
+				"parent": "6632-5457-8ba1-2b00",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 2
+				},
+				"font": {
+					"size": 20,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"testId": "YrEYk4SF3",
+				"textColor": "rgba( 24, 23, 37, 1 )",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "9f18-d3f3-2a4d-454c",
+			"props": {
+				"children": [],
+				"name": "lblSeeAll",
+				"parent": "6632-5457-8ba1-2b00",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 12,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"testId": "vjc6uzjKI",
+				"textAlignment": "MIDRIGHT",
+				"textColor": "rgba( 83, 177, 117, 1 )",
+				"usePageVariable": true
+			}
+		}
+	]
+}

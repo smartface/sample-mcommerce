@@ -9,6 +9,8 @@ import LviSpacer from '../components/LviSpacer';
 import LviProductItem from '../components/LviProductItem';
 import LviRow2ProductItem from '../components/LviRow2ProductItem';
 import LviEmptyItem from '../components/LviEmptyItem';
+import LviShowcaseHeader from '../components/LviShowcaseHeader';
+import LviHomeCategories from '../components/LviHomeCategories';
 
 export enum LviTypes {
     LVI_ACCOUNT,
@@ -21,7 +23,9 @@ export enum LviTypes {
     LVI_SPACER,
     LVI_PRODUCT_ITEM,
     LVI_ROW_2_PRODUCT_ITEM,
-    LVI_EMPTY_ITEM
+    LVI_EMPTY_ITEM,
+    LVI_SHOWCASE_HEADER,
+    LVI_HOME_CATEGORIES
 }
 
 export const LviClasses = {
@@ -35,7 +39,9 @@ export const LviClasses = {
     [LviTypes.LVI_SPACER]: LviSpacer,
     [LviTypes.LVI_PRODUCT_ITEM]: LviProductItem,
     [LviTypes.LVI_ROW_2_PRODUCT_ITEM]: LviRow2ProductItem,
-    [LviTypes.LVI_EMPTY_ITEM]: LviEmptyItem
+    [LviTypes.LVI_EMPTY_ITEM]: LviEmptyItem,
+    [LviTypes.LVI_SHOWCASE_HEADER]: LviShowcaseHeader,
+    [LviTypes.LVI_HOME_CATEGORIES]: LviHomeCategories
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -87,6 +93,8 @@ export namespace ProcessorTypes {
     export interface ILviProductItem extends IProcessed<LviProductItem> {}
     export interface ILviRow2ProductItem extends IProcessed<LviRow2ProductItem> {}
     export interface ILviEmptyItem extends IProcessed<LviEmptyItem> {}
+    export interface ILviShowcaseHeader extends IProcessed<LviShowcaseHeader> {}
+    export interface ILviHomeCategories extends IProcessed<LviHomeCategories> {}
 }
 
 export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAccount {
@@ -194,5 +202,21 @@ export function getLviEmptyItem(item: Partial<LviEmptyItem>): ProcessorTypes.ILv
         type: 'LVI_EMPTY_ITEM',
         properties: { ...item },
         height: LviEmptyItem.getScreenHeight()
+    };
+}
+
+export function getLviShowcaseHeader(item: Partial<LviShowcaseHeader>): ProcessorTypes.ILviShowcaseHeader {
+    return {
+        type: 'LVI_SHOWCASE_HEADER',
+        properties: { ...item },
+        height: LviShowcaseHeader.getHeight()
+    };
+}
+
+export function getLviHomeCategories(item: Partial<LviHomeCategories>): ProcessorTypes.ILviHomeCategories {
+    return {
+        type: 'LVI_HOME_CATEGORIES',
+        properties: { ...item },
+        height: LviHomeCategories.getHeight()
     };
 }

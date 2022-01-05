@@ -1,7 +1,6 @@
 {
 	".flProductContainer": {
 		"flexProps": {},
-		"height": 300,
 		"testId": "8gXp0YRzt",
 		"&-flProductHeader": {
 			"flexProps": {

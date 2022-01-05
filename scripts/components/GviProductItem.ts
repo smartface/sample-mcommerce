@@ -38,6 +38,18 @@ export default class GviProductItem extends GviProductItemDesign {
     set itemPrice(value: any) {
         this.flProductItem.itemPrice = value;
     }
+    get itemReview(): any {
+        return this.flProductItem.itemReview;
+    }
+    set itemReview(value: any) {
+        this.flProductItem.itemReview = value;
+    }
+    get itemDiscountPrice(): any {
+        return this.flProductItem.itemDiscountPrice.text;
+    }
+    set itemDiscountPrice(value: any) {
+        this.flProductItem.itemDiscountPrice = value;
+    }
     get itemTag(): string {
         return this.flProductItem.itemTag;
     }

@@ -17,10 +17,11 @@
 			},
 			"&-productImage": {
 				"height": 62,
-				"width": 100
+				"width": 100,
+				"imageFillType": "ASPECTFIT"
 			},
 			"&-descriptionWrapper": {
-				"height": 60,
+				"height": 80,
 				"paddingTop": 5,
 				"paddingBottom": 5,
 				"paddingLeft": 5,
@@ -50,6 +51,40 @@
 						"family": "Nunito",
 						"style": "Regular"
 					}
+				},
+				"&-flReviewWrapper": {
+					"flexProps": {
+						"alignItems": "STRETCH",
+						"flexDirection": "ROW",
+						"justifyContent": "FLEX_START",
+						"alignContent": "STRETCH"
+					},
+					"height": 25,
+					"testId": "ge-Pb4M8C",
+					"width": 100,
+					"&-imgStar": {
+						"height": 25,
+						"image": "star.png",
+						"testId": "LiH9AIXVX",
+						"width": 25
+					},
+					"&-lblReview": {
+						"flexProps": {
+							"flexGrow": 1
+						},
+						"font": {
+							"size": 14,
+							"bold": false,
+							"italic": false,
+							"family": "Nunito",
+							"style": "Medium"
+						},
+						"height": 25,
+						"testId": "xvO2dsQHZ",
+						"textAlignment": "MIDLEFT",
+						"textColor": "rgba( 124, 124, 124, 1 )",
+						"width": null
+					}
 				}
 			},
 			"&-priceButtonWrapper": {
@@ -65,8 +100,7 @@
 					"alignItems": "STRETCH"
 				},
 				"&-lblProductPrice": {
-					"height": null,
-					"width": 20,
+					"height": 25,
 					"textColor": "${textDark}",
 					"font": {
 						"size": 18,
@@ -75,6 +109,28 @@
 					},
 					"flexProps": {
 						"flexGrow": 1
+					}
+				},
+				"&-flProductItemPrice": {
+					"flexProps": {
+						"flexGrow": 1
+					},
+					"height": 50,
+					"testId": "xrz-EzbFP",
+					"&-lblPriceWithDiscount": {
+						"flexProps": {
+							"flexGrow": 1
+						},
+						"font": {
+							"size": 19,
+							"bold": true,
+							"italic": false,
+							"family": "Nunito",
+							"style": "Bold"
+						},
+						"height": null,
+						"testId": "N-ZSVmfvq",
+						"textColor": "rgba( 124, 124, 124, 1 )"
 					}
 				}
 			},
