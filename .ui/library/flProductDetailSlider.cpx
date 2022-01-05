@@ -1,0 +1,43 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout",
+			"hiddenComponent": true,
+			"id": "b11a-5a7a-63e7-5390",
+			"props": {
+				"children": [
+					"9da5-f6dc-828a-50b7"
+				],
+				"name": "flProductDetailSlider",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": "22.68",
+				"testId": "wZuhpK1Dc",
+				"top": "377.32"
+			}
+		},
+		{
+			"className": ".sf-flexLayout .grow",
+			"id": "9da5-f6dc-828a-50b7",
+			"props": {
+				"children": [],
+				"name": "flSwipeViewLayout",
+				"parent": "b11a-5a7a-63e7-5390",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

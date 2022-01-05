@@ -28,6 +28,11 @@
 		"paddingLeft": 15,
 		"paddingRight": 15
 	},
+	".rowFlex": {
+		"flexProps": {
+			"flexDirection": "ROW"
+		}
+	},
 	".gvMain": {
 		"testId": "ArDB7vEaS",
 		"height": null,

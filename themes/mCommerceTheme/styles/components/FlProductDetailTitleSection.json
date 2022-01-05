@@ -1,0 +1,44 @@
+{
+	".flProductDetailTitleSection": {
+		"flexProps": {
+			"alignContent": "CENTER"
+		},
+		"&-flWrapper": {
+			"flexProps": {
+				"flexDirection": "ROW"
+			},
+			"&-flTitleAndDesc": {
+				"flexProps": {
+					"flexDirection": "COLUMN"
+				},
+				"testId": "tZKkNycUh",
+				"&-lblProductTitle": {
+					"textColor": "${textDark}",
+					"font": {
+						"size": 24,
+						"bold": true,
+						"italic": false,
+						"family": "Nunito",
+						"style": "Bold"
+					},
+					"maxLines": 2,
+					"height": 30
+				},
+				"&-lblProductMeas": {
+					"textColor": "${textLight}",
+					"font": {
+						"size": 16,
+						"bold": true,
+						"italic": false,
+						"family": "Nunito",
+						"style": "SemiBold"
+					},
+					"height": 30,
+					"testId": "WhIxHioCx"
+				}
+			}
+		},
+		"null": "75",
+		"height": 75
+	}
+}

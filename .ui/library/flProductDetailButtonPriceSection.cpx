@@ -1,0 +1,200 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flProductDetailButtonPriceSection",
+			"hiddenComponent": true,
+			"id": "9d51-ffe5-c389-48da",
+			"props": {
+				"children": [
+					"d15c-1479-78db-cb95",
+					"0d4e-9ac0-154a-5319"
+				],
+				"name": "flProductDetailButtonPriceSection",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": "16.48",
+				"top": "125.27"
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flProductDetailButtonPriceSection-flMinusPlusWrapper",
+			"id": "d15c-1479-78db-cb95",
+			"props": {
+				"children": [
+					"c75a-2e9d-6766-a582",
+					"d656-0140-db0d-c610",
+					"cec0-e06d-e80d-0ebc"
+				],
+				"name": "flMinusPlusWrapper",
+				"parent": "9d51-ffe5-c389-48da"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "c75a-2e9d-6766-a582",
+			"props": {
+				"children": [
+					"9bd9-ffce-d2bb-b128"
+				],
+				"name": "flMinus",
+				"parent": "d15c-1479-78db-cb95"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"testId": "dDt6EtLrK"
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "9bd9-ffce-d2bb-b128",
+			"props": {
+				"children": [],
+				"name": "imgMinus",
+				"parent": "c75a-2e9d-6766-a582"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"image": "minus.png",
+				"testId": "O2GzELplK"
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flProductDetailButtonPriceSection-flMinusPlusWrapper-flCounter",
+			"id": "d656-0140-db0d-c610",
+			"props": {
+				"children": [
+					"f7ed-8e86-bd41-4f49"
+				],
+				"name": "flCounter",
+				"parent": "d15c-1479-78db-cb95"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-label .flProductDetailButtonPriceSection-flMinusPlusWrapper-flCounter-lblCounter",
+			"id": "f7ed-8e86-bd41-4f49",
+			"props": {
+				"children": [],
+				"name": "lblCounter",
+				"parent": "d656-0140-db0d-c610",
+				"text": "1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout",
+			"id": "cec0-e06d-e80d-0ebc",
+			"props": {
+				"children": [
+					"0025-3ed5-4c2c-5cd9"
+				],
+				"name": "flPlus",
+				"parent": "d15c-1479-78db-cb95"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"testId": "6_AatMiCH"
+			}
+		},
+		{
+			"className": ".sf-imageView",
+			"id": "0025-3ed5-4c2c-5cd9",
+			"props": {
+				"children": [],
+				"name": "imgPlus",
+				"parent": "cec0-e06d-e80d-0ebc"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": null,
+				"image": "plus.png",
+				"testId": "lBtDe3Fnz"
+			}
+		},
+		{
+			"className": ".sf-flexLayout .grow .flProductDetailButtonPriceSection-flPrice",
+			"id": "0d4e-9ac0-154a-5319",
+			"props": {
+				"children": [
+					"6340-6cfc-486e-2cdb"
+				],
+				"name": "flPrice",
+				"parent": "9d51-ffe5-c389-48da"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-label .flProductDetailButtonPriceSection-lblPrice",
+			"id": "6340-6cfc-486e-2cdb",
+			"props": {
+				"children": [],
+				"name": "lblPrice",
+				"parent": "0d4e-9ac0-154a-5319",
+				"text": "$4.99",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "$4.99",
+				"usePageVariable": true
+			}
+		}
+	]
+}
