@@ -128,16 +128,30 @@ const initialState = {
             categories: [
                 {
                     id: 1,
-                    title: 'Fresh Fruits & Vegetable',
+                    title: 'Pulses',
                     menuColor: '#1053B175',
                     menuBorderColor: '#7053B175',
                     categoryImg: 'catfruits.png'
                 },
                 {
                     id: 2,
-                    title: 'Cooking Oil & Ghee',
+                    title: 'Rice',
                     menuColor: '#10F8A44C',
                     menuBorderColor: '#70F8A44C',
+                    categoryImg: 'catoil.png'
+                },
+                {
+                    id: 3,
+                    title: 'Vegetables',
+                    menuColor: '#10FDE598',
+                    menuBorderColor: '#70FDE598',
+                    categoryImg: 'catoil.png'
+                },
+                {
+                    id: 4,
+                    title: 'Chocolates',
+                    menuColor: '#10B7DFF5',
+                    menuBorderColor: '#70B7DFF5',
                     categoryImg: 'catoil.png'
                 }
             ]

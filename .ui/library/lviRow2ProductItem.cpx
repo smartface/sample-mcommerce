@@ -39,6 +39,7 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"height": null,
 				"usePageVariable": true
 			}
 		},
@@ -59,6 +60,7 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"height": null,
 				"usePageVariable": true
 			}
 		}

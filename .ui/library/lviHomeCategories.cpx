@@ -2,6 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviHomeCategories",
+			"hiddenComponent": true,
 			"id": "0892-218d-bc64-b1ba",
 			"props": {
 				"children": [
@@ -14,7 +15,11 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 5,
+				"top": 91
+			}
 		},
 		{
 			"className": ".sf-flexLayout",
@@ -32,8 +37,13 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"height": 110,
 				"testId": "XrlsS0Gnx",
-				"usePageVariable": true
+				"usePageVariable": true,
+				"width": null
 			}
 		},
 		{
@@ -57,7 +67,8 @@
 				},
 				"height": null,
 				"layoutManager": {
-					"spanCount": 2
+					"spanCount": 1,
+					"scrollDirection": "HORIZONTAL"
 				},
 				"testId": "dCDtAPeMn",
 				"usePageVariable": true
@@ -85,6 +96,7 @@
 				"flexProps": {
 					"positionType": "RELATIVE"
 				},
+				"height": 105,
 				"left": 0,
 				"testId": "jY874wSnw",
 				"top": 0

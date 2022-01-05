@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviShowcaseHeader",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "e452-08b3-17fd-0e31",
 			"props": {
 				"children": [

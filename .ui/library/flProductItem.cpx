@@ -16,11 +16,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": "155",
-				"top": "53"
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flProductItem-flProductItemWrapper",
@@ -67,8 +63,7 @@
 			"props": {
 				"children": [
 					"c198-5d29-8fb1-d382",
-					"1c8b-9490-b880-0bac",
-					"d6af-63c5-ff39-8e6a"
+					"e56e-ee15-1cfe-49da"
 				],
 				"name": "flProductItemDescWrapper",
 				"parent": "d9b4-8ba5-e284-4e97",
@@ -79,6 +74,9 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"flexProps": {
+					"justifyContent": "FLEX_START"
+				},
 				"usePageVariable": true
 			}
 		},
@@ -102,33 +100,14 @@
 			}
 		},
 		{
-			"className": ".sf-label .flProductItem-flProductItemWrapper-descriptionWrapper-lblProductDimension",
-			"id": "1c8b-9490-b880-0bac",
-			"props": {
-				"children": [],
-				"name": "lblProductItemDesc",
-				"parent": "d640-f820-86e0-1294",
-				"text": "label2",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"text": "label2",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout .flProductItem-flProductItemWrapper-descriptionWrapper-flReviewWrapper",
-			"id": "d6af-63c5-ff39-8e6a",
+			"className": ".sf-flexLayout",
+			"id": "e56e-ee15-1cfe-49da",
 			"props": {
 				"children": [
-					"59c1-580d-68dc-9ffc",
-					"4098-572f-2c1a-eae5"
+					"db14-203d-7c53-2f49",
+					"dbf4-d4a4-1b65-b95d"
 				],
-				"name": "flReviewWrapper",
+				"name": "flProductDescAndReviewWrapper",
 				"parent": "d640-f820-86e0-1294",
 				"usePageVariable": true
 			},
@@ -137,16 +116,79 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"flexProps": {
+					"flexDirection": "ROW",
+					"alignSelf": "AUTO",
+					"alignItems": "CENTER",
+					"justifyContent": "SPACE_BETWEEN"
+				},
+				"height": 40,
+				"testId": "d92hrNH4Y",
+				"usePageVariable": true,
+				"width": 175
+			}
+		},
+		{
+			"className": ".sf-label .flProductItem-flProductItemWrapper-descriptionWrapper-lblProductDimension",
+			"id": "db14-203d-7c53-2f49",
+			"props": {
+				"children": [],
+				"name": "lblProductItemDesc",
+				"parent": "e56e-ee15-1cfe-49da",
+				"text": "label2",
 				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 2
+				},
+				"height": 25,
+				"text": "label2",
+				"usePageVariable": true,
+				"width": null
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flProductItem-flProductItemWrapper-descriptionWrapper-flReviewWrapper",
+			"id": "dbf4-d4a4-1b65-b95d",
+			"props": {
+				"children": [
+					"1d19-7695-58ca-1e6e",
+					"b7ee-7113-fb62-0e9f"
+				],
+				"name": "flReviewWrapper",
+				"parent": "e56e-ee15-1cfe-49da",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1,
+					"alignSelf": "AUTO",
+					"alignItems": "FLEX_END",
+					"justifyContent": "FLEX_END",
+					"alignContent": "FLEX_END"
+				},
+				"maxWidth": 100,
+				"minWidth": 25,
+				"usePageVariable": true,
+				"width": null
 			}
 		},
 		{
 			"className": ".sf-imageView .flProductItem-flProductItemWrapper-descriptionWrapper-flReviewWrapper-imgStar",
-			"id": "59c1-580d-68dc-9ffc",
+			"id": "1d19-7695-58ca-1e6e",
 			"props": {
 				"children": [],
 				"name": "imgStar",
-				"parent": "d6af-63c5-ff39-8e6a",
+				"parent": "dbf4-d4a4-1b65-b95d",
 				"usePageVariable": true
 			},
 			"source": {
@@ -159,11 +201,12 @@
 		},
 		{
 			"className": ".sf-label .flProductItem-flProductItemWrapper-descriptionWrapper-flReviewWrapper-lblReview",
-			"id": "4098-572f-2c1a-eae5",
+			"id": "b7ee-7113-fb62-0e9f",
 			"props": {
 				"children": [],
 				"name": "lblReview",
-				"parent": "d6af-63c5-ff39-8e6a",
+				"parent": "dbf4-d4a4-1b65-b95d",
+				"text": "lblR",
 				"usePageVariable": true
 			},
 			"source": {
@@ -171,6 +214,7 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"text": "lblR",
 				"usePageVariable": true
 			}
 		},
