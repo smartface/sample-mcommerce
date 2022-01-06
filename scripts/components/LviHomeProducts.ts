@@ -60,5 +60,6 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
             };
         };
         this.gvProducts.itemCount = this.items.length;
+        this.gvProducts.refreshData();
     }
 }

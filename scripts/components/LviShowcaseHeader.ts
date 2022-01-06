@@ -1,6 +1,6 @@
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 import LviShowcaseHeaderDesign from 'generated/my-components/LviShowcaseHeader';
-const { height } = getCombinedStyle('.lviShowcaseHeader').height;
+const { height } = getCombinedStyle('.lviShowcaseHeader');
 export default class LviShowcaseHeader extends LviShowcaseHeaderDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {

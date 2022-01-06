@@ -50,6 +50,7 @@ export default class PgHome extends PgHomeDesign {
         ];
         this.showcases = store.getState().showcaseProducts;
         this.showcases.forEach((showcase) => {
+            console.log('showcase', showcase);
             processorItems.push(
                 ListViewItems.getLviShowcaseHeader({
                     showcaseTitle: showcase.showcaseTitle,

@@ -4,7 +4,6 @@
 		"testId": "8gXp0YRzt",
 		"&-flProductHeader": {
 			"flexProps": {
-				"direction": "INHERIT",
 				"flexDirection": "ROW"
 			},
 			"height": 50,

@@ -70,9 +70,8 @@ export default class FlProductItem extends FlProductItemDesign {
         return this.lblTag.text;
     }
     set itemTag(value: string) {
-        if (!value) {
-            this.flTagWrapper.visible = false;
-        } else {
+        this.flTagWrapper.visible = !!value;
+        if (!!value) {
             this.lblTag.text = value;
         }
 
