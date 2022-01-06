@@ -99,25 +99,13 @@
 					"justifyContent": "SPACE_BETWEEN",
 					"alignItems": "STRETCH"
 				},
-				"&-lblProductPrice": {
-					"height": 25,
-					"textColor": "${textDark}",
-					"font": {
-						"size": 18,
-						"family": "Nunito",
-						"style": "Bold"
-					},
-					"flexProps": {
-						"flexGrow": 1
-					}
-				},
 				"&-flProductItemPrice": {
 					"flexProps": {
 						"flexGrow": 1
 					},
 					"height": 50,
 					"testId": "xrz-EzbFP",
-					"&-lblPriceWithDiscount": {
+					"&-tvPriceWithDiscount": {
 						"flexProps": {
 							"flexGrow": 1
 						},
@@ -128,9 +116,22 @@
 							"family": "Nunito",
 							"style": "Bold"
 						},
+						"testId": "Cw4YoZ5Bi",
 						"height": null,
-						"testId": "N-ZSVmfvq",
 						"textColor": "rgba( 124, 124, 124, 1 )"
+					}
+				},
+				"&-tvProductPrice": {
+					"testId": "tvOK1ghZM",
+					"height": 25,
+					"textColor": "${textDark}",
+					"font": {
+						"size": 18,
+						"family": "Nunito",
+						"style": "Bold"
+					},
+					"flexProps": {
+						"flexGrow": 1
 					}
 				}
 			},

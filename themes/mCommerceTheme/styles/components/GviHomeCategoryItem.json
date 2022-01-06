@@ -1,7 +1,7 @@
 {
 	".gviHomeCategoryItem": {
 		"flexProps": {
-			"justifyContent": "FLEX_START"
+			"flexGrow": 1
 		},
 		"height": 105,
 		"testId": "8BqVLbuHe",

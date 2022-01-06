@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviHomeCategories",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "0892-218d-bc64-b1ba",
 			"props": {
 				"children": [
@@ -16,7 +16,9 @@
 			},
 			"type": "ListViewItem",
 			"userProps": {
-				"flexProps": {},
+				"flexProps": {
+					"alignItems": "STRETCH"
+				},
 				"left": 5,
 				"top": 91
 			}
@@ -65,13 +67,14 @@
 				"flexProps": {
 					"flexGrow": 1
 				},
-				"height": null,
+				"height": 110,
 				"layoutManager": {
 					"spanCount": 1,
 					"scrollDirection": "HORIZONTAL"
 				},
 				"testId": "dCDtAPeMn",
-				"usePageVariable": true
+				"usePageVariable": true,
+				"width": null
 			}
 		},
 		{
@@ -89,18 +92,7 @@
 				"id": "c0db-5053-33dd-bd4d"
 			},
 			"type": "GridViewItem",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"height": 105,
-				"left": 0,
-				"testId": "jY874wSnw",
-				"top": 0
-			}
+			"userProps": {}
 		}
 	]
 }

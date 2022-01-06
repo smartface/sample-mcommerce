@@ -3,6 +3,9 @@ import ActivityIndicator from '@smartface/native/ui/activityindicator';
 import Button from '@smartface/native/ui/button';
 import Image from '@smartface/native/ui/image';
 import setVisibility from 'lib/setVisibility';
+import AttributedString from '@smartface/native/ui/attributedstring';
+import Font from '@smartface/native/ui/font';
+import Color from '@smartface/native/ui/color';
 
 export default class FlProductItem extends FlProductItemDesign {
     pageName?: string | undefined;
@@ -49,22 +52,50 @@ export default class FlProductItem extends FlProductItemDesign {
         this.lblProductItemTitle.text = value;
     }
     get itemPrice(): any {
-        return this.lblProductItemPrice.text;
+        return this.tvProductPrice.text;
     }
     set itemPrice(value: any) {
-        this.lblProductItemPrice.text = value;
+        let attributeString = new AttributedString();
+        if (!!value) {
+            if (this.tvPriceWithDiscount.text) {
+                attributeString.strikethrough = true;
+                attributeString.string = value;
+                attributeString.font = Font.create('Nunito', 14);
+                attributeString.foregroundColor = Color.create('#7c7c7c');
+            } else {
+                // TODO: get combined color ve fontlar icin
+                attributeString.font = Font.create('Nunito', 18);
+                attributeString.string = value;
+            }
+        }
+        this.tvProductPrice.attributedText = [attributeString];
     }
     get itemReview(): any {
         return this.lblReview.text;
     }
     set itemReview(value: any) {
-        this.lblReview.text = value;
+        if (!!value) {
+            this.imgStar.visible = true;
+            this.lblReview.visible = true;
+            this.lblReview.text = value;
+        } else {
+            this.imgStar.visible = false;
+            this.lblReview.visible = false;
+        }
     }
     get itemDiscountPrice(): any {
-        return this.lblPriceWithDiscount.text;
+        return this.tvPriceWithDiscount.text;
     }
     set itemDiscountPrice(value: any) {
-        this.lblPriceWithDiscount.text = value;
+        let attributeString = new AttributedString();
+        if (!!value) {
+            this.tvPriceWithDiscount.visible = true;
+            attributeString.string = value;
+            attributeString.font = Font.create('Nunito', 18);
+        } else {
+            this.tvPriceWithDiscount.visible = false;
+        }
+        this.tvPriceWithDiscount.attributedText = [attributeString];
     }
     get itemTag(): string {
         return this.lblTag.text;
