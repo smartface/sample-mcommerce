@@ -1,14 +1,15 @@
 {
-    "green": "#53B175",
-    "white": "#FFFFFF",
-    "textDark": "#181725",
-    "textLight": "#7C7C7C",
-    "transparent": "rgba(255,255,255,0)",
-    "backgroundMain": "#FFFFFF",
-    "genericImage": "images://smartface.png",
-    "grayBorder": "#E2E2E2",
-    "grayLightBorder":"#F0F0F0",
-    "grayTextColor": "#B3B3B3",
-    "light": "#F5F5F5",
-    "darkGray": "rgba(117,117,117,1)"
+	"green": "#53B175",
+	"white": "#FFFFFF",
+	"textDark": "#181725",
+	"textLight": "#7C7C7C",
+	"transparent": "rgba(255,255,255,0)",
+	"backgroundMain": "#FFFFFF",
+	"genericImage": "images://smartface.png",
+	"grayBorder": "#E2E2E2",
+	"grayLightBorder": "#F0F0F0",
+	"grayTextColor": "#B3B3B3",
+	"light": "#F5F5F5",
+	"darkGray": "rgba(117,117,117,1)",
+	"nutritionsGray": "#EBEBEB"
 }

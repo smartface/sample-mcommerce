@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviShowcaseHeader",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "e452-08b3-17fd-0e31",
 			"props": {
 				"children": [
@@ -15,7 +15,11 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": "26",
+				"top": "91.33"
+			}
 		},
 		{
 			"className": ".sf-flexLayout .flProductContainer-flProductHeader",

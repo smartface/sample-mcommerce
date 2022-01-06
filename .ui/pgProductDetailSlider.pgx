@@ -15,9 +15,10 @@
 				"parent": null
 			},
 			"type": "Page",
-			"userProps": {},
-			"version": "0.0.1.a",
-			"degree": 0
+			"userProps": {
+				"backgroundColor": "rgba( 242, 243, 242, 1 )"
+			},
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -29,8 +30,7 @@
 				"parent": "c689-3a3e-cf54-fa5b"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
 			"className": ".sf-headerBar",
@@ -45,8 +45,7 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgProductDetailSlider"
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-imageView .grow",
@@ -60,10 +59,9 @@
 			"type": "ImageView",
 			"userProps": {
 				"imageFillType": "ASPECTFIT",
-				"usePageVariable": true,
-				"testId": "hLVOsoVOt"
-			},
-			"degree": 1
+				"testId": "eCiquBBlp",
+				"usePageVariable": true
+			}
 		}
 	]
 }

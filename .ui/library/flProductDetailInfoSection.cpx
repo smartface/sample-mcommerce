@@ -31,13 +31,16 @@
 					"e7b6-e8fa-a597-bca6"
 				],
 				"name": "flDescTitleAndArrow",
-				"parent": "fa80-6dff-466b-3197"
+				"parent": "fa80-6dff-466b-3197",
+				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-label .flProductDetailInfoSection-flDescTitleAndArrow-lblTitle",
@@ -46,14 +49,16 @@
 				"children": [],
 				"name": "lblTitle",
 				"parent": "b417-c441-6c9d-f949",
-				"text": "Detail Title"
+				"text": "Detail Title",
+				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
 			},
 			"type": "Label",
 			"userProps": {
-				"text": "Detail Title"
+				"text": "Detail Title",
+				"usePageVariable": true
 			}
 		},
 		{
@@ -112,14 +117,16 @@
 				"children": [],
 				"name": "lblProductInfo",
 				"parent": "a56d-4f44-3a2b-4c9c",
-				"text": "label2"
+				"text": "label2",
+				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
 			},
 			"type": "Label",
 			"userProps": {
-				"text": "label2"
+				"text": "label2",
+				"usePageVariable": true
 			}
 		}
 	]

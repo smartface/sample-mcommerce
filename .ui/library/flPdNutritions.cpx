@@ -1,0 +1,44 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flPdNutritions",
+			"hiddenComponent": true,
+			"id": "a90d-46f5-5bc0-4004",
+			"props": {
+				"children": [
+					"eb1a-325d-83b1-096f"
+				],
+				"name": "flPdNutritions",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": "124",
+				"top": "209.33"
+			}
+		},
+		{
+			"className": ".sf-label .flPdNutritions-lblNutritions",
+			"id": "eb1a-325d-83b1-096f",
+			"props": {
+				"children": [],
+				"name": "lblNutrition",
+				"parent": "a90d-46f5-5bc0-4004",
+				"text": "label2",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label2",
+				"usePageVariable": true
+			}
+		}
+	]
+}

@@ -12,6 +12,12 @@ import LviEmptyItem from '../components/LviEmptyItem';
 import LviShowcaseHeader from '../components/LviShowcaseHeader';
 import LviHomeCategories from '../components/LviHomeCategories';
 
+import LviPdInfoSection from '../components/LviPdInfoSection';
+import LviPdTitleLikeSection from '../components/LviPdTitleLikeSection';
+import LviPdSlider from '../components/LviPdSlider';
+import LviPdOverviewSection from '../components/LviPdOverviewSection';
+import LviPdButtonPriceSection from '../components/LviPdButtonPriceSection';
+
 export enum LviTypes {
     LVI_ACCOUNT,
     LVI_HOME_PRODUCTS,
@@ -25,7 +31,12 @@ export enum LviTypes {
     LVI_ROW_2_PRODUCT_ITEM,
     LVI_EMPTY_ITEM,
     LVI_SHOWCASE_HEADER,
-    LVI_HOME_CATEGORIES
+    LVI_HOME_CATEGORIES,
+    LVI_PD_SLIDER,
+    LVI_PD_TITLE_LIKE_SECTION,
+    LVI_PD_BUTTON_PRICE_SECTION,
+    LVI_PD_INFO_SECTION,
+    LVI_PD_OVERVIEW_SECTION
 }
 
 export const LviClasses = {
@@ -41,7 +52,12 @@ export const LviClasses = {
     [LviTypes.LVI_ROW_2_PRODUCT_ITEM]: LviRow2ProductItem,
     [LviTypes.LVI_EMPTY_ITEM]: LviEmptyItem,
     [LviTypes.LVI_SHOWCASE_HEADER]: LviShowcaseHeader,
-    [LviTypes.LVI_HOME_CATEGORIES]: LviHomeCategories
+    [LviTypes.LVI_HOME_CATEGORIES]: LviHomeCategories,
+    [LviTypes.LVI_PD_SLIDER]: LviPdSlider,
+    [LviTypes.LVI_PD_TITLE_LIKE_SECTION]: LviPdTitleLikeSection,
+    [LviTypes.LVI_PD_BUTTON_PRICE_SECTION]: LviPdButtonPriceSection,
+    [LviTypes.LVI_PD_INFO_SECTION]: LviPdInfoSection,
+    [LviTypes.LVI_PD_OVERVIEW_SECTION]: LviPdOverviewSection
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -95,6 +111,11 @@ export namespace ProcessorTypes {
     export interface ILviEmptyItem extends IProcessed<LviEmptyItem> {}
     export interface ILviShowcaseHeader extends IProcessed<LviShowcaseHeader> {}
     export interface ILviHomeCategories extends IProcessed<LviHomeCategories> {}
+    export interface ILviPdSlider extends IProcessed<LviPdSlider> {}
+    export interface ILviPdTitleLikeSection extends IProcessed<LviPdTitleLikeSection> {}
+    export interface ILviPdButtonPriceSection extends IProcessed<LviPdButtonPriceSection> {}
+    export interface ILviPdInfoSection extends IProcessed<LviPdInfoSection> {}
+    export interface ILviPdOverviewSection extends IProcessed<LviPdOverviewSection> {}
 }
 
 export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAccount {
@@ -218,5 +239,57 @@ export function getLviHomeCategories(item: Partial<LviHomeCategories>): Processo
         type: 'LVI_HOME_CATEGORIES',
         properties: { ...item },
         height: LviHomeCategories.getHeight()
+    };
+}
+
+export function getLviPdSlider(item: Partial<LviPdSlider>): ProcessorTypes.ILviPdSlider {
+    return {
+        type: 'LVI_PD_SLIDER',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviPdSlider.getHeight()
+    };
+}
+
+export function getLviPdTitleLikeSection(item: Partial<LviPdTitleLikeSection>): ProcessorTypes.ILviPdTitleLikeSection {
+    return {
+        type: 'LVI_PD_TITLE_LIKE_SECTION',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviPdTitleLikeSection.getHeight()
+    };
+}
+export function getLviPdButtonPriceSection(item: Partial<LviPdButtonPriceSection>): ProcessorTypes.ILviPdButtonPriceSection {
+    return {
+        type: 'LVI_PD_BUTTON_PRICE_SECTION',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviPdButtonPriceSection.getHeight()
+    };
+}
+export function getLviPdInfoSection(item: Partial<LviPdInfoSection>): ProcessorTypes.ILviPdInfoSection {
+    return {
+        type: 'LVI_PD_INFO_SECTION',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviPdInfoSection.getHeight()
+    };
+}
+export function getLviPdOverviewSection(item: Partial<LviPdOverviewSection>): ProcessorTypes.ILviPdOverviewSection {
+    return {
+        type: 'LVI_PD_OVERVIEW_SECTION',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviPdOverviewSection.getHeight()
     };
 }

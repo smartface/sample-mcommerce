@@ -17,12 +17,12 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"left": "9.89",
-				"top": "30.77"
+				"left": "15.73",
+				"top": "23.60"
 			}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout .flProductDetailSlider .noMargin",
 			"hiddenComponent": false,
 			"id": "7462-b7bc-fece-5b14",
 			"props": {
@@ -38,15 +38,6 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"testId": "wZuhpK1Dc",
-				"top": 0,
 				"usePageVariable": true
 			}
 		}

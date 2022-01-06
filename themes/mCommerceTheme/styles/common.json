@@ -5,6 +5,16 @@
 		},
 		"height": null
 	},
+	".noPadding": {
+		"paddingLeft": null,
+		"paddingRight": null,
+		"paddingTop": null,
+		"paddingBottom": null
+	},
+	".noMargin": {
+		"marginTop": null,
+		"marginBottom": null
+	},
 	".sticky": {
 		"flexProps": {
 			"positionType": "ABSOLUTE"

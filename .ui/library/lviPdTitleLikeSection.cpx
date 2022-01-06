@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-listViewItem .lviProductDetailTitleSection",
+			"className": ".sf-listViewItem .lviProductDetailTitleSection .paddingHorizontal",
 			"hiddenComponent": true,
 			"id": "10a8-d884-ae77-9442",
 			"props": {
@@ -17,8 +17,8 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"left": "13.48",
-				"top": "178.65"
+				"left": "21.35",
+				"top": "351.69"
 			}
 		},
 		{
@@ -28,7 +28,8 @@
 			"props": {
 				"children": [],
 				"name": "flProductDetailTitleSection",
-				"parent": "10a8-d884-ae77-9442"
+				"parent": "10a8-d884-ae77-9442",
+				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__",
@@ -36,7 +37,9 @@
 				"id": "117b-fbab-a4e6-d493"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"usePageVariable": true
+			}
 		}
 	]
 }

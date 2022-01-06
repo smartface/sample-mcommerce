@@ -125,7 +125,8 @@
 			"props": {
 				"children": [],
 				"name": "imgFavorite",
-				"parent": "f0e4-6a0c-5daa-4fcc"
+				"parent": "f0e4-6a0c-5daa-4fcc",
+				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
@@ -137,7 +138,8 @@
 				},
 				"height": null,
 				"image": "favourite.png",
-				"testId": "vzb75eWIi"
+				"testId": "vzb75eWIi",
+				"usePageVariable": true
 			}
 		}
 	]

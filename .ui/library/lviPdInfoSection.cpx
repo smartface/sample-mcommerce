@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-listViewItem .lviPdInfoSection",
+			"className": ".sf-listViewItem .lviPdInfoSection .paddingHorizontal",
 			"hiddenComponent": true,
 			"id": "0496-135c-a968-8c99",
 			"props": {
@@ -17,8 +17,8 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"left": "21.35",
-				"top": "366.29"
+				"left": "19.10",
+				"top": "533.71"
 			}
 		},
 		{
@@ -28,7 +28,8 @@
 			"props": {
 				"children": [],
 				"name": "flProductDetailInfoSection",
-				"parent": "0496-135c-a968-8c99"
+				"parent": "0496-135c-a968-8c99",
+				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__",
@@ -45,7 +46,8 @@
 				},
 				"left": 0,
 				"testId": "TxDLr10c-",
-				"top": 0
+				"top": 0,
+				"usePageVariable": true
 			}
 		}
 	]

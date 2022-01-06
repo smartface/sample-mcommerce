@@ -1,8 +1,8 @@
 {
 	"components": [
 		{
-			"className": ".sf-flexLayout",
-			"hiddenComponent": true,
+			"className": ".sf-flexLayout .flProductDetailSlider",
+			"hiddenComponent": false,
 			"id": "b11a-5a7a-63e7-5390",
 			"props": {
 				"children": [
@@ -15,15 +15,10 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": "22.68",
-				"testId": "wZuhpK1Dc",
-				"top": "377.32"
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout .grow",
+			"className": ".sf-flexLayout .grow .noMargin",
 			"id": "9da5-f6dc-828a-50b7",
 			"props": {
 				"children": [],

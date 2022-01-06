@@ -1,14 +1,14 @@
 {
 	"components": [
 		{
-			"className": ".sf-listViewItem .lviPdButtonPriceSection .paddingHorizontal",
+			"className": ".sf-listViewItem .lviPdOverviewSection .paddingHorizontal",
 			"hiddenComponent": true,
-			"id": "3f62-88bd-72f0-210b",
+			"id": "6d55-791a-b71a-4f87",
 			"props": {
 				"children": [
-					"65e7-891c-1f5e-ebc3"
+					"28aa-e963-86a8-b8c2"
 				],
-				"name": "lviPdButtonPriceSection",
+				"name": "lviPdOverviewSection",
 				"parent": "57f4-201f-4bfc-5fc6"
 			},
 			"source": {
@@ -17,24 +17,24 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"left": "13.48",
-				"top": "432.58"
+				"left": "21.35",
+				"top": "644.94"
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flProductDetailButtonPriceSection",
+			"className": ".sf-flexLayout .flProductDetailOverviewSection",
 			"hiddenComponent": false,
-			"id": "65e7-891c-1f5e-ebc3",
+			"id": "28aa-e963-86a8-b8c2",
 			"props": {
 				"children": [],
-				"name": "flProductDetailButtonPriceSection",
-				"parent": "3f62-88bd-72f0-210b",
+				"name": "flProductDetailOverviewSection",
+				"parent": "6d55-791a-b71a-4f87",
 				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__",
-				"type": "flProductDetailButtonPriceSection",
-				"id": "9d51-ffe5-c389-48da"
+				"type": "flProductDetailOverviewSection",
+				"id": "837c-72f9-7c35-6e0b"
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -45,7 +45,7 @@
 					"positionType": "RELATIVE"
 				},
 				"left": 0,
-				"testId": "I1CgKqUAd",
+				"testId": "eiVc3Wr-b",
 				"top": 0,
 				"usePageVariable": true
 			}
