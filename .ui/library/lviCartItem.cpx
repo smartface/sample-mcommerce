@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviCartItem",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "9653-a462-6015-ef3e",
 			"props": {
 				"children": [

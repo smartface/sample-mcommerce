@@ -1,17 +1,28 @@
 import FlRow2LineButtonDesign from 'generated/my-components/FlRow2LineButton';
 import Image from '@smartface/native/ui/image';
 import { setID } from 'lib/testAutomation';
+import Button from '@smartface/native/ui/button';
 
 export default class FlRow2LineButton extends FlRow2LineButtonDesign {
     pageName?: string | undefined;
-    private __mainOnClick: () => void;
-    private __bottomLeftOnClick: () => void;
-    private __bottomRightOnClick: () => void;
+    __mainOnClick: (...args) => void;
+    __bottomLeftOnClick: (...args) => void;
+    __bottomRightOnClick: (...args) => void;
     private __ID: string;
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
+
+        this.btnMain.on(Button.Events.TouchEnded, () => {
+            this.__mainOnClick && this.__mainOnClick();
+        });
+        this.btnBottomLeft.on(Button.Events.TouchEnded, () => {
+            this.__bottomLeftOnClick && this.__bottomLeftOnClick();
+        });
+        this.btnBottomRight.on(Button.Events.TouchEnded, () => {
+            this.__bottomRightOnClick && this.__bottomRightOnClick();
+        });
     }
     get leftIcon() {
         return this.imgLeft.image;
@@ -37,26 +48,23 @@ export default class FlRow2LineButton extends FlRow2LineButtonDesign {
     set bottomRightButtonText(value: string) {
         this.btnBottomRight.text = value;
     }
-    get mainOnClick(): () => void {
+    get mainOnClick(): (...args) => void {
         return this.__mainOnClick;
     }
-    set mainOnClick(value: () => void) {
+    set mainOnClick(value: (...args) => void) {
         this.__mainOnClick = value;
-        this.btnMain.onPress = value;
     }
-    get bottomLeftOnClick(): () => void {
+    get bottomLeftOnClick(): (...args) => void {
         return this.__bottomLeftOnClick;
     }
-    set bottomLeftOnClick(value: () => void) {
+    set bottomLeftOnClick(value: (...args) => void) {
         this.__bottomLeftOnClick = value;
-        this.btnBottomLeft.onPress = value;
     }
-    get bottomRightOnClick(): () => void {
+    get bottomRightOnClick(): (...args) => void {
         return this.__bottomRightOnClick;
     }
-    set bottomRightOnClick(value: () => void) {
+    set bottomRightOnClick(value: (...args) => void) {
         this.__bottomRightOnClick = value;
-        this.btnBottomRight.onPress = value;
     }
     set ID(value: string) {
         setID(this, (this.__ID = value));

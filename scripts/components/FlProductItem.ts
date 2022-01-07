@@ -8,25 +8,19 @@ import Font from '@smartface/native/ui/font';
 import Color from '@smartface/native/ui/color';
 
 export default class FlProductItem extends FlProductItemDesign {
+    _addToBasket: (...args) => void;
     pageName?: string | undefined;
     myActivityIndicator: ActivityIndicator;
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
+        this.btnAddToBasket.on(Button.Events.TouchEnded, () => {
+            this._addToBasket && this._addToBasket();
+        });
     }
     initIndicator() {
         this.aiAddToCart.android.zIndex = this.btnAddToBasket.android.zIndex + 1;
-        // this.flProductItemPriceButtonWrapper.addChild(this.myActivityIndicator, 'myActivityIndicator', '.sf-activityIndicator', {
-        //     width: 30,
-        //     height: 30,
-        //     right: 13,
-        //     visible: true,
-        //     flexProps: {
-        //         positionType: 'ABSOLUTE'
-        //     },
-        //     color: '#181725'
-        // });
     }
     toggleIndicator(toggle: boolean): void {
         console.log('toggle', toggle);
@@ -38,11 +32,11 @@ export default class FlProductItem extends FlProductItemDesign {
             }
         });
     }
-    get onActionClick(): Button['onTouch'] {
-        return this.btnAddToBasket.onTouch;
+    get onActionClick(): (...args) => void {
+        return this._addToBasket;
     }
-    set onActionClick(value: Button['onTouch']) {
-        this.btnAddToBasket.onTouch = value;
+    set onActionClick(value: (...args) => void) {
+        this._addToBasket = value;
     }
     get itemTitle(): string {
         return this.lblProductItemTitle.text;

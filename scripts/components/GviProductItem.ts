@@ -7,12 +7,17 @@ import setVisibility from 'lib/setVisibility';
 import store from 'store';
 
 export default class GviProductItem extends GviProductItemDesign {
+    __onActionClick: (...args) => void;
     pageName?: string | undefined;
     myActivityIndicator: ActivityIndicator;
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
+
+        // this.flProductItem.btnAddToBasket.on(Button.Events.TouchEnded, () => {
+        //     this.__onActionClick && this.__onActionClick();
+        // });
     }
     initIndicator() {
         this.flProductItem.initIndicator();
@@ -20,11 +25,11 @@ export default class GviProductItem extends GviProductItemDesign {
     toggleIndicator(toggle: boolean): void {
         this.flProductItem.toggleIndicator(toggle);
     }
-    get onActionClick(): Button['onTouch'] {
-        return this.flProductItem.btnAddToBasket.onTouch;
+    get onActionClick(): (...args) => void {
+        return this.flProductItem.onActionClick;
     }
-    set onActionClick(value: Button['onTouch']) {
-        this.flProductItem.btnAddToBasket.onTouch = value;
+    set onActionClick(value: (...args) => void) {
+        this.flProductItem.onActionClick = value;
     }
     get itemTitle(): string {
         return this.flProductItem.itemTitle;
