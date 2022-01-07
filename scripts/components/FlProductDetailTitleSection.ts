@@ -3,13 +3,15 @@ import View from '@smartface/native/ui/view';
 import FlProductDetailTitleSectionDesign from 'generated/my-components/FlProductDetailTitleSection';
 
 export default class FlProductDetailTitleSection extends FlProductDetailTitleSectionDesign {
-    private __onFavoriteClick: (product: any) => void;
-
+    __onFavoriteClick: (...args) => void;
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
+        this.imgFavorite.on(View.Events.TouchEnded, () => {
+            this.__onFavoriteClick && this.__onFavoriteClick();
+        });
     }
     get productTitle(): string {
         return this.lblProductTitle.text;
@@ -23,11 +25,10 @@ export default class FlProductDetailTitleSection extends FlProductDetailTitleSec
     set productMeas(value: string) {
         this.lblProductMeas.text = value;
     }
-    get onFavoriteClick(): (product: any) => void {
+    get onFavoriteClick(): (...args) => void {
         return this.__onFavoriteClick;
     }
-    set onFavoriteClick(value: (product: any) => void) {
+    set onFavoriteClick(value: (...args) => void) {
         this.__onFavoriteClick = value;
-        this.imgFavorite.onTouchEnded = value;
     }
 }

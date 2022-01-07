@@ -165,6 +165,8 @@ const initialState = {
             price: 4.99,
             image: 'sprite.png',
             categoryId: 6,
+            discount: 2.99,
+            review: 4.3,
             discountTag: 'Sepette %15 indirim'
         },
         {

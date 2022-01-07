@@ -12,10 +12,10 @@ export default class LviPdTitleLikeSection extends LviPdTitleLikeSectionDesign {
     static getHeight(): number {
         return height;
     }
-    get onFavoriteClick(): (product: any) => void {
+    get onFavoriteClick(): (...args) => void {
         return this.flProductDetailTitleSection.onFavoriteClick;
     }
-    set onFavoriteClick(value: (product: any) => void) {
+    set onFavoriteClick(value: (...args) => void) {
         this.flProductDetailTitleSection.onFavoriteClick = value;
     }
     get productTitle(): string {

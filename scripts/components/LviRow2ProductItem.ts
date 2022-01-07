@@ -6,12 +6,12 @@ import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyl
 const { height } = getCombinedStyle('.lviProductItem');
 
 export default class LviRow2ProductItem extends LviRow2ProductItemDesign {
-	pageName?: string | undefined;
-	constructor(props?: any, pageName?: string) {
-		// Initalizes super class for this scope
-		super(props);
-		this.pageName = pageName;
-	}
+    pageName?: string | undefined;
+    constructor(props?: any, pageName?: string) {
+        // Initalizes super class for this scope
+        super(props);
+        this.pageName = pageName;
+    }
     initIndicator1() {
         this.flProductItem1.initIndicator();
     }
@@ -35,6 +35,18 @@ export default class LviRow2ProductItem extends LviRow2ProductItemDesign {
     }
     set itemPrice1(value: any) {
         this.flProductItem1.itemPrice = value;
+    }
+    get itemReview1(): any {
+        return this.flProductItem1.itemReview.text;
+    }
+    set itemReview1(value: any) {
+        this.flProductItem1.itemReview = value;
+    }
+    get itemDiscountPrice1(): any {
+        return this.flProductItem1.itemDiscountPrice.text;
+    }
+    set itemDiscountPrice1(value: any) {
+        this.flProductItem1.itemDiscountPrice = value;
     }
     get itemTag1(): string {
         return this.flProductItem1.itemTag;
@@ -77,6 +89,18 @@ export default class LviRow2ProductItem extends LviRow2ProductItemDesign {
     }
     set itemPrice2(value: any) {
         this.flProductItem2.itemPrice = value;
+    }
+    get itemReview2(): any {
+        return this.flProductItem2.itemReview.text;
+    }
+    set itemReview2(value: any) {
+        this.flProductItem2.itemReview = value;
+    }
+    get itemDiscountPrice2(): any {
+        return this.flProductItem2.itemDiscountPrice.text;
+    }
+    set itemDiscountPrice2(value: any) {
+        this.flProductItem2.itemDiscountPrice = value;
     }
     get itemTag2(): string {
         return this.flProductItem2.itemTag;

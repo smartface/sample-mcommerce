@@ -124,7 +124,34 @@ export default class PgProductDetail extends PgProductDetailDesign {
         processorItems.push(
             ListViewItems.getLviPdTitleLikeSection({
                 productTitle: this.routeData.productName,
-                productMeas: this.routeData.productDescription
+                productMeas: this.routeData.productDescription,
+                onFavoriteClick: () => {
+                    if (
+                        store.getState().favorites &&
+                        store.getState().favorites.length > 0 &&
+                        store.getState().favorites.some((product) => product.id === this.routeData.productId)
+                    ) {
+                        store.dispatch({
+                            type: 'REMOVE_FROM_FAVORITES',
+                            payload: {
+                                data: {
+                                    productId: this.routeData.productId
+                                }
+                            }
+                        });
+                        //this.imgFavorite.image = Image.createFromFile('images://favourite.png');
+                    } else {
+                        store.dispatch({
+                            type: 'ADD_TO_FAVORITES',
+                            payload: {
+                                data: {
+                                    product: store.getState().products.find((product) => product.id == this.routeData.productId)
+                                }
+                            }
+                        });
+                        //this.imgFavorite.image = Image.createFromFile('images://favorited.png');
+                    }
+                }
             })
         );
 
