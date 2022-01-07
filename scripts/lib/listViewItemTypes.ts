@@ -197,7 +197,7 @@ export function getLviRow2LineButton(item: Partial<LviRow2LineButton>): Processo
 export function getLviSpacerItem(item: Partial<LviSpacer>): ProcessorTypes.ILviSpacer {
     return {
         type: 'LVI_SPACER',
-        properties: { ...item },
+        properties: { ...item, borders: [] },
         height: LviSpacer.getHeight(item.className)
     };
 }

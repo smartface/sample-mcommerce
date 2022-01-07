@@ -12,28 +12,28 @@ export default class LviProfile extends LviProfileDesign {
         this.pageName = pageName;
     }
     get userName(): string {
-        return this.lblAccountName.text;
+        return this.flAccountUser.userName;
     }
     set userName(value: string) {
-        this.lblAccountName.text = value;
+        this.flAccountUser.userName = value;
     }
     get userEditIcon(): string {
-        return this.lblAccountEditIcon.text;
+        return this.flAccountUser.userEditIcon;
     }
     set userEditIcon(value: string) {
-        this.lblAccountEditIcon.text = value;
+        this.flAccountUser.userEditIcon = value;
     }
     get userEmail(): string {
-        return this.lblAccountEmail.text;
+        return this.flAccountUser.userEmail;
     }
     set userEmail(value: string) {
-        this.lblAccountEmail.text = value;
+        this.flAccountUser.userEmail = value;
     }
     get userImage(): any {
-        return this.imgUserAccount.image;
+        return this.flAccountUser.userImage.image;
     }
     set userImage(value: any) {
-        this.imgUserAccount.image = `images://${value}`;
+        this.flAccountUser.userImage = value;
     }
     static getHeight(): number {
         return originalHeight;

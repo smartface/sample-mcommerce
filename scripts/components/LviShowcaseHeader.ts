@@ -12,15 +12,15 @@ export default class LviShowcaseHeader extends LviShowcaseHeaderDesign {
         return height;
     }
     get showcaseTitle(): string {
-        return this.lblTitle.text;
+        return this.flProductHeader.showcaseTitle;
     }
     set showcaseTitle(value: string) {
-        this.lblTitle.text = value;
+        this.flProductHeader.showcaseTitle = value;
     }
     get showcaseLinkText(): string {
-        return this.lblSeeAll.text;
+        return this.flProductHeader.showcaseLinkText;
     }
     set showcaseLinkText(value: string) {
-        this.lblSeeAll.text = value;
+        this.flProductHeader.showcaseLinkText = value;
     }
 }

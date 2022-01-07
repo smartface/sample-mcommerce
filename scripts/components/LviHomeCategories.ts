@@ -26,25 +26,6 @@ export default class LviHomeCategories extends LviHomeCategoriesDesign {
             GridViewItem.categoryName = this.items[categoryIndex].title;
             GridViewItem.categoryBackgroundColor = this.items[categoryIndex].menuColor;
             GridViewItem.categoryBorderColor = this.items[categoryIndex].menuBorderColor;
-            // this.gvCategories.onItemSelected = (GridViewItem: GviHomeCategoryItem, categoryIndex: number) => {
-            //     //this.onProductClick(this.items[categoryIndex]);
-            // };
-            // GridViewItem.onActionClick = () => {
-            //     GridViewItem.initIndicator();
-            //     GridViewItem.toggleIndicator(true);
-            //     store.dispatch({
-            //         type: 'ADD_TO_BASKET',
-            //         payload: {
-            //             data: {
-            //                 product: this.items[productIndex],
-            //                 count: 1
-            //             }
-            //         }
-            //     });
-            //     setTimeout(() => {
-            //         GridViewItem.toggleIndicator(false);
-            //     }, 500);
-            // };
         };
         this.gvCategories.itemCount = this.items.length;
     }

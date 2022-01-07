@@ -31,7 +31,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar #pgCategoryDetail-headerBar",
 			"id": "319e-211d-a87b-8d37",
 			"props": {
 				"children": [],
@@ -40,10 +40,7 @@
 				"parent": "7dd3-eb16-f5e0-3035"
 			},
 			"type": "HeaderBar",
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"visible": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-listView .grow",
@@ -56,7 +53,7 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"testId": "xRMsjTHHo",
+				"testId": "n2i8VMZIX",
 				"usePageVariable": true
 			}
 		}

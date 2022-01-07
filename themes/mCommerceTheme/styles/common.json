@@ -53,5 +53,31 @@
 		"flexProps": {
 			"flexGrow": 1
 		}
+	},
+	".gvCategories": {
+		"layoutManager": {
+			"spanCount": 1,
+			"scrollDirection": "HORIZONTAL"
+		},
+		"height": null,
+		"flexProps": {
+			"flexGrow": 1
+		}
+	},
+	".flHomeCategory": {
+		"flexProps": {},
+		"height": 105,
+		"marginRight": 10
+	},
+	".categoriesGrid": {
+		"flexProps": {
+			"flexGrow": 1
+		},
+		"layoutManager": {
+			"spanCount": 2
+		},
+		"left": 0,
+		"testId": "y2_Ae0-c0",
+		"top": 0
 	}
 }

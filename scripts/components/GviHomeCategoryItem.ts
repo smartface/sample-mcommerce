@@ -10,27 +10,27 @@ export default class GviHomeCategoryItem extends GviHomeCategoryItemDesign {
         this.pageName = pageName;
     }
     get categoryImage(): any {
-        return this.imgLeft.image;
+        return this.flHomeCategory.categoryImage;
     }
     set categoryImage(value: any) {
-        this.imgLeft.image = `images://${value}`;
+        this.flHomeCategory.categoryImage = `images://${value}`;
     }
     get categoryName() {
-        return this.lblCategoryName.text;
+        return this.flHomeCategory.categoryName;
     }
     set categoryName(value: string) {
-        this.lblCategoryName.text = value;
+        this.flHomeCategory.categoryName = value;
     }
     get categoryBorderColor(): any {
-        return this.flHomeCategoryWrapper.borderColor;
+        return this.flHomeCategory.borderColor;
     }
     set categoryBorderColor(value: any) {
-        this.flHomeCategoryWrapper.borderColor = Color.create(value);
+        this.flHomeCategory.borderColor = Color.create(value);
     }
     get categoryBackgroundColor(): any {
-        return this.flHomeCategoryWrapper.backgroundColor;
+        return this.flHomeCategory.backgroundColor;
     }
     set categoryBackgroundColor(value: any) {
-        this.flHomeCategoryWrapper.backgroundColor = Color.create(value);
+        this.flHomeCategory.backgroundColor = Color.create(value);
     }
 }

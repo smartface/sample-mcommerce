@@ -143,35 +143,6 @@ export default class PgCart extends PgCartDesign {
                 break;
         }
     }
-    toggleDialog(toggle: boolean, cart: any) {
-        this.flDialog.dialogTitle = 'Bu ürünü silmek istediğinizden emin misiniz?';
-        this.flDialog.btnAcceptTitle = 'Evet';
-        this.flDialog.btnDenyTitle = 'Hayır';
-        this.flDialog.dispatch({
-            type: 'updateUserStyle',
-            userStyle: {
-                visible: toggle
-            }
-        });
-        this.flDialog.acceptClick = () => {
-            this.cartOperation(cart, 'all');
-            this.refreshListView();
-            this.flDialog.dispatch({
-                type: 'updateUserStyle',
-                userStyle: {
-                    visible: false
-                }
-            });
-        };
-        this.flDialog.denyClick = () => {
-            this.flDialog.dispatch({
-                type: 'updateUserStyle',
-                userStyle: {
-                    visible: false
-                }
-            });
-        };
-    }
 }
 
 /**

@@ -2,11 +2,11 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviShowcaseHeader",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "e452-08b3-17fd-0e31",
 			"props": {
 				"children": [
-					"6632-5457-8ba1-2b00"
+					"42f9-d378-0bc7-c1a8"
 				],
 				"name": "lviShowcaseHeader",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -17,89 +17,38 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"left": "26",
-				"top": "91.33"
+				"left": "35.96",
+				"top": "133.71"
 			}
 		},
 		{
 			"className": ".sf-flexLayout .flProductContainer-flProductHeader",
-			"id": "6632-5457-8ba1-2b00",
+			"hiddenComponent": false,
+			"id": "42f9-d378-0bc7-c1a8",
 			"props": {
-				"children": [
-					"0045-707c-9548-8058",
-					"9f18-d3f3-2a4d-454c"
-				],
+				"children": [],
 				"name": "flProductHeader",
 				"parent": "e452-08b3-17fd-0e31",
 				"usePageVariable": true
 			},
 			"source": {
-				"page": "__library__"
+				"page": "__library__",
+				"type": "flProductHeader",
+				"id": "ba0d-9de0-46a9-685a"
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"flex": {
+					"flexGrow": 1,
+					"positionType": 0
+				},
 				"flexProps": {
-					"flexGrow": 1
+					"flexGrow": 1,
+					"positionType": "RELATIVE"
 				},
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label",
-			"id": "0045-707c-9548-8058",
-			"props": {
-				"children": [],
-				"name": "lblTitle",
-				"parent": "6632-5457-8ba1-2b00",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 2
-				},
-				"font": {
-					"size": 20,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"testId": "YrEYk4SF3",
-				"textColor": "rgba( 24, 23, 37, 1 )",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label",
-			"id": "9f18-d3f3-2a4d-454c",
-			"props": {
-				"children": [],
-				"name": "lblSeeAll",
-				"parent": "6632-5457-8ba1-2b00",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"font": {
-					"size": 12,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"testId": "vjc6uzjKI",
-				"textAlignment": "MIDRIGHT",
-				"textColor": "rgba( 83, 177, 117, 1 )",
+				"left": 0,
+				"testId": "M7-f82Zys",
+				"top": 0,
 				"usePageVariable": true
 			}
 		}

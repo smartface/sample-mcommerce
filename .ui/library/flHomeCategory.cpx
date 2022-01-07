@@ -1,0 +1,79 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flHomeCategory",
+			"hiddenComponent": true,
+			"id": "cf17-9bcb-510e-509a",
+			"props": {
+				"children": [
+					"f34e-c2bd-e9b9-cc2e"
+				],
+				"name": "flHomeCategory",
+				"parent": "57f4-201f-4bfc-5fc6",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flHomeCategoryWrapper",
+			"id": "f34e-c2bd-e9b9-cc2e",
+			"props": {
+				"children": [
+					"85ae-453f-93e9-0aa7",
+					"455c-9400-27e4-feea"
+				],
+				"name": "flHomeCategoryWrapper",
+				"parent": "cf17-9bcb-510e-509a"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-imageView .gviHomeCategoryItem-flHomeCategoryWrapper-imgLeft",
+			"id": "85ae-453f-93e9-0aa7",
+			"props": {
+				"children": [],
+				"name": "imgLeft",
+				"parent": "f34e-c2bd-e9b9-cc2e",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"borderRadius": 15,
+				"height": 50,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .gviHomeCategoryItem-flHomeCategoryWrapper-lblCategoryName",
+			"id": "455c-9400-27e4-feea",
+			"props": {
+				"children": [],
+				"name": "lblCategoryName",
+				"parent": "f34e-c2bd-e9b9-cc2e",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		}
+	]
+}

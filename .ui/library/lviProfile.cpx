@@ -6,7 +6,7 @@
 			"id": "21e4-9a74-e568-74d9",
 			"props": {
 				"children": [
-					"bdc9-35c2-1456-d347"
+					"84e5-7bcb-dc55-b8ec"
 				],
 				"name": "lviProfile",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -17,141 +17,36 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"left": "0",
-				"top": "118.97"
+				"left": "20.22",
+				"top": "147.19"
 			}
 		},
 		{
 			"className": ".sf-flexLayout .flAccountUser",
 			"hiddenComponent": false,
-			"id": "bdc9-35c2-1456-d347",
+			"id": "84e5-7bcb-dc55-b8ec",
 			"props": {
-				"children": [
-					"e3b4-55e8-ed6b-1822",
-					"5080-6d96-0420-4b44"
-				],
+				"children": [],
 				"name": "flAccountUser",
-				"parent": "21e4-9a74-e568-74d9"
+				"parent": "21e4-9a74-e568-74d9",
+				"usePageVariable": true
 			},
 			"source": {
-				"page": "__library__"
+				"page": "__library__",
+				"type": "flAccountUser",
+				"id": "f4e3-277e-950f-74f8"
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {}
-			}
-		},
-		{
-			"className": ".sf-imageView .flAccountUser-imgUserAccount",
-			"id": "e3b4-55e8-ed6b-1822",
-			"props": {
-				"children": [],
-				"name": "imgUserAccount",
-				"parent": "bdc9-35c2-1456-d347",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout .flAccountUser-flAccountRightWrapper",
-			"id": "5080-6d96-0420-4b44",
-			"props": {
-				"children": [
-					"cc2c-8b12-83d0-7733",
-					"399c-54ab-bb78-0afa"
-				],
-				"name": "flAccountUserRightWrapper",
-				"parent": "bdc9-35c2-1456-d347",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout .flAccountUser-flAccountRightWrapper-flAccountRightTopWrapper",
-			"id": "cc2c-8b12-83d0-7733",
-			"props": {
-				"children": [
-					"94b3-5052-1f6e-5a17",
-					"fd80-f473-518a-b9bb"
-				],
-				"name": "flAccountTop",
-				"parent": "5080-6d96-0420-4b44"
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"maxWidth": 250
-			}
-		},
-		{
-			"className": ".sf-label .flAccountUser-lblAccountName",
-			"id": "94b3-5052-1f6e-5a17",
-			"props": {
-				"children": [],
-				"name": "lblAccountName",
-				"parent": "cc2c-8b12-83d0-7733",
-				"text": "label1",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"height": null,
-				"text": "label1",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label .flAccountUser-lblAccountEditIcon",
-			"id": "fd80-f473-518a-b9bb",
-			"props": {
-				"children": [],
-				"name": "lblAccountEditIcon",
-				"parent": "cc2c-8b12-83d0-7733",
-				"text": "label2",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"text": "label2",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label .flAccountUser-lblAccountEmail",
-			"id": "399c-54ab-bb78-0afa",
-			"props": {
-				"children": [],
-				"name": "lblAccountEmail",
-				"parent": "5080-6d96-0420-4b44",
-				"text": "label2",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"text": "label2",
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"testId": "GONbKWSf9",
+				"top": 0,
 				"usePageVariable": true
 			}
 		}

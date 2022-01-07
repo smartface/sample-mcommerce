@@ -8,8 +8,7 @@
 				"children": [
 					"1594-c983-b696-ce6f",
 					"4574-8647-13e2-80d6",
-					"058b-4603-b33c-5ca6",
-					"c5ab-8a82-210b-a2f7"
+					"058b-4603-b33c-5ca6"
 				],
 				"name": "pgCart",
 				"orientation": "PORTRAIT",
@@ -64,30 +63,8 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"testId": "MvUB2U7Zx",
-				"usePageVariable": true
-			},
-			"degree": 1
-		},
-		{
-			"className": ".sf-flexLayout .flDialog",
-			"hiddenComponent": false,
-			"id": "c5ab-8a82-210b-a2f7",
-			"props": {
-				"children": [],
-				"name": "flDialog",
-				"parent": "036b-b8d7-fe5a-9b69",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "flDialog",
-				"id": "b544-72dd-5ecf-ab0b"
-			},
-			"type": "FlexLayout",
-			"userProps": {
 				"usePageVariable": true,
-				"testId": "dF_FkmU0P"
+				"testId": "Yn84W7Gyz"
 			},
 			"degree": 1
 		}

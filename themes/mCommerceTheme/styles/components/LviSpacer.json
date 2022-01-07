@@ -1,6 +1,7 @@
 {
 	".lviSpacer": {
-		"height": 30,
+		"height": null,
+		"width": null,
 		"backgroundColor": "${backgroundMain}",
 		".small": {
 			"height": 15
@@ -19,12 +20,6 @@
 		},
 		".xLarge": {
 			"height": 35
-		},
-		"&-dummyLayout": {
-			"visible": false,
-			"height": null,
-			"width": null,
-			"backgroundColor": "${backgroundMain}"
 		}
 	}
 }

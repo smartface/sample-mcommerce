@@ -1,0 +1,12 @@
+{
+	"#pgHomeSlider": {
+		"&-imgSliderItem": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"height": null,
+			"imageFillType": "ASPECTFIT",
+			"testId": "igIL-AhnY"
+		}
+	}
+}

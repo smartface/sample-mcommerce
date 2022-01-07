@@ -16,7 +16,8 @@
 			},
 			"type": "Page",
 			"userProps": {},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -28,10 +29,11 @@
 				"parent": "e27f-743b-23a5-ea3b"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar #pgFavorites-headerBar",
 			"id": "23ce-fa2e-9d68-e404",
 			"props": {
 				"children": [],
@@ -40,10 +42,8 @@
 				"parent": "e27f-743b-23a5-ea3b"
 			},
 			"type": "HeaderBar",
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"visible": true
-			}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-listView .grow",
@@ -56,9 +56,10 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"testId": "wHnvwrM2N",
-				"usePageVariable": true
-			}
+				"usePageVariable": true,
+				"testId": "1xPyBYi2J"
+			},
+			"degree": 1
 		}
 	]
 }
