@@ -1,18 +1,13 @@
 import PgHomeDesign from 'generated/pages/pgHome';
-import Image from '@smartface/native/ui/image';
-import View from '@smartface/native/ui/view';
 import store from '../store/index';
-import GviProductItem from 'components/GviProductItem';
-import LviHomeProducts from 'components/LviHomeProducts';
 import Application from '@smartface/native/application';
-import Color from '@smartface/native/ui/color';
-import PgHomeSlider from './pgHomeSlider';
-import SwipeView from '@smartface/native/ui/swipeview';
-import System from '@smartface/native/device/system';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 
-type Processor = ListViewItems.ProcessorTypes.ILviHomeProducts | ListViewItems.ProcessorTypes.ILviHomeSlider;
+type Processor =
+    | ListViewItems.ProcessorTypes.ILviHomeProducts
+    | ListViewItems.ProcessorTypes.ILviHomeSlider
+    | ListViewItems.ProcessorTypes.ILviShowcaseHeader;
 
 export default class PgHome extends PgHomeDesign {
     router: any;
@@ -43,14 +38,14 @@ export default class PgHome extends PgHomeDesign {
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
+        this.showcases = store.getState().showcaseProducts;
+
         const processorItems = [
             ListViewItems.getLviHomeSlider({
                 images: ['images://firstbanner.png', 'images://bannerone.png']
             })
         ];
-        this.showcases = store.getState().showcaseProducts;
         this.showcases.forEach((showcase) => {
-            console.log('showcase', showcase);
             processorItems.push(
                 ListViewItems.getLviShowcaseHeader({
                     showcaseTitle: showcase.showcaseTitle,

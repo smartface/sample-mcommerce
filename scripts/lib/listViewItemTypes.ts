@@ -205,7 +205,7 @@ export function getLviSpacerItem(item: Partial<LviSpacer>): ProcessorTypes.ILviS
 export function getLviProductItem(item: Partial<LviProductItem>): ProcessorTypes.ILviProductItem {
     return {
         type: 'LVI_PRODUCT_ITEM',
-        properties: { ...item },
+        properties: { ...item, borders: [] },
         height: LviProductItem.getHeight()
     };
 }
@@ -213,7 +213,7 @@ export function getLviProductItem(item: Partial<LviProductItem>): ProcessorTypes
 export function getLviRow2ProductItem(item: Partial<LviRow2ProductItem>): ProcessorTypes.ILviRow2ProductItem {
     return {
         type: 'LVI_ROW_2_PRODUCT_ITEM',
-        properties: { ...item },
+        properties: { ...item, borders: [] },
         height: LviRow2ProductItem.getHeight()
     };
 }
@@ -221,7 +221,7 @@ export function getLviRow2ProductItem(item: Partial<LviRow2ProductItem>): Proces
 export function getLviEmptyItem(item: Partial<LviEmptyItem>): ProcessorTypes.ILviEmptyItem {
     return {
         type: 'LVI_EMPTY_ITEM',
-        properties: { ...item },
+        properties: { ...item, borders: [] },
         height: LviEmptyItem.getScreenHeightDivide2()
     };
 }
@@ -229,7 +229,7 @@ export function getLviEmptyItem(item: Partial<LviEmptyItem>): ProcessorTypes.ILv
 export function getLviShowcaseHeader(item: Partial<LviShowcaseHeader>): ProcessorTypes.ILviShowcaseHeader {
     return {
         type: 'LVI_SHOWCASE_HEADER',
-        properties: { ...item },
+        properties: { ...item, borders: [] },
         height: LviShowcaseHeader.getHeight()
     };
 }
@@ -237,7 +237,7 @@ export function getLviShowcaseHeader(item: Partial<LviShowcaseHeader>): Processo
 export function getLviHomeCategories(item: Partial<LviHomeCategories>): ProcessorTypes.ILviHomeCategories {
     return {
         type: 'LVI_HOME_CATEGORIES',
-        properties: { ...item },
+        properties: { ...item, borders: [] },
         height: LviHomeCategories.getHeight()
     };
 }

@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flProductItem",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "d126-3ab9-070f-a585",
 			"props": {
 				"children": [
@@ -74,9 +74,6 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"justifyContent": "FLEX_START"
-				},
 				"usePageVariable": true
 			}
 		},
@@ -317,18 +314,8 @@
 			},
 			"type": "Button",
 			"userProps": {
-				"font": {
-					"size": 16,
-					"bold": false,
-					"italic": false,
-					"family": "FontAwesome5FreeSolid",
-					"style": null
-				},
-				"height": 46,
-				"testId": "-j0wS8iX7",
 				"text": "",
-				"usePageVariable": true,
-				"width": 46
+				"usePageVariable": true
 			}
 		},
 		{

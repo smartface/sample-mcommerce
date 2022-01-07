@@ -29,7 +29,7 @@
 				"flexProps": {
 					"alignSelf": "STRETCH",
 					"flexDirection": "COLUMN",
-					"justifyContent": "CENTER",
+					"justifyContent": "FLEX_START",
 					"alignItems": "FLEX_START"
 				},
 				"&-lblProductTitle": {

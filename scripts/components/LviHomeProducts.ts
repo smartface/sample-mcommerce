@@ -29,7 +29,6 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     set onProductClick(value: (product: any) => void) {
         this.__onProductClick = value;
     }
-
     private initGridView() {
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             GridViewItem.itemTag = this.items[productIndex].discountTag;
