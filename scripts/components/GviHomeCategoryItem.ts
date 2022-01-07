@@ -9,11 +9,11 @@ export default class GviHomeCategoryItem extends GviHomeCategoryItemDesign {
         super(props);
         this.pageName = pageName;
     }
-    get categoryImage(): any {
+    get categoryImage() {
         return this.flHomeCategory.categoryImage;
     }
-    set categoryImage(value: any) {
-        this.flHomeCategory.categoryImage = `images://${value}`;
+    set categoryImage(value: string | Image) {
+        this.flHomeCategory.categoryImage = value;
     }
     get categoryName() {
         return this.flHomeCategory.categoryName;

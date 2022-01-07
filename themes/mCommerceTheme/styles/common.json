@@ -67,7 +67,8 @@
 	".flHomeCategory": {
 		"flexProps": {},
 		"height": 105,
-		"marginRight": 10
+		"marginRight": 10,
+		"borderRadius": 18
 	},
 	".categoriesGrid": {
 		"flexProps": {

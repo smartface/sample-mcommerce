@@ -16,23 +16,22 @@ export default class FlProductItem extends FlProductItemDesign {
         this.pageName = pageName;
     }
     initIndicator() {
-        this.myActivityIndicator = new ActivityIndicator();
-        this.myActivityIndicator.android.zIndex = this.btnAddToBasket.android.zIndex + 1;
-        this.flProductItemPriceButtonWrapper.addChild(this.myActivityIndicator, 'myActivityIndicator', '.sf-activityIndicator', {
-            width: 30,
-            height: 30,
-            right: 13,
-            visible: true,
-            flexProps: {
-                positionType: 'ABSOLUTE'
-            },
-            color: '#181725'
-        });
+        this.aiAddToCart.android.zIndex = this.btnAddToBasket.android.zIndex + 1;
+        // this.flProductItemPriceButtonWrapper.addChild(this.myActivityIndicator, 'myActivityIndicator', '.sf-activityIndicator', {
+        //     width: 30,
+        //     height: 30,
+        //     right: 13,
+        //     visible: true,
+        //     flexProps: {
+        //         positionType: 'ABSOLUTE'
+        //     },
+        //     color: '#181725'
+        // });
     }
     toggleIndicator(toggle: boolean): void {
         console.log('toggle', toggle);
         //@ts-ignore
-        this.myActivityIndicator.dispatch({
+        this.aiAddToCart.dispatch({
             type: 'updateUserStyle',
             userStyle: {
                 visible: toggle

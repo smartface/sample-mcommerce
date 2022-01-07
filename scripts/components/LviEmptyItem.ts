@@ -13,7 +13,7 @@ export default class LviEmptyItem extends LviEmptyItemDesign {
     static getHeight(): number {
         return getCombinedStyle(`.lviEmptyItem`).height || 0;
     }
-    static getScreenHeight(): number {
+    static getScreenHeightDivide2(): number {
         return Screen.height / 2;
     }
     get emptyTitle(): any {

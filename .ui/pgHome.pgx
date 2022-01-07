@@ -19,7 +19,8 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -32,7 +33,8 @@
 				"parent": "0cc7-c9f0-ae49-184b"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar #pgHome-headerBar",
@@ -45,7 +47,8 @@
 				"parent": "0cc7-c9f0-ae49-184b"
 			},
 			"type": "HeaderBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-listView .grow",
@@ -58,9 +61,10 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"testId": "TQjxdhuot",
-				"usePageVariable": true
-			}
+				"usePageVariable": true,
+				"testId": "sysMQSEga"
+			},
+			"degree": 1
 		}
 	]
 }

@@ -42,13 +42,21 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
                     itemImage1: product1?.image || '',
                     // @ts-ignore TODO
                     itemTag1: product1?.discountTag || '',
+                    // @ts-ignore TODO
+                    itemReview1: product1?.review || '',
+                    // @ts-ignore TODO
+                    itemDiscountPrice1: product1?.discount || '',
 
                     itemTitle2: product2?.name || '',
                     itemDesc2: product2?.description || '',
                     itemPrice2: product2?.price || '',
                     itemImage2: product2?.image || '',
                     // @ts-ignore TODO
-                    itemTag2: product2?.discountTag || ''
+                    itemTag2: product2?.discountTag || '',
+                    // @ts-ignore TODO
+                    itemReview2: product2?.review || '',
+                    // @ts-ignore TODO
+                    itemDiscountPrice2: product2?.discount || ''
                 })
             );
         }

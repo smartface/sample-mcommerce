@@ -1,4 +1,3 @@
-import Image from '@smartface/native/ui/image';
 import PgHomeSliderDesign from 'generated/pages/pgHomeSlider';
 
 export default function PgHomeSlider(props) {

@@ -1,3 +1,4 @@
+import Image from '@smartface/native/ui/image';
 import FlHomeCategoryDesign from 'generated/my-components/FlHomeCategory';
 
 export default class FlHomeCategory extends FlHomeCategoryDesign {
@@ -7,10 +8,10 @@ export default class FlHomeCategory extends FlHomeCategoryDesign {
         super(props);
         this.pageName = pageName;
     }
-    get categoryImage(): any {
+    get categoryImage() {
         return this.imgLeft.image;
     }
-    set categoryImage(value: any) {
+    set categoryImage(value: string | Image) {
         this.imgLeft.image = value;
     }
     get categoryName() {

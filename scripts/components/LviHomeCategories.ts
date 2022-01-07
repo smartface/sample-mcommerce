@@ -22,7 +22,7 @@ export default class LviHomeCategories extends LviHomeCategoriesDesign {
     }
     private initGridView() {
         this.gvCategories.onItemBind = (GridViewItem: GviHomeCategoryItem, categoryIndex: number) => {
-            GridViewItem.categoryImage = this.items[categoryIndex].categoryImg;
+            GridViewItem.categoryImage = `images://${this.items[categoryIndex].categoryImg}`;
             GridViewItem.categoryName = this.items[categoryIndex].title;
             GridViewItem.categoryBackgroundColor = this.items[categoryIndex].menuColor;
             GridViewItem.categoryBorderColor = this.items[categoryIndex].menuBorderColor;

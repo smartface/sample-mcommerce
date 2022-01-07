@@ -33,10 +33,10 @@ export default class LviFavorites extends LviFavoritesDesign {
         this.imgFavoriteItem.image = Image.createFromFile(`images://${value}`);
     }
     get itemDesc(): string {
-        return this.lblFavroiteItemDesc.text;
+        return this.lblFavroiteItemDescription.text;
     }
     set itemDesc(value: string) {
-        this.lblFavroiteItemDesc.text = value;
+        this.lblFavroiteItemDescription.text = value;
     }
     get onDeleteProduct(): (product: any) => void {
         return this.__onDeleteProduct;

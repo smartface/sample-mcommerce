@@ -15,11 +15,7 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {
-				"flexProps": {},
-				"left": "19.10",
-				"top": "533.71"
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flProductDetailInfoSection",

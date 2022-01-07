@@ -167,6 +167,20 @@
 					"paddingRight": 10,
 					"paddingLeft": 10
 				}
+			},
+			"&-flProductItemPriceButtonWrapper": {
+				"&-aiAddToCart": {
+					"height": 45,
+					"right": 5,
+					"testId": "QDcEE6yvp",
+					"width": 45,
+					"flexProps": {
+						"positionType": "ABSOLUTE"
+					},
+					"color": "rgba(255,255,255,1)",
+					"ios": {},
+					"visible": false
+				}
 			}
 		},
 		"height": 250,
