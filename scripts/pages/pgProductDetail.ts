@@ -30,7 +30,7 @@ export default class PgProductDetail extends PgProductDetailDesign {
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
         this.headerBar.title = '';
-        // this.btnAddToBasket.text = global.lang.addToBasket;
+        this.btnAddToBasket.text = global.lang.addToBasket;
     }
     addLeftItem() {
         this.leftItem = new HeaderBarItem();
@@ -44,27 +44,27 @@ export default class PgProductDetail extends PgProductDetailDesign {
         this.rightItem.color = Color.BLACK;
         this.headerBar.setItems([this.rightItem]);
     }
-    // addToBasket() {
-    //     this.btnAddToBasket.on(Button.Events.Touch, () => {
-    //         console.log('Store', store.getState().products);
-    //         let product = store.getState().products.find((product) => product.id == this.routeData.productId);
-    //         console.log('Product:', product);
-    //         store.dispatch({
-    //             type: 'ADD_TO_BASKET',
-    //             payload: {
-    //                 data: {
-    //                     product: product,
-    //                     count: 1
-    //                 }
-    //             }
-    //         });
-    //         this.toggleToast(true);
-    //         this.flAlert.title = 'Sepete Eklendi';
-    //         setTimeout(() => {
-    //             this.toggleToast(false);
-    //         }, 2000);
-    //     });
-    // }
+    addToBasket() {
+        this.btnAddToBasket.on(Button.Events.Touch, () => {
+            console.log('Store', store.getState().products);
+            let product = store.getState().products.find((product) => product.id == this.routeData.productId);
+            console.log('Product:', product);
+            store.dispatch({
+                type: 'ADD_TO_BASKET',
+                payload: {
+                    data: {
+                        product: product,
+                        count: 1
+                    }
+                }
+            });
+            this.toggleToast(true);
+            this.flAlert.title = 'Sepete Eklendi';
+            setTimeout(() => {
+                this.toggleToast(false);
+            }, 2000);
+        });
+    }
     // addToFavorite() {
     //     this.imgFavorite.on(View.Events.TouchEnded, () => {
     //         if (
@@ -139,7 +139,6 @@ export default class PgProductDetail extends PgProductDetailDesign {
                                 }
                             }
                         });
-                        //this.imgFavorite.image = Image.createFromFile('images://favourite.png');
                     } else {
                         store.dispatch({
                             type: 'ADD_TO_FAVORITES',
@@ -149,7 +148,6 @@ export default class PgProductDetail extends PgProductDetailDesign {
                                 }
                             }
                         });
-                        //this.imgFavorite.image = Image.createFromFile('images://favorited.png');
                     }
                 }
             })
@@ -181,6 +179,17 @@ export default class PgProductDetail extends PgProductDetailDesign {
 
         return processorItems;
     }
+    // checkIfFavorited(): string | Image {
+    //     if (
+    //         store.getState().favorites &&
+    //         store.getState().favorites.length > 0 &&
+    //         store.getState().favorites.some((product) => product.id === this.routeData.productId)
+    //     ) {
+    //         return 'images://favourite.png';
+    //     } else {
+    //         return 'images://favorited.png';
+    //     }
+    // }
 }
 
 /**
@@ -207,6 +216,7 @@ function onLoad(this: PgProductDetail, superOnLoad: () => void) {
     superOnLoad();
     this.addLeftItem();
     this.addRightItem();
+    this.addToBasket();
     this.initListView();
     this.refreshListView();
 }

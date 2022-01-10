@@ -8,8 +8,9 @@
 				"children": [
 					"a15a-7cf2-a4a9-f958",
 					"5616-03c8-f54a-9abb",
-					"9ded-29fe-1660-25ad",
-					"53ac-d037-7a65-6f24"
+					"53ac-d037-7a65-6f24",
+					"64a5-07e5-9032-fa6c",
+					"9ded-29fe-1660-25ad"
 				],
 				"name": "pgProductDetail",
 				"orientation": "PORTRAIT",
@@ -20,8 +21,7 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a",
-			"degree": 0
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -35,8 +35,7 @@
 			"type": "StatusBar",
 			"userProps": {
 				"style": "DEFAULT"
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-headerBar",
@@ -53,8 +52,55 @@
 				"backgroundImage": "backbtn.png",
 				"transparent": true,
 				"visible": true
+			}
+		},
+		{
+			"className": ".sf-listView .grow .noMargin",
+			"id": "53ac-d037-7a65-6f24",
+			"props": {
+				"children": [],
+				"name": "lvMain",
+				"parent": "9495-c1b8-4521-aab3",
+				"usePageVariable": true
 			},
-			"degree": 1
+			"type": "ListView",
+			"userProps": {
+				"testId": "NJWczjygX",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .paddingHorizontal",
+			"id": "64a5-07e5-9032-fa6c",
+			"props": {
+				"children": [
+					"a22d-2c0d-39f5-f1dd"
+				],
+				"name": "flAddToBasket",
+				"parent": "9495-c1b8-4521-aab3"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"height": 70,
+				"testId": "IlwSj9D8p"
+			}
+		},
+		{
+			"className": ".sf-button .sf-button-main",
+			"id": "a22d-2c0d-39f5-f1dd",
+			"props": {
+				"children": [],
+				"name": "btnAddToBasket",
+				"parent": "64a5-07e5-9032-fa6c",
+				"text": "Add to Basket",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"testId": "sIzwSD6Oc",
+				"text": "Add to Basket",
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-flexLayout .flAlert",
@@ -80,24 +126,7 @@
 				"top": 250,
 				"usePageVariable": true,
 				"visible": false
-			},
-			"degree": 1
-		},
-		{
-			"className": ".sf-listView .grow .noMargin",
-			"id": "53ac-d037-7a65-6f24",
-			"props": {
-				"children": [],
-				"name": "lvMain",
-				"parent": "9495-c1b8-4521-aab3",
-				"usePageVariable": true
-			},
-			"type": "ListView",
-			"userProps": {
-				"usePageVariable": true,
-				"testId": "NJWczjygX"
-			},
-			"degree": 1
+			}
 		}
 	]
 }
