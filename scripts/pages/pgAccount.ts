@@ -4,6 +4,7 @@ import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Color from '@smartface/native/ui/color';
+import LviAccount from 'components/LviAccount';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -30,6 +31,18 @@ export default class PgAccount extends PgAccountDesign {
         this.lvMain.onRowHeight = onRowHeight.bind(this);
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
+        this.lvMain.onRowSelected = (item: LviAccount, index) => {
+            if (this.data[index].type === 'LVI_ACCOUNT') {
+                if (this.data[index].properties.itemTitle === 'settings') {
+                    this.router.push('/btb/tab5/settings');
+                } else {
+                    alert({
+                        title: 'ALERT',
+                        message: this.data[index].properties.itemTitle
+                    });
+                }
+            }
+        };
         this.lvMain.refreshEnabled = false;
         this.refreshListView();
     }

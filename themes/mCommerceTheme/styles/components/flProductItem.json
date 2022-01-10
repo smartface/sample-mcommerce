@@ -30,11 +30,10 @@
 					"alignSelf": "STRETCH",
 					"flexDirection": "COLUMN",
 					"justifyContent": "FLEX_START",
-					"alignItems": "FLEX_START"
+					"alignItems": "STRETCH"
 				},
 				"&-lblProductTitle": {
 					"height": 20,
-					"width": 130,
 					"textColor": "${textDark}",
 					"font": {
 						"size": 16,
@@ -44,24 +43,27 @@
 				},
 				"&-lblProductDimension": {
 					"height": 20,
-					"width": 130,
+					"width": null,
 					"textColor": "${textLight}",
 					"font": {
 						"size": 14,
 						"family": "Nunito",
 						"style": "Regular"
+					},
+					"flexProps": {
+						"flexGrow": 2
 					}
 				},
 				"&-flReviewWrapper": {
 					"flexProps": {
-						"alignItems": "STRETCH",
+						"alignItems": "FLEX_END",
 						"flexDirection": "ROW",
-						"justifyContent": "FLEX_START",
-						"alignContent": "STRETCH"
+						"justifyContent": "FLEX_END",
+						"alignContent": "FLEX_END",
+						"flexGrow": 1
 					},
 					"height": 25,
 					"testId": "ge-Pb4M8C",
-					"width": 100,
 					"&-imgStar": {
 						"height": 25,
 						"image": "star.png",
@@ -84,7 +86,19 @@
 						"textAlignment": "MIDLEFT",
 						"textColor": "rgba( 124, 124, 124, 1 )",
 						"width": null
-					}
+					},
+					"paddingRight": 5
+				},
+				"&-flProductDescAndReviewWrapper": {
+					"flexProps": {
+						"flexDirection": "ROW",
+						"alignItems": "CENTER",
+						"justifyContent": "SPACE_BETWEEN",
+						"flexGrow": 1
+					},
+					"height": 40,
+					"testId": "d92hrNH4Y",
+					"maxWidth": 500
 				}
 			},
 			"&-priceButtonWrapper": {
@@ -106,9 +120,7 @@
 					"height": 50,
 					"testId": "xrz-EzbFP",
 					"&-tvPriceWithDiscount": {
-						"flexProps": {
-							"flexGrow": 1
-						},
+						"flexProps": {},
 						"font": {
 							"size": 19,
 							"bold": true,
@@ -118,7 +130,8 @@
 						},
 						"testId": "Cw4YoZ5Bi",
 						"height": null,
-						"textColor": "rgba( 124, 124, 124, 1 )"
+						"textColor": "rgba( 124, 124, 124, 1 )",
+						"minHeight": 25
 					}
 				},
 				"&-tvProductPrice": {
@@ -130,9 +143,7 @@
 						"family": "Nunito",
 						"style": "Bold"
 					},
-					"flexProps": {
-						"flexGrow": 1
-					}
+					"flexProps": {}
 				}
 			},
 			"&-flTagWrapper": {

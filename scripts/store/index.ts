@@ -114,6 +114,8 @@ const initialState = {
                     description: '250g, Price',
                     price: 4.99,
                     image: 'ginger.png',
+                    discount: 3.49,
+                    review: 5.0,
                     categoryId: 6
                 },
                 {
@@ -208,6 +210,8 @@ const initialState = {
             description: '4pcs, Price',
             price: 1.99,
             image: 'eggs.png',
+            discount: 0.99,
+            review: 4.5,
             categoryId: 6
         },
         {

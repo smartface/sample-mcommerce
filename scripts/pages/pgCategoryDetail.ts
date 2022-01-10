@@ -38,19 +38,19 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
                 ListViewItems.getLviRow2ProductItem({
                     itemTitle1: product1?.name || '',
                     itemDesc1: product1?.description || '',
-                    itemDiscountPrice1: !!product1?.discount ? product1?.discount : false,
-                    itemPrice1: product1?.price || '',
+                    itemDiscountPrice1: !!product1?.discount ? `$${product1?.discount}` : '',
+                    itemPrice1: `$${product1?.price}` || '',
                     itemImage1: product1?.image || '',
                     itemTag1: product1?.discountTag || '',
-                    itemReview1: !!product1?.review ? product1?.review : false,
+                    itemReview1: !!product1?.review ? product1?.review : '',
 
                     itemTitle2: product2?.name || '',
                     itemDesc2: product2?.description || '',
-                    itemDiscountPrice2: !!product2?.discount ? product2?.discount : false,
-                    itemPrice2: product2?.price || '',
+                    itemDiscountPrice2: !!product2?.discount ? `$${product2?.discount}` : '',
+                    itemPrice2: `$${product2?.price}` || '',
                     itemImage2: product2?.image || '',
                     itemTag2: product2?.discountTag || '',
-                    itemReview2: !!product2?.review ? product2?.review : false
+                    itemReview2: !!product2?.review ? product2?.review : ''
                 })
             );
         }
