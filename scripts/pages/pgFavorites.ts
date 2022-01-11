@@ -67,14 +67,12 @@ export default class PgFavorites extends PgFavoritesDesign {
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.onRowSwipe = onRowSwipe.bind(this);
         this.lvMain.refreshEnabled = false;
-        this.lvMain.swipeEnabled = true;
         // this.listView1.contentInset = { top: 10, bottom: 0 };
         this.lvMain.onRowCanSwipe = (index: number) => {
             return [ListView.SwipeDirection.RIGHTTOLEFT];
         };
         this.lvMain.onRowSwipe = (e: any): ListView.SwipeItem[] => {
             if (e.direction == ListView.SwipeDirection.RIGHTTOLEFT) {
-                console.log('e', e);
                 e.ios.expansionSettings.buttonIndex = 0;
                 e.ios.expansionSettings.threshold = 1.5;
                 e.ios.expansionSettings.fillOnTrigger = true;
@@ -83,8 +81,6 @@ export default class PgFavorites extends PgFavoritesDesign {
                 deleteItem.backgroundColor = Color.RED;
                 deleteItem.textColor = Color.create('#FFFFFF');
                 deleteItem.icon = Image.createFromFile('images://cross.png');
-                //@ts-ignore
-                //@ts-ignore
                 deleteItem.ios.isAutoHide = false;
                 deleteItem.onPress = (e: any) => {
                     this.deleteAndRefresh(e);
@@ -97,6 +93,13 @@ export default class PgFavorites extends PgFavoritesDesign {
     refreshListView() {
         this.data = this.processor();
         this.lvMain.itemCount = this.data.length;
+        if (this.data && this.data.length > 0) {
+            if (this.data[0].type === 'LVI_EMPTY_ITEM') {
+                this.lvMain.swipeEnabled = false;
+            } else {
+                this.lvMain.swipeEnabled = true;
+            }
+        }
         this.lvMain.refreshData();
     }
     processor(): Processor[] {

@@ -9,6 +9,7 @@ import PgProductDetailDesign from 'generated/pages/pgProductDetail';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import store from 'store';
+import { ThemeService } from 'theme';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviPdSlider
@@ -23,6 +24,8 @@ export default class PgProductDetail extends PgProductDetailDesign {
     leftItem: HeaderBarItem;
     rightItem: HeaderBarItem;
     routeData: any;
+    productCounter = 1;
+    productFavoriteImg = 'images://favourite.png';
     constructor() {
         super();
         // Overrides super.onShow method
@@ -46,15 +49,13 @@ export default class PgProductDetail extends PgProductDetailDesign {
     }
     addToBasket() {
         this.btnAddToBasket.on(Button.Events.Touch, () => {
-            console.log('Store', store.getState().products);
             let product = store.getState().products.find((product) => product.id == this.routeData.productId);
-            console.log('Product:', product);
             store.dispatch({
                 type: 'ADD_TO_BASKET',
                 payload: {
                     data: {
                         product: product,
-                        count: 1
+                        count: this.productCounter
                     }
                 }
             });
@@ -125,6 +126,7 @@ export default class PgProductDetail extends PgProductDetailDesign {
             ListViewItems.getLviPdTitleLikeSection({
                 productTitle: this.routeData.productName,
                 productMeas: this.routeData.productDescription,
+                favoriteImg: this.productFavoriteImg,
                 onFavoriteClick: () => {
                     if (
                         store.getState().favorites &&
@@ -139,6 +141,8 @@ export default class PgProductDetail extends PgProductDetailDesign {
                                 }
                             }
                         });
+                        this.productFavoriteImg = 'images://favourite.png';
+                        this.refreshListView();
                     } else {
                         store.dispatch({
                             type: 'ADD_TO_FAVORITES',
@@ -148,6 +152,8 @@ export default class PgProductDetail extends PgProductDetailDesign {
                                 }
                             }
                         });
+                        this.productFavoriteImg = 'images://favorited.png';
+                        this.refreshListView();
                     }
                 }
             })
@@ -156,7 +162,19 @@ export default class PgProductDetail extends PgProductDetailDesign {
         processorItems.push(
             ListViewItems.getLviPdButtonPriceSection({
                 productPrice: this.routeData.productPrice,
-                productCount: '1'
+                productCount: this.productCounter.toString(),
+                onPlusClick: () => {
+                    this.productCounter += 1;
+                    this.refreshListView();
+                },
+                onMinusClick: () => {
+                    if (this.productCounter === 1) {
+                        return;
+                    } else {
+                        this.productCounter -= 1;
+                        this.refreshListView();
+                    }
+                }
             })
         );
 
@@ -179,17 +197,20 @@ export default class PgProductDetail extends PgProductDetailDesign {
 
         return processorItems;
     }
-    // checkIfFavorited(): string | Image {
-    //     if (
-    //         store.getState().favorites &&
-    //         store.getState().favorites.length > 0 &&
-    //         store.getState().favorites.some((product) => product.id === this.routeData.productId)
-    //     ) {
-    //         return 'images://favourite.png';
-    //     } else {
-    //         return 'images://favorited.png';
-    //     }
-    // }
+
+    checkIfFavorited() {
+        if (
+            store.getState().favorites &&
+            store.getState().favorites.length > 0 &&
+            store.getState().favorites.some((product) => product.id === this.routeData.productId)
+        ) {
+            this.productFavoriteImg = 'images://favorited.png';
+            this.refreshListView();
+        } else {
+            this.productFavoriteImg = 'images://favourite.png';
+            this.refreshListView();
+        }
+    }
 }
 
 /**
@@ -200,7 +221,7 @@ export default class PgProductDetail extends PgProductDetailDesign {
  */
 function onShow(this: PgProductDetail, superOnShow: () => void) {
     superOnShow();
-
+    this.checkIfFavorited();
     if (System.OS !== 'iOS') {
         Application.statusBar.visible = true;
         Application.statusBar.backgroundColor = Color.create('#F2F3F2');

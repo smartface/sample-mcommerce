@@ -47,13 +47,16 @@
 					"0c45-050b-869d-ca74"
 				],
 				"name": "flTitleAndDesc",
-				"parent": "52af-5b6f-d7c1-6add"
+				"parent": "52af-5b6f-d7c1-6add",
+				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-label .flProductDetailTitleSection-flWrapper-flTitleAndDesc-lblProductTitle",
@@ -102,7 +105,8 @@
 					"35c4-834a-020c-a3ad"
 				],
 				"name": "flFavoriteImg",
-				"parent": "52af-5b6f-d7c1-6add"
+				"parent": "52af-5b6f-d7c1-6add",
+				"usePageVariable": false
 			},
 			"source": {
 				"page": "__library__"
@@ -116,6 +120,7 @@
 				},
 				"height": 50,
 				"testId": "Tz4OLJcsU",
+				"usePageVariable": false,
 				"width": 50
 			}
 		},
@@ -137,7 +142,6 @@
 					"flexGrow": 1
 				},
 				"height": null,
-				"image": "favourite.png",
 				"testId": "vzb75eWIi",
 				"usePageVariable": true
 			}

@@ -1,7 +1,7 @@
 import LviPdTitleLikeSectionDesign from 'generated/my-components/LviPdTitleLikeSection';
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 import Image from '@smartface/native/ui/image';
-
+import store from 'store';
 const { height } = getCombinedStyle('.lviProductDetailTitleSection');
 export default class LviPdTitleLikeSection extends LviPdTitleLikeSectionDesign {
     pageName?: string | undefined;
@@ -31,10 +31,10 @@ export default class LviPdTitleLikeSection extends LviPdTitleLikeSectionDesign {
     set productMeas(value: string) {
         this.flProductDetailTitleSection.productMeas = value;
     }
-    get imgFavorite(): string | Image {
-        return this.flProductDetailTitleSection.imgFavorite.image;
+    get favoriteImg(): string | Image {
+        return this.flProductDetailTitleSection.favoriteImg;
     }
-    set imgFavorite(value: string | Image) {
-        this.flProductDetailTitleSection.imgFavorite.image = value;
+    set favoriteImg(value: string | Image) {
+        this.flProductDetailTitleSection.favoriteImg = value;
     }
 }

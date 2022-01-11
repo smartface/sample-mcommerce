@@ -15,6 +15,7 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
     }
+
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowHeight = onRowHeight.bind(this);
@@ -65,6 +66,7 @@ function onShow(this: PgCategoryDetail, superOnShow: () => void) {
 function onLoad(this: PgCategoryDetail, superOnLoad: () => void) {
     superOnLoad();
     this.headerBar.title = this.routeData.title;
+
     this.initListView();
     this.refreshListView();
 }

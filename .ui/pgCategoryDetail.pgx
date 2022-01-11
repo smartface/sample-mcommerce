@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page #pgCategoryDetail",
 			"id": "7dd3-eb16-f5e0-3035",
 			"initialized": true,
 			"props": {
@@ -53,7 +53,7 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"testId": "n2i8VMZIX",
+				"testId": "CpdmopJW-",
 				"usePageVariable": true
 			}
 		}

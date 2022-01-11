@@ -16,7 +16,11 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 18.95,
+				"top": 333.68
+			}
 		},
 		{
 			"className": ".sf-flexLayout .flProductItem-flProductItemWrapper",
@@ -131,6 +135,8 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"ellipsizeMode": "WORDWRAPPING",
+				"maxLines": 2,
 				"text": "label2",
 				"usePageVariable": true
 			}

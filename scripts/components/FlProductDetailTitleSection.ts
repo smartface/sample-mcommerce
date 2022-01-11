@@ -25,6 +25,12 @@ export default class FlProductDetailTitleSection extends FlProductDetailTitleSec
     set productMeas(value: string) {
         this.lblProductMeas.text = value;
     }
+    get favoriteImg(): string | Image {
+        return this.imgFavorite.image;
+    }
+    set favoriteImg(value: string | Image) {
+        this.imgFavorite.image = value;
+    }
     get onFavoriteClick(): (...args) => void {
         return this.__onFavoriteClick;
     }

@@ -42,7 +42,6 @@
 					}
 				},
 				"&-lblProductDimension": {
-					"height": 20,
 					"width": null,
 					"textColor": "${textLight}",
 					"font": {
@@ -51,8 +50,9 @@
 						"style": "Regular"
 					},
 					"flexProps": {
-						"flexGrow": 2
-					}
+						"flexGrow": 3
+					},
+					"maxHeight": 50
 				},
 				"&-flReviewWrapper": {
 					"flexProps": {
@@ -60,7 +60,7 @@
 						"flexDirection": "ROW",
 						"justifyContent": "FLEX_END",
 						"alignContent": "FLEX_END",
-						"flexGrow": 1
+						"flexGrow": 2
 					},
 					"height": 25,
 					"testId": "ge-Pb4M8C",

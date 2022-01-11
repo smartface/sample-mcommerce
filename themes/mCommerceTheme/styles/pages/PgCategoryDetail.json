@@ -1,5 +1,9 @@
 {
 	"#pgCategoryDetail": {
+		"paddingTop": 15,
+		"paddingBottom": 15,
+		"paddingRight": 10,
+		"paddingLeft": 10,
 		"&-headerBar": {
 			"backgroundColor": "rgba( 255, 255, 255, 1 )",
 			"visible": true
