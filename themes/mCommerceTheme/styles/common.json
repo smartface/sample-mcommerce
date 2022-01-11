@@ -80,5 +80,16 @@
 		"left": 0,
 		"testId": "y2_Ae0-c0",
 		"top": 0
+	},
+	".seperator": {
+		"height": 1,
+		"left": 15,
+		"right": 0,
+		"bottom": 0,
+		"marginTop": null,
+		"marginBottom": null,
+		"flexProps": {
+			"positionType": "ABSOLUTE"
+		}
 	}
 }

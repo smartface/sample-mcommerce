@@ -18,6 +18,8 @@ import LviPdSlider from '../components/LviPdSlider';
 import LviPdOverviewSection from '../components/LviPdOverviewSection';
 import LviPdButtonPriceSection from '../components/LviPdButtonPriceSection';
 
+import LviRow1LineLarge from '../components/LviRow1LineLarge';
+
 export enum LviTypes {
     LVI_ACCOUNT,
     LVI_HOME_PRODUCTS,
@@ -36,7 +38,8 @@ export enum LviTypes {
     LVI_PD_TITLE_LIKE_SECTION,
     LVI_PD_BUTTON_PRICE_SECTION,
     LVI_PD_INFO_SECTION,
-    LVI_PD_OVERVIEW_SECTION
+    LVI_PD_OVERVIEW_SECTION,
+    LVI_ROW1_LINE_LARGE
 }
 
 export const LviClasses = {
@@ -57,7 +60,8 @@ export const LviClasses = {
     [LviTypes.LVI_PD_TITLE_LIKE_SECTION]: LviPdTitleLikeSection,
     [LviTypes.LVI_PD_BUTTON_PRICE_SECTION]: LviPdButtonPriceSection,
     [LviTypes.LVI_PD_INFO_SECTION]: LviPdInfoSection,
-    [LviTypes.LVI_PD_OVERVIEW_SECTION]: LviPdOverviewSection
+    [LviTypes.LVI_PD_OVERVIEW_SECTION]: LviPdOverviewSection,
+    [LviTypes.LVI_ROW1_LINE_LARGE]: LviRow1LineLarge
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -116,6 +120,7 @@ export namespace ProcessorTypes {
     export interface ILviPdButtonPriceSection extends IProcessed<LviPdButtonPriceSection> {}
     export interface ILviPdInfoSection extends IProcessed<LviPdInfoSection> {}
     export interface ILviPdOverviewSection extends IProcessed<LviPdOverviewSection> {}
+    export interface ILviRow1LineLarge extends IProcessed<LviRow1LineLarge> {}
 }
 
 export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAccount {
@@ -291,5 +296,15 @@ export function getLviPdOverviewSection(item: Partial<LviPdOverviewSection>): Pr
             borders: []
         },
         height: LviPdOverviewSection.getHeight()
+    };
+}
+export function getLviRow1LineLarge(item: Partial<LviRow1LineLarge>): ProcessorTypes.ILviRow1LineLarge {
+    return {
+        type: 'LVI_ROW1_LINE_LARGE',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviRow1LineLarge.getHeight()
     };
 }

@@ -1,0 +1,8 @@
+{
+	".lviRow1LineLarge": {
+		"height": 70,
+		"flexProps": {
+			"flexDirection": "ROW"
+		}
+	}
+}
