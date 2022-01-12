@@ -21,8 +21,6 @@ type Processor =
 export default class PgProductDetail extends PgProductDetailDesign {
     router: any;
     data: Processor[];
-    leftItem: HeaderBarItem;
-    rightItem: HeaderBarItem;
     routeData: any;
     productCounter = 1;
     productFavoriteImg = 'images://favourite.png';
@@ -32,20 +30,20 @@ export default class PgProductDetail extends PgProductDetailDesign {
         this.onShow = onShow.bind(this, this.onShow.bind(this));
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        this.headerBar.title = '';
-        this.btnAddToBasket.text = global.lang.addToBasket;
     }
     addLeftItem() {
-        this.leftItem = new HeaderBarItem();
-        this.leftItem.image = 'images://backbtn.png';
-        this.leftItem.color = Color.BLACK;
-        this.headerBar.setLeftItem(this.leftItem);
+        const leftItem = new HeaderBarItem({
+            image: Image.createFromFile('images://backbtn.png'),
+            color: Color.BLACK
+        });
+        this.headerBar.setLeftItem(leftItem);
     }
     addRightItem() {
-        this.rightItem = new HeaderBarItem();
-        this.rightItem.image = 'images://share.png';
-        this.rightItem.color = Color.BLACK;
-        this.headerBar.setItems([this.rightItem]);
+        const rightItem = new HeaderBarItem({
+            image: Image.createFromFile('images://share.png'),
+            color: Color.BLACK
+        });
+        this.headerBar.setItems([rightItem]);
     }
     addToBasket() {
         this.btnAddToBasket.on(Button.Events.Touch, () => {
@@ -66,35 +64,6 @@ export default class PgProductDetail extends PgProductDetailDesign {
             }, 2000);
         });
     }
-    // addToFavorite() {
-    //     this.imgFavorite.on(View.Events.TouchEnded, () => {
-    //         if (
-    //             store.getState().favorites &&
-    //             store.getState().favorites.length > 0 &&
-    //             store.getState().favorites.some((product) => product.id === this.routeData.productId)
-    //         ) {
-    //             store.dispatch({
-    //                 type: 'REMOVE_FROM_FAVORITES',
-    //                 payload: {
-    //                     data: {
-    //                         productId: this.routeData.productId
-    //                     }
-    //                 }
-    //             });
-    //             this.imgFavorite.image = Image.createFromFile('images://favourite.png');
-    //         } else {
-    //             store.dispatch({
-    //                 type: 'ADD_TO_FAVORITES',
-    //                 payload: {
-    //                     data: {
-    //                         product: store.getState().products.find((product) => product.id == this.routeData.productId)
-    //                     }
-    //                 }
-    //             });
-    //             this.imgFavorite.image = Image.createFromFile('images://favorited.png');
-    //         }
-    //     });
-    // }
     toggleToast(toggle: boolean): void {
         this.flAlert.dispatch({
             type: 'updateUserStyle',
@@ -222,10 +191,6 @@ export default class PgProductDetail extends PgProductDetailDesign {
 function onShow(this: PgProductDetail, superOnShow: () => void) {
     superOnShow();
     this.checkIfFavorited();
-    if (System.OS !== 'iOS') {
-        Application.statusBar.visible = true;
-        Application.statusBar.backgroundColor = Color.create('#F2F3F2');
-    }
 }
 
 /**
@@ -235,8 +200,10 @@ function onShow(this: PgProductDetail, superOnShow: () => void) {
  */
 function onLoad(this: PgProductDetail, superOnLoad: () => void) {
     superOnLoad();
-    this.addLeftItem();
     this.addRightItem();
+    // this.addLeftItem();
+    this.headerBar.title = global.lang.productDetail;
+    this.btnAddToBasket.text = global.lang.addToBasket;
     this.addToBasket();
     this.initListView();
     this.refreshListView();

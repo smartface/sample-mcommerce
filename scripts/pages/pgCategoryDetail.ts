@@ -2,12 +2,20 @@ import PgCategoryDetailDesign from 'generated/pages/pgCategoryDetail';
 import store from 'store';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import * as ListViewItems from 'lib/listViewItemTypes';
-
+import SearchView from '@smartface/native/ui/searchview';
+import MySearchBar from 'components/FlSearchBar';
+import Color from '@smartface/native/ui/color';
+import HeaderBarItem from '@smartface/native/ui/headerbaritem';
+import Image from '@smartface/native/ui/image';
+import System from '@smartface/native/device/system';
 type Processor = ListViewItems.ProcessorTypes.ILviRow2ProductItem | ListViewItems.ProcessorTypes.ILviSpacer;
 
 export default class PgCategoryDetail extends PgCategoryDetailDesign {
     data: Processor[];
+    MySearchBar: SearchView;
     routeData: any;
+    isSearchViewVisible = false;
+    categoryProducts: Array<any>;
     constructor() {
         super();
         // Overrides super.onShow method
@@ -15,7 +23,44 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
         // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
     }
-
+    addRightItem() {
+        const rightItem = new HeaderBarItem({
+            image: Image.createFromFile('images://filtericon.png'),
+            color: Color.BLACK,
+            onPress: () => {
+                if (this.isSearchViewVisible) {
+                    this.initSearchView(false);
+                } else {
+                    this.initSearchView(true);
+                }
+            }
+        });
+        this.headerBar.setItems([rightItem]);
+    }
+    initSearchView(visible) {
+        this.MySearchBar = new SearchView();
+        this.MySearchBar.textFieldBackgroundColor = Color.create('#F2F3F2');
+        this.MySearchBar.addToHeaderBar(this);
+        if (visible) {
+            this.isSearchViewVisible = true;
+            this.MySearchBar.onTextChanged = (searchText) => {
+                if (this.categoryProducts && this.categoryProducts.length > 0) {
+                    let foundProducts = this.categoryProducts.filter((product) =>
+                        product.name.startsWith(searchText.charAt(0).toLocaleUpperCase('tr-TR'))
+                    );
+                    this.categoryProducts = foundProducts;
+                    this.refreshListView();
+                }
+                if (searchText.length === 0) {
+                    this.getCategoryProducts();
+                    this.refreshListView();
+                }
+            };
+        } else {
+            this.isSearchViewVisible = false;
+            this.MySearchBar.visible = false;
+        }
+    }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowHeight = onRowHeight.bind(this);
@@ -30,11 +75,9 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
     }
     processor(): Processor[] {
         const processorItems: Processor[] = [];
-        const products = store.getState().products.filter((product) => product.categoryId === this.routeData.id);
 
-        for (let i = 0; i < products.length; i += 2) {
-            const [product1, product2] = [products[i], products[i + 1]];
-
+        for (let i = 0; i < this.categoryProducts.length; i += 2) {
+            const [product1, product2] = [this.categoryProducts[i], this.categoryProducts[i + 1]];
             processorItems.push(
                 ListViewItems.getLviRow2ProductItem({
                     itemTitle1: product1?.name || '',
@@ -57,6 +100,9 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
         }
         return processorItems;
     }
+    getCategoryProducts() {
+        this.categoryProducts = store.getState().products.filter((product) => product.categoryId === this.routeData.id);
+    }
 }
 
 function onShow(this: PgCategoryDetail, superOnShow: () => void) {
@@ -66,7 +112,13 @@ function onShow(this: PgCategoryDetail, superOnShow: () => void) {
 function onLoad(this: PgCategoryDetail, superOnLoad: () => void) {
     superOnLoad();
     this.headerBar.title = this.routeData.title;
-
+    // this.initSearchView();
+    this.getCategoryProducts();
+    if (System.OS === System.OSType.IOS) {
+        this.addRightItem();
+    } else {
+        this.initSearchView(true);
+    }
     this.initListView();
     this.refreshListView();
 }

@@ -3,7 +3,6 @@ import buildExtender from '@smartface/extension-utils/lib/router/buildExtender';
 import * as Pages from 'pages';
 
 export default function (basePath: string) {
-    console.info('basePath');
     return StackRouter.of({
         path: `${basePath}/pages`,
         to: `${basePath}/pages/pgWelcome`,

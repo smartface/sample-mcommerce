@@ -1,4 +1,5 @@
 SMF.i18n.defineLanguage('tr', {
+    productDetail: 'Ürün Detayı',
     goToCheckout: 'Ödemeye Git',
     accept: 'Kabul Et',
     homeHeader: 'Anasayfa',

@@ -22,12 +22,12 @@ store.subscribe(() => {
     } else {
         btbItemCart.badge.visible = true;
         btbItemCart.badge.move(0, 0);
+        btbItemCart.badge.backgroundColor = Color.create('#53b175');
     }
     if (parseInt(btbItemCart.badge.text) > 10) {
         btbItemCart.badge.text = '10+';
     }
 });
-btbItemCart.badge.backgroundColor = Color.create('#53b175');
 
 export default BottomTabBarRouter.of({
     path: '/btb',
@@ -57,12 +57,8 @@ export default BottomTabBarRouter.of({
             routes: [
                 Route.of({
                     path: '/btb/tab1/home',
-                    build: buildExtender({ getPageClass: () => require('pages/pgHome').default })
+                    build: buildExtender({ getPageClass: () => require('pages/pgHome').default, headerBarStyle: { visible: true } })
                 }),
-                // Route.of({
-                //     path: "/btb/tab1/productDetail",
-                //     build: buildExtender({ getPageClass: () => require("pages/pgProductDetail").default })
-                // }),
                 StackRouter.of({
                     path: '/btb/tab1/productDetail',
                     to: '/btb/tab1/productDetail/main',
