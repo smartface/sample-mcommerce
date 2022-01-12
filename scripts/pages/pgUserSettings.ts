@@ -52,7 +52,7 @@ export default class PgUserSettings extends PgUserSettingsDesign {
                     const targetTheme = currentTheme === 'mCommerceDarkTheme' ? 'mCommerceTheme' : 'mCommerceDarkTheme';
                     console.log('Current theme:', currentTheme);
                     console.log('Target theme:', targetTheme);
-                    //ThemeService.changeTheme(targetTheme);
+                    ThemeService.changeTheme(targetTheme);
                     Data.setStringVariable(CURRENT_THEME, targetTheme);
                     setTimeout(() => {
                         this.__isBusy = false;

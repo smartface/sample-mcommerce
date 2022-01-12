@@ -1,10 +1,10 @@
 {
 	"green": "#53B175",
-	"white": "#181725",
-	"textDark": "#FFFFFF",
+	"white": "#FFFFFF",
+	"textDark": "#181725",
 	"textLight": "#7C7C7C",
 	"transparent": "rgba(255,255,255,0)",
-	"backgroundMain": "#181725",
+	"backgroundMain": "#FFFFFF",
 	"genericImage": "images://smartface.png",
 	"grayBorder": "#E2E2E2",
 	"grayLightBorder": "#F0F0F0",
