@@ -1,7 +1,7 @@
 {
-	"#pgHome": {
+	"#pgUserSettings": {
 		"backgroundColor": "${backgroundMain}",
-		"&-headerBar": {
+		"&-header": {
 			"backgroundColor": "${backgroundMain}",
 			"visible": true,
 			"titleColor": "${textDark}"

@@ -48,7 +48,7 @@
 			"marginBottom": null,
 			"marginLeft": 0,
 			"marginTop": null,
-			"textColor": "rgba( 0, 0, 0, 1 )",
+			"textColor": "${textDark}",
 			".active": {
 				"marginLeft": 10
 			}
@@ -79,12 +79,13 @@
 					"flexProps": {
 						"alignSelf": "CENTER"
 					},
+					"tintColor": "${main}",
 					"height": 20,
 					"image": "ayarlar_karanlik.png",
 					"imageFillType": "ASPECTFIT",
 					"width": 20
 				},
-				"backgroundColor": "rgba(255,255,255,1)",
+				"backgroundColor": "${themeSwitchLeft}",
 				"borderColor": "rgba( 59, 87, 140, 1 )"
 			},
 			"&-flRight": {
@@ -106,8 +107,22 @@
 					"imageFillType": "ASPECTFIT",
 					"width": 20
 				},
-				"backgroundColor": "rgba( 59, 87, 140, 1 )",
+				"backgroundColor": "${themeSwitchRight}",
 				"borderColor": "rgba( 59, 87, 140, 1 )"
+			},
+			".borderRadius": {
+				"borderRadius": 8
+			}
+		},
+		"&-sw": {
+			"right": 15,
+			"minWidth": null,
+			"minHeight": null,
+			"marginTop": null,
+			"marginBottom": null,
+			"flexProps": {
+				"alignSelf": "CENTER",
+				"positionType": "ABSOLUTE"
 			}
 		}
 	}

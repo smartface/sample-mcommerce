@@ -1,16 +1,16 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #pgUserSettings",
-			"id": "3f5c-88d0-4abf-1412",
+			"className": ".sf-page",
+			"id": "8446-6639-046d-a1a6",
 			"initialized": true,
 			"props": {
 				"children": [
-					"b151-fb91-aa8a-f690",
-					"216d-d032-bbea-16b4",
-					"5e63-975d-23b4-89af"
+					"4ad5-5661-cb1a-0899",
+					"e396-0d5c-9481-dbab",
+					"5d7e-f0b0-398b-bb6b"
 				],
-				"name": "pgUserSettings",
+				"name": "pgNotifications",
 				"orientation": "PORTRAIT",
 				"parent": null,
 				"safeAreaEnabled": true
@@ -19,42 +19,47 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
-			"id": "b151-fb91-aa8a-f690",
+			"id": "4ad5-5661-cb1a-0899",
 			"props": {
 				"children": [],
 				"isRemovable": false,
 				"name": "statusBar",
-				"parent": "3f5c-88d0-4abf-1412"
+				"parent": "8446-6639-046d-a1a6"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
-			"className": ".sf-headerBar #pgUserSettings-header",
-			"id": "216d-d032-bbea-16b4",
+			"className": ".sf-headerBar",
+			"id": "e396-0d5c-9481-dbab",
 			"props": {
 				"children": [],
 				"isRemovable": false,
 				"name": "headerBar",
-				"parent": "3f5c-88d0-4abf-1412",
-				"title": "Settings"
+				"parent": "8446-6639-046d-a1a6",
+				"title": "pgNotifications"
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"title": "Settings"
-			}
+				"backgroundColor": "rgba( 255, 255, 255, 1 )",
+				"title": "pgNotifications",
+				"visible": true
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-listView",
-			"id": "5e63-975d-23b4-89af",
+			"id": "5d7e-f0b0-398b-bb6b",
 			"props": {
 				"children": [],
 				"name": "lvMain",
-				"parent": "3f5c-88d0-4abf-1412",
+				"parent": "8446-6639-046d-a1a6",
 				"usePageVariable": true
 			},
 			"type": "ListView",
@@ -65,9 +70,10 @@
 				"height": null,
 				"marginBottom": null,
 				"marginTop": null,
-				"testId": "clhJCtEsc",
-				"usePageVariable": true
-			}
+				"usePageVariable": true,
+				"testId": "xe3xTdHwM"
+			},
+			"degree": 1
 		}
 	]
 }

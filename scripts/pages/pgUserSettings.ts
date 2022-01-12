@@ -42,6 +42,7 @@ export default class PgUserSettings extends PgUserSettingsDesign {
             image: 'images://ayarlar_karanlikmod.png',
             title: 'Change Theme',
             showSeparator: true,
+            themeSwitch: true,
             onTouchEnded: () => {
                 if (this.__isBusy) {
                     return;
@@ -60,7 +61,15 @@ export default class PgUserSettings extends PgUserSettingsDesign {
                 }, 100);
             }
         });
-        this.data = [themeItem];
+        const biometricItem = getLviRow1LineLarge({
+            image: true ? 'images://icon_faceid.png' : 'images://icon_fingerprint.png',
+            title: 'Face Recognition',
+            showSeparator: true,
+            enableSwitch: true,
+            switchToggle: true,
+            themeSwitch: false
+        });
+        this.data = [themeItem, biometricItem];
         this.lvMain.itemCount = this.data.length;
         this.lvMain.refreshData();
     }

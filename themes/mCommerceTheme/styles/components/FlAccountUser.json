@@ -8,6 +8,7 @@
 		"paddingRight": 10,
 		"paddingLeft": 10,
 		"paddingTop": 10,
+		"backgroundColor": "${backgroundMain}",
 		"height": 100,
 		"&-imgUserAccount": {
 			"flexProps": {

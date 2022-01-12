@@ -9,7 +9,8 @@
 					"5841-fe1f-39fc-d234",
 					"0aab-7a98-5601-04c5",
 					"fb03-349c-5223-4b75",
-					"93aa-a396-0a44-b14f"
+					"93aa-a396-0a44-b14f",
+					"cc00-0394-62f0-4b0d"
 				],
 				"name": "flRow1LineLarge",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -172,6 +173,7 @@
 		},
 		{
 			"className": ".sf-flexLayout .seperator",
+			"hiddenComponent": false,
 			"id": "93aa-a396-0a44-b14f",
 			"props": {
 				"children": [],
@@ -184,6 +186,25 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-switch .flRow1LineLarge-sw .notVisible",
+			"id": "cc00-0394-62f0-4b0d",
+			"props": {
+				"children": [],
+				"name": "sw",
+				"parent": "e973-397b-f904-99f7",
+				"toggle": true,
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Switch",
+			"userProps": {
+				"toggle": true,
 				"usePageVariable": true
 			}
 		}
