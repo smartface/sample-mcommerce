@@ -1,0 +1,8 @@
+{
+	"#pgProductDetail": {
+		"&-headerBar": {
+			"visible": "true",
+			"backgroundColor": "rgba(255,255,255,1)"
+		}
+	}
+}
