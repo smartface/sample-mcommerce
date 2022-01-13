@@ -5,6 +5,18 @@ import { BottomTabBarRouter, NativeStackRouter as StackRouter, Route } from '@sm
 import buildExtender from '@smartface/extension-utils/lib/router/buildExtender';
 import store from 'store';
 import authRouteGenerator from './auth';
+import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import BottomTabBarController from '@smartface/native/ui/bottomtabbarcontroller';
+import { ThemeService } from 'theme';
+
+ThemeService.onChange(() => {
+    const { backgroundColor, itemColor } = getCombinedStyle('.tabs');
+    const rootController = bottomTabBarRouter._renderer._rootController;
+    if (rootController instanceof BottomTabBarController) {
+        rootController.tabBar.backgroundColor = backgroundColor;
+        rootController.tabBar.itemColor = itemColor;
+    }
+});
 
 let btbItemCart = new TabBarItem();
 btbItemCart.title = global.lang.cart;
@@ -34,7 +46,7 @@ const getBasketCounter = () => {
     }
 };
 
-export default BottomTabBarRouter.of({
+const bottomTabBarRouter = BottomTabBarRouter.of({
     path: '/btb',
     to: '/btb/tab1/home',
     homeRoute: 0,
@@ -189,3 +201,5 @@ export default BottomTabBarRouter.of({
         })
     ]
 });
+
+export default bottomTabBarRouter;

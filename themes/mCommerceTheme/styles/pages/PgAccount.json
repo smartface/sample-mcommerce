@@ -4,6 +4,7 @@
 		"paddingLeft": 0,
 		"paddingRight": 0,
 		"paddingTop": 0,
+		"backgroundColor": "${backgroundMain}",
 		"&-listViewAccount": {
 			"flexProps": {
 				"flexGrow": 1
@@ -26,6 +27,11 @@
 			"height": null,
 			"paddingLeft": 20,
 			"paddingRight": 20
+		},
+		"&-headerBar": {
+			"backgroundColor": "${backgroundMain}",
+			"visible": true,
+			"titleColor": "${textDark}"
 		}
 	}
 }

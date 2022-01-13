@@ -1,6 +1,7 @@
 {
 	".lviRow1LineLarge": {
 		"height": 70,
+		"backgroundColor": "${backgroundMain}",
 		"flexProps": {
 			"flexDirection": "ROW"
 		}

@@ -30,6 +30,12 @@
 			".active": {
 				"height": 40,
 				"width": 40
+			},
+			"&-imgIcon": {
+				"height": 24,
+				"imageFillType": "ASPECTFIT",
+				"width": 24,
+				"tintColor": "${textDark}"
 			}
 		},
 		"&-lblTitle": {
@@ -85,8 +91,8 @@
 					"imageFillType": "ASPECTFIT",
 					"width": 20
 				},
-				"backgroundColor": "${themeSwitchLeft}",
-				"borderColor": "rgba( 59, 87, 140, 1 )"
+				"backgroundColor": "${textDark}",
+				"borderColor": "${green}"
 			},
 			"&-flRight": {
 				"borderWidth": 1,
@@ -103,12 +109,13 @@
 						"alignSelf": "CENTER"
 					},
 					"height": 20,
+					"tintColor": "${main}",
 					"image": "ayarlar_aydinlik.png",
 					"imageFillType": "ASPECTFIT",
 					"width": 20
 				},
-				"backgroundColor": "${themeSwitchRight}",
-				"borderColor": "rgba( 59, 87, 140, 1 )"
+				"backgroundColor": "${backgroundMain}",
+				"borderColor": "${green}"
 			},
 			".borderRadius": {
 				"borderRadius": 8

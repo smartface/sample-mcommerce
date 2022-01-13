@@ -1,8 +1,10 @@
 {
 	"#pgFavorites": {
+		"backgroundColor": "${backgroundMain}",
 		"&-headerBar": {
-			"backgroundColor": "rgba( 255, 255, 255, 1 )",
-			"visible": true
+			"backgroundColor": "${backgroundMain}",
+			"visible": true,
+			"titleColor": "${textDark}"
 		}
 	}
 }

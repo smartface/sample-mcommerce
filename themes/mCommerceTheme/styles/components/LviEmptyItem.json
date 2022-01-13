@@ -17,7 +17,8 @@
 				"flexProps": {},
 				"height": 100,
 				"testId": "iK4kwHKmH",
-				"width": null
+				"width": null,
+				"tintColor": "${textDark}"
 			},
 			"&-lblEmptyTitle": {
 				"flexProps": {},

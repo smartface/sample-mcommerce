@@ -21,6 +21,13 @@
 					"style": "Bold"
 				},
 				"testId": "4dE2tG-C4"
+			},
+			"&-imgRouteArrow": {
+				"height": 50,
+				"image": "rightarrow.png",
+				"tintColor": "${textDark}",
+				"testId": "dtVNM0nNK",
+				"width": 50
 			}
 		}
 	}

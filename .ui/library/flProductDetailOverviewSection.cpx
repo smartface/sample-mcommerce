@@ -88,7 +88,7 @@
 			}
 		},
 		{
-			"className": ".sf-imageView",
+			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-imgRouteArrow",
 			"id": "efa8-13e9-32b6-84c8",
 			"props": {
 				"children": [],
@@ -101,11 +101,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"height": 50,
-				"image": "rightarrow.png",
-				"testId": "dtVNM0nNK",
-				"usePageVariable": true,
-				"width": 50
+				"usePageVariable": true
 			}
 		}
 	]

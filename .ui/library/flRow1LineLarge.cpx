@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flRow1LineLarge",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "e973-397b-f904-99f7",
 			"props": {
 				"children": [
@@ -41,7 +41,7 @@
 			}
 		},
 		{
-			"className": ".sf-imageView",
+			"className": ".sf-imageView .flRow1LineLarge-flImageWrapper-imgIcon",
 			"id": "5b96-bc28-ee90-a5ff",
 			"props": {
 				"children": [],
@@ -54,10 +54,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"height": 24,
-				"imageFillType": "ASPECTFIT",
-				"usePageVariable": true,
-				"width": 24
+				"usePageVariable": true
 			}
 		},
 		{

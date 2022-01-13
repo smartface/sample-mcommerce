@@ -1,13 +1,13 @@
 {
-  "dependencies": {
-    "@smartface/component-keyboardlayout": "4.0.0",
-    "@smartface/component-materialtextbox": "6.0.2",
-    "@smartface/contx": "4.0.0",
-    "@smartface/extension-utils": "16.2.4",
-    "@smartface/native": "^4.3.5",
-    "@smartface/router": "2.0.0",
-    "@smartface/styler": "2.0.0",
-    "redux": "^4.1.2",
-    "source-map": "0.6.1"
-  }
+	"dependencies": {
+		"@smartface/component-keyboardlayout": "4.0.0",
+		"@smartface/component-materialtextbox": "6.0.2",
+		"@smartface/contx": "4.0.0",
+		"@smartface/extension-utils": "16.2.4",
+		"@smartface/native": "^4.3.5",
+		"@smartface/router": "2.0.0",
+		"@smartface/styler": "2.0.0",
+		"redux": "^4.1.2",
+		"source-map": "0.6.1"
+	}
 }

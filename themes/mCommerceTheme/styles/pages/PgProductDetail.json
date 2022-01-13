@@ -1,8 +1,10 @@
 {
 	"#pgProductDetail": {
+		"backgroundColor": "${backgroundMain}",
 		"&-headerBar": {
-			"visible": "true",
-			"backgroundColor": "rgba(255,255,255,1)"
+			"backgroundColor": "${backgroundMain}",
+			"visible": true,
+			"titleColor": "${textDark}"
 		}
 	}
 }

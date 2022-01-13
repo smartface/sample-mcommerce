@@ -40,7 +40,7 @@
 				},
 				"marginLeft": 10,
 				"testId": "NrZ-2VxaH",
-				"textColor": "rgba( 62, 66, 63, 1 )"
+				"textColor": "${categoryText}"
 			}
 		},
 		"minWidth": 250

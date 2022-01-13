@@ -35,6 +35,18 @@ export default class LviProfile extends LviProfileDesign {
     set userImage(value: any) {
         this.flAccountUser.userImage = value;
     }
+    get onProfileClick(): () => Promise<any> {
+        return this.flAccountUser.onProfileClick;
+    }
+    set onProfileClick(value: () => Promise<any>) {
+        this.flAccountUser.onProfileClick = value;
+    }
+    get onPhotoClick(): () => Promise<any> {
+        return this.flAccountUser.onPhotoClick;
+    }
+    set onPhotoClick(value: () => Promise<any>) {
+        this.flAccountUser.onPhotoClick = value;
+    }
     get onAction(): (...args) => void {
         return this.flAccountUser.onAction;
     }

@@ -6,10 +6,40 @@
 		"testId": "8gXp0YRzt",
 		"&-flProductHeader": {
 			"flexProps": {
-				"flexDirection": "ROW"
+				"flexDirection": "ROW",
+				"flexGrow": 1
 			},
 			"height": 50,
-			"testId": "UpFCsZXn6"
+			"testId": "UpFCsZXn6",
+			"&-lblTitle": {
+				"flexProps": {
+					"flexGrow": 2
+				},
+				"font": {
+					"size": 20,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"testId": "YrEYk4SF3",
+				"textColor": "${textDark}"
+			},
+			"&-lblSeeAll": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 12,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"testId": "vjc6uzjKI",
+				"textAlignment": "MIDRIGHT",
+				"textColor": "${green}"
+			}
 		},
 		"&-gvProducts": {
 			"flexProps": {

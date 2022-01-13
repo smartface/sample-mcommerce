@@ -34,6 +34,7 @@
 				},
 				"&-lblProductTitle": {
 					"height": 20,
+					"backgroundColor": "${backgroundMain}",
 					"textColor": "${textDark}",
 					"font": {
 						"size": 16,
@@ -81,6 +82,7 @@
 							"family": "Nunito",
 							"style": "Medium"
 						},
+						"backgroundColor": "${backgroundMain}",
 						"height": 25,
 						"testId": "xvO2dsQHZ",
 						"textAlignment": "MIDLEFT",
@@ -130,6 +132,7 @@
 						},
 						"testId": "Cw4YoZ5Bi",
 						"height": null,
+						"backgroundColor": "${backgroundMain}",
 						"textColor": "${textDark}",
 						"minHeight": 25
 					}
@@ -138,6 +141,7 @@
 					"testId": "tvOK1ghZM",
 					"height": 25,
 					"textColor": "${textDark}",
+					"backgroundColor": "${backgroundMain}",
 					"font": {
 						"size": 18,
 						"family": "Nunito",

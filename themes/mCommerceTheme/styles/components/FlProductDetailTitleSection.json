@@ -36,6 +36,16 @@
 					"height": 30,
 					"testId": "WhIxHioCx"
 				}
+			},
+			"&-flFavoriteImg": {
+				"&-imgFavorite": {
+					"flexProps": {
+						"flexGrow": 1
+					},
+					"tintColor": "${favoriIcon}",
+					"height": null,
+					"testId": "vzb75eWIi"
+				}
 			}
 		},
 		"null": "75",

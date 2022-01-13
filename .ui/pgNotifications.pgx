@@ -36,7 +36,7 @@
 			"degree": 1
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar #pgNotifications-headerBar",
 			"id": "e396-0d5c-9481-dbab",
 			"props": {
 				"children": [],
@@ -47,14 +47,12 @@
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"title": "pgNotifications",
-				"visible": true
+				"title": "pgNotifications"
 			},
 			"degree": 1
 		},
 		{
-			"className": ".sf-listView",
+			"className": ".sf-listView .grow .lvMain",
 			"id": "5d7e-f0b0-398b-bb6b",
 			"props": {
 				"children": [],
@@ -64,14 +62,8 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"marginBottom": null,
-				"marginTop": null,
 				"usePageVariable": true,
-				"testId": "xe3xTdHwM"
+				"testId": "be2N52fd_"
 			},
 			"degree": 1
 		}

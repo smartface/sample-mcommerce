@@ -4,7 +4,8 @@
 		"&-imgLeft": {
 			"width": 60,
 			"height": 60,
-			"marginRight": 15
+			"marginRight": 15,
+			"tintColor": "${textDark}"
 		},
 		"flexProps": {
 			"flexDirection": "ROW"
@@ -22,13 +23,13 @@
 				},
 				"marginTop": 10
 			},
-            "&-secondary": {
-                "backgroundColor": "${light}",
-                "textColor": "${darkGray}",
-                "borderColor": "${darkGray}",
-                "borderWidth": 2,
-                "height": 60
-            }
+			"&-secondary": {
+				"backgroundColor": "${light}",
+				"textColor": "${darkGray}",
+				"borderColor": "${darkGray}",
+				"borderWidth": 2,
+				"height": 60
+			}
 		}
 	}
 }

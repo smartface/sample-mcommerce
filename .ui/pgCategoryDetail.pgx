@@ -16,7 +16,8 @@
 			},
 			"type": "Page",
 			"userProps": {},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -28,7 +29,8 @@
 				"parent": "7dd3-eb16-f5e0-3035"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar #pgCategoryDetail-headerBar",
@@ -40,10 +42,11 @@
 				"parent": "7dd3-eb16-f5e0-3035"
 			},
 			"type": "HeaderBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
-			"className": ".sf-listView .grow",
+			"className": ".sf-listView .grow .lvMain",
 			"id": "9c8a-99c0-5d01-7907",
 			"props": {
 				"children": [],
@@ -53,9 +56,10 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"testId": "CpdmopJW-",
-				"usePageVariable": true
-			}
+				"usePageVariable": true,
+				"testId": "42nY9R7e-"
+			},
+			"degree": 1
 		}
 	]
 }

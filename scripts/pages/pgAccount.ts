@@ -5,6 +5,7 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Color from '@smartface/native/ui/color';
 import LviAccount from 'components/LviAccount';
+import profileImageMenu from 'lib/profileImageMenu';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -68,6 +69,15 @@ export default class PgAccount extends PgAccountDesign {
                           message: 'Edit Profile Photo'
                       });
                   }
+                  //   onProfileClick: () => {
+                  //     if (myself) {
+                  //         profileImageMenu({ imageUrl: profileImageURL, isProfileImageExists: profile.isProfileImageExists }).then((base64) =>
+                  //             uploadImage(profile.username, base64)
+                  //         );
+                  //     } else {
+                  //         profile.isProfileImageExists && initPictureDialog(profileImageURL).show();
+                  //     }
+                  // }
               })
             : ListViewItems.getLviRow2LineButton({
                   leftIcon: 'images://tabiconuser.png',

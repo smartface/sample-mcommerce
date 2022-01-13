@@ -15,11 +15,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": "16.48",
-				"top": "43.96"
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flProductDetailTitleSection-flWrapper .grow",
@@ -125,7 +121,7 @@
 			}
 		},
 		{
-			"className": ".sf-imageView",
+			"className": ".sf-imageView .flProductDetailTitleSection-flWrapper-flFavoriteImg-imgFavorite",
 			"id": "35c4-834a-020c-a3ad",
 			"props": {
 				"children": [],
@@ -138,11 +134,6 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "vzb75eWIi",
 				"usePageVariable": true
 			}
 		}

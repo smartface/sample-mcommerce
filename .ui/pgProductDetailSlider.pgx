@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page #pgProductDetailSlider",
 			"id": "c689-3a3e-cf54-fa5b",
 			"initialized": true,
 			"props": {
@@ -15,9 +15,7 @@
 				"parent": null
 			},
 			"type": "Page",
-			"userProps": {
-				"backgroundColor": "rgba( 242, 243, 242, 1 )"
-			},
+			"userProps": {},
 			"version": "0.0.1.a"
 		},
 		{

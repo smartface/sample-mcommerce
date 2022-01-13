@@ -19,7 +19,8 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -31,7 +32,8 @@
 				"parent": "3f5c-88d0-4abf-1412"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar #pgUserSettings-header",
@@ -46,10 +48,11 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "Settings"
-			}
+			},
+			"degree": 1
 		},
 		{
-			"className": ".sf-listView",
+			"className": ".sf-listView .grow .lvMain",
 			"id": "5e63-975d-23b4-89af",
 			"props": {
 				"children": [],
@@ -59,15 +62,10 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"marginBottom": null,
-				"marginTop": null,
-				"testId": "clhJCtEsc",
-				"usePageVariable": true
-			}
+				"usePageVariable": true,
+				"testId": "N-8LqBIxN"
+			},
+			"degree": 1
 		}
 	]
 }

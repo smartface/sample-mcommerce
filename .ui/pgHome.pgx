@@ -51,7 +51,7 @@
 			"degree": 1
 		},
 		{
-			"className": ".sf-listView .grow",
+			"className": ".sf-listView .grow .lvMain",
 			"id": "d4e5-3968-92a3-8db0",
 			"props": {
 				"children": [],
@@ -62,7 +62,7 @@
 			"type": "ListView",
 			"userProps": {
 				"usePageVariable": true,
-				"testId": "fERxNoEWZ"
+				"testId": "JEEySNz30"
 			},
 			"degree": 1
 		}

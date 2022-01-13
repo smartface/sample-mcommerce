@@ -4,9 +4,11 @@
 		"paddingBottom": 15,
 		"paddingRight": 10,
 		"paddingLeft": 10,
+		"backgroundColor": "${backgroundMain}",
 		"&-headerBar": {
-			"backgroundColor": "rgba( 255, 255, 255, 1 )",
-			"visible": true
+			"backgroundColor": "${backgroundMain}",
+			"visible": true,
+			"titleColor": "${textDark}"
 		}
 	}
 }

@@ -36,8 +36,8 @@
 			"degree": 1
 		},
 		{
-			"className": ".sf-headerBar",
-			"hiddenComponent": true,
+			"className": ".sf-headerBar #pgAccount-headerBar",
+			"hiddenComponent": false,
 			"id": "64f0-4598-a7d6-2aa7",
 			"props": {
 				"children": [],
@@ -48,17 +48,12 @@
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"ios": {
-					"translucent": false
-				},
-				"title": "pgAccount",
-				"visible": true
+				"title": "pgAccount"
 			},
 			"degree": 1
 		},
 		{
-			"className": ".sf-listView #pgAccount-listViewAccount",
+			"className": ".sf-listView #pgAccount-listViewAccount .lvMain",
 			"id": "fc95-5a4f-f83c-ea45",
 			"props": {
 				"children": [],
@@ -69,7 +64,7 @@
 			"type": "ListView",
 			"userProps": {
 				"usePageVariable": true,
-				"testId": "jsPL9P5Cw"
+				"testId": "XyS5Cm8P2"
 			},
 			"degree": 1
 		}

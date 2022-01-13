@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flProductContainer-flProductHeader",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "ba0d-9de0-46a9-685a",
 			"props": {
 				"children": [
@@ -18,14 +18,11 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label .flProductContainer-flProductHeader-lblTitle",
 			"id": "aaf6-f68c-a5a4-9657",
 			"props": {
 				"children": [],
@@ -38,23 +35,11 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 2
-				},
-				"font": {
-					"size": 20,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"testId": "YrEYk4SF3",
-				"textColor": "rgba( 24, 23, 37, 1 )",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label .flProductContainer-flProductHeader-lblSeeAll",
 			"id": "c2ef-7872-ce34-2dfe",
 			"props": {
 				"children": [],
@@ -67,19 +52,6 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"font": {
-					"size": 12,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"testId": "vjc6uzjKI",
-				"textAlignment": "MIDRIGHT",
-				"textColor": "rgba( 83, 177, 117, 1 )",
 				"usePageVariable": true
 			}
 		}
