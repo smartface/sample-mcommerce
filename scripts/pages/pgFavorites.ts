@@ -11,7 +11,7 @@ import View from '@smartface/native/ui/view';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/listView';
 
-type Processor = ListViewItems.ProcessorTypes.ILviFavorites | ListViewItems.ProcessorTypes.ILviFavorites;
+type Processor = ListViewItems.ProcessorTypes.ILviFavorites;
 
 export default class PgFavorites extends PgFavoritesDesign {
     favoriteProducts: any;

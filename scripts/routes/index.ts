@@ -18,7 +18,7 @@ import System from '@smartface/native/device/system';
 
 backClose.dismissBuilder = () => {
     return {
-        image: Image.createFromFile('images://backbtn.png'),
+        image: Image.createFromFile('images://closeicon.png'),
         position: backClose.DismissPosition.LEFT,
         color: System.OS === System.OSType.IOS ? Color.BLACK : undefined
     };

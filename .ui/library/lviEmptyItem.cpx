@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviEmptyItem",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "3de8-9719-8900-24cd",
 			"props": {
 				"children": [
@@ -15,7 +15,11 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 20.65,
+				"top": 117.39
+			}
 		},
 		{
 			"className": ".sf-flexLayout .lviEmptyItem-flWrapper",
@@ -48,10 +52,6 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": null
-				},
-				"height": 150,
 				"usePageVariable": true
 			}
 		},

@@ -1,6 +1,5 @@
 {
 	".lviEmptyItem": {
-		"height": 200,
 		"flexProps": {
 			"alignContent": "CENTER"
 		},
@@ -15,17 +14,13 @@
 			"height": null,
 			"testId": "FZihRVPmu",
 			"&-imgEmpty": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
+				"flexProps": {},
+				"height": 100,
 				"testId": "iK4kwHKmH",
 				"width": null
 			},
 			"&-lblEmptyTitle": {
-				"flexProps": {
-					"flexGrow": 1
-				},
+				"flexProps": {},
 				"textColor": "${textDark}",
 				"font": {
 					"size": 17,
@@ -35,8 +30,11 @@
 					"style": "SemiBold"
 				},
 				"testId": "ae8JtxRfc",
-				"textAlignment": "MIDCENTER"
+				"textAlignment": "MIDCENTER",
+				"height": 30,
+				"marginTop": 15
 			}
-		}
+		},
+		"height": 300
 	}
 }

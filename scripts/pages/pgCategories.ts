@@ -23,7 +23,11 @@ export default class PgCategories extends PgCategoriesDesign {
             GridViewItem.categoryTitle = categories[index].title;
             GridViewItem.categoryImage = categories[index].categoryImg;
             this.categoriesGrid.onItemSelected = (GridViewItem: categoriesItem, index: number) => {
-                this.router.push('/btb/tab2/categoryDetail', { id: categories[index].id, title: categories[index].title });
+                this.router.push('/btb/tab2/categoryDetail', {
+                    dataId: categories[index].id,
+                    title: categories[index].title,
+                    isShowcase: false
+                });
             };
         };
 

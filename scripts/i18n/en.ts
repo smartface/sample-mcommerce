@@ -4,6 +4,8 @@ SMF.i18n.defineLanguage('en', {
     accept: 'Accept',
     shoppingCartIsEmpty: 'Your shopping cart is empty',
     favoritesIsEmpty: 'There is no product in your favorites',
+    categoriesIsEmpty: 'There is no product in this category',
+    categoriesIsEmptyWithSearch: 'No product found with : ',
     homeHeader: 'Home',
     accountHeader: 'My Account',
     loginHeader: 'Login',

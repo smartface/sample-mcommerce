@@ -23,4 +23,10 @@ export default class LviShowcaseHeader extends LviShowcaseHeaderDesign {
     set showcaseLinkText(value: string) {
         this.flProductHeader.showcaseLinkText = value;
     }
+    get onSeeAllClick(): (...args) => void {
+        return this.flProductHeader.onSeeAllClick;
+    }
+    set onSeeAllClick(value: (...args) => void) {
+        this.flProductHeader.onSeeAllClick = value;
+    }
 }

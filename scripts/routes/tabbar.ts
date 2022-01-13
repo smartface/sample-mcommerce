@@ -10,13 +10,7 @@ let btbItemCart = new TabBarItem();
 btbItemCart.title = global.lang.cart;
 btbItemCart.icon = Image.createFromFile('images://tabiconcart.png');
 store.subscribe(() => {
-    btbItemCart.badge.text =
-        store.getState().basket && store.getState().basket.length > 0
-            ? store
-                  .getState()
-                  .basket.reduce((total, product) => total + product.count, 0)
-                  .toString()
-            : '0';
+    btbItemCart.badge.text = getBasketCounter();
     if (btbItemCart.badge.text == '0') {
         btbItemCart.badge.visible = false; // default false
     } else {
@@ -28,6 +22,17 @@ store.subscribe(() => {
         btbItemCart.badge.text = '10+';
     }
 });
+
+const getBasketCounter = () => {
+    if (store.getState().basket && store.getState().basket.length > 0) {
+        return store
+            .getState()
+            .basket.reduce((total, product) => total + product.count, 0)
+            .toString();
+    } else {
+        return null;
+    }
+};
 
 export default BottomTabBarRouter.of({
     path: '/btb',
@@ -68,6 +73,20 @@ export default BottomTabBarRouter.of({
                             path: '/btb/tab1/productDetail/main',
                             build: buildExtender({
                                 getPageClass: () => require('pages/pgProductDetail').default,
+                                headerBarStyle: { visible: true }
+                            })
+                        })
+                    ]
+                }),
+                StackRouter.of({
+                    path: '/btb/tab1/categoryDetail',
+                    to: '/btb/tab1/categoryDetail/main',
+                    modal: true,
+                    routes: [
+                        Route.of({
+                            path: '/btb/tab1/categoryDetail/main',
+                            build: buildExtender({
+                                getPageClass: () => require('pages/pgCategoryDetail').default,
                                 headerBarStyle: { visible: true }
                             })
                         })

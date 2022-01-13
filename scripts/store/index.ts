@@ -3,6 +3,7 @@ import { createStore } from 'redux';
 const initialState = {
     showcaseProducts: [
         {
+            showcaseId: 1,
             showcaseTitle: 'Exclusive Offer',
             showcaseLink: '/',
             showcaseLinkText: 'See All',
@@ -15,14 +16,14 @@ const initialState = {
                     discount: 2.99,
                     review: 4.3,
                     image: 'sprite.png',
-                    discountTag: 'Sepette %15 indirim',
+                    discountTag: '%15 Discount on Basket',
                     categoryId: 6
                 },
                 {
                     id: 2,
                     name: 'Diet Coke',
                     description: '325ml, Price',
-                    discountTag: 'Süper Fiyat',
+                    discountTag: 'Best Price',
                     price: 1.99,
                     image: 'dietcoke.png',
                     categoryId: 6
@@ -31,7 +32,7 @@ const initialState = {
                     id: 3,
                     name: 'Orange Juice',
                     description: '325ml, Price',
-                    discountTag: 'Kargo Bedava',
+                    discountTag: 'Freeshipping',
                     price: 4.99,
                     image: 'juice.png',
                     categoryId: 6
@@ -40,7 +41,7 @@ const initialState = {
                     id: 4,
                     name: 'Organic Bananas',
                     description: '12kg, Price',
-                    discountTag: 'Sepette %15 indirim',
+                    discountTag: '%15 Discount on Basket',
                     price: 4.99,
                     image: 'banana.png',
                     categoryId: 6
@@ -49,7 +50,7 @@ const initialState = {
                     id: 5,
                     name: 'Ginger',
                     description: '250g, Price',
-                    discountTag: 'Kargo Bedava',
+                    discountTag: 'Freeshipping',
                     price: 4.99,
                     image: 'ginger.png',
                     categoryId: 6
@@ -65,6 +66,7 @@ const initialState = {
             ]
         },
         {
+            showcaseId: 2,
             showcaseTitle: 'Best Seller',
             showcaseLink: '/',
             showcaseLinkText: 'See All',
@@ -104,6 +106,7 @@ const initialState = {
             ]
         },
         {
+            showcaseId: 3,
             showcaseTitle: 'Groceries',
             showcaseLink: '/',
             showcaseLinkText: 'See All',
@@ -169,7 +172,7 @@ const initialState = {
             categoryId: 6,
             discount: 2.99,
             review: 4.3,
-            discountTag: 'Sepette %15 indirim'
+            discountTag: '%15 Discount on Basket'
         },
         {
             id: 2,
@@ -178,7 +181,7 @@ const initialState = {
             price: 1.99,
             image: 'dietcoke.png',
             categoryId: 6,
-            discountTag: 'Süper Fiyat'
+            discountTag: 'Best Price'
         },
         {
             id: 3,

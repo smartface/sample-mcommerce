@@ -302,6 +302,7 @@
 		},
 		{
 			"className": ".sf-activityIndicator .flProductItem-flProductItemWrapper-flProductItemPriceButtonWrapper-aiAddToCart",
+			"hiddenComponent": false,
 			"id": "3314-2be8-ad7c-4822",
 			"props": {
 				"children": [],
@@ -351,12 +352,6 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1,
-					"positionType": "RELATIVE"
-				},
-				"height": null,
-				"testId": "P5NlWy478",
 				"text": "label1",
 				"usePageVariable": true
 			}

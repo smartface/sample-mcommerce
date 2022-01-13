@@ -23,8 +23,6 @@ export default class FlProductItem extends FlProductItemDesign {
         this.aiAddToCart.android.zIndex = this.btnAddToBasket.android.zIndex + 1;
     }
     toggleIndicator(toggle: boolean): void {
-        console.log('toggle', toggle);
-        //@ts-ignore
         this.aiAddToCart.dispatch({
             type: 'updateUserStyle',
             userStyle: {

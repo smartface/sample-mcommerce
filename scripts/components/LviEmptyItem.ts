@@ -14,7 +14,7 @@ export default class LviEmptyItem extends LviEmptyItemDesign {
         return getCombinedStyle(`.lviEmptyItem`).height || 0;
     }
     static getScreenHeightDivide2(): number {
-        return Screen.height / 2;
+        return Screen.height / 1.5;
     }
     get emptyTitle(): any {
         return this.lblEmptyTitle.text;

@@ -46,10 +46,18 @@ export default class PgHome extends PgHomeDesign {
             })
         ];
         this.showcases.forEach((showcase) => {
+            console.log('showcase', showcase);
             processorItems.push(
                 ListViewItems.getLviShowcaseHeader({
                     showcaseTitle: showcase.showcaseTitle,
-                    showcaseLinkText: showcase.showcaseLinkText
+                    showcaseLinkText: showcase.showcaseLinkText,
+                    onSeeAllClick: () => {
+                        this.router.push('/btb/tab1/categoryDetail', {
+                            dataId: showcase.showcaseId,
+                            title: showcase.showcaseTitle,
+                            isShowcase: true
+                        });
+                    }
                 })
             );
             if (showcase.categories) {
