@@ -19,7 +19,7 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
     MySearchBar: SearchView;
     routeData: any;
     isSearchViewVisible = false;
-    categoryProducts: Array<any> | Object;
+    categoryProducts: any;
     searchStatus: searchStatus = {
         isSearchActive: false,
         searchText: null
