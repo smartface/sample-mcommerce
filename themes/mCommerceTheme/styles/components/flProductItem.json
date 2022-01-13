@@ -147,6 +147,9 @@
 				}
 			},
 			"&-flTagWrapper": {
+				"paddingLeft": 10,
+				"paddingRight": 10,
+				"width": 120,
 				"backgroundColor": "${tagPurple}",
 				"testId": "_9ziXcn4H",
 				"height": 30,
@@ -170,18 +173,10 @@
 					"marginBottom": null,
 					"marginTop": null,
 					"textAlignment": "MIDCENTER",
-<<<<<<< HEAD
-					"textColor": "rgba( 255, 255, 255, 1 )"
-				},
-				"paddingLeft": 10,
-				"paddingRight": 10,
-				"width": 120
-=======
 					"textColor": "${white}",
 					"paddingRight": 10,
 					"paddingLeft": 10
 				}
->>>>>>> 90252227619751539c7ce49908142b15124a7c25
 			},
 			"&-flProductItemPriceButtonWrapper": {
 				"&-aiAddToCart": {
