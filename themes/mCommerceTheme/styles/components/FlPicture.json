@@ -1,0 +1,16 @@
+{
+	".flPicture": {
+		"borderRadius": 15,
+		"height": 350,
+		"left": 24,
+		"marginBottom": null,
+		"marginTop": null,
+		"right": 24,
+		"&-imgPicture": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"imageFillType": "ASPECTFIT"
+		}
+	}
+}

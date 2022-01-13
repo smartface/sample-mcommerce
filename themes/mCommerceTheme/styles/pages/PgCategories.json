@@ -1,0 +1,10 @@
+{
+	"#pgCategories": {
+		"backgroundColor": "${backgroundMain}",
+		"&-headerBar": {
+			"backgroundColor": "${backgroundMain}",
+			"visible": true,
+			"titleColor": "${textDark}"
+		}
+	}
+}
