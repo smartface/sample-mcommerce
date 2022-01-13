@@ -91,5 +91,8 @@
 		"flexProps": {
 			"positionType": "ABSOLUTE"
 		}
+	},
+	".notVisible": {
+		"visible": false
 	}
 }

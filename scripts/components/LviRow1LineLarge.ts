@@ -26,6 +26,27 @@ export default class LviRow1LineLarge extends LviRow1LineLargeDesign {
     set showSeparator(value: boolean) {
         this.flRow1LineLarge.showSeparator = value;
     }
+    get themeSwitch(): boolean {
+        return this.flRow1LineLarge.themeSwitch;
+    }
+    set themeSwitch(value: boolean) {
+        this.flRow1LineLarge.themeSwitch = value;
+    }
+    get switchToggle(): boolean {
+        return this.flRow1LineLarge.switchToggle;
+    }
+    set switchToggle(value: boolean) {
+        this.flRow1LineLarge.switchToggle = value;
+    }
+    toggleSwitch(value: boolean) {
+        this.flRow1LineLarge.toggleSwitch(value);
+    }
+    set enableSwitch(value: boolean) {
+        this.flRow1LineLarge.enableSwitch = value;
+    }
+    get setLargeSwitch(): (...args: any) => any {
+        return this.flRow1LineLarge.setLargeSwitch;
+    }
     static getHeight() {
         return height;
     }

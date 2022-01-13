@@ -170,6 +170,20 @@ export default BottomTabBarRouter.of({
                         })
                     ]
                 }),
+                StackRouter.of({
+                    path: '/btb/tab5/notifications',
+                    to: '/btb/tab5/notifications/main',
+                    modal: true,
+                    routes: [
+                        Route.of({
+                            path: '/btb/tab5/notifications/main',
+                            build: buildExtender({
+                                getPageClass: () => require('pages/pgNotifications').default,
+                                headerBarStyle: { visible: true }
+                            })
+                        })
+                    ]
+                }),
                 authRouteGenerator('/btb/tab5')
             ]
         })

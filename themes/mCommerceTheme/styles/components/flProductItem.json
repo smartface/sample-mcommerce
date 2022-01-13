@@ -84,7 +84,7 @@
 						"height": 25,
 						"testId": "xvO2dsQHZ",
 						"textAlignment": "MIDLEFT",
-						"textColor": "rgba( 124, 124, 124, 1 )",
+						"textColor": "${textDark}",
 						"width": null
 					},
 					"paddingRight": 5
@@ -130,7 +130,7 @@
 						},
 						"testId": "Cw4YoZ5Bi",
 						"height": null,
-						"textColor": "rgba( 124, 124, 124, 1 )",
+						"textColor": "${textDark}",
 						"minHeight": 25
 					}
 				},
@@ -147,7 +147,7 @@
 				}
 			},
 			"&-flTagWrapper": {
-				"backgroundColor": "rgba( 136, 21, 236, 1 )",
+				"backgroundColor": "${tagPurple}",
 				"testId": "_9ziXcn4H",
 				"height": 30,
 				"top": 0,
@@ -170,11 +170,18 @@
 					"marginBottom": null,
 					"marginTop": null,
 					"textAlignment": "MIDCENTER",
+<<<<<<< HEAD
 					"textColor": "rgba( 255, 255, 255, 1 )"
 				},
 				"paddingLeft": 10,
 				"paddingRight": 10,
 				"width": 120
+=======
+					"textColor": "${white}",
+					"paddingRight": 10,
+					"paddingLeft": 10
+				}
+>>>>>>> 90252227619751539c7ce49908142b15124a7c25
 			},
 			"&-flProductItemPriceButtonWrapper": {
 				"&-aiAddToCart": {

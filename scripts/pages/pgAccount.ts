@@ -35,6 +35,8 @@ export default class PgAccount extends PgAccountDesign {
             if (this.data[index].type === 'LVI_ACCOUNT') {
                 if (this.data[index].properties.itemTitle === 'settings') {
                     this.router.push('/btb/tab5/settings');
+                } else if (this.data[index].properties.itemTitle === 'notifications') {
+                    this.router.push('/btb/tab5/notifications');
                 } else {
                     alert({
                         title: 'ALERT',
@@ -59,7 +61,13 @@ export default class PgAccount extends PgAccountDesign {
                   userName: this.userInfo.fullName,
                   userEmail: this.userInfo.email,
                   userEditIcon: '',
-                  userImage: this.userInfo.profileImage
+                  userImage: this.userInfo.profileImage,
+                  onAction: () => {
+                      alert({
+                          title: 'ALERT',
+                          message: 'Edit Profile Photo'
+                      });
+                  }
               })
             : ListViewItems.getLviRow2LineButton({
                   leftIcon: 'images://tabiconuser.png',

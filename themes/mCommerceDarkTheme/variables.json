@@ -1,15 +1,19 @@
 {
+	"main": "#53B175",
 	"green": "#53B175",
-	"white": "#FFFFFF",
-	"textDark": "#181725",
+	"white": "#181725",
+	"textDark": "#FFFFFF",
 	"textLight": "#7C7C7C",
 	"transparent": "rgba(255,255,255,0)",
-	"backgroundMain": "#FFFFFF",
+	"backgroundMain": "rgba(0,0,0,1.0",
 	"genericImage": "images://smartface.png",
 	"grayBorder": "#E2E2E2",
 	"grayLightBorder": "#F0F0F0",
 	"grayTextColor": "#B3B3B3",
 	"light": "#F5F5F5",
 	"darkGray": "rgba(117,117,117,1)",
-	"nutritionsGray": "#EBEBEB"
+	"nutritionsGray": "#EBEBEB",
+	"tagPurple": "rgba( 136, 21, 236, 1 )",
+	"themeSwitchLeft": "#FFFFFF",
+	"themeSwitchRight": "#181725"
 }

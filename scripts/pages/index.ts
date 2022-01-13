@@ -15,3 +15,4 @@ export { default as pgAccount } from './pgAccount';
 export { default as pgUserSettings } from './pgUserSettings';
 export { default as pgCart } from './pgCart';
 export { default as pgCategoryDetail } from './pgCategoryDetail';
+export { default as pgNotifications } from './pgNotifications';

@@ -35,6 +35,12 @@ export default class LviProfile extends LviProfileDesign {
     set userImage(value: any) {
         this.flAccountUser.userImage = value;
     }
+    get onAction(): (...args) => void {
+        return this.flAccountUser.onAction;
+    }
+    set onAction(value: (...args) => void) {
+        this.flAccountUser.onAction = value;
+    }
     static getHeight(): number {
         return originalHeight;
     }

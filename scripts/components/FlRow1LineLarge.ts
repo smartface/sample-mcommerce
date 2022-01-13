@@ -1,11 +1,14 @@
 import pushClassNames from '@smartface/contx/lib/styling/action/pushClassNames';
+import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 import Image from '@smartface/native/ui/image';
 import FlRow1LineLargeDesign from 'generated/my-components/FlRow1LineLarge';
+import { setBordersForView } from 'lib/border';
 import setVisibility from 'lib/setVisibility';
 
 export default class FlRow1LineLarge extends FlRow1LineLargeDesign {
     pageName?: string | undefined;
     private __icon: any;
+    private __largeSwitch: boolean;
     private __showSeparator: boolean;
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
@@ -35,11 +38,28 @@ export default class FlRow1LineLarge extends FlRow1LineLargeDesign {
         setVisibility(this.seperator, value);
         this.__showSeparator = value;
     }
-    // get themeSwitch(): boolean {
-    //     return this.__largeSwitch;
-    // }
-    // set themeSwitch(value: boolean) {
-    //     value ? this.setLargeSwitch() : setVisibility(this.flSwitch, false);;
-    //     this.__largeSwitch = value;
-    // }
+    get themeSwitch(): boolean {
+        return this.__largeSwitch;
+    }
+    set themeSwitch(value: boolean) {
+        value ? this.setLargeSwitch() : setVisibility(this.flSwitch, false);
+        this.__largeSwitch = value;
+    }
+    set switchToggle(value: boolean) {
+        this.toggleSwitch(value);
+    }
+    set enableSwitch(value: boolean) {
+        setVisibility(this.sw, value);
+        this.sw.enabled = value;
+    }
+    toggleSwitch(toggle: boolean): void {
+        this.sw.toggle = toggle;
+    }
+    setLargeSwitch(): void {
+        const { flSwitch, flLeft, flRight } = this;
+        setVisibility(flSwitch, true);
+        const { borderRadius } = getCombinedStyle('.flRow1LineLarge-flSwitch.borderRadius');
+        setBordersForView(flLeft, ['left'], borderRadius);
+        setBordersForView(flRight, ['right'], borderRadius);
+    }
 }
