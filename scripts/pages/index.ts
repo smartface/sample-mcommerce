@@ -1,6 +1,5 @@
 export { default as pgHome } from './pgHome';
 export { default as pgWelcome } from './pgWelcome';
-export { default as pgSignIn } from './pgSignIn';
 export { default as pgNumber } from './pgNumber';
 export { default as pgVerification } from './pgVerification';
 export { default as pgLogin } from './pgLogin';
