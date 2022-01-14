@@ -12,7 +12,7 @@
 		"paddingLeft": 0,
 		"paddingBottom": 0,
 		"paddingRight": 0,
-		"backgroundColor": "${navbar}",
+		"backgroundColor": "${backgroundMain}",
 		"orientation": "PORTRAIT",
 		".backgroundMain": {
 			"backgroundColor": "${backgroundMain}"
@@ -25,6 +25,11 @@
 		},
 		".black": {
 			"backgroundColor": "${black}"
+		}
+	},
+	".sf": {
+		"&-headerBar": {
+			"backgroundColor": "${white}"
 		}
 	}
 }

@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #pgLogin",
+			"className": "#pgLogin .sf-page.backgroundMain",
 			"id": "aa9f-e1cb-2f7f-92d5",
 			"initialized": true,
 			"props": {
