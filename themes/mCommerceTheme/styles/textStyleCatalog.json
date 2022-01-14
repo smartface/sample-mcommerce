@@ -1,0 +1,960 @@
+{
+	".dashboard": {
+		"font": {
+			"family": "Nunito",
+			"bold": true,
+			"italic": false
+		},
+		".numbers": {
+			"font": {
+				"style": "DemiBold",
+				"size": 34,
+				"family": "Nunito",
+				"bold": true,
+				"italic": false
+			},
+			"textColor": "${mainText}",
+			".small": {
+				"font": {
+					"size": 24
+				}
+			}
+		},
+		".titleSmall": {
+			"font": {
+				"style": "Medium",
+				"size": 14
+			},
+			"textColor": "${main}",
+			"&-leaveRequest": {
+				"font": {
+					"family": "Nunito",
+					"bold": true,
+					"size": 12,
+					"italic": true,
+					"style": "DemiBoldOblique"
+				},
+				"textColor": "${iconsSecondary}",
+				"maxLines": 0
+			},
+			"&-disclaimer": {
+				"font": {
+					"family": "Nunito",
+					"bold": true,
+					"size": 14,
+					"italic": false,
+					"style": "DemiBold"
+				},
+				"textColor": "${hintTextColor}",
+				".multiline": {
+					"maxLines": 0
+				}
+			}
+		}
+	},
+	".news": {
+		"font": {
+			"family": "Nunito",
+			"italic": false
+		},
+		".text": {
+			"font": {
+				"style": "Regular",
+				"size": 15,
+				"bold": false
+			},
+			"textColor": "${mainText}"
+		},
+		".titleBig": {
+			"font": {
+				"style": "Bold",
+				"size": 19,
+				"bold": true
+			},
+			"textColor": "${mainText}"
+		},
+		".boxTitle": {
+			"font": {
+				"style": "Bold",
+				"size": 15,
+				"bold": true
+			},
+			"textColor": "${mainText}"
+		},
+		".boxDate": {
+			"font": {
+				"style": "Medium",
+				"size": 13,
+				"bold": true
+			},
+			"textColor": "${darkGray}"
+		},
+		".categoryTitle": {
+			"font": {
+				"style": "Medium",
+				"size": 13,
+				"bold": true
+			},
+			"textColor": "${mainDark}"
+		},
+		".segment": {
+			"font": {
+				"style": "Medium",
+				"size": 13,
+				"bold": true
+			},
+			"textColor": "${white}"
+		}
+	},
+	".sectionTitles": {
+		"font": {
+			"family": "Nunito",
+			"style": "DemiBold",
+			"bold": true,
+			"italic": false
+		},
+		".small": {
+			"font": {
+				"size": 14
+			},
+			"textColor": "${main}"
+		},
+		".big": {
+			"font": {
+				"size": 18
+			},
+			"textColor": "${main}"
+		},
+		".mid": {
+			"font": {
+				"size": 15
+			},
+			"textColor": "${iconsSecondary}",
+			".mainDark": {
+				"textColor": "${mainDark}"
+			},
+			".hint": {
+				"textColor": "${hintTextColor}"
+			}
+		}
+	},
+	".tags": {
+		"font": {
+			"family": "Nunito",
+			"style": "Regular",
+			"size": 14,
+			"bold": false,
+			"italic": false
+		},
+		".normal": {
+			"textColor": "${darkGray}"
+		},
+		".selected": {
+			"textColor": "${iconsMain}"
+		}
+	},
+	".buttons": {
+		"font": {
+			"family": "Nunito",
+			"style": "Bold",
+			"size": 17,
+			"bold": true,
+			"italic": false
+		},
+		".titleWhite": {
+			"textColor": "${white}"
+		},
+		".titleMainColor": {
+			"textColor": "${main}"
+		},
+		".negative": {
+			"textColor": "${coralTwo}"
+		}
+	},
+	".popup": {
+		"font": {
+			"family": "Nunito",
+			"italic": false
+		},
+		".text": {
+			"font": {
+				"style": "Regular",
+				"size": 13,
+				"bold": false
+			},
+			"textColor": "${black}"
+		},
+		".title": {
+			"font": {
+				"style": "DemiBold",
+				"size": 17,
+				"bold": true
+			},
+			"textColor": "${black}"
+		}
+	},
+	".rows": {
+		"ellipsizeMode": "NONE",
+		"font": {
+			"family": "Nunito",
+			"italic": false,
+			"bold": true
+		},
+		".title": {
+			"font": {
+				"style": "DemiBold",
+				"size": 15
+			},
+			"ellipsizeMode": "END",
+			"textColor": "${mainText}",
+			".smallest": {
+				"font": {
+					"size": 13
+				}
+			},
+			".smaller": {
+				"font": {
+					"size": 12
+				}
+			},
+			".small": {
+				"ellipsizeMode": "END",
+				"font": {
+					"size": 14
+				}
+			},
+			".large": {
+				"font": {
+					"size": 16
+				}
+			},
+			".big": {
+				"font": {
+					"size": 18
+				}
+			},
+			".notBold": {
+				"font": {
+					"style": "Regular",
+					"bold": false
+				}
+			}
+		},
+		".titleSmallLink": {
+			"font": {
+				"style": "DemiBold",
+				"size": 14
+			},
+			"textColor": "${main}"
+		},
+		".subsubTitle": {
+			"font": {
+				"style": "Medium",
+				"size": 14
+			},
+			"textColor": "${darkGray}",
+			".brandColor": {
+				"textColor": "${brandColor}"
+			},
+			".small": {
+				"font": {
+					"style": "Medium",
+					"size": 12
+				},
+				".endColor": {
+					"textColor": "${profileEndColor}"
+				}
+			}
+		},
+		".subTitle": {
+			"font": {
+				"style": "Medium",
+				"size": 14
+			},
+			"textColor": "${mainDark}",
+			".small": {
+				"font": {
+					"size": 13
+				}
+			}
+		},
+		".subTitleDark": {
+			"font": {
+				"style": "Medium",
+				"size": 14
+			},
+			"textColor": "${subtitleDark}",
+			".bold": {
+				"font": {
+					"bold": true,
+					"style": "DemiBold"
+				}
+			}
+		},
+		".red": {
+			"textColor": "${coralTwo}"
+		}
+	},
+	".txtbox": {
+		"font": {
+			"family": "Nunito",
+			"italic": false
+		},
+		".titleSmall": {
+			"font": {
+				"style": "DemiBold",
+				"size": 14,
+				"bold": true
+			},
+			"textColor": "${main}",
+			".white": {
+				"textColor": "${white}"
+			}
+		},
+		".titleBig": {
+			"font": {
+				"style": "DemiBold",
+				"size": 15,
+				"bold": true
+			},
+			"textColor": "${mainDark}"
+		},
+		".error": {
+			"font": {
+				"style": "Medium",
+				"size": 14,
+				"bold": true
+			},
+			"textColor": "${deny}"
+		},
+		".text": {
+			"font": {
+				"style": "Medium",
+				"size": 15,
+				"bold": true
+			},
+			"textColor": "${mainText}"
+		},
+		".textDisabled": {
+			"font": {
+				"style": "Medium",
+				"size": 15,
+				"bold": true
+			},
+			"textColor": "${mainDark}"
+		},
+		".placeHolder": {
+			"font": {
+				"style": "Regular",
+				"size": 15,
+				"bold": false
+			},
+			"textColor": "${mainDark}"
+		}
+	},
+	".general": {
+		"font": {
+			"family": "Nunito",
+			"bold": true,
+			"italic": false
+		},
+		".emptyInfo": {
+			"font": {
+				"style": "DemiBold",
+				"size": 15
+			},
+			"textColor": "${darkGray}"
+		},
+		".fastMenuTitle": {
+			"font": {
+				"style": "Medium",
+				"size": 12
+			},
+			"textColor": "${mainDark}"
+		}
+	},
+	".tabbar": {
+		"font": {
+			"family": "Nunito",
+			"style": "Medium",
+			"size": 10,
+			"bold": true,
+			"italic": false
+		},
+		".active": {
+			"textColor": "${main}"
+		},
+		".passive": {
+			"textColor": "${darkGray}"
+		}
+	},
+	".profile": {
+		"font": {
+			"family": "Nunito",
+			"italic": false
+		},
+		".greeting": {
+			"font": {
+				"style": "Light",
+				"size": 26,
+				"bold": false
+			},
+			"textColor": "${white}"
+		},
+		".name": {
+			"font": {
+				"style": "Medium",
+				"size": 26,
+				"bold": false
+			},
+			"textColor": "${white}"
+		},
+		".nameSmall": {
+			"font": {
+				"style": "Medium",
+				"size": 22,
+				"bold": false
+			},
+			"textColor": "${white}"
+		},
+		".power": {
+			"font": {
+				"style": "Medium",
+				"size": 15,
+				"bold": false
+			},
+			"foregroundColor": "${white}"
+		},
+		".status": {
+			"font": {
+				"style": "Medium",
+				"size": 14,
+				"bold": true
+			},
+			"foregroundColor": "${white}"
+		},
+		".level": {
+			"font": {
+				"style": "Bold",
+				"size": 15,
+				"bold": true
+			},
+			"foregroundColor": "${brandColor}"
+		},
+		".badgeHeader": {
+			"font": {
+				"style": "Bold",
+				"size": 15,
+				"bold": true
+			},
+			"textColor": "${brandColor}"
+		},
+		".recommendationTitle": {
+			"font": {
+				"style": "Medium",
+				"size": 18,
+				"bold": false
+			},
+			"textColor": "${white}"
+		},
+		".actionTitle": {
+			"font": {
+				"style": "Medium",
+				"size": 11,
+				"bold": false
+			},
+			"textColor": "${mainDark}"
+		}
+	},
+	".detailedSearch": {
+		".activeSlider": {
+			"font": {
+				"style": "Bold",
+				"size": 13,
+				"bold": true
+			},
+			"textColor": "${iconsMain}"
+		},
+		".disabledSlider": {
+			"font": {
+				"style": "Medium",
+				"size": 13,
+				"bold": false
+			},
+			"textColor": "${iconsSecondary}"
+		}
+	},
+	".badgeDetail": {
+		".title": {
+			"font": {
+				"family": "Nunito",
+				"style": "DemiBold",
+				"bold": true,
+				"italic": false
+			},
+			"textColor": "${white}",
+			".mainDark": {
+				"textColor": "${mainDark}"
+			}
+		},
+		".textView": {
+			"font": {
+				"style": "Medium",
+				"size": 15,
+				"bold": false
+			},
+			"textColor": "${mainText}"
+		}
+	},
+	".liveStream": {
+		".title": {
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"bold": true,
+				"italic": false,
+				"size": 15
+			},
+			"textColor": "${navbar}"
+		}
+	},
+	".expense": {
+		"font": {
+			"style": "Regular",
+			"size": 13,
+			"bold": false
+		},
+		"textColor": "${mainText}",
+		".balance": {
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"bold": true,
+				"italic": false,
+				"size": 15
+			},
+			"textColor": "${iconsMain}"
+		}
+	},
+	".description": {
+		"font": {
+			"family": "Nunito",
+			"style": "Regular",
+			"bold": true,
+			"italic": false,
+			"size": 14
+		},
+		"textColor": "${hintTextColor}",
+		".duskBlue": {
+			"textColor": "${duskBlue}"
+		},
+		".bigger": {
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"bold": true,
+				"italic": false
+			}
+		}
+	},
+	".notificationCount": {
+		"font": {
+			"family": "Nunito",
+			"style": "Bold",
+			"bold": true,
+			"italic": false,
+			"size": 12
+		},
+		"textColor": "${black}",
+		"textAlignment": "MIDCENTER"
+	},
+	".pickerStyle": {
+		".header": {
+			"font": {
+				"family": "Nunito",
+				"style": "DemiBold",
+				"size": 12
+			},
+			"+Device:Device.os === \"iOS\"": {
+				"font": {
+					"family": "Nunito",
+					"style": "DemiBold",
+					"size": 11
+				}
+			},
+			"textColor": "${iconsSecondary}",
+			"maxLines": 1
+		},
+		".text": {
+			"font": {
+				"family": "Nunito",
+				"style": "DemiBold",
+				"size": 15
+			},
+			"textColor": "${mainText}",
+			"maxLines": 1
+		}
+	},
+	".materialTextBoxTextStyle": {
+		".header": {
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"bold": true,
+				"italic": false,
+				"size": 14
+			},
+			"textColor": "${selectedHintTextColor}",
+			".white": {
+				"textColor": "${white}"
+			}
+		},
+		".text": {
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"bold": true,
+				"italic": false,
+				"size": 16
+			},
+			"textColor": "${mainText}",
+			"maxLines": 0,
+			".center": {
+				"textAlignment": "MIDCENTER"
+			}
+		},
+		".rightLayout": {
+			"font": {
+				"family": "Nunito",
+				"style": "Regular",
+				"bold": false,
+				"italic": false,
+				"size": 12
+			},
+			"textColor": "${lightGray}",
+			"maxLines": 0
+		},
+		".fakeRightLayout": {
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"bold": true,
+				"italic": false,
+				"size": 12
+			},
+			"textColor": "${slateGray}",
+			"maxLines": 0
+		}
+	},
+	".headerBarTitle": {
+		"font": {
+			"family": "Roboto",
+			"style": "Medium",
+			"size": 20,
+			"bold": false,
+			"italic": false
+		},
+		"textColor": "${white}",
+		"+Device:Device.os === \"iOS\"": {
+			"font": {
+				"size": 18
+			}
+		}
+	},
+	".stream": {
+		".counter": {
+			"ellipsizeMode": "NONE",
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"size": 15,
+				"bold": true,
+				"italic": false
+			},
+			"textColor": "${selectedHintTextColor}"
+		},
+		".questionPanel": {
+			"ellipsizeMode": "NONE",
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"size": 15,
+				"bold": true,
+				"italic": false
+			},
+			"textColor": "${white}",
+			".small": {
+				"font": {
+					"size": 13
+				}
+			}
+		}
+	},
+	".switch": {
+		".label": {
+			"ellipsizeMode": "NONE",
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"size": 15,
+				"bold": true,
+				"italic": false
+			},
+			"textColor": "${white}"
+		}
+	},
+	".mainRows": {
+		"ellipsizeMode": "NONE",
+		"font": {
+			"family": "Nunito",
+			"style": "Regular",
+			"size": 16,
+			"bold": false,
+			"italic": false
+		},
+		"textColor": "${white}",
+		".first": {
+			"font": {
+				"style": "Bold",
+				"bold": true,
+				"size": 16
+			}
+		},
+		".second": {
+			"alpha": 0.6,
+			"font": {
+				"size": 12
+			}
+		}
+	},
+	".info": {
+		"textColor": "${duskBlue}",
+		".header": {
+			"font": {
+				"family": "Nunito",
+				"style": "DemiBold",
+				"size": 14,
+				"bold": true,
+				"italic": false
+			}
+		},
+		".label": {
+			"font": {
+				"family": "Nunito",
+				"style": "Regular",
+				"size": 14,
+				"bold": false,
+				"italic": false
+			},
+			"maxLines": 0,
+			".bold": {
+				"font": {
+					"bold": true,
+					"family": "Nunito",
+					"style": "Bold",
+					"size": 14,
+					"italic": false
+				}
+			}
+		}
+	},
+	".characterRestriction": {
+		"font": {
+			"family": "Nunito",
+			"style": "Medium",
+			"size": 10,
+			"bold": true,
+			"italic": false
+		},
+		"textColor": "${darkGray}"
+	},
+	".listViewIndex": {
+		"font": {
+			"family": "Nunito",
+			"style": "Medium",
+			"size": 9,
+			"bold": false,
+			"italic": false
+		},
+		"textColor": "${mainText}"
+	},
+	".pendingJobs": {
+		"&-status": {
+			"font": {
+				"family": "Nunito",
+				"style": "DemiBold",
+				"size": 12,
+				"bold": true,
+				"italic": false
+			},
+			".red": {
+				"textColor": "${deny}"
+			},
+			".yellow": {
+				"textColor": "${brandColor}"
+			},
+			".green": {
+				"textColor": "${approve}"
+			},
+			".orange": {
+				"textColor": "${orange}"
+			},
+			".gray": {
+				"textColor": "${lightGray}"
+			}
+		},
+		"&-bigCounter": {
+			"textColor": "${hintTextColor}",
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"size": 68,
+				"bold": true,
+				"italic": false
+			},
+			"&-fourDigit": {
+				"font": {
+					"size": 44
+				}
+			}
+		},
+		"&-counter": {
+			"textColor": "${hintTextColor}",
+			"font": {
+				"family": "Nunito",
+				"style": "Bold",
+				"size": 32,
+				"bold": true,
+				"italic": false
+			},
+			"&-fourDigit": {
+				"font": {
+					"size": 24
+				}
+			}
+		},
+		"&-header": {
+			"textColor": "${hintTextColor}",
+			"font": {
+				"family": "Nunito",
+				"style": "Medium",
+				"size": 18,
+				"bold": false,
+				"italic": false
+			}
+		},
+		"&-commentInput": {
+			"maxLines": 0,
+			"textColor": "${mainText}",
+			".normal": {
+				"font": {
+					"family": "Nunito",
+					"style": "Medium",
+					"bold": false,
+					"italic": false,
+					"size": 16
+				}
+			},
+			".bold": {
+				"font": {
+					"family": "Nunito",
+					"style": "Bold",
+					"bold": true,
+					"italic": false,
+					"size": 16
+				},
+				"textColor": "${mainDark}"
+			},
+			".buttons": {
+				"textColor": "${mainText}",
+				".normal": {
+					"font": {
+						"size": 16,
+						"bold": false,
+						"italic": false,
+						"family": "Nunito",
+						"style": "Regular"
+					}
+				},
+				".bold": {
+					"font": {
+						"size": 16,
+						"bold": true,
+						"italic": false,
+						"family": "Nunito",
+						"style": "Bold"
+					}
+				}
+			}
+		}
+	},
+	".meetingRoom": {
+		".infoTitle": {
+			"font": {
+				"size": 12,
+				"bold": false,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Regular"
+			},
+			"textColor": "${meetingRoomLabel}",
+			".white": {
+				"textColor": "${white}"
+			}
+		},
+		".hourTitle": {
+			"font": {
+				"size": 12,
+				"bold": false,
+				"italic": false,
+				"family": "Nunito",
+				"style": "Regular"
+			},
+			".normal": {
+				"textColor": "${hintTextColor}"
+			},
+			".disabled": {
+				"textColor": "${hintTextColor30}"
+			}
+		},
+		".hourInfoTitle": {
+			"font": {
+				"size": 11,
+				"bold": true,
+				"italic": false,
+				"family": "Nunito",
+				"style": "DemiBold"
+			},
+			"textColor": "${mainText}"
+		}
+	},
+	".adverts": {
+		"ellipsizeMode": "NONE",
+		"font": {
+			"family": "Nunito",
+			"italic": false,
+			"bold": true
+		},
+		".title": {
+			"font": {
+				"style": "DemiBold",
+				"size": 22
+			},
+			"ellipsizeMode": "END",
+			"textColor": "${mainText}",
+			".detail": {
+				"font": {
+					"size": 16
+				}
+			}
+		},
+		".price": {
+			"font": {
+				"style": "DemiBold",
+				"size": 16
+			},
+			"ellipsizeMode": "END",
+			"textColor": "${main}"
+		}
+	}
+}
