@@ -1,42 +1,5 @@
 {
 	".gviProductItem": {
-		"flexProps": {},
-		"height": 250,
-		"testId": "yW_9gIzxP",
-		"width": 170,
-		"&-flTagWrapper": {
-			"backgroundColor": "rgba( 136, 21, 236, 1 )",
-			"testId": "_9ziXcn4H",
-			"height": 30,
-			"top": 0,
-			"width": 100,
-			"right": 5,
-			"borderRadius": 10,
-			"flexProps": {
-				"flexGrow": 1,
-				"positionType": "ABSOLUTE"
-			},
-			"&-lblTag": {
-				"ellipsizeMode": "END",
-				"flexProps": {
-					"alignSelf": "AUTO",
-					"flexGrow": 1
-				},
-				"font": {
-					"size": 10,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Medium"
-				},
-				"marginBottom": null,
-				"marginTop": null,
-				"textAlignment": "MIDCENTER",
-				"textColor": "rgba( 255, 255, 255, 1 )",
-				"paddingRight": 10,
-				"paddingLeft": 10
-			}
-		},
-		"paddingTop": 10
+		"height": 250
 	}
 }

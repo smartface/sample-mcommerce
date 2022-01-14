@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviHomeProducts",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "7886-61eb-1fbd-6516",
 			"props": {
 				"children": [
@@ -40,7 +40,7 @@
 			"id": "1357-ee6c-3b2e-7436",
 			"props": {
 				"children": [
-					"3e8d-03db-f084-cf5f"
+					"2f3f-607f-7dba-b67a"
 				],
 				"name": "gvProducts",
 				"parent": "f678-b1ba-8e32-3969",
@@ -55,9 +55,9 @@
 			}
 		},
 		{
-			"className": ".sf-gridViewItem",
+			"className": ".sf-gridViewItem .gviProductItem",
 			"hiddenComponent": false,
-			"id": "3e8d-03db-f084-cf5f",
+			"id": "2f3f-607f-7dba-b67a",
 			"props": {
 				"children": [],
 				"name": "gviProductItem",
@@ -69,7 +69,16 @@
 				"id": "7208-a5eb-9be3-319f"
 			},
 			"type": "GridViewItem",
-			"userProps": {}
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0
+			}
 		}
 	]
 }

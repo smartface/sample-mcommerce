@@ -6,7 +6,7 @@
 			"id": "7208-a5eb-9be3-319f",
 			"props": {
 				"children": [
-					"700c-1d45-ad24-3d07"
+					"1b51-485d-5b9a-7f3d"
 				],
 				"name": "gviProductItem",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -15,16 +15,12 @@
 				"page": "__library__"
 			},
 			"type": "GridViewItem",
-			"userProps": {
-				"flexProps": {},
-				"left": "154",
-				"top": "43"
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flProductItem",
 			"hiddenComponent": false,
-			"id": "700c-1d45-ad24-3d07",
+			"id": "1b51-485d-5b9a-7f3d",
 			"props": {
 				"children": [],
 				"name": "flProductItem",
@@ -38,6 +34,14 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0,
 				"usePageVariable": true
 			}
 		}
