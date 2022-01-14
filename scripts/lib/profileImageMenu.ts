@@ -14,6 +14,7 @@ import genericErrorHandler from './genericErrorHandler';
 
 // WORKAROUND : SUPDEV-2198 - Remove following lines when resolved
 import Contacts from '@smartface/native/device/contacts';
+import FlexLayout from '@smartface/native/ui/flexlayout';
 //@ts-ignore
 const contactActivity = Contacts.onActivityResult;
 //@ts-ignore

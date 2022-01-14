@@ -6,6 +6,8 @@ import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Color from '@smartface/native/ui/color';
 import LviAccount from 'components/LviAccount';
 import profileImageMenu from 'lib/profileImageMenu';
+import Blob from '@smartface/native/blob';
+import Image from '@smartface/native/ui/image';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -18,6 +20,7 @@ export default class PgAccount extends PgAccountDesign {
     data: any;
     userInfo: any;
     rightItem: HeaderBarItem;
+    updatedImage: Image;
     onExit: (...args) => any;
     constructor() {
         super();
@@ -62,22 +65,21 @@ export default class PgAccount extends PgAccountDesign {
                   userName: this.userInfo.fullName,
                   userEmail: this.userInfo.email,
                   userEditIcon: '',
-                  userImage: this.userInfo.profileImage,
+                  userImage: this.updatedImage || this.userInfo.profileImage,
                   onAction: () => {
-                      alert({
-                          title: 'ALERT',
-                          message: 'Edit Profile Photo'
-                      });
+                      console.info('onActionClicked');
+                      profileImageMenu({
+                          imageUrl: 'https://i.picsum.photos/id/49/800/800.jpg?hmac=rAzFhjqrfdnRPLR5_nFV49tMbvavk1xvsaEngwbDUfc',
+                          isProfileImageExists: true
+                      })
+                          .then((base64) => {
+                              this.updatedImage = Image.createFromBlob(Blob.createFromBase64(base64));
+                              this.refreshListView();
+                          })
+                          .catch((err) => {
+                              console.error(err);
+                          });
                   }
-                  //   onProfileClick: () => {
-                  //     if (myself) {
-                  //         profileImageMenu({ imageUrl: profileImageURL, isProfileImageExists: profile.isProfileImageExists }).then((base64) =>
-                  //             uploadImage(profile.username, base64)
-                  //         );
-                  //     } else {
-                  //         profile.isProfileImageExists && initPictureDialog(profileImageURL).show();
-                  //     }
-                  // }
               })
             : ListViewItems.getLviRow2LineButton({
                   leftIcon: 'images://tabiconuser.png',
