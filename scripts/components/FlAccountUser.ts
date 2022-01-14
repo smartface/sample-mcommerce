@@ -37,7 +37,11 @@ export default class FlAccountUser extends FlAccountUserDesign {
         return this.imgUserAccount.image;
     }
     set userImage(value: any) {
-        this.imgUserAccount.image = Image.createFromFile(`images://${value}`);
+        if (value instanceof Image) {
+            this.imgUserAccount.image = value;
+        } else {
+            this.imgUserAccount.image = Image.createFromFile(`images://${value}`);
+        }
     }
     get onProfileClick(): () => Promise<any> {
         return this.__onProfileClick;
