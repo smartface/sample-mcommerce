@@ -205,7 +205,7 @@ export const onGallerySelect = (opts: IPhotoEdit = {}) => {
 const initPictureDialog = (imageUrl: string) => {
     const flPicture = new FlPicture();
     flPicture.imageUrl = imageUrl;
-    return dialog(flPicture as unknown as FlexLayout, { closeOnTouch: true });
+    return dialog(flPicture, { closeOnTouch: true });
 };
 
 export default updateImage;
