@@ -60,7 +60,7 @@ export default class PgLogin extends PgLoginDesign {
                             data: found
                         }
                     });
-                    this.router.dismiss();                    
+                    this.router.dismiss();
                 }
             }
         }
@@ -91,5 +91,4 @@ function onLoad(this: PgLogin, superOnLoad: () => void) {
     this.headerBar.title = global.lang.loginHeader;
     this.headerBar.android.elevation = 0;
     this.initMaterialTextBoxes();
-    this.initUserLogin();
 }
