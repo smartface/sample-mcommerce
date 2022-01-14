@@ -16,13 +16,6 @@ export default function (basePath: string) {
                 })
             }),
             Route.of({
-                path: `${basePath}/pages/pgSignIn`,
-                build: buildExtender({
-                    getPageClass: () => Pages.pgSignIn,
-                    headerBarStyle: { visible: true }
-                })
-            }),
-            Route.of({
                 path: `${basePath}/pages/pgNumber`,
                 build: buildExtender({
                     getPageClass: () => Pages.pgNumber,
