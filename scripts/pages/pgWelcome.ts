@@ -1,11 +1,9 @@
 import PgWelcomeDesign from 'generated/pages/pgWelcome';
 import View from '@smartface/native/ui/view';
-import System from '@smartface/native/device/system';
-import Application from '@smartface/native/application';
-import Color from '@smartface/native/ui/color';
+import { NativeStackRouter } from '@smartface/router';
 
 export default class PgWelcome extends PgWelcomeDesign {
-    router: any;
+    router: NativeStackRouter;
     constructor() {
         super();
         this.onShow = onShow.bind(this, this.onShow.bind(this));
