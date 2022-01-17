@@ -50,52 +50,24 @@
 					"flexGrow": 0.75,
 					"alignSelf": "AUTO"
 				},
-				"font": {
-					"size": 44,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
 				"height": null,
 				"marginBottom": null,
 				"marginTop": null,
 				"maxHeight": 120,
 				"maxLines": 2,
 				"testId": "CH0SPiKCX",
-				"textAlignment": "MIDCENTER",
-				"textColor": "rgba( 255, 255, 255, 1 )"
-			},
-			"&-lblStore": {
-				"font": {
-					"size": 44,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"testId": "V-XkVZMom",
-				"textAlignment": "MIDCENTER",
-				"textColor": "rgba( 255, 255, 255, 1 )"
+				"textAlignment": "MIDCENTER"
 			},
 			"&-subtext": {
 				"ellipsizeMode": "MIDDLE",
 				"flexProps": {
 					"flexGrow": 0.5
 				},
-				"font": {
-					"size": 16,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
 				"height": null,
 				"maxHeight": 50,
 				"maxLines": 2,
 				"testId": "5_s4VJDXL",
 				"textAlignment": "MIDCENTER",
-				"textColor": "rgba( 252, 252, 252, 0.7 )",
 				"width": null
 			},
 			"&-getstarted": {

@@ -39,7 +39,7 @@
 			"degree": 1
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": " .sf-headerBar",
 			"id": "c9be-d152-52cc-8c62",
 			"props": {
 				"children": [],
@@ -62,8 +62,8 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"usePageVariable": true,
-				"testId": "JvD12jmVV"
+				"testId": "JvD12jmVV",
+				"usePageVariable": true
 			},
 			"degree": 1
 		},
@@ -101,7 +101,7 @@
 			"degree": 2
 		},
 		{
-			"className": ".sf-label #pgWelcome-container-lblWelcome",
+			"className": ".sf-label #pgWelcome-container-lblWelcome .welcome.main",
 			"id": "a0e2-d99e-d2b4-ddbc",
 			"props": {
 				"children": [],
@@ -111,13 +111,13 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"testId": "HGM2Fmf5FC",
+				"testId": "H4AWmKXYB",
 				"usePageVariable": true
 			},
 			"degree": 2
 		},
 		{
-			"className": ".sf-label #pgWelcome-container-subtext",
+			"className": ".sf-label #pgWelcome-container-subtext .welcome.sub",
 			"id": "f664-6802-0481-ec51",
 			"props": {
 				"children": [],
@@ -127,7 +127,7 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"testId": "k3zJ82-MRF",
+				"testId": "d1b8nai5i",
 				"usePageVariable": true
 			},
 			"degree": 2
@@ -144,7 +144,7 @@
 			"type": "Button",
 			"userProps": {
 				"usePageVariable": true,
-				"testId": "2-6lkGVoqY"
+				"testId": "kTjgNUe-y"
 			},
 			"degree": 2
 		}

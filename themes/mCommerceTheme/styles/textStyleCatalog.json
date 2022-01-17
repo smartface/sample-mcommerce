@@ -1,4 +1,25 @@
 {
+	".welcome": {
+		"font": {
+			"family": "Nunito",
+			"bold": true,
+			"italic": false
+		},
+		".main": {
+			"font": {
+				"size": 44,
+				"style": "Bold"
+			},
+			"textColor": "${white}"
+		},
+		".sub": {
+			"font": {
+				"size": 16,
+				"style": "Bold"
+			},
+			"textColor": "${subText}"
+		}
+	},
 	".dashboard": {
 		"font": {
 			"family": "Nunito",

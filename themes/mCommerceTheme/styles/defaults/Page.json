@@ -26,10 +26,5 @@
 		".black": {
 			"backgroundColor": "${black}"
 		}
-	},
-	".sf": {
-		"&-headerBar": {
-			"backgroundColor": "${white}"
-		}
 	}
 }
