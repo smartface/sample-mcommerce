@@ -39,7 +39,7 @@
 			"degree": 1
 		},
 		{
-			"className": " .sf-headerBar",
+			"className": ".sf-headerBar",
 			"id": "c9be-d152-52cc-8c62",
 			"props": {
 				"children": [],
