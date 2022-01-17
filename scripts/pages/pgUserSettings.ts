@@ -8,26 +8,20 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { getLviRow1LineLarge } from 'lib/listViewItemTypes';
 import PgUserSettingsDesign from 'generated/pages/pgUserSettings';
 import { ThemeService } from 'theme';
-
-//type Processor = ListViewItems.ProcessorTypes.ILviRow1LineLarge;
+import Image from '@smartface/native/ui/image';
+import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { NativeStackRouter } from '@smartface/router';
+const { image } = getCombinedStyle('.sf-headerBar.close');
 
 export default class PgUserSettings extends PgUserSettingsDesign {
-    router: any;
+    router: NativeStackRouter;
     private data: ReturnType<typeof getLviRow1LineLarge>[];
     private __isBusy = false;
     leftItem: HeaderBarItem;
     constructor() {
         super();
-        // Overrides super.onShow method
         this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-    }
-    addLeftItem() {
-        this.leftItem = new HeaderBarItem();
-        this.leftItem.image = 'images://backbtn.png';
-        this.leftItem.color = Color.BLACK;
-        this.headerBar.setLeftItem(this.leftItem);
     }
     initListView() {
         this.lvMain.refreshEnabled = false;
@@ -40,7 +34,7 @@ export default class PgUserSettings extends PgUserSettingsDesign {
     refreshListView() {
         const themeItem = getLviRow1LineLarge({
             image: 'images://ayarlar_karanlikmod.png',
-            title: 'Change Theme',
+            title: global.lang.changeTheme,
             showSeparator: true,
             themeSwitch: true,
             onTouchEnded: () => {
@@ -51,8 +45,6 @@ export default class PgUserSettings extends PgUserSettingsDesign {
                 setTimeout(() => {
                     const currentTheme = Data.getStringVariable(CURRENT_THEME);
                     const targetTheme = currentTheme === 'mCommerceDarkTheme' ? 'mCommerceTheme' : 'mCommerceDarkTheme';
-                    console.log('Current theme:', currentTheme);
-                    console.log('Target theme:', targetTheme);
                     ThemeService.changeTheme(targetTheme);
                     Data.setStringVariable(CURRENT_THEME, targetTheme);
                     setTimeout(() => {
@@ -75,25 +67,13 @@ export default class PgUserSettings extends PgUserSettingsDesign {
     }
 }
 
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
 function onShow(this: PgUserSettings, superOnShow: () => void) {
     superOnShow();
     this.headerBar.title = global.lang.settingsHeader;
     this.refreshListView();
 }
 
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
 function onLoad(this: PgUserSettings, superOnLoad: () => void) {
     superOnLoad();
-    this.addLeftItem();
     this.initListView();
 }

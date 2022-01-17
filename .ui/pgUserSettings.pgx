@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #pgUserSettings",
+			"className": ".sf-page",
 			"id": "3f5c-88d0-4abf-1412",
 			"initialized": true,
 			"props": {
@@ -36,7 +36,7 @@
 			"degree": 1
 		},
 		{
-			"className": ".sf-headerBar #pgUserSettings-header",
+			"className": ".sf-headerBar.main",
 			"id": "216d-d032-bbea-16b4",
 			"props": {
 				"children": [],
@@ -52,7 +52,7 @@
 			"degree": 1
 		},
 		{
-			"className": ".sf-listView .grow .lvMain",
+			"className": ".sf-listView .grow",
 			"id": "5e63-975d-23b4-89af",
 			"props": {
 				"children": [],
@@ -63,7 +63,7 @@
 			"type": "ListView",
 			"userProps": {
 				"usePageVariable": true,
-				"testId": "N-8LqBIxN"
+				"testId": "ssWOLWM1q"
 			},
 			"degree": 1
 		}
