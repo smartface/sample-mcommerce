@@ -13,6 +13,7 @@ SMF.i18n.defineLanguage('tr', {
     accountHeader: 'Hesabım',
     addToBasket: 'Sepete Ekle',
     show: 'Görüntüle',
+    phoneCode: '+90',
     updatePhoto: 'Profil Fotoğrafını Güncelle',
     openCamera: 'Kamerayı Aç',
     selectFromGallery: 'Fotoğraf Galerisinden Seç',

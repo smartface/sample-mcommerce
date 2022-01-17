@@ -12,6 +12,7 @@ SMF.i18n.defineLanguage('en', {
     signUpHeader: 'Sign Up',
     mycartHeader: 'My Cart',
     show: 'Show',
+    phoneCode: '+90',
     updatePhoto: 'Update Profile Photo',
     openCamera: 'Open Camera',
     selectFromGallery: 'Pick From Gallery',

@@ -20,6 +20,36 @@
 			"textColor": "${subText}"
 		}
 	},
+	".number": {
+		"font": {
+			"family": "Nunito",
+			"bold": true,
+			"italic": false
+		},
+		".title": {
+			"font": {
+				"size": 26,
+				"style": "Bold"
+			},
+			"textColor": "${black}"
+		},
+		".text": {
+			"font": {
+				"size": 16,
+				"style": "Bold"
+			},
+			"textColor": "${textLight}"
+		},
+		".button": {
+			"font": {
+				"family": "FontAwesome5FreeSolid",
+				"bold": false,
+				"size": 20,
+				"style": null
+			},
+			"textColor": "${white}"
+		}
+	},
 	".dashboard": {
 		"font": {
 			"family": "Nunito",
