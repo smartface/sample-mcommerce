@@ -1,0 +1,13 @@
+{
+	".sf-headerBar": {
+		"visible": true,
+		"backgroundColor": "${navbar}",
+		"titleColor": "${textDark}",
+		"itemColor": "${textDark}",
+		"transparent": false,
+		"borderVisibility": false,
+		"android": {
+			"elevation": 0
+		}
+	}
+}

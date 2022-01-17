@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #pgLogin",
+			"className": ".sf-page.backgroundMain",
 			"id": "aa9f-e1cb-2f7f-92d5",
 			"initialized": true,
 			"props": {
@@ -23,7 +23,7 @@
 			"version": "0.0.1.a"
 		},
 		{
-			"className": ".sf-statusBar #pgLogin-statusbar",
+			"className": ".sf-statusBar",
 			"id": "6e03-bc0b-218a-d1e2",
 			"props": {
 				"children": [],
@@ -35,7 +35,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar #pgLogin-headerbar",
+			"className": ".sf-headerBar",
 			"id": "f1b8-030b-a8b6-50f8",
 			"props": {
 				"children": [],
@@ -46,9 +46,7 @@
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"title": "pgLogin",
-				"visible": true
+				"title": "pgLogin"
 			}
 		},
 		{
