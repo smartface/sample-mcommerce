@@ -8,20 +8,6 @@
 		"borderVisibility": false,
 		"android": {
 			"elevation": 0
-		},
-		".btb": {
-			"visible": false
-		},
-		".transparent": {
-			"android": {
-				"elevation": 5
-			},
-			"transparent": true,
-			"titleColor": "${transparent}",
-			"leftItemEnabled": "true"
-		},
-		".close": {
-			"image": "backbtn.png"
 		}
 	}
 }

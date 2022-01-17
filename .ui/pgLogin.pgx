@@ -23,7 +23,7 @@
 			"version": "0.0.1.a"
 		},
 		{
-			"className": " .sf-statusBar",
+			"className": ".sf-statusBar",
 			"id": "6e03-bc0b-218a-d1e2",
 			"props": {
 				"children": [],
@@ -35,7 +35,7 @@
 			"userProps": {}
 		},
 		{
-			"className": " .sf-headerBar",
+			"className": ".sf-headerBar",
 			"id": "f1b8-030b-a8b6-50f8",
 			"props": {
 				"children": [],
