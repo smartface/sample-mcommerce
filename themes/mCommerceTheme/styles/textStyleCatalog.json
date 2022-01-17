@@ -40,7 +40,7 @@
 			},
 			"textColor": "${textLight}"
 		},
-		".btnRoute": {
+		".button": {
 			"font": {
 				"family": "FontAwesome5FreeSolid",
 				"bold": false,

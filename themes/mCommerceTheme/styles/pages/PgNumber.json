@@ -64,13 +64,9 @@
 					"positionType": 0
 				},
 				"flexProps": {
-					"positionType": "RELATIVE",
-					"alignItems": "STRETCH",
 					"flexGrow": 1
 				},
-				"left": 0,
-				"testId": "x_F3cBMmG",
-				"top": 0
+				"testId": "x_F3cBMmG"
 			}
 		},
 		"&-flfooter": {

@@ -16,6 +16,9 @@
 			"transparent": true,
 			"titleColor": "${transparent}",
 			"leftItemEnabled": "true"
+		},
+		".close": {
+			"image": "backbtn.png"
 		}
 	}
 }

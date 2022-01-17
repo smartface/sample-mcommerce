@@ -40,10 +40,10 @@ export default class PgNumber extends PgNumberDesign {
 
 function onShow(this: PgNumber, superOnShow: () => void) {
     superOnShow();
+    this.addHeaderWithDirectImage();
 }
 
 function onLoad(this: PgNumber, superOnLoad: () => void) {
     superOnLoad();
     this.initMaterialTextBox();
-    this.addHeaderWithDirectImage();
 }
