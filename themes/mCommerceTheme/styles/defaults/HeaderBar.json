@@ -9,6 +9,12 @@
 		"android": {
 			"elevation": 0
 		},
+		".main": {
+			"visible": true,
+			"backgroundColor": "${navbar}",
+			"titleColor": "${textDark}",
+			"itemColor": "${textDark}"
+		},
 		".transparent": {
 			"android": {
 				"elevation": 5

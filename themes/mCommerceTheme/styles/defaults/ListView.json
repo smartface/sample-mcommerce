@@ -1,0 +1,12 @@
+{
+	".sf-listView": {
+		"height": null,
+		"width": null,
+		"backgroundColor": "${backgroundMain}",
+		"flexProps": {
+			"alignSelf": "AUTO",
+			"positionType": "RELATIVE",
+			"flexGrow": 1
+		}
+	}
+}

@@ -14,6 +14,7 @@ SMF.i18n.defineLanguage('tr', {
     addToBasket: 'Sepete Ekle',
     show: 'Görüntüle',
     phoneCode: '+90',
+    changeTheme: 'Tema Değiştir',
     updatePhoto: 'Profil Fotoğrafını Güncelle',
     openCamera: 'Kamerayı Aç',
     selectFromGallery: 'Fotoğraf Galerisinden Seç',
