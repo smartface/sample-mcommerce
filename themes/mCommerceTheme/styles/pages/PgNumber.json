@@ -58,16 +58,7 @@
 			"height": null,
 			"paddingLeft": 25,
 			"paddingRight": 25,
-			"testId": "nMjwnwI42",
-			"&-mtbNumber": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"testId": "x_F3cBMmG"
-			}
+			"testId": "nMjwnwI42"
 		},
 		"&-flfooter": {
 			"flexProps": {
