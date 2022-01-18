@@ -3,6 +3,8 @@ import store from '../store/index';
 import Application from '@smartface/native/application';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
+import { NativeStackRouter } from '@smartface/router';
+import { HomeShowcases, Product } from 'types';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -10,20 +12,13 @@ type Processor =
     | ListViewItems.ProcessorTypes.ILviShowcaseHeader;
 
 export default class PgHome extends PgHomeDesign {
-    router: any;
+    router: NativeStackRouter;
     data: Processor[];
-    showcases: any;
+    showcases: HomeShowcases[];
     constructor() {
         super();
-        // Overrides super.onShow method
         this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
-        // this.lblOffer.text = global.lang['exclusiveOffer'];
-        // this.lblOfferSeeAll.text = global.lang['seeAll'];
-        // this.lblBestSeller.text = global.lang['bestSeller'];
-        // this.lblBestSellerSeeAll.text = global.lang['seeAll'];
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -46,7 +41,6 @@ export default class PgHome extends PgHomeDesign {
             })
         ];
         this.showcases.forEach((showcase) => {
-            console.log('showcase', showcase);
             processorItems.push(
                 ListViewItems.getLviShowcaseHeader({
                     showcaseTitle: showcase.showcaseTitle,
@@ -89,17 +83,11 @@ export default class PgHome extends PgHomeDesign {
 
 function onShow(this: PgHome, superOnShow: () => void) {
     superOnShow();
-    // this.refreshShowcaseProductsGrid();
-    Application.statusBar.visible = true;
 }
 
 function onLoad(this: PgHome, superOnLoad: () => void) {
     superOnLoad();
-    // this.initShowcaseProductsGrid();
     this.headerBar.title = global.lang.homeHeader;
-    this.headerBar.android.elevation = 0;
-    //   this.scrollView1.autoSizeEnabled = true;
-    //   this.scrollView1.layout.applyLayout;
     this.initListView();
     this.refreshListView();
 }
