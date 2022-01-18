@@ -1,5 +1,6 @@
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 import Screen from '@smartface/native/device/screen';
+import Image from '@smartface/native/ui/image';
 import LviEmptyItemDesign from 'generated/my-components/LviEmptyItem';
 
 export default class LviEmptyItem extends LviEmptyItemDesign {
