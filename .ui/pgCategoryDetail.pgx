@@ -31,7 +31,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar #pgCategoryDetail-headerBar",
+			"className": ".sf-headerBar",
 			"id": "319e-211d-a87b-8d37",
 			"props": {
 				"children": [],
@@ -44,11 +44,12 @@
 		},
 		{
 			"className": ".sf-flexLayout .grow",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "a0cc-d3bc-d6af-bb46",
 			"props": {
 				"children": [
-					"e16d-dce9-f199-d74b"
+					"e16d-dce9-f199-d74b",
+					"69ce-0e64-d3ad-b208"
 				],
 				"name": "flProductContainer",
 				"parent": "7dd3-eb16-f5e0-3035"
@@ -57,7 +58,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-gridView",
+			"className": ".sf-gridView #pgCategoryDetail-gvProducts",
 			"id": "e16d-dce9-f199-d74b",
 			"props": {
 				"children": [
@@ -69,14 +70,7 @@
 			},
 			"type": "GridView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"layoutManager": {
-					"spanCount": 2,
-					"scrollDirection": "VERTICAL"
-				},
-				"testId": "Hh4ClTTsp",
+				"testId": "R6hFXByol",
 				"usePageVariable": true
 			}
 		},
@@ -97,6 +91,27 @@
 			"type": "GridViewItem",
 			"userProps": {
 				"height": 250
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flEmptyItem #pgCategoryDetail-emptyItem",
+			"hiddenComponent": false,
+			"id": "69ce-0e64-d3ad-b208",
+			"props": {
+				"children": [],
+				"name": "flEmptyItem",
+				"parent": "a0cc-d3bc-d6af-bb46",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flEmptyItem",
+				"id": "5b47-f50d-f63a-1309"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "KOjzc1lsh",
+				"usePageVariable": true
 			}
 		}
 	]

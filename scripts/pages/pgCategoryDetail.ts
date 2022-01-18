@@ -9,7 +9,9 @@ import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
 import System from '@smartface/native/device/system';
 import GviProductItem from 'components/GviProductItem';
-import ListView from '@smartface/native/ui/listview';
+import Screen from '@smartface/native/device/screen';
+import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { Product } from 'types';
 type Processor = ListViewItems.ProcessorTypes.ILviRow2ProductItem | ListViewItems.ProcessorTypes.ILviSpacer;
 
 type searchStatus = {
@@ -17,12 +19,10 @@ type searchStatus = {
     searchText: string;
 };
 export default class PgCategoryDetail extends PgCategoryDetailDesign {
-    myListView: ListView;
-    data: Processor[];
-    MySearchBar: SearchView;
+    productSearchView: SearchView;
     routeData: any;
     isSearchViewVisible = false;
-    categoryProducts: any;
+    categoryProducts: Array<Product>;
     searchStatus: searchStatus = {
         isSearchActive: false,
         searchText: null
@@ -49,12 +49,12 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
         this.headerBar.setItems([rightItem]);
     }
     initSearchView(visible) {
-        this.MySearchBar = new SearchView();
-        this.MySearchBar.textFieldBackgroundColor = Color.create('#F2F3F2');
-        this.MySearchBar.addToHeaderBar(this);
+        this.productSearchView = new SearchView();
+        this.productSearchView.textFieldBackgroundColor = getCombinedStyle('.commerceSearchView').textFieldBackgroundColor;
+        this.productSearchView.addToHeaderBar(this);
         if (visible) {
             this.isSearchViewVisible = true;
-            this.MySearchBar.onTextChanged = (searchText) => {
+            this.productSearchView.onTextChanged = (searchText) => {
                 this.searchStatus.isSearchActive = true;
                 this.searchStatus.searchText = searchText;
                 if (this.categoryProducts && this.categoryProducts.length > 0) {
@@ -78,31 +78,8 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
             };
         } else {
             this.isSearchViewVisible = false;
-            this.MySearchBar.visible = false;
+            this.productSearchView.visible = false;
         }
-    }
-    processor(): Processor[] {
-        const processorItems: Processor[] = [];
-        if (this.categoryProducts.length === 0 && !this.searchStatus.isSearchActive) {
-            console.log('search false, length 0');
-            processorItems.push(
-                ListViewItems.getLviEmptyItem({
-                    emptyImage: 'images://empty_category.png',
-                    emptyTitle: global.lang.categoriesIsEmpty
-                })
-            );
-        } else if (this.categoryProducts.length === 0 && this.searchStatus.isSearchActive) {
-            console.log('search true, length 0');
-
-            processorItems.push(
-                ListViewItems.getLviEmptyItem({
-                    emptyImage: 'images://empty_category.png',
-                    emptyTitle: `${global.lang.categoriesIsEmptyWithSearch} ${this.searchStatus.searchText}`
-                })
-            );
-        }
-        console.log('processor items', processorItems);
-        return processorItems;
     }
     getCategoryProducts() {
         this.categoryProducts = store.getState().products.filter((product) => product.categoryId === this.routeData.dataId);
@@ -144,7 +121,32 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
     }
     refreshGridView() {
         this.gvProducts.itemCount = this.categoryProducts.length;
+        this.checkIfListEmpty();
         this.gvProducts.refreshData();
+    }
+    checkIfListEmpty() {
+        if (this.categoryProducts.length === 0) {
+            this.flEmptyItem.emptyImage = 'images://empty_category.png';
+            if (this.searchStatus.isSearchActive) {
+                this.flEmptyItem.emptyTitle = `${global.lang.categoriesIsEmptyWithSearch} ${this.searchStatus.searchText}`;
+            } else {
+                this.flEmptyItem.emptyTitle = global.lang.categoriesIsEmpty;
+            }
+            this.flEmptyItem.dispatch({
+                type: 'updateUserStyle',
+                userStyle: {
+                    visible: true,
+                    height: Screen.height / 1.5
+                }
+            });
+        } else {
+            this.flEmptyItem.dispatch({
+                type: 'updateUserStyle',
+                userStyle: {
+                    visible: false
+                }
+            });
+        }
     }
 }
 

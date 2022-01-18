@@ -17,15 +17,15 @@ export default class LviEmptyItem extends LviEmptyItemDesign {
         return Screen.height / 1.5;
     }
     get emptyTitle(): any {
-        return this.lblEmptyTitle.text;
+        return this.flEmptyItem.lblEmptyTitle.text;
     }
     set emptyTitle(value: any) {
-        this.lblEmptyTitle.text = value;
+        this.flEmptyItem.lblEmptyTitle.text = value;
     }
     get emptyImage(): any {
-        return this.imgEmpty.image;
+        return this.flEmptyItem.imgEmpty.image;
     }
     set emptyImage(value: any) {
-        this.imgEmpty.image = value;
+        this.flEmptyItem.imgEmpty.image = value;
     }
 }

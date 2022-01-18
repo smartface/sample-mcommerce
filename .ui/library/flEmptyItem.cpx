@@ -1,0 +1,61 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flEmptyItem",
+			"id": "5b47-f50d-f63a-1309",
+			"props": {
+				"children": [
+					"a272-f6fb-24ce-16d4",
+					"3ff8-395a-19c7-4713"
+				],
+				"name": "flEmptyItem",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": 14,
+				"top": 73
+			}
+		},
+		{
+			"className": ".sf-imageView .flEmptyItem-imgEmpty",
+			"id": "a272-f6fb-24ce-16d4",
+			"props": {
+				"children": [],
+				"name": "imgEmpty",
+				"parent": "5b47-f50d-f63a-1309",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flEmptyItem-lblEmptyTitle",
+			"id": "3ff8-395a-19c7-4713",
+			"props": {
+				"children": [],
+				"name": "lblEmptyTitle",
+				"parent": "5b47-f50d-f63a-1309",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		}
+	]
+}
