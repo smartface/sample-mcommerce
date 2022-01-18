@@ -29,16 +29,9 @@
 				"flexProps": {
 					"flexGrow": 2
 				},
-				"font": {
-					"size": 20,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
 				"marginLeft": 10,
 				"testId": "NrZ-2VxaH",
-				"textColor": "rgba( 62, 66, 63, 1 )"
+				"textColor": "${textDark}"
 			},
 			"marginRight": 10
 		}

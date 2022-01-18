@@ -134,6 +134,18 @@
 			"textColor": "${main}"
 		}
 	},
+	".homeCategory": {
+		"font": {
+			"bold": false,
+			"italic": false,
+			"family": "Nunito"
+		},
+		".text": {
+			"bold": true,
+			"size": 20,
+			"style": "Bold"
+		}
+	},
 	".dashboard": {
 		"font": {
 			"family": "Nunito",
