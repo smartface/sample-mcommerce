@@ -10,6 +10,9 @@ import Image from '@smartface/native/ui/image';
 import { NativeStackRouter } from '@smartface/router';
 import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 import { User } from 'types';
+import LviSpacer from 'generated/my-components/LviSpacer';
+import LviProfile from 'components/LviProfile';
+import LviRow2LineButton from 'components/LviRow2LineButton';
 const { image } = getCombinedStyle('.lviRow2LineButton.leftIcon');
 
 type Processor =
@@ -20,7 +23,7 @@ type Processor =
 
 export default class PgAccount extends PgAccountDesign {
     router: NativeStackRouter;
-    data: object | any;
+    data: Processor[];
     userInfo: User;
     rightItem: HeaderBarItem;
     updatedImage: Image;
@@ -37,16 +40,16 @@ export default class PgAccount extends PgAccountDesign {
         this.lvMain.onRowHeight = onRowHeight.bind(this);
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
-        this.lvMain.onRowSelected = (item: LviAccount, index) => {
-            if (this.data[index].type === 'LVI_ACCOUNT') {
-                if (this.data[index].properties.itemTitle === 'settings') {
+        this.lvMain.onRowSelected = (item: LviAccount | LviProfile | LviRow2LineButton | LviSpacer, index) => {
+            if (item instanceof LviAccount) {
+                if (item.itemTitle === global.lang.settings) {
                     this.router.push('/btb/tab5/settings');
-                } else if (this.data[index].properties.itemTitle === 'notifications') {
+                } else if (item.itemTitle === global.lang.notifications) {
                     this.router.push('/btb/tab5/notifications');
                 } else {
                     alert({
                         title: 'ALERT',
-                        message: this.data[index].properties.itemTitle
+                        message: item.itemTitle
                     });
                 }
             }
