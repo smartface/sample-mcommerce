@@ -8,6 +8,10 @@ import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
 import System from '@smartface/native/device/system';
+import GviProductItem from 'components/GviProductItem';
+import Screen from '@smartface/native/device/screen';
+import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { Product } from 'types';
 type Processor = ListViewItems.ProcessorTypes.ILviRow2ProductItem | ListViewItems.ProcessorTypes.ILviSpacer;
 
 type searchStatus = {
@@ -15,20 +19,17 @@ type searchStatus = {
     searchText: string;
 };
 export default class PgCategoryDetail extends PgCategoryDetailDesign {
-    data: Processor[];
-    MySearchBar: SearchView;
+    productSearchView: SearchView;
     routeData: any;
     isSearchViewVisible = false;
-    categoryProducts: any;
+    categoryProducts: Array<Product>;
     searchStatus: searchStatus = {
         isSearchActive: false,
         searchText: null
     };
     constructor() {
         super();
-        // Overrides super.onShow method
         this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
     }
     addRightItem() {
@@ -46,12 +47,12 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
         this.headerBar.setItems([rightItem]);
     }
     initSearchView(visible) {
-        this.MySearchBar = new SearchView();
-        this.MySearchBar.textFieldBackgroundColor = Color.create('#F2F3F2');
-        this.MySearchBar.addToHeaderBar(this);
+        this.productSearchView = new SearchView();
+        this.productSearchView.textFieldBackgroundColor = getCombinedStyle('.commerceSearchView').textFieldBackgroundColor;
+        this.productSearchView.addToHeaderBar(this);
         if (visible) {
             this.isSearchViewVisible = true;
-            this.MySearchBar.onTextChanged = (searchText) => {
+            this.productSearchView.onTextChanged = (searchText) => {
                 this.searchStatus.isSearchActive = true;
                 this.searchStatus.searchText = searchText;
                 if (this.categoryProducts && this.categoryProducts.length > 0) {
@@ -59,7 +60,7 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
                         product.name.startsWith(searchText.charAt(0).toLocaleUpperCase('tr-TR'))
                     );
                     this.categoryProducts = foundProducts;
-                    this.refreshListView();
+                    this.refreshGridView();
                 }
                 if (searchText.length === 0) {
                     this.searchStatus.isSearchActive = false;
@@ -69,68 +70,14 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
                     } else {
                         this.getCategoryProducts();
                     }
-                    this.refreshListView();
+                    this.refreshGridView();
                 }
-                this.refreshListView();
+                this.refreshGridView();
             };
         } else {
             this.isSearchViewVisible = false;
-            this.MySearchBar.visible = false;
+            this.productSearchView.visible = false;
         }
-    }
-    initListView() {
-        this.lvMain.onRowType = onRowType.bind(this);
-        this.lvMain.onRowHeight = onRowHeight.bind(this);
-        this.lvMain.onRowCreate = onRowCreate.bind(this);
-        this.lvMain.onRowBind = onRowBind.bind(this);
-        this.lvMain.refreshEnabled = false;
-    }
-    refreshListView() {
-        this.data = this.processor();
-        this.lvMain.itemCount = this.data.length;
-        this.lvMain.refreshData();
-    }
-    processor(): Processor[] {
-        const processorItems: Processor[] = [];
-        if (this.categoryProducts.length === 0 && !this.searchStatus.isSearchActive) {
-            processorItems.push(
-                ListViewItems.getLviEmptyItem({
-                    emptyImage: 'images://empty_category.png',
-                    emptyTitle: global.lang.categoriesIsEmpty
-                })
-            );
-        } else if (this.categoryProducts.length === 0 && this.searchStatus.isSearchActive) {
-            processorItems.push(
-                ListViewItems.getLviEmptyItem({
-                    emptyImage: 'images://empty_category.png',
-                    emptyTitle: `${global.lang.categoriesIsEmptyWithSearch} ${this.searchStatus.searchText}`
-                })
-            );
-        } else {
-            for (let i = 0; i < this.categoryProducts.length; i += 2) {
-                const [product1, product2] = [this.categoryProducts[i], this.categoryProducts[i + 1]];
-                processorItems.push(
-                    ListViewItems.getLviRow2ProductItem({
-                        itemTitle1: product1?.name || '',
-                        itemDesc1: product1?.description || '',
-                        itemDiscountPrice1: !!product1?.discount ? `$${product1?.discount}` : '',
-                        itemPrice1: `$${product1?.price}` || '',
-                        itemImage1: product1?.image || '',
-                        itemTag1: product1?.discountTag || '',
-                        itemReview1: !!product1?.review ? product1?.review : '',
-
-                        itemTitle2: product2?.name || '',
-                        itemDesc2: product2?.description || '',
-                        itemDiscountPrice2: !!product2?.discount ? `$${product2?.discount}` : '',
-                        itemPrice2: `$${product2?.price}` || '',
-                        itemImage2: product2?.image || '',
-                        itemTag2: product2?.discountTag || '',
-                        itemReview2: !!product2?.review ? product2?.review : ''
-                    })
-                );
-            }
-        }
-        return processorItems;
     }
     getCategoryProducts() {
         this.categoryProducts = store.getState().products.filter((product) => product.categoryId === this.routeData.dataId);
@@ -139,20 +86,78 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
         this.categoryProducts = store
             .getState()
             .showcaseProducts.find((showcase) => showcase.showcaseId === this.routeData.dataId).products;
+    }
 
-        console.log('this.categoryProducts', this.categoryProducts);
+    initGridView() {
+        this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
+            GridViewItem.itemTag = this.categoryProducts[productIndex].discountTag;
+            GridViewItem.itemTitle = this.categoryProducts[productIndex].name;
+            GridViewItem.itemDesc = this.categoryProducts[productIndex].description;
+            GridViewItem.itemImage = this.categoryProducts[productIndex].image;
+            GridViewItem.itemDiscountPrice = !!this.categoryProducts[productIndex].discount
+                ? `$${this.categoryProducts[productIndex].discount}`
+                : false;
+            GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price}`;
+            GridViewItem.itemReview = !!this.categoryProducts[productIndex].review ? this.categoryProducts[productIndex]?.review : false;
+            GridViewItem.onActionClick = () => {
+                GridViewItem.initIndicator();
+                GridViewItem.toggleIndicator(true);
+                store.dispatch({
+                    type: 'ADD_TO_BASKET',
+                    payload: {
+                        data: {
+                            product: this.categoryProducts[productIndex],
+                            count: 1
+                        }
+                    }
+                });
+                setTimeout(() => {
+                    GridViewItem.toggleIndicator(false);
+                }, 500);
+            };
+        };
+    }
+    refreshGridView() {
+        this.gvProducts.itemCount = this.categoryProducts.length;
+        this.checkIfListEmpty();
+        this.gvProducts.refreshData();
+    }
+    initEmptyItem() {
+        this.flEmptyItem.emptyImage = 'images://empty_category.png';
+        this.flEmptyItem.height = Screen.height / 1.5;
+    }
+    checkIfListEmpty() {
+        if (this.categoryProducts.length === 0) {
+            if (this.searchStatus.isSearchActive) {
+                this.flEmptyItem.emptyTitle = `${global.lang.categoriesIsEmptyWithSearch} ${this.searchStatus.searchText}`;
+            } else {
+                this.flEmptyItem.emptyTitle = global.lang.categoriesIsEmpty;
+            }
+            this.flEmptyItem.dispatch({
+                type: 'updateUserStyle',
+                userStyle: {
+                    visible: true
+                }
+            });
+        } else {
+            this.flEmptyItem.dispatch({
+                type: 'updateUserStyle',
+                userStyle: {
+                    visible: false
+                }
+            });
+        }
     }
 }
 
 function onShow(this: PgCategoryDetail, superOnShow: () => void) {
     superOnShow();
+    this.refreshGridView();
 }
 
 function onLoad(this: PgCategoryDetail, superOnLoad: () => void) {
     superOnLoad();
     this.headerBar.title = this.routeData.title;
-    // this.initSearchView();
-    console.log('onload route', this.routeData);
     if (this.routeData.isShowcase) {
         this.getShowcaseProducts();
     } else {
@@ -163,6 +168,6 @@ function onLoad(this: PgCategoryDetail, superOnLoad: () => void) {
     } else {
         this.initSearchView(true);
     }
-    this.initListView();
-    this.refreshListView();
+    this.initEmptyItem();
+    this.initGridView();
 }
