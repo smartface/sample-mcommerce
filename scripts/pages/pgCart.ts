@@ -86,9 +86,9 @@ export default class PgCart extends PgCartDesign {
 
         return processorItems;
     }
-    cartOperation(cart: Product, type: number) {
+    cartOperation(cart: Product, type: CartOperationEnum) {
         switch (type) {
-            case 1:
+            case CartOperationEnum.Add:
                 return store.dispatch({
                     type: 'ADD_TO_BASKET',
                     payload: {
@@ -99,7 +99,7 @@ export default class PgCart extends PgCartDesign {
                     }
                 });
                 break;
-            case -1:
+            case CartOperationEnum.Remove:
                 return store.dispatch({
                     type: 'ADD_TO_BASKET',
                     payload: {
@@ -110,7 +110,7 @@ export default class PgCart extends PgCartDesign {
                     }
                 });
                 break;
-            case 0:
+            case CartOperationEnum.Clear:
                 return store.dispatch({
                     type: 'REMOVE_FROM_BASKET',
                     payload: {
