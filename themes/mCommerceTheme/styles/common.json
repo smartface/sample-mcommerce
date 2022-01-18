@@ -43,6 +43,45 @@
 			"flexDirection": "ROW"
 		}
 	},
+	".gvMain": {
+		"testId": "ArDB7vEaS",
+		"height": null,
+		"layoutManager": {
+			"spanCount": 2,
+			"scrollDirection": "HORIZONTAL"
+		},
+		"flexProps": {
+			"flexGrow": 1
+		}
+	},
+	".gvCategories": {
+		"layoutManager": {
+			"spanCount": 1,
+			"scrollDirection": "HORIZONTAL"
+		},
+		"height": null,
+		"flexProps": {
+			"flexGrow": 1
+		}
+	},
+	".flHomeCategory": {
+		"flexProps": {},
+		"height": 105,
+		"marginRight": 10,
+		"borderRadius": 18
+	},
+	".categoriesGrid": {
+		"flexProps": {
+			"flexGrow": 1
+		},
+		"layoutManager": {
+			"spanCount": 2
+		},
+		"backgroundColor": "${backgroundMain}",
+		"left": 0,
+		"testId": "y2_Ae0-c0",
+		"top": 0
+	},
 	".seperator": {
 		"height": 1,
 		"left": 15,
@@ -56,5 +95,8 @@
 	},
 	".notVisible": {
 		"visible": false
+	},
+	".lvMain": {
+		"backgroundColor": "${backgroundMain}"
 	}
 }

@@ -33,7 +33,7 @@ export default function (basePath: string) {
                 path: `${basePath}/pages/pgLogin`,
                 build: buildExtender({
                     getPageClass: () => Pages.pgLogin,
-                    headerBarStyle: { visible: false }
+                    headerBarStyle: { visible: true }
                 })
             }),
             Route.of({

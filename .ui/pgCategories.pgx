@@ -34,7 +34,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar.main",
+			"className": ".sf-headerBar #pgCategories-headerBar",
 			"id": "6ae8-a3a8-d05b-899c",
 			"props": {
 				"children": [],
@@ -46,7 +46,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-gridView #pgCategories-categoriesGrid",
+			"className": ".sf-gridView .categoriesGrid",
 			"id": "6341-e5f9-beee-727a",
 			"props": {
 				"children": [
