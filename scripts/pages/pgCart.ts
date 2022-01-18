@@ -1,43 +1,20 @@
-import Color from '@smartface/native/ui/color';
-import Font from '@smartface/native/ui/font';
-import Dialog from '@smartface/native/ui/dialog';
-import LviCartItem from 'components/LviCartItem';
 import PgCartDesign from 'generated/pages/pgCart';
 import store from 'store';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
-import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import AlertView from '@smartface/native/ui/alertview';
+import { Basket, Product } from 'types';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
 export default class PgCart extends PgCartDesign {
-    unsubscribe: any;
-    basketItems: any;
-    rightItem: HeaderBarItem;
-    cartProducts: any;
+    cartProducts: Basket;
     data: Processor[];
-    myDialog = new Dialog();
     constructor() {
         super();
-        // Overrides super.onShow method
         this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        // this.rightItem.onPress = () => {
-        //   this.myDialog.show();
-        // };
-        //this.btnGoToCheckOut.text = global.lang.goToCheckout;
     }
-    addRightItem() {
-        this.rightItem = new HeaderBarItem();
-        this.rightItem.title = 'Select';
-        this.rightItem.font = Font.create('Nunito', 16);
-        this.rightItem.color = Color.BLACK;
-        this.headerBar.setItems([this.rightItem]);
-    }
-
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowHeight = onRowHeight.bind(this);
@@ -78,7 +55,6 @@ export default class PgCart extends PgCartDesign {
                             this.refreshListView();
                         },
                         onRemoveAction: () => {
-                            // this.toggleDialog(true, cart);
                             alert({
                                 title: global.lang.delete,
                                 message: global.lang.sureToDelete,
@@ -87,7 +63,7 @@ export default class PgCart extends PgCartDesign {
                                         text: global.lang.delete,
                                         type: AlertView.Android.ButtonType.POSITIVE,
                                         onClick: () => {
-                                            this.cartOperation(cart, 'all');
+                                            this.cartOperation(cart, 0);
                                             this.refreshListView();
                                         }
                                     },
@@ -105,7 +81,7 @@ export default class PgCart extends PgCartDesign {
 
         return processorItems;
     }
-    cartOperation(cart, type) {
+    cartOperation(cart: Product, type: number) {
         switch (type) {
             case 1:
                 return store.dispatch({
@@ -129,7 +105,7 @@ export default class PgCart extends PgCartDesign {
                     }
                 });
                 break;
-            case 'all':
+            case 0:
                 return store.dispatch({
                     type: 'REMOVE_FROM_BASKET',
                     payload: {
@@ -154,10 +130,7 @@ export default class PgCart extends PgCartDesign {
 function onShow(this: PgCart, superOnShow: () => void) {
     superOnShow();
     this.headerBar.title = global.lang.mycartHeader;
-    this.basketItems = store.getState().basket;
     this.refreshListView();
-    // this.unsubscribe = store.subscribe(this.getBasketItems)
-    // this.unsubscribe();
 }
 
 /**
@@ -168,9 +141,5 @@ function onShow(this: PgCart, superOnShow: () => void) {
 function onLoad(this: PgCart, superOnLoad: () => void) {
     superOnLoad();
     this.headerBar.leftItemEnabled = false;
-    this.headerBar.backgroundColor = Color.WHITE;
-    this.headerBar.android.elevation = 0;
     this.initListView();
-    this.refreshListView();
-    // this.addRightItem();
 }

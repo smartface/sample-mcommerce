@@ -34,28 +34,28 @@ export default class LviCartItem extends LviCartItemDesign {
     set productName(value: string) {
         this.lblProductName.text = value;
     }
-    get productInfo(): any {
+    get productInfo(): string {
         return this.lblProductInfo.text;
     }
-    set productInfo(value: any) {
+    set productInfo(value: string) {
         this.lblProductInfo.text = value;
     }
-    get productImage(): any {
+    get productImage(): string | Image {
         return this.imgProduct.image;
     }
-    set productImage(value: any) {
+    set productImage(value: string | Image) {
         this.imgProduct.image = Image.createFromFile(`images://${value}`);
     }
-    get productPrice(): string {
+    get productPrice(): string | number {
         return this.lblProductPrice.text;
     }
-    set productPrice(value: string) {
+    set productPrice(value: string | number) {
         this.lblProductPrice.text = `$${value}`;
     }
-    set productCount(value: string) {
-        this.lblProductCount.text = value;
+    set productCount(value: string | number) {
+        this.lblProductCount.text = value.toString();
     }
-    get productCount(): string {
+    get productCount(): string | number {
         return this.lblProductCount.text;
     }
     get bottomLine(): boolean {
