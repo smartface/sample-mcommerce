@@ -3,11 +3,17 @@ import store from '../store/index';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
-import Color from '@smartface/native/ui/color';
 import LviAccount from 'components/LviAccount';
 import profileImageMenu from 'lib/profileImageMenu';
 import Blob from '@smartface/native/blob';
 import Image from '@smartface/native/ui/image';
+import { NativeStackRouter } from '@smartface/router';
+import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { User } from 'types';
+import LviSpacer from 'generated/my-components/LviSpacer';
+import LviProfile from 'components/LviProfile';
+import LviRow2LineButton from 'components/LviRow2LineButton';
+const { image } = getCombinedStyle('.lviRow2LineButton.leftIcon');
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -16,17 +22,16 @@ type Processor =
     | ListViewItems.ProcessorTypes.ILviSpacer;
 
 export default class PgAccount extends PgAccountDesign {
-    router: any;
-    data: any;
-    userInfo: any;
+    router: NativeStackRouter;
+    data: Processor[];
+    userInfo: User;
     rightItem: HeaderBarItem;
     updatedImage: Image;
+    unsubscribe = null;
     onExit: (...args) => any;
     constructor() {
         super();
-        // Overrides super.onShow method
         this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
     }
 
@@ -35,16 +40,16 @@ export default class PgAccount extends PgAccountDesign {
         this.lvMain.onRowHeight = onRowHeight.bind(this);
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
-        this.lvMain.onRowSelected = (item: LviAccount, index) => {
-            if (this.data[index].type === 'LVI_ACCOUNT') {
-                if (this.data[index].properties.itemTitle === 'settings') {
+        this.lvMain.onRowSelected = (item: LviAccount | LviProfile | LviRow2LineButton | LviSpacer, index) => {
+            if (item instanceof LviAccount) {
+                if (item.itemTitle === global.lang.settings) {
                     this.router.push('/btb/tab5/settings');
-                } else if (this.data[index].properties.itemTitle === 'notifications') {
+                } else if (item.itemTitle === global.lang.notifications) {
                     this.router.push('/btb/tab5/notifications');
                 } else {
                     alert({
                         title: 'ALERT',
-                        message: this.data[index].properties.itemTitle
+                        message: item.itemTitle
                     });
                 }
             }
@@ -58,7 +63,7 @@ export default class PgAccount extends PgAccountDesign {
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
-        this.userInfo = store.getState().currentUser[0];
+        this.userInfo = store.getState().currentUser;
         console.info('userInfo: ', this.userInfo);
         const accountItem = this.userInfo
             ? ListViewItems.getLviProfile({
@@ -82,10 +87,10 @@ export default class PgAccount extends PgAccountDesign {
                   }
               })
             : ListViewItems.getLviRow2LineButton({
-                  leftIcon: 'images://tabiconuser.png',
-                  mainButtonText: 'Log In',
-                  bottomLeftButtonText: 'Register',
-                  bottomRightButtonText: 'Forgot Password',
+                  leftIcon: image,
+                  mainButtonText: global.lang.loginHeader,
+                  bottomLeftButtonText: global.lang.signup,
+                  bottomRightButtonText: global.lang.forgotPassword,
                   mainOnClick: () => {
                       this.router.push('pages/pgWelcome');
                   },
@@ -110,12 +115,12 @@ export default class PgAccount extends PgAccountDesign {
         return processorItems;
     }
     addRightItem() {
-        this.rightItem = new HeaderBarItem();
-        this.rightItem.image = 'images://logouticon.png';
-        this.rightItem.color = Color.BLACK;
-        this.rightItem.onPress = () => {
-            return this.onExit();
-        };
+        this.rightItem = new HeaderBarItem({
+            image: 'images://logouticon.png',
+            onPress: () => {
+                return this.onExit();
+            }
+        });
         this.headerBar.setItems([this.rightItem]);
     }
     initLogoutButton() {
@@ -126,19 +131,20 @@ export default class PgAccount extends PgAccountDesign {
             this.refreshListView();
         };
     }
-}
-
-function onShow(this: PgAccount, superOnShow: () => void) {
-    superOnShow();
-    console.log('isuserloggedin: =>', store.getState().isUserLoggedIn);
-    store.subscribe(() => {
+    handleChange() {
         if (store.getState().isUserLoggedIn) {
             this.addRightItem();
         } else {
             this.headerBar.setItems([]);
             this.layout.applyLayout();
+            this.unsubscribe();
         }
-    });
+    }
+}
+
+function onShow(this: PgAccount, superOnShow: () => void) {
+    superOnShow();
+    this.unsubscribe = store.subscribe(() => this.handleChange());
     setTimeout(() => {
         this.refreshListView();
     }, 500);
@@ -147,7 +153,6 @@ function onShow(this: PgAccount, superOnShow: () => void) {
 function onLoad(this: PgAccount, superOnLoad: () => void) {
     superOnLoad();
     this.headerBar.title = global.lang.accountHeader;
-    this.headerBar.android.elevation = 0;
     this.initLogoutButton();
     this.initListView();
 }
