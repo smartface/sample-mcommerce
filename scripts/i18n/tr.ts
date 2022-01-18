@@ -1,4 +1,5 @@
 SMF.i18n.defineLanguage('tr', {
+    verificationCode: 'Doğrulama Kodu',
     productDetail: 'Ürün Detayı',
     goToCheckout: 'Ödemeye Git',
     accept: 'Kabul Et',
