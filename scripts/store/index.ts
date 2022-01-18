@@ -347,7 +347,7 @@ const initialState = {
             menuLeftIcon: ''
         }
     ],
-    currentUser: [],
+    currentUser: null,
     favorites: [],
     isUserLoggedIn: false
 };
@@ -355,15 +355,14 @@ const initialState = {
 const initAction = (state = initialState, action) => {
     switch (action.type) {
         case 'LOGOUT':
-            state.currentUser = [];
+            state.currentUser = null;
             state.isUserLoggedIn = false;
-            console.log('new', state);
             return state;
         case 'SET_NEW_USER':
             state.users.push(action.payload.data);
             return state;
         case 'SET_CURRENT_USER':
-            state.currentUser.push(action.payload.data);
+            state.currentUser = action.payload.data;
             state.isUserLoggedIn = true;
             return state;
         case 'ADD_TO_BASKET':
