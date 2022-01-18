@@ -1,3 +1,4 @@
+import Image from '@smartface/native/ui/image';
 import FlEmptyItemDesign from 'generated/my-components/FlEmptyItem';
 
 export default class FlEmptyItem extends FlEmptyItemDesign {
@@ -7,16 +8,16 @@ export default class FlEmptyItem extends FlEmptyItemDesign {
         super(props);
         this.pageName = pageName;
     }
-    get emptyTitle(): any {
+    get emptyTitle(): string {
         return this.lblEmptyTitle.text;
     }
-    set emptyTitle(value: any) {
+    set emptyTitle(value: string) {
         this.lblEmptyTitle.text = value;
     }
-    get emptyImage(): any {
+    get emptyImage(): string | Image {
         return this.imgEmpty.image;
     }
-    set emptyImage(value: any) {
+    set emptyImage(value: string | Image) {
         this.imgEmpty.image = value;
     }
 }

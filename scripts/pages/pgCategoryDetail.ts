@@ -29,9 +29,7 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
     };
     constructor() {
         super();
-        // Overrides super.onShow method
         this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
     }
     addRightItem() {
@@ -124,9 +122,12 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
         this.checkIfListEmpty();
         this.gvProducts.refreshData();
     }
+    initEmptyItem() {
+        this.flEmptyItem.emptyImage = 'images://empty_category.png';
+        this.flEmptyItem.height = Screen.height / 1.5;
+    }
     checkIfListEmpty() {
         if (this.categoryProducts.length === 0) {
-            this.flEmptyItem.emptyImage = 'images://empty_category.png';
             if (this.searchStatus.isSearchActive) {
                 this.flEmptyItem.emptyTitle = `${global.lang.categoriesIsEmptyWithSearch} ${this.searchStatus.searchText}`;
             } else {
@@ -135,8 +136,7 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
             this.flEmptyItem.dispatch({
                 type: 'updateUserStyle',
                 userStyle: {
-                    visible: true,
-                    height: Screen.height / 1.5
+                    visible: true
                 }
             });
         } else {
@@ -158,7 +158,6 @@ function onShow(this: PgCategoryDetail, superOnShow: () => void) {
 function onLoad(this: PgCategoryDetail, superOnLoad: () => void) {
     superOnLoad();
     this.headerBar.title = this.routeData.title;
-    // this.initSearchView()
     if (this.routeData.isShowcase) {
         this.getShowcaseProducts();
     } else {
@@ -169,5 +168,6 @@ function onLoad(this: PgCategoryDetail, superOnLoad: () => void) {
     } else {
         this.initSearchView(true);
     }
+    this.initEmptyItem();
     this.initGridView();
 }

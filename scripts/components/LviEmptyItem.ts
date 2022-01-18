@@ -5,7 +5,6 @@ import LviEmptyItemDesign from 'generated/my-components/LviEmptyItem';
 export default class LviEmptyItem extends LviEmptyItemDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
     }
@@ -16,16 +15,16 @@ export default class LviEmptyItem extends LviEmptyItemDesign {
     static getScreenHeightDivide2(): number {
         return Screen.height / 1.5;
     }
-    get emptyTitle(): any {
+    get emptyTitle(): string {
         return this.flEmptyItem.lblEmptyTitle.text;
     }
-    set emptyTitle(value: any) {
+    set emptyTitle(value: string) {
         this.flEmptyItem.lblEmptyTitle.text = value;
     }
-    get emptyImage(): any {
+    get emptyImage(): string | Image {
         return this.flEmptyItem.imgEmpty.image;
     }
-    set emptyImage(value: any) {
+    set emptyImage(value: string | Image) {
         this.flEmptyItem.imgEmpty.image = value;
     }
 }
