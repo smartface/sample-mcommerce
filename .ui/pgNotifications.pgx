@@ -19,8 +19,7 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a",
-			"degree": 0
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -32,11 +31,10 @@
 				"parent": "8446-6639-046d-a1a6"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar #pgNotifications-headerBar",
+			"className": ".sf-headerBar.main",
 			"id": "e396-0d5c-9481-dbab",
 			"props": {
 				"children": [],
@@ -48,8 +46,7 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgNotifications"
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-listView .grow .lvMain",
@@ -62,10 +59,9 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"usePageVariable": true,
-				"testId": "be2N52fd_"
-			},
-			"degree": 1
+				"testId": "be2N52fd_",
+				"usePageVariable": true
+			}
 		}
 	]
 }
