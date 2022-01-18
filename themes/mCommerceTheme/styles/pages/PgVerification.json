@@ -48,13 +48,7 @@
 				"flexGrow": 1,
 				"alignSelf": "STRETCH"
 			},
-			"font": {
-				"size": 26,
-				"bold": true,
-				"italic": false,
-				"family": "Nunito",
-				"style": "Bold"
-			},
+			"font": {},
 			"left": 0,
 			"marginBottom": null,
 			"marginTop": null,
@@ -68,13 +62,7 @@
 				"flexGrow": 1,
 				"alignSelf": "STRETCH"
 			},
-			"font": {
-				"size": 16,
-				"bold": true,
-				"italic": false,
-				"family": "Nunito",
-				"style": "Bold"
-			},
+			"font": {},
 			"left": 0,
 			"maxHeight": 40,
 			"testId": "2i8YmmjN6",
@@ -116,7 +104,7 @@
 			"height": 200,
 			"testId": "2UoNUpnKT"
 		},
-		"&-resend": {
+		"&-lblResend": {
 			"flexProps": {
 				"flexGrow": 1
 			},

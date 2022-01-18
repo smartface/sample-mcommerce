@@ -1,4 +1,5 @@
 SMF.i18n.defineLanguage('en', {
+    verificationCode: 'Verification Code',
     productDetail: 'Product Detail',
     goToCheckout: 'Go To Checkout',
     accept: 'Accept',
