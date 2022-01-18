@@ -79,7 +79,7 @@
 			}
 		},
 		{
-			"className": ".sf-label #pgVerification-title .verfication.text-26-bold",
+			"className": ".sf-label #pgVerification-title .verification.text-26-bold",
 			"id": "0e59-2327-6fb8-773c",
 			"props": {
 				"children": [],
@@ -94,7 +94,7 @@
 			}
 		},
 		{
-			"className": ".sf-label #pgVerification-text .verfication.text-16-bold",
+			"className": ".sf-label #pgVerification-text .verification.text-16-bold",
 			"id": "1880-4a46-ac29-ee4c",
 			"props": {
 				"children": [],
@@ -166,7 +166,7 @@
 			}
 		},
 		{
-			"className": ".sf-label #pgVerification-lblResend .verfication.text",
+			"className": ".sf-label #pgVerification-lblResend .verification.text",
 			"id": "8777-2fba-ba1a-8fb8",
 			"props": {
 				"children": [],

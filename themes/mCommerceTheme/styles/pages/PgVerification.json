@@ -7,12 +7,6 @@
 		"&-statusbar": {
 			"style": "DEFAULT"
 		},
-		"&-headerbar": {
-			"backgroundColor": "rgba( 255, 255, 255, 0 )",
-			"titleColor": "rgba( 255, 255, 255, 0 )",
-			"transparent": true,
-			"visible": true
-		},
 		"&-imagebackground": {
 			"bottom": 0,
 			"flexProps": {
@@ -48,7 +42,6 @@
 				"flexGrow": 1,
 				"alignSelf": "STRETCH"
 			},
-			"font": {},
 			"left": 0,
 			"marginBottom": null,
 			"marginTop": null,
@@ -62,7 +55,6 @@
 				"flexGrow": 1,
 				"alignSelf": "STRETCH"
 			},
-			"font": {},
 			"left": 0,
 			"maxHeight": 40,
 			"testId": "2i8YmmjN6",
@@ -108,16 +100,8 @@
 			"flexProps": {
 				"flexGrow": 1
 			},
-			"font": {
-				"size": 18,
-				"bold": false,
-				"italic": false,
-				"family": "Nunito",
-				"style": "Medium"
-			},
 			"marginLeft": 25,
-			"testId": "JmUyde_sD",
-			"textColor": "rgba( 83, 177, 117, 1 )"
+			"testId": "JmUyde_sD"
 		},
 		"&-btnroute": {
 			"font": {

@@ -50,7 +50,7 @@
 			"textColor": "${white}"
 		}
 	},
-	".verfication": {
+	".verification": {
 		"font": {
 			"bold": false,
 			"italic": false,
