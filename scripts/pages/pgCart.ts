@@ -7,6 +7,11 @@ import { Basket, Product } from 'types';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
+enum CartOperationEnum {
+    Add = 1,
+    Remove = -1,
+    Clear = 0
+}
 export default class PgCart extends PgCartDesign {
     cartProducts: Basket;
     data: Processor[];
@@ -47,11 +52,11 @@ export default class PgCart extends PgCartDesign {
                         productPrice: cart.price,
                         productCount: cart.count,
                         onActionPlus: () => {
-                            this.cartOperation(cart, 1);
+                            this.cartOperation(cart, CartOperationEnum.Add);
                             this.refreshListView();
                         },
                         onActionMinus: () => {
-                            this.cartOperation(cart, -1);
+                            this.cartOperation(cart, CartOperationEnum.Remove);
                             this.refreshListView();
                         },
                         onRemoveAction: () => {
@@ -63,7 +68,7 @@ export default class PgCart extends PgCartDesign {
                                         text: global.lang.delete,
                                         type: AlertView.Android.ButtonType.POSITIVE,
                                         onClick: () => {
-                                            this.cartOperation(cart, 0);
+                                            this.cartOperation(cart, CartOperationEnum.Clear);
                                             this.refreshListView();
                                         }
                                     },
