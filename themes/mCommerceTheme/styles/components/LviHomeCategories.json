@@ -2,6 +2,16 @@
 	".lviHomeCategories": {
 		"height": 110,
 		"flexProps": {},
-		"testId": "7ycy14PHi"
+		"testId": "7ycy14PHi",
+		"&-gvCategories": {
+			"layoutManager": {
+				"spanCount": 1,
+				"scrollDirection": "HORIZONTAL"
+			},
+			"height": null,
+			"flexProps": {
+				"flexGrow": 1
+			}
+		}
 	}
 }

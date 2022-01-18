@@ -80,6 +80,60 @@
 			"textColor": "${textLight}"
 		}
 	},
+	".login": {
+		"font": {
+			"bold": false,
+			"italic": false,
+			"family": "Nunito"
+		},
+		".text": {
+			"font": {
+				"size": 18,
+				"style": "Medium"
+			},
+			"textColor": "${main}"
+		},
+		".text-26-bold": {
+			"font": {
+				"bold": true,
+				"size": 26,
+				"style": "Bold"
+			},
+			"textColor": "${textDark}"
+		},
+		".text-16-bold": {
+			"font": {
+				"bold": true,
+				"size": 16,
+				"style": "Bold"
+			},
+			"textColor": "${textLight}"
+		},
+		".labelForgotPassword": {
+			"font": {
+				"size": 14,
+				"style": "Medium"
+			},
+			"textColor": "${textDark}"
+		},
+		".labelLeft": {
+			"font": {
+				"size": 14,
+				"bold": true,
+				"italic": false,
+				"style": "Bold"
+			},
+			"textColor": "${textDark}"
+		},
+		".labelRoute": {
+			"font": {
+				"size": 14,
+				"bold": true,
+				"style": "Bold"
+			},
+			"textColor": "${main}"
+		}
+	},
 	".dashboard": {
 		"font": {
 			"family": "Nunito",
