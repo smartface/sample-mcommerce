@@ -50,6 +50,73 @@
 			"textColor": "${white}"
 		}
 	},
+	".signup": {
+		"font": {
+			"family": "Nunito",
+			"bold": true,
+			"italic": false
+		},
+		".lblTitle": {
+			"font": {
+				"size": 26,
+				"style": "Bold"
+			},
+			"textColor": "${black}"
+		},
+		".lblText": {
+			"font": {
+				"size": 16,
+				"style": "Bold"
+			},
+			"textColor": "${textLight}"
+		},
+		".lblTermsLeft": {
+			"font": {
+				"size": 14,
+				"bold": false,
+				"style": "Medium"
+			},
+			"textColor": "${textLight}"
+		},
+		".lblTermsRight": {
+			"font": {
+				"size": 14,
+				"bold": false,
+				"style": "Medium"
+			},
+			"textColor": "${main}"
+		},
+		".lblPrivacyLeft": {
+			"font": {
+				"size": 14,
+				"bold": false,
+				"style": "Medium"
+			},
+			"textColor": "${textLight}"
+		},
+		".lblPrivacyRight": {
+			"font": {
+				"size": 14,
+				"bold": false,
+				"style": "Medium"
+			},
+			"textColor": "${main}"
+		},
+		".lblFooterLeft": {
+			"font": {
+				"size": 14,
+				"style": "Bold"
+			},
+			"textColor": "${black}"
+		},
+		".lblFooterRight": {
+			"font": {
+				"size": 14,
+				"style": "Bold"
+			},
+			"textColor": "${main}"
+		}
+	},
 	".dashboard": {
 		"font": {
 			"family": "Nunito",
