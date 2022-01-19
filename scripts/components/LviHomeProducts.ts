@@ -2,6 +2,7 @@ import { themeService } from 'theme';
 import LviHomeProductsDesign from 'generated/my-components/LviHomeProducts';
 import GviProductItem from './GviProductItem';
 import store from 'store/index';
+import storeActions from 'store/main/actions';
 const originalHeight = themeService.getStyle('.lviHomeProducts').height;
 import { Router } from '@smartface/router';
 export default class LviHomeProducts extends LviHomeProductsDesign {
@@ -44,15 +45,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
             GridViewItem.onActionClick = () => {
                 GridViewItem.initIndicator();
                 GridViewItem.toggleIndicator(true);
-                store.dispatch({
-                    type: 'ADD_TO_BASKET',
-                    payload: {
-                        data: {
-                            product: this.items[productIndex],
-                            count: 1
-                        }
-                    }
-                });
+                store.dispatch(storeActions.AddToBasket({ product: this.items[productIndex], count: 1 }));
                 setTimeout(() => {
                     GridViewItem.toggleIndicator(false);
                 }, 500);

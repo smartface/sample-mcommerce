@@ -3,6 +3,7 @@ import Color from '@smartface/native/ui/color';
 import View from '@smartface/native/ui/view';
 import Application from '@smartface/native/application';
 import store from 'store/index';
+import storeActions from 'store/main/actions';
 import System from '@smartface/native/device/system';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
@@ -39,10 +40,11 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
     }
     initUserSignup() {
         let userPayload = {
-            fullName: null,
-            username: null,
-            password: null,
-            email: null,
+            id: 10,
+            fullName: '',
+            username: '',
+            password: '',
+            email: '',
             profileImage: 'userprofilephoto.png'
         };
         userPayload.email = this.mtbEmail.materialTextBox.text.trim();
@@ -50,12 +52,7 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         userPayload.fullName = this.mtbUsername.materialTextBox.text.trim();
         userPayload.password = this.mtbPassword.materialTextBox.text.trim();
 
-        store.dispatch({
-            type: 'SET_NEW_USER',
-            payload: {
-                data: userPayload
-            }
-        });
+        store.dispatch(storeActions.SetNewUser(userPayload));
         this.router.push('/pages/pgLogin');
     }
 

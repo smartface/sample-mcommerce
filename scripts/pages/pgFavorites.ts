@@ -1,5 +1,6 @@
 import PgFavoritesDesign from 'generated/pages/pgFavorites';
 import store from '../store/index';
+import storeActions from 'store/main/actions';
 import Image from '@smartface/native/ui/image';
 import Color from '@smartface/native/ui/color';
 import ListView from '@smartface/native/ui/listview';
@@ -22,7 +23,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
             item.android.borderTopLeftRadius = 5;
             item.android.borderBottomLeftRadius = 5;
             item.android.borderBottomRightRadius = 5;
-        } else if (index == store.getState().products.length - 1) {
+        } else if (index == store.getState().main.products.length - 1) {
             item.android.borderTopRightRadius = 5;
             item.android.borderTopLeftRadius = 5;
             item.android.borderBottomLeftRadius = 5;
@@ -42,14 +43,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         let length = this.favoriteProducts.length;
         let removedItem = this.favoriteProducts.find((product, index) => index === e.index);
         this.favoriteProducts.splice(e.index, 1);
-        store.dispatch({
-            type: 'REMOVE_FROM_FAVORITES',
-            payload: {
-                data: {
-                    productId: removedItem.id
-                }
-            }
-        });
+        store.dispatch(storeActions.RemoveFromBasket({ productId: removedItem.id }));
         this.refreshListView();
     }
 
@@ -97,7 +91,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
     }
     processor(): Processor[] {
         const processorItems = [];
-        this.favoriteProducts = store.getState().favorites;
+        this.favoriteProducts = store.getState().main.favorites;
         if (this.favoriteProducts.length === 0) {
             processorItems.push(
                 ListViewItems.getLviEmptyItem({
