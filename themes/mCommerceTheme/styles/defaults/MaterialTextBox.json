@@ -2,14 +2,14 @@
 	".materialTextBox": {
 		"ellipsizeMode": "END",
 		"textAlignment": "MIDLEFT",
-		"textColor": "#181725",
-		"errorColor": "rgba( 255,0,0,1 )",
-		"hintTextColor": "#7C7C7C",
-		"cursorColor": "rgba( 0,161,241,1 )",
-		"selectedHintTextColor": "#7C7C7C",
+		"textColor": "${textDark}",
+		"errorColor": "${favoriIcon}",
+		"hintTextColor": "${textLight}",
+		"cursorColor": "${textLight}",
+		"selectedHintTextColor": "${textLight}",
 		"lineColor": {
-			"normal": "#E2E2E2",
-			"selected": "#7C7C7C"
+			"normal": "${grayBorder}",
+			"selected": "${textLight}"
 		},
 		"font": {
 			"size": 16,
@@ -65,28 +65,6 @@
 		"image": "arrowbottom.png",
 		".hidden": {
 			"visible": true
-		}
-	},
-	".sf-mtb-number": {
-		"ellipsizeMode": "END",
-		"textAlignment": "MIDLEFT",
-		"textColor": "#181725",
-		"errorColor": "rgba( 255,0,0,1 )",
-		"hintTextColor": "#181725",
-		"cursorColor": "rgba( 0,161,241,1 )",
-		"selectedHintTextColor": "#ffffff",
-		"lineColor": {
-			"normal": "#E2E2E2",
-			"selected": "#7C7C7C"
-		},
-		"font": {
-			"size": 16,
-			"family": "Nunito",
-			"weight": "bold"
-		},
-		"labelsFont": {
-			"size": 18,
-			"family": "Nunito"
 		}
 	}
 }
