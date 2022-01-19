@@ -20,15 +20,14 @@ themeService.onChange(() => {
 
 let btbItemCart = new TabBarItem();
 btbItemCart.title = global.lang.cart;
+btbItemCart.badge.backgroundColor = Color.create(itemColor.selected);
 btbItemCart.icon = Image.createFromFile('images://tabiconcart.png');
 store.subscribe(() => {
-    btbItemCart.badge.text = getBasketCounter();
-    if (btbItemCart.badge.text == '0') {
-        btbItemCart.badge.visible = false; // default false
-    } else {
+    if (getBasketCounter()) {
         btbItemCart.badge.visible = true;
-        btbItemCart.badge.move(0, 0);
-        btbItemCart.badge.backgroundColor = Color.create('#53b175');
+        btbItemCart.badge.text = getBasketCounter();
+    } else {
+        btbItemCart.badge.visible = false;
     }
     if (parseInt(btbItemCart.badge.text) > 10) {
         btbItemCart.badge.text = '10+';
@@ -42,7 +41,7 @@ const getBasketCounter = () => {
             .basket.reduce((total, product) => total + product.count, 0)
             .toString();
     } else {
-        return null;
+        return false;
     }
 };
 

@@ -83,7 +83,8 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                   }
               })
             : ListViewItems.getLviRow2LineButton({
-                  leftIcon: image,
+                  // FIX AFTER THE UPDATE
+                  leftIcon: Image.createFromFile(`images://${image}`),
                   mainButtonText: global.lang.loginHeader,
                   bottomLeftButtonText: global.lang.signup,
                   bottomRightButtonText: global.lang.forgotPassword,

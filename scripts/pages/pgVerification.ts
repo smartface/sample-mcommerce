@@ -14,7 +14,7 @@ export default class PgVerification extends withDismissAndBackButton(PgVerificat
         super({});
 
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
-        this.btnRouter.on(Button.Events.Touch, () => {
+        this.btnRouter.on(Button.Events.Press, () => {
             this.router.push('pgLogin');
         });
         this.lblTitle.text = global.lang.enterdigitcode;

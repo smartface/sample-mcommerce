@@ -32,7 +32,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     }
     addToBasket() {
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
-        this.btnAddToBasket.on(Button.Events.Touch, () => {
+        this.btnAddToBasket.on(Button.Events.Press, () => {
             let product = store.getState().products.find((product) => product.id == this.route.getState().routeData.productId);
             store.dispatch({
                 type: 'ADD_TO_BASKET',
@@ -174,6 +174,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.checkIfFavorited();
         this.addRightItem();
         this.initDismissButton(this.router);
+        this.refreshListView();
     }
 
     onLoad() {
@@ -182,6 +183,5 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.btnAddToBasket.text = global.lang.addToBasket;
         this.addToBasket();
         this.initListView();
-        this.refreshListView();
     }
 }
