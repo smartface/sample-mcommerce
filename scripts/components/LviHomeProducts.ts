@@ -3,7 +3,7 @@ import LviHomeProductsDesign from 'generated/my-components/LviHomeProducts';
 import GviProductItem from './GviProductItem';
 import store from 'store/index';
 const originalHeight = themeService.getStyle('.lviHomeProducts').height;
-import { Router } from '@smartface/router';
+import System from '@smartface/native/device/system';
 export default class LviHomeProducts extends LviHomeProductsDesign {
     pageName?: string | undefined;
     private __onProductClick: (product: any) => void;
@@ -12,6 +12,13 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
+        if (System.OS === System.OSType.ANDROID) {
+            //Android item widths fails after theme change this fixes it
+            themeService.onChange(() => {
+                this.gvProducts.itemCount = this.__items.length;
+                this.gvProducts.refreshData();
+            });
+        }
     }
     static getHeight(): number {
         return originalHeight;
@@ -22,6 +29,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     set items(value: any[]) {
         this.__items = value;
         this.initGridView();
+        this.refreshGridView();
     }
     get onProductClick(): (product: any) => void {
         return this.__onProductClick;
@@ -58,6 +66,8 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
                 }, 500);
             };
         };
+    }
+    refreshGridView() {
         this.gvProducts.itemCount = this.items.length;
         this.gvProducts.refreshData();
     }
