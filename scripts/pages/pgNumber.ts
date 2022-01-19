@@ -3,7 +3,7 @@ import KeyboardType from '@smartface/native/ui/keyboardtype';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import { themeService } from 'theme';
 import Image from '@smartface/native/ui/image';
-const { image } = themeService.getStyle('.sf-headerBar.close');
+const { image } = themeService.getStyle('.sf-headerBar.back');
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
@@ -26,20 +26,12 @@ export default class PgNumber extends withDismissAndBackButton(PgNumberDesign) {
         };
         this.mtbNumber.materialTextBox.keyboardType = KeyboardType.NUMBER;
     }
-    addHeaderWithDirectImage() {
-        this.leftItem = new HeaderBarItem({
-            image: Image.createFromFile(image),
-            onPress: () => {
-                this.router.goBack();
-            }
-        });
-        this.headerBar.setLeftItem(this.leftItem);
-    }
     onShow() {
         super.onShow();
-        this.addHeaderWithDirectImage();
-        this.initDismissButton(this.router);
-        this.initBackButton(this.router);
+        this.initBackButton(this.router, {
+            color: themeService.getStyle('.sf-headerBar.itemColor'),
+            image: Image.createFromFile(`images://${image}`)
+        });
     }
     onLoad() {
         super.onLoad();

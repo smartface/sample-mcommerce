@@ -1,4 +1,4 @@
-import { NativeStackRouter as StackRouter, Route } from '@smartface/router';
+import { NativeStackRouter, NativeStackRouter as StackRouter, Route } from '@smartface/router';
 import * as Pages from 'pages';
 
 export default function (basePath: string) {
@@ -37,7 +37,8 @@ export default function (basePath: string) {
             Route.of<Pages.pgLogin>({
                 path: `${basePath}/pages/pgLogin`,
                 build(router, route) {
-                    return new Pages.pgLogin(router, route);
+                    // FIX ROUTER AFTER THE UPDATE
+                    return new Pages.pgLogin(router as NativeStackRouter, route);
                 },
                 headerBarParams: () => ({
                     visible: false

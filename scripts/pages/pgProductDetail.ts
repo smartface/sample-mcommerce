@@ -8,7 +8,8 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import store from 'store';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
-
+import { themeService } from 'theme';
+const { image } = themeService.getStyle('.sf-headerBar.dismiss');
 type Processor =
     | ListViewItems.ProcessorTypes.ILviPdSlider
     | ListViewItems.ProcessorTypes.ILviPdTitleLikeSection
@@ -26,7 +27,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     addRightItem() {
         const rightItem = new HeaderBarItem({
             image: Image.createFromFile('images://share.png'),
-            color: Color.BLACK
+            color: themeService.getStyle('.sf-headerBar.itemColor')
         });
         this.headerBar.setItems([rightItem]);
     }
@@ -173,8 +174,11 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         super.onShow();
         this.checkIfFavorited();
         this.addRightItem();
-        this.initDismissButton(this.router);
         this.refreshListView();
+        this.initDismissButton(this.router, {
+            color: themeService.getStyle('.sf-headerBar.itemColor'),
+            image: Image.createFromFile(`images://${image}`)
+        });
     }
 
     onLoad() {

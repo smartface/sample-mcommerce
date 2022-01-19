@@ -4,6 +4,9 @@ import store from 'store/index';
 import { Route, BaseRouter, NativeStackRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
+import Image from '@smartface/native/ui/image';
+import { themeService } from 'theme';
+const { image } = themeService.getStyle('.sf-headerBar.back');
 
 export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     constructor(private router?: Router, private route?: Route) {
@@ -57,7 +60,10 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     }
     onShow() {
         super.onShow();
-        this.initDismissButton(this.router);
+        this.initBackButton(this.router, {
+            color: themeService.getStyle('.sf-headerBar.itemColor'),
+            image: Image.createFromFile(`images://${image}`)
+        });
     }
     onLoad() {
         super.onLoad();
