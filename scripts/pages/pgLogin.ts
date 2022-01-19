@@ -1,8 +1,9 @@
 import PgLoginDesign from 'generated/pages/pgLogin';
 import View from '@smartface/native/ui/view';
 import store from 'store/index';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Route, BaseRouter, NativeStackRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
+import Button from '@smartface/native/ui/button';
 
 export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     constructor(private router?: Router, private route?: Route) {
@@ -12,7 +13,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
             this.router.push('/pages/pgSignUp');
         });
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
-        this.btnLogIn.on(View.Events.Touch, () => {
+        this.btnLogIn.on(Button.Events.Press, () => {
             this.initUserLogin();
         });
         this.lblTitle.text = global.lang.login;
@@ -49,7 +50,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
                             data: found
                         }
                     });
-                    this.router.goBack();
+                    this.router.dismiss();
                 }
             }
         }
@@ -57,7 +58,6 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     onShow() {
         super.onShow();
         this.initDismissButton(this.router);
-        this.initBackButton(this.router);
     }
     onLoad() {
         super.onLoad();

@@ -6,16 +6,17 @@ import store from 'store/index';
 import System from '@smartface/native/device/system';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
+import Button from '@smartface/native/ui/button';
 
 export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
 
-        this.lblRouteLogin.on(View.Events.Touch, () => {
+        this.lblRouteLogin.on(View.Events.TouchEnded, () => {
             this.router.goBack();
         });
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
-        this.btnSignUp.on(View.Events.Touch, () => {
+        this.btnSignUp.on(Button.Events.Press, () => {
             this.initUserSignup();
         });
         this.lblTitle.text = global.lang.signup;
