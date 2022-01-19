@@ -1,7 +1,7 @@
 import LviPdInfoSectionDesign from 'generated/my-components/LviPdInfoSection';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 
-const { height } = getCombinedStyle('.lviPdInfoSection');
+const { height } = themeService.getStyle('.lviPdInfoSection');
 
 export default class LviPdInfoSection extends LviPdInfoSectionDesign {
     pageName?: string | undefined;

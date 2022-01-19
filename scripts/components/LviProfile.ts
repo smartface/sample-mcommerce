@@ -1,8 +1,8 @@
 import Image from '@smartface/native/ui/image';
 import LviProfileDesign from 'generated/my-components/LviProfile';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import store from 'store/index';
-const originalHeight = getCombinedStyle('.lviProfile').height;
+const originalHeight = themeService.getStyle('.lviProfile').height;
 
 export default class LviProfile extends LviProfileDesign {
     pageName?: string | undefined;

@@ -1,10 +1,10 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import Button from '@smartface/native/ui/button';
 import Image from '@smartface/native/ui/image';
 import Label from '@smartface/native/ui/label';
 import View from '@smartface/native/ui/view';
 import LviCartItemDesign from 'generated/my-components/LviCartItem';
-const originalHeight = getCombinedStyle('.lviCartItem').height;
+const originalHeight = themeService.getStyle('.lviCartItem').height;
 
 export default class LviCartItem extends LviCartItemDesign {
     pageName?: string | undefined;
@@ -15,9 +15,11 @@ export default class LviCartItem extends LviCartItemDesign {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
+        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnCartPlus.on(Button.Events.TouchEnded, () => {
             this._value && this._value();
         });
+        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnCartMinus.on(Button.Events.TouchEnded, () => {
             this._valueMinus && this._valueMinus();
         });

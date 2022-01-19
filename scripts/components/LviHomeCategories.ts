@@ -1,7 +1,7 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import LviHomeCategoriesDesign from 'generated/my-components/LviHomeCategories';
 import GviHomeCategoryItem from './GviHomeCategoryItem';
-const { height } = getCombinedStyle('.lviHomeCategories');
+const { height } = themeService.getStyle('.lviHomeCategories');
 export default class LviHomeCategories extends LviHomeCategoriesDesign {
     pageName?: string | undefined;
     private __items: any[] = [];

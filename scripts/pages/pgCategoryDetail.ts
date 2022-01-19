@@ -1,24 +1,22 @@
 import PgCategoryDetailDesign from 'generated/pages/pgCategoryDetail';
 import store from 'store';
-import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
-import * as ListViewItems from 'lib/listViewItemTypes';
 import SearchView from '@smartface/native/ui/searchview';
-import MySearchBar from 'components/FlSearchBar';
 import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
 import System from '@smartface/native/device/system';
 import GviProductItem from 'components/GviProductItem';
 import Screen from '@smartface/native/device/screen';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import { Product } from 'types';
-type Processor = ListViewItems.ProcessorTypes.ILviRow2ProductItem | ListViewItems.ProcessorTypes.ILviSpacer;
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
 
 type searchStatus = {
     isSearchActive: boolean;
     searchText: string;
 };
-export default class PgCategoryDetail extends PgCategoryDetailDesign {
+export default class PgCategoryDetail extends withDismissAndBackButton(PgCategoryDetailDesign) {
     productSearchView: SearchView;
     routeData: any;
     isSearchViewVisible = false;
@@ -27,10 +25,8 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
         isSearchActive: false,
         searchText: null
     };
-    constructor() {
-        super();
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    constructor(private router?: Router, private route?: Route) {
+        super({});
     }
     addRightItem() {
         const rightItem = new HeaderBarItem({
@@ -48,7 +44,9 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
     }
     initSearchView(visible) {
         this.productSearchView = new SearchView();
-        this.productSearchView.textFieldBackgroundColor = getCombinedStyle('.commerceSearchView').textFieldBackgroundColor;
+        this.productSearchView.textFieldBackgroundColor = Color.create(
+            themeService.getStyle('.commerceSearchView').textFieldBackgroundColor
+        );
         this.productSearchView.addToHeaderBar(this);
         if (visible) {
             this.isSearchViewVisible = true;
@@ -65,7 +63,7 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
                 if (searchText.length === 0) {
                     this.searchStatus.isSearchActive = false;
                     this.searchStatus.searchText = null;
-                    if (this.routeData.isShowcase) {
+                    if (this.route.getState().routeData.isShowcase) {
                         this.getShowcaseProducts();
                     } else {
                         this.getCategoryProducts();
@@ -80,12 +78,14 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
         }
     }
     getCategoryProducts() {
-        this.categoryProducts = store.getState().products.filter((product) => product.categoryId === this.routeData.dataId);
+        this.categoryProducts = store
+            .getState()
+            .products.filter((product) => product.categoryId === this.route.getState().routeData.dataId);
     }
     getShowcaseProducts() {
         this.categoryProducts = store
             .getState()
-            .showcaseProducts.find((showcase) => showcase.showcaseId === this.routeData.dataId).products;
+            .showcaseProducts.find((showcase) => showcase.showcaseId === this.route.getState().routeData.dataId).products;
     }
 
     initGridView() {
@@ -148,26 +148,28 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
             });
         }
     }
-}
 
-function onShow(this: PgCategoryDetail, superOnShow: () => void) {
-    superOnShow();
-    this.refreshGridView();
-}
+    onShow() {
+        super.onShow();
+        this.refreshGridView();
+        this.initDismissButton(this.router);
+        this.initBackButton(this.router);
+    }
 
-function onLoad(this: PgCategoryDetail, superOnLoad: () => void) {
-    superOnLoad();
-    this.headerBar.title = this.routeData.title;
-    if (this.routeData.isShowcase) {
-        this.getShowcaseProducts();
-    } else {
-        this.getCategoryProducts();
+    onLoad() {
+        super.onLoad();
+        this.headerBar.title = this.route.getState().routeData.title;
+        if (this.route.getState().routeData.isShowcase) {
+            this.getShowcaseProducts();
+        } else {
+            this.getCategoryProducts();
+        }
+        if (System.OS === System.OSType.IOS) {
+            this.addRightItem();
+        } else {
+            this.initSearchView(true);
+        }
+        this.initEmptyItem();
+        this.initGridView();
     }
-    if (System.OS === System.OSType.IOS) {
-        this.addRightItem();
-    } else {
-        this.initSearchView(true);
-    }
-    this.initEmptyItem();
-    this.initGridView();
 }

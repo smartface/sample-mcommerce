@@ -1,5 +1,5 @@
 import pushClassNames from '@smartface/contx/lib/styling/action/pushClassNames';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import Image from '@smartface/native/ui/image';
 import FlRow1LineLargeDesign from 'generated/my-components/FlRow1LineLarge';
 import { setBordersForView } from 'lib/border';
@@ -58,7 +58,7 @@ export default class FlRow1LineLarge extends FlRow1LineLargeDesign {
     setLargeSwitch(): void {
         const { flSwitch, flLeft, flRight } = this;
         setVisibility(flSwitch, true);
-        const { borderRadius } = getCombinedStyle('.flRow1LineLarge-flSwitch.borderRadius');
+        const { borderRadius } = themeService.getStyle('.flRow1LineLarge-flSwitch.borderRadius');
         setBordersForView(flLeft, ['left'], borderRadius);
         setBordersForView(flRight, ['right'], borderRadius);
     }

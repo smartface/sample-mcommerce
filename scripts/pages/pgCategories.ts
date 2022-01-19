@@ -1,17 +1,12 @@
-import Color from '@smartface/native/ui/color';
 import PgCategoriesDesign from 'generated/pages/pgCategories';
 import store from '../store/index';
 import categoriesItem from 'components/CategoryGridViewItem';
-import Image from '@smartface/native/ui/image';
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
 
-export default class PgCategories extends PgCategoriesDesign {
-    router: any;
-    constructor() {
-        super();
-        // Overrides super.onShow method
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
+    constructor(private router?: Router, private route?: Route) {
+        super({});
     }
     initCategoriesGrid() {
         const categories = store.getState().categories;
@@ -33,26 +28,14 @@ export default class PgCategories extends PgCategoriesDesign {
 
         this.categoriesGrid.itemCount = categories.length;
     }
-}
-
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
-function onShow(this: PgCategories, superOnShow: () => void) {
-    superOnShow();
-}
-
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
-function onLoad(this: PgCategories, superOnLoad: () => void) {
-    superOnLoad();
-    this.headerBar.title = global.lang.categoriesHeader;
-    this.headerBar.android.elevation = 0;
-    this.initCategoriesGrid();
+    onShow() {
+        super.onShow();
+    }
+    onLoad() {
+        super.onLoad();
+        this.headerBar.title = global.lang.categoriesHeader;
+        this.headerBar.android.elevation = 0;
+        this.initCategoriesGrid();
+        this.headerBar.leftItemEnabled = false;
+    }
 }

@@ -1,8 +1,8 @@
 import LviPdOverviewSectionDesign from 'generated/my-components/LviPdOverviewSection';
 
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 
-const { height } = getCombinedStyle('.lviPdOverviewSection');
+const { height } = themeService.getStyle('.lviPdOverviewSection');
 export default class LviPdOverviewSection extends LviPdOverviewSectionDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {

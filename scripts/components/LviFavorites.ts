@@ -1,7 +1,7 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import Image from '@smartface/native/ui/image';
 import LviFavoritesDesign from 'generated/my-components/LviFavorites';
-const originalHeight = getCombinedStyle('.lviFavorites').height;
+const originalHeight = themeService.getStyle('.lviFavorites').height;
 
 export default class LviFavorites extends LviFavoritesDesign {
     private __onDeleteProduct: (product: any) => void;

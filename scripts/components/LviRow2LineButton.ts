@@ -1,9 +1,9 @@
 import LviRow2LineButtonDesign from 'generated/my-components/LviRow2LineButton';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import { setID } from 'lib/testAutomation';
 import Image from '@smartface/native/ui/image';
 
-const { height } = getCombinedStyle('.lviRow2LineButton');
+const { height } = themeService.getStyle('.lviRow2LineButton');
 
 export default class LviRow2LineButton extends LviRow2LineButtonDesign {
     pageName?: string | undefined;

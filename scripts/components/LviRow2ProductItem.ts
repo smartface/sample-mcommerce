@@ -1,9 +1,9 @@
 import LviRow2ProductItemDesign from 'generated/my-components/LviRow2ProductItem';
 import Button from '@smartface/native/ui/button';
 import Image from '@smartface/native/ui/image';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 
-const { height } = getCombinedStyle('.lviProductItem');
+const { height } = themeService.getStyle('.lviProductItem');
 
 export default class LviRow2ProductItem extends LviRow2ProductItemDesign {
     pageName?: string | undefined;

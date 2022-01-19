@@ -1,7 +1,7 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import LviHomeSliderDesign from 'generated/my-components/LviHomeSlider';
 
-const { height } = getCombinedStyle('.lviHomeSlider');
+const { height } = themeService.getStyle('.lviHomeSlider');
 
 export default class LviHomeSlider extends LviHomeSliderDesign {
     pageName?: string | undefined;

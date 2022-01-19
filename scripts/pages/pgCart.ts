@@ -4,6 +4,8 @@ import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import AlertView from '@smartface/native/ui/alertview';
 import { Basket, Product } from 'types';
+import { withDismissAndBackButton } from '@smartface/mixins';
+import { Route, BaseRouter as Router } from '@smartface/router';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -12,13 +14,11 @@ enum CartOperationEnum {
     Remove = -1,
     Clear = 0
 }
-export default class PgCart extends PgCartDesign {
+export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     cartProducts: Basket;
     data: Processor[];
-    constructor() {
-        super();
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    constructor(private router?: Router, private route?: Route) {
+        super({});
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -124,27 +124,15 @@ export default class PgCart extends PgCartDesign {
                 break;
         }
     }
-}
+    onShow() {
+        super.onShow();
+        this.headerBar.title = global.lang.mycartHeader;
+        this.refreshListView();
+    }
 
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
-function onShow(this: PgCart, superOnShow: () => void) {
-    superOnShow();
-    this.headerBar.title = global.lang.mycartHeader;
-    this.refreshListView();
-}
-
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
-function onLoad(this: PgCart, superOnLoad: () => void) {
-    superOnLoad();
-    this.headerBar.leftItemEnabled = false;
-    this.initListView();
+    onLoad() {
+        super.onLoad();
+        this.headerBar.leftItemEnabled = false;
+        this.initListView();
+    }
 }

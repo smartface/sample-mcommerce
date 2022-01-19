@@ -1,19 +1,17 @@
 import PgLoginDesign from 'generated/pages/pgLogin';
 import View from '@smartface/native/ui/view';
 import store from 'store/index';
-import { NativeStackRouter } from '@smartface/router';
-export default class PgLogin extends PgLoginDesign {
-    router: NativeStackRouter;
-    constructor() {
-        super();
-        // Overrides super.onShow method
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
+
+export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
+    constructor(private router?: Router, private route?: Route) {
+        super({});
 
         this.lblRouteSignUp.on(View.Events.Touch, () => {
             this.router.push('/pages/pgSignUp');
         });
+        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnLogIn.on(View.Events.Touch, () => {
             this.initUserLogin();
         });
@@ -51,30 +49,19 @@ export default class PgLogin extends PgLoginDesign {
                             data: found
                         }
                     });
-                    this.router.dismiss();
+                    this.router.goBack();
                 }
             }
         }
     }
-}
-
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
-function onShow(this: PgLogin, superOnShow: () => void) {
-    superOnShow();
-}
-
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
-function onLoad(this: PgLogin, superOnLoad: () => void) {
-    superOnLoad();
-    this.headerBar.title = global.lang.loginHeader;
-    this.initMaterialTextBoxes();
+    onShow() {
+        super.onShow();
+        this.initDismissButton(this.router);
+        this.initBackButton(this.router);
+    }
+    onLoad() {
+        super.onLoad();
+        this.headerBar.title = global.lang.loginHeader;
+        this.initMaterialTextBoxes();
+    }
 }

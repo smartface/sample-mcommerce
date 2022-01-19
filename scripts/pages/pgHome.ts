@@ -1,24 +1,21 @@
 import PgHomeDesign from 'generated/pages/pgHome';
 import store from '../store/index';
-import Application from '@smartface/native/application';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
-import { NativeStackRouter } from '@smartface/router';
-import { HomeShowcases, Product } from 'types';
+import { HomeShowcases } from 'types';
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
     | ListViewItems.ProcessorTypes.ILviHomeSlider
     | ListViewItems.ProcessorTypes.ILviShowcaseHeader;
 
-export default class PgHome extends PgHomeDesign {
-    router: NativeStackRouter;
+export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     data: Processor[];
     showcases: HomeShowcases[];
-    constructor() {
-        super();
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    constructor(private router?: Router, private route?: Route) {
+        super({});
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -79,15 +76,16 @@ export default class PgHome extends PgHomeDesign {
 
         return processorItems;
     }
-}
 
-function onShow(this: PgHome, superOnShow: () => void) {
-    superOnShow();
-}
+    onShow() {
+        super.onShow();
+    }
 
-function onLoad(this: PgHome, superOnLoad: () => void) {
-    superOnLoad();
-    this.headerBar.title = global.lang.homeHeader;
-    this.initListView();
-    this.refreshListView();
+    onLoad() {
+        super.onLoad();
+        this.headerBar.title = global.lang.homeHeader;
+        this.initListView();
+        this.refreshListView();
+        this.headerBar.leftItemEnabled = false;
+    }
 }

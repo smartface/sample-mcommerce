@@ -1,4 +1,4 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import Screen from '@smartface/native/device/screen';
 import Image from '@smartface/native/ui/image';
 import LviEmptyItemDesign from 'generated/my-components/LviEmptyItem';
@@ -11,7 +11,7 @@ export default class LviEmptyItem extends LviEmptyItemDesign {
     }
 
     static getHeight(): number {
-        return getCombinedStyle(`.lviEmptyItem`).height || 0;
+        return themeService.getStyle(`.lviEmptyItem`).height || 0;
     }
     static getScreenHeightDivide2(): number {
         return Screen.height / 1.5;

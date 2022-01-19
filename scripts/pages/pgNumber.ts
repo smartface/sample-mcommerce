@@ -2,19 +2,18 @@ import PgNumberDesign from 'generated/pages/pgNumber';
 import View from '@smartface/native/ui/view';
 import KeyboardType from '@smartface/native/ui/keyboardtype';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
-import { NativeStackRouter } from '@smartface/router';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import Image from '@smartface/native/ui/image';
-const { image } = getCombinedStyle('.sf-headerBar.close');
+const { image } = themeService.getStyle('.sf-headerBar.close');
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
 
-export default class PgNumber extends PgNumberDesign {
-    router: NativeStackRouter;
+export default class PgNumber extends withDismissAndBackButton(PgNumberDesign) {
     leftItem: HeaderBarItem;
-    constructor() {
-        super();
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    constructor(private router?: Router, private route?: Route) {
+        super({});
 
+        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnRoute.on(View.Events.Touch, () => {
             this.router.push('pgVerification');
         });
@@ -36,14 +35,14 @@ export default class PgNumber extends PgNumberDesign {
         });
         this.headerBar.setLeftItem(this.leftItem);
     }
-}
-
-function onShow(this: PgNumber, superOnShow: () => void) {
-    superOnShow();
-    this.addHeaderWithDirectImage();
-}
-
-function onLoad(this: PgNumber, superOnLoad: () => void) {
-    superOnLoad();
-    this.initMaterialTextBox();
+    onShow() {
+        super.onShow();
+        this.addHeaderWithDirectImage();
+        this.initDismissButton(this.router);
+        this.initBackButton(this.router);
+    }
+    onLoad() {
+        super.onLoad();
+        this.initMaterialTextBox();
+    }
 }

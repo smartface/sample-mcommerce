@@ -1,21 +1,20 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
+import Button from '@smartface/native/ui/button';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
 import KeyboardType from '@smartface/native/ui/keyboardtype';
-import View from '@smartface/native/ui/view';
-import { NativeStackRouter } from '@smartface/router';
 import PgVerificationDesign from 'generated/pages/pgVerification';
-const { image } = getCombinedStyle('.sf-headerBar.close');
+const { image } = themeService.getStyle('.sf-headerBar.close');
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
 
-export default class PgVerification extends PgVerificationDesign {
-    router: NativeStackRouter;
+export default class PgVerification extends withDismissAndBackButton(PgVerificationDesign) {
     leftItem: HeaderBarItem;
-    constructor() {
-        super();
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    constructor(private router?: Router, private route?: Route) {
+        super({});
 
-        this.btnRouter.on(View.Events.Touch, () => {
+        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
+        this.btnRouter.on(Button.Events.Touch, () => {
             this.router.push('pgLogin');
         });
         this.lblTitle.text = global.lang.enterdigitcode;
@@ -37,25 +36,14 @@ export default class PgVerification extends PgVerificationDesign {
         });
         this.headerBar.setLeftItem(this.leftItem);
     }
-}
-
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
-function onShow(this: PgVerification, superOnShow: () => void) {
-    superOnShow();
-    this.addHeaderWithDirectImage();
-}
-
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
-function onLoad(this: PgVerification, superOnLoad: () => void) {
-    superOnLoad();
-    this.initMaterialTextBox();
+    onShow() {
+        super.onShow();
+        this.addHeaderWithDirectImage();
+        this.initDismissButton(this.router);
+        this.initBackButton(this.router);
+    }
+    onLoad() {
+        super.onLoad();
+        this.initMaterialTextBox();
+    }
 }

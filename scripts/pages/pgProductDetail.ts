@@ -1,15 +1,13 @@
-import Application from '@smartface/native/application';
-import System from '@smartface/native/device/system';
 import Button from '@smartface/native/ui/button';
 import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
-import View from '@smartface/native/ui/view';
 import PgProductDetailDesign from 'generated/pages/pgProductDetail';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import store from 'store';
-import { ThemeService } from 'theme';
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviPdSlider
@@ -18,25 +16,12 @@ type Processor =
     | ListViewItems.ProcessorTypes.ILviPdInfoSection
     | ListViewItems.ProcessorTypes.ILviPdOverviewSection;
 
-export default class PgProductDetail extends PgProductDetailDesign {
-    router: any;
+export default class PgProductDetail extends withDismissAndBackButton(PgProductDetailDesign) {
     data: Processor[];
-    routeData: any;
     productCounter = 1;
     productFavoriteImg = 'images://favourite.png';
-    constructor() {
-        super();
-        // Overrides super.onShow method
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-    }
-    addLeftItem() {
-        const leftItem = new HeaderBarItem({
-            image: Image.createFromFile('images://backbtn.png'),
-            color: Color.BLACK
-        });
-        this.headerBar.setLeftItem(leftItem);
+    constructor(private router?: Router, private route?: Route) {
+        super({});
     }
     addRightItem() {
         const rightItem = new HeaderBarItem({
@@ -46,8 +31,9 @@ export default class PgProductDetail extends PgProductDetailDesign {
         this.headerBar.setItems([rightItem]);
     }
     addToBasket() {
+        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnAddToBasket.on(Button.Events.Touch, () => {
-            let product = store.getState().products.find((product) => product.id == this.routeData.productId);
+            let product = store.getState().products.find((product) => product.id == this.route.getState().routeData.productId);
             store.dispatch({
                 type: 'ADD_TO_BASKET',
                 payload: {
@@ -88,25 +74,25 @@ export default class PgProductDetail extends PgProductDetailDesign {
     processor(): Processor[] {
         const processorItems = [
             ListViewItems.getLviPdSlider({
-                images: [`images://${this.routeData.productImg}`, `images://${this.routeData.productImg}`]
+                images: [`images://${this.route.getState().routeData.productImg}`, `images://${this.route.getState().routeData.productImg}`]
             })
         ];
         processorItems.push(
             ListViewItems.getLviPdTitleLikeSection({
-                productTitle: this.routeData.productName,
-                productMeas: this.routeData.productDescription,
+                productTitle: this.route.getState().routeData.productName,
+                productMeas: this.route.getState().routeData.productDescription,
                 favoriteImg: this.productFavoriteImg,
                 onFavoriteClick: () => {
                     if (
                         store.getState().favorites &&
                         store.getState().favorites.length > 0 &&
-                        store.getState().favorites.some((product) => product.id === this.routeData.productId)
+                        store.getState().favorites.some((product) => product.id === this.route.getState().routeData.productId)
                     ) {
                         store.dispatch({
                             type: 'REMOVE_FROM_FAVORITES',
                             payload: {
                                 data: {
-                                    productId: this.routeData.productId
+                                    productId: this.route.getState().routeData.productId
                                 }
                             }
                         });
@@ -117,7 +103,9 @@ export default class PgProductDetail extends PgProductDetailDesign {
                             type: 'ADD_TO_FAVORITES',
                             payload: {
                                 data: {
-                                    product: store.getState().products.find((product) => product.id == this.routeData.productId)
+                                    product: store
+                                        .getState()
+                                        .products.find((product) => product.id == this.route.getState().routeData.productId)
                                 }
                             }
                         });
@@ -130,7 +118,7 @@ export default class PgProductDetail extends PgProductDetailDesign {
 
         processorItems.push(
             ListViewItems.getLviPdButtonPriceSection({
-                productPrice: this.routeData.productPrice,
+                productPrice: this.route.getState().routeData.productPrice,
                 productCount: this.productCounter.toString(),
                 onPlusClick: () => {
                     this.productCounter += 1;
@@ -171,7 +159,7 @@ export default class PgProductDetail extends PgProductDetailDesign {
         if (
             store.getState().favorites &&
             store.getState().favorites.length > 0 &&
-            store.getState().favorites.some((product) => product.id === this.routeData.productId)
+            store.getState().favorites.some((product) => product.id === this.route.getState().routeData.productId)
         ) {
             this.productFavoriteImg = 'images://favorited.png';
             this.refreshListView();
@@ -180,31 +168,20 @@ export default class PgProductDetail extends PgProductDetailDesign {
             this.refreshListView();
         }
     }
-}
 
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
-function onShow(this: PgProductDetail, superOnShow: () => void) {
-    superOnShow();
-    this.checkIfFavorited();
-}
+    onShow() {
+        super.onShow();
+        this.checkIfFavorited();
+        this.addRightItem();
+        this.initDismissButton(this.router);
+    }
 
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
-function onLoad(this: PgProductDetail, superOnLoad: () => void) {
-    superOnLoad();
-    this.addRightItem();
-    // this.addLeftItem();
-    this.headerBar.title = global.lang.productDetail;
-    this.btnAddToBasket.text = global.lang.addToBasket;
-    this.addToBasket();
-    this.initListView();
-    this.refreshListView();
+    onLoad() {
+        super.onLoad();
+        this.headerBar.title = global.lang.productDetail;
+        this.btnAddToBasket.text = global.lang.addToBasket;
+        this.addToBasket();
+        this.initListView();
+        this.refreshListView();
+    }
 }

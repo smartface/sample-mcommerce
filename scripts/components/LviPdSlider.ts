@@ -1,7 +1,7 @@
 import LviPdSliderDesign from 'generated/my-components/LviPdSlider';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 
-const { height } = getCombinedStyle('.lviProductDetailSlider');
+const { height } = themeService.getStyle('.lviProductDetailSlider');
 export default class LviPdSlider extends LviPdSliderDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {

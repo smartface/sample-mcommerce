@@ -10,28 +10,27 @@ export default class CategoryGridViewItem extends CategoryGridViewItemDesign {
         this.pageName = pageName;
     }
     get categoryTitle(): string {
-        return this.lblCategoryItemTitle.text
+        return this.lblCategoryItemTitle.text;
     }
     set categoryTitle(value: string) {
-        this.lblCategoryItemTitle.text = value
+        this.lblCategoryItemTitle.text = value;
     }
     get categoryImage(): string | Image {
-        return this.imgCategoryItem.image
+        return this.imgCategoryItem.image;
     }
     set categoryImage(value: string | Image) {
-        this.imgCategoryItem.image = Image.createFromFile(`images://${value}`)
+        this.imgCategoryItem.image = Image.createFromFile(`images://${value}`);
     }
     get flCategoryItemWrapperBorderColor(): any {
-        return this.flCategoryItemWrapper.borderColor
+        return this.flCategoryItemWrapper.borderColor;
     }
     set flCategoryItemWrapperBorderColor(value: any) {
-        this.flCategoryItemWrapper.borderColor = Color.create(value)
+        this.flCategoryItemWrapper.borderColor = Color.create(value);
     }
     get flCategoryItemWrapperBackgroundColor(): any {
-        return this.flCategoryItemWrapper.backgroundColor
+        return this.flCategoryItemWrapper.backgroundColor;
     }
     set flCategoryItemWrapperBackgroundColor(value: any) {
-        this.flCategoryItemWrapper.backgroundColor = Color.create(value)
+        this.flCategoryItemWrapper.backgroundColor = Color.create(value);
     }
 }
-

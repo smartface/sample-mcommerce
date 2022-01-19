@@ -15,6 +15,7 @@ export default class FlProductItem extends FlProductItemDesign {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
+        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnAddToBasket.on(Button.Events.TouchEnded, () => {
             this._addToBasket && this._addToBasket();
         });

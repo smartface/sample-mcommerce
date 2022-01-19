@@ -1,5 +1,5 @@
 import LviSpacerDesign from 'generated/my-components/LviSpacer';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import pushClassNames from '@smartface/contx/lib/styling/action/pushClassNames';
 import { setID } from 'lib/testAutomation';
 
@@ -31,6 +31,6 @@ export default class LviSpacer extends LviSpacerDesign {
         setID(this, (this.__ID = value));
     }
     static getHeight(className: string): number {
-        return getCombinedStyle(`.lviSpacer.${className}`).height || 0;
+        return themeService.getStyle(`.lviSpacer.${className}`).height || 0;
     }
 }

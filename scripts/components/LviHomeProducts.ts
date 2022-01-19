@@ -1,8 +1,8 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import LviHomeProductsDesign from 'generated/my-components/LviHomeProducts';
 import GviProductItem from './GviProductItem';
 import store from 'store/index';
-const originalHeight = getCombinedStyle('.lviHomeProducts').height;
+const originalHeight = themeService.getStyle('.lviHomeProducts').height;
 import { Router } from '@smartface/router';
 export default class LviHomeProducts extends LviHomeProductsDesign {
     pageName?: string | undefined;

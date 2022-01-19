@@ -2,19 +2,19 @@ import Color from '@smartface/native/ui/color';
 import Image from '@smartface/native/ui/image';
 import TabBarItem from '@smartface/native/ui/tabbaritem';
 import { BottomTabBarRouter, NativeStackRouter as StackRouter, Route } from '@smartface/router';
-import buildExtender from '@smartface/extension-utils/lib/router/buildExtender';
 import store from 'store';
 import authRouteGenerator from './auth';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import BottomTabBarController from '@smartface/native/ui/bottomtabbarcontroller';
-import { ThemeService } from 'theme';
+import * as Pages from 'pages';
+const { backgroundColor, itemColor } = themeService.getStyle('.tabs');
 
-ThemeService.onChange(() => {
-    const { backgroundColor, itemColor } = getCombinedStyle('.tabs');
+themeService.onChange(() => {
+    const { backgroundColor, itemColor } = themeService.getStyle('.tabs');
     const rootController = bottomTabBarRouter._renderer._rootController;
     if (rootController instanceof BottomTabBarController) {
-        rootController.tabBar.backgroundColor = backgroundColor;
-        rootController.tabBar.itemColor = itemColor;
+        rootController.tabBar.backgroundColor = Color.create(backgroundColor);
+        rootController.tabBar.itemColor = { normal: Color.create(itemColor.normal), selected: Color.create(itemColor.selected) };
     }
 });
 
@@ -52,11 +52,8 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
     homeRoute: 0,
     tabbarParams: () => ({
         ios: { translucent: false },
-        itemColor: {
-            normal: Color.create('#181725'),
-            selected: Color.create('#53B175')
-        },
-        backgroundColor: Color.create('#FFFFFF')
+        itemColor: { normal: Color.create(itemColor.normal), selected: Color.create(itemColor.selected) },
+        backgroundColor: Color.create(backgroundColor)
     }),
     items: [
         { title: global.lang.shop, icon: Image.createFromFile('images://tabiconhome.png') },
@@ -72,20 +69,27 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             path: '/btb/tab1',
             to: '/btb/tab1/home',
             routes: [
-                Route.of({
-                    path: '/btb/tab1/home',
-                    build: buildExtender({ getPageClass: () => require('pages/pgHome').default, headerBarStyle: { visible: true } })
+                Route.of<Pages.pgHome>({
+                    path: `/btb/tab1/home`,
+                    build(router, route) {
+                        return new Pages.pgHome(router, route);
+                    },
+                    headerBarParams: () => ({
+                        visible: true
+                    })
                 }),
                 StackRouter.of({
                     path: '/btb/tab1/productDetail',
                     to: '/btb/tab1/productDetail/main',
                     modal: true,
                     routes: [
-                        Route.of({
-                            path: '/btb/tab1/productDetail/main',
-                            build: buildExtender({
-                                getPageClass: () => require('pages/pgProductDetail').default,
-                                headerBarStyle: { visible: true }
+                        Route.of<Pages.pgProductDetail>({
+                            path: `/btb/tab1/productDetail/main`,
+                            build(router, route) {
+                                return new Pages.pgProductDetail(router, route);
+                            },
+                            headerBarParams: () => ({
+                                visible: true
                             })
                         })
                     ]
@@ -95,11 +99,13 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     to: '/btb/tab1/categoryDetail/main',
                     modal: true,
                     routes: [
-                        Route.of({
-                            path: '/btb/tab1/categoryDetail/main',
-                            build: buildExtender({
-                                getPageClass: () => require('pages/pgCategoryDetail').default,
-                                headerBarStyle: { visible: true }
+                        Route.of<Pages.pgCategoryDetail>({
+                            path: `/btb/tab1/categoryDetail/main`,
+                            build(router, route) {
+                                return new Pages.pgCategoryDetail(router, route);
+                            },
+                            headerBarParams: () => ({
+                                visible: true
                             })
                         })
                     ]
@@ -111,11 +117,13 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             path: '/btb/tab2',
             to: '/btb/tab2/categories',
             routes: [
-                Route.of({
-                    path: '/btb/tab2/categories',
-                    build: buildExtender({
-                        getPageClass: () => require('pages/pgCategories').default,
-                        headerBarStyle: { visible: true }
+                Route.of<Pages.pgCategories>({
+                    path: `/btb/tab2/categories`,
+                    build(router, route) {
+                        return new Pages.pgCategories(router, route);
+                    },
+                    headerBarParams: () => ({
+                        visible: true
                     })
                 }),
                 StackRouter.of({
@@ -123,11 +131,13 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     to: '/btb/tab2/categoryDetail/main',
                     modal: true,
                     routes: [
-                        Route.of({
-                            path: '/btb/tab2/categoryDetail/main',
-                            build: buildExtender({
-                                getPageClass: () => require('pages/pgCategoryDetail').default,
-                                headerBarStyle: { visible: true }
+                        Route.of<Pages.pgCategoryDetail>({
+                            path: `/btb/tab2/categoryDetail/main`,
+                            build(router, route) {
+                                return new Pages.pgCategoryDetail(router, route);
+                            },
+                            headerBarParams: () => ({
+                                visible: true
                             })
                         })
                     ]
@@ -138,9 +148,14 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             path: '/btb/tab3',
             to: '/btb/tab3/cart',
             routes: [
-                Route.of({
-                    path: '/btb/tab3/cart',
-                    build: buildExtender({ getPageClass: () => require('pages/pgCart').default, headerBarStyle: { visible: true } })
+                Route.of<Pages.pgCart>({
+                    path: `/btb/tab3/cart`,
+                    build(router, route) {
+                        return new Pages.pgCart(router, route);
+                    },
+                    headerBarParams: () => ({
+                        visible: true
+                    })
                 })
             ]
         }),
@@ -148,11 +163,13 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             path: '/btb/tab4',
             to: '/btb/tab4/favorites',
             routes: [
-                Route.of({
-                    path: '/btb/tab4/favorites',
-                    build: buildExtender({
-                        getPageClass: () => require('pages/pgFavorites').default,
-                        headerBarStyle: { visible: true }
+                Route.of<Pages.pgFavorites>({
+                    path: `/btb/tab4/favorites`,
+                    build(router, route) {
+                        return new Pages.pgFavorites(router, route);
+                    },
+                    headerBarParams: () => ({
+                        visible: true
                     })
                 })
             ]
@@ -161,11 +178,13 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             path: '/btb/tab5',
             to: '/btb/tab5/account',
             routes: [
-                Route.of({
-                    path: '/btb/tab5/account',
-                    build: buildExtender({
-                        getPageClass: () => require('pages/pgAccount').default,
-                        headerBarStyle: { visible: true }
+                Route.of<Pages.pgAccount>({
+                    path: `/btb/tab5/account`,
+                    build(router, route) {
+                        return new Pages.pgAccount(router, route);
+                    },
+                    headerBarParams: () => ({
+                        visible: true
                     })
                 }),
                 StackRouter.of({
@@ -173,11 +192,13 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     to: '/btb/tab5/settings/main',
                     modal: true,
                     routes: [
-                        Route.of({
-                            path: '/btb/tab5/settings/main',
-                            build: buildExtender({
-                                getPageClass: () => require('pages/pgUserSettings').default,
-                                headerBarStyle: { visible: true }
+                        Route.of<Pages.pgUserSettings>({
+                            path: `/btb/tab5/settings/main`,
+                            build(router, route) {
+                                return new Pages.pgUserSettings(router, route);
+                            },
+                            headerBarParams: () => ({
+                                visible: true
                             })
                         })
                     ]
@@ -187,11 +208,13 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     to: '/btb/tab5/notifications/main',
                     modal: true,
                     routes: [
-                        Route.of({
-                            path: '/btb/tab5/notifications/main',
-                            build: buildExtender({
-                                getPageClass: () => require('pages/pgNotifications').default,
-                                headerBarStyle: { visible: true }
+                        Route.of<Pages.pgNotifications>({
+                            path: `/btb/tab5/notifications/main`,
+                            build(router, route) {
+                                return new Pages.pgNotifications(router, route);
+                            },
+                            headerBarParams: () => ({
+                                visible: true
                             })
                         })
                     ]

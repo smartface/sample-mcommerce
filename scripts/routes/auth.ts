@@ -1,5 +1,4 @@
 import { NativeStackRouter as StackRouter, Route } from '@smartface/router';
-import buildExtender from '@smartface/extension-utils/lib/router/buildExtender';
 import * as Pages from 'pages';
 
 export default function (basePath: string) {
@@ -8,39 +7,49 @@ export default function (basePath: string) {
         to: `${basePath}/pages/pgWelcome`,
         modal: true,
         routes: [
-            Route.of({
+            Route.of<Pages.pgWelcome>({
                 path: `${basePath}/pages/pgWelcome`,
-                build: buildExtender({
-                    getPageClass: () => Pages.pgWelcome,
-                    headerBarStyle: { visible: true }
+                build(router, route) {
+                    return new Pages.pgWelcome(router, route);
+                },
+                headerBarParams: () => ({
+                    visible: true
                 })
             }),
-            Route.of({
+            Route.of<Pages.pgNumber>({
                 path: `${basePath}/pages/pgNumber`,
-                build: buildExtender({
-                    getPageClass: () => Pages.pgNumber,
-                    headerBarStyle: { visible: true }
+                build(router, route) {
+                    return new Pages.pgNumber(router, route);
+                },
+                headerBarParams: () => ({
+                    visible: true
                 })
             }),
-            Route.of({
+            Route.of<Pages.pgVerification>({
                 path: `${basePath}/pages/pgVerification`,
-                build: buildExtender({
-                    getPageClass: () => Pages.pgVerification,
-                    headerBarStyle: { visible: true }
+                build(router, route) {
+                    return new Pages.pgVerification(router, route);
+                },
+                headerBarParams: () => ({
+                    visible: true
                 })
             }),
-            Route.of({
+            Route.of<Pages.pgLogin>({
                 path: `${basePath}/pages/pgLogin`,
-                build: buildExtender({
-                    getPageClass: () => Pages.pgLogin,
-                    headerBarStyle: { visible: false }
+                build(router, route) {
+                    return new Pages.pgLogin(router, route);
+                },
+                headerBarParams: () => ({
+                    visible: false
                 })
             }),
-            Route.of({
+            Route.of<Pages.pgSignUp>({
                 path: `${basePath}/pages/pgSignUp`,
-                build: buildExtender({
-                    getPageClass: () => Pages.pgSignUp,
-                    headerBarStyle: { visible: true }
+                build(router, route) {
+                    return new Pages.pgSignUp(router, route);
+                },
+                headerBarParams: () => ({
+                    visible: true
                 })
             })
         ]
