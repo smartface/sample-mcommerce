@@ -20,6 +20,16 @@
 			"textColor": "${subText}"
 		}
 	},
+	".category": {
+		"font": {
+			"size": 20,
+			"bold": true,
+			"italic": false,
+			"family": "Nunito",
+			"style": "Bold"
+		},
+		"textColor": "${categoryText}"
+	},
 	".number": {
 		"font": {
 			"family": "Nunito",

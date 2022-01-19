@@ -21,7 +21,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flHomeCategoryWrapper",
+			"className": ".sf-flexLayout .flHomeCategory-flHomeCategoryWrapper",
 			"id": "f34e-c2bd-e9b9-cc2e",
 			"props": {
 				"children": [
@@ -38,7 +38,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-imageView .gviHomeCategoryItem-flHomeCategoryWrapper-imgLeft",
+			"className": ".sf-imageView .flHomeCategory-flHomeCategoryWrapper-imgLeft",
 			"id": "85ae-453f-93e9-0aa7",
 			"props": {
 				"children": [],
@@ -57,7 +57,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .gviHomeCategoryItem-flHomeCategoryWrapper-lblCategoryName",
+			"className": ".sf-label .flHomeCategory-flHomeCategoryWrapper-lblCategoryName .category",
 			"id": "455c-9400-27e4-feea",
 			"props": {
 				"children": [],
