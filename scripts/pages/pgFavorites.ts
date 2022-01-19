@@ -60,7 +60,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.onRowSwipe = onRowSwipe.bind(this);
         this.lvMain.refreshEnabled = false;
-        // this.listView1.contentInset = { top: 10, bottom: 0 };
         this.lvMain.onRowCanSwipe = (index: number) => {
             return [ListView.SwipeDirection.RIGHTTOLEFT];
         };
@@ -126,9 +125,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
     }
     onLoad() {
         super.onLoad();
-        this.headerBar.title = 'Favorites';
-        this.headerBar.backgroundColor = Color.WHITE;
-        this.headerBar.android.elevation = 0;
         this.initListView();
         this.refreshListView();
         this.headerBar.leftItemEnabled = false;
