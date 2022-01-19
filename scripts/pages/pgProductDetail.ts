@@ -9,7 +9,6 @@ import store from 'store';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
-const { image } = themeService.getStyle('.sf-headerBar.dismiss');
 type Processor =
     | ListViewItems.ProcessorTypes.ILviPdSlider
     | ListViewItems.ProcessorTypes.ILviPdTitleLikeSection
@@ -176,8 +175,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.addRightItem();
         this.refreshListView();
         this.initDismissButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor'),
-            image: Image.createFromFile(`images://${image}`)
+            color: themeService.getStyle('.sf-headerBar.itemColor')
         });
     }
 

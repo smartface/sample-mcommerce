@@ -7,8 +7,6 @@ import PgUserSettingsDesign from 'generated/pages/pgUserSettings';
 import { themeService } from 'theme';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
-import Image from '@smartface/native/ui/image';
-const { image } = themeService.getStyle('.sf-headerBar.dismiss');
 
 export default class PgUserSettings extends withDismissAndBackButton(PgUserSettingsDesign) {
     private data: ReturnType<typeof getLviRow1LineLarge>[];
@@ -64,8 +62,7 @@ export default class PgUserSettings extends withDismissAndBackButton(PgUserSetti
         this.headerBar.title = global.lang.settingsHeader;
         this.refreshListView();
         this.initDismissButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor'),
-            image: Image.createFromFile(`images://${image}`)
+            color: themeService.getStyle('.sf-headerBar.itemColor')
         });
     }
     onLoad() {

@@ -8,8 +8,6 @@ import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { themeService } from 'theme';
-import Image from '@smartface/native/ui/image';
-const { image } = themeService.getStyle('.sf-headerBar.back');
 
 export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
     constructor(private router?: Router, private route?: Route) {
@@ -69,8 +67,7 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
             Application.statusBar.backgroundColor = Color.WHITE;
         }
         this.initBackButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor'),
-            image: Image.createFromFile(`images://${image}`)
+            color: themeService.getStyle('.sf-headerBar.itemColor')
         });
     }
 

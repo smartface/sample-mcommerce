@@ -11,7 +11,6 @@ import { themeService } from 'theme';
 import { Product } from 'types';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
-const { image } = themeService.getStyle('.sf-headerBar.dismiss');
 type searchStatus = {
     isSearchActive: boolean;
     searchText: string;
@@ -153,8 +152,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         super.onShow();
         this.refreshGridView();
         this.initDismissButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor'),
-            image: Image.createFromFile(`images://${image}`)
+            color: themeService.getStyle('.sf-headerBar.itemColor')
         });
     }
 

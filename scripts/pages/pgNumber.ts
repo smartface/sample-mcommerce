@@ -2,8 +2,6 @@ import PgNumberDesign from 'generated/pages/pgNumber';
 import KeyboardType from '@smartface/native/ui/keyboardtype';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import { themeService } from 'theme';
-import Image from '@smartface/native/ui/image';
-const { image } = themeService.getStyle('.sf-headerBar.back');
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
@@ -29,8 +27,7 @@ export default class PgNumber extends withDismissAndBackButton(PgNumberDesign) {
     onShow() {
         super.onShow();
         this.initBackButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor'),
-            image: Image.createFromFile(`images://${image}`)
+            color: themeService.getStyle('.sf-headerBar.itemColor')
         });
     }
     onLoad() {

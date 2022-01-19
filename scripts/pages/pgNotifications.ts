@@ -4,8 +4,7 @@ import { getLviRow1LineLarge } from 'lib/listViewItemTypes';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
-import Image from '@smartface/native/ui/image';
-const { image } = themeService.getStyle('.sf-headerBar.dismiss');
+
 export default class PgNotifications extends withDismissAndBackButton(PgNotificationsDesign) {
     private data: ReturnType<typeof getLviRow1LineLarge>[];
     private __isBusy = false;
@@ -45,8 +44,7 @@ export default class PgNotifications extends withDismissAndBackButton(PgNotifica
         super.onShow();
         this.refreshListView();
         this.initDismissButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor'),
-            image: Image.createFromFile(`images://${image}`)
+            color: themeService.getStyle('.sf-headerBar.itemColor')
         });
     }
     onLoad() {

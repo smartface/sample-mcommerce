@@ -24,7 +24,7 @@
 			"leftItemEnabled": "true"
 		},
 		".dismiss": {
-			"image": "dismiss_icon.png"
+			"image": "close_icon.png"
 		},
 		".back": {
 			"image": "arrow_back.png"
