@@ -23,8 +23,11 @@
 			"titleColor": "${transparent}",
 			"leftItemEnabled": "true"
 		},
-		".close": {
-			"image": "backbtn.png"
+		".dismiss": {
+			"image": "close_icon.png"
+		},
+		".back": {
+			"image": "arrow_back.png"
 		}
 	}
 }

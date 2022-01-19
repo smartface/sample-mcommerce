@@ -1,9 +1,10 @@
 import PgLoginDesign from 'generated/pages/pgLogin';
 import View from '@smartface/native/ui/view';
 import store from 'store/index';
-import { Route, BaseRouter, NativeStackRouter as Router } from '@smartface/router';
+import { Route, BaseRouter as Router, NativeStackRouter } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
+import { themeService } from 'theme';
 
 export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     constructor(private router?: Router, private route?: Route) {
@@ -50,14 +51,17 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
                             data: found
                         }
                     });
-                    this.router.dismiss();
+                    // FIX LATER
+                    (this.router as NativeStackRouter).dismiss();
                 }
             }
         }
     }
     onShow() {
         super.onShow();
-        this.initDismissButton(this.router);
+        this.initBackButton(this.router, {
+            color: themeService.getStyle('.sf-headerBar.itemColor')
+        });
     }
     onLoad() {
         super.onLoad();

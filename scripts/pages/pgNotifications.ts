@@ -3,6 +3,7 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { getLviRow1LineLarge } from 'lib/listViewItemTypes';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
+import { themeService } from 'theme';
 
 export default class PgNotifications extends withDismissAndBackButton(PgNotificationsDesign) {
     private data: ReturnType<typeof getLviRow1LineLarge>[];
@@ -42,8 +43,9 @@ export default class PgNotifications extends withDismissAndBackButton(PgNotifica
     onShow() {
         super.onShow();
         this.refreshListView();
-        this.initDismissButton(this.router);
-        this.initBackButton(this.router);
+        this.initDismissButton(this.router, {
+            color: themeService.getStyle('.sf-headerBar.itemColor')
+        });
     }
     onLoad() {
         super.onLoad();
