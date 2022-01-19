@@ -50,5 +50,6 @@ function onShow(this: PgNotifications, superOnShow: () => void) {
 
 function onLoad(this: PgNotifications, superOnLoad: () => void) {
     superOnLoad();
+    this.headerBar.title = global.lang.notifications;
     this.initListView();
 }

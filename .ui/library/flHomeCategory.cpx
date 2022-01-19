@@ -57,7 +57,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .flHomeCategory-flHomeCategoryWrapper-lblCategoryName",
+			"className": ".sf-label .flHomeCategory-flHomeCategoryWrapper-lblCategoryName .category",
 			"id": "455c-9400-27e4-feea",
 			"props": {
 				"children": [],
