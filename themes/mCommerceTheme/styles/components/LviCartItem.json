@@ -13,7 +13,6 @@
 					"alignSelf": "CENTER"
 				},
 				"height": 70,
-				"image": "appledetail.png",
 				"imageFillType": "ASPECTFIT",
 				"testId": "XfDQCq2bR",
 				"width": 70
@@ -45,7 +44,7 @@
 					},
 					"height": 25,
 					"testId": "DhxO3bzI2",
-					"textColor": "rgba( 179, 179, 179, 1 )",
+					"textColor": "${textLight}",
 					"flexProps": {},
 					"marginBottom": null,
 					"marginTop": null
@@ -73,7 +72,7 @@
 						"height": 40,
 						"testId": "LGnWBeATD",
 						"textAlignment": "MIDCENTER",
-						"textColor": "rgba( 24, 23, 37, 1 )"
+						"textColor": "${textDark}"
 					},
 					"&-lblProductPrice": {
 						"flexProps": {
@@ -89,7 +88,7 @@
 						"height": 40,
 						"testId": "juWT9KqSV",
 						"textAlignment": "MIDRIGHT",
-						"textColor": "rgba( 24, 23, 37, 1 )"
+						"textColor": "${textDark}"
 					}
 				}
 			},
@@ -112,7 +111,7 @@
 			},
 			"testId": "V7hXg88Aj",
 			"textAlignment": "MIDRIGHT",
-			"textColor": "rgba( 179, 179, 179, 1 )"
+			"textColor": "${textLight}"
 		},
 		"&-lblProductName": {
 			"flexProps": {
@@ -127,7 +126,7 @@
 				"style": "Bold"
 			},
 			"testId": "lmfuMkXN_",
-			"textColor": "rgba( 24, 23, 37, 1 )"
+			"textColor": "${textDark}"
 		}
 	}
 }

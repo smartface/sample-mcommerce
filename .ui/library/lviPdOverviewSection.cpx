@@ -1,0 +1,50 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviPdOverviewSection .paddingHorizontal",
+			"hiddenComponent": true,
+			"id": "6d55-791a-b71a-4f87",
+			"props": {
+				"children": [
+					"28aa-e963-86a8-b8c2"
+				],
+				"name": "lviPdOverviewSection",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flProductDetailOverviewSection",
+			"hiddenComponent": false,
+			"id": "28aa-e963-86a8-b8c2",
+			"props": {
+				"children": [],
+				"name": "flProductDetailOverviewSection",
+				"parent": "6d55-791a-b71a-4f87",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flProductDetailOverviewSection",
+				"id": "837c-72f9-7c35-6e0b"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"testId": "eiVc3Wr-b",
+				"top": 0,
+				"usePageVariable": true
+			}
+		}
+	]
+}

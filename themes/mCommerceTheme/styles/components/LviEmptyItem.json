@@ -1,0 +1,41 @@
+{
+	".lviEmptyItem": {
+		"flexProps": {
+			"alignContent": "CENTER"
+		},
+		"&-flWrapper": {
+			"flexProps": {
+				"flexGrow": 1,
+				"flexDirection": "COLUMN",
+				"justifyContent": "CENTER",
+				"alignItems": "STRETCH",
+				"alignContent": "CENTER"
+			},
+			"height": null,
+			"testId": "FZihRVPmu",
+			"&-imgEmpty": {
+				"flexProps": {},
+				"height": 100,
+				"testId": "iK4kwHKmH",
+				"width": null,
+				"tintColor": "${textDark}"
+			},
+			"&-lblEmptyTitle": {
+				"flexProps": {},
+				"textColor": "${textDark}",
+				"font": {
+					"size": 17,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "SemiBold"
+				},
+				"testId": "ae8JtxRfc",
+				"textAlignment": "MIDCENTER",
+				"height": 30,
+				"marginTop": 15
+			}
+		},
+		"height": 350
+	}
+}

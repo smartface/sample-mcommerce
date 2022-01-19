@@ -1,0 +1,108 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flProductDetailOverviewSection",
+			"hiddenComponent": true,
+			"id": "837c-72f9-7c35-6e0b",
+			"props": {
+				"children": [
+					"4ec7-297a-dfa8-5aea"
+				],
+				"name": "flProductDetailOverviewSection",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": "27.33",
+				"top": "48.67"
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flProductDetailOverviewSection-flWrapper",
+			"id": "4ec7-297a-dfa8-5aea",
+			"props": {
+				"children": [
+					"c62a-6808-5bd5-fcdb",
+					"f588-c8af-9dc9-7dae",
+					"efa8-13e9-32b6-84c8"
+				],
+				"name": "flWrapper",
+				"parent": "837c-72f9-7c35-6e0b"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-label .flProductDetailOverviewSection-flWrapper-lblOverviewTitle",
+			"id": "c62a-6808-5bd5-fcdb",
+			"props": {
+				"children": [],
+				"name": "lblOverviewTitle",
+				"parent": "4ec7-297a-dfa8-5aea",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flPdNutritions",
+			"hiddenComponent": false,
+			"id": "f588-c8af-9dc9-7dae",
+			"props": {
+				"children": [],
+				"name": "flPdNutritions",
+				"parent": "4ec7-297a-dfa8-5aea",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flPdNutritions",
+				"id": "a90d-46f5-5bc0-4004"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"testId": "71uMqitC9",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-imgRouteArrow",
+			"id": "efa8-13e9-32b6-84c8",
+			"props": {
+				"children": [],
+				"name": "imgRouteArrow",
+				"parent": "4ec7-297a-dfa8-5aea",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

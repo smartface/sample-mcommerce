@@ -16,7 +16,8 @@
 			},
 			"type": "Page",
 			"userProps": {},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -28,7 +29,8 @@
 				"parent": "6dbb-e9d2-fde1-2008"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar",
@@ -43,10 +45,11 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgHomeSlider"
-			}
+			},
+			"degree": 1
 		},
 		{
-			"className": ".sf-imageView",
+			"className": ".sf-imageView #pgHomeSlider-imgSliderItem",
 			"id": "59bc-eb22-264a-cb56",
 			"props": {
 				"children": [],
@@ -56,13 +59,10 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "igIL-AhnY",
-				"usePageVariable": true
-			}
+				"usePageVariable": true,
+				"testId": "5CkMvLsN4"
+			},
+			"degree": 1
 		}
 	]
 }

@@ -1,117 +1,93 @@
 import PgHomeDesign from 'generated/pages/pgHome';
-import Image from '@smartface/native/ui/image';
-import View from '@smartface/native/ui/view';
 import store from '../store/index';
-import GviProductItem from 'components/GviProductItem';
-import LviHomeProducts from 'components/LviHomeProducts';
 import Application from '@smartface/native/application';
-import Color from '@smartface/native/ui/color';
-import PgHomeSlider from './pgHomeSlider';
-import SwipeView from '@smartface/native/ui/swipeview';
-import System from '@smartface/native/device/system';
+import * as ListViewItems from 'lib/listViewItemTypes';
+import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
+import { NativeStackRouter } from '@smartface/router';
+import { HomeShowcases, Product } from 'types';
+
+type Processor =
+    | ListViewItems.ProcessorTypes.ILviHomeProducts
+    | ListViewItems.ProcessorTypes.ILviHomeSlider
+    | ListViewItems.ProcessorTypes.ILviShowcaseHeader;
 
 export default class PgHome extends PgHomeDesign {
-  router: any;
-  showcases: any;
-  constructor() {
-    super();
-    // Overrides super.onShow method
-    this.onShow = onShow.bind(this, this.onShow.bind(this));
-    // Overrides super.onLoad method
-    this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
-    // this.lblOffer.text = global.lang['exclusiveOffer'];
-    // this.lblOfferSeeAll.text = global.lang['seeAll'];
-    // this.lblBestSeller.text = global.lang['bestSeller'];
-    // this.lblBestSellerSeeAll.text = global.lang['seeAll'];
-  }
-  initSLider() {
-    this.flHomeSlider.removeAll();
-    const swipeView = new SwipeView({
-      page: this,
-      flexGrow: 1,
-      pages: ['images://apple.png', 'images://banana.png'].map((image: string) => PgHomeSlider({ image })),
-      onPageSelected: (index: number) => {
-        console.log('index', index);
-        // this.indicatorCurrentIndex = index;
-      },
-    });
-    this.flHomeSlider.addChild(swipeView, 'swipeView', '.grow-relative');
-    if (System.OS === System.OSType.IOS) {
-      this.flHomeSlider.applyLayout();
+    router: NativeStackRouter;
+    data: Processor[];
+    showcases: HomeShowcases[];
+    constructor() {
+        super();
+        this.onShow = onShow.bind(this, this.onShow.bind(this));
+        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
     }
-  }
-  refreshShowcaseProductsGrid() {
-    this.showcases = store.getState().showcaseProducts;
-    this.listShowcases.itemCount = this.showcases.length;
-    this.listShowcases.refreshData();
-  }
-  initShowcaseProductsGrid() {
-    // this.listShowcases.rowHeight = 300;
-    this.listShowcases.onRowHeight = (index) => LviHomeProducts.getHeight();
-    this.listShowcases.onRowBind = (listViewItem: LviHomeProducts, index: number) => {
-      listViewItem.showcaseTitle = this.showcases[index].showcaseTitle;
-      listViewItem.showcaseLinkText = this.showcases[index].showcaseLinkText;
-      listViewItem.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
-        GridViewItem.itemTitle = this.showcases[index].products[productIndex].name;
-        GridViewItem.itemDesc = this.showcases[index].products[productIndex].description;
-        GridViewItem.itemImage = this.showcases[index].products[productIndex].image;
-        GridViewItem.itemPrice = `$${this.showcases[index].products[productIndex].price}`;
+    initListView() {
+        this.lvMain.onRowType = onRowType.bind(this);
+        this.lvMain.onRowHeight = onRowHeight.bind(this);
+        this.lvMain.onRowCreate = onRowCreate.bind(this);
+        this.lvMain.onRowBind = onRowBind.bind(this);
+        this.lvMain.refreshEnabled = false;
+    }
+    refreshListView() {
+        this.data = this.processor();
+        this.lvMain.itemCount = this.data.length;
+        this.lvMain.refreshData();
+    }
+    processor(): Processor[] {
+        this.showcases = store.getState().showcaseProducts;
 
-        listViewItem.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
-          this.router.push('/btb/tab1/productDetail', {
-            productId: this.showcases[index].products[productIndex].id,
-            productName: this.showcases[index].products[productIndex].name,
-            productPrice: this.showcases[index].products[productIndex].price,
-            productDescription: this.showcases[index].products[productIndex].description,
-            productImg: this.showcases[index].products[productIndex].image,
-          });
-        };
-        GridViewItem.onActionClick = () => {
-          GridViewItem.initIndicator();
-          GridViewItem.toggleIndicator(true);
-          store.dispatch({
-            type: 'ADD_TO_BASKET',
-            payload: {
-              data: {
-                product: this.showcases[index].products[productIndex],
-                count: 1,
-              },
-            },
-          });
-          setTimeout(() => {
-            GridViewItem.toggleIndicator(false);
-          }, 500);
-        };
-      };
-      listViewItem.gvProducts.itemCount = this.showcases[index].products.length;
-    };
-  }
+        const processorItems = [
+            ListViewItems.getLviHomeSlider({
+                images: ['images://firstbanner.png', 'images://bannerone.png']
+            })
+        ];
+        this.showcases.forEach((showcase) => {
+            processorItems.push(
+                ListViewItems.getLviShowcaseHeader({
+                    showcaseTitle: showcase.showcaseTitle,
+                    showcaseLinkText: showcase.showcaseLinkText,
+                    onSeeAllClick: () => {
+                        this.router.push('/btb/tab1/categoryDetail', {
+                            dataId: showcase.showcaseId,
+                            title: showcase.showcaseTitle,
+                            isShowcase: true
+                        });
+                    }
+                })
+            );
+            if (showcase.categories) {
+                processorItems.push(
+                    ListViewItems.getLviHomeCategories({
+                        items: showcase.categories
+                    })
+                );
+            }
+            processorItems.push(
+                ListViewItems.getLviHomeProducts({
+                    items: showcase.products,
+                    onProductClick: (product) => {
+                        this.router.push('/btb/tab1/productDetail', {
+                            productId: product.id,
+                            productName: product.name,
+                            productPrice: product.price,
+                            productDescription: product.description,
+                            productImg: product.image
+                        });
+                    }
+                })
+            );
+        });
+
+        return processorItems;
+    }
 }
 
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
 function onShow(this: PgHome, superOnShow: () => void) {
-  superOnShow();
-  this.refreshShowcaseProductsGrid();
-  Application.statusBar.visible = true;
+    superOnShow();
 }
 
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
 function onLoad(this: PgHome, superOnLoad: () => void) {
-  superOnLoad();
-  this.initShowcaseProductsGrid();
-  this.initSLider();
-  this.headerBar.title = global.lang.homeHeader;
-  this.headerBar.android.elevation = 0;
-  //   this.scrollView1.autoSizeEnabled = true;
-  //   this.scrollView1.layout.applyLayout;
+    superOnLoad();
+    this.headerBar.title = global.lang.homeHeader;
+    this.initListView();
+    this.refreshListView();
 }

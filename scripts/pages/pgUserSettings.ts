@@ -2,62 +2,78 @@ import Application from '@smartface/native/application';
 import Data from '@smartface/native/global/data';
 import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
-import View from '@smartface/native/ui/view';
+import { CURRENT_THEME } from 'constants/deviceVariables.json';
+import * as ListViewItems from 'lib/listViewItemTypes';
+import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
+import { getLviRow1LineLarge } from 'lib/listViewItemTypes';
 import PgUserSettingsDesign from 'generated/pages/pgUserSettings';
+import { ThemeService } from 'theme';
+import Image from '@smartface/native/ui/image';
+import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { NativeStackRouter } from '@smartface/router';
+const { image } = getCombinedStyle('.sf-headerBar.close');
 
 export default class PgUserSettings extends PgUserSettingsDesign {
-    router: any
-    leftItem: HeaderBarItem
-	constructor() {
-		super();
-		// Overrides super.onShow method
-		this.onShow = onShow.bind(this, this.onShow.bind(this));
-		// Overrides super.onLoad method
-		this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
-        this.lblLanguage.text = global.lang.langText
-        this.lblEnglish.text = global.lang.english
-        this.lblTurkish.text = global.lang.turkish
-
-        this.lblTheme.text = global.lang.themeText
-        this.lblLight.text = global.lang.lightTheme
-        this.lblDark.text = global.lang.darkTheme
-
-        this.lblTurkish.on(View.Events.Touch, () => {
-            Data.setStringVariable('language', 'tr');
-            Application.restart();
-        })
-
-        this.lblEnglish.on(View.Events.Touch, () => {
-            Data.setStringVariable('language', 'en');
-            Application.restart();
-        })
-	}
-    addLeftItem() {
-        this.leftItem = new HeaderBarItem();
-        this.leftItem.image = "images://backbtn.png";
-        this.leftItem.color = Color.BLACK;
-        this.headerBar.setLeftItem(this.leftItem);
+    router: NativeStackRouter;
+    private data: ReturnType<typeof getLviRow1LineLarge>[];
+    private __isBusy = false;
+    leftItem: HeaderBarItem;
+    constructor() {
+        super();
+        this.onShow = onShow.bind(this, this.onShow.bind(this));
+        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    }
+    initListView() {
+        this.lvMain.refreshEnabled = false;
+        this.lvMain.scrollEnabled = false;
+        this.lvMain.onRowCreate = onRowCreate.bind(this);
+        this.lvMain.onRowHeight = onRowHeight.bind(this);
+        this.lvMain.onRowType = onRowType.bind(this);
+        this.lvMain.onRowBind = onRowBind.bind(this);
+    }
+    refreshListView() {
+        const themeItem = getLviRow1LineLarge({
+            image: 'images://ayarlar_karanlikmod.png',
+            title: global.lang.changeTheme,
+            showSeparator: true,
+            themeSwitch: true,
+            onTouchEnded: () => {
+                if (this.__isBusy) {
+                    return;
+                }
+                this.__isBusy = true;
+                setTimeout(() => {
+                    const currentTheme = Data.getStringVariable(CURRENT_THEME);
+                    const targetTheme = currentTheme === 'mCommerceDarkTheme' ? 'mCommerceTheme' : 'mCommerceDarkTheme';
+                    ThemeService.changeTheme(targetTheme);
+                    Data.setStringVariable(CURRENT_THEME, targetTheme);
+                    setTimeout(() => {
+                        this.__isBusy = false;
+                    }, 500);
+                }, 100);
+            }
+        });
+        const biometricItem = getLviRow1LineLarge({
+            image: true ? 'images://icon_faceid.png' : 'images://icon_fingerprint.png',
+            title: 'Face Recognition',
+            showSeparator: true,
+            enableSwitch: true,
+            switchToggle: true,
+            themeSwitch: false
+        });
+        this.data = [themeItem, biometricItem];
+        this.lvMain.itemCount = this.data.length;
+        this.lvMain.refreshData();
     }
 }
 
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
 function onShow(this: PgUserSettings, superOnShow: () => void) {
-	superOnShow();
-    this.headerBar.title = global.lang.settingsHeader
+    superOnShow();
+    this.headerBar.title = global.lang.settingsHeader;
+    this.refreshListView();
 }
 
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
 function onLoad(this: PgUserSettings, superOnLoad: () => void) {
-	superOnLoad();
-    this.addLeftItem()
+    superOnLoad();
+    this.initListView();
 }

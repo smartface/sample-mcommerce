@@ -1,15 +1,14 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page.backgroundMain .paddingHorizontal",
 			"id": "e27f-743b-23a5-ea3b",
 			"initialized": true,
 			"props": {
 				"children": [
 					"5e52-8223-5aed-6626",
 					"23ce-fa2e-9d68-e404",
-					"e97d-0545-2a49-4ba2",
-					"4dca-3168-2b63-80c9"
+					"e97d-0545-2a49-4ba2"
 				],
 				"name": "pgFavorites",
 				"orientation": "PORTRAIT",
@@ -32,7 +31,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar #pgFavorites-headerBar",
 			"id": "23ce-fa2e-9d68-e404",
 			"props": {
 				"children": [],
@@ -41,89 +40,20 @@
 				"parent": "e27f-743b-23a5-ea3b"
 			},
 			"type": "HeaderBar",
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"visible": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-listView .grow",
+			"className": ".sf-listView .grow .lvMain",
 			"id": "e97d-0545-2a49-4ba2",
 			"props": {
-				"children": [
-					"f7f5-9741-1106-5278"
-				],
-				"name": "listView1",
+				"children": [],
+				"name": "lvMain",
 				"parent": "e27f-743b-23a5-ea3b",
 				"usePageVariable": true
 			},
 			"type": "ListView",
 			"userProps": {
-				"testId": "wHnvwrM2N",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-listViewItem",
-			"hiddenComponent": false,
-			"id": "f7f5-9741-1106-5278",
-			"props": {
-				"children": [],
-				"name": "lviFavorites",
-				"parent": "e97d-0545-2a49-4ba2"
-			},
-			"source": {
-				"page": "__library__",
-				"type": "lviFavorites",
-				"id": "844f-778d-a88e-c085"
-			},
-			"type": "ListViewItem",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"height": 160,
-				"left": 0,
-				"testId": "jFkvviy6q",
-				"top": 0,
-				"width": 392
-			}
-		},
-		{
-			"className": ".sf-flexLayout .sticky .padding",
-			"id": "4dca-3168-2b63-80c9",
-			"props": {
-				"children": [
-					"838d-f202-ddc8-2b87"
-				],
-				"name": "flFavoritesBottomButton",
-				"parent": "e27f-743b-23a5-ea3b",
-				"usePageVariable": true
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"testId": "exfK66zt8",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-button .sf-button-main",
-			"id": "838d-f202-ddc8-2b87",
-			"props": {
-				"children": [],
-				"name": "btnAddAllToCart",
-				"parent": "4dca-3168-2b63-80c9",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"testId": "GsVkZ-Ujf",
+				"testId": "MfpZK07sE",
 				"usePageVariable": true
 			}
 		}

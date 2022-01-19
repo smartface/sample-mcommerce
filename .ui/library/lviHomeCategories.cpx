@@ -1,0 +1,57 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviHomeCategories",
+			"hiddenComponent": true,
+			"id": "0892-218d-bc64-b1ba",
+			"props": {
+				"children": [
+					"182f-b6b2-5123-0a73"
+				],
+				"name": "lviHomeCategories",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-gridView .lviHomeCategories-gvCategories",
+			"id": "182f-b6b2-5123-0a73",
+			"props": {
+				"children": [
+					"3b2b-3d8e-e680-fee5"
+				],
+				"name": "gvCategories",
+				"parent": "0892-218d-bc64-b1ba",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "GridView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-gridViewItem",
+			"hiddenComponent": false,
+			"id": "3b2b-3d8e-e680-fee5",
+			"props": {
+				"children": [],
+				"name": "gviHomeCategoryItem",
+				"parent": "182f-b6b2-5123-0a73"
+			},
+			"source": {
+				"page": "__library__",
+				"type": "gviHomeCategoryItem",
+				"id": "c0db-5053-33dd-bd4d"
+			},
+			"type": "GridViewItem",
+			"userProps": {}
+		}
+	]
+}

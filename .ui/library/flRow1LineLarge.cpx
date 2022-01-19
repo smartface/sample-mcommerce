@@ -1,0 +1,209 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flRow1LineLarge",
+			"hiddenComponent": true,
+			"id": "e973-397b-f904-99f7",
+			"props": {
+				"children": [
+					"5841-fe1f-39fc-d234",
+					"0aab-7a98-5601-04c5",
+					"fb03-349c-5223-4b75",
+					"93aa-a396-0a44-b14f",
+					"cc00-0394-62f0-4b0d"
+				],
+				"name": "flRow1LineLarge",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flRow1LineLarge-flImageWrapper",
+			"id": "5841-fe1f-39fc-d234",
+			"props": {
+				"children": [
+					"5b96-bc28-ee90-a5ff"
+				],
+				"name": "flImageWrapper",
+				"parent": "e973-397b-f904-99f7",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView .flRow1LineLarge-flImageWrapper-imgIcon",
+			"id": "5b96-bc28-ee90-a5ff",
+			"props": {
+				"children": [],
+				"name": "imgIcon",
+				"parent": "5841-fe1f-39fc-d234",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flRow1LineLarge-lblTitle",
+			"id": "0aab-7a98-5601-04c5",
+			"props": {
+				"children": [],
+				"name": "lblTitle",
+				"parent": "e973-397b-f904-99f7",
+				"text": "Choose Theme",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "Choose Theme",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRow1LineLarge-flSwitch",
+			"id": "fb03-349c-5223-4b75",
+			"props": {
+				"children": [
+					"55bc-eb21-04f7-f745",
+					"1bec-639a-b7be-6a7e"
+				],
+				"name": "flSwitch",
+				"parent": "e973-397b-f904-99f7",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRow1LineLarge-flSwitch-flLeft",
+			"id": "55bc-eb21-04f7-f745",
+			"props": {
+				"children": [
+					"5f81-e462-8e3a-6c05"
+				],
+				"name": "flLeft",
+				"parent": "fb03-349c-5223-4b75",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView .flRow1LineLarge-flSwitch-flLeft-imgDark",
+			"id": "5f81-e462-8e3a-6c05",
+			"props": {
+				"children": [],
+				"name": "imgDark",
+				"parent": "55bc-eb21-04f7-f745",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRow1LineLarge-flSwitch-flRight",
+			"id": "1bec-639a-b7be-6a7e",
+			"props": {
+				"children": [
+					"8a2a-75bc-e569-c5ee"
+				],
+				"name": "flRight",
+				"parent": "fb03-349c-5223-4b75",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView .flRow1LineLarge-flSwitch-flRight-imgLight",
+			"id": "8a2a-75bc-e569-c5ee",
+			"props": {
+				"children": [],
+				"name": "imgLight",
+				"parent": "1bec-639a-b7be-6a7e",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .seperator",
+			"hiddenComponent": false,
+			"id": "93aa-a396-0a44-b14f",
+			"props": {
+				"children": [],
+				"name": "seperator",
+				"parent": "e973-397b-f904-99f7",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-switch .flRow1LineLarge-sw .notVisible",
+			"id": "cc00-0394-62f0-4b0d",
+			"props": {
+				"children": [],
+				"name": "sw",
+				"parent": "e973-397b-f904-99f7",
+				"toggle": true,
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Switch",
+			"userProps": {
+				"toggle": true,
+				"usePageVariable": true
+			}
+		}
+	]
+}

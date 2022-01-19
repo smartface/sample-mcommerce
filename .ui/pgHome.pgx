@@ -1,14 +1,13 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page .paddingHorizontal",
 			"id": "0cc7-c9f0-ae49-184b",
 			"initialized": true,
 			"props": {
 				"children": [
 					"9eee-8878-9db7-1662",
 					"4ab0-4431-3107-8aa1",
-					"6413-7fc0-a7ae-e9f6",
 					"d4e5-3968-92a3-8db0"
 				],
 				"name": "pgHome",
@@ -20,7 +19,8 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -33,10 +33,11 @@
 				"parent": "0cc7-c9f0-ae49-184b"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar.main",
 			"hiddenComponent": false,
 			"id": "4ab0-4431-3107-8aa1",
 			"props": {
@@ -46,84 +47,24 @@
 				"parent": "0cc7-c9f0-ae49-184b"
 			},
 			"type": "HeaderBar",
-			"userProps": {
-				"backgroundColor": "rgba( 255, 255, 255, 1 )",
-				"visible": true
-			}
+			"userProps": {},
+			"degree": 1
 		},
 		{
-			"className": ".sf-flexLayout",
-			"id": "6413-7fc0-a7ae-e9f6",
-			"props": {
-				"children": [],
-				"name": "flHomeSlider",
-				"parent": "0cc7-c9f0-ae49-184b",
-				"usePageVariable": true
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"height": 120,
-				"testId": "nxOjYfT6E",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-listView",
+			"className": ".sf-listView .grow",
 			"id": "d4e5-3968-92a3-8db0",
 			"props": {
-				"children": [
-					"09f1-9590-a639-adb5"
-				],
-				"name": "listShowcases",
+				"children": [],
+				"name": "lvMain",
 				"parent": "0cc7-c9f0-ae49-184b",
 				"usePageVariable": true
 			},
 			"type": "ListView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 3
-				},
-				"height": null,
-				"testId": "Z--GuhP9L",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-listViewItem",
-			"hiddenComponent": false,
-			"id": "09f1-9590-a639-adb5",
-			"props": {
-				"children": [],
-				"name": "lviHomeProducts",
-				"parent": "d4e5-3968-92a3-8db0"
+				"usePageVariable": true,
+				"testId": "nA6AArFYt"
 			},
-			"source": {
-				"page": "__library__",
-				"type": "lviHomeProducts",
-				"id": "7886-61eb-1fbd-6516"
-			},
-			"type": "ListViewItem",
-			"userProps": {
-				"flex": {
-					"alignItems": 4,
-					"justifyContent": 1,
-					"alignContent": 2,
-					"flexWrap": 0,
-					"positionType": 0
-				},
-				"flexProps": {
-					"alignItems": "STRETCH",
-					"justifyContent": "CENTER",
-					"alignContent": "CENTER",
-					"flexWrap": "NOWRAP",
-					"positionType": "RELATIVE"
-				},
-				"height": "329.47",
-				"left": 0,
-				"testId": "Sct2y2MyI",
-				"top": 0,
-				"width": "383.16"
-			}
+			"degree": 1
 		}
 	]
 }

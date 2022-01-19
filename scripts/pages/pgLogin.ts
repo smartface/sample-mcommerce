@@ -1,65 +1,61 @@
 import PgLoginDesign from 'generated/pages/pgLogin';
-import ImageView from '@smartface/native/ui/imageview';
 import View from '@smartface/native/ui/view';
 import store from 'store/index';
-import Application from '@smartface/native/application';
-import System from '@smartface/native/device/system';
-import Color from '@smartface/native/ui/color';
+import { NativeStackRouter } from '@smartface/router';
 export default class PgLogin extends PgLoginDesign {
-  router: any;
-  constructor() {
-    imgShow: ImageView;
-    super();
-    // Overrides super.onShow method
-    this.onShow = onShow.bind(this, this.onShow.bind(this));
-    // Overrides super.onLoad method
-    this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    router: NativeStackRouter;
+    constructor() {
+        super();
+        // Overrides super.onShow method
+        this.onShow = onShow.bind(this, this.onShow.bind(this));
+        // Overrides super.onLoad method
+        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
-    this.lblRouteSignUp.on(View.Events.Touch, () => {
-      //this.router.push('/pages/pgSignUp')
-      this.router.push('/pages/pgSignUp');
-    });
-    this.btnLogIn.on(View.Events.Touch, () => {
-      this.initUserLogin();
-    });
-    this.lblTitle.text = global.lang.login;
-    this.lblText.text = global.lang.loginSubText;
-    this.lblForgotPassword.text = global.lang.forgotPassword;
-    this.btnLogIn.text = global.lang.login;
+        this.lblRouteSignUp.on(View.Events.Touch, () => {
+            this.router.push('/pages/pgSignUp');
+        });
+        this.btnLogIn.on(View.Events.Touch, () => {
+            this.initUserLogin();
+        });
+        this.lblTitle.text = global.lang.login;
+        this.lblText.text = global.lang.loginSubText;
+        this.lblForgotPassword.text = global.lang.forgotPassword;
+        this.btnLogIn.text = global.lang.login;
 
-    this.lblLeft.text = global.lang.donthaveanaccount;
-    this.lblRouteSignUp.text = global.lang.signup;
-  }
-  initMaterialTextBoxes() {
-    this.mtbLogin.options = {
-      hint: global.lang.email,
-    };
-    this.mtbPassword.options = {
-      hint: global.lang.password,
-    };
-    this.mtbPassword.materialTextBox.isPassword = true;
-  }
-  initUserLogin() {
-    this.mtbLogin.materialTextBox.text = 'smartface';
-    this.mtbPassword.materialTextBox.text = '1234';
-
-    if (this.mtbLogin.materialTextBox.text && this.mtbLogin.materialTextBox.text !== '' && this.mtbPassword.materialTextBox.text && this.mtbPassword.materialTextBox.text !== '') {
-      const found = store.getState().users.find((usr) => usr.email === this.mtbLogin.materialTextBox.text);
-      console.log('login found usr', found);
-      if (found) {
-        const isPasswordTrue = found.password == this.mtbPassword.materialTextBox.text;
-        if (isPasswordTrue) {
-          store.dispatch({
-            type: 'SET_CURRENT_USER',
-            payload: {
-              data: found,
-            },
-          });
-          this.router.push('/btb/tab1/home');
-        }
-      }
+        this.lblLeft.text = global.lang.donthaveanaccount;
+        this.lblRouteSignUp.text = global.lang.signup;
     }
-  }
+    initMaterialTextBoxes() {
+        this.mtbLogin.options = {
+            hint: global.lang.email
+        };
+        this.mtbPassword.options = {
+            hint: global.lang.password
+        };
+        this.mtbPassword.materialTextBox.isPassword = true;
+    }
+    initUserLogin() {
+        if (
+            this.mtbLogin.materialTextBox.text &&
+            this.mtbLogin.materialTextBox.text !== '' &&
+            this.mtbPassword.materialTextBox.text &&
+            this.mtbPassword.materialTextBox.text !== ''
+        ) {
+            const found = store.getState().users.find((usr) => usr.email === this.mtbLogin.materialTextBox.text);
+            if (found) {
+                const isPasswordTrue = found.password == this.mtbPassword.materialTextBox.text;
+                if (isPasswordTrue) {
+                    store.dispatch({
+                        type: 'SET_CURRENT_USER',
+                        payload: {
+                            data: found
+                        }
+                    });
+                    this.router.dismiss();
+                }
+            }
+        }
+    }
 }
 
 /**
@@ -69,11 +65,7 @@ export default class PgLogin extends PgLoginDesign {
  * @param {Object} parameters passed from Router.go function
  */
 function onShow(this: PgLogin, superOnShow: () => void) {
-  superOnShow();
-  if (System.OS !== 'iOS') {
-    Application.statusBar.visible = true;
-    Application.statusBar.backgroundColor = Color.WHITE;
-  }
+    superOnShow();
 }
 
 /**
@@ -82,9 +74,7 @@ function onShow(this: PgLogin, superOnShow: () => void) {
  * @param {function} superOnLoad super onLoad function
  */
 function onLoad(this: PgLogin, superOnLoad: () => void) {
-  superOnLoad();
-  this.headerBar.title = global.lang.loginHeader;
-  this.headerBar.android.elevation = 0;
-  this.initMaterialTextBoxes();
-  this.initUserLogin();
+    superOnLoad();
+    this.headerBar.title = global.lang.loginHeader;
+    this.initMaterialTextBoxes();
 }

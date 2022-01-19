@@ -1,0 +1,66 @@
+{
+	".flProductDetailInfoSection": {
+		"flexProps": {},
+		"height": 100,
+		"testId": "ADIYA6Y9-",
+		"&-flDescTitleAndArrow": {
+			"flexProps": {
+				"flexGrow": 1,
+				"flexDirection": "ROW"
+			},
+			"height": null,
+			"testId": "F8p6Ga7av",
+			"&-lblTitle": {
+				"textColor": "${textDark}",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"size": 16,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "Bold"
+				},
+				"height": 50,
+				"testId": "dNO2DWoOw"
+			},
+			"&-flArrow": {
+				"height": 50,
+				"marginBottom": null,
+				"marginTop": null,
+				"paddingBottom": 1,
+				"paddingTop": 1,
+				"testId": "J55DGbkIj",
+				"width": 50,
+				"&-imgArrow": {
+					"flexProps": {
+						"flexGrow": 1
+					},
+					"height": null,
+					"imageFillType": "ASPECTFIT",
+					"testId": "6rLGeOgQJ"
+				}
+			}
+		},
+		"&-flDetail": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"height": null,
+			"testId": "Yt38negsX",
+			"&-lblInfo": {
+				"textColor": "${textLight}",
+				"ellipsizeMode": "END",
+				"font": {
+					"size": 13,
+					"bold": true,
+					"italic": false,
+					"family": "Nunito",
+					"style": "SemiBold"
+				},
+				"testId": "hvB8_Kw-3"
+			}
+		}
+	}
+}

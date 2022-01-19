@@ -1,0 +1,41 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviHomeSlider",
+			"hiddenComponent": true,
+			"id": "071a-98b6-5ee9-08b0",
+			"props": {
+				"children": [
+					"0257-fd8a-45b2-a997"
+				],
+				"name": "lviHomeSlider",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flHomeSlider",
+			"hiddenComponent": false,
+			"id": "0257-fd8a-45b2-a997",
+			"props": {
+				"children": [],
+				"name": "flHomeSlider",
+				"parent": "071a-98b6-5ee9-08b0",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flHomeSlider",
+				"id": "7538-8405-11be-9c6f"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

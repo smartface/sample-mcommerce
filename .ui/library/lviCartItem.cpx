@@ -18,9 +18,8 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"left": "3.06",
-				"testId": "2CR5Jw8Wo",
-				"top": "71.43"
+				"left": 6.19,
+				"top": 165.98
 			}
 		},
 		{
@@ -57,7 +56,6 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"image": "appledetail.png",
 				"usePageVariable": true
 			}
 		},

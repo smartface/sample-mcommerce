@@ -1,0 +1,118 @@
+{
+	"components": [
+		{
+			"className": ".sf-page #pgCategoryDetail",
+			"id": "7dd3-eb16-f5e0-3035",
+			"initialized": true,
+			"props": {
+				"children": [
+					"86bf-5dec-4deb-0ed6",
+					"319e-211d-a87b-8d37",
+					"a0cc-d3bc-d6af-bb46"
+				],
+				"name": "pgCategoryDetail",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "86bf-5dec-4deb-0ed6",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "7dd3-eb16-f5e0-3035"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "319e-211d-a87b-8d37",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "7dd3-eb16-f5e0-3035"
+			},
+			"type": "HeaderBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .grow",
+			"hiddenComponent": false,
+			"id": "a0cc-d3bc-d6af-bb46",
+			"props": {
+				"children": [
+					"e16d-dce9-f199-d74b",
+					"69ce-0e64-d3ad-b208"
+				],
+				"name": "flProductContainer",
+				"parent": "7dd3-eb16-f5e0-3035"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-gridView #pgCategoryDetail-gvProducts",
+			"id": "e16d-dce9-f199-d74b",
+			"props": {
+				"children": [
+					"bb65-3945-fe9c-21ae"
+				],
+				"name": "gvProducts",
+				"parent": "a0cc-d3bc-d6af-bb46",
+				"usePageVariable": true
+			},
+			"type": "GridView",
+			"userProps": {
+				"testId": "R6hFXByol",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-gridViewItem .gviProductItem",
+			"hiddenComponent": false,
+			"id": "bb65-3945-fe9c-21ae",
+			"props": {
+				"children": [],
+				"name": "gviProductItem",
+				"parent": "e16d-dce9-f199-d74b"
+			},
+			"source": {
+				"page": "__library__",
+				"type": "gviProductItem",
+				"id": "7208-a5eb-9be3-319f"
+			},
+			"type": "GridViewItem",
+			"userProps": {
+				"height": 250
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flEmptyItem #pgCategoryDetail-emptyItem",
+			"hiddenComponent": false,
+			"id": "69ce-0e64-d3ad-b208",
+			"props": {
+				"children": [],
+				"name": "flEmptyItem",
+				"parent": "a0cc-d3bc-d6af-bb46",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flEmptyItem",
+				"id": "5b47-f50d-f63a-1309"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "KOjzc1lsh",
+				"usePageVariable": true
+			}
+		}
+	]
+}

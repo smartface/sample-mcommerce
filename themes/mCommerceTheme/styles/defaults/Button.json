@@ -15,7 +15,7 @@
 			"bold": true,
 			"italic": false,
 			"family": "Nunito",
-            "style": "bold"
+			"style": "bold"
 		},
 		"flexProps": {
 			"positionType": "RELATIVE",
@@ -51,56 +51,56 @@
 		"textAlignment": "MIDCENTER",
 		"font": {
 			"family": "FontAwesome5FreeSolid",
-            "style": null,
-            "bold": false,
-            "italic": false,
-            "size": 20
+			"style": null,
+			"bold": false,
+			"italic": false,
+			"size": 20
 		},
 		"flexProps": {
 			"positionType": "RELATIVE",
 			"alignSelf": "AUTO"
 		}
 	},
-    ".sf-button-addToBasket-countplus": {
+	".sf-button-addToBasket-countplus": {
 		"width": 45,
 		"height": 45,
 		"touchEnabled": true,
 		"visible": true,
-		"backgroundColor": "${white}",
+		"backgroundColor": "${backgroundMain}",
 		"borderRadius": 17,
-        "borderWidth": 1,
-        "borderColor": "${grayBorder}",
+		"borderWidth": 1,
+		"borderColor": "${grayBorder}",
 		"textColor": "${green}",
 		"textAlignment": "MIDCENTER",
 		"font": {
 			"family": "FontAwesome5FreeSolid",
-            "style": null,
-            "bold": false,
-            "italic": false,
-            "size": 17
+			"style": null,
+			"bold": false,
+			"italic": false,
+			"size": 17
 		},
 		"flexProps": {
 			"positionType": "RELATIVE",
 			"alignSelf": "AUTO"
 		}
 	},
-    ".sf-button-addToBasket-countminus": {
+	".sf-button-addToBasket-countminus": {
 		"width": 45,
 		"height": 45,
 		"touchEnabled": true,
 		"visible": true,
-		"backgroundColor": "${white}",
+		"backgroundColor": "${backgroundMain}",
 		"borderRadius": 17,
-        "borderColor": "${grayLightBorder}",
-        "borderWidth": 1,
+		"borderColor": "${grayLightBorder}",
+		"borderWidth": 1,
 		"textColor": "${grayTextColor}",
 		"textAlignment": "MIDCENTER",
 		"font": {
 			"family": "FontAwesome5FreeSolid",
-            "style": null,
-            "bold": false,
-            "italic": false,
-            "size": 17
+			"style": null,
+			"bold": false,
+			"italic": false,
+			"size": 17
 		},
 		"flexProps": {
 			"positionType": "RELATIVE",
@@ -146,8 +146,8 @@
 			"backgroundColor": "#4F8A10"
 		}
 	},
-    ".sf-button-logout": {
-        "width": null,
+	".sf-button-logout": {
+		"width": null,
 		"height": 67,
 		"touchEnabled": true,
 		"visible": true,
@@ -162,13 +162,13 @@
 			"bold": true,
 			"italic": false,
 			"family": "Nunito",
-            "style": "bold"
+			"style": "bold"
 		},
 		"flexProps": {
 			"positionType": "RELATIVE",
 			"alignSelf": "AUTO"
 		}
-    },
+	},
 	".sf": {
 		"&-button": {
 			"&-addToBasket": {

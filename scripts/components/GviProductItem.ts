@@ -3,68 +3,74 @@ import Button from '@smartface/native/ui/button';
 import Image from '@smartface/native/ui/image';
 import View from '@smartface/native/ui/view';
 import GviProductItemDesign from 'generated/my-components/GviProductItem';
+import setVisibility from 'lib/setVisibility';
 import store from 'store';
 
 export default class GviProductItem extends GviProductItemDesign {
-  pageName?: string | undefined;
-  myActivityIndicator: ActivityIndicator;
-  constructor(props?: any, pageName?: string) {
-    // Initalizes super class for this scope
-    super(props);
-    this.pageName = pageName;
-  }
-  initIndicator() {
-    this.myActivityIndicator = new ActivityIndicator();
-    this.myActivityIndicator.android.zIndex = this.gviProductItemButton.android.zIndex + 1;
-    this.gviProductItemPriceButtonWrapper.addChild(this.myActivityIndicator, 'myActivityIndicator', '.sf-activityIndicator', {
-      width: 30,
-      height: 30,
-      right: 13,
-      visible: true,
-      flexProps: {
-        positionType: 'ABSOLUTE',
-      },
-      color: '#181725',
-    });
-  }
-  toggleIndicator(toggle: boolean): void {
-    console.log('toggle', toggle);
-    //@ts-ignore
-    this.myActivityIndicator.dispatch({
-      type: 'updateUserStyle',
-      userStyle: {
-        visible: toggle,
-      },
-    });
-  }
-  get onActionClick(): Button['onTouch'] {
-    return this.gviProductItemButton.onTouch;
-  }
-  set onActionClick(value: Button['onTouch']) {
-    this.gviProductItemButton.onTouch = value;
-  }
-  get itemTitle(): string {
-    return this.gviLblProductItemTitle.text;
-  }
-  set itemTitle(value: string) {
-    this.gviLblProductItemTitle.text = value;
-  }
-  get itemPrice(): any {
-    return this.gviProductItemPrice.text;
-  }
-  set itemPrice(value: any) {
-    this.gviProductItemPrice.text = value;
-  }
-  get itemImage(): string | Image {
-    return this.gviProductItemImg.image;
-  }
-  set itemImage(value: string | Image) {
-    this.gviProductItemImg.image = Image.createFromFile(`images://${value}`);
-  }
-  get itemDesc(): string {
-    return this.gviProductItemDesc.text;
-  }
-  set itemDesc(value: string) {
-    this.gviProductItemDesc.text = value;
-  }
+    __onActionClick: (...args) => void;
+    pageName?: string | undefined;
+    myActivityIndicator: ActivityIndicator;
+    constructor(props?: any, pageName?: string) {
+        // Initalizes super class for this scope
+        super(props);
+        this.pageName = pageName;
+
+        // this.flProductItem.btnAddToBasket.on(Button.Events.TouchEnded, () => {
+        //     this.__onActionClick && this.__onActionClick();
+        // });
+    }
+    initIndicator() {
+        this.flProductItem.initIndicator();
+    }
+    toggleIndicator(toggle: boolean): void {
+        this.flProductItem.toggleIndicator(toggle);
+    }
+    get onActionClick(): (...args) => void {
+        return this.flProductItem.onActionClick;
+    }
+    set onActionClick(value: (...args) => void) {
+        this.flProductItem.onActionClick = value;
+    }
+    get itemTitle(): string {
+        return this.flProductItem.itemTitle;
+    }
+    set itemTitle(value: string) {
+        this.flProductItem.itemTitle = value;
+    }
+    get itemPrice(): any {
+        return this.flProductItem.itemPrice.text;
+    }
+    set itemPrice(value: any) {
+        this.flProductItem.itemPrice = value;
+    }
+    get itemReview(): any {
+        return this.flProductItem.itemReview;
+    }
+    set itemReview(value: any) {
+        this.flProductItem.itemReview = value;
+    }
+    get itemDiscountPrice(): any {
+        return this.flProductItem.itemDiscountPrice.text;
+    }
+    set itemDiscountPrice(value: any) {
+        this.flProductItem.itemDiscountPrice = value;
+    }
+    get itemTag(): string {
+        return this.flProductItem.itemTag;
+    }
+    set itemTag(value: string) {
+        this.flProductItem.itemTag = value;
+    }
+    get itemImage(): string | Image {
+        return this.flProductItem.itemImage;
+    }
+    set itemImage(value: string | Image) {
+        this.flProductItem.itemImage = value;
+    }
+    get itemDesc(): string {
+        return this.flProductItem.itemDesc;
+    }
+    set itemDesc(value: string) {
+        this.flProductItem.itemDesc = value;
+    }
 }

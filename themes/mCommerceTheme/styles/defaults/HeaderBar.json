@@ -1,0 +1,30 @@
+{
+	".sf-headerBar": {
+		"visible": true,
+		"backgroundColor": "${navbar}",
+		"titleColor": "${textDark}",
+		"itemColor": "${textDark}",
+		"transparent": false,
+		"borderVisibility": false,
+		"android": {
+			"elevation": 0
+		},
+		".main": {
+			"visible": true,
+			"backgroundColor": "${navbar}",
+			"titleColor": "${textDark}",
+			"itemColor": "${textDark}"
+		},
+		".transparent": {
+			"android": {
+				"elevation": 5
+			},
+			"transparent": true,
+			"titleColor": "${transparent}",
+			"leftItemEnabled": "true"
+		},
+		".close": {
+			"image": "backbtn.png"
+		}
+	}
+}

@@ -1,0 +1,59 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flProductContainer-flProductHeader",
+			"hiddenComponent": true,
+			"id": "ba0d-9de0-46a9-685a",
+			"props": {
+				"children": [
+					"aaf6-f68c-a5a4-9657",
+					"c2ef-7872-ce34-2dfe"
+				],
+				"name": "flProductHeader",
+				"parent": "57f4-201f-4bfc-5fc6",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flProductContainer-flProductHeader-lblTitle",
+			"id": "aaf6-f68c-a5a4-9657",
+			"props": {
+				"children": [],
+				"name": "lblTitle",
+				"parent": "ba0d-9de0-46a9-685a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flProductContainer-flProductHeader-lblSeeAll",
+			"id": "c2ef-7872-ce34-2dfe",
+			"props": {
+				"children": [],
+				"name": "lblSeeAll",
+				"parent": "ba0d-9de0-46a9-685a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #pgNumber",
+			"className": ".sf-page",
 			"id": "49ad-4e86-8aa1-37db",
 			"initialized": true,
 			"props": {
@@ -25,7 +25,7 @@
 			"version": "0.0.1.a"
 		},
 		{
-			"className": ".sf-statusBar #pgNumber-statusbar",
+			"className": ".sf-statusBar",
 			"id": "1e23-65cd-ba9a-451c",
 			"props": {
 				"children": [],
@@ -37,7 +37,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar #pgNumber-headerbar",
+			"className": ".sf-headerBar.transparent",
 			"id": "de24-5fdd-e841-2527",
 			"props": {
 				"children": [],
@@ -73,12 +73,12 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"testId": "CaqsSllZG",
+				"testId": "TKCLMvQyT",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label #pgNumber-title",
+			"className": ".sf-label #pgNumber-flheader-lblTitle .number.title",
 			"id": "7700-5a68-f35e-a45f",
 			"props": {
 				"children": [],
@@ -88,12 +88,12 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"testId": "R2I0U01pLp",
+				"testId": "HuB1glOr5",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label #pgNumber-text",
+			"className": ".sf-label #pgNumber-flheader-lblText .number.text",
 			"id": "25d2-ba43-3a7e-3509",
 			"props": {
 				"children": [],
@@ -103,7 +103,7 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"testId": "0w8UcYPOo1",
+				"testId": "qecqzLtzDI",
 				"usePageVariable": true
 			}
 		},
@@ -120,12 +120,12 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"testId": "bEZGVk71sA",
+				"testId": "pBxD4RaJp",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper #pgNumber-mtbNumber",
+			"className": ".flexLayout .materialTextBox-wrapper .grow",
 			"hiddenComponent": false,
 			"id": "f070-b89e-b3ec-4eee",
 			"initialized": false,
@@ -142,7 +142,7 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"testId": "P9UdwAXac",
+				"testId": "QqEu9XuMv",
 				"usePageVariable": true
 			}
 		},
@@ -159,12 +159,12 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"testId": "uRMxR0PQBK",
+				"testId": "MxWVmTf4K",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-button .sf-button-router #pgNumber-btnroute",
+			"className": ".sf-button .sf-button-router #pgNumber-flfooter-btnroute .number.button",
 			"id": "21cd-590b-cdee-f5e3",
 			"props": {
 				"children": [],
@@ -175,7 +175,7 @@
 			},
 			"type": "Button",
 			"userProps": {
-				"testId": "mEo8XqG3g",
+				"testId": "HWBaefW5Y",
 				"text": "",
 				"usePageVariable": true
 			}

@@ -7,12 +7,6 @@
 		"&-statusbar": {
 			"style": "DEFAULT"
 		},
-		"&-headerbar": {
-			"backgroundColor": "rgba( 255, 255, 255, 0 )",
-			"titleColor": "rgba( 255, 255, 255, 0 )",
-			"transparent": true,
-			"visible": true
-		},
 		"&-imagebackground": {
 			"bottom": 0,
 			"flexProps": {
@@ -48,13 +42,6 @@
 				"flexGrow": 1,
 				"alignSelf": "STRETCH"
 			},
-			"font": {
-				"size": 26,
-				"bold": true,
-				"italic": false,
-				"family": "Nunito",
-				"style": "Bold"
-			},
 			"left": 0,
 			"marginBottom": null,
 			"marginTop": null,
@@ -67,13 +54,6 @@
 			"flexProps": {
 				"flexGrow": 1,
 				"alignSelf": "STRETCH"
-			},
-			"font": {
-				"size": 16,
-				"bold": true,
-				"italic": false,
-				"family": "Nunito",
-				"style": "Bold"
 			},
 			"left": 0,
 			"maxHeight": 40,
@@ -116,20 +96,12 @@
 			"height": 200,
 			"testId": "2UoNUpnKT"
 		},
-		"&-resend": {
+		"&-lblResend": {
 			"flexProps": {
 				"flexGrow": 1
 			},
-			"font": {
-				"size": 18,
-				"bold": false,
-				"italic": false,
-				"family": "Nunito",
-				"style": "Medium"
-			},
 			"marginLeft": 25,
-			"testId": "JmUyde_sD",
-			"textColor": "rgba( 83, 177, 117, 1 )"
+			"testId": "JmUyde_sD"
 		},
 		"&-btnroute": {
 			"font": {

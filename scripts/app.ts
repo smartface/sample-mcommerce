@@ -18,4 +18,4 @@ Application.onUnhandledError = function (e: UnhandledError) {
   });
 };
 
-router.push('/pages/pgWelcome');
+router.push('/btb');

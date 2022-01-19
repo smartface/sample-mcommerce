@@ -19,7 +19,6 @@
 				"flexProps": {},
 				"height": "160.67",
 				"testId": "jFkvviy6q",
-				"top": "456.67",
 				"width": "392.67"
 			}
 		},
@@ -87,7 +86,6 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"image": "eggs.png",
 				"imageFillType": "ASPECTFIT",
 				"testId": "rP-vhokHM",
 				"usePageVariable": true
@@ -143,7 +141,7 @@
 			"id": "cc34-8bb6-2a4f-f481",
 			"props": {
 				"children": [],
-				"name": "lblFavroiteItemDesc",
+				"name": "lblFavroiteItemDescription",
 				"parent": "989d-03b1-51c1-1d59",
 				"text": "label2",
 				"usePageVariable": true

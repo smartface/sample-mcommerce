@@ -14,7 +14,10 @@
     "paddingBottom": 16,
     "paddingRight": 16,
     "backgroundColor": "#FFFFFF",
-    "orientation": "PORTRAIT"
+    "orientation": "PORTRAIT",
+    ".backgroundMain": {
+        "backgroundColor": "${backgroundMain}"
+    }
   },
   ".page": {
     "masksToBounds": true,

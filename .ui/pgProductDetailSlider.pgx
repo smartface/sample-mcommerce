@@ -1,0 +1,65 @@
+{
+	"components": [
+		{
+			"className": ".sf-page #pgProductDetailSlider",
+			"id": "c689-3a3e-cf54-fa5b",
+			"initialized": true,
+			"props": {
+				"children": [
+					"060f-ab04-025d-b911",
+					"4aeb-4b40-9778-67f7",
+					"0c70-5a49-a10f-0611"
+				],
+				"name": "pgProductDetailSlider",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "060f-ab04-025d-b911",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "c689-3a3e-cf54-fa5b"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "4aeb-4b40-9778-67f7",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "c689-3a3e-cf54-fa5b",
+				"title": "pgProductDetailSlider"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgProductDetailSlider"
+			}
+		},
+		{
+			"className": ".sf-imageView .grow",
+			"id": "0c70-5a49-a10f-0611",
+			"props": {
+				"children": [],
+				"name": "imgProductDetailSlider",
+				"parent": "c689-3a3e-cf54-fa5b",
+				"usePageVariable": true
+			},
+			"type": "ImageView",
+			"userProps": {
+				"imageFillType": "ASPECTFIT",
+				"testId": "eCiquBBlp",
+				"usePageVariable": true
+			}
+		}
+	]
+}

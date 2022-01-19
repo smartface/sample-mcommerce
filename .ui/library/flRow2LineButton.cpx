@@ -1,0 +1,130 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flRow2LineButton",
+			"hiddenComponent": true,
+			"id": "6680-6456-32b9-4718",
+			"props": {
+				"children": [
+					"1bf7-a73b-5d94-3d6f",
+					"20e3-2b6c-c9a1-20e4"
+				],
+				"name": "flRow2LineButton",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-imageView .flRow2LineButton-imgLeft",
+			"id": "1bf7-a73b-5d94-3d6f",
+			"props": {
+				"children": [],
+				"name": "imgLeft",
+				"parent": "6680-6456-32b9-4718",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .grow",
+			"id": "20e3-2b6c-c9a1-20e4",
+			"props": {
+				"children": [
+					"d70a-1ba6-547c-eff2",
+					"05b1-21e2-b480-12b9"
+				],
+				"name": "flButtons",
+				"parent": "6680-6456-32b9-4718"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-button .sf-button-main",
+			"id": "d70a-1ba6-547c-eff2",
+			"props": {
+				"children": [],
+				"name": "btnMain",
+				"parent": "20e3-2b6c-c9a1-20e4",
+				"text": "button1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "button1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRow2LineButton-flButtons-flOtherButtons",
+			"id": "05b1-21e2-b480-12b9",
+			"props": {
+				"children": [
+					"3555-1810-4996-c1dc",
+					"05de-8a53-16ec-c8e5"
+				],
+				"name": "flOtherButtons",
+				"parent": "20e3-2b6c-c9a1-20e4"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-button .grow .flRow2LineButton-flButtons-secondary .flRow2LineButton-flButtons-flOtherButtons-btnBottomLeft",
+			"id": "3555-1810-4996-c1dc",
+			"props": {
+				"children": [],
+				"name": "btnBottomLeft",
+				"parent": "05b1-21e2-b480-12b9",
+				"text": "button1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "button1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button .grow .flRow2LineButton-flButtons-secondary .flRow2LineButton-flButtons-flOtherButtons-btnBottomRight",
+			"id": "05de-8a53-16ec-c8e5",
+			"props": {
+				"children": [],
+				"name": "btnBottomRight",
+				"parent": "05b1-21e2-b480-12b9",
+				"text": "button1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "button1",
+				"usePageVariable": true
+			}
+		}
+	]
+}

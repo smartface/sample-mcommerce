@@ -1,0 +1,8 @@
+{
+	".lviProductItem": {
+		"height": 250,
+		"flexProps": {
+			"alignItems": "CENTER"
+		}
+	}
+}

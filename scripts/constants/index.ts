@@ -1,0 +1,4 @@
+export const PROFILE_IMAGE_DIMENSIONS = {
+    WIDTH: 1280,
+    HEIGHT: 1280
+};

@@ -1,0 +1,20 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviSpacer",
+			"hiddenComponent": false,
+			"id": "9221-229c-4fe2-104e",
+			"initialized": true,
+			"props": {
+				"children": [],
+				"name": "lviSpacer",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		}
+	]
+}

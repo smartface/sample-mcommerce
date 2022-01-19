@@ -1,0 +1,14 @@
+{
+	"#pgHomeSlider": {
+		"backgroundColor": "${backgroundMain}",
+		"&-imgSliderItem": {
+			"flexProps": {
+				"flexGrow": 1
+			},
+			"height": null,
+			"backgroundColor": "${backgroundMain}",
+			"imageFillType": "ASPECTFIT",
+			"testId": "igIL-AhnY"
+		}
+	}
+}
