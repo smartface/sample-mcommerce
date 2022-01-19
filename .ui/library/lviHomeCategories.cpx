@@ -18,7 +18,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-gridView .gvCategories",
+			"className": ".sf-gridView .lviHomeCategories-gvCategories",
 			"id": "182f-b6b2-5123-0a73",
 			"props": {
 				"children": [

@@ -1,14 +1,10 @@
 import PgLoginDesign from 'generated/pages/pgLogin';
-import ImageView from '@smartface/native/ui/imageview';
 import View from '@smartface/native/ui/view';
 import store from 'store/index';
-import Application from '@smartface/native/application';
-import System from '@smartface/native/device/system';
-import Color from '@smartface/native/ui/color';
+import { NativeStackRouter } from '@smartface/router';
 export default class PgLogin extends PgLoginDesign {
-    router: any;
+    router: NativeStackRouter;
     constructor() {
-        imgShow: ImageView;
         super();
         // Overrides super.onShow method
         this.onShow = onShow.bind(this, this.onShow.bind(this));
@@ -16,7 +12,6 @@ export default class PgLogin extends PgLoginDesign {
         this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
 
         this.lblRouteSignUp.on(View.Events.Touch, () => {
-            //this.router.push('/pages/pgSignUp')
             this.router.push('/pages/pgSignUp');
         });
         this.btnLogIn.on(View.Events.Touch, () => {
@@ -40,9 +35,6 @@ export default class PgLogin extends PgLoginDesign {
         this.mtbPassword.materialTextBox.isPassword = true;
     }
     initUserLogin() {
-        // this.mtbLogin.materialTextBox.text = '';
-        // this.mtbPassword.materialTextBox.text = '';
-
         if (
             this.mtbLogin.materialTextBox.text &&
             this.mtbLogin.materialTextBox.text !== '' &&
@@ -50,7 +42,6 @@ export default class PgLogin extends PgLoginDesign {
             this.mtbPassword.materialTextBox.text !== ''
         ) {
             const found = store.getState().users.find((usr) => usr.email === this.mtbLogin.materialTextBox.text);
-            console.log('login found usr', found);
             if (found) {
                 const isPasswordTrue = found.password == this.mtbPassword.materialTextBox.text;
                 if (isPasswordTrue) {
@@ -75,10 +66,6 @@ export default class PgLogin extends PgLoginDesign {
  */
 function onShow(this: PgLogin, superOnShow: () => void) {
     superOnShow();
-    if (System.OS !== 'iOS') {
-        Application.statusBar.visible = true;
-        Application.statusBar.backgroundColor = Color.WHITE;
-    }
 }
 
 /**
@@ -89,6 +76,5 @@ function onShow(this: PgLogin, superOnShow: () => void) {
 function onLoad(this: PgLogin, superOnLoad: () => void) {
     superOnLoad();
     this.headerBar.title = global.lang.loginHeader;
-    this.headerBar.android.elevation = 0;
     this.initMaterialTextBoxes();
 }

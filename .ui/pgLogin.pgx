@@ -20,7 +20,8 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -32,10 +33,11 @@
 				"parent": "aa9f-e1cb-2f7f-92d5"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar.transparent",
 			"id": "f1b8-030b-a8b6-50f8",
 			"props": {
 				"children": [],
@@ -47,7 +49,8 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgLogin"
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-imageView #pgLogin-imagebackground",
@@ -58,7 +61,8 @@
 				"parent": "aa9f-e1cb-2f7f-92d5"
 			},
 			"type": "ImageView",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-flexLayout #pgLogin-flcontainer",
@@ -78,7 +82,8 @@
 			"userProps": {
 				"testId": "MWUP6dCpO",
 				"usePageVariable": true
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-imageView #pgLogin-logo",
@@ -89,10 +94,11 @@
 				"parent": "9503-8d4b-931f-3afe"
 			},
 			"type": "ImageView",
-			"userProps": {}
+			"userProps": {},
+			"degree": 2
 		},
 		{
-			"className": ".sf-label #pgLogin-title",
+			"className": ".sf-label #pgLogin-title .login.text-26-bold",
 			"id": "3a60-cc2c-259e-ab70",
 			"props": {
 				"children": [],
@@ -102,12 +108,13 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"testId": "Hye5Ja0v_",
+				"testId": "CmwM08kTW",
 				"usePageVariable": true
-			}
+			},
+			"degree": 2
 		},
 		{
-			"className": ".sf-label #pgLogin-text",
+			"className": ".sf-label #pgLogin-text .login.text-16-bold",
 			"id": "73fb-0516-a060-3970",
 			"props": {
 				"children": [],
@@ -117,9 +124,10 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"testId": "DFjFEbC9Yn",
+				"testId": "r-xPY55LwX",
 				"usePageVariable": true
-			}
+			},
+			"degree": 2
 		},
 		{
 			"className": ".sf-flexLayout #pgLogin-flform",
@@ -137,7 +145,8 @@
 				"parent": "9503-8d4b-931f-3afe"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {},
+			"degree": 2
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgLogin-mtbemail",
@@ -159,7 +168,8 @@
 			"userProps": {
 				"testId": "cBMa7uQlv",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgLogin-mtbpassword",
@@ -181,10 +191,11 @@
 			"userProps": {
 				"testId": "TE1-YGpfO",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
-			"className": ".sf-label #pgLogin-lblForgotPassword",
+			"className": ".sf-label #pgLogin-lblForgotPassword .login.labelForgotPassword",
 			"id": "bdfa-6292-509e-bad0",
 			"props": {
 				"children": [],
@@ -194,9 +205,10 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"testId": "kmHMfpMHf",
+				"testId": "oM3iP7eQ7",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
 			"className": ".sf-button .sf-button-main",
@@ -211,7 +223,8 @@
 			"userProps": {
 				"testId": "LGkCVcClMB",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
 			"className": ".sf-flexLayout #pgLogin-flfooter",
@@ -227,15 +240,13 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"flexDirection": "ROW"
-				},
-				"testId": "RLSTHRh4l",
-				"usePageVariable": true
-			}
+				"usePageVariable": true,
+				"testId": "lohe2xjAZ"
+			},
+			"degree": 3
 		},
 		{
-			"className": ".sf-label #pgLogin-lblLeft",
+			"className": ".sf-label #pgLogin-lblLeft .login.labelLeft",
 			"hiddenComponent": true,
 			"id": "e85e-6514-edb3-f609",
 			"props": {
@@ -250,10 +261,11 @@
 				"testId": "tpVhjtcbD",
 				"text": "Don’t have an account? ",
 				"usePageVariable": true
-			}
+			},
+			"degree": 4
 		},
 		{
-			"className": ".sf-label #pgLogin-lblRouteSignUp",
+			"className": ".sf-label #pgLogin-lblRouteSignUp .login.labelRoute",
 			"hiddenComponent": true,
 			"id": "b60f-803f-5f9e-4650",
 			"props": {
@@ -268,7 +280,8 @@
 				"testId": "LItobv3NmQ",
 				"text": "Singup",
 				"usePageVariable": true
-			}
+			},
+			"degree": 4
 		}
 	]
 }
