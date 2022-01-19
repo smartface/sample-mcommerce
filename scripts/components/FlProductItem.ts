@@ -16,7 +16,7 @@ export default class FlProductItem extends FlProductItemDesign {
         super(props);
         this.pageName = pageName;
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
-        this.btnAddToBasket.on(Button.Events.TouchEnded, () => {
+        this.btnAddToBasket.on(Button.Events.Press, () => {
             this._addToBasket && this._addToBasket();
         });
     }

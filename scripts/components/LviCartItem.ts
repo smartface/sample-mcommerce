@@ -16,11 +16,11 @@ export default class LviCartItem extends LviCartItemDesign {
         super(props);
         this.pageName = pageName;
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
-        this.btnCartPlus.on(Button.Events.TouchEnded, () => {
+        this.btnCartPlus.on(Button.Events.Press, () => {
             this._value && this._value();
         });
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
-        this.btnCartMinus.on(Button.Events.TouchEnded, () => {
+        this.btnCartMinus.on(Button.Events.Press, () => {
             this._valueMinus && this._valueMinus();
         });
         this.lblCloseIcon.on(View.Events.Touch, () => {

@@ -15,15 +15,15 @@ export default class FlRow2LineButton extends FlRow2LineButtonDesign {
         this.pageName = pageName;
 
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
-        this.btnMain.on(Button.Events.TouchEnded, () => {
+        this.btnMain.on(Button.Events.Press, () => {
             this.__mainOnClick && this.__mainOnClick();
         });
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
-        this.btnBottomLeft.on(Button.Events.TouchEnded, () => {
+        this.btnBottomLeft.on(Button.Events.Press, () => {
             this.__bottomLeftOnClick && this.__bottomLeftOnClick();
         });
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
-        this.btnBottomRight.on(Button.Events.TouchEnded, () => {
+        this.btnBottomRight.on(Button.Events.Press, () => {
             this.__bottomRightOnClick && this.__bottomRightOnClick();
         });
     }
