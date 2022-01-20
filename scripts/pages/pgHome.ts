@@ -8,8 +8,8 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
-    | ListViewItems.ProcessorTypes.ILviHomeSlider
-    | ListViewItems.ProcessorTypes.ILviShowcaseHeader;
+    | ListViewItems.ProcessorTypes.ILviShowcaseHeader
+    | ListViewItems.ProcessorTypes.ILviGenericSlider;
 
 export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     data: Processor[];
@@ -33,9 +33,12 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         this.showcases = store.getState().main.showcaseProducts;
 
         const processorItems = [
-            ListViewItems.getLviHomeSlider({
-                images: ['images://firstbanner.png', 'images://bannerone.png']
-            })
+            ListViewItems.getLviGenericSlider(
+                {
+                    images: ['images://firstbanner.png', 'images://bannerone.png']
+                },
+                { className: '.lviGenericSlider.small' }
+            )
         ];
         this.showcases.forEach((showcase) => {
             processorItems.push(
