@@ -1,0 +1,64 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .paddingHorizontal .flCartCheckout",
+			"id": "97a7-de34-7dcc-2791",
+			"props": {
+				"children": [
+					"4019-9ec6-5080-51a2",
+					"ffe7-607a-5f59-857d"
+				],
+				"name": "flCartCheckout",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": 24.67,
+				"top": 106.67
+			}
+		},
+		{
+			"className": ".sf-button-main",
+			"hiddenComponent": false,
+			"id": "4019-9ec6-5080-51a2",
+			"props": {
+				"children": [],
+				"name": "btnCartCheckout",
+				"parent": "97a7-de34-7dcc-2791",
+				"text": "Go to Checkout",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "Go to Checkout",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCartCheckout-lblCartCheckoutPrice .checkout",
+			"id": "ffe7-607a-5f59-857d",
+			"props": {
+				"children": [],
+				"name": "lblCartCheckoutPrice",
+				"parent": "97a7-de34-7dcc-2791",
+				"text": "$129.99",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "$129.99",
+				"usePageVariable": true
+			}
+		}
+	]
+}

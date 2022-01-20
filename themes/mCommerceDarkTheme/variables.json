@@ -81,5 +81,6 @@
 	"reverse": "rgba(255,255,255,1.0)",
 	"iconBackgroundGray": "rgba(55,55,55,1.0)",
 	"iconHintGray": "rgba(242,242,242,1.0)",
-	"pickerBackground": "rgba(26,26,26,1.0)"
+	"pickerBackground": "rgba(26,26,26,1.0)",
+	"checkoutPrice": "#489E67"
 }
