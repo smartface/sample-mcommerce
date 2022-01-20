@@ -2,7 +2,7 @@ import Color from '@smartface/native/ui/color';
 import Image from '@smartface/native/ui/image';
 import TabBarItem from '@smartface/native/ui/tabbaritem';
 import { BottomTabBarRouter, NativeStackRouter as StackRouter, Route } from '@smartface/router';
-import store from 'store';
+import store from 'store/index';
 import authRouteGenerator from './auth';
 import { themeService } from 'theme';
 import BottomTabBarController from '@smartface/native/ui/bottomtabbarcontroller';
@@ -23,7 +23,7 @@ btbItemCart.title = global.lang.cart;
 btbItemCart.badge.backgroundColor = Color.create(itemColor.selected);
 btbItemCart.icon = Image.createFromFile('images://tabiconcart.png');
 store.subscribe(() => {
-    if (getBasketCounter()) {
+    if (getBasketCounter() !== '') {
         btbItemCart.badge.visible = true;
         btbItemCart.badge.text = getBasketCounter();
     } else {
@@ -35,13 +35,13 @@ store.subscribe(() => {
 });
 
 const getBasketCounter = () => {
-    if (store.getState().basket && store.getState().basket.length > 0) {
+    if (store.getState().main.basket && store.getState().main.basket.length > 0) {
         return store
             .getState()
-            .basket.reduce((total, product) => total + product.count, 0)
+            .main.basket.reduce((total, product) => total + product.count, 0)
             .toString();
     } else {
-        return false;
+        return '';
     }
 };
 

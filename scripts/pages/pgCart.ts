@@ -1,11 +1,12 @@
 import PgCartDesign from 'generated/pages/pgCart';
-import store from 'store';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import AlertView from '@smartface/native/ui/alertview';
 import { Basket, Product } from 'types';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { Route, BaseRouter as Router } from '@smartface/router';
+import store from 'store/index';
+import storeActions from 'store/main/actions';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -34,7 +35,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     }
     processor(): Processor[] {
         const processorItems = [];
-        this.cartProducts = store.getState().basket;
+        this.cartProducts = store.getState().main.basket;
         if (this.cartProducts.length === 0) {
             processorItems.push(
                 ListViewItems.getLviEmptyItem({
@@ -89,37 +90,13 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     cartOperation(cart: Product, type: CartOperationEnum) {
         switch (type) {
             case CartOperationEnum.Add:
-                return store.dispatch({
-                    type: 'ADD_TO_BASKET',
-                    payload: {
-                        data: {
-                            product: cart,
-                            count: 1
-                        }
-                    }
-                });
+                return store.dispatch(storeActions.AddToBasket({ product: cart, count: 1 }));
                 break;
             case CartOperationEnum.Remove:
-                return store.dispatch({
-                    type: 'ADD_TO_BASKET',
-                    payload: {
-                        data: {
-                            product: cart,
-                            count: -1
-                        }
-                    }
-                });
+                return store.dispatch(storeActions.AddToBasket({ product: cart, count: 1 }));
                 break;
             case CartOperationEnum.Clear:
-                return store.dispatch({
-                    type: 'REMOVE_FROM_BASKET',
-                    payload: {
-                        data: {
-                            productId: cart.id
-                        }
-                    }
-                });
-
+                return store.dispatch(storeActions.RemoveFromBasket({ productId: cart.id }));
             default:
                 break;
         }

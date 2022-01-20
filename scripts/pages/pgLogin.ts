@@ -1,7 +1,8 @@
 import PgLoginDesign from 'generated/pages/pgLogin';
 import View from '@smartface/native/ui/view';
 import store from 'store/index';
-import { Route, BaseRouter as Router, NativeStackRouter } from '@smartface/router';
+import storeActions from 'store/main/actions';
+import { Route, NativeStackRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { themeService } from 'theme';
@@ -41,27 +42,19 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
             this.mtbPassword.materialTextBox.text &&
             this.mtbPassword.materialTextBox.text !== ''
         ) {
-            const found = store.getState().users.find((usr) => usr.email === this.mtbLogin.materialTextBox.text);
+            const found = store.getState().main.users.find((usr) => usr.email === this.mtbLogin.materialTextBox.text);
             if (found) {
                 const isPasswordTrue = found.password == this.mtbPassword.materialTextBox.text;
                 if (isPasswordTrue) {
-                    store.dispatch({
-                        type: 'SET_CURRENT_USER',
-                        payload: {
-                            data: found
-                        }
-                    });
-                    // FIX LATER
-                    (this.router as NativeStackRouter).dismiss();
+                    store.dispatch(storeActions.SetCurrentUser(found));
+                    this.router.dismiss();
                 }
             }
         }
     }
     onShow() {
         super.onShow();
-        this.initBackButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor')
-        });
+        this.initBackButton(this.router);
     }
     onLoad() {
         super.onLoad();

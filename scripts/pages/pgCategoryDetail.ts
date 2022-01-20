@@ -1,5 +1,6 @@
 import PgCategoryDetailDesign from 'generated/pages/pgCategoryDetail';
-import store from 'store';
+import store from 'store/index';
+import storeActions from 'store/main/actions';
 import SearchView from '@smartface/native/ui/searchview';
 import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
@@ -79,12 +80,12 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     getCategoryProducts() {
         this.categoryProducts = store
             .getState()
-            .products.filter((product) => product.categoryId === this.route.getState().routeData.dataId);
+            .main.products.filter((product) => product.categoryId === this.route.getState().routeData.dataId);
     }
     getShowcaseProducts() {
         this.categoryProducts = store
             .getState()
-            .showcaseProducts.find((showcase) => showcase.showcaseId === this.route.getState().routeData.dataId).products;
+            .main.showcaseProducts.find((showcase) => showcase.showcaseId === this.route.getState().routeData.dataId).products;
     }
 
     initGridView() {
@@ -101,15 +102,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             GridViewItem.onActionClick = () => {
                 GridViewItem.initIndicator();
                 GridViewItem.toggleIndicator(true);
-                store.dispatch({
-                    type: 'ADD_TO_BASKET',
-                    payload: {
-                        data: {
-                            product: this.categoryProducts[productIndex],
-                            count: 1
-                        }
-                    }
-                });
+                store.dispatch(storeActions.AddToBasket({ product: this.categoryProducts[productIndex], count: 1 }));
                 setTimeout(() => {
                     GridViewItem.toggleIndicator(false);
                 }, 500);
@@ -151,9 +144,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     onShow() {
         super.onShow();
         this.refreshGridView();
-        this.initDismissButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor')
-        });
+        this.initDismissButton(this.router);
     }
 
     onLoad() {

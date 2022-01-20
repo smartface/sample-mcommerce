@@ -30,7 +30,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
-        this.showcases = store.getState().showcaseProducts;
+        this.showcases = store.getState().main.showcaseProducts;
 
         const processorItems = [
             ListViewItems.getLviHomeSlider({

@@ -1,5 +1,6 @@
 import PgAccountDesign from 'generated/pages/pgAccount';
 import store from '../store/index';
+import storeActions from '../store/main/actions';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
@@ -61,7 +62,7 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
-        this.userInfo = store.getState().currentUser;
+        this.userInfo = store.getState().main.currentUser;
         const accountItem = this.userInfo
             ? ListViewItems.getLviProfile({
                   userName: this.userInfo.fullName,
@@ -99,7 +100,7 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                   }
               });
         const processorItems = [accountItem, ListViewItems.getLviSpacerItem({ className: 'small' })];
-        const accountMenus = store.getState().accountMenus;
+        const accountMenus = store.getState().main.accountMenus;
         accountMenus.forEach((menu, index) => {
             processorItems.push(
                 ListViewItems.getLviAccount({
@@ -122,14 +123,12 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
     }
     initLogoutButton() {
         this.onExit = () => {
-            store.dispatch({
-                type: 'LOGOUT'
-            });
+            store.dispatch(storeActions.logout());
             this.refreshListView();
         };
     }
     handleChange() {
-        if (store.getState().isUserLoggedIn) {
+        if (store.getState().main.isUserLoggedIn) {
             this.addRightItem();
         } else {
             this.headerBar.setItems([]);

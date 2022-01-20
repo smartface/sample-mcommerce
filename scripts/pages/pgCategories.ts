@@ -20,7 +20,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
         }
     }
     initCategoriesGrid() {
-        this.categories = store.getState().categories;
+        this.categories = store.getState().main.categories;
         this.categoriesGrid.scrollBarEnabled = false;
         this.categoriesGrid.onItemBind = (GridViewItem: categoriesItem, index: number) => {
             GridViewItem.flCategoryItemWrapper.borderWidth = 1;

@@ -5,7 +5,8 @@ import Image from '@smartface/native/ui/image';
 import PgProductDetailDesign from 'generated/pages/pgProductDetail';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
-import store from 'store';
+import store from 'store/index';
+import storeActions from 'store/main/actions';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
@@ -25,24 +26,15 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     }
     addRightItem() {
         const rightItem = new HeaderBarItem({
-            image: Image.createFromFile('images://share.png'),
-            color: themeService.getStyle('.sf-headerBar.itemColor')
+            image: Image.createFromFile('images://share.png')
         });
         this.headerBar.setItems([rightItem]);
     }
     addToBasket() {
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnAddToBasket.on(Button.Events.Press, () => {
-            let product = store.getState().products.find((product) => product.id == this.route.getState().routeData.productId);
-            store.dispatch({
-                type: 'ADD_TO_BASKET',
-                payload: {
-                    data: {
-                        product: product,
-                        count: this.productCounter
-                    }
-                }
-            });
+            let product = store.getState().main.products.find((product) => product.id == this.route.getState().routeData.productId);
+            store.dispatch(storeActions.AddToBasket({ product: product, count: this.productCounter }));
             this.toggleToast(true);
             this.flAlert.title = 'Sepete Eklendi';
             setTimeout(() => {
@@ -84,31 +76,21 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
                 favoriteImg: this.productFavoriteImg,
                 onFavoriteClick: () => {
                     if (
-                        store.getState().favorites &&
-                        store.getState().favorites.length > 0 &&
-                        store.getState().favorites.some((product) => product.id === this.route.getState().routeData.productId)
+                        store.getState().main.favorites &&
+                        store.getState().main.favorites.length > 0 &&
+                        store.getState().main.favorites.some((product) => product.id === this.route.getState().routeData.productId)
                     ) {
-                        store.dispatch({
-                            type: 'REMOVE_FROM_FAVORITES',
-                            payload: {
-                                data: {
-                                    productId: this.route.getState().routeData.productId
-                                }
-                            }
-                        });
+                        store.dispatch(storeActions.RemoveFromFavorites({ productId: this.route.getState().routeData.productId }));
                         this.productFavoriteImg = 'images://favourite.png';
                         this.refreshListView();
                     } else {
-                        store.dispatch({
-                            type: 'ADD_TO_FAVORITES',
-                            payload: {
-                                data: {
-                                    product: store
-                                        .getState()
-                                        .products.find((product) => product.id == this.route.getState().routeData.productId)
-                                }
-                            }
-                        });
+                        store.dispatch(
+                            storeActions.AddToFavorites({
+                                product: store
+                                    .getState()
+                                    .main.products.find((product) => product.id == this.route.getState().routeData.productId)
+                            })
+                        );
                         this.productFavoriteImg = 'images://favorited.png';
                         this.refreshListView();
                     }
@@ -157,9 +139,9 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
 
     checkIfFavorited() {
         if (
-            store.getState().favorites &&
-            store.getState().favorites.length > 0 &&
-            store.getState().favorites.some((product) => product.id === this.route.getState().routeData.productId)
+            store.getState().main.favorites &&
+            store.getState().main.favorites.length > 0 &&
+            store.getState().main.favorites.some((product) => product.id === this.route.getState().routeData.productId)
         ) {
             this.productFavoriteImg = 'images://favorited.png';
             this.refreshListView();
@@ -174,9 +156,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.checkIfFavorited();
         this.addRightItem();
         this.refreshListView();
-        this.initDismissButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor')
-        });
+        this.initDismissButton(this.router);
     }
 
     onLoad() {
