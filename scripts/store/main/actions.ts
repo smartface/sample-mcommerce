@@ -15,7 +15,7 @@ export default class Actions {
     }
     static SetCurrentUser(user: Types.User): ActionTypes {
         return {
-            type: Constants.SET_NEW_USER,
+            type: Constants.SET_CURRENT_USER,
             payload: user
         };
     }
