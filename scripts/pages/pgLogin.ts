@@ -2,7 +2,7 @@ import PgLoginDesign from 'generated/pages/pgLogin';
 import View from '@smartface/native/ui/view';
 import store from 'store/index';
 import storeActions from 'store/main/actions';
-import { Route, NativeStackRouter as Router } from '@smartface/router';
+import { Route, NativeStackRouter, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { themeService } from 'theme';
@@ -47,7 +47,9 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
                 const isPasswordTrue = found.password == this.mtbPassword.materialTextBox.text;
                 if (isPasswordTrue) {
                     store.dispatch(storeActions.SetCurrentUser(found));
-                    this.router.dismiss();
+                    if (this.router instanceof NativeStackRouter) {
+                        this.router.dismiss();
+                    }
                 }
             }
         }
