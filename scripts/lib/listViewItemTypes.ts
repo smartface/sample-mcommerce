@@ -1,6 +1,5 @@
 import LviAccount from '../components/LviAccount';
 import LviHomeProducts from '../components/LviHomeProducts';
-import LviHomeSlider from '../components/LviHomeSlider';
 import LviCartItem from '../components/LviCartItem';
 import LviFavorites from '../components/LviFavorites';
 import LviProfile from '../components/LviProfile';
@@ -11,10 +10,8 @@ import LviRow2ProductItem from '../components/LviRow2ProductItem';
 import LviEmptyItem from '../components/LviEmptyItem';
 import LviShowcaseHeader from '../components/LviShowcaseHeader';
 import LviHomeCategories from '../components/LviHomeCategories';
-
 import LviPdInfoSection from '../components/LviPdInfoSection';
 import LviPdTitleLikeSection from '../components/LviPdTitleLikeSection';
-// import LviPdSlider from '../components/LviPdSlider';
 import LviGenericSlider from '../components/LviGenericSlider';
 import LviPdOverviewSection from '../components/LviPdOverviewSection';
 import LviPdButtonPriceSection from '../components/LviPdButtonPriceSection';
@@ -24,7 +21,6 @@ import LviRow1LineLarge from '../components/LviRow1LineLarge';
 export enum LviTypes {
     LVI_ACCOUNT,
     LVI_HOME_PRODUCTS,
-    LVI_HOME_SLIDER,
     LVI_CART_PRODUCTS,
     LVI_FAVOURITES,
     LVI_PROFILE,
@@ -35,7 +31,6 @@ export enum LviTypes {
     LVI_EMPTY_ITEM,
     LVI_SHOWCASE_HEADER,
     LVI_HOME_CATEGORIES,
-    LVI_PD_SLIDER,
     LVI_PD_TITLE_LIKE_SECTION,
     LVI_PD_BUTTON_PRICE_SECTION,
     LVI_PD_INFO_SECTION,
@@ -47,7 +42,6 @@ export enum LviTypes {
 export const LviClasses = {
     [LviTypes.LVI_ACCOUNT]: LviAccount,
     [LviTypes.LVI_HOME_PRODUCTS]: LviHomeProducts,
-    [LviTypes.LVI_HOME_SLIDER]: LviHomeSlider,
     [LviTypes.LVI_CART_PRODUCTS]: LviCartItem,
     [LviTypes.LVI_FAVOURITES]: LviFavorites,
     [LviTypes.LVI_PROFILE]: LviProfile,
@@ -58,7 +52,6 @@ export const LviClasses = {
     [LviTypes.LVI_EMPTY_ITEM]: LviEmptyItem,
     [LviTypes.LVI_SHOWCASE_HEADER]: LviShowcaseHeader,
     [LviTypes.LVI_HOME_CATEGORIES]: LviHomeCategories,
-    // [LviTypes.LVI_PD_SLIDER]: LviPdSlider,
     [LviTypes.LVI_PD_TITLE_LIKE_SECTION]: LviPdTitleLikeSection,
     [LviTypes.LVI_PD_BUTTON_PRICE_SECTION]: LviPdButtonPriceSection,
     [LviTypes.LVI_PD_INFO_SECTION]: LviPdInfoSection,
@@ -107,7 +100,6 @@ export interface IProcessed<T> {
 export namespace ProcessorTypes {
     export interface ILviAccount extends IProcessed<LviAccount> {}
     export interface ILviHomeProducts extends IProcessed<LviHomeProducts> {}
-    export interface ILviHomeSlider extends IProcessed<LviHomeSlider> {}
     export interface ILviCartItem extends IProcessed<LviCartItem> {}
     export interface ILviFavorites extends IProcessed<LviFavorites> {}
     export interface ILviProfile extends IProcessed<LviProfile> {}
@@ -118,7 +110,6 @@ export namespace ProcessorTypes {
     export interface ILviEmptyItem extends IProcessed<LviEmptyItem> {}
     export interface ILviShowcaseHeader extends IProcessed<LviShowcaseHeader> {}
     export interface ILviHomeCategories extends IProcessed<LviHomeCategories> {}
-    // export interface ILviPdSlider extends IProcessed<LviPdSlider> {}
     export interface ILviPdTitleLikeSection extends IProcessed<LviPdTitleLikeSection> {}
     export interface ILviPdButtonPriceSection extends IProcessed<LviPdButtonPriceSection> {}
     export interface ILviPdInfoSection extends IProcessed<LviPdInfoSection> {}
@@ -156,17 +147,6 @@ export function getLviHomeProducts(item: Partial<LviHomeProducts>): ProcessorTyp
             borders: []
         },
         height: LviHomeProducts.getHeight()
-    };
-}
-
-export function getLviHomeSlider(item: Partial<LviHomeSlider>): ProcessorTypes.ILviHomeSlider {
-    return {
-        type: 'LVI_HOME_SLIDER',
-        properties: {
-            ...item,
-            borders: []
-        },
-        height: LviHomeSlider.getHeight()
     };
 }
 
@@ -260,18 +240,6 @@ export function getLviHomeCategories(item: Partial<LviHomeCategories>): Processo
         height: LviHomeCategories.getHeight()
     };
 }
-
-// export function getLviPdSlider(item: Partial<LviPdSlider>): ProcessorTypes.ILviPdSlider {
-//     return {
-//         type: 'LVI_PD_SLIDER',
-//         properties: {
-//             ...item,
-//             borders: []
-//         },
-//         height: LviPdSlider.getHeight()
-//     };
-// }
-
 export function getLviPdTitleLikeSection(item: Partial<LviPdTitleLikeSection>): ProcessorTypes.ILviPdTitleLikeSection {
     return {
         type: 'LVI_PD_TITLE_LIKE_SECTION',

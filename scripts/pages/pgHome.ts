@@ -8,7 +8,6 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
-    | ListViewItems.ProcessorTypes.ILviHomeSlider
     | ListViewItems.ProcessorTypes.ILviShowcaseHeader
     | ListViewItems.ProcessorTypes.ILviGenericSlider;
 
