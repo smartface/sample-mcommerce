@@ -62,7 +62,7 @@ export default class PgUserSettings extends withDismissAndBackButton(PgUserSetti
         this.headerBar.title = global.lang.settingsHeader;
         this.refreshListView();
         this.initDismissButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor')
+            color: themeService.getStyle('.sf-headerBar').itemColor
         });
     }
     onLoad() {

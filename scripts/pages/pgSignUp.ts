@@ -64,7 +64,7 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
             Application.statusBar.backgroundColor = Color.WHITE;
         }
         this.initBackButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor')
+            color: themeService.getStyle('.sf-headerBar').itemColor
         });
     }
 

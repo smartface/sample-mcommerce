@@ -145,7 +145,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         super.onShow();
         this.refreshGridView();
         this.initDismissButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor')
+            color: themeService.getStyle('.sf-headerBar').itemColor
         });
     }
 

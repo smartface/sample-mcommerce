@@ -40,7 +40,7 @@ export default class PgVerification extends withDismissAndBackButton(PgVerificat
         super.onShow();
         this.addHeaderWithDirectImage();
         this.initBackButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor')
+            color: themeService.getStyle('.sf-headerBar').itemColor
         });
     }
     onLoad() {

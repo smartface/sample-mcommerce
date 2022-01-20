@@ -27,7 +27,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     addRightItem() {
         const rightItem = new HeaderBarItem({
             image: Image.createFromFile('images://share.png'),
-            color: themeService.getStyle('.sf-headerBar.itemColor')
+            color: themeService.getStyle('.sf-headerBar').itemColor
         });
         this.headerBar.setItems([rightItem]);
     }
@@ -158,7 +158,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.addRightItem();
         this.refreshListView();
         this.initDismissButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar.itemColor')
+            color: themeService.getStyle('.sf-headerBar').itemColor
         });
     }
 
