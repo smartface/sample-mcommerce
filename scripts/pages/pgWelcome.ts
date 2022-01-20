@@ -17,9 +17,7 @@ export default class PgWelcome extends withDismissAndBackButton(PgWelcomeDesign)
     }
     onShow() {
         super.onShow();
-        this.initDismissButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar').itemColor
-        });
+        this.initDismissButton(this.router);
     }
     onLoad() {
         super.onLoad();

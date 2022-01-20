@@ -54,9 +54,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     }
     onShow() {
         super.onShow();
-        this.initBackButton(this.router, {
-            color: themeService.getStyle('.sf-headerBar').itemColor
-        });
+        this.initBackButton(this.router);
     }
     onLoad() {
         super.onLoad();
