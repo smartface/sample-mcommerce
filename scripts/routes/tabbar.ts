@@ -21,10 +21,12 @@ themeService.onChange(() => {
 let btbItemCart = new TabBarItem();
 btbItemCart.title = global.lang.cart;
 btbItemCart.badge.backgroundColor = Color.create(itemColor.selected);
+btbItemCart.badge.visible = false;
 btbItemCart.icon = Image.createFromFile('images://tabiconcart.png');
 store.subscribe(() => {
     if (getBasketCounter() !== '') {
         btbItemCart.badge.visible = true;
+        btbItemCart.badge.move(0, 0);
         btbItemCart.badge.text = getBasketCounter();
     } else {
         btbItemCart.badge.visible = false;

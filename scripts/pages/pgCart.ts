@@ -91,14 +91,10 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
         switch (type) {
             case CartOperationEnum.Add:
                 return store.dispatch(storeActions.AddToBasket({ product: cart, count: 1 }));
-                break;
             case CartOperationEnum.Remove:
-                return store.dispatch(storeActions.AddToBasket({ product: cart, count: 1 }));
-                break;
+                return store.dispatch(storeActions.AddToBasket({ product: cart, count: -1 }));
             case CartOperationEnum.Clear:
                 return store.dispatch(storeActions.RemoveFromBasket({ productId: cart.id }));
-            default:
-                break;
         }
     }
     onShow() {
