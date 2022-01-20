@@ -45,7 +45,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     initSearchView(visible) {
         this.productSearchView = new SearchView();
         this.productSearchView.textFieldBackgroundColor = Color.create(
-            themeService.getStyle('.commerceSearchView').textFieldBackgroundColor
+            themeService.getStyle('.sf-searchView.gray').textFieldBackgroundColor
         );
         this.productSearchView.addToHeaderBar(this);
         if (visible) {
