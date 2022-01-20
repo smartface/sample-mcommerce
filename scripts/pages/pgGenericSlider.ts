@@ -1,7 +1,7 @@
-import PgHomeSliderDesign from 'generated/pages/pgHomeSlider';
+import PgGenericSliderDesign from 'generated/pages/pgGenericSlider';
 
-export default function PgHomeSlider(props) {
-    return class extends PgHomeSliderDesign {
+export default function PgGenericSlider(props) {
+    return class extends PgGenericSliderDesign {
         constructor() {
             super();
         }

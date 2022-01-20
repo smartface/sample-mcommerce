@@ -1,11 +1,10 @@
 import System from '@smartface/native/device/system';
 import SwipeView from '@smartface/native/ui/swipeview';
-import FlHomeSliderDesign from 'generated/my-components/FlHomeSlider';
-import PgHomeSlider from 'pages/pgHomeSlider';
+import FlGenericSliderDesign from 'generated/my-components/FlGenericSlider';
+import pgGenericSlider from 'pages/pgGenericSlider';
 
-export default class FlHomeSlider extends FlHomeSliderDesign {
+export default class FlGenericSlider extends FlGenericSliderDesign {
     pageName?: string | undefined;
-    private __images: string[];
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
         super(props);
@@ -23,11 +22,8 @@ export default class FlHomeSlider extends FlHomeSliderDesign {
         const swipeView = new SwipeView({
             page: this,
             flexGrow: 1,
-            pages: this.images.map((image: string) => PgHomeSlider({ image })),
-            onPageSelected: (index: number) => {
-                console.log('index', index);
-                // this.indicatorCurrentIndex = index;
-            }
+            pages: this.images.map((image: string) => pgGenericSlider({ image })),
+            onPageSelected: (index: number) => {}
         });
         this.flSwipeViewLayout.addChild(swipeView, 'swipeView', '.grow-relative');
         if (System.OS === System.OSType.IOS) {

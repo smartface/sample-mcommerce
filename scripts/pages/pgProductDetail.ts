@@ -11,7 +11,7 @@ import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
 type Processor =
-    | ListViewItems.ProcessorTypes.ILviPdSlider
+    | ListViewItems.ProcessorTypes.ILviGenericSlider
     | ListViewItems.ProcessorTypes.ILviPdTitleLikeSection
     | ListViewItems.ProcessorTypes.ILviPdButtonPriceSection
     | ListViewItems.ProcessorTypes.ILviPdInfoSection
@@ -65,7 +65,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     }
     processor(): Processor[] {
         const processorItems = [
-            ListViewItems.getLviPdSlider({
+            ListViewItems.getLviGenericSlider({
                 images: [`images://${this.route.getState().routeData.productImg}`, `images://${this.route.getState().routeData.productImg}`]
             })
         ];
@@ -120,7 +120,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         processorItems.push(
             ListViewItems.getLviPdInfoSection({
                 productTitle: 'Product Detail',
-                productInfo: 'Lorem ipsum dolor sit amet'
+                productInfo: 'Lorem ipsum dolor sit amets'
             })
         );
         processorItems.push(
