@@ -144,7 +144,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper #pgLogin-mtbemail",
+			"className": ".flexLayout .materialTextBox-wrapper",
 			"hiddenComponent": false,
 			"id": "2357-5cc8-f049-3396",
 			"initialized": false,
@@ -166,7 +166,7 @@
 			}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper #pgLogin-mtbpassword",
+			"className": ".flexLayout .materialTextBox-wrapper",
 			"hiddenComponent": false,
 			"id": "530e-ea35-e6ca-1809",
 			"initialized": false,
