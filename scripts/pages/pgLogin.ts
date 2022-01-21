@@ -5,7 +5,7 @@ import storeActions from 'store/main/actions';
 import { Route, NativeStackRouter, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
-import { themeService } from 'theme';
+import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constants';
 
 export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     isMailValid = false;
@@ -64,18 +64,18 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
 
         if (mailExist && this.checkIsEmailValid(this.mtbLogin.materialTextBox.text)) {
             this.isMailValid = true;
+            this.mtbLogin.materialTextBox.errorMessage = '';
         } else {
             this.isMailValid = false;
-            this.mtbLogin.enableErrorMessage = true;
-            this.mtbLogin.materialTextBox.errorMessage = 'Invalid email';
+            this.mtbLogin.materialTextBox.errorMessage = global.lang.invalidEmail;
         }
 
-        if (passwordExists && this.mtbPassword.materialTextBox.text.length >= 6) {
+        if (passwordExists && this.mtbPassword.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD) {
             this.isPasswordValid = true;
+            this.mtbPassword.materialTextBox.errorMessage = '';
         } else {
             this.isPasswordValid = false;
-            this.mtbPassword.enableErrorMessage = true;
-            this.mtbPassword.materialTextBox.errorMessage = 'Invalid password';
+            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword;
         }
         if (this.isMailValid && this.isPasswordValid) {
             return true;
@@ -84,10 +84,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
         }
     }
     checkIsEmailValid(email: string) {
-        const regexp = new RegExp(
-            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-        );
-        return regexp.test(email);
+        return EMAIL_REGEXP.test(email);
     }
     onShow() {
         super.onShow();

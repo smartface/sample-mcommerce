@@ -108,6 +108,6 @@ SMF.i18n.defineLanguage('tr', {
     scanFaceIDTitle: 'FaceID ile oturum aç',
     scanFaceIDMessage: 'Yüzünü tarat',
     chooseNavigationApp: 'Navigasyon uygulaması seç',
-    invalidPassword: 'Şifre en az 6 karakterden oluşmalıdır.',
+    minimumCharacterErrorOnPassword: 'Şifre en az 8 karakterden oluşmalıdır.',
     invalidEmail: 'Geçersiz Mail'
 });

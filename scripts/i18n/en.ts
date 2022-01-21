@@ -110,6 +110,6 @@ SMF.i18n.defineLanguage('en', {
     scanFaceIDTitle: 'Login with FaceID',
     scanFaceIDMessage: 'Scan your face',
     chooseNavigationApp: 'Choose Navigation App',
-    invalidPassword: 'Password must be at least 6 characters',
+    minimumCharacterErrorOnPassword: 'Password must be at least 8 characters',
     invalidEmail: 'Invalid Email'
 });
