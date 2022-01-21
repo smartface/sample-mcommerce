@@ -87,7 +87,6 @@
 					},
 					"tintColor": "${main}",
 					"height": 20,
-					"image": "ayarlar_karanlik.png",
 					"imageFillType": "ASPECTFIT",
 					"width": 20
 				},
@@ -110,7 +109,6 @@
 					},
 					"height": 20,
 					"tintColor": "${main}",
-					"image": "ayarlar_aydinlik.png",
 					"imageFillType": "ASPECTFIT",
 					"width": 20
 				},

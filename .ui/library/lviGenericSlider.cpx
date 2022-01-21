@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviGenericSlider",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "934f-e2ec-7d81-92c0",
 			"props": {
 				"children": [

@@ -2,7 +2,7 @@ import View from '@smartface/native/ui/view';
 import { themeService } from 'theme';
 import System from '@smartface/native/device/system';
 import Color from '@smartface/native/ui/color';
-let { backgroundColor, paddingLeft, paddingRight } = themeService.getStyle('.lviRowNLine-flMain');
+let { backgroundColor, paddingLeft, paddingRight } = themeService.getNativeStyle('.lviRowNLine-flMain');
 
 const isIOS = System.OS === System.OSType.IOS;
 

@@ -15,6 +15,7 @@ import genericErrorHandler from './genericErrorHandler';
 // WORKAROUND : SUPDEV-2198 - Remove following lines when resolved
 import Contacts from '@smartface/native/device/contacts';
 import FlexLayout from '@smartface/native/ui/flexlayout';
+import { NativeRouter as Router } from '@smartface/router';
 //@ts-ignore
 const contactActivity = Contacts.onActivityResult;
 //@ts-ignore
@@ -106,7 +107,7 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
             menuItems.push(cancelMenuItem);
         }
         menu.items = menuItems;
-        menu.show(active.page);
+        menu.show(Router.currentRouter.getState().view);
     });
 };
 
@@ -143,7 +144,7 @@ export const onCameraSelect = (opts: IPhotoEdit = {}) => {
                         headerBarTitle: global.lang.photoEditHeaderTitle,
                         hideBottomControls: false
                     },
-                    page: active.page
+                    page: Router.currentRouter.getState().view
                 };
                 !opts.freeAspectRatio && (startCameraOpts['aspectRatio'] = { x: 1, y: 1 });
                 !opts.freeMaxResultSize &&
@@ -189,7 +190,7 @@ export const onGallerySelect = (opts: IPhotoEdit = {}) => {
                         headerBarTitle: global.lang.photoEditHeaderTitle,
                         hideBottomControls: false
                     },
-                    page: active.page
+                    page: Router.currentRouter.getState().view
                 };
                 !opts.freeAspectRatio && (pickFromGalleryOpts['aspectRatio'] = { x: 1, y: 1 });
                 !opts.freeMaxResultSize &&

@@ -20,8 +20,7 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a",
-			"degree": 0
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -33,8 +32,7 @@
 				"parent": "85da-2fd3-8e39-c6d0"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
 			"className": ".sf-headerBar.transparent",
@@ -49,8 +47,7 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgSignUp"
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-imageView #pgSignUp-imagebackground",
@@ -61,8 +58,9 @@
 				"parent": "85da-2fd3-8e39-c6d0"
 			},
 			"type": "ImageView",
-			"userProps": {},
-			"degree": 1
+			"userProps": {
+				"image": "background.png"
+			}
 		},
 		{
 			"className": ".sf-flexLayout #pgSignUp-flContainer",
@@ -82,8 +80,7 @@
 			"userProps": {
 				"testId": "HD_85tn3t",
 				"usePageVariable": true
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-imageView #pgSignUp-flContainer-imgLogo",
@@ -94,8 +91,9 @@
 				"parent": "2040-54a0-940e-495a"
 			},
 			"type": "ImageView",
-			"userProps": {},
-			"degree": 2
+			"userProps": {
+				"image": "logo.png"
+			}
 		},
 		{
 			"className": ".sf-label #pgSignUp-flContainer-lblTitle .signup.lblTitle",
@@ -110,8 +108,7 @@
 			"userProps": {
 				"testId": "c0IeOywGJ",
 				"usePageVariable": true
-			},
-			"degree": 2
+			}
 		},
 		{
 			"className": ".sf-label #pgSignUp-flContainer-lblText .signup.lblText",
@@ -126,8 +123,7 @@
 			"userProps": {
 				"testId": "ig1_1Vjn2J",
 				"usePageVariable": true
-			},
-			"degree": 2
+			}
 		},
 		{
 			"className": ".sf-flexLayout #pgSignUp-flContainer-flForm",
@@ -147,8 +143,7 @@
 				"parent": "2040-54a0-940e-495a"
 			},
 			"type": "FlexLayout",
-			"userProps": {},
-			"degree": 2
+			"userProps": {}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
@@ -168,10 +163,9 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"usePageVariable": true,
-				"testId": "YwZtv6Dt3"
-			},
-			"degree": 3
+				"testId": "YwZtv6Dt3",
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
@@ -193,8 +187,7 @@
 			"userProps": {
 				"testId": "YF5E3mRog",
 				"usePageVariable": true
-			},
-			"degree": 3
+			}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
@@ -216,8 +209,7 @@
 			"userProps": {
 				"testId": "64dCtKq8CQ",
 				"usePageVariable": true
-			},
-			"degree": 3
+			}
 		},
 		{
 			"className": ".sf-flexLayout #pgSignUp-flContainer-flForm-flTerms",
@@ -231,54 +223,7 @@
 				"parent": "40d7-1892-4734-7a1b"
 			},
 			"type": "FlexLayout",
-			"userProps": {},
-			"degree": 3
-		},
-		{
-			"className": ".sf-flexLayout #pgSignUp-flContainer-flForm-flPrivacy",
-			"id": "5aaf-f8a9-8953-b2cc",
-			"props": {
-				"children": [
-					"eade-4475-69c0-5aee",
-					"ec96-c1f9-ba8b-f30d"
-				],
-				"name": "flPrivacy",
-				"parent": "40d7-1892-4734-7a1b"
-			},
-			"type": "FlexLayout",
-			"userProps": {},
-			"degree": 3
-		},
-		{
-			"className": ".sf-button .sf-button-main",
-			"id": "fe91-7b0a-263b-7b5f",
-			"props": {
-				"children": [],
-				"name": "btnSignUp",
-				"parent": "40d7-1892-4734-7a1b",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"testId": "NudLl5Utk",
-				"usePageVariable": true
-			},
-			"degree": 3
-		},
-		{
-			"className": ".sf-flexLayout #pgSignUp-flContainer-flForm-flFooter",
-			"id": "e333-17ee-ecf4-3517",
-			"props": {
-				"children": [
-					"116e-9475-8284-ae76",
-					"3462-f45d-874f-b834"
-				],
-				"name": "flFooter",
-				"parent": "40d7-1892-4734-7a1b"
-			},
-			"type": "FlexLayout",
-			"userProps": {},
-			"degree": 3
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label #pgSignUp-flContainer-flForm-flTerms-lblTermsLeft .signup.lblTermsLeft",
@@ -295,39 +240,7 @@
 				"testId": "yHKmid72b3",
 				"text": "By continuing you agree to our",
 				"usePageVariable": true
-			},
-			"degree": 4
-		},
-		{
-			"className": ".sf-label #pgSignUp-flContainer-flForm-flPrivacy-lblPrivacyLeft .signup.lblPrivacyLeft",
-			"id": "eade-4475-69c0-5aee",
-			"props": {
-				"children": [],
-				"name": "lblPrivacyLeft",
-				"parent": "5aaf-f8a9-8953-b2cc",
-				"text": "and "
-			},
-			"type": "Label",
-			"userProps": {
-				"text": "and "
-			},
-			"degree": 4
-		},
-		{
-			"className": ".sf-label #pgSignUp-flContainer-flForm-flFooter-lblFooterLeft .signup.lblFooterLeft",
-			"id": "116e-9475-8284-ae76",
-			"props": {
-				"children": [],
-				"name": "lblFooterLeft",
-				"parent": "e333-17ee-ecf4-3517",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"testId": "fZi-0ZTSAq",
-				"usePageVariable": true
-			},
-			"degree": 4
+			}
 		},
 		{
 			"className": ".sf-label #pgSignUp-flContainer-flForm-flTerms-lblTermsRight .signup.termsPrivacyRight",
@@ -344,8 +257,35 @@
 				"testId": "swBvQHCYgv",
 				"text": "Terms of Service",
 				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout #pgSignUp-flContainer-flForm-flPrivacy",
+			"id": "5aaf-f8a9-8953-b2cc",
+			"props": {
+				"children": [
+					"eade-4475-69c0-5aee",
+					"ec96-c1f9-ba8b-f30d"
+				],
+				"name": "flPrivacy",
+				"parent": "40d7-1892-4734-7a1b"
 			},
-			"degree": 4
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-label #pgSignUp-flContainer-flForm-flPrivacy-lblPrivacyLeft .signup.lblPrivacyLeft",
+			"id": "eade-4475-69c0-5aee",
+			"props": {
+				"children": [],
+				"name": "lblPrivacyLeft",
+				"parent": "5aaf-f8a9-8953-b2cc",
+				"text": "and "
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "and "
+			}
 		},
 		{
 			"className": ".sf-label #pgSignUp-flContainer-flForm-flPrivacy-lblPrivacyRight .signup.termsPrivacyRight",
@@ -359,8 +299,51 @@
 			"type": "Label",
 			"userProps": {
 				"text": "Privacy Policy."
+			}
+		},
+		{
+			"className": ".sf-button .sf-button-main",
+			"id": "fe91-7b0a-263b-7b5f",
+			"props": {
+				"children": [],
+				"name": "btnSignUp",
+				"parent": "40d7-1892-4734-7a1b",
+				"usePageVariable": true
 			},
-			"degree": 4
+			"type": "Button",
+			"userProps": {
+				"testId": "NudLl5Utk",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout #pgSignUp-flContainer-flForm-flFooter",
+			"id": "e333-17ee-ecf4-3517",
+			"props": {
+				"children": [
+					"116e-9475-8284-ae76",
+					"3462-f45d-874f-b834"
+				],
+				"name": "flFooter",
+				"parent": "40d7-1892-4734-7a1b"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-label #pgSignUp-flContainer-flForm-flFooter-lblFooterLeft .signup.lblFooterLeft",
+			"id": "116e-9475-8284-ae76",
+			"props": {
+				"children": [],
+				"name": "lblFooterLeft",
+				"parent": "e333-17ee-ecf4-3517",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "fZi-0ZTSAq",
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-label #pgSignUp-flContainer-flForm-flFooter-lblRouteLogin .signup.lblRouteLogin",
@@ -375,8 +358,7 @@
 			"userProps": {
 				"testId": "5mcetTYCAf",
 				"usePageVariable": true
-			},
-			"degree": 4
+			}
 		}
 	]
 }

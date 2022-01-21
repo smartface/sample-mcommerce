@@ -1,26 +1,25 @@
-import Color from '@smartface/native/ui/color';
 import Image from '@smartface/native/ui/image';
 import TabBarItem from '@smartface/native/ui/tabbaritem';
-import { BottomTabBarRouter, NativeStackRouter as StackRouter, Route } from '@smartface/router';
+import { BottomTabBarRouter, NativeStackRouter as StackRouter, Route, Router } from '@smartface/router';
 import store from 'store/index';
 import authRouteGenerator from './auth';
 import { themeService } from 'theme';
 import BottomTabBarController from '@smartface/native/ui/bottomtabbarcontroller';
 import * as Pages from 'pages';
-const { backgroundColor, itemColor } = themeService.getStyle('.tabs');
+const { backgroundColor, itemColor } = themeService.getNativeStyle('.tabs');
 
 themeService.onChange(() => {
-    const { backgroundColor, itemColor } = themeService.getStyle('.tabs');
+    const { backgroundColor, itemColor } = themeService.getNativeStyle('.tabs');
     const rootController = bottomTabBarRouter._renderer._rootController;
     if (rootController instanceof BottomTabBarController) {
-        rootController.tabBar.backgroundColor = Color.create(backgroundColor);
-        rootController.tabBar.itemColor = { normal: Color.create(itemColor.normal), selected: Color.create(itemColor.selected) };
+        rootController.tabBar.backgroundColor = backgroundColor;
+        rootController.tabBar.itemColor = itemColor;
     }
 });
 
 let btbItemCart = new TabBarItem();
 btbItemCart.title = global.lang.cart;
-btbItemCart.badge.backgroundColor = Color.create(itemColor.selected);
+btbItemCart.badge.backgroundColor = itemColor.selected;
 btbItemCart.badge.visible = false;
 btbItemCart.icon = Image.createFromFile('images://tabiconcart.png');
 store.subscribe(() => {
@@ -47,14 +46,35 @@ const getBasketCounter = () => {
     }
 };
 
+function productDetailRouter(basePath: string) {
+    return StackRouter.of({
+        path: `${basePath}/productDetail`,
+        to: `${basePath}/productDetail/main`,
+        modal: true,
+        routes: [
+            Route.of<Pages.pgProductDetail>({
+                path: `${basePath}/productDetail/main`,
+                build(router, route) {
+                    const page = new Pages.pgProductDetail(router, route);
+                    Router.getActiveRouter().setState({ view: page });
+                    return page;
+                },
+                headerBarParams: () => ({
+                    visible: true
+                })
+            })
+        ]
+    });
+}
+
 const bottomTabBarRouter = BottomTabBarRouter.of({
     path: '/btb',
     to: '/btb/tab1/home',
     homeRoute: 0,
     tabbarParams: () => ({
         ios: { translucent: false },
-        itemColor: { normal: Color.create(itemColor.normal), selected: Color.create(itemColor.selected) },
-        backgroundColor: Color.create(backgroundColor)
+        itemColor: itemColor,
+        backgroundColor: backgroundColor
     }),
     items: [
         { title: global.lang.shop, icon: Image.createFromFile('images://tabiconhome.png') },
@@ -73,28 +93,15 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 Route.of<Pages.pgHome>({
                     path: `/btb/tab1/home`,
                     build(router, route) {
-                        return new Pages.pgHome(router, route);
+                        const page = new Pages.pgHome(router, route);
+                        Router.getActiveRouter().setState({ view: page });
+                        return page;
                     },
                     headerBarParams: () => ({
                         visible: true
                     })
                 }),
-                StackRouter.of({
-                    path: '/btb/tab1/productDetail',
-                    to: '/btb/tab1/productDetail/main',
-                    modal: true,
-                    routes: [
-                        Route.of<Pages.pgProductDetail>({
-                            path: `/btb/tab1/productDetail/main`,
-                            build(router, route) {
-                                return new Pages.pgProductDetail(router, route);
-                            },
-                            headerBarParams: () => ({
-                                visible: true
-                            })
-                        })
-                    ]
-                }),
+                productDetailRouter('/btb/tab1'),
                 StackRouter.of({
                     path: '/btb/tab1/categoryDetail',
                     to: '/btb/tab1/categoryDetail/main',
@@ -103,12 +110,15 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         Route.of<Pages.pgCategoryDetail>({
                             path: `/btb/tab1/categoryDetail/main`,
                             build(router, route) {
-                                return new Pages.pgCategoryDetail(router, route);
+                                const page = new Pages.pgCategoryDetail(router, route);
+                                Router.getActiveRouter().setState({ view: page });
+                                return page;
                             },
                             headerBarParams: () => ({
                                 visible: true
                             })
-                        })
+                        }),
+                        productDetailRouter('/btb/tab1/categoryDetail')
                     ]
                 })
             ]
@@ -121,7 +131,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 Route.of<Pages.pgCategories>({
                     path: `/btb/tab2/categories`,
                     build(router, route) {
-                        return new Pages.pgCategories(router, route);
+                        const page = new Pages.pgCategories(router, route);
+                        Router.getActiveRouter().setState({ view: page });
+                        return page;
                     },
                     headerBarParams: () => ({
                         visible: true
@@ -135,7 +147,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         Route.of<Pages.pgCategoryDetail>({
                             path: `/btb/tab2/categoryDetail/main`,
                             build(router, route) {
-                                return new Pages.pgCategoryDetail(router, route);
+                                const page = new Pages.pgCategoryDetail(router, route);
+                                Router.getActiveRouter().setState({ view: page });
+                                return page;
                             },
                             headerBarParams: () => ({
                                 visible: true
@@ -152,7 +166,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 Route.of<Pages.pgCart>({
                     path: `/btb/tab3/cart`,
                     build(router, route) {
-                        return new Pages.pgCart(router, route);
+                        const page = new Pages.pgCart(router, route);
+                        Router.getActiveRouter().setState({ view: page });
+                        return page;
                     },
                     headerBarParams: () => ({
                         visible: true
@@ -167,7 +183,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 Route.of<Pages.pgFavorites>({
                     path: `/btb/tab4/favorites`,
                     build(router, route) {
-                        return new Pages.pgFavorites(router, route);
+                        const page = new Pages.pgFavorites(router, route);
+                        Router.getActiveRouter().setState({ view: page });
+                        return page;
                     },
                     headerBarParams: () => ({
                         visible: true
@@ -182,7 +200,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 Route.of<Pages.pgAccount>({
                     path: `/btb/tab5/account`,
                     build(router, route) {
-                        return new Pages.pgAccount(router, route);
+                        const page = new Pages.pgAccount(router, route);
+                        Router.getActiveRouter().setState({ view: page });
+                        return page;
                     },
                     headerBarParams: () => ({
                         visible: true
@@ -196,7 +216,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         Route.of<Pages.pgUserSettings>({
                             path: `/btb/tab5/settings/main`,
                             build(router, route) {
-                                return new Pages.pgUserSettings(router, route);
+                                const page = new Pages.pgUserSettings(router, route);
+                                Router.getActiveRouter().setState({ view: page });
+                                return page;
                             },
                             headerBarParams: () => ({
                                 visible: true
@@ -212,7 +234,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         Route.of<Pages.pgNotifications>({
                             path: `/btb/tab5/notifications/main`,
                             build(router, route) {
-                                return new Pages.pgNotifications(router, route);
+                                const page = new Pages.pgNotifications(router, route);
+                                Router.getActiveRouter().setState({ view: page });
+                                return page;
                             },
                             headerBarParams: () => ({
                                 visible: true

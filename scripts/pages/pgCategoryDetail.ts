@@ -44,9 +44,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     }
     initSearchView(visible) {
         this.productSearchView = new SearchView();
-        this.productSearchView.textFieldBackgroundColor = Color.create(
-            themeService.getStyle('.sf-searchView.gray').textFieldBackgroundColor
-        );
+        this.productSearchView.textFieldBackgroundColor = themeService.getNativeStyle('.sf-searchView.gray').textFieldBackgroundColor;
         this.productSearchView.addToHeaderBar(this);
         if (visible) {
             this.isSearchViewVisible = true;
@@ -107,6 +105,16 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                     GridViewItem.toggleIndicator(false);
                 }, 500);
             };
+        };
+        this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
+            const product = this.categoryProducts[productIndex];
+            this.router.push('/btb/tab1/categoryDetail/productDetail', {
+                productId: product.id,
+                productName: product.name,
+                productPrice: product.price,
+                productDescription: product.description,
+                productImg: product.image
+            });
         };
     }
     refreshGridView() {

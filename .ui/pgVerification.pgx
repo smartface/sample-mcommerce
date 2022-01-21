@@ -58,7 +58,9 @@
 				"parent": "8492-4718-26bc-e27d"
 			},
 			"type": "ImageView",
-			"userProps": {}
+			"userProps": {
+                "image": "background.png"
+            }
 		},
 		{
 			"className": ".sf-flexLayout #pgVerification-flheader",

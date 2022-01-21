@@ -1,4 +1,4 @@
-import { NativeStackRouter as StackRouter, Route } from '@smartface/router';
+import { NativeStackRouter as StackRouter, Route, Router } from '@smartface/router';
 import * as Pages from 'pages';
 
 export default function (basePath: string) {
@@ -10,7 +10,9 @@ export default function (basePath: string) {
             Route.of<Pages.pgWelcome>({
                 path: `${basePath}/pages/pgWelcome`,
                 build(router, route) {
-                    return new Pages.pgWelcome(router, route);
+                    const page = new Pages.pgWelcome(router, route);
+                    Router.getActiveRouter().setState({ view: page });
+                    return page;
                 },
                 headerBarParams: () => ({
                     visible: true
@@ -19,7 +21,9 @@ export default function (basePath: string) {
             Route.of<Pages.pgNumber>({
                 path: `${basePath}/pages/pgNumber`,
                 build(router, route) {
-                    return new Pages.pgNumber(router, route);
+                    const page = new Pages.pgNumber(router, route);
+                    Router.getActiveRouter().setState({ view: page });
+                    return page;
                 },
                 headerBarParams: () => ({
                     visible: true
@@ -28,7 +32,9 @@ export default function (basePath: string) {
             Route.of<Pages.pgVerification>({
                 path: `${basePath}/pages/pgVerification`,
                 build(router, route) {
-                    return new Pages.pgVerification(router, route);
+                    const page = new Pages.pgVerification(router, route);
+                    Router.getActiveRouter().setState({ view: page });
+                    return page;
                 },
                 headerBarParams: () => ({
                     visible: true
@@ -37,7 +43,9 @@ export default function (basePath: string) {
             Route.of<Pages.pgLogin>({
                 path: `${basePath}/pages/pgLogin`,
                 build(router, route) {
-                    return new Pages.pgLogin(router, route);
+                    const page = new Pages.pgLogin(router, route);
+                    Router.getActiveRouter().setState({ view: page });
+                    return page;
                 },
                 headerBarParams: () => ({
                     visible: false
@@ -46,7 +54,9 @@ export default function (basePath: string) {
             Route.of<Pages.pgSignUp>({
                 path: `${basePath}/pages/pgSignUp`,
                 build(router, route) {
-                    return new Pages.pgSignUp(router, route);
+                    const page = new Pages.pgSignUp(router, route);
+                    Router.getActiveRouter().setState({ view: page });
+                    return page;
                 },
                 headerBarParams: () => ({
                     visible: true

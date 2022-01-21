@@ -175,6 +175,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "star.png",
 				"usePageVariable": true
 			}
 		},

@@ -57,7 +57,9 @@
 				"parent": "49ad-4e86-8aa1-37db"
 			},
 			"type": "ImageView",
-			"userProps": {}
+			"userProps": {
+				"image": "background.png"
+			}
 		},
 		{
 			"className": ".sf-flexLayout #pgNumber-flheader",
