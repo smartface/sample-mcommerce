@@ -7,20 +7,20 @@ import authRouteGenerator from './auth';
 import { themeService } from 'theme';
 import BottomTabBarController from '@smartface/native/ui/bottomtabbarcontroller';
 import * as Pages from 'pages';
-const { backgroundColor, itemColor } = themeService.getStyle('.tabs');
+const { backgroundColor, itemColor } = themeService.getNativeStyle('.tabs');
 
 themeService.onChange(() => {
-    const { backgroundColor, itemColor } = themeService.getStyle('.tabs');
+    const { backgroundColor, itemColor } = themeService.getNativeStyle('.tabs');
     const rootController = bottomTabBarRouter._renderer._rootController;
     if (rootController instanceof BottomTabBarController) {
-        rootController.tabBar.backgroundColor = Color.create(backgroundColor);
-        rootController.tabBar.itemColor = { normal: Color.create(itemColor.normal), selected: Color.create(itemColor.selected) };
+        rootController.tabBar.backgroundColor = backgroundColor;
+        rootController.tabBar.itemColor = itemColor;
     }
 });
 
 let btbItemCart = new TabBarItem();
 btbItemCart.title = global.lang.cart;
-btbItemCart.badge.backgroundColor = Color.create(itemColor.selected);
+btbItemCart.badge.backgroundColor = itemColor.selected;
 btbItemCart.badge.visible = false;
 btbItemCart.icon = Image.createFromFile('images://tabiconcart.png');
 store.subscribe(() => {
@@ -53,8 +53,8 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
     homeRoute: 0,
     tabbarParams: () => ({
         ios: { translucent: false },
-        itemColor: { normal: Color.create(itemColor.normal), selected: Color.create(itemColor.selected) },
-        backgroundColor: Color.create(backgroundColor)
+        itemColor: itemColor,
+        backgroundColor: backgroundColor
     }),
     items: [
         { title: global.lang.shop, icon: Image.createFromFile('images://tabiconhome.png') },

@@ -1,10 +1,9 @@
 import { themeService } from 'theme';
 import Button from '@smartface/native/ui/button';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
-import Image from '@smartface/native/ui/image';
 import KeyboardType from '@smartface/native/ui/keyboardtype';
 import PgVerificationDesign from 'generated/pages/pgVerification';
-const { image } = themeService.getStyle('.sf-headerBar.back');
+const { image } = themeService.getNativeStyle('.sf-headerBar.back');
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 
@@ -29,7 +28,7 @@ export default class PgVerification extends withDismissAndBackButton(PgVerificat
     }
     addHeaderWithDirectImage() {
         this.leftItem = new HeaderBarItem({
-            image: Image.createFromFile(image),
+            image,
             onPress: () => {
                 this.router.goBack();
             }

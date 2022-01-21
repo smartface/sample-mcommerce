@@ -13,7 +13,7 @@ import { User } from 'types';
 import LviSpacer from 'generated/my-components/LviSpacer';
 import LviProfile from 'components/LviProfile';
 import LviRow2LineButton from 'components/LviRow2LineButton';
-const { image } = themeService.getStyle('.lviRow2LineButton.leftIcon');
+const { image } = themeService.getNativeStyle('.lviRow2LineButton.leftIcon');
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 

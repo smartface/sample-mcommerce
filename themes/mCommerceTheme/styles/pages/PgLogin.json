@@ -18,7 +18,6 @@
 				"flexGrow": 1
 			},
 			"height": null,
-			"image": "background.png",
 			"imageFillType": "ASPECTFILL",
 			"left": 0,
 			"marginBottom": null,
@@ -37,7 +36,6 @@
 		},
 		"&-logo": {
 			"height": null,
-			"image": "logo.png",
 			"imageFillType": "NORMAL",
 			"marginBottom": 10,
 			"testId": "zw0_J-c-V",

@@ -129,6 +129,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "ayarlar_karanlik.png",
 				"usePageVariable": true
 			}
 		},
@@ -165,6 +166,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "ayarlar_aydinlik.png",
 				"usePageVariable": true
 			}
 		},

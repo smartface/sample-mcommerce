@@ -2,6 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .paddingHorizontal .flCartCheckout",
+			"hiddenComponent": true,
 			"id": "97a7-de34-7dcc-2791",
 			"props": {
 				"children": [

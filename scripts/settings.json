@@ -3,7 +3,12 @@
 		"theme": {
 			"currentTheme": "mCommerceTheme",
 			"baseTheme": "baseTheme",
-			"themes": ["defaultTheme", "baseTheme", "mCommerceDarkTheme", "mCommerceTheme"]
+			"themes": [
+				"defaultTheme",
+				"baseTheme",
+				"mCommerceDarkTheme",
+				"mCommerceTheme"
+			]
 		},
 		"paths": {
 			"pgxFolder": ".ui",
@@ -15,8 +20,15 @@
 			"themesDistFolder": "scripts/generated/themes",
 			"output": {
 				"root": "dist",
-				"include": ["node_modules", "sf_modules"],
-				"acceptedExtensions": [".js", ".json", ".map"]
+				"include": [
+					"node_modules",
+					"sf_modules"
+				],
+				"acceptedExtensions": [
+					".js",
+					".json",
+					".map"
+				]
 			}
 		},
 		"version": "6.15.1",

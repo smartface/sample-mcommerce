@@ -9,6 +9,8 @@ type DialogOpts = {
 };
 
 export default function (component: FlexLayout, opts?: DialogOpts): StyleContextComponentType<Dialog> {
+    return;
+    //TODO COMPONENT CONTEXT VPATCH
     const dialog = new Dialog({
         android: {
             themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
