@@ -318,38 +318,3 @@ export function onRowHeight(index, fieldName = 'data') {
     return isNaN(height) ? LviClass.getHeight() : height;
     //Show default height if no height parameter is given.
 }
-
-function initMtb({ picker, materialTextBox, onPickerDone = () => {} }) {
-    if (isIOS) {
-        const keyboardLayout = KeyboardLayout.init(materialTextBox)[0];
-        keyboardLayout.onDoneButtonClick = () => Application.hideKeyboard();
-        materialTextBox.ios.inputView = undefined;
-    }
-}
-
-export function updateRowRangeLv(params: {
-    listView: ListView;
-    oldListLength: number;
-    newListLength: number;
-    updateLastItemBorders: boolean;
-}) {
-    const { oldListLength, newListLength, listView, updateLastItemBorders } = params;
-    listView.itemCount = newListLength;
-    if (oldListLength >= newListLength) {
-        isEmulator() &&
-            console.error(
-                `(insertRowRangeLv) New list length is equals or smaller than old list length! old : ${oldListLength} new : ${newListLength}`
-            );
-        listView.refreshData();
-        return;
-    }
-    const itemCount = newListLength - oldListLength;
-    const rowRangeParams = {
-        positionStart: updateLastItemBorders ? (oldListLength - 1 >= 0 ? oldListLength - 1 : 0) : oldListLength >= 0 ? oldListLength : 0,
-        itemCount: itemCount,
-        ios: {
-            animation: ListView.iOS.RowAnimation.AUTOMATIC
-        }
-    };
-    listView.insertRowRange(rowRangeParams);
-}
