@@ -4,6 +4,7 @@
 	"backgroundSecondary": "rgba(237,243,254,1.0)",
 	"textDark": "#181725",
 	"textLight": "#7C7C7C",
+	"searchViewBg": "#F2F3F2",
 	"green": "#53B175",
 	"white": "#FFFFFF",
 	"black": "rgba(0,0,0,1.0)",
