@@ -202,5 +202,15 @@
 			},
 			"textColor": "${main}"
 		}
+	},
+	".checkout": {
+		"font": {
+			"family": "Nunito",
+			"bold": true,
+			"italic": false,
+			"size": 12,
+			"style": "Bold"
+		},
+		"textColor": "${white}"
 	}
 }

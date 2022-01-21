@@ -18,6 +18,7 @@ enum CartOperationEnum {
 export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     cartProducts: Basket;
     data: Processor[];
+    unsubscribe = null;
     constructor(private router?: Router, private route?: Route) {
         super({});
     }
@@ -37,6 +38,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
         const processorItems = [];
         this.cartProducts = store.getState().main.basket;
         if (this.cartProducts.length === 0) {
+            this.flCartCheckout.visible = false;
             processorItems.push(
                 ListViewItems.getLviEmptyItem({
                     emptyImage: 'images://empty_cart.png',
@@ -75,7 +77,8 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                                     },
                                     {
                                         text: global.lang.cancel,
-                                        type: AlertView.Android.ButtonType.NEGATIVE
+                                        type: AlertView.Android.ButtonType.NEGATIVE,
+                                        onClick: () => {}
                                     }
                                 ]
                             });
@@ -83,9 +86,22 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                     })
                 );
             });
+            this.calculateCheckoutPrice();
         }
 
         return processorItems;
+    }
+    calculateCheckoutPrice() {
+        if (store.getState().main.basket.length > 0) {
+            this.flCartCheckout.checkoutTitle = 'Go to Checkout';
+            this.flCartCheckout.checkoutPrice = store
+                .getState()
+                .main.basket.reduce((total, product) => total + product.price * product.count, 0)
+                .toFixed(2);
+            this.flCartCheckout.visible = true;
+        } else {
+            this.flCartCheckout.visible = false;
+        }
     }
     cartOperation(cart: Product, type: CartOperationEnum) {
         switch (type) {
@@ -101,6 +117,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
         super.onShow();
         this.headerBar.title = global.lang.mycartHeader;
         this.refreshListView();
+        this.unsubscribe = store.subscribe(() => this.calculateCheckoutPrice());
     }
 
     onLoad() {
