@@ -1,7 +1,6 @@
-import Color from '@smartface/native/ui/color';
 import Image from '@smartface/native/ui/image';
 import TabBarItem from '@smartface/native/ui/tabbaritem';
-import { BottomTabBarRouter, NativeStackRouter as StackRouter, Route } from '@smartface/router';
+import { BottomTabBarRouter, NativeStackRouter as StackRouter, Route, Router } from '@smartface/router';
 import store from 'store/index';
 import authRouteGenerator from './auth';
 import { themeService } from 'theme';
@@ -56,7 +55,9 @@ function productDetailRouter(basePath: string) {
             Route.of<Pages.pgProductDetail>({
                 path: `${basePath}/productDetail/main`,
                 build(router, route) {
-                    return new Pages.pgProductDetail(router, route);
+                    const page = new Pages.pgProductDetail(router, route);
+                    Router.getActiveRouter().setState({ view: page });
+                    return page;
                 },
                 headerBarParams: () => ({
                     visible: true
@@ -92,7 +93,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 Route.of<Pages.pgHome>({
                     path: `/btb/tab1/home`,
                     build(router, route) {
-                        return new Pages.pgHome(router, route);
+                        const page = new Pages.pgHome(router, route);
+                        Router.getActiveRouter().setState({ view: page });
+                        return page;
                     },
                     headerBarParams: () => ({
                         visible: true
@@ -107,7 +110,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         Route.of<Pages.pgCategoryDetail>({
                             path: `/btb/tab1/categoryDetail/main`,
                             build(router, route) {
-                                return new Pages.pgCategoryDetail(router, route);
+                                const page = new Pages.pgCategoryDetail(router, route);
+                                Router.getActiveRouter().setState({ view: page });
+                                return page;
                             },
                             headerBarParams: () => ({
                                 visible: true
@@ -126,7 +131,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 Route.of<Pages.pgCategories>({
                     path: `/btb/tab2/categories`,
                     build(router, route) {
-                        return new Pages.pgCategories(router, route);
+                        const page = new Pages.pgCategories(router, route);
+                        Router.getActiveRouter().setState({ view: page });
+                        return page;
                     },
                     headerBarParams: () => ({
                         visible: true
@@ -140,7 +147,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         Route.of<Pages.pgCategoryDetail>({
                             path: `/btb/tab2/categoryDetail/main`,
                             build(router, route) {
-                                return new Pages.pgCategoryDetail(router, route);
+                                const page = new Pages.pgCategoryDetail(router, route);
+                                Router.getActiveRouter().setState({ view: page });
+                                return page;
                             },
                             headerBarParams: () => ({
                                 visible: true
@@ -157,7 +166,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 Route.of<Pages.pgCart>({
                     path: `/btb/tab3/cart`,
                     build(router, route) {
-                        return new Pages.pgCart(router, route);
+                        const page = new Pages.pgCart(router, route);
+                        Router.getActiveRouter().setState({ view: page });
+                        return page;
                     },
                     headerBarParams: () => ({
                         visible: true
@@ -172,7 +183,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 Route.of<Pages.pgFavorites>({
                     path: `/btb/tab4/favorites`,
                     build(router, route) {
-                        return new Pages.pgFavorites(router, route);
+                        const page = new Pages.pgFavorites(router, route);
+                        Router.getActiveRouter().setState({ view: page });
+                        return page;
                     },
                     headerBarParams: () => ({
                         visible: true
@@ -187,7 +200,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 Route.of<Pages.pgAccount>({
                     path: `/btb/tab5/account`,
                     build(router, route) {
-                        return new Pages.pgAccount(router, route);
+                        const page = new Pages.pgAccount(router, route);
+                        Router.getActiveRouter().setState({ view: page });
+                        return page;
                     },
                     headerBarParams: () => ({
                         visible: true
@@ -201,7 +216,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         Route.of<Pages.pgUserSettings>({
                             path: `/btb/tab5/settings/main`,
                             build(router, route) {
-                                return new Pages.pgUserSettings(router, route);
+                                const page = new Pages.pgUserSettings(router, route);
+                                Router.getActiveRouter().setState({ view: page });
+                                return page;
                             },
                             headerBarParams: () => ({
                                 visible: true
@@ -217,7 +234,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         Route.of<Pages.pgNotifications>({
                             path: `/btb/tab5/notifications/main`,
                             build(router, route) {
-                                return new Pages.pgNotifications(router, route);
+                                const page = new Pages.pgNotifications(router, route);
+                                Router.getActiveRouter().setState({ view: page });
+                                return page;
                             },
                             headerBarParams: () => ({
                                 visible: true

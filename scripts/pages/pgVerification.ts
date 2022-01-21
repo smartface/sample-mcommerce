@@ -26,18 +26,8 @@ export default class PgVerification extends withDismissAndBackButton(PgVerificat
         };
         this.mtbNumber.materialTextBox.keyboardType = KeyboardType.NUMBER;
     }
-    addHeaderWithDirectImage() {
-        this.leftItem = new HeaderBarItem({
-            image,
-            onPress: () => {
-                this.router.goBack();
-            }
-        });
-        this.headerBar.setLeftItem(this.leftItem);
-    }
     onShow() {
         super.onShow();
-        this.addHeaderWithDirectImage();
         this.initBackButton(this.router);
     }
     onLoad() {

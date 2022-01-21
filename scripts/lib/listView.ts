@@ -3,20 +3,14 @@ import ListView from '@smartface/native/ui/listview';
 import ListViewItem from '@smartface/native/ui/listviewitem';
 import { LviTypes, LviClasses, IProcessed } from 'lib/listViewItemTypes';
 import { setBordersForSwipeItem, setBordersForListViewItem } from 'lib/border';
-// import LviMaterialTextBox from 'components/LviMaterialTextBox';
-// import LviDoubleMaterialTextBox from 'components/LviDoubleMaterialTextBox';
-import componentContextPatch from '@smartface/contx/lib/smartface/componentContextPatch';
+import createPageContext from '@smartface/styling-context/lib/pageContext';
 import addChild from '@smartface/contx/lib/smartface/action/addChild';
 import pushClassNames from '@smartface/contx/lib/styling/action/pushClassNames';
-import Application from '@smartface/native/application';
-// import Picker from 'lib/picker';
-import KeyboardLayout from '@smartface/component-keyboardlayout';
 import { setID } from 'lib/testAutomation';
 import genericErrorHandler from 'lib/genericErrorHandler';
-// import LviRow1Line from 'components/LviRow1Line';
 import Image from '@smartface/native/ui/image';
 import Page from '@smartface/native/ui/page';
-import isEmulator from '@smartface/extension-utils/lib/isEmulator';
+import { themeService } from 'theme';
 
 const isIOS = System.OS === System.OSType.IOS;
 const SwipeImages = {
@@ -216,7 +210,7 @@ const swipeAndroidWorkaroundMethod = (page: Page) => {
 
 function initSwipeItem(itemOptions?: SwipeItemOptions): StyleContextComponentType<ListView.SwipeItem> {
     const swipeItem = new ListView.SwipeItem() as StyleContextComponentType<ListView.SwipeItem>;
-    componentContextPatch(swipeItem, itemOptions.contextName);
+    themeService.addPage(createPageContext(swipeItem, itemOptions.contextName), itemOptions.contextName);
     swipeItem.text = itemOptions.text || '';
     if (itemOptions.icon) {
         swipeItem.icon = itemOptions.icon;

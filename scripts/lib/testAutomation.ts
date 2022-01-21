@@ -25,7 +25,7 @@ enum FOCUSABLE {
 
 export function setID(component: any, uniqueKey: string, opts?: AutomationAndAccessibilityOptions): void {
     //@ts-ignore
-    const pageName = active.page?.pageName;
+    const pageName = Router.currentRouter.getState().view?.pageName;
     if (!pageName) return;
     const id = removeSpaces(pageName + '/' + uniqueKey);
     setIDWithNativeAPIAccess(component, id, opts);

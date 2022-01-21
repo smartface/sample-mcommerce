@@ -1,7 +1,8 @@
 import Dialog from '@smartface/native/ui/dialog';
 import FlexLayout from '@smartface/native/ui/flexlayout';
-import componentContextPatch from '@smartface/contx/lib/smartface/componentContextPatch';
 import pushClassNames from '@smartface/contx/lib/styling/action/pushClassNames';
+import createPageContext from '@smartface/styling-context/lib/pageContext';
+import { themeService } from 'theme';
 
 type DialogOpts = {
     className?: string;
@@ -9,15 +10,13 @@ type DialogOpts = {
 };
 
 export default function (component: FlexLayout, opts?: DialogOpts): StyleContextComponentType<Dialog> {
-    return;
-    //TODO COMPONENT CONTEXT VPATCH
     const dialog = new Dialog({
         android: {
             themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
             cancelable: false
         }
     }) as StyleContextComponentType<Dialog>;
-    componentContextPatch(dialog, 'genericDialog');
+    themeService.addPage(createPageContext(dialog, 'genericDialog'), 'genericDialog');
     dialog.dispatch(pushClassNames([opts?.className || '.dialog']));
     dialog.android.isTransparent = false;
     if (opts?.closeOnTouch) {
