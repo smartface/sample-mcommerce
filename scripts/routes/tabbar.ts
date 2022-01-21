@@ -47,6 +47,25 @@ const getBasketCounter = () => {
     }
 };
 
+function productDetailRouter(basePath: string) {
+    return StackRouter.of({
+        path: `${basePath}/productDetail`,
+        to: `${basePath}/productDetail/main`,
+        modal: true,
+        routes: [
+            Route.of<Pages.pgProductDetail>({
+                path: `${basePath}/productDetail/main`,
+                build(router, route) {
+                    return new Pages.pgProductDetail(router, route);
+                },
+                headerBarParams: () => ({
+                    visible: true
+                })
+            })
+        ]
+    });
+}
+
 const bottomTabBarRouter = BottomTabBarRouter.of({
     path: '/btb',
     to: '/btb/tab1/home',
@@ -79,22 +98,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         visible: true
                     })
                 }),
-                StackRouter.of({
-                    path: '/btb/tab1/productDetail',
-                    to: '/btb/tab1/productDetail/main',
-                    modal: true,
-                    routes: [
-                        Route.of<Pages.pgProductDetail>({
-                            path: `/btb/tab1/productDetail/main`,
-                            build(router, route) {
-                                return new Pages.pgProductDetail(router, route);
-                            },
-                            headerBarParams: () => ({
-                                visible: true
-                            })
-                        })
-                    ]
-                }),
+                productDetailRouter('/btb/tab1'),
                 StackRouter.of({
                     path: '/btb/tab1/categoryDetail',
                     to: '/btb/tab1/categoryDetail/main',
@@ -108,7 +112,8 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                             headerBarParams: () => ({
                                 visible: true
                             })
-                        })
+                        }),
+                        productDetailRouter('/btb/tab1/categoryDetail')
                     ]
                 })
             ]
