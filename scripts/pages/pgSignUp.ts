@@ -9,6 +9,7 @@ import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { themeService } from 'theme';
+import { register } from 'service/commerce';
 
 export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
     constructor(private router?: Router, private route?: Route) {
@@ -39,7 +40,7 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         };
         this.mtbPassword.materialTextBox.isPassword = true;
     }
-    initUserSignup() {
+    async initUserSignup() {
         let userPayload = {
             id: 10,
             fullName: '',
@@ -52,9 +53,13 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         userPayload.username = this.mtbUsername.materialTextBox.text.trim();
         userPayload.fullName = this.mtbUsername.materialTextBox.text.trim();
         userPayload.password = this.mtbPassword.materialTextBox.text.trim();
-
-        store.dispatch(storeActions.SetNewUser(userPayload));
-        this.router.push('/pages/pgLogin');
+        const registerResponse = await register({
+            email: userPayload.email,
+            password: userPayload.password
+        });
+        if (registerResponse && registerResponse.success) {
+            this.router.push('/pages/pgLogin');
+        }
     }
 
     onShow() {

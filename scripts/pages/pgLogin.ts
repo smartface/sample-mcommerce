@@ -6,7 +6,7 @@ import { Route, NativeStackRouter, BaseRouter as Router } from '@smartface/route
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constants';
-
+import { login } from 'service/auth';
 export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     isMailValid = false;
     isPasswordValid = false;
@@ -42,8 +42,9 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
         };
         this.mtbPassword.materialTextBox.isPassword = true;
     }
-    initUserLogin() {
+    async initUserLogin() {
         if (this.initValidate()) {
+            const response = await login({ username: this.mtbLogin.materialTextBox.text, password: this.mtbPassword.materialTextBox.text });
             const found = store.getState().main.users.find((usr) => usr.email === this.mtbLogin.materialTextBox.text);
             if (found) {
                 const isPasswordTrue = found.password == this.mtbPassword.materialTextBox.text.replace(/\s+/g, '').trim();

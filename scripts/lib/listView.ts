@@ -221,7 +221,7 @@ function initSwipeItem(itemOptions?: SwipeItemOptions): StyleContextComponentTyp
                 itemOptions.onPress(itemOptions.dataId);
             }
         } catch (err) {
-            genericErrorHandler(err, false);
+            genericErrorHandler(err);
         } finally {
             swipeAndroidWorkaroundMethod(itemOptions.page);
         }

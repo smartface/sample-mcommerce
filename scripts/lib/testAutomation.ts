@@ -150,7 +150,7 @@ function setIDWithNativeAPIAccess(component: any, id: string, opts?: AutomationA
                 }
             }
         } catch (err) {
-            genericErrorHandler(err, false);
+            genericErrorHandler(err);
         }
     }
 }
