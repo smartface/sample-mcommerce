@@ -2,6 +2,7 @@ import { createServiceCallObject } from 'service';
 import getCurrentEnvironment from 'lib/getCurrentEnvironment';
 import config from 'config.json';
 import { buildQueryParams } from 'lib/query';
+import genericErrorHandler from 'lib/genericErrorHandler';
 
 const { serviceUrl } = config.environments[getCurrentEnvironment()];
 
@@ -26,6 +27,7 @@ export async function register({ email = '', password = '' }: IAuthQueryParams =
         });
         return res;
     } catch (err) {
+        genericErrorHandler(err);
         throw err;
     }
 }

@@ -1,11 +1,11 @@
 import { createServiceCallObject } from 'service';
-import { setAccessToken, setRefreshToken, getRefreshToken, getAccessToken, setIdToken, parseToken } from 'service/token';
+import { setAccessToken, setRefreshToken, getAccessToken, setIdToken } from 'service/token';
 import genericErrorHandler from 'lib/genericErrorHandler';
 import getCurrentEnvironment from 'lib/getCurrentEnvironment';
 import config from 'config.json';
 import { buildQueryParams } from 'lib/query';
 
-const { client_id, client_secret, identityProviderHint, redirect_uri, serviceUrl } = config.environments[getCurrentEnvironment()].auth;
+const { client_id, client_secret, serviceUrl } = config.environments[getCurrentEnvironment()].auth;
 
 const sc = createServiceCallObject(serviceUrl);
 
@@ -28,13 +28,7 @@ type LoginOptions = {
     sendToken: boolean;
 };
 
-export async function login(
-    { username = '', password = '', login_hint = '', grant_type = 'password', authType = '' }: IAuthQueryParams = {},
-    loginOptions: LoginOptions = {
-        handleErrors: true,
-        sendToken: false
-    }
-): Promise<any> {
+export async function login({ username = '', password = '', grant_type = 'password' }: IAuthQueryParams): Promise<any> {
     try {
         const res = await sc.request('/auth/realms/smartcommerce/protocol/openid-connect/token', {
             method: 'POST',
@@ -46,10 +40,7 @@ export async function login(
                 client_secret,
                 username,
                 password,
-                grant_type,
-                redirect_uri,
-                login_hint,
-                authType
+                grant_type
             })
         });
         if (res.access_token) {
@@ -60,17 +51,12 @@ export async function login(
         }
         return res;
     } catch (err) {
+        genericErrorHandler(err);
         throw err;
     }
 }
 
-export async function register(
-    { username = '', password = '' }: IAuthQueryParams = {},
-    loginOptions: LoginOptions = {
-        handleErrors: true,
-        sendToken: false
-    }
-): Promise<any> {
+export async function register({ username = '', password = '' }: IAuthQueryParams): Promise<any> {
     try {
         const res = await sc.request('/auth/realms/smartcommerce/protocol/openid-connect/token', {
             method: 'POST',
@@ -81,12 +67,12 @@ export async function register(
                 client_id,
                 client_secret,
                 username,
-                password,
-                redirect_uri
+                password
             })
         });
         return res;
     } catch (err) {
+        genericErrorHandler(err);
         throw err;
     }
 }
@@ -101,22 +87,7 @@ export async function getUserInfo(): Promise<any> {
         });
         return response;
     } catch (err) {
-        genericErrorHandler(err, false);
-        throw err;
-    }
-}
-export async function logout(): Promise<any> {
-    try {
-        const response = await sc.request('/auth/realms/turkcell/protocol/openid-connect/logout', {
-            method: 'POST',
-            headers: {
-                Authorization: `Bearer ${getAccessToken()}`
-            },
-            body: buildQueryParams({ client_id, client_secret, grant_type: 'refresh_token', refresh_token: getRefreshToken() })
-        });
-        return response;
-    } catch (err) {
-        genericErrorHandler(err, false);
+        genericErrorHandler(err);
         throw err;
     }
 }

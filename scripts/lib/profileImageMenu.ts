@@ -60,7 +60,7 @@ const compressImage = (UIImage: Image, opts?: IPhotoEdit): Promise<any> => {
     return resize(UIImage)
         .then((image) => compress(image))
         .then((blob) => blob.toBase64())
-        .catch((err) => genericErrorHandler(err, false));
+        .catch((err) => genericErrorHandler(err));
 };
 
 const updateImage = (params: IPhotoMenu): Promise<string> => {

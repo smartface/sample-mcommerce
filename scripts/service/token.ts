@@ -32,30 +32,10 @@ export function setRefreshToken(_refreshToken: string) {
     try {
         refreshToken;
     } catch (ex) {
-        genericErrorHandler(ex, false);
+        genericErrorHandler(ex);
     }
 }
 
 export function getRefreshToken() {
     return refreshToken || Data.getStringVariable(REFRESH_TOKEN);
-}
-
-export function parseToken(token) {
-    var base64Url = token.split('.')[1] || '';
-    var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    base64 = base64AddPadding(base64);
-    var jsonPayload = decodeURIComponent(
-        Blob.createFromBase64(base64)
-            .toString()
-            .split('')
-            .map(function (c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            })
-            .join('')
-    );
-    return JSON.parse(jsonPayload);
-}
-
-function base64AddPadding(str) {
-    return str + Array(((4 - (str.length % 4)) % 4) + 1).join('=');
 }
