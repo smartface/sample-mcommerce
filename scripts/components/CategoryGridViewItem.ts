@@ -24,8 +24,7 @@ export default class CategoryGridViewItem extends CategoryGridViewItemDesign {
         this.__imageUrl = getCategoryImage(categoryId);
         this.imgCategoryItem.loadFromUrl({
             url: this.__imageUrl,
-            useHTTPCacheControl: true,
-            fade: !this.imgCategoryItem.image
+            useHTTPCacheControl: true
         });
     }
     get flCategoryItemWrapperBorderColor(): any {

@@ -42,15 +42,20 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
         this.categoriesGrid.itemCount = this.categories.length;
         this.categoriesGrid.refreshData();
     }
+    async fetchCategories() {
+        this.categories = await getCategories();
+        if (this.categories) {
+            this.refreshGridView();
+        }
+    }
     onShow() {
         super.onShow();
     }
-    async onLoad() {
+    onLoad() {
         super.onLoad();
         this.headerBar.title = global.lang.categoriesHeader;
         this.headerBar.leftItemEnabled = false;
-        this.categories = await getCategories();
         this.initCategoriesGrid();
-        this.refreshGridView();
+        this.fetchCategories();
     }
 }
