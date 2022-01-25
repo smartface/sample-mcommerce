@@ -5,6 +5,7 @@ import { getCategoryImage } from 'service/commerce';
 
 export default class CategoryGridViewItem extends CategoryGridViewItemDesign {
     pageName?: string | undefined;
+    private __imageUrl: string;
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
         super(props);
@@ -16,11 +17,16 @@ export default class CategoryGridViewItem extends CategoryGridViewItemDesign {
     set categoryTitle(value: string) {
         this.lblCategoryItemTitle.text = value;
     }
-    get categoryImage(): string | Image {
-        return this.imgCategoryItem.image;
+    get imageUrl(): string {
+        return this.__imageUrl;
     }
-    set categoryImage(value: string | Image) {
-        this.imgCategoryItem.loadFromUrl({ url: getCategoryImage(value) });
+    set imageUrl(categoryId: string) {
+        this.__imageUrl = getCategoryImage(categoryId);
+        this.imgCategoryItem.loadFromUrl({
+            url: this.__imageUrl,
+            useHTTPCacheControl: true,
+            fade: !this.imgCategoryItem.image
+        });
     }
     get flCategoryItemWrapperBorderColor(): any {
         return this.flCategoryItemWrapper.borderColor;

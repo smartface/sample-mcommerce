@@ -28,7 +28,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
             GridViewItem.flCategoryItemWrapperBorderColor = this.categories[index].borderColor;
             GridViewItem.flCategoryItemWrapperBackgroundColor = this.categories[index].menuColor;
             GridViewItem.categoryTitle = this.categories[index].title;
-            GridViewItem.categoryImage = this.categories[index]._id;
+            GridViewItem.imageUrl = this.categories[index]._id;
             this.categoriesGrid.onItemSelected = (GridViewItem: categoriesItem, index: number) => {
                 this.router.push('/btb/tab2/categoryDetail', {
                     dataId: this.categories[index]._id,
