@@ -46,9 +46,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
         if (this.initValidate()) {
             const response = await login({ username: this.mtbLogin.materialTextBox.text, password: this.mtbPassword.materialTextBox.text });
             if (response && !!response.access_token) {
-                if (this.router instanceof NativeStackRouter) {
-                    this.router.dismiss();
-                }
+                this.router.push('/btb');
             }
         } else {
             // TODO: ADD USER NOT FOUND ERROR HERE

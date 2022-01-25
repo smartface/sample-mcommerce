@@ -131,7 +131,6 @@
 			"id": "40d7-1892-4734-7a1b",
 			"props": {
 				"children": [
-					"9cb0-9e79-e526-4f64",
 					"efef-c8d5-44cf-b90d",
 					"8680-508c-a2b2-3977",
 					"8bcf-a729-caf1-6202",
@@ -144,28 +143,6 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {}
-		},
-		{
-			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
-			"hiddenComponent": false,
-			"id": "9cb0-9e79-e526-4f64",
-			"initialized": false,
-			"props": {
-				"children": [],
-				"name": "mtbUsername",
-				"parent": "40d7-1892-4734-7a1b",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "materialTextBox",
-				"id": "574a-10da-b765-48e5"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"testId": "YwZtv6Dt3",
-				"usePageVariable": true
-			}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
