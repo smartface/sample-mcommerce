@@ -44,12 +44,21 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     }
     async initUserLogin() {
         if (this.initValidate()) {
-            const response = await login({ username: this.mtbLogin.materialTextBox.text, password: this.mtbPassword.materialTextBox.text });
-            if (response && !!response?.access_token) {
-                this.router.push('/btb');
+            try {
+                const response = await login({
+                    username: this.mtbLogin.materialTextBox.text,
+                    password: this.mtbPassword.materialTextBox.text
+                });
+                if (response && !!response?.access_token) {
+                    this.router.push('/btb');
+                }
+            } catch (error) {
+                alert({
+                    title: global.lang.warning,
+                    message: global.lang.userNotFoundWithThisCredentials
+                });
             }
         } else {
-            // TODO: ADD USER NOT FOUND ERROR HERE
             return;
         }
     }

@@ -111,5 +111,7 @@ SMF.i18n.defineLanguage('en', {
     scanFaceIDMessage: 'Scan your face',
     chooseNavigationApp: 'Choose Navigation App',
     minimumCharacterErrorOnPassword: 'Password must be at least 8 characters',
-    invalidEmail: 'Invalid Email'
+    invalidEmail: 'Invalid Email',
+    warning: 'Warning',
+    userNotFoundWithThisCredentials: 'User not found with this credentials'
 });
