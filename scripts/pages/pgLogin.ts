@@ -50,7 +50,9 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
                     password: this.mtbPassword.materialTextBox.text
                 });
                 if (response && !!response?.access_token) {
-                    this.router.push('/btb');
+                    if (this.router instanceof NativeStackRouter) {
+                        this.router.dismiss();
+                    }
                 }
             } catch (error) {
                 alert({

@@ -16,6 +16,7 @@ import LviRow2LineButton from 'components/LviRow2LineButton';
 const { image } = themeService.getNativeStyle('.lviRow2LineButton.leftIcon');
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
+import { getProfileImage, getProfileImageUrl, putProfileImage } from 'service/commerce';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -61,6 +62,11 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
         this.lvMain.itemCount = this.data.length;
         this.lvMain.refreshData();
     }
+    async fetchUserProfileImage() {
+        const response = await getProfileImage();
+        console.log('FETCH USER PP: ', response);
+        return response;
+    }
     processor(): Processor[] {
         this.userInfo = store.getState().main.currentUser;
         const accountItem = this.userInfo
@@ -68,15 +74,17 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                   userName: this.userInfo.email,
                   userEmail: this.userInfo.email,
                   userEditIcon: '',
-                  userImage: this.updatedImage || this.userInfo.profileImage,
+                  userImage: getProfileImageUrl(),
                   onAction: () => {
                       profileImageMenu({
-                          imageUrl: 'https://i.picsum.photos/id/49/800/800.jpg?hmac=rAzFhjqrfdnRPLR5_nFV49tMbvavk1xvsaEngwbDUfc',
+                          imageUrl: this.userInfo.profileImage,
                           isProfileImageExists: true
                       })
-                          .then((base64) => {
-                              this.updatedImage = Image.createFromBlob(Blob.createFromBase64(base64));
-                              this.refreshListView();
+                          .then(async (base64) => {
+                              const response = await putProfileImage(base64);
+                              if (response && response?.success) {
+                                  this.refreshListView();
+                              }
                           })
                           .catch((err) => {
                               console.error(err);
