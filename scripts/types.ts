@@ -34,12 +34,11 @@ export type AccountMenus = {
 };
 
 export type User = {
-    id: number;
-    fullName: string;
-    username: string;
-    email: string;
-    password: string;
-    profileImage: string;
+    id?: number;
+    fullName?: string;
+    preferred_username?: string;
+    email?: string;
+    profileImage?: string;
 };
 
 export type Basket = Array<Product>;

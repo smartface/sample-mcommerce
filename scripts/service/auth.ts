@@ -4,7 +4,8 @@ import genericErrorHandler from 'lib/genericErrorHandler';
 import getCurrentEnvironment from 'lib/getCurrentEnvironment';
 import config from 'config.json';
 import { buildQueryParams } from 'lib/query';
-
+import store from 'store';
+import storeActions from 'store/main/actions';
 const { client_id, client_secret, serviceUrl } = config.environments[getCurrentEnvironment()].auth;
 
 const sc = createServiceCallObject(serviceUrl);
@@ -85,7 +86,9 @@ export async function getUserInfo(): Promise<any> {
                 Authorization: `Bearer ${getAccessToken()}`
             }
         });
-        return response;
+        if (response) {
+            store.dispatch(storeActions.SetCurrentUser(response));
+        }
     } catch (err) {
         genericErrorHandler(err);
         throw err;
