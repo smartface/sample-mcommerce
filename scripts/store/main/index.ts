@@ -1,4 +1,5 @@
 import * as Types from 'types';
+import { Type } from 'typescript';
 
 export interface SessionState {
     products: Types.Product[];
@@ -20,6 +21,7 @@ export namespace Constants {
     export const REMOVE_FROM_BASKET = 'REMOVE_FROM_BASKET';
     export const ADD_TO_FAVORITES = 'ADD_TO_FAVORITES';
     export const REMOVE_FROM_FAVORITES = 'REMOVE_FROM_FAVORITES';
+    export const SET_CATEGORIES = 'SET_CATEGORIES';
 }
 
 declare namespace Actions {
@@ -59,6 +61,10 @@ declare namespace Actions {
             productId: number;
         };
     }
+    export interface SetCategories {
+        type: typeof Constants.SET_CATEGORIES;
+        payload: Types.Categories[];
+    }
 }
 
 export type ActionTypes =
@@ -68,4 +74,5 @@ export type ActionTypes =
     | Actions.AddToBasket
     | Actions.RemoveFromBasket
     | Actions.AddToFavorites
-    | Actions.RemoveFromFavorites;
+    | Actions.RemoveFromFavorites
+    | Actions.SetCategories;
