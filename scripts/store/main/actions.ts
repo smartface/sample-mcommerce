@@ -43,4 +43,10 @@ export default class Actions {
             payload: productId
         };
     }
+    static SetCategories(categories: Types.Categories[]): ActionTypes {
+        return {
+            type: Constants.SET_CATEGORIES,
+            payload: categories
+        };
+    }
 }

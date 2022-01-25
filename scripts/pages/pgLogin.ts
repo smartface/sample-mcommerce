@@ -45,6 +45,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     async initUserLogin() {
         if (this.initValidate()) {
             const response = await login({ username: this.mtbLogin.materialTextBox.text, password: this.mtbPassword.materialTextBox.text });
+            console.log('response login', response);
             const found = store.getState().main.users.find((usr) => usr.email === this.mtbLogin.materialTextBox.text);
             if (found) {
                 const isPasswordTrue = found.password == this.mtbPassword.materialTextBox.text.replace(/\s+/g, '').trim();

@@ -1,8 +1,8 @@
 export type Categories = {
-    id: number;
+    _id: string;
     title: string;
     menuColor: string;
-    menuBorderColor: string;
+    borderColor: string;
     categoryImg: string;
 };
 

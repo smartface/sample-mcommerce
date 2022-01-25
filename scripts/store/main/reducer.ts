@@ -132,31 +132,31 @@ const initialState: SessionState = {
             ],
             categories: [
                 {
-                    id: 1,
+                    _id: '1',
                     title: 'Pulses',
                     menuColor: '#1053B175',
-                    menuBorderColor: '#7053B175',
+                    borderColor: '#7053B175',
                     categoryImg: 'catfruits.png'
                 },
                 {
-                    id: 2,
+                    _id: '2',
                     title: 'Rice',
                     menuColor: '#10F8A44C',
-                    menuBorderColor: '#70F8A44C',
+                    borderColor: '#70F8A44C',
                     categoryImg: 'catoil.png'
                 },
                 {
-                    id: 3,
+                    _id: '3',
                     title: 'Vegetables',
                     menuColor: '#10FDE598',
-                    menuBorderColor: '#70FDE598',
+                    borderColor: '#70FDE598',
                     categoryImg: 'catoil.png'
                 },
                 {
-                    id: 4,
+                    _id: '4',
                     title: 'Chocolates',
                     menuColor: '#10B7DFF5',
-                    menuBorderColor: '#70B7DFF5',
+                    borderColor: '#70B7DFF5',
                     categoryImg: 'catoil.png'
                 }
             ]
@@ -234,50 +234,7 @@ const initialState: SessionState = {
             categoryId: 6
         }
     ],
-    categories: [
-        {
-            id: 1,
-            title: 'Fresh Fruits & Vegetable',
-            menuColor: '#1053B175',
-            menuBorderColor: '#7053B175',
-            categoryImg: 'catfruits.png'
-        },
-        {
-            id: 2,
-            title: 'Cooking Oil & Ghee',
-            menuColor: '#10F8A44C',
-            menuBorderColor: '#70F8A44C',
-            categoryImg: 'catoil.png'
-        },
-        {
-            id: 3,
-            title: 'Meat & Fish',
-            menuColor: '#10F7A593',
-            menuBorderColor: '#70F7A593',
-            categoryImg: 'catfish.png'
-        },
-        {
-            id: 4,
-            title: 'Bakery & Snacks',
-            menuColor: '#10D3B0E0',
-            menuBorderColor: '#70D3B0E0',
-            categoryImg: 'catbread.png'
-        },
-        {
-            id: 5,
-            title: 'Dairy & Eggs',
-            menuColor: '#10FDE598',
-            menuBorderColor: '#70FDE598',
-            categoryImg: 'categg.png'
-        },
-        {
-            id: 6,
-            title: 'Beverages',
-            menuColor: '#10B7DFF5',
-            menuBorderColor: '#70B7DFF5',
-            categoryImg: 'catbeverages.png'
-        }
-    ],
+    categories: [],
     basket: [],
     users: [
         {
@@ -391,6 +348,10 @@ export default function (state = initialState, action: ActionTypes): SessionStat
         }
         case Constants.REMOVE_FROM_FAVORITES: {
             newState.favorites = state.favorites.filter((product) => product.id !== action.payload.productId);
+            break;
+        }
+        case Constants.SET_CATEGORIES: {
+            newState.categories = [...action.payload];
             break;
         }
         default: {

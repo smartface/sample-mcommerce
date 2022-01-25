@@ -6,6 +6,8 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { Categories } from 'types';
 import System from '@smartface/native/device/system';
 import { themeService } from 'theme';
+import { getCategories, getCategoryImage } from 'service/commerce';
+import Image from '@smartface/native/ui/image';
 
 export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
     categories: Categories[];
@@ -19,18 +21,17 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
             });
         }
     }
-    initCategoriesGrid() {
-        this.categories = store.getState().main.categories;
+    async initCategoriesGrid() {
         this.categoriesGrid.scrollBarEnabled = false;
         this.categoriesGrid.onItemBind = (GridViewItem: categoriesItem, index: number) => {
             GridViewItem.flCategoryItemWrapper.borderWidth = 1;
-            GridViewItem.flCategoryItemWrapperBorderColor = this.categories[index].menuBorderColor;
+            GridViewItem.flCategoryItemWrapperBorderColor = this.categories[index].borderColor;
             GridViewItem.flCategoryItemWrapperBackgroundColor = this.categories[index].menuColor;
             GridViewItem.categoryTitle = this.categories[index].title;
-            GridViewItem.categoryImage = this.categories[index].categoryImg;
+            GridViewItem.categoryImage = this.categories[index]._id;
             this.categoriesGrid.onItemSelected = (GridViewItem: categoriesItem, index: number) => {
                 this.router.push('/btb/tab2/categoryDetail', {
-                    dataId: this.categories[index].id,
+                    dataId: this.categories[index]._id,
                     title: this.categories[index].title,
                     isShowcase: false
                 });
@@ -43,12 +44,13 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
     }
     onShow() {
         super.onShow();
-        this.refreshGridView();
     }
-    onLoad() {
+    async onLoad() {
         super.onLoad();
         this.headerBar.title = global.lang.categoriesHeader;
-        this.initCategoriesGrid();
         this.headerBar.leftItemEnabled = false;
+        this.categories = await getCategories();
+        this.initCategoriesGrid();
+        this.refreshGridView();
     }
 }

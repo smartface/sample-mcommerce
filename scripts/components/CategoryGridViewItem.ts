@@ -1,6 +1,7 @@
 import Color from '@smartface/native/ui/color';
 import Image from '@smartface/native/ui/image';
 import CategoryGridViewItemDesign from 'generated/my-components/CategoryGridViewItem';
+import { getCategoryImage } from 'service/commerce';
 
 export default class CategoryGridViewItem extends CategoryGridViewItemDesign {
     pageName?: string | undefined;
@@ -19,7 +20,7 @@ export default class CategoryGridViewItem extends CategoryGridViewItemDesign {
         return this.imgCategoryItem.image;
     }
     set categoryImage(value: string | Image) {
-        this.imgCategoryItem.image = Image.createFromFile(`images://${value}`);
+        this.imgCategoryItem.loadFromUrl({ url: getCategoryImage(value) });
     }
     get flCategoryItemWrapperBorderColor(): any {
         return this.flCategoryItemWrapper.borderColor;
