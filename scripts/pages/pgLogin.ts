@@ -45,7 +45,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     async initUserLogin() {
         if (this.initValidate()) {
             const response = await login({ username: this.mtbLogin.materialTextBox.text, password: this.mtbPassword.materialTextBox.text });
-            if (response && !!response.access_token) {
+            if (response && !!response?.access_token) {
                 this.router.push('/btb');
             }
         } else {
