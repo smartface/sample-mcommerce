@@ -236,32 +236,7 @@ const initialState: SessionState = {
     ],
     categories: [],
     basket: [],
-    users: [
-        {
-            id: 1,
-            fullName: 'Eren Kan',
-            username: 'erenkan',
-            email: 'eren.kan@smartface.io',
-            password: '1234',
-            profileImage: 'userprofilephoto.png'
-        },
-        {
-            id: 2,
-            fullName: 'Fuat Guzel',
-            username: 'fuatguzel',
-            email: 'fuat.guzel@smartface.io',
-            password: '12345',
-            profileImage: 'userprofilephoto.png'
-        },
-        {
-            id: 3,
-            fullName: 'Smartface',
-            username: 'smartface',
-            email: 'smartface',
-            password: '1234',
-            profileImage: 'userprofilephoto.png'
-        }
-    ],
+    users: [],
     accountMenus: [
         {
             menuId: 1,

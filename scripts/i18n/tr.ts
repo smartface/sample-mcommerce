@@ -109,5 +109,7 @@ SMF.i18n.defineLanguage('tr', {
     scanFaceIDMessage: 'Yüzünü tarat',
     chooseNavigationApp: 'Navigasyon uygulaması seç',
     minimumCharacterErrorOnPassword: 'Şifre en az 8 karakterden oluşmalıdır.',
-    invalidEmail: 'Geçersiz Mail'
+    invalidEmail: 'Geçersiz Mail',
+    warning: 'Uyarı',
+    userNotFoundWithThisCredentials: 'Girilen bilgiler ile eşleşen bir kullanıcı bulunamadı.'
 });

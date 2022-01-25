@@ -29,9 +29,6 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         this.lblRouteLogin.text = global.lang.login;
     }
     initMaterialTextBoxes() {
-        this.mtbUsername.options = {
-            hint: global.lang.username
-        };
         this.mtbEmail.options = {
             hint: global.lang.email
         };
@@ -43,15 +40,11 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
     async initUserSignup() {
         let userPayload = {
             id: 10,
-            fullName: '',
-            username: '',
             password: '',
             email: '',
             profileImage: 'userprofilephoto.png'
         };
         userPayload.email = this.mtbEmail.materialTextBox.text.trim();
-        userPayload.username = this.mtbUsername.materialTextBox.text.trim();
-        userPayload.fullName = this.mtbUsername.materialTextBox.text.trim();
         userPayload.password = this.mtbPassword.materialTextBox.text.trim();
         const registerResponse = await register({
             email: userPayload.email,

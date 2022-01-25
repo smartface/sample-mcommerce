@@ -44,16 +44,19 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     }
     async initUserLogin() {
         if (this.initValidate()) {
-            const response = await login({ username: this.mtbLogin.materialTextBox.text, password: this.mtbPassword.materialTextBox.text });
-            const found = store.getState().main.users.find((usr) => usr.email === this.mtbLogin.materialTextBox.text);
-            if (found) {
-                const isPasswordTrue = found.password == this.mtbPassword.materialTextBox.text.replace(/\s+/g, '').trim();
-                if (isPasswordTrue) {
-                    store.dispatch(storeActions.SetCurrentUser(found));
-                    if (this.router instanceof NativeStackRouter) {
-                        this.router.dismiss();
-                    }
+            try {
+                const response = await login({
+                    username: this.mtbLogin.materialTextBox.text,
+                    password: this.mtbPassword.materialTextBox.text
+                });
+                if (response && !!response?.access_token) {
+                    this.router.push('/btb');
                 }
+            } catch (error) {
+                alert({
+                    title: global.lang.warning,
+                    message: global.lang.userNotFoundWithThisCredentials
+                });
             }
         } else {
             return;
