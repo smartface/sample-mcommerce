@@ -4,7 +4,6 @@ const originalHeight = themeService.getStyle('.lviProfile').height;
 
 export default class LviProfile extends LviProfileDesign {
     pageName?: string | undefined;
-    private __imageUrl: string;
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
@@ -28,11 +27,10 @@ export default class LviProfile extends LviProfileDesign {
         this.flAccountUser.userEmail = value;
     }
     get userImage(): string {
-        return this.__image;
+        return this.flAccountUser.userImage;
     }
     set userImage(value: string) {
-        this.__image = value;
-        this.flAccountUser.userImage = this.__image;
+        this.flAccountUser.userImage = value;
     }
     get onProfileClick(): () => Promise<any> {
         return this.flAccountUser.onProfileClick;
