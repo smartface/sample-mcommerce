@@ -54,21 +54,6 @@ export function getProfileImageUrl(): string {
     return `${serviceUrl}/user/profile-photo`;
 }
 
-export async function getProfileImage(): Promise<any> {
-    try {
-        const response = await sc.request('/user/profile-photo', {
-            method: 'GET',
-            headers: {
-                Authorization: `Bearer ${getAccessToken()}`
-            }
-        });
-        return response;
-    } catch (err) {
-        genericErrorHandler(err);
-        throw err;
-    }
-}
-
 export async function putProfileImage(base64: string): Promise<any> {
     try {
         const response = await sc.request('/user/profile-photo', {

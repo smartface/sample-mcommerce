@@ -4,11 +4,11 @@ import { getAccessToken } from 'service/token';
 
 export default class FlAccountUser extends FlAccountUserDesign {
     pageName?: string | undefined;
+    private __imageUrl: string;
     _value: (...args) => void;
     private __onProfileClick: () => Promise<any>;
     private __onPhotoClick: () => Promise<any>;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
         this.lblAccountEditIcon.on(View.Events.TouchEnded, () => {
@@ -33,12 +33,13 @@ export default class FlAccountUser extends FlAccountUserDesign {
     set userEmail(value: string) {
         this.lblAccountEmail.text = value;
     }
-    get userImage(): any {
-        return this.imgUserAccount.image;
+    get userImage(): string {
+        return this.__imageUrl;
     }
-    set userImage(value: any) {
+    set userImage(value: string) {
+        this.__imageUrl = value;
         this.imgUserAccount.loadFromUrl({
-            url: value,
+            url: this.__imageUrl,
             headers: {
                 Authorization: `Bearer ${getAccessToken()}`
             }

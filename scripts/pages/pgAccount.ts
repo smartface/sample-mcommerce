@@ -6,7 +6,6 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import LviAccount from 'components/LviAccount';
 import profileImageMenu from 'lib/profileImageMenu';
-import Blob from '@smartface/native/blob';
 import Image from '@smartface/native/ui/image';
 import { themeService } from 'theme';
 import { User } from 'types';
@@ -16,7 +15,7 @@ import LviRow2LineButton from 'components/LviRow2LineButton';
 const { image } = themeService.getNativeStyle('.lviRow2LineButton.leftIcon');
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
-import { getProfileImage, getProfileImageUrl, putProfileImage } from 'service/commerce';
+import { getProfileImageUrl, putProfileImage } from 'service/commerce';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -28,7 +27,6 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
     data: Processor[];
     userInfo: User;
     rightItem: HeaderBarItem;
-    updatedImage: Image;
     unsubscribe = null;
     onExit: (...args) => any;
     constructor(private router?: Router, private route?: Route) {
@@ -61,11 +59,6 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
         this.data = this.processor();
         this.lvMain.itemCount = this.data.length;
         this.lvMain.refreshData();
-    }
-    async fetchUserProfileImage() {
-        const response = await getProfileImage();
-        console.log('FETCH USER PP: ', response);
-        return response;
     }
     processor(): Processor[] {
         this.userInfo = store.getState().main.currentUser;

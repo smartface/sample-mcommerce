@@ -1,13 +1,11 @@
-import Image from '@smartface/native/ui/image';
 import LviProfileDesign from 'generated/my-components/LviProfile';
 import { themeService } from 'theme';
-import store from 'store/index';
 const originalHeight = themeService.getStyle('.lviProfile').height;
 
 export default class LviProfile extends LviProfileDesign {
     pageName?: string | undefined;
+    private __imageUrl: string;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
     }
@@ -29,11 +27,12 @@ export default class LviProfile extends LviProfileDesign {
     set userEmail(value: string) {
         this.flAccountUser.userEmail = value;
     }
-    get userImage(): any {
-        return this.flAccountUser.userImage.image;
+    get userImage(): string {
+        return this.__image;
     }
-    set userImage(value: any) {
-        this.flAccountUser.userImage = value;
+    set userImage(value: string) {
+        this.__image = value;
+        this.flAccountUser.userImage = this.__image;
     }
     get onProfileClick(): () => Promise<any> {
         return this.flAccountUser.onProfileClick;
