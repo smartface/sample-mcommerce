@@ -88,8 +88,10 @@
 	"iconHintGray": "rgba(60,60,67,0.6)",
 	"pickerBackground": "rgba(237,243,255,1.0)",
 	"checkoutPrice": "#489E67",
-	"deActiveSwitch": "#d6d6d6",
-	"activeSwitch": "#ffee32",
+	"deActiveSwitch": "#53b175",
+	"activeSwitch": "rgba(237,243,254,1.0)",
 	"reverseBackground": "rgba(0,0,0,1.0)",
-	"productItemPriceBorder": "rgba(255, 255, 255, 0)"
+	"productItemPriceBorder": "rgba(255, 255, 255, 0)",
+	"themeDarkSwitch": "rgba(255,255,255,1.0)",
+	"themeLightSwitch": "#53b175"
 }

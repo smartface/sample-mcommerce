@@ -90,7 +90,7 @@
 					"imageFillType": "ASPECTFIT",
 					"width": 20
 				},
-				"backgroundColor": "${backgroundMain}",
+				"backgroundColor": "${themeDarkSwitch}",
 				"borderColor": "${textLight}"
 			},
 			"&-flRight": {
@@ -112,7 +112,7 @@
 					"imageFillType": "ASPECTFIT",
 					"width": 20
 				},
-				"backgroundColor": "${reverseBackground}",
+				"backgroundColor": "${themeLightSwitch}",
 				"borderColor": "${textLight}"
 			},
 			".borderRadius": {
