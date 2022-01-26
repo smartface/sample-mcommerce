@@ -17,7 +17,7 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
     waitDialog: Dialog;
     constructor(private router?: Router, private route?: Route) {
         super({});
-
+        this.waitDialog = dialog(new FlWaitDialog());
         this.lblRouteLogin.on(View.Events.TouchEnded, () => {
             this.router.goBack();
         });
@@ -63,10 +63,6 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
             this.waitDialog.hide();
         }
     }
-    initDialog() {
-        const flWaitDialog = new FlWaitDialog();
-        this.waitDialog = dialog(flWaitDialog);
-    }
     onShow() {
         super.onShow();
         if (System.OS !== 'iOS') {
@@ -75,10 +71,8 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         }
         this.initBackButton(this.router);
     }
-
     onLoad() {
         super.onLoad();
-        this.initDialog();
         this.headerBar.title = global.lang.signUpHeader;
         this.initMaterialTextBoxes();
     }

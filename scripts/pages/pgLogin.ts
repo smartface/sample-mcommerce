@@ -16,7 +16,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     waitDialog: Dialog;
     constructor(private router?: Router, private route?: Route) {
         super({});
-
+        this.waitDialog = dialog(new FlWaitDialog());
         this.lblRouteSignUp.on(View.Events.Touch, () => {
             this.router.push('/pages/pgSignUp');
         });
@@ -100,17 +100,12 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     checkIsEmailValid(email: string) {
         return EMAIL_REGEXP.test(email);
     }
-    initDialog() {
-        const flWaitDialog = new FlWaitDialog();
-        this.waitDialog = dialog(flWaitDialog);
-    }
     onShow() {
         super.onShow();
         this.initBackButton(this.router);
     }
     onLoad() {
         super.onLoad();
-        this.initDialog();
         this.headerBar.title = global.lang.loginHeader;
         this.initMaterialTextBoxes();
     }
