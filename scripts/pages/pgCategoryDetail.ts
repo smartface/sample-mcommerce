@@ -32,6 +32,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     };
     constructor(private router?: Router, private route?: Route) {
         super({});
+        this.waitDialog = dialog(new FlWaitDialog());
     }
     addRightItem() {
         const rightItem = new HeaderBarItem({
@@ -163,10 +164,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             });
         }
     }
-    initDialog() {
-        const flWaitDialog = new FlWaitDialog();
-        this.waitDialog = dialog(flWaitDialog);
-    }
+
     onShow() {
         super.onShow();
         this.initDismissButton(this.router);
@@ -174,7 +172,6 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
 
     onLoad() {
         super.onLoad();
-        this.initDialog();
         this.headerBar.title = this.route.getState().routeData.title;
         if (this.route.getState().routeData.isShowcase) {
             this.getShowcaseProducts();

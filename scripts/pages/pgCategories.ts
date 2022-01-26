@@ -15,6 +15,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
     waitDialog: Dialog;
     constructor(private router?: Router, private route?: Route) {
         super({});
+        this.waitDialog = dialog(new FlWaitDialog());
         if (System.OS === System.OSType.ANDROID) {
             //Android item widths fails after theme change this fixes it
             themeService.onChange(() => {
@@ -53,21 +54,15 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
             }
         } catch (error) {
         } finally {
-            setTimeout(() => {
-                this.waitDialog.hide();
-            }, 1000);
+            this.waitDialog.hide();
         }
     }
-    initDialog() {
-        const flWaitDialog = new FlWaitDialog();
-        this.waitDialog = dialog(flWaitDialog);
-    }
+
     onShow() {
         super.onShow();
     }
     onLoad() {
         super.onLoad();
-        this.initDialog();
         this.headerBar.title = global.lang.categoriesHeader;
         this.headerBar.leftItemEnabled = false;
         this.initCategoriesGrid();

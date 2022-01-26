@@ -59,7 +59,6 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
                 this.router.push('/pages/pgLogin');
             }
         } catch (error) {
-            this.waitDialog.hide();
         } finally {
             this.waitDialog.hide();
         }

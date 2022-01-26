@@ -64,7 +64,6 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
                     title: global.lang.warning,
                     message: global.lang.userNotFoundWithThisCredentials
                 });
-                this.waitDialog.hide();
             } finally {
                 this.waitDialog.hide();
             }

@@ -1,6 +1,5 @@
 import Dialog from '@smartface/native/ui/dialog';
 import FlexLayout from '@smartface/native/ui/flexlayout';
-import pushClassNames from '@smartface/contx/lib/styling/action/pushClassNames';
 import createPageContext from '@smartface/styling-context/lib/pageContext';
 import { themeService } from 'theme';
 
@@ -17,7 +16,10 @@ export default function (component: FlexLayout, opts?: DialogOpts): StyleContext
         }
     }) as StyleContextComponentType<Dialog>;
     themeService.addPage(createPageContext(dialog, 'genericDialog'), 'genericDialog');
-    dialog.dispatch(pushClassNames([opts?.className || '.dialog']));
+    dialog.dispatch({
+        type: 'pushClassNames',
+        classNames: opts?.className || '.dialog'
+    });
     dialog.android.isTransparent = false;
     if (opts?.closeOnTouch) {
         dialog.layout.onTouchEnded = (isInside) => isInside && dialog.hide();
