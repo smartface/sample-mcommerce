@@ -51,7 +51,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                     ListViewItems.getLviCartProducts({
                         productName: cart.name,
                         productInfo: cart.description,
-                        productImage: cart.image,
+                        productImage: cart.images ? cart.images[0] : null,
                         productPrice: cart.price,
                         productCount: cart.count,
                         onActionPlus: () => {
@@ -110,7 +110,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
             case CartOperationEnum.Remove:
                 return store.dispatch(storeActions.AddToBasket({ product: cart, count: -1 }));
             case CartOperationEnum.Clear:
-                return store.dispatch(storeActions.RemoveFromBasket({ productId: cart.id }));
+                return store.dispatch(storeActions.RemoveFromBasket({ productId: cart._id }));
         }
     }
     onShow() {

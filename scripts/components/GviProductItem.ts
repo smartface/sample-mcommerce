@@ -4,6 +4,7 @@ import Image from '@smartface/native/ui/image';
 import View from '@smartface/native/ui/view';
 import GviProductItemDesign from 'generated/my-components/GviProductItem';
 import setVisibility from 'lib/setVisibility';
+import { getProductImageUrl } from 'service/commerce';
 import store from 'store';
 
 export default class GviProductItem extends GviProductItemDesign {
@@ -61,11 +62,11 @@ export default class GviProductItem extends GviProductItemDesign {
     set itemTag(value: string) {
         this.flProductItem.itemTag = value;
     }
-    get itemImage(): string | Image {
-        return this.flProductItem.itemImage;
+    get itemImage(): string {
+        return this.flProductItem.imageUrl;
     }
-    set itemImage(value: string | Image) {
-        this.flProductItem.itemImage = value;
+    set itemImage(value: string) {
+        this.flProductItem.imageUrl = value;
     }
     get itemDesc(): string {
         return this.flProductItem.itemDesc;

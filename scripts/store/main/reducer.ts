@@ -1,239 +1,8 @@
 import { SessionState, Constants, ActionTypes } from '.';
 
 const initialState: SessionState = {
-    showcaseProducts: [
-        {
-            showcaseId: 1,
-            showcaseTitle: 'Exclusive Offer',
-            showcaseLink: '/',
-            showcaseLinkText: 'See All',
-            products: [
-                {
-                    id: 1,
-                    name: 'Sprite Can',
-                    description: '325ml, Price',
-                    price: 4.99,
-                    discount: 2.99,
-                    review: 4.3,
-                    image: 'sprite.png',
-                    discountTag: '%15 Discount on Basket',
-                    categoryId: 6
-                },
-                {
-                    id: 2,
-                    name: 'Diet Coke',
-                    description: '325ml, Price',
-                    discountTag: 'Best Price',
-                    price: 1.99,
-                    image: 'dietcoke.png',
-                    categoryId: 6
-                },
-                {
-                    id: 3,
-                    name: 'Orange Juice',
-                    description: '325ml, Price',
-                    discountTag: 'Freeshipping',
-                    price: 4.99,
-                    image: 'juice.png',
-                    categoryId: 6
-                },
-                {
-                    id: 4,
-                    name: 'Organic Bananas',
-                    description: '12kg, Price',
-                    discountTag: '%15 Discount on Basket',
-                    price: 4.99,
-                    image: 'banana.png',
-                    categoryId: 6
-                },
-                {
-                    id: 5,
-                    name: 'Ginger',
-                    description: '250g, Price',
-                    discountTag: 'Freeshipping',
-                    price: 4.99,
-                    image: 'ginger.png',
-                    categoryId: 6
-                },
-                {
-                    id: 6,
-                    name: 'Egg Chicken Red',
-                    description: '4pcs, Price',
-                    price: 1.99,
-                    image: 'eggs.png',
-                    categoryId: 6
-                }
-            ]
-        },
-        {
-            showcaseId: 2,
-            showcaseTitle: 'Best Seller',
-            showcaseLink: '/',
-            showcaseLinkText: 'See All',
-            products: [
-                {
-                    id: 1,
-                    name: 'Sprite Can',
-                    description: '325ml, Price',
-                    price: 4.99,
-                    image: 'sprite.png',
-                    categoryId: 6
-                },
-                {
-                    id: 4,
-                    name: 'Organic Bananas',
-                    description: '12kg, Price',
-                    price: 4.99,
-                    image: 'banana.png',
-                    categoryId: 6
-                },
-                {
-                    id: 5,
-                    name: 'Ginger',
-                    description: '250g, Price',
-                    price: 4.99,
-                    image: 'ginger.png',
-                    categoryId: 6
-                },
-                {
-                    id: 6,
-                    name: 'Egg Chicken Red',
-                    description: '4pcs, Price',
-                    price: 1.99,
-                    image: 'eggs.png',
-                    categoryId: 6
-                }
-            ]
-        },
-        {
-            showcaseId: 3,
-            showcaseTitle: 'Groceries',
-            showcaseLink: '/',
-            showcaseLinkText: 'See All',
-            products: [
-                {
-                    id: 5,
-                    name: 'Ginger',
-                    description: '250g, Price',
-                    price: 4.99,
-                    image: 'ginger.png',
-                    discount: 3.49,
-                    review: 5.0,
-                    categoryId: 6
-                },
-                {
-                    id: 6,
-                    name: 'Egg Chicken Red',
-                    description: '4pcs, Price',
-                    price: 1.99,
-                    image: 'eggs.png',
-                    categoryId: 6
-                }
-            ],
-            categories: [
-                {
-                    _id: '1',
-                    title: 'Pulses',
-                    menuColor: '#1053B175',
-                    borderColor: '#7053B175',
-                    categoryImg: 'catfruits.png'
-                },
-                {
-                    _id: '2',
-                    title: 'Rice',
-                    menuColor: '#10F8A44C',
-                    borderColor: '#70F8A44C',
-                    categoryImg: 'catoil.png'
-                },
-                {
-                    _id: '3',
-                    title: 'Vegetables',
-                    menuColor: '#10FDE598',
-                    borderColor: '#70FDE598',
-                    categoryImg: 'catoil.png'
-                },
-                {
-                    _id: '4',
-                    title: 'Chocolates',
-                    menuColor: '#10B7DFF5',
-                    borderColor: '#70B7DFF5',
-                    categoryImg: 'catoil.png'
-                }
-            ]
-        }
-    ],
-    products: [
-        {
-            id: 1,
-            name: 'Sprite Can',
-            description: '325ml, Price',
-            price: 4.99,
-            image: 'sprite.png',
-            categoryId: 6,
-            discount: 2.99,
-            review: 4.3,
-            discountTag: '%15 Discount on Basket'
-        },
-        {
-            id: 2,
-            name: 'Diet Coke',
-            description: '325ml, Price',
-            price: 1.99,
-            image: 'dietcoke.png',
-            categoryId: 6,
-            discountTag: 'Best Price'
-        },
-        {
-            id: 3,
-            name: 'Orange Juice',
-            description: '325ml, Price',
-            price: 4.99,
-            image: 'juice.png',
-            categoryId: 6
-        },
-        {
-            id: 4,
-            name: 'Organic Bananas',
-            description: '12kg, Price',
-            price: 4.99,
-            image: 'banana.png',
-            categoryId: 6
-        },
-        {
-            id: 5,
-            name: 'Ginger',
-            description: '250g, Price',
-            price: 4.99,
-            image: 'ginger.png',
-            categoryId: 6
-        },
-        {
-            id: 6,
-            name: 'Egg Chicken Red',
-            description: '4pcs, Price',
-            price: 1.99,
-            image: 'eggs.png',
-            discount: 0.99,
-            review: 4.5,
-            categoryId: 6
-        },
-        {
-            id: 7,
-            name: 'Beef',
-            description: '1kg, Price',
-            price: 4.99,
-            image: 'beef.png',
-            categoryId: 6
-        },
-        {
-            id: 8,
-            name: 'Chicken',
-            description: '1kg, Price',
-            price: 4.99,
-            image: 'chicken.png',
-            categoryId: 6
-        }
-    ],
+    showcaseProducts: [],
+    products: [],
     categories: [],
     basket: [],
     users: [],
@@ -300,9 +69,9 @@ export default function (state = initialState, action: ActionTypes): SessionStat
             break;
         }
         case Constants.ADD_TO_BASKET: {
-            if (newState.basket.some((pId) => pId.id === action.payload.product.id)) {
+            if (newState.basket.some((pId) => pId._id === action.payload.product._id)) {
                 let updatedData = newState.basket.map((basketItem) =>
-                    basketItem.id === action.payload.product.id
+                    basketItem._id === action.payload.product._id
                         ? { ...basketItem, count: (basketItem.count += action.payload.count) }
                         : basketItem
                 );
@@ -314,7 +83,7 @@ export default function (state = initialState, action: ActionTypes): SessionStat
             break;
         }
         case Constants.REMOVE_FROM_BASKET: {
-            newState.basket = newState.basket.filter((product) => product.id !== action.payload.productId);
+            newState.basket = newState.basket.filter((product) => product._id !== action.payload.productId);
             break;
         }
         case Constants.ADD_TO_FAVORITES: {
@@ -322,7 +91,7 @@ export default function (state = initialState, action: ActionTypes): SessionStat
             break;
         }
         case Constants.REMOVE_FROM_FAVORITES: {
-            newState.favorites = state.favorites.filter((product) => product.id !== action.payload.productId);
+            newState.favorites = state.favorites.filter((product) => product._id !== action.payload.productId);
             break;
         }
         case Constants.SET_CATEGORIES: {

@@ -33,7 +33,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     addToBasket() {
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnAddToBasket.on(Button.Events.Press, () => {
-            let product = store.getState().main.products.find((product) => product.id == this.route.getState().routeData.productId);
+            let product = store.getState().main.products.find((product) => product._id == this.route.getState().routeData.productId);
             store.dispatch(storeActions.AddToBasket({ product: product, count: this.productCounter }));
             this.toggleToast(true);
             this.flAlert.title = 'Sepete Eklendi';
@@ -78,7 +78,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
                     if (
                         store.getState().main.favorites &&
                         store.getState().main.favorites.length > 0 &&
-                        store.getState().main.favorites.some((product) => product.id === this.route.getState().routeData.productId)
+                        store.getState().main.favorites.some((product) => product._id === this.route.getState().routeData.productId)
                     ) {
                         store.dispatch(storeActions.RemoveFromFavorites({ productId: this.route.getState().routeData.productId }));
                         this.productFavoriteImg = 'images://favourite.png';
@@ -88,7 +88,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
                             storeActions.AddToFavorites({
                                 product: store
                                     .getState()
-                                    .main.products.find((product) => product.id == this.route.getState().routeData.productId)
+                                    .main.products.find((product) => product._id == this.route.getState().routeData.productId)
                             })
                         );
                         this.productFavoriteImg = 'images://favorited.png';
@@ -141,7 +141,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         if (
             store.getState().main.favorites &&
             store.getState().main.favorites.length > 0 &&
-            store.getState().main.favorites.some((product) => product.id === this.route.getState().routeData.productId)
+            store.getState().main.favorites.some((product) => product._id === this.route.getState().routeData.productId)
         ) {
             this.productFavoriteImg = 'images://favorited.png';
             this.refreshListView();
