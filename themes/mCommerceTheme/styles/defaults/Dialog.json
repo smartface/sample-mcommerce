@@ -5,6 +5,9 @@
 		"backgroundColor": "rgba(0,0,0,0.4)",
 		"&-transparent": {
 			"backgroundColor": "${transparent}"
+		},
+		"flexProps": {
+			"alignContent": "CENTER"
 		}
 	}
 }

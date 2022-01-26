@@ -5,7 +5,6 @@ import { LviTypes, LviClasses, IProcessed } from 'lib/listViewItemTypes';
 import { setBordersForSwipeItem, setBordersForListViewItem } from 'lib/border';
 import createPageContext from '@smartface/styling-context/lib/pageContext';
 import addChild from '@smartface/contx/lib/smartface/action/addChild';
-import pushClassNames from '@smartface/contx/lib/styling/action/pushClassNames';
 import { setID } from 'lib/testAutomation';
 import genericErrorHandler from 'lib/genericErrorHandler';
 import Image from '@smartface/native/ui/image';
@@ -55,145 +54,11 @@ export function onRowSwipe(event, fieldName = 'data') {
         borders,
         dataId
     });
-    const cancelItem = initSwipeItem({
-        contextName: 'cancelItem',
-        text: global.lang.cancelIt,
-        onPress: properties.onCancel,
-        className: '.swipeItem.delete',
-        page: this,
-        borders,
-        dataId
-    });
-    const editItem = initSwipeItem({
-        contextName: 'editItem',
-        text: global.lang.edit,
-        onPress: properties.onEdit,
-        className: '.swipeItem.edit',
-        page: this,
-        borders,
-        dataId
-    });
-    const updateItem = initSwipeItem({
-        contextName: 'updateItem',
-        text: global.lang.update,
-        onPress: properties.onUpdate,
-        className: '.swipeItem.edit',
-        page: this,
-        borders,
-        dataId
-    });
-    const callItem = initSwipeItem({
-        contextName: 'callItem',
-        text: global.lang.ara,
-        onPress: properties.onCall,
-        className: '.swipeItem.call',
-        page: this,
-        borders,
-        dataId
-    });
-    const copyTextItem = initSwipeItem({
-        contextName: 'copyTextItem',
-        text: global.lang.copy,
-        onPress: properties.onCopyText,
-        className: '.swipeItem.copy',
-        page: this,
-        borders,
-        dataId
-    });
-    const addReminderItem = initSwipeItem({
-        contextName: 'addReminderItem',
-        text: global.lang.addToReminder,
-        onPress: properties.onAddReminder,
-        className: '.swipeItem.addReminder',
-        page: this,
-        borders,
-        dataId
-    });
-    const showFeedbacksItem = initSwipeItem({
-        contextName: 'showFeedbacksItem',
-        text: global.lang.showFeedback,
-        onPress: properties.onShowFeedbacks,
-        className: '.swipeItem.showFeedbacks',
-        page: this,
-        borders,
-        dataId
-    });
-    const approveItem = initSwipeItem({
-        contextName: 'approveItem',
-        text: global.lang.verify,
-        onPress: properties.onApprove,
-        className: '.swipeItem.approve',
-        page: this,
-        borders,
-        dataId,
-        icon: SwipeImages.APPROVE
-    });
-    const rejectItem = initSwipeItem({
-        contextName: 'rejectItem',
-        text: global.lang.reject,
-        onPress: properties.onReject,
-        className: '.swipeItem.deny',
-        page: this,
-        borders,
-        icon: SwipeImages.REJECT,
-        dataId
-    });
-    const shareItem = initSwipeItem({
-        contextName: 'shareItem',
-        text: global.lang.share,
-        onPress: properties.onShare,
-        className: '.swipeItem.share',
-        page: this,
-        borders,
-        icon: SwipeImages.APPROVE,
-        dataId
-    });
-    const otherItem = initSwipeItem({
-        contextName: 'otherItem',
-        text: global.lang.other,
-        onPress: properties.onOther,
-        className: '.swipeItem.other',
-        page: this,
-        borders,
-        icon: SwipeImages.OTHER,
-        dataId
-    });
-    const mapOutItem = initSwipeItem({
-        contextName: 'mapOutItem',
-        text: global.lang.showOnMap,
-        onPress: properties.onMapOut,
-        className: '.swipeItem.mapOut',
-        page: this,
-        borders,
-        dataId
-    });
 
     event.ios.expansionSettings.buttonIndex = 0;
     const items = [];
     if (event.direction === ListView.SwipeDirection.RIGHTTOLEFT) {
         items.push(deleteItem);
-        items.push(cancelItem);
-        items.push(mapOutItem);
-        items.push(approveItem);
-        items.push(addReminderItem);
-        items.push(shareItem);
-        items.push(callItem);
-        if (System.OS === System.OSType.IOS) {
-            items.push(editItem);
-            items.push(updateItem);
-            items.push(copyTextItem);
-            items.push(rejectItem);
-            items.push(otherItem);
-        }
-    } else {
-        if (System.OS === System.OSType.ANDROID) {
-            items.push(rejectItem);
-            items.push(editItem);
-            items.push(updateItem);
-            items.push(copyTextItem);
-            items.push(callItem);
-        }
-        items.push(showFeedbacksItem);
     }
     return items.filter((item) => !!item);
 }
@@ -227,7 +92,10 @@ function initSwipeItem(itemOptions?: SwipeItemOptions): StyleContextComponentTyp
         }
     };
     setBordersForSwipeItem(swipeItem, itemOptions.borders);
-    swipeItem.dispatch(pushClassNames(itemOptions.className));
+    swipeItem.dispatch({
+        type: 'pushClassNames',
+        classNames: itemOptions.className
+    });
     return itemOptions.onPress ? swipeItem : null;
 }
 

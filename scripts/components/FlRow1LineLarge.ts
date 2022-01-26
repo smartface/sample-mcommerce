@@ -1,4 +1,3 @@
-import pushClassNames from '@smartface/contx/lib/styling/action/pushClassNames';
 import { themeService } from 'theme';
 import Image from '@smartface/native/ui/image';
 import FlRow1LineLargeDesign from 'generated/my-components/FlRow1LineLarge';
@@ -27,8 +26,14 @@ export default class FlRow1LineLarge extends FlRow1LineLargeDesign {
     set image(value: any) {
         this.imgIcon.image = Image.createFromFile(`${(this.__icon = value)}`);
         if (value) {
-            this.flImageWrapper.dispatch(pushClassNames('.flRow1LineLarge-flImageWrapper.active'));
-            this.lblTitle.dispatch(pushClassNames('.flRow1LineLarge-lblTitle.active'));
+            this.flImageWrapper.dispatch({
+                type: 'pushClassNames',
+                classNames: '.flRow1LineLarge-flImageWrapper.active'
+            });
+            this.lblTitle.dispatch({
+                type: 'pushClassNames',
+                classNames: '.flRow1LineLarge-lblTitle.active'
+            });
         }
     }
     get showSeparator(): boolean {

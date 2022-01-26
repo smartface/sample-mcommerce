@@ -70,8 +70,7 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                   userImage: getProfileImageUrl(),
                   onAction: () => {
                       profileImageMenu({
-                          imageUrl: this.userInfo.profileImage,
-                          isProfileImageExists: true
+                          imageUrl: getProfileImageUrl()
                       })
                           .then(async (base64) => {
                               const response = await putProfileImage(base64);

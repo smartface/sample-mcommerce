@@ -14,8 +14,8 @@ import genericErrorHandler from './genericErrorHandler';
 
 // WORKAROUND : SUPDEV-2198 - Remove following lines when resolved
 import Contacts from '@smartface/native/device/contacts';
-import FlexLayout from '@smartface/native/ui/flexlayout';
 import { NativeRouter as Router } from '@smartface/router';
+import { themeService } from 'theme';
 //@ts-ignore
 const contactActivity = Contacts.onActivityResult;
 //@ts-ignore
@@ -68,17 +68,15 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
         const menu = new Menu();
         const menuItems = [];
         menu.headerTitle = params.title ? params.title : global.lang.updatePhoto;
-        if (params.isProfileImageExists) {
-            const pictureDialog = initPictureDialog(params.imageUrl);
-            menuItems.push(
-                new MenuItem({
-                    title: global.lang.show,
-                    onSelected: () => {
-                        pictureDialog.show();
-                    }
-                })
-            );
-        }
+        const pictureDialog = initPictureDialog(params.imageUrl);
+        menuItems.push(
+            new MenuItem({
+                title: global.lang.show,
+                onSelected: () => {
+                    pictureDialog.show();
+                }
+            })
+        );
         menuItems.push(
             new MenuItem({
                 title: global.lang.openCamera,
@@ -205,7 +203,12 @@ export const onGallerySelect = (opts: IPhotoEdit = {}) => {
 
 const initPictureDialog = (imageUrl: string) => {
     const flPicture = new FlPicture();
+    themeService.addGlobalComponent(flPicture as any /** to be fixed with stylingcontext next version */, 'flPicture');
     flPicture.imageUrl = imageUrl;
+    flPicture.dispatch({
+        type: 'pushClassNames',
+        classNames: `.flPicture`
+    });
     return dialog(flPicture, { closeOnTouch: true });
 };
 
