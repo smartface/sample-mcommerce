@@ -1,5 +1,5 @@
 import { createServiceCallObject } from 'service';
-import { setAccessToken, setRefreshToken, getAccessToken, setIdToken } from 'service/token';
+import { setAccessToken, setRefreshToken, getAccessToken, setIdToken, getRefreshToken } from 'service/token';
 import genericErrorHandler from 'lib/genericErrorHandler';
 import getCurrentEnvironment from 'lib/getCurrentEnvironment';
 import config from 'config.json';
@@ -29,6 +29,26 @@ type LoginOptions = {
     sendToken: boolean;
 };
 
+export async function autoLogin(): Promise<any> {
+    try {
+        const response = await sc.request('/auth/realms/smartcommerce/protocol/openid-connect/token', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: buildQueryParams({
+                client_id,
+                client_secret,
+                refresh_token: getRefreshToken(),
+                grant_type: 'refresh_token'
+            })
+        });
+        if (response) {
+            await getUserInfo();
+        }
+    } catch (err) {
+        genericErrorHandler(err);
+        throw err;
+    }
+}
 export async function login({ username = '', password = '', grant_type = 'password' }: IAuthQueryParams): Promise<any> {
     try {
         const res = await sc.request('/auth/realms/smartcommerce/protocol/openid-connect/token', {
