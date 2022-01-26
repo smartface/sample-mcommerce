@@ -46,7 +46,7 @@ declare namespace Actions {
     export interface RemoveFromBasket {
         type: typeof Constants.REMOVE_FROM_BASKET;
         payload: {
-            productId: number;
+            productId: string;
         };
     }
     export interface AddToFavorites {
@@ -58,7 +58,7 @@ declare namespace Actions {
     export interface RemoveFromFavorites {
         type: typeof Constants.REMOVE_FROM_FAVORITES;
         payload: {
-            productId: number;
+            productId: string;
         };
     }
     export interface SetCategories {

@@ -6,6 +6,7 @@ import genericErrorHandler from 'lib/genericErrorHandler';
 import storeActions from 'store/main/actions';
 import { getAccessToken } from 'service/token';
 import store from 'store/index';
+import { ProductRequestQuery } from './service';
 const { serviceUrl } = config.environments[getCurrentEnvironment()];
 
 const sc = createServiceCallObject(serviceUrl);
@@ -71,4 +72,24 @@ export async function putProfileImage(base64: string): Promise<any> {
         genericErrorHandler(err);
         throw err;
     }
+}
+
+export async function getProductsByQuery(query: ProductRequestQuery): Promise<any> {
+    try {
+        const response = await sc.request(`/commerce/products?${buildQueryParams(query)}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        return response;
+    } catch (err) {
+        genericErrorHandler(err);
+        throw err;
+    }
+}
+
+export function getProductImageUrl(imageId: string): string {
+    return `${serviceUrl}/commerce/product/${imageId}/image`;
 }

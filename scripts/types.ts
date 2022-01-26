@@ -16,12 +16,13 @@ export type HomeShowcases = {
 };
 
 export type Product = {
-    id: number;
+    _id: string;
     name: string;
-    description: string;
+    shortDescription?: string;
+    description?: string;
     price: number;
-    image: string;
-    categoryId: number;
+    images?: Array<string>;
+    category: Categories;
     review?: number;
     discount?: number;
     discountTag?: string;
