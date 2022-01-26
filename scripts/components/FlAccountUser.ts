@@ -1,14 +1,14 @@
-import Image from '@smartface/native/ui/image';
 import View from '@smartface/native/ui/view';
 import FlAccountUserDesign from 'generated/my-components/FlAccountUser';
+import { getAccessToken } from 'service/token';
 
 export default class FlAccountUser extends FlAccountUserDesign {
     pageName?: string | undefined;
+    private __imageUrl: string;
     _value: (...args) => void;
     private __onProfileClick: () => Promise<any>;
     private __onPhotoClick: () => Promise<any>;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
         this.lblAccountEditIcon.on(View.Events.TouchEnded, () => {
@@ -33,15 +33,17 @@ export default class FlAccountUser extends FlAccountUserDesign {
     set userEmail(value: string) {
         this.lblAccountEmail.text = value;
     }
-    get userImage(): any {
-        return this.imgUserAccount.image;
+    get userImage(): string {
+        return this.__imageUrl;
     }
-    set userImage(value: any) {
-        if (value instanceof Image) {
-            this.imgUserAccount.image = value;
-        } else {
-            this.imgUserAccount.image = Image.createFromFile(`images://${value}`);
-        }
+    set userImage(value: string) {
+        this.__imageUrl = value;
+        this.imgUserAccount.loadFromUrl({
+            url: this.__imageUrl,
+            headers: {
+                Authorization: `Bearer ${getAccessToken()}`
+            }
+        });
     }
     get onProfileClick(): () => Promise<any> {
         return this.__onProfileClick;
@@ -49,7 +51,6 @@ export default class FlAccountUser extends FlAccountUserDesign {
     set onProfileClick(value: () => Promise<any>) {
         this.__onProfileClick = value;
         this.lblAccountEditIcon.onTouchEnded = (isInside) => isInside && value();
-        //this.flCircle.onTouchEnded = (isInside) => isInside && value();
     }
     get onPhotoClick(): () => Promise<any> {
         return this.__onPhotoClick;
@@ -57,7 +58,6 @@ export default class FlAccountUser extends FlAccountUserDesign {
     set onPhotoClick(value: () => Promise<any>) {
         if (value) {
             this.__onPhotoClick = value;
-            //this.imgPhoto.dispatch(pushClassNames([".lviProfile-profilePhoto.active"]));
             this.lblAccountEditIcon.onTouchEnded = (isInside) => isInside && value();
         }
     }

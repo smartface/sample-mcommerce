@@ -49,3 +49,26 @@ export async function getCategories(): Promise<any> {
 export function getCategoryImage(categoryId: string): string {
     return `${serviceUrl}/commerce/category/${categoryId}/image`;
 }
+
+export function getProfileImageUrl(): string {
+    return `${serviceUrl}/user/profile-photo`;
+}
+
+export async function putProfileImage(base64: string): Promise<any> {
+    try {
+        const response = await sc.request('/user/profile-photo', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${getAccessToken()}`
+            },
+            body: {
+                image: base64
+            }
+        });
+        return response;
+    } catch (err) {
+        genericErrorHandler(err);
+        throw err;
+    }
+}

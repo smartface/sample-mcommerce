@@ -6,7 +6,6 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import LviAccount from 'components/LviAccount';
 import profileImageMenu from 'lib/profileImageMenu';
-import Blob from '@smartface/native/blob';
 import Image from '@smartface/native/ui/image';
 import { themeService } from 'theme';
 import { User } from 'types';
@@ -16,6 +15,7 @@ import LviRow2LineButton from 'components/LviRow2LineButton';
 const { image } = themeService.getNativeStyle('.lviRow2LineButton.leftIcon');
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
+import { getProfileImageUrl, putProfileImage } from 'service/commerce';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -27,7 +27,6 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
     data: Processor[];
     userInfo: User;
     rightItem: HeaderBarItem;
-    updatedImage: Image;
     unsubscribe = null;
     onExit: (...args) => any;
     constructor(private router?: Router, private route?: Route) {
@@ -68,15 +67,17 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                   userName: this.userInfo.email,
                   userEmail: this.userInfo.email,
                   userEditIcon: '',
-                  userImage: this.updatedImage || this.userInfo.profileImage,
+                  userImage: getProfileImageUrl(),
                   onAction: () => {
                       profileImageMenu({
-                          imageUrl: 'https://i.picsum.photos/id/49/800/800.jpg?hmac=rAzFhjqrfdnRPLR5_nFV49tMbvavk1xvsaEngwbDUfc',
+                          imageUrl: this.userInfo.profileImage,
                           isProfileImageExists: true
                       })
-                          .then((base64) => {
-                              this.updatedImage = Image.createFromBlob(Blob.createFromBase64(base64));
-                              this.refreshListView();
+                          .then(async (base64) => {
+                              const response = await putProfileImage(base64);
+                              if (response && response?.success) {
+                                  this.refreshListView();
+                              }
                           })
                           .catch((err) => {
                               console.error(err);
