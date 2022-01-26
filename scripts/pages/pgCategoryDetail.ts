@@ -91,9 +91,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             }
         } catch (error) {
         } finally {
-            setTimeout(() => {
-                this.waitDialog.hide();
-            }, 1000);
+            this.waitDialog.hide();
         }
     }
     getShowcaseProducts() {
