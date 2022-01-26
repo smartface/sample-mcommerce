@@ -10,7 +10,11 @@
 			"flexProps": {
 				"flexGrow": 1
 			},
-			"imageFillType": "ASPECTFIT"
-		}
+			"imageFillType": "ASPECTFILL"
+		},
+		"flexProps": {
+			"positionType": "ABSOLUTE"
+		},
+		"backgroundColor": "${backgroundMain}"
 	}
 }

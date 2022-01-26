@@ -13,4 +13,9 @@ const themeSources = themeConfig.themes.map((name) => ({
 }));
 
 export const themeService = new ThemeService(themeSources);
+
+export function isCurrentThemeLight(): boolean {
+    return (Data.getStringVariable('currentTheme') || themeConfig.currentTheme) === 'mCommerceTheme';
+}
+
 Application['theme'] = ThemeService.instance;

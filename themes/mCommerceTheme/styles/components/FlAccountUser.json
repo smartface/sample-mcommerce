@@ -15,10 +15,15 @@
 				"alignSelf": "CENTER"
 			},
 			"testId": "PSD2wLj0u",
-			"borderRadius": 10,
+			"borderRadius": 35,
 			"width": 70,
 			"height": 70,
-			"imageFillType": "ASPECTFIT"
+			"imageFillType": "ASPECTFIT",
+			".placeholder": {
+				"image": {
+					"src": "${profilePlaceholder}"
+				}
+			}
 		},
 		"&-flAccountRightWrapper": {
 			"flexProps": {

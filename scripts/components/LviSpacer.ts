@@ -1,6 +1,5 @@
 import LviSpacerDesign from 'generated/my-components/LviSpacer';
 import { themeService } from 'theme';
-import pushClassNames from '@smartface/contx/lib/styling/action/pushClassNames';
 import { setID } from 'lib/testAutomation';
 
 export default class LviSpacer extends LviSpacerDesign {
@@ -18,14 +17,20 @@ export default class LviSpacer extends LviSpacerDesign {
     }
     set className(value: string) {
         this.__className = value;
-        this.dispatch(pushClassNames([value]));
+        this.dispatch({
+            type: 'pushClassNames',
+            classNames: value
+        });
     }
     get backgroundColorClass(): string {
         return this.__backgroundColorClass;
     }
     set backgroundColorClass(value: string) {
         this.__backgroundColorClass = value;
-        this.dispatch(pushClassNames([`.lviSpacer-backgroundColors.${value}`]));
+        this.dispatch({
+            type: 'pushClassNames',
+            classNames: `.lviSpacer-backgroundColors.${value}`
+        });
     }
     set ID(value: string) {
         setID(this, (this.__ID = value));
