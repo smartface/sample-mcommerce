@@ -32,7 +32,6 @@ function initWaitDialog() {
 }
 
 export const showWaitDialog = () => {
-    console.log('showWaitDialog');
     if (!waitDialog) {
         waitDialog = initWaitDialog();
     }

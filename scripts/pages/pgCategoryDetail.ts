@@ -86,7 +86,6 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 this.refreshGridView();
             }
         } catch (error) {
-            console.log('error', error);
         } finally {
             hideWaitDialog();
         }
