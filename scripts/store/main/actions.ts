@@ -25,7 +25,7 @@ export default class Actions {
             payload: basketItem
         };
     }
-    static RemoveFromBasket(productId: { productId: number }): ActionTypes {
+    static RemoveFromBasket(productId: { productId: string }): ActionTypes {
         return {
             type: Constants.REMOVE_FROM_BASKET,
             payload: productId
@@ -37,7 +37,7 @@ export default class Actions {
             payload: product
         };
     }
-    static RemoveFromFavorites(productId: { productId: number }): ActionTypes {
+    static RemoveFromFavorites(productId: { productId: string }): ActionTypes {
         return {
             type: Constants.REMOVE_FROM_FAVORITES,
             payload: productId

@@ -6,8 +6,10 @@ import setVisibility from 'lib/setVisibility';
 import AttributedString from '@smartface/native/ui/attributedstring';
 import Font from '@smartface/native/ui/font';
 import Color from '@smartface/native/ui/color';
+import { getProductImageUrl } from 'service/commerce';
 
 export default class FlProductItem extends FlProductItemDesign {
+    private __imageUrl: string;
     _addToBasket: (...args) => void;
     pageName?: string | undefined;
     myActivityIndicator: ActivityIndicator;
@@ -100,13 +102,15 @@ export default class FlProductItem extends FlProductItemDesign {
 
         this.checkIsHidden();
     }
-    get itemImage(): string | Image {
-        return this.imgProduct.image;
+    get imageUrl(): string {
+        return this.__imageUrl;
     }
-    set itemImage(value: string | Image) {
-        if (value) {
-            this.imgProduct.image = Image.createFromFile(`images://${value}`);
-        }
+    set imageUrl(categoryId: string) {
+        this.__imageUrl = getProductImageUrl(categoryId);
+        this.imgProduct.loadFromUrl({
+            url: this.__imageUrl,
+            useHTTPCacheControl: true
+        });
     }
     get itemDesc(): string {
         return this.lblProductItemDesc.text;

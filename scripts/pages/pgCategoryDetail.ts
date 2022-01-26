@@ -12,6 +12,7 @@ import { themeService } from 'theme';
 import { Product } from 'types';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
+import { getProductsByQuery } from 'service/commerce';
 type searchStatus = {
     isSearchActive: boolean;
     searchText: string;
@@ -75,10 +76,14 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             this.productSearchView.visible = false;
         }
     }
-    getCategoryProducts() {
-        this.categoryProducts = store
-            .getState()
-            .main.products.filter((product) => product.categoryId === this.route.getState().routeData.dataId);
+    async getCategoryProducts() {
+        try {
+            const productResponse = await getProductsByQuery({ page: 1, categoryId: this.route.getState().routeData.dataId });
+            if (productResponse && productResponse?.products.length > 0) {
+                this.categoryProducts = productResponse.products;
+                this.refreshGridView();
+            }
+        } catch (error) {}
     }
     getShowcaseProducts() {
         this.categoryProducts = store
@@ -91,7 +96,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             GridViewItem.itemTag = this.categoryProducts[productIndex].discountTag;
             GridViewItem.itemTitle = this.categoryProducts[productIndex].name;
             GridViewItem.itemDesc = this.categoryProducts[productIndex].description;
-            GridViewItem.itemImage = this.categoryProducts[productIndex].image;
+            GridViewItem.itemImage = this.categoryProducts[productIndex].images ? this.categoryProducts[productIndex].images[0] : null;
             GridViewItem.itemDiscountPrice = !!this.categoryProducts[productIndex].discount
                 ? `$${this.categoryProducts[productIndex].discount}`
                 : false;
@@ -109,11 +114,11 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
             const product = this.categoryProducts[productIndex];
             this.router.push('/btb/tab1/categoryDetail/productDetail', {
-                productId: product.id,
+                productId: product._id,
                 productName: product.name,
                 productPrice: product.price,
                 productDescription: product.description,
-                productImg: product.image
+                productImg: product.images
             });
         };
     }
@@ -151,7 +156,6 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
 
     onShow() {
         super.onShow();
-        this.refreshGridView();
         this.initDismissButton(this.router);
     }
 
