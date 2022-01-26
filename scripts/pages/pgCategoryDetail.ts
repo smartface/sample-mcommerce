@@ -13,11 +13,15 @@ import { Product } from 'types';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductsByQuery } from 'service/commerce';
+import FlWaitDialog from 'components/FlWaitDialog';
+import dialog from 'lib/dialog';
+import Dialog from '@smartface/native/ui/dialog';
 type searchStatus = {
     isSearchActive: boolean;
     searchText: string;
 };
 export default class PgCategoryDetail extends withDismissAndBackButton(PgCategoryDetailDesign) {
+    waitDialog: Dialog;
     productSearchView: SearchView;
     routeData: any;
     isSearchViewVisible = false;
@@ -77,13 +81,19 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         }
     }
     async getCategoryProducts() {
+        this.waitDialog.show();
         try {
             const productResponse = await getProductsByQuery({ page: 1, categoryId: this.route.getState().routeData.dataId });
             if (productResponse && productResponse?.products.length > 0) {
                 this.categoryProducts = productResponse.products;
                 this.refreshGridView();
             }
-        } catch (error) {}
+        } catch (error) {
+        } finally {
+            setTimeout(() => {
+                this.waitDialog.hide();
+            }, 1000);
+        }
     }
     getShowcaseProducts() {
         this.categoryProducts = store
@@ -153,7 +163,10 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             });
         }
     }
-
+    initDialog() {
+        const flWaitDialog = new FlWaitDialog();
+        this.waitDialog = dialog(flWaitDialog);
+    }
     onShow() {
         super.onShow();
         this.initDismissButton(this.router);
@@ -161,6 +174,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
 
     onLoad() {
         super.onLoad();
+        this.initDialog();
         this.headerBar.title = this.route.getState().routeData.title;
         if (this.route.getState().routeData.isShowcase) {
             this.getShowcaseProducts();

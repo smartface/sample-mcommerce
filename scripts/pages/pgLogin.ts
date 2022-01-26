@@ -7,9 +7,13 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constants';
 import { login } from 'service/auth';
+import Dialog from '@smartface/native/ui/dialog';
+import FlWaitDialog from 'components/FlWaitDialog';
+import dialog from 'lib/dialog';
 export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     isMailValid = false;
     isPasswordValid = false;
+    waitDialog: Dialog;
     constructor(private router?: Router, private route?: Route) {
         super({});
 
@@ -44,6 +48,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     }
     async initUserLogin() {
         if (this.initValidate()) {
+            this.waitDialog.show();
             try {
                 const response = await login({
                     username: this.mtbLogin.materialTextBox.text,
@@ -59,8 +64,12 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
                     title: global.lang.warning,
                     message: global.lang.userNotFoundWithThisCredentials
                 });
+                this.waitDialog.hide();
+            } finally {
+                this.waitDialog.hide();
             }
         } else {
+            this.waitDialog.hide();
             return;
         }
     }
@@ -92,12 +101,17 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     checkIsEmailValid(email: string) {
         return EMAIL_REGEXP.test(email);
     }
+    initDialog() {
+        const flWaitDialog = new FlWaitDialog();
+        this.waitDialog = dialog(flWaitDialog);
+    }
     onShow() {
         super.onShow();
         this.initBackButton(this.router);
     }
     onLoad() {
         super.onLoad();
+        this.initDialog();
         this.headerBar.title = global.lang.loginHeader;
         this.initMaterialTextBoxes();
     }

@@ -7,10 +7,12 @@ import { Categories } from 'types';
 import System from '@smartface/native/device/system';
 import { themeService } from 'theme';
 import { getCategories, getCategoryImage } from 'service/commerce';
-import Image from '@smartface/native/ui/image';
-
+import FlWaitDialog from 'components/FlWaitDialog';
+import dialog from 'lib/dialog';
+import Dialog from '@smartface/native/ui/dialog';
 export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
     categories: Categories[];
+    waitDialog: Dialog;
     constructor(private router?: Router, private route?: Route) {
         super({});
         if (System.OS === System.OSType.ANDROID) {
@@ -43,16 +45,29 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
         this.categoriesGrid.refreshData();
     }
     async fetchCategories() {
-        this.categories = await getCategories();
-        if (this.categories) {
-            this.refreshGridView();
+        this.waitDialog.show();
+        try {
+            this.categories = await getCategories();
+            if (this.categories) {
+                this.refreshGridView();
+            }
+        } catch (error) {
+        } finally {
+            setTimeout(() => {
+                this.waitDialog.hide();
+            }, 1000);
         }
+    }
+    initDialog() {
+        const flWaitDialog = new FlWaitDialog();
+        this.waitDialog = dialog(flWaitDialog);
     }
     onShow() {
         super.onShow();
     }
     onLoad() {
         super.onLoad();
+        this.initDialog();
         this.headerBar.title = global.lang.categoriesHeader;
         this.headerBar.leftItemEnabled = false;
         this.initCategoriesGrid();

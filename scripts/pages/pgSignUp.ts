@@ -10,8 +10,11 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { themeService } from 'theme';
 import { register } from 'service/commerce';
-
+import Dialog from '@smartface/native/ui/dialog';
+import FlWaitDialog from 'components/FlWaitDialog';
+import dialog from 'lib/dialog';
 export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
+    waitDialog: Dialog;
     constructor(private router?: Router, private route?: Route) {
         super({});
 
@@ -46,15 +49,25 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         };
         userPayload.email = this.mtbEmail.materialTextBox.text.trim();
         userPayload.password = this.mtbPassword.materialTextBox.text.trim();
-        const registerResponse = await register({
-            email: userPayload.email,
-            password: userPayload.password
-        });
-        if (registerResponse && registerResponse.success) {
-            this.router.push('/pages/pgLogin');
+        this.waitDialog.show();
+        try {
+            const registerResponse = await register({
+                email: userPayload.email,
+                password: userPayload.password
+            });
+            if (registerResponse && registerResponse.success) {
+                this.router.push('/pages/pgLogin');
+            }
+        } catch (error) {
+            this.waitDialog.hide();
+        } finally {
+            this.waitDialog.hide();
         }
     }
-
+    initDialog() {
+        const flWaitDialog = new FlWaitDialog();
+        this.waitDialog = dialog(flWaitDialog);
+    }
     onShow() {
         super.onShow();
         if (System.OS !== 'iOS') {
@@ -66,6 +79,7 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
 
     onLoad() {
         super.onLoad();
+        this.initDialog();
         this.headerBar.title = global.lang.signUpHeader;
         this.initMaterialTextBoxes();
     }
