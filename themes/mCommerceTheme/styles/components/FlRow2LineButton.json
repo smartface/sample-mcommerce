@@ -5,7 +5,10 @@
 			"width": 60,
 			"height": 60,
 			"marginRight": 15,
-			"tintColor": "${textDark}"
+			"tintColor": "${textDark}",
+			"flexProps": {
+				"alignSelf": "CENTER"
+			}
 		},
 		"flexProps": {
 			"flexDirection": "ROW"
@@ -24,10 +27,10 @@
 				"marginTop": 10
 			},
 			"&-secondary": {
-				"backgroundColor": "${light}",
-				"textColor": "${darkGray}",
-				"borderColor": "${darkGray}",
-				"borderWidth": 2,
+				"backgroundColor": "${backgroundSecondary}",
+				"textColor": "${textDark}",
+				"borderColor": "${textDark}",
+                "borderWidth": 2,
 				"height": 60
 			}
 		}

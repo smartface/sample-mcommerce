@@ -225,15 +225,15 @@
 			"font": {
 				"size": 14
 			},
-			"foregroundColor": "${textLight}"
+			"textColor": "${textLight}"
 		},
 		".nodiscount": {
 			"font": {
 				"size": 18
 			},
-			"foregroundColor": "${textDark}"
+			"textColor": "${textDark}"
 		},
-		"foregroundColor": "${textDark}"
+		"textColor": "${textDark}"
 	},
 	".categoryDetail": {
 		"font": {

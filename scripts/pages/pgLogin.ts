@@ -7,6 +7,7 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constants';
 import { login } from 'service/auth';
+import { themeService } from 'theme';
 export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     isMailValid = false;
     isPasswordValid = false;
@@ -94,7 +95,9 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     }
     onShow() {
         super.onShow();
-        this.initBackButton(this.router);
+        this.initBackButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        });
     }
     onLoad() {
         super.onLoad();

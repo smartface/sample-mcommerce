@@ -38,10 +38,10 @@ export default class GviProductItem extends GviProductItemDesign {
     set itemTitle(value: string) {
         this.flProductItem.itemTitle = value;
     }
-    get itemPrice(): any {
-        return this.flProductItem.itemPrice.text;
+    get itemPrice(): string {
+        return this.flProductItem.itemPrice;
     }
-    set itemPrice(value: any) {
+    set itemPrice(value: string) {
         this.flProductItem.itemPrice = value;
     }
     get itemReview(): any {
@@ -50,10 +50,10 @@ export default class GviProductItem extends GviProductItemDesign {
     set itemReview(value: any) {
         this.flProductItem.itemReview = value;
     }
-    get itemDiscountPrice(): any {
-        return this.flProductItem.itemDiscountPrice.text;
+    get itemDiscountPrice(): string {
+        return this.flProductItem.itemDiscountPrice;
     }
-    set itemDiscountPrice(value: any) {
+    set itemDiscountPrice(value: string) {
         this.flProductItem.itemDiscountPrice = value;
     }
     get itemTag(): string {

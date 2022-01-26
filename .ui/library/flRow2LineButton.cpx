@@ -16,7 +16,11 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 12,
+				"top": 70.67
+			}
 		},
 		{
 			"className": ".sf-imageView .flRow2LineButton-imgLeft",
@@ -32,6 +36,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "tabiconuser.png",
 				"usePageVariable": true
 			}
 		},
