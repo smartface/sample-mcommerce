@@ -21,7 +21,7 @@
 			"id": "4bd2-69f2-a94e-4c3a",
 			"props": {
 				"children": [],
-				"name": "activityIndicator1",
+				"name": "activityIndicatorMain",
 				"parent": "9052-1c0f-2d56-74fb",
 				"usePageVariable": true
 			},
