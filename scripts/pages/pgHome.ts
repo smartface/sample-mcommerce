@@ -5,6 +5,8 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { HomeShowcases } from 'types';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
+import { getRefreshToken } from 'service/token';
+import { autoLogin } from 'service/auth';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -83,9 +85,16 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     onShow() {
         super.onShow();
     }
-
+    async initAutoLogin() {
+        if (!!getRefreshToken()) {
+            try {
+                await autoLogin();
+            } catch (error) {}
+        }
+    }
     onLoad() {
         super.onLoad();
+        this.initAutoLogin();
         this.headerBar.title = global.lang.homeHeader;
         this.initListView();
         this.refreshListView();

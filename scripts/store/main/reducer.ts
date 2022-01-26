@@ -1,3 +1,4 @@
+import { clearTokens } from 'service/token';
 import { SessionState, Constants, ActionTypes } from '.';
 
 const initialState: SessionState = {
@@ -57,7 +58,9 @@ export default function (state = initialState, action: ActionTypes): SessionStat
     const newState = Object.assign({}, state);
     switch (action.type) {
         case Constants.LOGOUT: {
+            clearTokens();
             newState.currentUser = null;
+            newState.isUserLoggedIn = false;
             break;
         }
         case Constants.SET_NEW_USER: {
@@ -66,6 +69,7 @@ export default function (state = initialState, action: ActionTypes): SessionStat
         }
         case Constants.SET_CURRENT_USER: {
             newState.currentUser = action.payload;
+            newState.isUserLoggedIn = true;
             break;
         }
         case Constants.ADD_TO_BASKET: {

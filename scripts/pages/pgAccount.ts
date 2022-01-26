@@ -140,6 +140,9 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
     onShow() {
         super.onShow();
         this.unsubscribe = store.subscribe(() => this.handleChange());
+        if (store.getState().main.isUserLoggedIn) {
+            this.addRightItem();
+        }
         setTimeout(() => {
             this.refreshListView();
         }, 500);
