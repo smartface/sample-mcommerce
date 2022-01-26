@@ -8,8 +8,6 @@ var waitDialog = null;
 var activeDialogCounter = 0;
 
 function initWaitDialog() {
-    console.log('initWaitDialog');
-
     let dialog = new Dialog({
         android: {
             themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
@@ -23,7 +21,6 @@ function initWaitDialog() {
         type: 'pushClassNames',
         classNames: '.dialog'
     });
-
     dialog.android.isTransparent = false;
     component.onTouch = () => {
         return true;

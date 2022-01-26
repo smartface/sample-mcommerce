@@ -45,7 +45,6 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
     async fetchCategories() {
         try {
             showWaitDialog();
-
             this.categories = await getCategories();
             if (this.categories) {
                 this.refreshGridView();
