@@ -13,15 +13,12 @@ import { Product } from 'types';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductsByQuery } from 'service/commerce';
-import FlWaitDialog from 'components/FlWaitDialog';
-import dialog from 'lib/dialog';
-import Dialog from '@smartface/native/ui/dialog';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 type searchStatus = {
     isSearchActive: boolean;
     searchText: string;
 };
 export default class PgCategoryDetail extends withDismissAndBackButton(PgCategoryDetailDesign) {
-    waitDialog: Dialog;
     productSearchView: SearchView;
     routeData: any;
     isSearchViewVisible = false;
@@ -32,7 +29,6 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     };
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.waitDialog = dialog(new FlWaitDialog());
     }
     addRightItem() {
         const rightItem = new HeaderBarItem({
@@ -82,16 +78,17 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         }
     }
     async getCategoryProducts() {
-        this.waitDialog.show();
         try {
+            showWaitDialog();
             const productResponse = await getProductsByQuery({ page: 1, categoryId: this.route.getState().routeData.dataId });
             if (productResponse && productResponse?.products.length > 0) {
                 this.categoryProducts = productResponse.products;
                 this.refreshGridView();
             }
         } catch (error) {
+            console.log('error', error);
         } finally {
-            this.waitDialog.hide();
+            hideWaitDialog();
         }
     }
     getShowcaseProducts() {

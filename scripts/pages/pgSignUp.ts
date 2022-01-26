@@ -10,14 +10,11 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { themeService } from 'theme';
 import { register } from 'service/commerce';
-import Dialog from '@smartface/native/ui/dialog';
-import FlWaitDialog from 'components/FlWaitDialog';
-import dialog from 'lib/dialog';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+
 export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
-    waitDialog: Dialog;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.waitDialog = dialog(new FlWaitDialog());
         this.lblRouteLogin.on(View.Events.TouchEnded, () => {
             this.router.goBack();
         });
@@ -49,8 +46,8 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         };
         userPayload.email = this.mtbEmail.materialTextBox.text.trim();
         userPayload.password = this.mtbPassword.materialTextBox.text.trim();
-        this.waitDialog.show();
         try {
+            showWaitDialog();
             const registerResponse = await register({
                 email: userPayload.email,
                 password: userPayload.password
@@ -60,7 +57,7 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
             }
         } catch (error) {
         } finally {
-            this.waitDialog.hide();
+            hideWaitDialog();
         }
     }
     onShow() {

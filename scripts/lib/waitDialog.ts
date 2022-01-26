@@ -2,11 +2,14 @@ import Dialog from '@smartface/native/ui/dialog';
 import FlWaitDialog from 'components/FlWaitDialog';
 import componentContextPatch from '@smartface/contx/lib/smartface/componentContextPatch';
 import { themeService } from 'theme';
+import FlexLayout from '@smartface/native/ui/flexlayout';
 
 var waitDialog = null;
 var activeDialogCounter = 0;
 
 function initWaitDialog() {
+    console.log('initWaitDialog');
+
     let dialog = new Dialog({
         android: {
             themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
@@ -14,11 +17,13 @@ function initWaitDialog() {
         }
     }) as StyleContextComponentType<Dialog>;
     const component = new FlWaitDialog();
+    themeService.addGlobalComponent(component as any, 'flWaitDialog');
     themeService.addGlobalComponent(dialog.layout as any, 'waitDialog');
-    dialog.dispatch({
+    (dialog.layout as StyleContextComponentType<FlexLayout>).dispatch({
         type: 'pushClassNames',
         classNames: '.dialog'
     });
+
     dialog.android.isTransparent = false;
     component.onTouch = () => {
         return true;
@@ -30,6 +35,7 @@ function initWaitDialog() {
 }
 
 export const showWaitDialog = () => {
+    console.log('showWaitDialog');
     if (!waitDialog) {
         waitDialog = initWaitDialog();
     }

@@ -6,16 +6,13 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { Categories } from 'types';
 import System from '@smartface/native/device/system';
 import { themeService } from 'theme';
-import { getCategories, getCategoryImage } from 'service/commerce';
-import FlWaitDialog from 'components/FlWaitDialog';
-import dialog from 'lib/dialog';
-import Dialog from '@smartface/native/ui/dialog';
+import { getCategories } from 'service/commerce';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+
 export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
     categories: Categories[];
-    waitDialog: Dialog;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.waitDialog = dialog(new FlWaitDialog());
         if (System.OS === System.OSType.ANDROID) {
             //Android item widths fails after theme change this fixes it
             themeService.onChange(() => {
@@ -46,15 +43,16 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
         this.categoriesGrid.refreshData();
     }
     async fetchCategories() {
-        this.waitDialog.show();
         try {
+            showWaitDialog();
+
             this.categories = await getCategories();
             if (this.categories) {
                 this.refreshGridView();
             }
         } catch (error) {
         } finally {
-            this.waitDialog.hide();
+            hideWaitDialog();
         }
     }
 
