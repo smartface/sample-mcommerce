@@ -1,6 +1,9 @@
 import View from '@smartface/native/ui/view';
+import { getProfileImagePlaceholder } from 'constants/style';
 import FlAccountUserDesign from 'generated/my-components/FlAccountUser';
 import { getAccessToken } from 'service/token';
+import { isCurrentThemeLight, themeService } from 'theme';
+const imageHeight = themeService.getStyle('.flAccountUser-imgUserAccount').height;
 
 export default class FlAccountUser extends FlAccountUserDesign {
     pageName?: string | undefined;
@@ -38,11 +41,15 @@ export default class FlAccountUser extends FlAccountUserDesign {
     }
     set userImage(value: string) {
         this.__imageUrl = value;
+        this.imgUserAccount.image = undefined;
         this.imgUserAccount.loadFromUrl({
             url: this.__imageUrl,
-            headers: {
-                Authorization: `Bearer ${getAccessToken()}`
-            }
+            headers: { Authorization: `Bearer ${getAccessToken()}` },
+            useHTTPCacheControl: true,
+            android: {
+                useMemoryCache: false
+            },
+            placeholder: getProfileImagePlaceholder(isCurrentThemeLight(), imageHeight)
         });
     }
     get onProfileClick(): () => Promise<any> {

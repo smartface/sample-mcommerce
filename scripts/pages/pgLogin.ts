@@ -40,6 +40,8 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
         this.mtbPassword.options = {
             hint: global.lang.password
         };
+        this.mtbLogin.materialTextBox.text = 'alim@gmail.com';
+        this.mtbPassword.materialTextBox.text = '12345678';
         this.mtbPassword.materialTextBox.isPassword = true;
     }
     async initUserLogin() {
