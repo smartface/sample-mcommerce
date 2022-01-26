@@ -32,7 +32,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     addRightItem() {
         const rightItem = new HeaderBarItem({
             image: Image.createFromFile('images://filtericon.png'),
-            color: Color.BLACK,
+            color: themeService.getStyle('.categoryDetail.headerBarItem').color,
             onPress: () => {
                 if (this.isSearchViewVisible) {
                     this.initSearchView(false);

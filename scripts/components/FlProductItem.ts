@@ -7,6 +7,7 @@ import AttributedString from '@smartface/native/ui/attributedstring';
 import Font from '@smartface/native/ui/font';
 import Color from '@smartface/native/ui/color';
 import { getProductImageUrl } from 'service/commerce';
+import { themeService } from 'theme';
 
 export default class FlProductItem extends FlProductItemDesign {
     private __imageUrl: string;
@@ -54,11 +55,12 @@ export default class FlProductItem extends FlProductItemDesign {
             if (this.tvPriceWithDiscount.text) {
                 attributeString.strikethrough = true;
                 attributeString.string = value;
-                attributeString.font = Font.create('Nunito', 14);
-                attributeString.foregroundColor = Color.create('#7c7c7c');
+                attributeString.font = themeService.getNativeStyle('.product-price.discount').font;
+                attributeString.foregroundColor = themeService.getNativeStyle('.product-price.discount').foregroundColor;
             } else {
                 // TODO: get combined color ve fontlar icin
-                attributeString.font = Font.create('Nunito', 18);
+                attributeString.font = themeService.getNativeStyle('.product-price.nodiscount').font;
+                attributeString.foregroundColor = themeService.getNativeStyle('.product-price.nodiscount').foregroundColor;
                 attributeString.string = value;
             }
         }
@@ -85,7 +87,8 @@ export default class FlProductItem extends FlProductItemDesign {
         if (!!value) {
             this.tvPriceWithDiscount.visible = true;
             attributeString.string = value;
-            attributeString.font = Font.create('Nunito', 18);
+            attributeString.font = themeService.getNativeStyle('.product-price').font;
+            attributeString.foregroundColor = themeService.getNativeStyle('.product-price').foregroundColor;
         } else {
             this.tvPriceWithDiscount.visible = false;
         }
