@@ -6,8 +6,8 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { Categories } from 'types';
 import System from '@smartface/native/device/system';
 import { themeService } from 'theme';
-import { getCategories, getCategoryImage } from 'service/commerce';
-import Image from '@smartface/native/ui/image';
+import { getCategories } from 'service/commerce';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 
 export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
     categories: Categories[];
@@ -43,11 +43,18 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
         this.categoriesGrid.refreshData();
     }
     async fetchCategories() {
-        this.categories = await getCategories();
-        if (this.categories) {
-            this.refreshGridView();
+        try {
+            showWaitDialog();
+            this.categories = await getCategories();
+            if (this.categories) {
+                this.refreshGridView();
+            }
+        } catch (error) {
+        } finally {
+            hideWaitDialog();
         }
     }
+
     onShow() {
         super.onShow();
     }

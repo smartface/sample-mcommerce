@@ -7,12 +7,12 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constants';
 import { login } from 'service/auth';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     isMailValid = false;
     isPasswordValid = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
-
         this.lblRouteSignUp.on(View.Events.Touch, () => {
             this.router.push('/pages/pgSignUp');
         });
@@ -45,6 +45,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     async initUserLogin() {
         if (this.initValidate()) {
             try {
+                showWaitDialog();
                 const response = await login({
                     username: this.mtbLogin.materialTextBox.text,
                     password: this.mtbPassword.materialTextBox.text
@@ -59,8 +60,11 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
                     title: global.lang.warning,
                     message: global.lang.userNotFoundWithThisCredentials
                 });
+            } finally {
+                hideWaitDialog();
             }
         } else {
+            hideWaitDialog();
             return;
         }
     }
