@@ -93,7 +93,8 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     getShowcaseProducts() {
         this.categoryProducts = store
             .getState()
-            .main.showcaseProducts.find((showcase) => showcase.showcaseId === this.route.getState().routeData.dataId).products;
+            .main.showcases.find((showcase) => showcase._id === this.route.getState().routeData.dataId).products;
+        this.refreshGridView();
     }
 
     initGridView() {

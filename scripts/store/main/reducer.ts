@@ -2,7 +2,7 @@ import { clearTokens } from 'service/token';
 import { SessionState, Constants, ActionTypes } from '.';
 
 const initialState: SessionState = {
-    showcaseProducts: [],
+    showcases: [],
     products: [],
     categories: [],
     basket: [],
@@ -100,6 +100,10 @@ export default function (state = initialState, action: ActionTypes): SessionStat
         }
         case Constants.SET_CATEGORIES: {
             newState.categories = [...action.payload];
+            break;
+        }
+        case Constants.SET_SHOWCASES: {
+            newState.showcases = [...action.payload];
             break;
         }
         default: {

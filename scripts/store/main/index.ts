@@ -6,7 +6,7 @@ export interface SessionState {
     basket: Types.Basket;
     categories: Types.Categories[];
     users: Types.User[];
-    showcaseProducts: Types.HomeShowcases[];
+    showcases: Types.HomeShowcases[];
     accountMenus: Types.AccountMenus[];
     favorites: Types.Favorites;
     currentUser: Types.User;
@@ -22,6 +22,7 @@ export namespace Constants {
     export const ADD_TO_FAVORITES = 'ADD_TO_FAVORITES';
     export const REMOVE_FROM_FAVORITES = 'REMOVE_FROM_FAVORITES';
     export const SET_CATEGORIES = 'SET_CATEGORIES';
+    export const SET_SHOWCASES = 'SET_SHOWCASES';
 }
 
 declare namespace Actions {
@@ -65,6 +66,10 @@ declare namespace Actions {
         type: typeof Constants.SET_CATEGORIES;
         payload: Types.Categories[];
     }
+    export interface SetShowcases {
+        type: typeof Constants.SET_SHOWCASES;
+        payload: Types.HomeShowcases[];
+    }
 }
 
 export type ActionTypes =
@@ -75,4 +80,5 @@ export type ActionTypes =
     | Actions.RemoveFromBasket
     | Actions.AddToFavorites
     | Actions.RemoveFromFavorites
-    | Actions.SetCategories;
+    | Actions.SetCategories
+    | Actions.SetShowcases;
