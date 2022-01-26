@@ -218,17 +218,17 @@
 			"family": "Nunito",
 			"bold": true,
 			"italic": false,
-			"size": 14
+			"size": 18,
+			"style": "Bold"
 		},
 		".discount": {
 			"font": {
-				"style": "Bold"
+				"size": 14
 			},
 			"foregroundColor": "${textLight}"
 		},
 		".nodiscount": {
 			"font": {
-				"style": "Bold",
 				"size": 18
 			},
 			"foregroundColor": "${textDark}"

@@ -55,13 +55,11 @@ export default class FlProductItem extends FlProductItemDesign {
             if (this.tvPriceWithDiscount.text) {
                 attributeString.strikethrough = true;
                 attributeString.string = value;
-                attributeString.font = themeService.getNativeStyle('.product-price.discount').font;
+                attributeString.font = themeService.getStyle('.product-price.discount').font;
                 attributeString.foregroundColor = themeService.getNativeStyle('.product-price.discount').foregroundColor;
             } else {
-                // TODO: get combined color ve fontlar icin
                 attributeString.font = themeService.getNativeStyle('.product-price.nodiscount').font;
                 attributeString.foregroundColor = themeService.getNativeStyle('.product-price.nodiscount').foregroundColor;
-                attributeString.string = value;
             }
         }
         this.tvProductPrice.attributedText = [attributeString];
