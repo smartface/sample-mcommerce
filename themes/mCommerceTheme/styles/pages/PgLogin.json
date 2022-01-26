@@ -8,24 +8,6 @@
 			"android": {},
 			"style": "DEFAULT"
 		},
-		"&-headerbar": {
-			"visible": false
-		},
-		"&-imagebackground": {
-			"bottom": 0,
-			"flexProps": {
-				"positionType": "ABSOLUTE",
-				"flexGrow": 1
-			},
-			"height": null,
-			"imageFillType": "ASPECTFILL",
-			"left": 0,
-			"marginBottom": null,
-			"marginTop": 1,
-			"right": 0,
-			"testId": "wcpeA6xgx",
-			"top": 0
-		},
 		"&-flcontainer": {
 			"flexProps": {
 				"flexGrow": 1

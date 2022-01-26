@@ -85,13 +85,13 @@
 					"flexProps": {
 						"alignSelf": "CENTER"
 					},
-					"tintColor": "${main}",
+					"tintColor": "${deActiveSwitch}",
 					"height": 20,
 					"imageFillType": "ASPECTFIT",
 					"width": 20
 				},
-				"backgroundColor": "${textDark}",
-				"borderColor": "${green}"
+				"backgroundColor": "${backgroundMain}",
+				"borderColor": "${textLight}"
 			},
 			"&-flRight": {
 				"borderWidth": 1,
@@ -108,12 +108,12 @@
 						"alignSelf": "CENTER"
 					},
 					"height": 20,
-					"tintColor": "${main}",
+					"tintColor": "${activeSwitch}",
 					"imageFillType": "ASPECTFIT",
 					"width": 20
 				},
-				"backgroundColor": "${backgroundMain}",
-				"borderColor": "${green}"
+				"backgroundColor": "${reverseBackground}",
+				"borderColor": "${textLight}"
 			},
 			".borderRadius": {
 				"borderRadius": 8

@@ -19,7 +19,7 @@
 			"normal": "${textDark}",
 			"selected": "${green}"
 		},
-		"backgroundColor": "${backgroundMain}",
+		"backgroundColor": "${backgroundSecondary}",
 		"&-default": {
 			"font": {
 				"size": 11

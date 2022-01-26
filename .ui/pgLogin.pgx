@@ -8,7 +8,6 @@
 				"children": [
 					"6e03-bc0b-218a-d1e2",
 					"f1b8-030b-a8b6-50f8",
-					"f711-79a1-d479-0493",
 					"9503-8d4b-931f-3afe"
 				],
 				"name": "pgLogin",
@@ -47,19 +46,6 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgLogin"
-			}
-		},
-		{
-			"className": ".sf-imageView #pgLogin-imagebackground",
-			"id": "f711-79a1-d479-0493",
-			"props": {
-				"children": [],
-				"name": "imgBackground",
-				"parent": "aa9f-e1cb-2f7f-92d5"
-			},
-			"type": "ImageView",
-			"userProps": {
-				"image": "background.png"
 			}
 		},
 		{

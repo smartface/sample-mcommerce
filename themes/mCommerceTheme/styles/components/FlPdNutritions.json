@@ -7,7 +7,7 @@
 		"testId": "m03QBlnI1",
 		"&-lblNutritions": {
 			"backgroundColor": "${nutritionsGray}",
-			"textColor": "${textLight}",
+			"textColor": "${black}",
 			"borderRadius": 5,
 			"testId": "X4K28uYJe",
 			"height": 20,

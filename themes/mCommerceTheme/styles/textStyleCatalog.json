@@ -41,7 +41,7 @@
 				"size": 26,
 				"style": "Bold"
 			},
-			"textColor": "${black}"
+			"textColor": "${textDark}"
 		},
 		".text": {
 			"font": {
@@ -155,7 +155,7 @@
 				"size": 26,
 				"style": "Bold"
 			},
-			"textColor": "${black}"
+			"textColor": "${textDark}"
 		},
 		".lblText": {
 			"font": {
@@ -193,7 +193,7 @@
 				"size": 14,
 				"style": "Bold"
 			},
-			"textColor": "${black}"
+			"textColor": "${textDark}"
 		},
 		".lblRouteLogin": {
 			"font": {
@@ -212,5 +212,39 @@
 			"style": "Bold"
 		},
 		"textColor": "${white}"
+	},
+	".product-price": {
+		"font": {
+			"family": "Nunito",
+			"bold": true,
+			"italic": false,
+			"size": 14
+		},
+		".discount": {
+			"font": {
+				"style": "Bold"
+			},
+			"foregroundColor": "${textLight}"
+		},
+		".nodiscount": {
+			"font": {
+				"style": "Bold",
+				"size": 18
+			},
+			"foregroundColor": "${textDark}"
+		},
+		"foregroundColor": "${textDark}"
+	},
+	".categoryDetail": {
+		"font": {
+			"family": "Nunito",
+			"bold": true,
+			"italic": false,
+			"size": 12,
+			"style": "Bold"
+		},
+		".headerBarItem": {
+			"color": "${textDark}"
+		}
 	}
 }
