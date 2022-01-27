@@ -113,5 +113,6 @@ SMF.i18n.defineLanguage('en', {
     minimumCharacterErrorOnPassword: 'Password must be at least 8 characters',
     invalidEmail: 'Invalid Email',
     warning: 'Warning',
-    userNotFoundWithThisCredentials: 'User not found with this credentials'
+    userNotFoundWithThisCredentials: 'User not found with this credentials',
+    alreadyExist: 'This user already exist.'
 });
