@@ -20,6 +20,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     data: Processor[];
     showcases: HomeShowcases[];
     banners: Banner[];
+    initialized = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
     }
@@ -91,9 +92,9 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                 this.showcases = showcaseResponse;
                 store.dispatch(storeActions.SetShowcases(showcaseResponse));
             }
+            return showcaseResponse;
         } catch (error) {
-        } finally {
-            this.refreshListView();
+            throw new Error(global.lang.showcaseServiceError);
         }
     }
 
@@ -103,13 +104,18 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             if (bannersResponse && bannersResponse.length > 0) {
                 this.banners = bannersResponse;
             }
+            return bannersResponse;
         } catch (error) {
-        } finally {
+            throw new Error(global.lang.bannerServiceError);
         }
     }
     async initAutoLogin() {
         if (!!getRefreshToken()) {
-            return await autoLogin();
+            try {
+                return await autoLogin();
+            } catch (err) {
+                return Promise.resolve(); //Silently fail on autologin
+            }
         } else {
             return Promise.resolve();
         }
@@ -117,22 +123,28 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     async callServices() {
         try {
             showWaitDialog();
-            await this.initAutoLogin();
-            await Promise.all([this.fetchShowcases(), this.fetchBanners()]);
+            if (this.initialized) {
+                return Promise.resolve();
+            } else {
+                await this.initAutoLogin();
+                await Promise.all([this.fetchShowcases(), this.fetchBanners()]);
+                this.initialized = true;
+            }
         } catch (error) {
-            alert(global.lang.userNotFoundWithThisCredentials);
+            alert(error.message);
         } finally {
             hideWaitDialog();
+            this.refreshListView();
         }
     }
     onShow() {
         super.onShow();
+        this.callServices();
     }
     onLoad() {
         super.onLoad();
         this.headerBar.title = global.lang.homeHeader;
         this.initListView();
-
         this.headerBar.leftItemEnabled = false;
     }
 }

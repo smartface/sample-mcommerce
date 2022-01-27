@@ -95,6 +95,8 @@ SMF.i18n.defineLanguage('en', {
     checkingUpdate: 'Checking for updates',
     rauProfileError: 'Update profile not found',
     rauChannelError: 'Update channel not found',
+    bannerServiceError: 'An error occurred on banner service.',
+    showcaseServiceError: 'An error occurred on showcase service.',
     noUpdate: 'No new updates were found',
     fingerprintUpdateStoredCredentialsTitle: 'Update stored credentials',
     fingerprintUpdateStoredCredentialsMessage:

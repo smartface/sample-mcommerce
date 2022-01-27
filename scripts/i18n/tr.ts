@@ -85,6 +85,8 @@ SMF.i18n.defineLanguage('tr', {
     checkingUpdate: 'Güncelleştirmeler kontrol ediliyor',
     rauProfileError: 'Güncelleştirme profili bulunamadı',
     rauChannelError: 'Güncelleştirme kanalı bulunamadı',
+    bannerServiceError: 'Afiş servisinde bir hata oluştu.',
+    showcaseServiceError: 'Vitrin servisinde bir hata oluştu.',
     noUpdate: 'Yeni bir güncelleştirme yok',
     fingerprintUpdateStoredCredentialsTitle: 'Kimlik bilgilerini güncelle',
     fingerprintUpdateStoredCredentialsMessage:
