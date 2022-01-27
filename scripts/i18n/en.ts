@@ -112,12 +112,12 @@ SMF.i18n.defineLanguage('en', {
     scanFaceIDTitle: 'Login with FaceID',
     scanFaceIDMessage: 'Scan your face',
     chooseNavigationApp: 'Choose Navigation App',
-    minimumCharacterErrorOnPassword: 'Password must be at least 8 characters',
+    minimumCharacterErrorOnPassword: 'Password must be at least $1 characters',
     invalidEmail: 'Invalid Email',
     warning: 'Warning',
     userNotFoundWithThisCredentials: 'User not found with this credentials',
     alreadyExist: 'This user already exist.',
     firstName: 'First name',
     lastName: 'Last name',
-    invalidName: 'The field must be a minimum of 4 characters!'
+    invalidName: 'The field must be a minimum of $1 characters!'
 });

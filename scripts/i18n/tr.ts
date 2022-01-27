@@ -110,12 +110,12 @@ SMF.i18n.defineLanguage('tr', {
     scanFaceIDTitle: 'FaceID ile oturum aç',
     scanFaceIDMessage: 'Yüzünü tarat',
     chooseNavigationApp: 'Navigasyon uygulaması seç',
-    minimumCharacterErrorOnPassword: 'Şifre en az 8 karakterden oluşmalıdır.',
+    minimumCharacterErrorOnPassword: 'Şifre en az $1 karakterden oluşmalıdır.',
     invalidEmail: 'Geçersiz Mail',
     warning: 'Uyarı',
     userNotFoundWithThisCredentials: 'Girilen bilgiler ile eşleşen bir kullanıcı bulunamadı.',
     alreadyExist: 'Bu bilgilerde bir kullanıcı zaten bulunuyor.',
     firstName: 'İsim',
     lastName: 'Soyisim',
-    invalidName: 'Alan minimum 4 karakter olmalıdır!'
+    invalidName: 'Alan minimum $1 karakter olmalıdır!'
 });

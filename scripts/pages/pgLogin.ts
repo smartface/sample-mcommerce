@@ -84,7 +84,10 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
             this.mtbPassword.materialTextBox.errorMessage = '';
         } else {
             this.isPasswordValid = false;
-            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword;
+            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword.replace(
+                '$1',
+                MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD
+            );
         }
         if (this.isMailValid && this.isPasswordValid) {
             return true;

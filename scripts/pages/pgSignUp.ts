@@ -97,8 +97,8 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
             this.mtbLastName.materialTextBox.errorMessage = '';
         } else {
             this.namesValid = false;
-            this.mtbFirstName.materialTextBox.errorMessage = global.lang.invalidName;
-            this.mtbLastName.materialTextBox.errorMessage = global.lang.invalidName;
+            this.mtbFirstName.materialTextBox.errorMessage = global.lang.invalidName.replace('$1', MINIMUM_CHARACTERS_REQUIRED);
+            this.mtbLastName.materialTextBox.errorMessage = global.lang.invalidName.replace('$1', MINIMUM_CHARACTERS_REQUIRED);
         }
 
         if (mailExist && this.checkIsEmailValid(this.mtbEmail.materialTextBox.text)) {
@@ -114,7 +114,10 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
             this.mtbPassword.materialTextBox.errorMessage = '';
         } else {
             this.isPasswordValid = false;
-            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword;
+            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword.replace(
+                '$1',
+                MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD
+            );
         }
         if (this.isMailValid && this.isPasswordValid) {
             return true;
