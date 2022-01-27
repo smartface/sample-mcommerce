@@ -1,7 +1,5 @@
 import PgLoginDesign from 'generated/pages/pgLogin';
 import View from '@smartface/native/ui/view';
-import store from 'store/index';
-import storeActions from 'store/main/actions';
 import { Route, NativeStackRouter, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
@@ -15,7 +13,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.lblRouteSignUp.on(View.Events.Touch, () => {
-            this.router.push('/pages/pgSignUp');
+            this.router.push('pgSignUp');
         });
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnLogIn.on(Button.Events.Press, () => {

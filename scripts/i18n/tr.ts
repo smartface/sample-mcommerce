@@ -112,5 +112,8 @@ SMF.i18n.defineLanguage('tr', {
     invalidEmail: 'Geçersiz Mail',
     warning: 'Uyarı',
     userNotFoundWithThisCredentials: 'Girilen bilgiler ile eşleşen bir kullanıcı bulunamadı.',
-    alreadyExist: 'Bu bilgilerde bir kullanıcı zaten bulunuyor.'
+    alreadyExist: 'Bu bilgilerde bir kullanıcı zaten bulunuyor.',
+    firstName: 'İsim',
+    lastName: 'Soyisim',
+    invalidName: 'Alan minimum 4 karakter olmalıdır!'
 });

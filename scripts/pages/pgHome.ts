@@ -86,7 +86,6 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
 
     async fetchShowcases() {
         try {
-            showWaitDialog();
             const showcaseResponse = await getShowcases();
             if (showcaseResponse && showcaseResponse.length > 0) {
                 this.showcases = showcaseResponse;
@@ -95,44 +94,45 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         } catch (error) {
         } finally {
             this.refreshListView();
-            hideWaitDialog();
         }
     }
 
     async fetchBanners() {
         try {
-            showWaitDialog();
             const bannersResponse = await getBanners();
             if (bannersResponse && bannersResponse.length > 0) {
                 this.banners = bannersResponse;
             }
         } catch (error) {
         } finally {
-            hideWaitDialog();
         }
-    }
-
-    onShow() {
-        super.onShow();
-        this.initAutoLogin();
     }
     async initAutoLogin() {
         if (!!getRefreshToken()) {
-            try {
-                showWaitDialog();
-                await autoLogin();
-            } catch (error) {
-            } finally {
-                hideWaitDialog();
-            }
+            return await autoLogin();
+        } else {
+            return Promise.resolve();
         }
+    }
+    async callServices() {
+        try {
+            showWaitDialog();
+            await this.initAutoLogin();
+            await Promise.all([this.fetchShowcases(), this.fetchBanners()]);
+        } catch (error) {
+            alert(global.lang.userNotFoundWithThisCredentials);
+        } finally {
+            hideWaitDialog();
+        }
+    }
+    onShow() {
+        super.onShow();
     }
     onLoad() {
         super.onLoad();
         this.headerBar.title = global.lang.homeHeader;
         this.initListView();
-        this.fetchShowcases();
-        this.fetchBanners();
+
         this.headerBar.leftItemEnabled = false;
     }
 }

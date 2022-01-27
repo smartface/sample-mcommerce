@@ -114,5 +114,8 @@ SMF.i18n.defineLanguage('en', {
     invalidEmail: 'Invalid Email',
     warning: 'Warning',
     userNotFoundWithThisCredentials: 'User not found with this credentials',
-    alreadyExist: 'This user already exist.'
+    alreadyExist: 'This user already exist.',
+    firstName: 'First name',
+    lastName: 'Last name',
+    invalidName: 'The field must be a minimum of 4 characters!'
 });

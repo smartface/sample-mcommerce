@@ -117,6 +117,8 @@
 			"id": "40d7-1892-4734-7a1b",
 			"props": {
 				"children": [
+					"3bca-c747-c5c1-5e8f",
+					"ca30-4d81-0ae1-206d",
 					"efef-c8d5-44cf-b90d",
 					"8680-508c-a2b2-3977",
 					"8bcf-a729-caf1-6202",
@@ -129,6 +131,50 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
+			"hiddenComponent": false,
+			"id": "3bca-c747-c5c1-5e8f",
+			"initialized": false,
+			"props": {
+				"children": [],
+				"name": "mtbFirstName",
+				"parent": "40d7-1892-4734-7a1b",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "YF5E3mRog",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
+			"hiddenComponent": false,
+			"id": "ca30-4d81-0ae1-206d",
+			"initialized": false,
+			"props": {
+				"children": [],
+				"name": "mtbLastName",
+				"parent": "40d7-1892-4734-7a1b",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "YF5E3mRog",
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",

@@ -12,21 +12,25 @@ const { serviceUrl } = config.environments[getCurrentEnvironment()];
 const sc = createServiceCallObject(serviceUrl);
 
 interface IAuthQueryParams {
+    firstName?: string;
+    lastName?: string;
     email?: string;
     password?: string;
 }
 
-export async function register({ email = '', password = '' }: IAuthQueryParams = {}): Promise<any> {
+export async function register({ firstName = '', lastName = '', email = '', password = '' }: IAuthQueryParams = {}): Promise<any> {
     try {
         const res = await sc.request('/auth/register', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
+                'Content-Type': 'application/json'
             },
-            body: buildQueryParams({
+            body: {
+                firstName,
+                lastName,
                 email,
                 password
-            })
+            }
         });
         return res;
     } catch (err) {
