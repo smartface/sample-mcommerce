@@ -46,26 +46,14 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         this.mtbPassword.materialTextBox.isPassword = true;
     }
     async initUserSignup() {
-        let userPayload = {
-            id: 10,
-            firstName: '',
-            lastName: '',
-            password: '',
-            email: '',
-            profileImage: ''
-        };
-        userPayload.firstName = this.mtbFirstName.materialTextBox.text.trim();
-        userPayload.lastName = this.mtbLastName.materialTextBox.text.trim();
-        userPayload.email = this.mtbEmail.materialTextBox.text.trim();
-        userPayload.password = this.mtbPassword.materialTextBox.text.trim();
         if (this.initValidate()) {
             try {
                 showWaitDialog();
                 const registerResponse = await register({
-                    firstName: userPayload.firstName,
-                    lastName: userPayload.lastName,
-                    email: userPayload.email,
-                    password: userPayload.password
+                    firstName: this.mtbFirstName.materialTextBox.text.trim(),
+                    lastName: this.mtbLastName.materialTextBox.text.trim(),
+                    email: this.mtbEmail.materialTextBox.text.trim(),
+                    password: this.mtbPassword.materialTextBox.text.trim()
                 });
                 if (registerResponse && registerResponse.success) {
                     this.router.push('pgLogin');
