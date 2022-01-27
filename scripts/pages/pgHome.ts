@@ -20,6 +20,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     data: Processor[];
     showcases: HomeShowcases[];
     banners: Banner[];
+    initialized = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
     }
@@ -86,53 +87,64 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
 
     async fetchShowcases() {
         try {
-            showWaitDialog();
             const showcaseResponse = await getShowcases();
             if (showcaseResponse && showcaseResponse.length > 0) {
                 this.showcases = showcaseResponse;
                 store.dispatch(storeActions.SetShowcases(showcaseResponse));
             }
+            return showcaseResponse;
         } catch (error) {
-        } finally {
-            this.refreshListView();
-            hideWaitDialog();
+            throw new Error(global.lang.showcaseServiceError);
         }
     }
 
     async fetchBanners() {
         try {
-            showWaitDialog();
             const bannersResponse = await getBanners();
             if (bannersResponse && bannersResponse.length > 0) {
                 this.banners = bannersResponse;
             }
+            return bannersResponse;
         } catch (error) {
-        } finally {
-            hideWaitDialog();
+            throw new Error(global.lang.bannerServiceError);
         }
-    }
-
-    onShow() {
-        super.onShow();
-        this.initAutoLogin();
     }
     async initAutoLogin() {
         if (!!getRefreshToken()) {
             try {
-                showWaitDialog();
-                await autoLogin();
-            } catch (error) {
-            } finally {
-                hideWaitDialog();
+                return await autoLogin();
+            } catch (err) {
+                return Promise.resolve(); //Silently fail on autologin
             }
+        } else {
+            return Promise.resolve();
         }
+    }
+    async callServices() {
+        try {
+            showWaitDialog();
+            if (this.initialized) {
+                return Promise.resolve();
+            } else {
+                await this.initAutoLogin();
+                await Promise.all([this.fetchShowcases(), this.fetchBanners()]);
+                this.initialized = true;
+            }
+        } catch (error) {
+            alert(error.message);
+        } finally {
+            hideWaitDialog();
+            this.refreshListView();
+        }
+    }
+    onShow() {
+        super.onShow();
+        this.callServices();
     }
     onLoad() {
         super.onLoad();
         this.headerBar.title = global.lang.homeHeader;
         this.initListView();
-        this.fetchShowcases();
-        this.fetchBanners();
         this.headerBar.leftItemEnabled = false;
     }
 }

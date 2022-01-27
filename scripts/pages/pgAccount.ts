@@ -64,7 +64,7 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
         this.userInfo = store.getState().main.currentUser;
         const accountItem = this.userInfo
             ? ListViewItems.getLviProfile({
-                  userName: this.userInfo.email,
+                  userName: this.userInfo.name,
                   userEmail: this.userInfo.email,
                   userEditIcon: '',
                   userImage: getProfileImageUrl(),

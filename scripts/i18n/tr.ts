@@ -85,6 +85,8 @@ SMF.i18n.defineLanguage('tr', {
     checkingUpdate: 'Güncelleştirmeler kontrol ediliyor',
     rauProfileError: 'Güncelleştirme profili bulunamadı',
     rauChannelError: 'Güncelleştirme kanalı bulunamadı',
+    bannerServiceError: 'Afiş servisinde bir hata oluştu.',
+    showcaseServiceError: 'Vitrin servisinde bir hata oluştu.',
     noUpdate: 'Yeni bir güncelleştirme yok',
     fingerprintUpdateStoredCredentialsTitle: 'Kimlik bilgilerini güncelle',
     fingerprintUpdateStoredCredentialsMessage:
@@ -108,9 +110,12 @@ SMF.i18n.defineLanguage('tr', {
     scanFaceIDTitle: 'FaceID ile oturum aç',
     scanFaceIDMessage: 'Yüzünü tarat',
     chooseNavigationApp: 'Navigasyon uygulaması seç',
-    minimumCharacterErrorOnPassword: 'Şifre en az 8 karakterden oluşmalıdır.',
+    minimumCharacterErrorOnPassword: 'Şifre en az $1 karakterden oluşmalıdır.',
     invalidEmail: 'Geçersiz Mail',
     warning: 'Uyarı',
     userNotFoundWithThisCredentials: 'Girilen bilgiler ile eşleşen bir kullanıcı bulunamadı.',
-    alreadyExist: 'Bu bilgilerde bir kullanıcı zaten bulunuyor.'
+    alreadyExist: 'Bu bilgilerde bir kullanıcı zaten bulunuyor.',
+    firstName: 'İsim',
+    lastName: 'Soyisim',
+    invalidName: 'Alan minimum $1 karakter olmalıdır!'
 });

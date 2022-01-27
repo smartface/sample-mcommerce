@@ -33,11 +33,13 @@ export type AccountMenus = {
 };
 
 export type User = {
-    id?: number;
-    fullName?: string;
-    preferred_username?: string;
-    email?: string;
-    profileImage?: string;
+    sub: string;
+    given_name: string;
+    preferred_username: string;
+    email: string;
+    profileImage: string;
+    name: string;
+    family_name: string;
 };
 
 export type Basket = Array<Product>;
