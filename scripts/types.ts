@@ -43,3 +43,9 @@ export type User = {
 export type Basket = Array<Product>;
 
 export type Favorites = Array<Product>;
+
+export type Banner = {
+    _id: string;
+    productId?: string;
+    categoryId?: string;
+};

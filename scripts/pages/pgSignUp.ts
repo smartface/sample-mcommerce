@@ -2,8 +2,6 @@ import PgSignUpDesign from 'generated/pages/pgSignUp';
 import Color from '@smartface/native/ui/color';
 import View from '@smartface/native/ui/view';
 import Application from '@smartface/native/application';
-import store from 'store/index';
-import storeActions from 'store/main/actions';
 import System from '@smartface/native/device/system';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';

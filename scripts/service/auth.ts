@@ -77,27 +77,6 @@ export async function login({ username = '', password = '', grant_type = 'passwo
     }
 }
 
-export async function register({ username = '', password = '' }: IAuthQueryParams): Promise<any> {
-    try {
-        const res = await sc.request('/auth/realms/smartcommerce/protocol/openid-connect/token', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: buildQueryParams({
-                client_id,
-                client_secret,
-                username,
-                password
-            })
-        });
-        return res;
-    } catch (err) {
-        genericErrorHandler(err);
-        throw err;
-    }
-}
-
 export async function getUserInfo(): Promise<any> {
     try {
         const response = await sc.request('/auth/realms/smartcommerce/protocol/openid-connect/userinfo', {
