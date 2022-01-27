@@ -191,7 +191,7 @@
 						"positionType": "ABSOLUTE",
 						"alignSelf": "CENTER"
 					},
-					"color": "rgba(255,255,255,1)",
+					"color": "${white}",
 					"ios": {
 						"activityIndicatorViewStyle": "NORMAL"
 					},
@@ -202,7 +202,7 @@
 					},
 					"marginTop": null,
 					"marginBottom": null,
-					"borderColor": "rgba( 255, 255, 255, 0 )",
+					"borderColor": "${productItemPriceBorder}",
 					"borderWidth": null,
 					"borderRadius": 17
 				}

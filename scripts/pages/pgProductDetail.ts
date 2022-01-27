@@ -156,7 +156,9 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.checkIfFavorited();
         this.addRightItem();
         this.refreshListView();
-        this.initDismissButton(this.router);
+        this.initDismissButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        });
     }
 
     onLoad() {

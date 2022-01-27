@@ -6,7 +6,6 @@ import LviProfile from '../components/LviProfile';
 import LviRow2LineButton from '../components/LviRow2LineButton';
 import LviSpacer from '../components/LviSpacer';
 import LviProductItem from '../components/LviProductItem';
-import LviRow2ProductItem from '../components/LviRow2ProductItem';
 import LviEmptyItem from '../components/LviEmptyItem';
 import LviShowcaseHeader from '../components/LviShowcaseHeader';
 import LviHomeCategories from '../components/LviHomeCategories';
@@ -48,7 +47,6 @@ export const LviClasses = {
     [LviTypes.LVI_ROW2_LINE_BUTTON]: LviRow2LineButton,
     [LviTypes.LVI_SPACER]: LviSpacer,
     [LviTypes.LVI_PRODUCT_ITEM]: LviProductItem,
-    [LviTypes.LVI_ROW_2_PRODUCT_ITEM]: LviRow2ProductItem,
     [LviTypes.LVI_EMPTY_ITEM]: LviEmptyItem,
     [LviTypes.LVI_SHOWCASE_HEADER]: LviShowcaseHeader,
     [LviTypes.LVI_HOME_CATEGORIES]: LviHomeCategories,
@@ -106,7 +104,6 @@ export namespace ProcessorTypes {
     export interface ILviRow2LineButton extends IProcessed<LviRow2LineButton> {}
     export interface ILviSpacer extends IProcessed<LviSpacer> {}
     export interface ILviProductItem extends IProcessed<LviProductItem> {}
-    export interface ILviRow2ProductItem extends IProcessed<LviRow2ProductItem> {}
     export interface ILviEmptyItem extends IProcessed<LviEmptyItem> {}
     export interface ILviShowcaseHeader extends IProcessed<LviShowcaseHeader> {}
     export interface ILviHomeCategories extends IProcessed<LviHomeCategories> {}
@@ -206,14 +203,6 @@ export function getLviProductItem(item: Partial<LviProductItem>): ProcessorTypes
         type: 'LVI_PRODUCT_ITEM',
         properties: { ...item, borders: [] },
         height: LviProductItem.getHeight()
-    };
-}
-
-export function getLviRow2ProductItem(item: Partial<LviRow2ProductItem>): ProcessorTypes.ILviRow2ProductItem {
-    return {
-        type: 'LVI_ROW_2_PRODUCT_ITEM',
-        properties: { ...item, borders: [] },
-        height: LviRow2ProductItem.getHeight()
     };
 }
 

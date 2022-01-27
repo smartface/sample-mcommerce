@@ -1,18 +1,5 @@
 {
 	"#pgSignUp": {
-		"&-imagebackground": {
-			"bottom": 0,
-			"flexProps": {
-				"positionType": "ABSOLUTE",
-				"flexGrow": 1
-			},
-			"height": null,
-			"imageFillType": "ASPECTFILL",
-			"left": 0,
-			"right": 0,
-			"testId": "tv6lNzMRn",
-			"top": 0
-		},
 		"&-flContainer": {
 			"flexProps": {
 				"flexGrow": 1

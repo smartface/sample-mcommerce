@@ -8,7 +8,6 @@
 				"children": [
 					"1e23-65cd-ba9a-451c",
 					"de24-5fdd-e841-2527",
-					"8685-1f79-9a59-9fcc",
 					"7965-324e-6485-6fca",
 					"2ec9-4ddc-2440-1833",
 					"2012-80cc-00f3-1e22"
@@ -47,19 +46,6 @@
 			},
 			"type": "HeaderBar",
 			"userProps": {}
-		},
-		{
-			"className": ".sf-imageView #pgNumber-imagebackground",
-			"id": "8685-1f79-9a59-9fcc",
-			"props": {
-				"children": [],
-				"name": "imgBackground",
-				"parent": "49ad-4e86-8aa1-37db"
-			},
-			"type": "ImageView",
-			"userProps": {
-				"image": "background.png"
-			}
 		},
 		{
 			"className": ".sf-flexLayout #pgNumber-flheader",

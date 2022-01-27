@@ -33,7 +33,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     addRightItem() {
         const rightItem = new HeaderBarItem({
             image: Image.createFromFile('images://filtericon.png'),
-            color: Color.BLACK,
+            color: themeService.getStyle('.categoryDetail.headerBarItem').color,
             onPress: () => {
                 if (this.isSearchViewVisible) {
                     this.initSearchView(false);
@@ -104,7 +104,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             GridViewItem.itemImage = this.categoryProducts[productIndex].images ? this.categoryProducts[productIndex].images[0] : null;
             GridViewItem.itemDiscountPrice = !!this.categoryProducts[productIndex].discount
                 ? `$${this.categoryProducts[productIndex].discount}`
-                : false;
+                : '';
             GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price}`;
             GridViewItem.itemReview = !!this.categoryProducts[productIndex].review ? this.categoryProducts[productIndex]?.review : false;
             GridViewItem.onActionClick = () => {
@@ -161,7 +161,9 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
 
     onShow() {
         super.onShow();
-        this.initDismissButton(this.router);
+        this.initDismissButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        });
     }
 
     onLoad() {

@@ -43,7 +43,9 @@ export default class PgNotifications extends withDismissAndBackButton(PgNotifica
     onShow() {
         super.onShow();
         this.refreshListView();
-        this.initDismissButton(this.router);
+        this.initDismissButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        });
     }
     onLoad() {
         super.onLoad();

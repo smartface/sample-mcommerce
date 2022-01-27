@@ -8,7 +8,6 @@
 				"children": [
 					"8b76-05f3-5f45-8c1e",
 					"5357-ac47-407b-a084",
-					"27ed-71ed-2b47-1aa9",
 					"2040-54a0-940e-495a"
 				],
 				"name": "pgSignUp",
@@ -47,19 +46,6 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgSignUp"
-			}
-		},
-		{
-			"className": ".sf-imageView #pgSignUp-imagebackground",
-			"id": "27ed-71ed-2b47-1aa9",
-			"props": {
-				"children": [],
-				"name": "imgBackground",
-				"parent": "85da-2fd3-8e39-c6d0"
-			},
-			"type": "ImageView",
-			"userProps": {
-				"image": "background.png"
 			}
 		},
 		{
