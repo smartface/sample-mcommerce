@@ -11,12 +11,13 @@ import Button from '@smartface/native/ui/button';
 import { themeService } from 'theme';
 import { register } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constants';
 
 export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.lblRouteLogin.on(View.Events.TouchEnded, () => {
-            this.router.goBack();
+            this.router.push('/pages/pgLogin');
         });
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnSignUp.on(Button.Events.Press, () => {
@@ -42,23 +43,57 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
             id: 10,
             password: '',
             email: '',
-            profileImage: 'userprofilephoto.png'
+            profileImage: ''
         };
         userPayload.email = this.mtbEmail.materialTextBox.text.trim();
         userPayload.password = this.mtbPassword.materialTextBox.text.trim();
-        try {
-            showWaitDialog();
-            const registerResponse = await register({
-                email: userPayload.email,
-                password: userPayload.password
-            });
-            if (registerResponse && registerResponse.success) {
-                this.router.push('/pages/pgLogin');
+        if (this.initValidate()) {
+            try {
+                showWaitDialog();
+                const registerResponse = await register({
+                    email: userPayload.email,
+                    password: userPayload.password
+                });
+                if (registerResponse && registerResponse.success) {
+                    this.router.push('/pages/pgLogin');
+                }
+            } catch (error) {
+                alert({
+                    title: global.lang.warning,
+                    message: global.lang.alreadyExist
+                });
+            } finally {
+                hideWaitDialog();
             }
-        } catch (error) {
-        } finally {
-            hideWaitDialog();
         }
+    }
+    initValidate() {
+        let mailExist = !!this.mtbEmail.materialTextBox.text.replace(/\s+/g, '').trim();
+        let passwordExists = !!this.mtbPassword.materialTextBox.text.replace(/\s+/g, '').trim();
+
+        if (mailExist && this.checkIsEmailValid(this.mtbEmail.materialTextBox.text)) {
+            this.isMailValid = true;
+            this.mtbEmail.materialTextBox.errorMessage = '';
+        } else {
+            this.isMailValid = false;
+            this.mtbEmail.materialTextBox.errorMessage = global.lang.invalidEmail;
+        }
+
+        if (passwordExists && this.mtbPassword.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD) {
+            this.isPasswordValid = true;
+            this.mtbPassword.materialTextBox.errorMessage = '';
+        } else {
+            this.isPasswordValid = false;
+            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword;
+        }
+        if (this.isMailValid && this.isPasswordValid) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    checkIsEmailValid(email: string) {
+        return EMAIL_REGEXP.test(email);
     }
     onShow() {
         super.onShow();

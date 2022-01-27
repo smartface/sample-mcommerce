@@ -111,5 +111,6 @@ SMF.i18n.defineLanguage('tr', {
     minimumCharacterErrorOnPassword: 'Şifre en az 8 karakterden oluşmalıdır.',
     invalidEmail: 'Geçersiz Mail',
     warning: 'Uyarı',
-    userNotFoundWithThisCredentials: 'Girilen bilgiler ile eşleşen bir kullanıcı bulunamadı.'
+    userNotFoundWithThisCredentials: 'Girilen bilgiler ile eşleşen bir kullanıcı bulunamadı.',
+    alreadyExist: 'Bu bilgilerde bir kullanıcı zaten bulunuyor.'
 });
