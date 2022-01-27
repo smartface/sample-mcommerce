@@ -7,8 +7,16 @@ export default function PgGenericSlider(props) {
         }
         onShow() {
             super.onShow();
-            const { image } = props;
-            this.imgSliderItem.image = image;
+            const { image, url } = props;
+            if (url) {
+                this.imgSliderItem.loadFromUrl({
+                    url,
+                    useHTTPCacheControl: true,
+                    fade: true
+                });
+            } else {
+                this.imgSliderItem.image = image;
+            }
         }
         onLoad() {
             super.onLoad();

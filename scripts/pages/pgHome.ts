@@ -3,13 +3,13 @@ import store from '../store/index';
 import storeActions from 'store/main/actions';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
-import { HomeShowcases } from 'types';
+import { Banner, HomeShowcases } from 'types';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getRefreshToken } from 'service/token';
 import { autoLogin } from 'service/auth';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
-import { getShowcases } from 'service/commerce';
+import { getBanners, getShowcases } from 'service/commerce';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -19,6 +19,7 @@ type Processor =
 export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     data: Processor[];
     showcases: HomeShowcases[];
+    banners: Banner[];
     constructor(private router?: Router, private route?: Route) {
         super({});
     }
@@ -38,7 +39,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         const processorItems = [
             ListViewItems.getLviGenericSlider(
                 {
-                    images: ['images://firstbanner.png', 'images://bannerone.png']
+                    images: this.banners.map((image) => image._id)
                 },
                 { className: '.lviGenericSlider.small' }
             )
@@ -98,6 +99,19 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         }
     }
 
+    async fetchBanners() {
+        try {
+            showWaitDialog();
+            const bannersResponse = await getBanners();
+            if (bannersResponse && bannersResponse.length > 0) {
+                this.banners = bannersResponse;
+            }
+        } catch (error) {
+        } finally {
+            hideWaitDialog();
+        }
+    }
+
     onShow() {
         super.onShow();
         this.initAutoLogin();
@@ -118,6 +132,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         this.headerBar.title = global.lang.homeHeader;
         this.initListView();
         this.fetchShowcases();
+        this.fetchBanners();
         this.headerBar.leftItemEnabled = false;
     }
 }

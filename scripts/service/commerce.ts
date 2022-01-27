@@ -105,3 +105,19 @@ export async function getProductsByQuery(query: ProductRequestQuery): Promise<an
 export function getProductImageUrl(imageId: string): string {
     return `${serviceUrl}/commerce/product/${imageId}/image`;
 }
+
+export function getBannerImage(bannerId: string): string {
+    return `${serviceUrl}/commerce/banner/${bannerId}/image`;
+}
+
+export async function getBanners(): Promise<any> {
+    try {
+        const response = await sc.request('/commerce/banners', {
+            method: 'GET'
+        });
+        return response;
+    } catch (err) {
+        genericErrorHandler(err);
+        throw err;
+    }
+}
