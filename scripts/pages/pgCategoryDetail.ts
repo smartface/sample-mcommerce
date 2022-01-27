@@ -13,6 +13,7 @@ import { Product } from 'types';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductsByQuery } from 'service/commerce';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 type searchStatus = {
     isSearchActive: boolean;
     searchText: string;
@@ -78,12 +79,16 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     }
     async getCategoryProducts() {
         try {
+            showWaitDialog();
             const productResponse = await getProductsByQuery({ page: 1, categoryId: this.route.getState().routeData.dataId });
             if (productResponse && productResponse?.products.length > 0) {
                 this.categoryProducts = productResponse.products;
                 this.refreshGridView();
             }
-        } catch (error) {}
+        } catch (error) {
+        } finally {
+            hideWaitDialog();
+        }
     }
     getShowcaseProducts() {
         this.categoryProducts = store

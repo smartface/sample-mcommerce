@@ -1,6 +1,16 @@
 {
 	".sf-activityIndicator": {
-		"marginTop": null,
-		"marginBottom": null
+		"width": 21,
+		"height": 21,
+		"color": "${main}",
+		"flexProps": {
+			"positionType": "RELATIVE",
+			"alignSelf": "CENTER"
+		},
+		"ios": {
+			"activityIndicatorViewStyle": "NORMAL"
+		},
+		"minHeight": 21,
+		"minWidth": 21
 	}
 }

@@ -10,11 +10,11 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { themeService } from 'theme';
 import { register } from 'service/commerce';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 
 export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
-
         this.lblRouteLogin.on(View.Events.TouchEnded, () => {
             this.router.goBack();
         });
@@ -46,15 +46,20 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         };
         userPayload.email = this.mtbEmail.materialTextBox.text.trim();
         userPayload.password = this.mtbPassword.materialTextBox.text.trim();
-        const registerResponse = await register({
-            email: userPayload.email,
-            password: userPayload.password
-        });
-        if (registerResponse && registerResponse.success) {
-            this.router.push('/pages/pgLogin');
+        try {
+            showWaitDialog();
+            const registerResponse = await register({
+                email: userPayload.email,
+                password: userPayload.password
+            });
+            if (registerResponse && registerResponse.success) {
+                this.router.push('/pages/pgLogin');
+            }
+        } catch (error) {
+        } finally {
+            hideWaitDialog();
         }
     }
-
     onShow() {
         super.onShow();
         if (System.OS !== 'iOS') {
@@ -65,7 +70,6 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
     }
-
     onLoad() {
         super.onLoad();
         this.headerBar.title = global.lang.signUpHeader;

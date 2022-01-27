@@ -39,3 +39,9 @@ export function setRefreshToken(_refreshToken: string) {
 export function getRefreshToken() {
     return refreshToken || Data.getStringVariable(REFRESH_TOKEN);
 }
+
+export function clearTokens() {
+    setAccessToken('');
+    setRefreshToken('');
+    setIdToken('');
+}
