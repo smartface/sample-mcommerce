@@ -1,20 +1,5 @@
 {
 	"#pgNumber": {
-		"&-imagebackground": {
-			"bottom": 0,
-			"flexProps": {
-				"positionType": "ABSOLUTE",
-				"flexGrow": 1
-			},
-			"height": null,
-			"imageFillType": "ASPECTFILL",
-			"left": 0,
-			"marginBottom": null,
-			"marginTop": null,
-			"right": 0,
-			"testId": "cmXETQSvh",
-			"top": 0
-		},
 		"&-flheader": {
 			"flexProps": {
 				"justifyContent": "FLEX_END",

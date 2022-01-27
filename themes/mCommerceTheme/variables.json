@@ -1,6 +1,6 @@
 {
 	"main": "#53B175",
-	"backgroundMain": "#FFFFFF",
+	"backgroundMain": "rgba(245,249,254,1.0)",
 	"backgroundSecondary": "rgba(237,243,254,1.0)",
 	"textDark": "#181725",
 	"textLight": "#7C7C7C",
@@ -23,7 +23,7 @@
 	"tagPurple": "rgba( 136, 21, 236, 1 )",
 	"themeSwitchLeft": "rgba(255,255,255,1)",
 	"themeSwitchRight": "#53b175",
-	"navbar": "#FFFFFF",
+	"navbar": "rgba(245,249,254,1.0)",
 	"profileStartColor": "rgba(16,52,122,1.0)",
 	"profileEndColor": "rgba(40,85,172,1.0)",
 	"selectedHintTextColor": "rgba(40,85,172,1.0)",
@@ -87,5 +87,11 @@
 	"iconBackgroundGray": "rgba(118,118,128,0.12)",
 	"iconHintGray": "rgba(60,60,67,0.6)",
 	"pickerBackground": "rgba(237,243,255,1.0)",
-	"checkoutPrice": "#489E67"
+	"checkoutPrice": "#489E67",
+	"deActiveSwitch": "#53b175",
+	"activeSwitch": "rgba(237,243,254,1.0)",
+	"reverseBackground": "rgba(0,0,0,1.0)",
+	"productItemPriceBorder": "rgba(255, 255, 255, 0)",
+	"themeDarkSwitch": "rgba(255,255,255,1.0)",
+	"themeLightSwitch": "#53b175"
 }

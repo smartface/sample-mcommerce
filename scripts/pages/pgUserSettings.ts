@@ -10,10 +10,15 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 
 export default class PgUserSettings extends withDismissAndBackButton(PgUserSettingsDesign) {
     private data: ReturnType<typeof getLviRow1LineLarge>[];
+    private static _instance: PgUserSettings;
     private __isBusy = false;
     leftItem: HeaderBarItem;
-    constructor(private router?: Router, private route?: Route) {
+    constructor(public router?: Router, public route?: Route) {
         super({});
+        themeService.onChange(() => this.onShow());
+    }
+    public static getInstance(router?: Router, route?: Route) {
+        return this._instance || (this._instance = new this(router, route));
     }
     initListView() {
         this.lvMain.refreshEnabled = false;
@@ -61,8 +66,13 @@ export default class PgUserSettings extends withDismissAndBackButton(PgUserSetti
         super.onShow();
         this.headerBar.title = global.lang.settingsHeader;
         this.refreshListView();
-        this.initDismissButton(this.router);
+        this.initDismissButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        });
     }
+    /**
+     * This class is used singleton, onLoad will be triggered once
+     */
     onLoad() {
         super.onLoad();
         this.initListView();

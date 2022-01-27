@@ -1,12 +1,10 @@
 import FlProductItemDesign from 'generated/my-components/FlProductItem';
 import ActivityIndicator from '@smartface/native/ui/activityindicator';
 import Button from '@smartface/native/ui/button';
-import Image from '@smartface/native/ui/image';
 import setVisibility from 'lib/setVisibility';
 import AttributedString from '@smartface/native/ui/attributedstring';
-import Font from '@smartface/native/ui/font';
-import Color from '@smartface/native/ui/color';
 import { getProductImageUrl } from 'service/commerce';
+import { themeService } from 'theme';
 
 export default class FlProductItem extends FlProductItemDesign {
     private __imageUrl: string;
@@ -45,23 +43,17 @@ export default class FlProductItem extends FlProductItemDesign {
     set itemTitle(value: string) {
         this.lblProductItemTitle.text = value;
     }
-    get itemPrice(): any {
+    get itemPrice(): string {
         return this.tvProductPrice.text;
     }
-    set itemPrice(value: any) {
-        let attributeString = new AttributedString();
-        if (!!value) {
-            if (this.tvPriceWithDiscount.text) {
-                attributeString.strikethrough = true;
-                attributeString.string = value;
-                attributeString.font = Font.create('Nunito', 14);
-                attributeString.foregroundColor = Color.create('#7c7c7c');
-            } else {
-                // TODO: get combined color ve fontlar icin
-                attributeString.font = Font.create('Nunito', 18);
-                attributeString.string = value;
-            }
-        }
+    set itemPrice(value: string) {
+        const discountExists = !!this.tvPriceWithDiscount.text;
+        let attributeString = new AttributedString({
+            strikethrough: discountExists,
+            string: value || '',
+            font: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').font,
+            foregroundColor: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').textColor
+        });
         this.tvProductPrice.attributedText = [attributeString];
     }
     get itemReview(): any {
@@ -77,18 +69,16 @@ export default class FlProductItem extends FlProductItemDesign {
             this.lblReview.visible = false;
         }
     }
-    get itemDiscountPrice(): any {
+    get itemDiscountPrice(): string {
         return this.tvPriceWithDiscount.text;
     }
-    set itemDiscountPrice(value: any) {
-        let attributeString = new AttributedString();
-        if (!!value) {
-            this.tvPriceWithDiscount.visible = true;
-            attributeString.string = value;
-            attributeString.font = Font.create('Nunito', 18);
-        } else {
-            this.tvPriceWithDiscount.visible = false;
-        }
+    set itemDiscountPrice(value: string) {
+        let attributeString = new AttributedString({
+            string: value || '',
+            font: themeService.getNativeStyle('.product-price').font,
+            foregroundColor: themeService.getNativeStyle('.product-price').textColor
+        });
+        setVisibility(this.tvPriceWithDiscount, !!value);
         this.tvPriceWithDiscount.attributedText = [attributeString];
     }
     get itemTag(): string {
