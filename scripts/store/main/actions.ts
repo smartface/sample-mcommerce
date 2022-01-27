@@ -49,4 +49,10 @@ export default class Actions {
             payload: categories
         };
     }
+    static SetShowcases(showcases: Types.HomeShowcases[]): ActionTypes {
+        return {
+            type: Constants.SET_SHOWCASES,
+            payload: showcases
+        };
+    }
 }

@@ -7,10 +7,8 @@ export type Categories = {
 };
 
 export type HomeShowcases = {
-    showcaseId?: number;
-    showcaseTitle?: string;
-    showcaseLink?: string;
-    showcaseLinkText?: string;
+    _id?: string;
+    title?: string;
     products?: Product[];
     categories?: Categories[];
 };

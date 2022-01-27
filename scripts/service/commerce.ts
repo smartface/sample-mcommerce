@@ -51,6 +51,18 @@ export function getCategoryImage(categoryId: string): string {
     return `${serviceUrl}/commerce/category/${categoryId}/image`;
 }
 
+export async function getShowcases(): Promise<any> {
+    try {
+        const response = await sc.request('/commerce/showcases', {
+            method: 'GET'
+        });
+        return response;
+    } catch (err) {
+        genericErrorHandler(err);
+        throw err;
+    }
+}
+
 export function getProfileImageUrl(): string {
     return `${serviceUrl}/user/profile-photo`;
 }

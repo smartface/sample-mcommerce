@@ -1,5 +1,6 @@
 import PgHomeDesign from 'generated/pages/pgHome';
 import store from '../store/index';
+import storeActions from 'store/main/actions';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { HomeShowcases } from 'types';
@@ -8,6 +9,7 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { getRefreshToken } from 'service/token';
 import { autoLogin } from 'service/auth';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+import { getShowcases } from 'service/commerce';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -33,8 +35,6 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
-        this.showcases = store.getState().main.showcaseProducts;
-
         const processorItems = [
             ListViewItems.getLviGenericSlider(
                 {
@@ -46,18 +46,18 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         this.showcases.forEach((showcase) => {
             processorItems.push(
                 ListViewItems.getLviShowcaseHeader({
-                    showcaseTitle: showcase.showcaseTitle,
-                    showcaseLinkText: showcase.showcaseLinkText,
+                    showcaseTitle: showcase.title,
+                    showcaseLinkText: global.lang.seeAll,
                     onSeeAllClick: () => {
                         this.router.push('/btb/tab1/categoryDetail', {
-                            dataId: showcase.showcaseId,
-                            title: showcase.showcaseTitle,
+                            dataId: showcase._id,
+                            title: showcase.title,
                             isShowcase: true
                         });
                     }
                 })
             );
-            if (showcase.categories) {
+            if (showcase.categories && showcase.categories.length > 0) {
                 processorItems.push(
                     ListViewItems.getLviHomeCategories({
                         items: showcase.categories
@@ -69,7 +69,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                     items: showcase.products,
                     onProductClick: (product) => {
                         this.router.push('/btb/tab1/productDetail', {
-                            productId: product.id,
+                            productId: product._id,
                             productName: product.name,
                             productPrice: product.price,
                             productDescription: product.description,
@@ -81,6 +81,21 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         });
 
         return processorItems;
+    }
+
+    async fetchShowcases() {
+        try {
+            showWaitDialog();
+            const showcaseResponse = await getShowcases();
+            if (showcaseResponse && showcaseResponse.length > 0) {
+                this.showcases = showcaseResponse;
+                store.dispatch(storeActions.SetShowcases(showcaseResponse));
+            }
+        } catch (error) {
+        } finally {
+            this.refreshListView();
+            hideWaitDialog();
+        }
     }
 
     onShow() {
@@ -102,7 +117,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         super.onLoad();
         this.headerBar.title = global.lang.homeHeader;
         this.initListView();
-        this.refreshListView();
+        this.fetchShowcases();
         this.headerBar.leftItemEnabled = false;
     }
 }
