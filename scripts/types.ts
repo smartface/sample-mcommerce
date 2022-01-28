@@ -13,6 +13,16 @@ export type HomeShowcases = {
     categories?: Categories[];
 };
 
+export type Metadata = {
+    totalCount: number;
+    page: number;
+};
+
+export type ProductResponse = {
+    metadata: Metadata;
+    products: Product[];
+};
+
 export type Product = {
     _id: string;
     name: string;

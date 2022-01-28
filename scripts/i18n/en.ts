@@ -39,6 +39,7 @@ SMF.i18n.defineLanguage('en', {
     resendCode: 'Resend Code',
     login: 'Login',
     loginSubText: 'Enter your emails and passwords',
+    productNotFound: 'Product not found.',
     username: 'Username',
     email: 'Email',
     password: 'Password',

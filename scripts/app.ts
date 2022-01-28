@@ -5,6 +5,7 @@ import { errorStackBySourceMap } from 'error-by-sourcemap';
 import System from '@smartface/native/device/system';
 import '@smartface/extension-utils';
 import 'theme';
+import 'lib/deeplink';
 import router from 'routes';
 
 // Set uncaught exception handler, all exceptions that are not caught will

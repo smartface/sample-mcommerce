@@ -3,10 +3,9 @@ import getCurrentEnvironment from 'lib/getCurrentEnvironment';
 import config from 'config.json';
 import { buildQueryParams } from 'lib/query';
 import genericErrorHandler from 'lib/genericErrorHandler';
-import storeActions from 'store/main/actions';
 import { getAccessToken } from 'service/token';
-import store from 'store/index';
 import { ProductRequestQuery } from './service';
+import { ProductResponse } from 'types';
 const { serviceUrl } = config.environments[getCurrentEnvironment()];
 
 const sc = createServiceCallObject(serviceUrl);
@@ -90,7 +89,7 @@ export async function putProfileImage(base64: string): Promise<any> {
     }
 }
 
-export async function getProductsByQuery(query: ProductRequestQuery): Promise<any> {
+export async function getProductsByQuery(query: ProductRequestQuery): Promise<ProductResponse> {
     try {
         const response = await sc.request(`/commerce/products?${buildQueryParams(query)}`, {
             method: 'GET',

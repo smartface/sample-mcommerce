@@ -40,6 +40,7 @@ SMF.i18n.defineLanguage('tr', {
     resendCode: 'Yeniden gönder',
     login: 'Giriş Yap',
     loginSubText: 'E-postanızı ve şifrenizi girin',
+    productNotFound: 'Ürün bulunamadı.',
     username: 'Kullanıcı adı',
     email: 'Email',
     password: 'Şifre',

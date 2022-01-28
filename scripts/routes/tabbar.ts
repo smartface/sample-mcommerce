@@ -154,7 +154,8 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                             headerBarParams: () => ({
                                 visible: true
                             })
-                        })
+                        }),
+                        productDetailRouter('/btb/tab2/categoryDetail')
                     ]
                 })
             ]

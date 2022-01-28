@@ -14,6 +14,7 @@ import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductImageUrl, getProductsByQuery } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+import { ON_SHOW_TIMEOUT } from 'constants';
 type searchStatus = {
     isSearchActive: boolean;
     searchText: string;
@@ -27,6 +28,10 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         isSearchActive: false,
         searchText: null
     };
+    pageNumber = 1;
+    totalCount = 0;
+    initialized = false;
+    paginating = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
     }
@@ -77,16 +82,33 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             this.productSearchView.visible = false;
         }
     }
-    async getCategoryProducts() {
+
+    paginate() {
+        const currentCount = this.categoryProducts?.length || 0;
+        if (currentCount < this.totalCount && !this.paginating) {
+            this.pageNumber = this.pageNumber + 1;
+            this.getCategoryProducts({ pageNumber: this.pageNumber });
+        }
+    }
+
+    async getCategoryProducts(opts: { pageNumber: number } = { pageNumber: 1 }) {
         try {
             showWaitDialog();
-            const productResponse = await getProductsByQuery({ page: 1, categoryId: this.route.getState().routeData.dataId });
+            this.paginating = true;
+            const productResponse = await getProductsByQuery({ page: opts.pageNumber, categoryId: this.route.getState().routeData.dataId });
+            this.totalCount = productResponse.metadata.totalCount;
             if (productResponse && productResponse?.products.length > 0) {
-                this.categoryProducts = productResponse.products;
+                if (opts.pageNumber !== 1) {
+                    this.categoryProducts = this.categoryProducts.concat(productResponse.products);
+                } else {
+                    this.categoryProducts = productResponse.products;
+                }
                 this.refreshGridView();
             }
         } catch (error) {
         } finally {
+            this.initialized = true;
+            this.paginating = false;
             hideWaitDialog();
         }
     }
@@ -95,6 +117,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             .getState()
             .main.showcases.find((showcase) => showcase._id === this.route.getState().routeData.dataId).products;
         this.refreshGridView();
+        this.initialized = true;
     }
 
     initGridView() {
@@ -118,10 +141,13 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                     GridViewItem.toggleIndicator(false);
                 }, 500);
             };
+            if (this.categoryProducts.length - 1 === productIndex) {
+                this.paginate();
+            }
         };
         this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
             const product = this.categoryProducts[productIndex];
-            this.router.push('/btb/tab1/categoryDetail/productDetail', {
+            this.router.push('productDetail', {
                 productId: product._id
             });
         };
@@ -163,16 +189,20 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         this.initDismissButton(this.router, {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
+        if (!this.initialized) {
+            setTimeout(() => {
+                if (this.route.getState().routeData.isShowcase) {
+                    this.getShowcaseProducts();
+                } else {
+                    this.getCategoryProducts();
+                }
+            }, ON_SHOW_TIMEOUT);
+        }
     }
 
     onLoad() {
         super.onLoad();
         this.headerBar.title = this.route.getState().routeData.title;
-        if (this.route.getState().routeData.isShowcase) {
-            this.getShowcaseProducts();
-        } else {
-            this.getCategoryProducts();
-        }
         if (System.OS === System.OSType.IOS) {
             this.addRightItem();
         } else {
