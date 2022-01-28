@@ -1,5 +1,4 @@
 import Button from '@smartface/native/ui/button';
-import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
 import PgProductDetailDesign from 'generated/pages/pgProductDetail';
@@ -38,7 +37,6 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     addToBasket() {
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnAddToBasket.on(Button.Events.Press, () => {
-            //let product = store.getState().main.products.find((product) => product._id == this.product._id);
             store.dispatch(storeActions.AddToBasket({ product: this.product, count: this.productCounter }));
             this.toggleToast(true);
             this.flAlert.title = 'Sepete Eklendi';
@@ -97,9 +95,6 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
                     } else {
                         store.dispatch(
                             storeActions.AddToFavorites({
-                                // store
-                                //     .getState()
-                                //     .main.products.find((product) => product._id
                                 product: this.product
                             })
                         );
@@ -131,18 +126,18 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
 
         processorItems.push(
             ListViewItems.getLviPdInfoSection({
-                productTitle: 'Product Detail',
+                productTitle: global.lang.productDetail,
                 productInfo: this.product.description
             })
         );
         processorItems.push(
             ListViewItems.getLviPdOverviewSection({
-                overviewTitle: 'Nutritions'
+                overviewTitle: global.lang.nutritions
             })
         );
         processorItems.push(
             ListViewItems.getLviPdOverviewSection({
-                overviewTitle: 'Reviews'
+                overviewTitle: global.lang.reviews
             })
         );
 
@@ -157,8 +152,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
             }
             return productResponse;
         } catch (error) {
-            // TODO: pd error
-            throw new Error(global.lang.bannerServiceError);
+            throw new Error(global.lang.productServiceError);
         } finally {
             this.refreshListView();
         }
