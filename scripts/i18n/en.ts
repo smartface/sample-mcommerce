@@ -97,6 +97,7 @@ SMF.i18n.defineLanguage('en', {
     rauProfileError: 'Update profile not found',
     rauChannelError: 'Update channel not found',
     bannerServiceError: 'An error occurred on banner service.',
+    productServiceError: 'An error occurred on product service.',
     showcaseServiceError: 'An error occurred on showcase service.',
     noUpdate: 'No new updates were found',
     fingerprintUpdateStoredCredentialsTitle: 'Update stored credentials',
@@ -120,5 +121,7 @@ SMF.i18n.defineLanguage('en', {
     alreadyExist: 'This user already exist.',
     firstName: 'First name',
     lastName: 'Last name',
-    invalidName: 'The field must be a minimum of $1 characters!'
+    invalidName: 'The field must be a minimum of $1 characters!',
+    nutritions: 'Nutritions',
+    reviews: 'Reviews'
 });

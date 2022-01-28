@@ -87,6 +87,7 @@ SMF.i18n.defineLanguage('tr', {
     rauProfileError: 'Güncelleştirme profili bulunamadı',
     rauChannelError: 'Güncelleştirme kanalı bulunamadı',
     bannerServiceError: 'Afiş servisinde bir hata oluştu.',
+    productServiceError: 'Ürün servisinde bir hata oluştu.',
     showcaseServiceError: 'Vitrin servisinde bir hata oluştu.',
     noUpdate: 'Yeni bir güncelleştirme yok',
     fingerprintUpdateStoredCredentialsTitle: 'Kimlik bilgilerini güncelle',
@@ -118,5 +119,7 @@ SMF.i18n.defineLanguage('tr', {
     alreadyExist: 'Bu bilgilerde bir kullanıcı zaten bulunuyor.',
     firstName: 'İsim',
     lastName: 'Soyisim',
-    invalidName: 'Alan minimum $1 karakter olmalıdır!'
+    invalidName: 'Alan minimum $1 karakter olmalıdır!',
+    nutritions: 'Besinler',
+    reviews: 'Yorumlar'
 });

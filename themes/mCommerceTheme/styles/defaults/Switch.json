@@ -15,16 +15,6 @@
 		"minHeight": null,
 		"minWidth": null,
 		"marginTop": null,
-		"marginBottom": null,
-		".inverted": {
-			"toggleOnColor": "rgba(130,159,214,1)",
-			"android": {
-				"toggleOffColor": "rgba(200,205,208,1)",
-				"thumbOffColor": "rgba(200,205,208,1)"
-			},
-			"+Device:Device.os === \"Android\"": {
-				"thumbOnColor": "${white}"
-			}
-		}
+		"marginBottom": null
 	}
 }
