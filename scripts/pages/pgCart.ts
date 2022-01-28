@@ -50,7 +50,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                 processorItems.push(
                     ListViewItems.getLviCartProducts({
                         productName: cart.name,
-                        productInfo: cart.description,
+                        productInfo: cart.shortDescription,
                         productImage: cart.images ? cart.images[0] : null,
                         productPrice: cart.price,
                         productCount: cart.count,
@@ -101,6 +101,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
             this.flCartCheckout.visible = true;
         } else {
             this.flCartCheckout.visible = false;
+            this.unsubscribe();
         }
     }
     cartOperation(cart: Product, type: CartOperationEnum) {

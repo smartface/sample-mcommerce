@@ -42,7 +42,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             GridViewItem.itemTag = this.items[productIndex].discountTag;
             GridViewItem.itemTitle = this.items[productIndex].name;
-            GridViewItem.itemDesc = this.items[productIndex].description;
+            GridViewItem.itemDesc = this.items[productIndex].shortDescription;
             GridViewItem.itemImage = this.items[productIndex].images ? this.items[productIndex].images[0] : null;
             GridViewItem.itemDiscountPrice = !!this.items[productIndex].discount ? `$${this.items[productIndex].discount}` : '';
             GridViewItem.itemPrice = `$${this.items[productIndex].price}`;

@@ -101,7 +101,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             GridViewItem.itemTag = this.categoryProducts[productIndex].discountTag;
             GridViewItem.itemTitle = this.categoryProducts[productIndex].name;
-            GridViewItem.itemDesc = this.categoryProducts[productIndex].description;
+            GridViewItem.itemDesc = this.categoryProducts[productIndex].shortDescription;
             GridViewItem.itemImage = this.categoryProducts[productIndex].images ? this.categoryProducts[productIndex].images[0] : null;
             GridViewItem.itemDiscountPrice = !!this.categoryProducts[productIndex].discount
                 ? `$${this.categoryProducts[productIndex].discount}`
