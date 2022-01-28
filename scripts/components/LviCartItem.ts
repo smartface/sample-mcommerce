@@ -1,10 +1,7 @@
 import { themeService } from 'theme';
 import Button from '@smartface/native/ui/button';
-import Image from '@smartface/native/ui/image';
-import Label from '@smartface/native/ui/label';
 import View from '@smartface/native/ui/view';
 import LviCartItemDesign from 'generated/my-components/LviCartItem';
-import { getProductImageUrl } from 'service/commerce';
 const originalHeight = themeService.getStyle('.lviCartItem').height;
 
 export default class LviCartItem extends LviCartItemDesign {
@@ -48,7 +45,7 @@ export default class LviCartItem extends LviCartItemDesign {
         return this.__imageUrl;
     }
     set productImage(value: string) {
-        this.__imageUrl = getProductImageUrl(value);
+        this.__imageUrl = value;
         this.imgProduct.loadFromUrl({
             url: this.__imageUrl,
             useHTTPCacheControl: true

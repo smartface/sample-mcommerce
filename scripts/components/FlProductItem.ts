@@ -3,7 +3,6 @@ import ActivityIndicator from '@smartface/native/ui/activityindicator';
 import Button from '@smartface/native/ui/button';
 import setVisibility from 'lib/setVisibility';
 import AttributedString from '@smartface/native/ui/attributedstring';
-import { getProductImageUrl } from 'service/commerce';
 import { themeService } from 'theme';
 
 export default class FlProductItem extends FlProductItemDesign {
@@ -95,8 +94,8 @@ export default class FlProductItem extends FlProductItemDesign {
     get imageUrl(): string {
         return this.__imageUrl;
     }
-    set imageUrl(categoryId: string) {
-        this.__imageUrl = getProductImageUrl(categoryId);
+    set imageUrl(value: string) {
+        this.__imageUrl = value;
         this.imgProduct.loadFromUrl({
             url: this.__imageUrl,
             useHTTPCacheControl: true

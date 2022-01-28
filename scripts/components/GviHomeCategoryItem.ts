@@ -12,7 +12,7 @@ export default class GviHomeCategoryItem extends GviHomeCategoryItemDesign {
     get categoryImage() {
         return this.flHomeCategory.categoryImage;
     }
-    set categoryImage(value: string | Image) {
+    set categoryImage(value: string) {
         this.flHomeCategory.categoryImage = value;
     }
     get categoryName() {

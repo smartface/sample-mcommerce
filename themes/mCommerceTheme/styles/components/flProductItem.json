@@ -6,7 +6,7 @@
 			"paddingLeft": 10,
 			"paddingRight": 10,
 			"borderRadius": 25,
-			"borderColor": "#E2E2E2",
+			"borderColor": "${grayBorder}",
 			"borderWidth": 1,
 			"backgroundColor": "${transparent}",
 			"flexProps": {

@@ -1,24 +1,13 @@
 import ActivityIndicator from '@smartface/native/ui/activityindicator';
-import Button from '@smartface/native/ui/button';
-import Image from '@smartface/native/ui/image';
-import View from '@smartface/native/ui/view';
 import GviProductItemDesign from 'generated/my-components/GviProductItem';
-import setVisibility from 'lib/setVisibility';
-import { getProductImageUrl } from 'service/commerce';
-import store from 'store';
 
 export default class GviProductItem extends GviProductItemDesign {
     __onActionClick: (...args) => void;
     pageName?: string | undefined;
     myActivityIndicator: ActivityIndicator;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-
-        // this.flProductItem.btnAddToBasket.on(Button.Events.TouchEnded, () => {
-        //     this.__onActionClick && this.__onActionClick();
-        // });
     }
     initIndicator() {
         this.flProductItem.initIndicator();

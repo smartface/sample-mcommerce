@@ -56,5 +56,12 @@
 	},
 	".notVisible": {
 		"visible": false
+	},
+	".radius": {
+		"borderRadius": 15
+	},
+	".borderColor": {
+		"borderWidth": 1,
+		"borderColor": "${grayBorder}"
 	}
 }
