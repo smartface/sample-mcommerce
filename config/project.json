@@ -3,7 +3,7 @@
 		"name": "Smart Commerce",
 		"company": "Smartface",
 		"webSite": "https://www.smartface.io",
-		"version": "1.0.3",
+		"version": "1.0.4",
 		"runtimeVersion": "1100",
 		"description": "This is Smartface's Smart Commerce project. You can use Smartface Run on Device Emulator to preview your changes."
 	},
