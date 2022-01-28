@@ -93,10 +93,10 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                       this.router.push('pages/pgWelcome');
                   },
                   bottomLeftOnClick: () => {
-                      console.info('bottomLeftOnClick');
+                      this.router.push('pages/pgSignUp');
                   },
                   bottomRightOnClick: () => {
-                      console.info('bottomRightOnClick');
+                      alert('todo');
                   }
               });
         const processorItems = [accountItem, ListViewItems.getLviSpacerItem({ className: 'small' })];

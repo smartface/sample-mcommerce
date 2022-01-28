@@ -6,10 +6,11 @@ import storeActions from 'store/main/actions';
 const originalHeight = themeService.getStyle('.lviHomeProducts').height;
 import System from '@smartface/native/device/system';
 import { getProductImageUrl } from 'service/commerce';
+import { Product } from 'types';
 export default class LviHomeProducts extends LviHomeProductsDesign {
     pageName?: string | undefined;
     private __onProductClick: (product: any) => void;
-    private __items: any[] = [];
+    private __items: Product[] = [];
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
         super(props);
@@ -25,10 +26,10 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     static getHeight(): number {
         return originalHeight;
     }
-    get items(): any[] {
+    get items(): Product[] {
         return this.__items;
     }
-    set items(value: any[]) {
+    set items(value: Product[]) {
         this.__items = value;
         this.initGridView();
         this.refreshGridView();
