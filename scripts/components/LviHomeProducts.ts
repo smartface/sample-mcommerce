@@ -45,7 +45,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
             GridViewItem.itemTitle = this.items[productIndex].name;
             GridViewItem.itemDesc = this.items[productIndex].shortDescription;
             GridViewItem.itemImage = this.items[productIndex].images ? getProductImageUrl(this.items[productIndex].images[0]) : null;
-            GridViewItem.itemDiscountPrice = !!this.items[productIndex].discount ? `$${this.items[productIndex].discount}` : '';
+            GridViewItem.itemDiscountPrice = !!this.items[productIndex].discountPrice ? `$${this.items[productIndex].discountPrice}` : '';
             GridViewItem.itemPrice = `$${this.items[productIndex].price}`;
             GridViewItem.itemReview = !!this.items[productIndex].review ? this.items[productIndex]?.review : false;
             this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {

@@ -22,7 +22,7 @@ export type Product = {
     images?: Array<string>;
     category: Categories;
     review?: number;
-    discount?: number;
+    discountPrice?: number;
     discountTag?: string;
     count?: number;
 };

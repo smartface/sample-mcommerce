@@ -8,6 +8,7 @@ import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/listView';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
+import { getProductImageUrl } from 'service/commerce';
 
 type Processor = ListViewItems.ProcessorTypes.ILviFavorites;
 
@@ -103,9 +104,9 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                 processorItems.push(
                     ListViewItems.getLviFavorites({
                         itemTitle: favouritedItem.name,
-                        itemDesc: favouritedItem.description,
-                        itemImage: favouritedItem.image,
-                        itemPrice: favouritedItem.price
+                        itemDesc: favouritedItem.shortDescription,
+                        itemImage: favouritedItem.images ? getProductImageUrl(favouritedItem.images[0]) : null,
+                        itemPrice: `$${favouritedItem.price}`
                     })
                 );
             });

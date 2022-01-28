@@ -105,8 +105,8 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             GridViewItem.itemImage = this.categoryProducts[productIndex].images
                 ? getProductImageUrl(this.categoryProducts[productIndex].images[0])
                 : null;
-            GridViewItem.itemDiscountPrice = !!this.categoryProducts[productIndex].discount
-                ? `$${this.categoryProducts[productIndex].discount}`
+            GridViewItem.itemDiscountPrice = !!this.categoryProducts[productIndex].discountPrice
+                ? `$${this.categoryProducts[productIndex].discountPrice}`
                 : '';
             GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price}`;
             GridViewItem.itemReview = !!this.categoryProducts[productIndex].review ? this.categoryProducts[productIndex]?.review : false;
