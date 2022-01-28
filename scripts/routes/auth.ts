@@ -18,28 +18,28 @@ export default function (basePath: string) {
                     visible: true
                 })
             }),
-            Route.of<Pages.pgNumber>({
-                path: `${basePath}/pages/pgNumber`,
-                build(router, route) {
-                    const page = new Pages.pgNumber(router, route);
-                    Router.getActiveRouter().setState({ view: page });
-                    return page;
-                },
-                headerBarParams: () => ({
-                    visible: true
-                })
-            }),
-            Route.of<Pages.pgVerification>({
-                path: `${basePath}/pages/pgVerification`,
-                build(router, route) {
-                    const page = new Pages.pgVerification(router, route);
-                    Router.getActiveRouter().setState({ view: page });
-                    return page;
-                },
-                headerBarParams: () => ({
-                    visible: true
-                })
-            }),
+            // Route.of<Pages.pgNumber>({
+            //     path: `${basePath}/pages/pgNumber`,
+            //     build(router, route) {
+            //         const page = new Pages.pgNumber(router, route);
+            //         Router.getActiveRouter().setState({ view: page });
+            //         return page;
+            //     },
+            //     headerBarParams: () => ({
+            //         visible: true
+            //     })
+            // }),
+            // Route.of<Pages.pgVerification>({
+            //     path: `${basePath}/pages/pgVerification`,
+            //     build(router, route) {
+            //         const page = new Pages.pgVerification(router, route);
+            //         Router.getActiveRouter().setState({ view: page });
+            //         return page;
+            //     },
+            //     headerBarParams: () => ({
+            //         visible: true
+            //     })
+            // }),
             Route.of<Pages.pgLogin>({
                 path: `${basePath}/pages/pgLogin`,
                 build(router, route) {

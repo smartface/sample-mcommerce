@@ -10,6 +10,8 @@ import storeActions from 'store/main/actions';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
+import { getProduct, getProductImageUrl } from 'service/commerce';
+import { Product } from 'types';
 type Processor =
     | ListViewItems.ProcessorTypes.ILviGenericSlider
     | ListViewItems.ProcessorTypes.ILviPdTitleLikeSection
@@ -19,6 +21,7 @@ type Processor =
 
 export default class PgProductDetail extends withDismissAndBackButton(PgProductDetailDesign) {
     data: Processor[];
+    product: Product;
     productCounter = 1;
     productFavoriteImg = 'images://favourite.png';
     constructor(private router?: Router, private route?: Route) {
@@ -26,15 +29,17 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     }
     addRightItem() {
         const rightItem = new HeaderBarItem({
-            image: Image.createFromFile('images://share.png')
+            image: Image.createFromFile('images://share.png'),
+            //Native › NTVE-435
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
         this.headerBar.setItems([rightItem]);
     }
     addToBasket() {
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnAddToBasket.on(Button.Events.Press, () => {
-            let product = store.getState().main.products.find((product) => product._id == this.route.getState().routeData.productId);
-            store.dispatch(storeActions.AddToBasket({ product: product, count: this.productCounter }));
+            //let product = store.getState().main.products.find((product) => product._id == this.product._id);
+            store.dispatch(storeActions.AddToBasket({ product: this.product, count: this.productCounter }));
             this.toggleToast(true);
             this.flAlert.title = 'Sepete Eklendi';
             setTimeout(() => {
@@ -64,15 +69,21 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
+        const isThisProductFavourited = store
+            .getState()
+            .main?.favorites?.some((product) => product._id === this.route.getState().routeData?.productId);
+        this.productFavoriteImg = isThisProductFavourited ? 'images://favorited.png' : 'images://favourite.png';
         const processorItems = [
             ListViewItems.getLviGenericSlider({
-                images: this.route.getState().routeData.productImg
+                images: this.product.images.map((image) => {
+                    return getProductImageUrl(image);
+                })
             })
         ];
         processorItems.push(
             ListViewItems.getLviPdTitleLikeSection({
-                productTitle: this.route.getState().routeData.productName,
-                productMeas: this.route.getState().routeData.productDescription,
+                productTitle: this.product.name,
+                productMeas: this.product.shortDescription,
                 favoriteImg: this.productFavoriteImg,
                 onFavoriteClick: () => {
                     if (
@@ -86,9 +97,10 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
                     } else {
                         store.dispatch(
                             storeActions.AddToFavorites({
-                                product: store
-                                    .getState()
-                                    .main.products.find((product) => product._id == this.route.getState().routeData.productId)
+                                // store
+                                //     .getState()
+                                //     .main.products.find((product) => product._id
+                                product: this.product
                             })
                         );
                         this.productFavoriteImg = 'images://favorited.png';
@@ -100,7 +112,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
 
         processorItems.push(
             ListViewItems.getLviPdButtonPriceSection({
-                productPrice: this.route.getState().routeData.productPrice,
+                productPrice: `$${this.product.price}`,
                 productCount: this.productCounter.toString(),
                 onPlusClick: () => {
                     this.productCounter += 1;
@@ -120,7 +132,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         processorItems.push(
             ListViewItems.getLviPdInfoSection({
                 productTitle: 'Product Detail',
-                productInfo: 'Lorem ipsum dolor sit amets'
+                productInfo: this.product.description
             })
         );
         processorItems.push(
@@ -137,25 +149,25 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         return processorItems;
     }
 
-    checkIfFavorited() {
-        if (
-            store.getState().main.favorites &&
-            store.getState().main.favorites.length > 0 &&
-            store.getState().main.favorites.some((product) => product._id === this.route.getState().routeData.productId)
-        ) {
-            this.productFavoriteImg = 'images://favorited.png';
-            this.refreshListView();
-        } else {
-            this.productFavoriteImg = 'images://favourite.png';
+    async fetchProduct() {
+        try {
+            const productResponse = await getProduct(this.route.getState().routeData.productId);
+            if (productResponse) {
+                this.product = productResponse;
+            }
+            return productResponse;
+        } catch (error) {
+            // TODO: pd error
+            throw new Error(global.lang.bannerServiceError);
+        } finally {
             this.refreshListView();
         }
     }
 
     onShow() {
         super.onShow();
-        this.checkIfFavorited();
+        this.fetchProduct();
         this.addRightItem();
-        this.refreshListView();
         this.initDismissButton(this.router, {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });

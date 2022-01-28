@@ -3,9 +3,10 @@ import FlCartCheckoutDesign from 'generated/my-components/FlCartCheckout';
 export default class FlCartCheckout extends FlCartCheckoutDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
+        //NTVE-434 related to this zIndex
+        this.lblCartCheckoutPrice.android.zIndex = 99;
     }
     get checkoutTitle(): string {
         return this.btnCartCheckout.text;

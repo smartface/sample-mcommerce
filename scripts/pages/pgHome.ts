@@ -9,7 +9,7 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { getRefreshToken } from 'service/token';
 import { autoLogin } from 'service/auth';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
-import { getBanners, getShowcases } from 'service/commerce';
+import { getBannerImage, getBanners, getShowcases } from 'service/commerce';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -40,7 +40,9 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         const processorItems = [
             ListViewItems.getLviGenericSlider(
                 {
-                    images: this.banners.map((image) => image._id)
+                    images: this.banners.map((image) => {
+                        return getBannerImage(image._id);
+                    })
                 },
                 { className: '.lviGenericSlider.small' }
             )
@@ -71,11 +73,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                     items: showcase.products,
                     onProductClick: (product) => {
                         this.router.push('/btb/tab1/productDetail', {
-                            productId: product._id,
-                            productName: product.name,
-                            productPrice: product.price,
-                            productDescription: product.description,
-                            productImg: product.images
+                            productId: product._id
                         });
                     }
                 })

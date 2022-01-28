@@ -3,10 +3,9 @@ import getCurrentEnvironment from 'lib/getCurrentEnvironment';
 import config from 'config.json';
 import { buildQueryParams } from 'lib/query';
 import genericErrorHandler from 'lib/genericErrorHandler';
-import storeActions from 'store/main/actions';
 import { getAccessToken } from 'service/token';
-import store from 'store/index';
 import { ProductRequestQuery } from './service';
+import { ProductResponse } from 'types';
 const { serviceUrl } = config.environments[getCurrentEnvironment()];
 
 const sc = createServiceCallObject(serviceUrl);
@@ -52,7 +51,7 @@ export async function getCategories(): Promise<any> {
 }
 
 export function getCategoryImage(categoryId: string): string {
-    return `${serviceUrl}/commerce/category/${categoryId}/image`;
+    return `${serviceUrl}/commerce/categories/${categoryId}/image`;
 }
 
 export async function getShowcases(): Promise<any> {
@@ -90,7 +89,7 @@ export async function putProfileImage(base64: string): Promise<any> {
     }
 }
 
-export async function getProductsByQuery(query: ProductRequestQuery): Promise<any> {
+export async function getProductsByQuery(query: ProductRequestQuery): Promise<ProductResponse> {
     try {
         const response = await sc.request(`/commerce/products?${buildQueryParams(query)}`, {
             method: 'GET',
@@ -111,13 +110,28 @@ export function getProductImageUrl(imageId: string): string {
 }
 
 export function getBannerImage(bannerId: string): string {
-    return `${serviceUrl}/commerce/banner/${bannerId}/image`;
+    return `${serviceUrl}/commerce/banners/${bannerId}/image`;
 }
 
 export async function getBanners(): Promise<any> {
     try {
         const response = await sc.request('/commerce/banners', {
             method: 'GET'
+        });
+        return response;
+    } catch (err) {
+        genericErrorHandler(err);
+        throw err;
+    }
+}
+
+export async function getProduct(productId: string): Promise<any> {
+    try {
+        const response = await sc.request(`/commerce/products/${productId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
         return response;
     } catch (err) {

@@ -6,10 +6,11 @@ import storeActions from 'store/main/actions';
 const originalHeight = themeService.getStyle('.lviHomeProducts').height;
 import System from '@smartface/native/device/system';
 import { getProductImageUrl } from 'service/commerce';
+import { Product } from 'types';
 export default class LviHomeProducts extends LviHomeProductsDesign {
     pageName?: string | undefined;
     private __onProductClick: (product: any) => void;
-    private __items: any[] = [];
+    private __items: Product[] = [];
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
         super(props);
@@ -25,10 +26,10 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     static getHeight(): number {
         return originalHeight;
     }
-    get items(): any[] {
+    get items(): Product[] {
         return this.__items;
     }
-    set items(value: any[]) {
+    set items(value: Product[]) {
         this.__items = value;
         this.initGridView();
         this.refreshGridView();
@@ -45,7 +46,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
             GridViewItem.itemTitle = this.items[productIndex].name;
             GridViewItem.itemDesc = this.items[productIndex].shortDescription;
             GridViewItem.itemImage = this.items[productIndex].images ? getProductImageUrl(this.items[productIndex].images[0]) : null;
-            GridViewItem.itemDiscountPrice = !!this.items[productIndex].discount ? `$${this.items[productIndex].discount}` : '';
+            GridViewItem.itemDiscountPrice = !!this.items[productIndex].discountPrice ? `$${this.items[productIndex].discountPrice}` : '';
             GridViewItem.itemPrice = `$${this.items[productIndex].price}`;
             GridViewItem.itemReview = !!this.items[productIndex].review ? this.items[productIndex]?.review : false;
             this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {

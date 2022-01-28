@@ -11,6 +11,7 @@
 		"@smartface/styler": "^2.0.0",
 		"@smartface/styling-context": "^1.1.8",
 		"redux": "^4.1.2",
-		"source-map": "0.6.1"
+		"source-map": "0.6.1",
+		"urijs": "^1.19.7"
 	}
 }

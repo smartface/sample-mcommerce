@@ -9,7 +9,6 @@
 		},
 		"height": 80,
 		"&-lblCartCheckoutPrice": {
-			"borderRadius": 7,
 			"flexProps": {
 				"positionType": "ABSOLUTE"
 			},

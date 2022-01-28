@@ -93,10 +93,10 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                       this.router.push('pages/pgWelcome');
                   },
                   bottomLeftOnClick: () => {
-                      console.info('bottomLeftOnClick');
+                      this.router.push('pages/pgSignUp');
                   },
                   bottomRightOnClick: () => {
-                      console.info('bottomRightOnClick');
+                      alert('todo');
                   }
               });
         const processorItems = [accountItem, ListViewItems.getLviSpacerItem({ className: 'small' })];
@@ -114,6 +114,8 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
     }
     addRightItem() {
         this.rightItem = new HeaderBarItem({
+            //Native › NTVE-435
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
             image: 'images://logouticon.png',
             onPress: () => {
                 return this.onExit();
