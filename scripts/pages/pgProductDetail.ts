@@ -29,7 +29,9 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     }
     addRightItem() {
         const rightItem = new HeaderBarItem({
-            image: Image.createFromFile('images://share.png')
+            image: Image.createFromFile('images://share.png'),
+            //Native › NTVE-435
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
         this.headerBar.setItems([rightItem]);
     }

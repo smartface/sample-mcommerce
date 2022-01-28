@@ -234,17 +234,5 @@
 			"textColor": "${textDark}"
 		},
 		"textColor": "${textDark}"
-	},
-	".categoryDetail": {
-		"font": {
-			"family": "Nunito",
-			"bold": true,
-			"italic": false,
-			"size": 12,
-			"style": "Bold"
-		},
-		".headerBarItem": {
-			"color": "${textDark}"
-		}
 	}
 }

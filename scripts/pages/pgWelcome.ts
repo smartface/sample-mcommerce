@@ -9,7 +9,7 @@ export default class PgWelcome extends withDismissAndBackButton(PgWelcomeDesign)
         super({});
         //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnStart.on(Button.Events.Press, () => {
-            this.router.push('pgNumber');
+            this.router.push('pgLogin');
         });
         this.lblWelcome.text = global.lang.welcomeText;
         this.lblSubtext.text = global.lang.welcomeSubText;
