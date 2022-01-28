@@ -52,7 +52,7 @@ export async function getCategories(): Promise<any> {
 }
 
 export function getCategoryImage(categoryId: string): string {
-    return `${serviceUrl}/commerce/category/${categoryId}/image`;
+    return `${serviceUrl}/commerce/categories/${categoryId}/image`;
 }
 
 export async function getShowcases(): Promise<any> {
@@ -111,13 +111,28 @@ export function getProductImageUrl(imageId: string): string {
 }
 
 export function getBannerImage(bannerId: string): string {
-    return `${serviceUrl}/commerce/banner/${bannerId}/image`;
+    return `${serviceUrl}/commerce/banners/${bannerId}/image`;
 }
 
 export async function getBanners(): Promise<any> {
     try {
         const response = await sc.request('/commerce/banners', {
             method: 'GET'
+        });
+        return response;
+    } catch (err) {
+        genericErrorHandler(err);
+        throw err;
+    }
+}
+
+export async function getProduct(productId: string): Promise<any> {
+    try {
+        const response = await sc.request(`/commerce/products/${productId}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
         return response;
     } catch (err) {

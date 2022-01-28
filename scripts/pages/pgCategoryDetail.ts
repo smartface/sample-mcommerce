@@ -122,11 +122,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
             const product = this.categoryProducts[productIndex];
             this.router.push('/btb/tab1/categoryDetail/productDetail', {
-                productId: product._id,
-                productName: product.name,
-                productPrice: product.price,
-                productDescription: product.description,
-                productImg: product.images
+                productId: product._id
             });
         };
     }
