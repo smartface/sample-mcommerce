@@ -12,7 +12,7 @@ import { themeService } from 'theme';
 import { Product } from 'types';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
-import { getProductsByQuery } from 'service/commerce';
+import { getProductImageUrl, getProductsByQuery } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 type searchStatus = {
     isSearchActive: boolean;
@@ -101,8 +101,10 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             GridViewItem.itemTag = this.categoryProducts[productIndex].discountTag;
             GridViewItem.itemTitle = this.categoryProducts[productIndex].name;
-            GridViewItem.itemDesc = this.categoryProducts[productIndex].description;
-            GridViewItem.itemImage = this.categoryProducts[productIndex].images ? this.categoryProducts[productIndex].images[0] : null;
+            GridViewItem.itemDesc = this.categoryProducts[productIndex].shortDescription;
+            GridViewItem.itemImage = this.categoryProducts[productIndex].images
+                ? getProductImageUrl(this.categoryProducts[productIndex].images[0])
+                : null;
             GridViewItem.itemDiscountPrice = !!this.categoryProducts[productIndex].discount
                 ? `$${this.categoryProducts[productIndex].discount}`
                 : '';

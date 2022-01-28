@@ -7,6 +7,8 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import store from 'store/index';
 import storeActions from 'store/main/actions';
+import { getProductImageUrl } from 'service/commerce';
+import setVisibility from 'lib/setVisibility';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -50,8 +52,8 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                 processorItems.push(
                     ListViewItems.getLviCartProducts({
                         productName: cart.name,
-                        productInfo: cart.description,
-                        productImage: cart.images ? cart.images[0] : null,
+                        productInfo: cart.shortDescription,
+                        productImage: cart.images ? getProductImageUrl(cart.images[0]) : null,
                         productPrice: cart.price,
                         productCount: cart.count,
                         onActionPlus: () => {
@@ -93,14 +95,15 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     }
     calculateCheckoutPrice() {
         if (store.getState().main.basket.length > 0) {
-            this.flCartCheckout.checkoutTitle = 'Go to Checkout';
+            this.flCartCheckout.checkoutTitle = global.lang.goToCheckout;
             this.flCartCheckout.checkoutPrice = store
                 .getState()
                 .main.basket.reduce((total, product) => total + product.price * product.count, 0)
                 .toFixed(2);
-            this.flCartCheckout.visible = true;
+            setVisibility(this.flCartCheckout, true);
         } else {
-            this.flCartCheckout.visible = false;
+            setVisibility(this.flCartCheckout, false);
+            this.unsubscribe();
         }
     }
     cartOperation(cart: Product, type: CartOperationEnum) {

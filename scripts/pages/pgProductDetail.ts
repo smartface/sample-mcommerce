@@ -66,7 +66,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     processor(): Processor[] {
         const processorItems = [
             ListViewItems.getLviGenericSlider({
-                images: [`images://${this.route.getState().routeData.productImg}`, `images://${this.route.getState().routeData.productImg}`]
+                images: this.route.getState().routeData.productImg
             })
         ];
         processorItems.push(

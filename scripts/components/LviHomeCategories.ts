@@ -2,6 +2,8 @@ import { themeService } from 'theme';
 import LviHomeCategoriesDesign from 'generated/my-components/LviHomeCategories';
 import GviHomeCategoryItem from './GviHomeCategoryItem';
 import System from '@smartface/native/device/system';
+import { getCategoryImage } from 'service/commerce';
+import { Categories } from 'types';
 const { height } = themeService.getStyle('.lviHomeCategories');
 export default class LviHomeCategories extends LviHomeCategoriesDesign {
     pageName?: string | undefined;
@@ -20,17 +22,17 @@ export default class LviHomeCategories extends LviHomeCategoriesDesign {
     static getHeight(): number {
         return height;
     }
-    get items(): any[] {
+    get items(): Categories[] {
         return this.__items;
     }
-    set items(value: any[]) {
+    set items(value: Categories[]) {
         this.__items = value;
         this.initGridView();
         this.refreshGridView();
     }
     private initGridView() {
         this.gvCategories.onItemBind = (GridViewItem: GviHomeCategoryItem, categoryIndex: number) => {
-            GridViewItem.categoryImage = `images://${this.items[categoryIndex].categoryImg}`;
+            GridViewItem.categoryImage = getCategoryImage(this.items[categoryIndex]._id);
             GridViewItem.categoryName = this.items[categoryIndex].title;
             GridViewItem.categoryBackgroundColor = this.items[categoryIndex].menuColor;
             GridViewItem.categoryBorderColor = this.items[categoryIndex].borderColor;

@@ -1,13 +1,12 @@
 import { themeService } from 'theme';
 import Button from '@smartface/native/ui/button';
-import Image from '@smartface/native/ui/image';
-import Label from '@smartface/native/ui/label';
 import View from '@smartface/native/ui/view';
 import LviCartItemDesign from 'generated/my-components/LviCartItem';
 const originalHeight = themeService.getStyle('.lviCartItem').height;
 
 export default class LviCartItem extends LviCartItemDesign {
     pageName?: string | undefined;
+    private __imageUrl: string;
     _value: (...args) => void;
     _valueMinus: (...args) => void;
     _removeValue: (...args) => void;
@@ -42,11 +41,15 @@ export default class LviCartItem extends LviCartItemDesign {
     set productInfo(value: string) {
         this.lblProductInfo.text = value;
     }
-    get productImage(): string | Image {
-        return this.imgProduct.image;
+    get productImage(): string {
+        return this.__imageUrl;
     }
-    set productImage(value: string | Image) {
-        this.imgProduct.image = Image.createFromFile(`images://${value}`);
+    set productImage(value: string) {
+        this.__imageUrl = value;
+        this.imgProduct.loadFromUrl({
+            url: this.__imageUrl,
+            useHTTPCacheControl: true
+        });
     }
     get productPrice(): string | number {
         return this.lblProductPrice.text;

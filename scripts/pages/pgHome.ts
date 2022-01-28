@@ -75,7 +75,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                             productName: product.name,
                             productPrice: product.price,
                             productDescription: product.description,
-                            productImg: product.image
+                            productImg: product.images
                         });
                     }
                 })

@@ -2,6 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flWaitDialog",
+			"hiddenComponent": true,
 			"id": "9052-1c0f-2d56-74fb",
 			"props": {
 				"children": [

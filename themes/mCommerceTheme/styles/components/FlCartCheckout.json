@@ -9,17 +9,16 @@
 		},
 		"height": 80,
 		"&-lblCartCheckoutPrice": {
-			"backgroundColor": "${checkoutPrice}",
 			"borderRadius": 7,
 			"flexProps": {
-				"flexGrow": 1,
 				"positionType": "ABSOLUTE"
 			},
-			"height": 30,
-			"marginRight": 20,
 			"right": 25,
 			"textAlignment": "MIDCENTER",
-			"width": 65
+			"width": 65,
+			"top": 0,
+			"bottom": 0,
+			"height": null
 		}
 	}
 }
