@@ -16,7 +16,7 @@ export default class LviRow2LineButton extends LviRow2LineButtonDesign {
     get leftIcon() {
         return this.flRow2LineButton.leftIcon;
     }
-    set leftIcon(value: string | Image) {
+    set leftIcon(value: string) {
         this.flRow2LineButton.leftIcon = value;
     }
     get mainButtonText() {

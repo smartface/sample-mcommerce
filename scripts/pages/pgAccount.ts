@@ -12,7 +12,6 @@ import { User } from 'types';
 import LviSpacer from 'generated/my-components/LviSpacer';
 import LviProfile from 'components/LviProfile';
 import LviRow2LineButton from 'components/LviRow2LineButton';
-const { image } = themeService.getNativeStyle('.lviRow2LineButton.leftIcon');
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProfileImageUrl, putProfileImage } from 'service/commerce';
@@ -84,8 +83,6 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                   }
               })
             : ListViewItems.getLviRow2LineButton({
-                  // FIX AFTER THE UPDATE
-                  leftIcon: Image.createFromFile(`images://${image}`),
                   mainButtonText: global.lang.loginHeader,
                   bottomLeftButtonText: global.lang.signup,
                   bottomRightButtonText: global.lang.forgotPassword,
