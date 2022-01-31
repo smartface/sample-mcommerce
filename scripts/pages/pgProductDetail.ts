@@ -11,6 +11,9 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
 import { getProduct, getProductImageUrl } from 'service/commerce';
 import { Product } from 'types';
+import Share from '@smartface/native/global/share';
+import { generateProductDeeplinkUrl } from 'lib/deeplink';
+
 type Processor =
     | ListViewItems.ProcessorTypes.ILviGenericSlider
     | ListViewItems.ProcessorTypes.ILviPdTitleLikeSection
@@ -29,6 +32,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     addRightItem() {
         const rightItem = new HeaderBarItem({
             image: Image.createFromFile('images://share.png'),
+            onPress: () => Share.shareText(generateProductDeeplinkUrl(this.product._id), this, []),
             //Native › NTVE-435
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
