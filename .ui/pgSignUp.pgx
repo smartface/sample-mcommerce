@@ -19,7 +19,8 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -31,7 +32,8 @@
 				"parent": "85da-2fd3-8e39-c6d0"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar.transparent",
@@ -46,7 +48,8 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgSignUp"
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-flexLayout #pgSignUp-flContainer",
@@ -66,7 +69,8 @@
 			"userProps": {
 				"testId": "HD_85tn3t",
 				"usePageVariable": true
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-imageView #pgSignUp-flContainer-imgLogo",
@@ -79,7 +83,8 @@
 			"type": "ImageView",
 			"userProps": {
 				"image": "logo.png"
-			}
+			},
+			"degree": 2
 		},
 		{
 			"className": ".sf-label #pgSignUp-flContainer-lblTitle .signup.lblTitle",
@@ -94,7 +99,8 @@
 			"userProps": {
 				"testId": "c0IeOywGJ",
 				"usePageVariable": true
-			}
+			},
+			"degree": 2
 		},
 		{
 			"className": ".sf-label #pgSignUp-flContainer-lblText .signup.lblText",
@@ -109,7 +115,8 @@
 			"userProps": {
 				"testId": "ig1_1Vjn2J",
 				"usePageVariable": true
-			}
+			},
+			"degree": 2
 		},
 		{
 			"className": ".sf-flexLayout #pgSignUp-flContainer-flForm",
@@ -121,8 +128,7 @@
 					"ca30-4d81-0ae1-206d",
 					"efef-c8d5-44cf-b90d",
 					"8680-508c-a2b2-3977",
-					"8bcf-a729-caf1-6202",
-					"5aaf-f8a9-8953-b2cc",
+					"b718-cb2e-2966-b1e1",
 					"fe91-7b0a-263b-7b5f",
 					"e333-17ee-ecf4-3517"
 				],
@@ -130,7 +136,8 @@
 				"parent": "2040-54a0-940e-495a"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {},
+			"degree": 2
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
@@ -152,7 +159,8 @@
 			"userProps": {
 				"testId": "YF5E3mRog",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
@@ -174,7 +182,8 @@
 			"userProps": {
 				"testId": "YF5E3mRog",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
@@ -196,7 +205,8 @@
 			"userProps": {
 				"testId": "YF5E3mRog",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
@@ -218,97 +228,28 @@
 			"userProps": {
 				"testId": "64dCtKq8CQ",
 				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout #pgSignUp-flContainer-flForm-flTerms",
-			"id": "8bcf-a729-caf1-6202",
-			"props": {
-				"children": [
-					"070a-d1bb-3c1c-d80e",
-					"a8f7-4819-e0d8-f75d"
-				],
-				"name": "flTerms",
-				"parent": "40d7-1892-4734-7a1b"
 			},
-			"type": "FlexLayout",
-			"userProps": {}
+			"degree": 3
 		},
 		{
-			"className": ".sf-label #pgSignUp-flContainer-flForm-flTerms-lblTermsLeft .signup.lblTermsLeft",
-			"id": "070a-d1bb-3c1c-d80e",
+			"className": ".sf-textView #pgSignUp-flContainer-flForm-tvTermsAndPrivacy",
+			"id": "b718-cb2e-2966-b1e1",
 			"props": {
 				"children": [],
-				"name": "lblTermsLeft",
-				"parent": "8bcf-a729-caf1-6202",
-				"text": "By continuing you agree to our",
+				"html": "<br>",
+				"name": "tvTermsAndPrivacy",
+				"parent": "40d7-1892-4734-7a1b",
+				"text": "\n",
 				"usePageVariable": true
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
-				"testId": "yHKmid72b3",
-				"text": "By continuing you agree to our",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label #pgSignUp-flContainer-flForm-flTerms-lblTermsRight .signup.termsPrivacyRight",
-			"id": "a8f7-4819-e0d8-f75d",
-			"props": {
-				"children": [],
-				"name": "lblTermsRight",
-				"parent": "8bcf-a729-caf1-6202",
-				"text": "Terms of Service",
-				"usePageVariable": true
+				"html": "<br>",
+				"text": "\n",
+				"usePageVariable": true,
+				"testId": "IBI6FgvPm"
 			},
-			"type": "Label",
-			"userProps": {
-				"testId": "swBvQHCYgv",
-				"text": "Terms of Service",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout #pgSignUp-flContainer-flForm-flPrivacy",
-			"id": "5aaf-f8a9-8953-b2cc",
-			"props": {
-				"children": [
-					"eade-4475-69c0-5aee",
-					"ec96-c1f9-ba8b-f30d"
-				],
-				"name": "flPrivacy",
-				"parent": "40d7-1892-4734-7a1b"
-			},
-			"type": "FlexLayout",
-			"userProps": {}
-		},
-		{
-			"className": ".sf-label #pgSignUp-flContainer-flForm-flPrivacy-lblPrivacyLeft .signup.lblPrivacyLeft",
-			"id": "eade-4475-69c0-5aee",
-			"props": {
-				"children": [],
-				"name": "lblPrivacyLeft",
-				"parent": "5aaf-f8a9-8953-b2cc",
-				"text": "and "
-			},
-			"type": "Label",
-			"userProps": {
-				"text": "and "
-			}
-		},
-		{
-			"className": ".sf-label #pgSignUp-flContainer-flForm-flPrivacy-lblPrivacyRight .signup.termsPrivacyRight",
-			"id": "ec96-c1f9-ba8b-f30d",
-			"props": {
-				"children": [],
-				"name": "lblPrivacyRight",
-				"parent": "5aaf-f8a9-8953-b2cc",
-				"text": "Privacy Policy."
-			},
-			"type": "Label",
-			"userProps": {
-				"text": "Privacy Policy."
-			}
+			"degree": 3
 		},
 		{
 			"className": ".sf-button .sf-button-main",
@@ -323,7 +264,8 @@
 			"userProps": {
 				"testId": "NudLl5Utk",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
 			"className": ".sf-flexLayout #pgSignUp-flContainer-flForm-flFooter",
@@ -337,7 +279,8 @@
 				"parent": "40d7-1892-4734-7a1b"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {},
+			"degree": 3
 		},
 		{
 			"className": ".sf-label #pgSignUp-flContainer-flForm-flFooter-lblFooterLeft .signup.lblFooterLeft",
@@ -352,7 +295,8 @@
 			"userProps": {
 				"testId": "fZi-0ZTSAq",
 				"usePageVariable": true
-			}
+			},
+			"degree": 4
 		},
 		{
 			"className": ".sf-label #pgSignUp-flContainer-flForm-flFooter-lblRouteLogin .signup.lblRouteLogin",
@@ -367,7 +311,8 @@
 			"userProps": {
 				"testId": "5mcetTYCAf",
 				"usePageVariable": true
-			}
+			},
+			"degree": 4
 		}
 	]
 }

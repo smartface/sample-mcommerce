@@ -68,35 +68,7 @@
 					"marginTop": null,
 					"maxHeight": 36,
 					"testId": "GgtHkJR7Y",
-					"width": null,
-					"&-lblTermsLeft": {
-						"ellipsizeMode": "WORDWRAPPING",
-						"flexProps": {
-							"flexGrow": 4,
-							"alignSelf": "CENTER"
-						},
-						"left": 0,
-						"marginBottom": null,
-						"marginTop": null,
-						"maxLines": 1,
-						"testId": "g4mLeQV5F",
-						"textAlignment": "MIDLEFT",
-						"top": 0
-					},
-					"&-lblTermsRight": {
-						"ellipsizeMode": "WORDWRAPPING",
-						"flexProps": {
-							"flexGrow": 4,
-							"alignSelf": "CENTER"
-						},
-						"left": 0,
-						"marginBottom": null,
-						"marginTop": null,
-						"maxLines": 2,
-						"testId": "g4mLeQV5F",
-						"textAlignment": "MIDLEFT",
-						"top": 0
-					}
+					"width": null
 				},
 				"&-flPrivacy": {
 					"flexProps": {
@@ -108,22 +80,7 @@
 					"height": null,
 					"maxHeight": 35,
 					"testId": "JW4QfG7Si",
-					"width": null,
-					"&-lblPrivacyLeft": {
-						"flexProps": {
-							"flexGrow": 1
-						},
-						"marginBottom": null,
-						"marginTop": null,
-						"testId": "jSogaLSf-",
-						"textAlignment": "MIDLEFT"
-					},
-					"&-lblPrivacyRight": {
-						"flexProps": {
-							"flexGrow": 10
-						},
-						"testId": "Cw8Dhn2M1"
-					}
+					"width": null
 				},
 				"&-flFooter": {
 					"flexProps": {
@@ -154,6 +111,13 @@
 						"textAlignment": "MIDLEFT",
 						"top": 0
 					}
+				},
+				"&-tvTermsAndPrivacy": {
+					"flexProps": {},
+					"testId": "-0ndka_XR",
+					"maxLines": 2,
+					"height": 70,
+					"backgroundColor": "${backgroundMain}"
 				}
 			}
 		}

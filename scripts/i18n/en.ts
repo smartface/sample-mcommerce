@@ -123,5 +123,9 @@ SMF.i18n.defineLanguage('en', {
     lastName: 'Last name',
     invalidName: 'The field must be a minimum of $1 characters!',
     nutritions: 'Nutritions',
-    reviews: 'Reviews'
+    reviews: 'Reviews',
+    termsLeft: 'By continuing you agree to our ',
+    termsRight: 'Terms of Service\n',
+    privacyLeft: 'and ',
+    privacyRight: 'Privacy Policy.'
 });

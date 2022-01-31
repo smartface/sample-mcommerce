@@ -164,7 +164,7 @@
 			},
 			"textColor": "${textLight}"
 		},
-		".lblTermsLeft": {
+		".termsLeft": {
 			"font": {
 				"size": 14,
 				"bold": false,
@@ -180,7 +180,7 @@
 			},
 			"textColor": "${main}"
 		},
-		".lblPrivacyLeft": {
+		".privacyLeft": {
 			"font": {
 				"size": 14,
 				"bold": false,
