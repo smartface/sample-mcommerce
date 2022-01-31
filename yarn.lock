@@ -731,10 +731,10 @@
   resolved "https://registry.yarnpkg.com/@smartface/styler/-/styler-1.3.16.tgz#7c8ddd1e044a28cf01c7bdb0cdf726467f9ce508"
   integrity sha512-WlHAJnAiXgKmT/4qh8Rx3TO9Y4sejDo2Xe/M25s4ClECWNB+RY132KDq0LPi2ZnmmCOASRg6Qbp7QZ24WYQdTA==
 
-"@smartface/tsc-watch@^0.8.0-rc.0":
-  version "0.8.0-rc.0"
-  resolved "https://registry.yarnpkg.com/@smartface/tsc-watch/-/tsc-watch-0.8.0-rc.0.tgz#dc504164368e97f410acb13c31167d10e31a15ac"
-  integrity sha512-NT7stmW3Ev8Oo0r2Tb506YLPWsiuYC+s/O+QedWSn7sbzc5ItjWI+wJm03FJrEC3dZDAn4gthtJqIhFgFiI4Mg==
+"@smartface/tsc-watch@^0.8.0":
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/@smartface/tsc-watch/-/tsc-watch-0.8.0.tgz#ec10f6a435082c512a9f3243467b98fd0952d872"
+  integrity sha512-8euY8aK98J4gs/3jeWMY9pSjnnL2EgjEwzA3re7nVH1ekiK1pqT5cy65y/zWVvjfXA+zqQvsChnq6xIzt4FaBg==
   dependencies:
     tsc-watch "^4.6.0"
 
