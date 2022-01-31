@@ -38,8 +38,6 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     addRightItem() {
         const rightItem = new HeaderBarItem({
             image: Image.createFromFile('images://filtericon.png'),
-            //Native › NTVE-435
-            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
             onPress: () => {
                 if (this.isSearchViewVisible) {
                     this.initSearchView(false);
@@ -187,9 +185,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
 
     onShow() {
         super.onShow();
-        this.initDismissButton(this.router, {
-            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
-        });
+        this.initDismissButton(this.router);
         if (!this.initialized) {
             setTimeout(() => {
                 if (this.route.getState().routeData.isShowcase) {

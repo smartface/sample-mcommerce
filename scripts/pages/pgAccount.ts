@@ -110,9 +110,8 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
         return processorItems;
     }
     addRightItem() {
+        console.info('set right item')
         this.rightItem = new HeaderBarItem({
-            //Native › NTVE-435
-            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
             image: 'images://logouticon.png',
             onPress: () => {
                 return this.onExit();

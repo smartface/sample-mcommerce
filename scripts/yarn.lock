@@ -55,9 +55,9 @@
     html-parse-stringify "1.0.2"
 
 "@smartface/mixins@^1.0.7":
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/@smartface/mixins/-/mixins-1.1.3.tgz#0121e58078bcdbad4fd3cc39e871f6493eb5035f"
-  integrity sha512-ShuB2BsWqL68GLlpewkSWqx6QwjhRSP9ufalAyakhOAy8WlkAaEB7Zs2FUPpAqI5QGVsUiBPAGhk9ldmz4ikQw==
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/@smartface/mixins/-/mixins-1.1.4.tgz#9da3c4b51217d8bdb24afc0d9449c11b8750c491"
+  integrity sha512-gdryyCgXn7UJzcO8E6GzVU/FmbGonQxPjP2tkJhHppl1vLNogr5kRRjXd5B3DX3tUIMLZbmBR4nlbno+4EauzA==
   dependencies:
     "@smartface/core" "^1.0.0"
 

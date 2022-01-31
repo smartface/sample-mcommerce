@@ -5,7 +5,7 @@
 		"@smartface/contx": "^4.2.2",
 		"@smartface/core": "^1.0.0",
 		"@smartface/extension-utils": "^16.2.9",
-		"@smartface/mixins": "^1.0.7",
+		"@smartface/mixins": "^1.1.4",
 		"@smartface/native": "^4.4.0",
 		"@smartface/router": "2.1.0",
 		"@smartface/styler": "^2.0.0",

@@ -26,9 +26,7 @@ export default class PgNumber extends withDismissAndBackButton(PgNumberDesign) {
     }
     onShow() {
         super.onShow();
-        this.initBackButton(this.router, {
-            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
-        });
+        this.initBackButton(this.router);
     }
     onLoad() {
         super.onLoad();
