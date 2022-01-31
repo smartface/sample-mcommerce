@@ -10,6 +10,7 @@ import { themeService } from 'theme';
 import { register } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD, MINIMUM_CHARACTERS_REQUIRED } from 'constants';
+import AttributedString from '@smartface/native/ui/attributedstring';
 
 export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
     isMailValid = false;
@@ -29,6 +30,29 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         this.btnSignUp.text = global.lang.signup;
         this.lblFooterLeft.text = global.lang.alreadyhaveanaccount;
         this.lblRouteLogin.text = global.lang.login;
+    }
+    initAttributedStrings() {
+        let termsLeft = new AttributedString({
+            string: global.lang.termsLeft,
+            font: themeService.getNativeStyle('.signup.termsLeft').font,
+            foregroundColor: themeService.getNativeStyle('.signup.termsLeft').textColor
+        });
+        let termsRight = new AttributedString({
+            string: global.lang.termsRight,
+            font: themeService.getNativeStyle('.signup.termsPrivacyRight').font,
+            foregroundColor: themeService.getNativeStyle('.signup.termsPrivacyRight').textColor
+        });
+        let privacyLeft = new AttributedString({
+            string: global.lang.privacyLeft,
+            font: themeService.getNativeStyle('.signup.privacyLeft').font,
+            foregroundColor: themeService.getNativeStyle('.signup.privacyLeft').textColor
+        });
+        let privacyRight = new AttributedString({
+            string: global.lang.privacyRight,
+            font: themeService.getNativeStyle('.signup.termsPrivacyRight').font,
+            foregroundColor: themeService.getNativeStyle('.signup.termsPrivacyRight').textColor
+        });
+        this.tvTermsAndPrivacy.attributedText = [termsLeft, termsRight, privacyLeft, privacyRight];
     }
     initMaterialTextBoxes() {
         this.mtbFirstName.options = {
@@ -130,5 +154,6 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         super.onLoad();
         this.headerBar.title = global.lang.signUpHeader;
         this.initMaterialTextBoxes();
+        this.initAttributedStrings();
     }
 }

@@ -121,5 +121,9 @@ SMF.i18n.defineLanguage('tr', {
     lastName: 'Soyisim',
     invalidName: 'Alan minimum $1 karakter olmalıdır!',
     nutritions: 'Besinler',
-    reviews: 'Yorumlar'
+    reviews: 'Yorumlar',
+    termsLeft: 'Devam ederek kabul ediyorum; ',
+    termsRight: 'Hizmet Şartlarımızı\n',
+    privacyLeft: 've ',
+    privacyRight: 'Gizlilik politikamızı.'
 });
