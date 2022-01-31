@@ -43,10 +43,10 @@ export default class LviProductItem extends LviProductItemDesign {
         this.flProductItem.itemTag = value;
     }
     get itemImage() {
-        return this.flProductItem.itemImage;
+        return this.flProductItem.imageUrl;
     }
-    set itemImage(value: string | Image) {
-        this.flProductItem.itemImage = value;
+    set itemImage(value: string) {
+        this.flProductItem.imageUrl = value;
     }
     get itemDesc(): string {
         return this.flProductItem.itemDesc;

@@ -12,9 +12,9 @@ import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD, MINIMUM_CHARACTERS_REQUIRED } from 'constants';
 
 export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
-    sMailValid = false;
+    isMailValid = false;
     isPasswordValid = false;
-    tnamesValid = false;
+    namesValid = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.lblRouteLogin.on(View.Events.TouchEnded, () => {
