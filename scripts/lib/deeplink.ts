@@ -15,6 +15,7 @@ Application.on(Application.Events.ApplicationCallReceived, (params: ApplicationC
 
 export function deeplinkHandler(params: ApplicationCallReceivedParams) {
     const { productId } = URI(params?.url || '').query(true);
+    alert(JSON.stringify({ ...params, productId }));
     if (productId) {
         productDetailHandler(productId);
     }
