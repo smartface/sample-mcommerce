@@ -1,0 +1,7 @@
+{
+	".lviAddReviewSection": {
+		"height": 70,
+		"backgroundColor": "${backgroundMain}",
+		"flexProps": {}
+	}
+}

@@ -1,0 +1,41 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviReview",
+			"hiddenComponent": true,
+			"id": "dac4-31b7-7202-929d",
+			"props": {
+				"children": [
+					"b840-881f-f6af-b976"
+				],
+				"name": "lviReview",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flReview",
+			"hiddenComponent": false,
+			"id": "b840-881f-f6af-b976",
+			"props": {
+				"children": [],
+				"name": "flReview",
+				"parent": "dac4-31b7-7202-929d",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flReview",
+				"id": "391c-0052-8b78-9389"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

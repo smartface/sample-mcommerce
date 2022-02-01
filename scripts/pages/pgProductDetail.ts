@@ -11,6 +11,7 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
 import { getProduct, getProductImageUrl } from 'service/commerce';
 import { Product } from 'types';
+import LviPdOverviewSection from 'components/LviPdOverviewSection';
 type Processor =
     | ListViewItems.ProcessorTypes.ILviGenericSlider
     | ListViewItems.ProcessorTypes.ILviPdTitleLikeSection
@@ -60,6 +61,18 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.refreshEnabled = false;
+        this.lvMain.onRowSelected = (item: LviPdOverviewSection, index) => {
+            if (item instanceof LviPdOverviewSection) {
+                if (item.overviewTitle === 'Reviews') {
+                    this.router.push('reviews', { productId: this.product._id });
+                } else {
+                    alert({
+                        title: 'ALERT',
+                        message: item.overviewTitle
+                    });
+                }
+            }
+        };
     }
     refreshListView() {
         this.data = this.processor();

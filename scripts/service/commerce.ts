@@ -139,3 +139,18 @@ export async function getProduct(productId: string): Promise<any> {
         throw err;
     }
 }
+
+export async function getReviewsByProduct(productId: string): Promise<any> {
+    try {
+        const response = await sc.request(`/commerce/products/${productId}/reviews`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        return response;
+    } catch (err) {
+        genericErrorHandler(err);
+        throw err;
+    }
+}

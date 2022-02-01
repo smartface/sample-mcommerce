@@ -1,0 +1,41 @@
+{
+  ".flReview": {
+    "flexProps": {},
+    "height": 150,
+    "&-flContainer": {
+      "flexProps": {
+        "flexDirection": "ROW",
+        "justifyContent": "FLEX_START",
+        "alignContent": "FLEX_START",
+        "alignItems": "CENTER"
+      },
+      "height": 20,
+      "&-lblName": {
+        "flexProps": {
+          "flexGrow": null
+        },
+        "height": 30
+      },
+      "&-lblStar": {
+        "flexProps": {
+          "flexGrow": 1
+        },
+        "height": 25,
+        "width": 10
+      },
+      "&-imgStar": {
+        "height": 25,
+        "width": 15
+      }
+    },
+    "&-tvComment": {
+      "maxLines": 3,
+      "height": 70,
+      "borderRadius": 15
+    },
+    "paddingLeft": 15,
+    "paddingRight": 50,
+    "paddingTop": 15,
+    "paddingBottom": 15
+  }
+}

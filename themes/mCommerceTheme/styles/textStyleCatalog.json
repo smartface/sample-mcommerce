@@ -234,5 +234,41 @@
 			"textColor": "${textDark}"
 		},
 		"textColor": "${textDark}"
+	},
+	".review": {
+		"font": {
+			"family": "Nunito",
+			"bold": true,
+			"italic": false,
+			"size": 18,
+			"style": "Bold"
+		},
+		".name": {
+			"font": {
+				"size": 18
+			},
+			"textColor": "${textDark}"
+		},
+		".star": {
+			"font": {
+				"size": 14
+			},
+			"textColor": "${textDark}"
+		},
+		".addReview": {
+			"font": {
+				"size": 18
+			},
+			"textColor": "${green}"
+		},
+		".tvComment": {
+			"font": {
+				"size": 14,
+				"bold": false,
+				"style": "Medium"
+			},
+			"backgroundColor": "${backgroundSecondary}",
+			"textColor": "${textDark}"
+		}
 	}
 }

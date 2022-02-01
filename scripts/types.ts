@@ -61,3 +61,11 @@ export type Banner = {
     productId?: string;
     categoryId?: string;
 };
+
+export type Review = {
+    star: number;
+    comment: string;
+    productId: string;
+    name: string;
+    sub: string;
+};

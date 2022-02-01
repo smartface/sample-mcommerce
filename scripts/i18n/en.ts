@@ -127,5 +127,9 @@ SMF.i18n.defineLanguage('en', {
     termsLeft: 'By continuing you agree to our ',
     termsRight: 'Terms of Service\n',
     privacyLeft: 'and ',
-    privacyRight: 'Privacy Policy.'
+    privacyRight: 'Privacy Policy.',
+    emptyReviewList: 'This product has no review yet.',
+    addReview: 'Add review',
+    reviewHeader: 'Reviews',
+    addReviewHeader: 'Add Review'
 });

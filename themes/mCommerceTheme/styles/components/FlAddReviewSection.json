@@ -1,0 +1,27 @@
+{
+  ".flAddReviewSection": {
+    "height": 70,
+    "flexProps": {
+      "flexDirection": "ROW",
+      "alignItems": "CENTER"
+    },
+    "&-lblReview": {
+      "flexProps": {
+        "flexGrow": 2
+      }
+    },
+    "&-lblAddReview": {
+      "flexProps": {
+        "flexGrow": 1
+      },
+      "textAlignment": "MIDRIGHT"
+    },
+    "paddingLeft": 15,
+    "paddingRight": 15,
+    "&-imgStar": {
+      "height": 30,
+      "image": "small_star.png",
+      "width": 30
+    }
+  }
+}
