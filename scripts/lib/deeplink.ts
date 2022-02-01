@@ -40,7 +40,7 @@ export async function productDetailHandler(productId: string) {
 }
 
 export function generateProductDeeplinkUrl(productId: string) {
-    return config.environments[getCurrentEnvironment()].serviceUrl + '/deeplink?productId=' + productId;
+    return config.environments[getCurrentEnvironment()].serviceUrl + '/deeplink/redirect?productId=' + productId;
 }
 
 // setTimeout(() => deeplinkHandler({ url: 'smartface-emulator://deeplink?productId=61ee8da12bd310de954a2708' }), 3000); //Deeplink tester
