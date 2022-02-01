@@ -10,6 +10,7 @@ import { getRefreshToken } from 'service/token';
 import { autoLogin } from 'service/auth';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { getBannerImage, getBanners, getShowcases } from 'service/commerce';
+import LviGenericSlider from 'components/LviGenericSlider';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -21,8 +22,10 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     showcases: HomeShowcases[];
     banners: Banner[];
     initialized = false;
+    sliderHeight = 0;
     constructor(private router?: Router, private route?: Route) {
         super({});
+        this.sliderHeight = LviGenericSlider.calculateHeightWithAspectRatio(3);
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -44,7 +47,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                         return getBannerImage(image._id);
                     })
                 },
-                { className: '.lviGenericSlider.small' }
+                { height: this.sliderHeight }
             )
         ];
         this.showcases.forEach((showcase) => {

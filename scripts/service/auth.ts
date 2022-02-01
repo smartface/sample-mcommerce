@@ -45,6 +45,7 @@ export async function autoLogin(): Promise<any> {
             await getUserInfo();
         }
     } catch (err) {
+        setRefreshToken('');
         genericErrorHandler(err);
         throw err;
     }
