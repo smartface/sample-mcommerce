@@ -17,7 +17,11 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 19,
+				"top": 115
+			}
 		},
 		{
 			"className": ".sf-imageView .flAddReviewSection-imgStar",
