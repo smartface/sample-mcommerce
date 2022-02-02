@@ -6,7 +6,7 @@
 			"id": "dac4-31b7-7202-929d",
 			"props": {
 				"children": [
-					"b840-881f-f6af-b976"
+					"839c-e9d6-1263-0fd5"
 				],
 				"name": "lviReview",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -20,7 +20,7 @@
 		{
 			"className": ".sf-flexLayout .flReview",
 			"hiddenComponent": false,
-			"id": "b840-881f-f6af-b976",
+			"id": "839c-e9d6-1263-0fd5",
 			"props": {
 				"children": [],
 				"name": "flReview",

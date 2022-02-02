@@ -8,6 +8,10 @@ import LviAddReviewSection from 'components/LviAddReviewSection';
 import { Product, Review } from 'types';
 import { themeService } from 'theme';
 import { getReviewsByProduct } from 'service/commerce';
+import { NO_RATE } from 'constants';
+import HeaderBarItem from '@smartface/native/ui/headerbaritem';
+import Image from '@smartface/native/ui/image';
+import store from 'store';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviReview[]
@@ -19,6 +23,26 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
     reviews: Review[];
     constructor(private router?: Router, private route?: Route) {
         super({});
+    }
+    addRightItem() {
+        this.rightItem = new HeaderBarItem({
+            //Native › NTVE-435
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
+            image: Image.createFromFile('images://share.png'),
+            onPress: () => {
+                this.router.push('addReview', { product: this.route.getState().routeData?.product });
+            }
+        });
+        this.headerBar.setItems([this.rightItem]);
+    }
+
+    handleRightItem() {
+        if (store.getState().main.isUserLoggedIn) {
+            this.addRightItem();
+        } else {
+            this.headerBar.setItems([]);
+            this.layout.applyLayout();
+        }
     }
 
     initListView() {
@@ -39,21 +63,13 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             processorItems.push(
                 ListViewItems.getLviEmptyItem({
                     emptyImage: 'images://empty_star.png',
-                    emptyTitle: global.lang.emptyReviewList,
-                    mainOnClick: () => {
-                        this.router.push('addReview', { product: this.route.getState().routeData?.product });
-                    }
+                    emptyTitle: global.lang.emptyReviewList
                 })
             );
         } else {
             processorItems.push(
                 ListViewItems.getLviAddReviewSection({
-                    //review: get average review
-                    review: '4.8',
-                    image: 'images://small_star_96.png',
-                    mainOnClick: () => {
-                        this.router.push('addReview', { product: this.route.getState().routeData?.product });
-                    }
+                    review: this.route.getState().routeData?.product?.rating?.toString() || NO_RATE.toString()
                 })
             );
             this.reviews.forEach((review) =>
@@ -62,7 +78,6 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
                         name: review.name,
                         star: `${review.star}`,
                         comment: review.comment,
-                        image: 'images://small_star.png',
                         showSeparator: true
                     })
                 )
@@ -87,6 +102,8 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
 
     public onShow() {
         super.onShow?.();
+        this.addRightItem();
+        this.handleRightItem();
         this.fetchProductReviews();
         this.initDismissButton(this.router, {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor

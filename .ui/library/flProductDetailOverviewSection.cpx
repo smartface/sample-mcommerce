@@ -27,7 +27,6 @@
 			"props": {
 				"children": [
 					"c62a-6808-5bd5-fcdb",
-					"f588-c8af-9dc9-7dae",
 					"efa8-13e9-32b6-84c8"
 				],
 				"name": "flWrapper",
@@ -55,35 +54,6 @@
 			"type": "Label",
 			"userProps": {
 				"text": "label1",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout .flPdNutritions",
-			"hiddenComponent": false,
-			"id": "f588-c8af-9dc9-7dae",
-			"props": {
-				"children": [],
-				"name": "flPdNutritions",
-				"parent": "4ec7-297a-dfa8-5aea",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "flPdNutritions",
-				"id": "a90d-46f5-5bc0-4004"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"testId": "71uMqitC9",
-				"top": 0,
 				"usePageVariable": true
 			}
 		},

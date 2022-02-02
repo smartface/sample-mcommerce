@@ -43,7 +43,7 @@
 			"flexDirection": "ROW"
 		}
 	},
-	".seperator": {
+	".separator": {
 		"height": 1,
 		"left": 15,
 		"right": 0,
@@ -52,7 +52,8 @@
 		"marginBottom": null,
 		"flexProps": {
 			"positionType": "ABSOLUTE"
-		}
+		},
+		"backgroundColor": "${separator}"
 	},
 	".notVisible": {
 		"visible": false

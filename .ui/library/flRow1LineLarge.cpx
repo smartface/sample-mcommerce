@@ -171,7 +171,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .seperator",
+			"className": ".sf-flexLayout .separator",
 			"hiddenComponent": false,
 			"id": "93aa-a396-0a44-b14f",
 			"props": {

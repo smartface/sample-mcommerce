@@ -6,8 +6,7 @@
 			"id": "391c-0052-8b78-9389",
 			"props": {
 				"children": [
-					"600e-b1dd-3d3e-17e8",
-					"6ae4-177e-5213-1582",
+					"9f2d-a25f-1cec-482d",
 					"f263-8261-358d-d158",
 					"217f-9e03-9048-3447"
 				],
@@ -18,15 +17,40 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 1.33,
+				"top": 60.67
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flReview-flHeader",
+			"id": "9f2d-a25f-1cec-482d",
+			"oldName": "flH",
+			"props": {
+				"children": [
+					"3690-94a8-2f63-c4d9",
+					"849f-c47b-d828-9450"
+				],
+				"name": "flHeader",
+				"parent": "391c-0052-8b78-9389",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-label .flReview-flContainer-lblName .review.name",
-			"id": "600e-b1dd-3d3e-17e8",
+			"id": "3690-94a8-2f63-c4d9",
 			"props": {
 				"children": [],
 				"name": "lblName",
-				"parent": "391c-0052-8b78-9389",
+				"parent": "9f2d-a25f-1cec-482d",
 				"text": "Isim",
 				"usePageVariable": true
 			},
@@ -41,14 +65,14 @@
 		},
 		{
 			"className": ".sf-flexLayout .flReview-flContainer",
-			"id": "6ae4-177e-5213-1582",
+			"id": "849f-c47b-d828-9450",
 			"props": {
 				"children": [
-					"836a-f711-0ff8-8d17",
-					"d6f7-e5c7-bea1-9c99"
+					"5a83-bfe5-dd20-07e3",
+					"3941-683d-ea82-15eb"
 				],
 				"name": "flContainer",
-				"parent": "391c-0052-8b78-9389",
+				"parent": "9f2d-a25f-1cec-482d",
 				"usePageVariable": true
 			},
 			"source": {
@@ -61,12 +85,12 @@
 		},
 		{
 			"className": ".sf-imageView .flReview-flContainer-imgStar",
-			"id": "836a-f711-0ff8-8d17",
+			"id": "5a83-bfe5-dd20-07e3",
 			"oldName": "imgSt",
 			"props": {
 				"children": [],
 				"name": "imgStar",
-				"parent": "6ae4-177e-5213-1582",
+				"parent": "849f-c47b-d828-9450",
 				"usePageVariable": true
 			},
 			"source": {
@@ -74,16 +98,18 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"usePageVariable": true
+				"image": "small_star.png",
+				"usePageVariable": true,
+				"width": 20
 			}
 		},
 		{
 			"className": ".sf-label .flReview-flContainer-lblStar .review.star",
-			"id": "d6f7-e5c7-bea1-9c99",
+			"id": "3941-683d-ea82-15eb",
 			"props": {
 				"children": [],
 				"name": "lblStar",
-				"parent": "6ae4-177e-5213-1582",
+				"parent": "849f-c47b-d828-9450",
 				"text": "4.3",
 				"usePageVariable": true
 			},
@@ -118,7 +144,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .seperator",
+			"className": ".sf-flexLayout .separator",
 			"id": "217f-9e03-9048-3447",
 			"oldName": "seperat",
 			"props": {

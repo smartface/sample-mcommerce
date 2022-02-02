@@ -2,7 +2,6 @@ import FlReviewProductDesign from 'generated/my-components/FlReviewProduct';
 
 export default class FlReviewProduct extends FlReviewProductDesign {
     pageName?: string | undefined;
-    private __image: string;
     private __productImage: string;
     constructor(props?: any, pageName?: string) {
         super(props);
@@ -23,13 +22,6 @@ export default class FlReviewProduct extends FlReviewProductDesign {
             url: this.__productImage,
             useHTTPCacheControl: true
         });
-    }
-    get imageStar(): string {
-        return this.__image;
-    }
-    set imageStar(value: string) {
-        this.__image = value;
-        this.imgStar.image = this.__image;
     }
     get productRate(): string {
         return this.lblRate.text;

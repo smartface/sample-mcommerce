@@ -1,7 +1,6 @@
 {
-	".lviReview": {
-		"height": 150,
-		"backgroundColor": "${backgroundMain}",
-		"flexProps": {}
-	}
+  ".lviReview": {
+    "height": 80,
+    "flexProps": {}
+  }
 }

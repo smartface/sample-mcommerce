@@ -12,7 +12,6 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
     product: Product;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.btnSendReview.text = global.lang.addReview;
         this.btnSendReview.on(Button.Events.Press, () => {
             this.postReview(this.product._id, this.flReviewAndRateProduct.rate, this.flReviewAndRateProduct.comment);
         });
@@ -21,17 +20,11 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
     initReviewProduct() {
         this.flReviewAndRateProduct.productName = this.product.name;
         this.flReviewAndRateProduct.productImage = getProductImageUrl(this.product.images[0]);
-        this.flReviewAndRateProduct.imageStar = 'images://small_star_96.png';
-        this.flReviewAndRateProduct.productRate = !!this.product?.rating ? this.product?.rating?.toString() : NO_RATE.toString();
+        this.flReviewAndRateProduct.productRate = this.product?.rating?.toString() || NO_RATE.toString();
     }
 
-    initRateProduct() {
-        console.info('this.flReviewAndRateProduct.rate', this.flReviewAndRateProduct.rate);
-    }
-
-    initReviewAndRateProduct() {
-        this.initReviewProduct();
-        this.initRateProduct();
+    initButton() {
+        this.btnSendReview.text = global.lang.addReview;
     }
 
     async postReview(productId, star, comment) {
@@ -60,6 +53,7 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
         super.onLoad?.();
         this.headerBar.title = global.lang.addReviewHeader;
         this.product = this.route.getState().routeData?.product;
-        this.initReviewAndRateProduct();
+        this.initButton();
+        this.initReviewProduct();
     }
 }

@@ -21,12 +21,6 @@ export default class FlReviewAndRateProduct extends FlReviewAndRateProductDesign
     set productImage(value: string) {
         this.flReviewProduct.productImage = value;
     }
-    get imageStar(): string {
-        return this.flReviewProduct.imageStar;
-    }
-    set imageStar(value: string) {
-        this, (this.flReviewProduct.imageStar = value);
-    }
     get productRate(): string {
         return this.flReviewProduct.productRate;
     }

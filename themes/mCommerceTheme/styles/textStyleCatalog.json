@@ -247,9 +247,6 @@
 			"textColor": "${textDark}"
 		},
 		".star": {
-			"font": {
-				"size": 16
-			},
 			"textColor": "${textDark}"
 		},
 		".addReview": {
@@ -261,7 +258,6 @@
 				"bold": false,
 				"style": "Medium"
 			},
-			"backgroundColor": "${backgroundSecondary}",
 			"textColor": "${textDark}"
 		},
 		".tb": {

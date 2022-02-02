@@ -1,10 +1,8 @@
 import Label from '@smartface/native/ui/label';
-import View from '@smartface/native/ui/view';
 import FlAddReviewSectionDesign from 'generated/my-components/FlAddReviewSection';
 
 export default class FlAddReviewSection extends FlAddReviewSectionDesign {
     pageName?: string | undefined;
-    private __image: string;
     __mainOnClick: (...args) => void;
     constructor(props?: any, pageName?: string) {
         super(props);
@@ -13,13 +11,6 @@ export default class FlAddReviewSection extends FlAddReviewSectionDesign {
             this.__mainOnClick && this.__mainOnClick();
         });
         this.lblAddReview.text = global.lang.addReview;
-    }
-    get image(): string {
-        return this.__image;
-    }
-    set image(value: string) {
-        this.__image = value;
-        this.imgStar.image = this.__image;
     }
     get review(): string {
         return this.lblReview.text;

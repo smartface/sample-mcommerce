@@ -4,7 +4,6 @@ import setVisibility from 'lib/setVisibility';
 export default class FlReview extends FlReviewDesign {
     pageName?: string | undefined;
     private __showSeparator: boolean;
-    private __image: string;
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
@@ -14,13 +13,6 @@ export default class FlReview extends FlReviewDesign {
     }
     set name(value: string) {
         this.lblName.text = value;
-    }
-    get image(): string {
-        return this.__image;
-    }
-    set image(value: string) {
-        this.__image = value;
-        this.imgStar.image = this.__image;
     }
     get star(): string {
         return this.lblStar.text;

@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flReviewProduct",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "5f7e-7ce3-3952-c302",
 			"props": {
 				"children": [
@@ -113,6 +113,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "small_star.png",
 				"usePageVariable": true
 			}
 		},

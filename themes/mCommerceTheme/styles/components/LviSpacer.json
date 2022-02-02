@@ -2,7 +2,6 @@
 	".lviSpacer": {
 		"height": null,
 		"width": null,
-		"backgroundColor": "${backgroundMain}",
 		".small": {
 			"height": 15
 		},

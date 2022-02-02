@@ -14,14 +14,20 @@ export default class FlRateProduct extends FlRateProductDesign {
         this.images.forEach((imageViewStar, index) => {
             imageViewStar.on(ImageView.Events.TouchEnded, () => {
                 this.rating = index + 1;
-                // for (let i = 0; i <= index; i++) {
-                //     this.images[i].image = 'images://small_star_96.png';
-                // }
-                for (let i = 0; i <= this.rating - 1; i++) {
-                    this.images[i].image = 'images://small_star_96.png';
-                }
-                for (let i = index + 1; i < 5; i++) {
-                    this.images[i].image = 'images://small_star_empty_96.png';
+                for (let i = 0; i < 5; i++) {
+                    if (i <= index) {
+                        console.log('IF');
+                        console.info('i -> ', i);
+                        console.info('index -> ', index);
+                        console.info('this.rating -> ', this.rating);
+                        this.images[i].image = 'images://small_star_96.png';
+                    } else {
+                        console.log('ELSE');
+                        console.info('i -> ', i);
+                        console.info('index -> ', index);
+                        console.info('this.rating -> ', this.rating);
+                        this.images[i].image = 'images://small_star_empty_96.png';
+                    }
                 }
             });
         });
