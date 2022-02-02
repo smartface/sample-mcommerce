@@ -1,0 +1,22 @@
+{
+	".flRateProduct": {
+		"flexProps": {},
+		"height": 170,
+		"&-lblHeader": {
+			"height": 30
+		},
+		"&-flStars": {
+			"height": 50,
+			"flexProps": {
+				"flexDirection": "ROW"
+			},
+			"&-image": {
+				"width": 40,
+				"height": 40
+			}
+		},
+		"&-tbComment": {
+			"height": 70
+		}
+	}
+}

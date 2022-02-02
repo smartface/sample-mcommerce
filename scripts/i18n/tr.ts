@@ -129,5 +129,9 @@ SMF.i18n.defineLanguage('tr', {
     emptyReviewList: 'Bu ürünün henüz incelemesi yok.',
     addReview: 'Değerlendir',
     reviewHeader: 'Değerlendirmeler',
-    addReviewHeader: 'Değerlendirme Yap'
+    addReviewHeader: 'Değerlendirme Yap',
+    addToCart: 'Sepete Eklendi',
+    rateProduct: 'Ürünü değerlendirin',
+    tbComment: 'Yorum yaz',
+    alreadySendReview: 'Bu ürünü zaten değerlendirdin.'
 });

@@ -40,7 +40,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.btnAddToBasket.on(Button.Events.Press, () => {
             store.dispatch(storeActions.AddToBasket({ product: this.product, count: this.productCounter }));
             this.toggleToast(true);
-            this.flAlert.title = 'Sepete Eklendi';
+            this.flAlert.title = global.lang.addToCart;
             setTimeout(() => {
                 this.toggleToast(false);
             }, 2000);
@@ -63,8 +63,8 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.lvMain.refreshEnabled = false;
         this.lvMain.onRowSelected = (item: LviPdOverviewSection, index) => {
             if (item instanceof LviPdOverviewSection) {
-                if (item.overviewTitle === 'Reviews') {
-                    this.router.push('reviews', { productId: this.product._id });
+                if (item.overviewTitle === global.lang.reviewHeader) {
+                    this.router.push('reviews', { productId: this.product._id, product: this.product });
                 } else {
                     alert({
                         title: 'ALERT',

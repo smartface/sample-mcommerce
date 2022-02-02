@@ -154,3 +154,24 @@ export async function getReviewsByProduct(productId: string): Promise<any> {
         throw err;
     }
 }
+
+export async function postProductReview(productId: string, star: number, comment: string): Promise<any> {
+    try {
+        const response = await sc.request(`/commerce/review`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${getAccessToken()}`
+            },
+            body: {
+                productId,
+                star,
+                comment
+            }
+        });
+        return response;
+    } catch (err) {
+        genericErrorHandler(err);
+        throw err;
+    }
+}

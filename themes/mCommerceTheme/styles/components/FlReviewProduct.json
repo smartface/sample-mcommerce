@@ -1,0 +1,39 @@
+{
+  ".flReviewProduct": {
+    "height": 90,
+    "flexProps": {
+      "flexDirection": "ROW",
+      "alignItems": "CENTER"
+    },
+    "&-imgProduct": {
+      "height": 70,
+      "width": 70,
+      "marginRight": 15
+    },
+    "&-flProductInfo": {
+      "height": 60,
+      "flexProps": {
+        "flexGrow": 1
+      },
+      "&-lblProductName": {
+        "height": 30
+      },
+      "&-flProductRate": {
+        "height": 30,
+        "flexProps": {
+          "flexDirection": "ROW"
+        },
+        "&-imgStar": {
+          "width": 25,
+          "height": 25
+        },
+        "&-lblRate": {
+          "flexProps": {
+            "flexGrow": 1
+          },
+          "height": 30
+        }
+      }
+    }
+  }
+}

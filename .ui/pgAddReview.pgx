@@ -1,20 +1,25 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page .paddingHorizontal",
 			"id": "8874-9476-fc66-5308",
 			"initialized": true,
 			"props": {
 				"children": [
 					"1967-d11b-7550-d2f5",
-					"a01d-991b-2f1c-4972"
+					"a01d-991b-2f1c-4972",
+					"35e2-e8a3-b518-4a79",
+					"d7ed-3fcb-f6c1-be9f"
 				],
 				"name": "pgAddReview",
 				"orientation": "PORTRAIT",
-				"parent": null
+				"parent": null,
+				"safeAreaEnabled": true
 			},
 			"type": "Page",
-			"userProps": {},
+			"userProps": {
+				"safeAreaEnabled": true
+			},
 			"version": "0.0.1.a"
 		},
 		{
@@ -42,6 +47,53 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgAddReview"
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flReviewAndRateProduct",
+			"hiddenComponent": false,
+			"id": "35e2-e8a3-b518-4a79",
+			"props": {
+				"children": [],
+				"name": "flReviewAndRateProduct",
+				"parent": "8874-9476-fc66-5308",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flReviewAndRateProduct",
+				"id": "e268-20ad-2da1-0b48"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"testId": "AkM_rGVhZ",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button-main",
+			"id": "d7ed-3fcb-f6c1-be9f",
+			"oldName": "btnSendRevi",
+			"props": {
+				"children": [],
+				"name": "btnSendReview",
+				"parent": "8874-9476-fc66-5308",
+				"text": "button1",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"testId": "Ve47S1GBZ",
+				"text": "button1",
+				"usePageVariable": true
 			}
 		}
 	]

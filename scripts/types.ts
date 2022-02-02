@@ -35,6 +35,7 @@ export type Product = {
     discountPrice?: number;
     discountTag?: string;
     count?: number;
+    rating?: number;
 };
 export type AccountMenus = {
     menuId: number;

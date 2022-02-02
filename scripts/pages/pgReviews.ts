@@ -5,7 +5,7 @@ import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import LviReview from 'components/LviReview';
 import LviAddReviewSection from 'components/LviAddReviewSection';
-import { Review } from 'types';
+import { Product, Review } from 'types';
 import { themeService } from 'theme';
 import { getReviewsByProduct } from 'service/commerce';
 
@@ -39,7 +39,10 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             processorItems.push(
                 ListViewItems.getLviEmptyItem({
                     emptyImage: 'images://empty_star.png',
-                    emptyTitle: global.lang.emptyReviewList
+                    emptyTitle: global.lang.emptyReviewList,
+                    mainOnClick: () => {
+                        this.router.push('addReview', { product: this.route.getState().routeData?.product });
+                    }
                 })
             );
         } else {
@@ -47,10 +50,9 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
                 ListViewItems.getLviAddReviewSection({
                     //review: get average review
                     review: '4.8',
-                    image: 'images://small_star.png',
-                    addReviewText: global.lang.addReview,
+                    image: 'images://small_star_96.png',
                     mainOnClick: () => {
-                        this.router.push('addReview');
+                        this.router.push('addReview', { product: this.route.getState().routeData?.product });
                     }
                 })
             );

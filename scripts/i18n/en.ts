@@ -131,5 +131,9 @@ SMF.i18n.defineLanguage('en', {
     emptyReviewList: 'This product has no review yet.',
     addReview: 'Add review',
     reviewHeader: 'Reviews',
-    addReviewHeader: 'Add Review'
+    addReviewHeader: 'Add Review',
+    addToCart: 'Add to Cart',
+    rateProduct: 'Rate product',
+    tbComment: 'Comment',
+    alreadySendReview: 'You already rate this product.'
 });

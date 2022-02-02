@@ -1,0 +1,140 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flReviewProduct",
+			"hiddenComponent": true,
+			"id": "5f7e-7ce3-3952-c302",
+			"props": {
+				"children": [
+					"8a1e-060c-b560-9189",
+					"5219-dc66-d146-1ec5"
+				],
+				"name": "flReviewProduct",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-imageView .flReviewProduct-imgProduct",
+			"id": "8a1e-060c-b560-9189",
+			"oldName": "imgProdu",
+			"props": {
+				"children": [],
+				"name": "imgProduct",
+				"parent": "5f7e-7ce3-3952-c302",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flReviewProduct-flProductInfo",
+			"id": "5219-dc66-d146-1ec5",
+			"oldName": "flProductInf",
+			"props": {
+				"children": [
+					"e96c-ed7b-c55b-0532",
+					"58cd-e11f-e68a-da19"
+				],
+				"name": "flProductInfo",
+				"parent": "5f7e-7ce3-3952-c302",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flReviewProduct-flProductInfo-lblProductName .review.name",
+			"id": "e96c-ed7b-c55b-0532",
+			"oldName": "lblProductN",
+			"props": {
+				"children": [],
+				"name": "lblProductName",
+				"parent": "5219-dc66-d146-1ec5",
+				"text": "product name",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "product name",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flReviewProduct-flProductInfo-flProductRate",
+			"id": "58cd-e11f-e68a-da19",
+			"oldName": "flProductRa",
+			"props": {
+				"children": [
+					"016d-58b8-a9c2-8470",
+					"ed65-222d-0d76-2434"
+				],
+				"name": "flProductRate",
+				"parent": "5219-dc66-d146-1ec5",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView .flReviewProduct-flProductInfo-flProductRate-imgStar",
+			"id": "016d-58b8-a9c2-8470",
+			"oldName": "imgSta",
+			"props": {
+				"children": [],
+				"name": "imgStar",
+				"parent": "58cd-e11f-e68a-da19",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flReviewProduct-flProductInfo-flProductRate-lblRate .review.star",
+			"id": "ed65-222d-0d76-2434",
+			"oldName": "lblRa",
+			"props": {
+				"children": [],
+				"name": "lblRate",
+				"parent": "58cd-e11f-e68a-da19",
+				"text": "5",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "5",
+				"usePageVariable": true
+			}
+		}
+	]
+}

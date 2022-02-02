@@ -244,21 +244,15 @@
 			"style": "Bold"
 		},
 		".name": {
-			"font": {
-				"size": 18
-			},
 			"textColor": "${textDark}"
 		},
 		".star": {
 			"font": {
-				"size": 14
+				"size": 16
 			},
 			"textColor": "${textDark}"
 		},
 		".addReview": {
-			"font": {
-				"size": 18
-			},
 			"textColor": "${green}"
 		},
 		".tvComment": {
@@ -269,6 +263,13 @@
 			},
 			"backgroundColor": "${backgroundSecondary}",
 			"textColor": "${textDark}"
+		},
+		".tb": {
+			"font": {
+				"size": 16
+			},
+			"textColor": "${textDark}",
+			"hintTextColor": "${textLight}"
 		}
 	}
 }
