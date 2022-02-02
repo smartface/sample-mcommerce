@@ -39,7 +39,6 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.headerBar.setItems([rightItem]);
     }
     addToBasket() {
-        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnAddToBasket.on(Button.Events.Press, () => {
             store.dispatch(storeActions.AddToBasket({ product: this.product, count: this.productCounter }));
             this.toggleToast(true);

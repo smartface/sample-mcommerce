@@ -7,7 +7,6 @@ import { themeService } from 'theme';
 export default class PgWelcome extends withDismissAndBackButton(PgWelcomeDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
-        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnStart.on(Button.Events.Press, () => {
             this.router.push('pgLogin');
         });

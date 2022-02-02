@@ -21,7 +21,6 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         this.lblRouteLogin.on(View.Events.TouchEnded, () => {
             this.router.push('pgLogin');
         });
-        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnSignUp.on(Button.Events.Press, () => {
             this.initUserSignup();
         });
