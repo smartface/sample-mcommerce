@@ -61,10 +61,10 @@
   dependencies:
     "@smartface/core" "^1.0.0"
 
-"@smartface/native@4.4.1-alpha.2":
-  version "4.4.1-alpha.2"
-  resolved "https://registry.yarnpkg.com/@smartface/native/-/native-4.4.1-alpha.2.tgz#fb3aa51db778e0bf3e05c5e571232af9ed47f827"
-  integrity sha512-jpdTTKjxXpc1ut6esl/SqlxotjTxerhKgSWBC0Dy92bd9jViHuRJhg2MSLgoc8Wq+2+qO4N0c02s3BIuY0kFJg==
+"@smartface/native@4.4.1-beta.0":
+  version "4.4.1-beta.0"
+  resolved "https://registry.yarnpkg.com/@smartface/native/-/native-4.4.1-beta.0.tgz#0ee3aac285be3330d2a6b91906b2dcd5cacd8518"
+  integrity sha512-0Yi8UOHNc7hUNhdummMa7X0YtD4wLtYbsk9MhfAvbDhMqYAZS6DLjFGrnWQmLSNSHk0nYxeHb85Cf752LAbo8w==
   dependencies:
     events "^3.3.0"
 
