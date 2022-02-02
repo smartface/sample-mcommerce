@@ -52,7 +52,8 @@
 		"marginBottom": null,
 		"flexProps": {
 			"positionType": "ABSOLUTE"
-		}
+		},
+		"backgroundColor": "${separator}"
 	},
 	".notVisible": {
 		"visible": false

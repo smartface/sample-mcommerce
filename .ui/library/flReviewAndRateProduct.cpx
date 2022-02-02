@@ -16,7 +16,11 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 17,
+				"top": 66
+			}
 		},
 		{
 			"className": ".sf-flexLayout .flReviewProduct",

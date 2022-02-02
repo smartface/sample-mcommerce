@@ -63,7 +63,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.lvMain.refreshEnabled = false;
         this.lvMain.onRowSelected = (item: LviPdOverviewSection, index) => {
             if (item instanceof LviPdOverviewSection) {
-                if (item.overviewTitle === global.lang.reviewHeader) {
+                if (item.overviewTitle === global.lang.reviews) {
                     this.router.push('reviews', { productId: this.product._id, product: this.product });
                 } else {
                     alert({
