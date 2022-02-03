@@ -7,6 +7,7 @@ const originalHeight = themeService.getStyle('.lviHomeProducts').height;
 import System from '@smartface/native/device/system';
 import { getProductImageUrl } from 'service/commerce';
 import { Product } from 'types';
+import Screen from '@smartface/native/device/screen';
 export default class LviHomeProducts extends LviHomeProductsDesign {
     pageName?: string | undefined;
     private __onProductClick: (product: any) => void;
@@ -41,6 +42,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
         this.__onProductClick = value;
     }
     private initGridView() {
+        this.gvProducts.layoutManager.onItemLength = () => Screen.width / 2;
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             GridViewItem.itemTag = this.items[productIndex].discountTag;
             GridViewItem.itemTitle = this.items[productIndex].name;

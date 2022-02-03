@@ -1,7 +1,7 @@
 {
   ".flProductItem": {
     "paddingTop": 10,
-    "marginRight": 15,
+    "marginRight": 10,
     "&-flProductItemWrapper": {
       "paddingLeft": 10,
       "paddingRight": 10,
@@ -212,6 +212,7 @@
     "width": null,
     "flexProps": {
       "flexGrow": 1
-    }
+    },
+    "marginLeft": 10
   }
 }
