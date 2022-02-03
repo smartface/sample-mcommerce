@@ -14,8 +14,8 @@ type ApplicationCallReceivedParams = {
 Application.on(Application.Events.ApplicationCallReceived, (params: ApplicationCallReceivedParams) => deeplinkHandler(params));
 
 export function deeplinkHandler(params: ApplicationCallReceivedParams) {
+    setTimeout(() => alert('selam' + JSON.stringify({ ...params })), 5000);
     const { productId } = URI(params?.url || '').query(true);
-    setTimeout(() => alert(JSON.stringify({ ...params, productId })), 5000);
     if (productId) {
         productDetailHandler(productId);
     }
