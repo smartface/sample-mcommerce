@@ -21,12 +21,12 @@
 			},
 			"transparent": true,
 			"titleColor": "${transparent}",
-            "backgroundColor": "${transparent}",
+			"backgroundColor": "${transparent}",
 			"leftItemEnabled": "true",
-            ".white": {
-                "borderVisibility": false,
-                "itemColor": "${white}"
-            }
+			".white": {
+				"borderVisibility": false,
+				"itemColor": "${white}"
+			}
 		},
 		".dismiss": {
 			"image": "close_icon.png"
