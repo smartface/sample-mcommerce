@@ -11,6 +11,7 @@ import { autoLogin } from 'service/auth';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { getBannerImage, getBanners, getShowcases } from 'service/commerce';
 import LviGenericSlider from 'components/LviGenericSlider';
+import { BANNER_ASPECT_RATIO } from 'constants';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -25,7 +26,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     sliderHeight = 0;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.sliderHeight = LviGenericSlider.calculateHeightWithAspectRatio(3);
+        this.sliderHeight = LviGenericSlider.calculateHeightWithAspectRatio(BANNER_ASPECT_RATIO);
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
