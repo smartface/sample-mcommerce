@@ -11,6 +11,9 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
 import { getProduct, getProductImageUrl } from 'service/commerce';
 import { Product } from 'types';
+import Share from '@smartface/native/global/share';
+import { generateProductDeeplinkUrl } from 'lib/deeplink';
+
 type Processor =
     | ListViewItems.ProcessorTypes.ILviGenericSlider
     | ListViewItems.ProcessorTypes.ILviPdTitleLikeSection
@@ -29,13 +32,13 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     addRightItem() {
         const rightItem = new HeaderBarItem({
             image: Image.createFromFile('images://share.png'),
+            onPress: () => Share.shareText(generateProductDeeplinkUrl(this.product._id), this, []),
             //Native › NTVE-435
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
         this.headerBar.setItems([rightItem]);
     }
     addToBasket() {
-        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnAddToBasket.on(Button.Events.Press, () => {
             store.dispatch(storeActions.AddToBasket({ product: this.product, count: this.productCounter }));
             this.toggleToast(true);

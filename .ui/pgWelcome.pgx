@@ -21,8 +21,7 @@
 				"orientation": "PORTRAIT",
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a",
-			"degree": 0
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -35,11 +34,10 @@
 				"parent": "7356-6c24-0e4a-1427"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar.transparent",
+			"className": ".sf-headerBar.transparent.white",
 			"id": "c9be-d152-52cc-8c62",
 			"props": {
 				"children": [],
@@ -48,8 +46,7 @@
 				"parent": "7356-6c24-0e4a-1427"
 			},
 			"type": "HeaderBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView #pgWelcome-imagebackground",
@@ -65,8 +62,7 @@
 				"image": "welcome.png",
 				"testId": "JvD12jmVV",
 				"usePageVariable": true
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-flexLayout #pgWelcome-container",
@@ -86,8 +82,7 @@
 			"userProps": {
 				"testId": "1lYMqIp1o",
 				"usePageVariable": true
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-flexLayout #pgWelcome-container-imageWrapper",
@@ -101,8 +96,23 @@
 				"parent": "8e00-78aa-472b-5b87"
 			},
 			"type": "FlexLayout",
-			"userProps": {},
-			"degree": 2
+			"userProps": {}
+		},
+		{
+			"className": ".sf-imageView #pgWelcome-container-logo",
+			"id": "7d85-5648-b169-d2f0",
+			"props": {
+				"children": [],
+				"name": "imgLogo",
+				"parent": "26eb-887e-6f7e-22ea",
+				"usePageVariable": true
+			},
+			"type": "ImageView",
+			"userProps": {
+				"image": "iconlarge.png",
+				"testId": "oj4Z32W7h",
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-label #pgWelcome-container-lblWelcome .welcome.main",
@@ -117,8 +127,7 @@
 			"userProps": {
 				"testId": "H4AWmKXYB",
 				"usePageVariable": true
-			},
-			"degree": 2
+			}
 		},
 		{
 			"className": ".sf-label #pgWelcome-container-subtext .welcome.sub",
@@ -133,8 +142,7 @@
 			"userProps": {
 				"testId": "d1b8nai5i",
 				"usePageVariable": true
-			},
-			"degree": 2
+			}
 		},
 		{
 			"className": ".sf-button .sf-button-main",
@@ -149,25 +157,7 @@
 			"userProps": {
 				"testId": "kTjgNUe-y",
 				"usePageVariable": true
-			},
-			"degree": 2
-		},
-		{
-			"className": ".sf-imageView #pgWelcome-container-logo",
-			"id": "7d85-5648-b169-d2f0",
-			"props": {
-				"children": [],
-				"name": "imgLogo",
-				"parent": "26eb-887e-6f7e-22ea",
-				"usePageVariable": true
-			},
-			"type": "ImageView",
-			"userProps": {
-				"image": "iconlarge.png",
-				"usePageVariable": true,
-				"testId": "oj4Z32W7h"
-			},
-			"degree": 3
+			}
 		}
 	]
 }

@@ -11,7 +11,8 @@ function initWaitDialog() {
     let dialog = new Dialog({
         android: {
             themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
-            cancelable: false
+            cancelable: false,
+            isTransparent: true
         }
     }) as StyleContextComponentType<Dialog>;
     const component = new FlWaitDialog();
@@ -19,9 +20,8 @@ function initWaitDialog() {
     themeService.addGlobalComponent(dialog.layout as any, 'waitDialog');
     (dialog.layout as StyleContextComponentType<FlexLayout>).dispatch({
         type: 'pushClassNames',
-        classNames: '.dialog'
+        classNames: '.dialog-transparent'
     });
-    dialog.android.isTransparent = false;
     component.onTouch = () => {
         return true;
     };
