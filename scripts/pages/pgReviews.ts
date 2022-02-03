@@ -21,6 +21,7 @@ type Processor =
 export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign) {
     data: Processor;
     reviews: Review[];
+    rightItem: HeaderBarItem;
     constructor(private router?: Router, private route?: Route) {
         super({});
     }
