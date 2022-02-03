@@ -20,8 +20,10 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
     data: Processor;
     reviews: Review[];
     rightItem: HeaderBarItem;
+    rating: number;
     constructor(private router?: Router, private route?: Route) {
         super({});
+        this.rating = this.route.getState().routeData?.product?.rating;
     }
     addRightItem() {
         this.rightItem = new HeaderBarItem({
@@ -67,18 +69,18 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
         } else {
             processorItems.push(
                 ListViewItems.getLviReviewProduct({
-                    productName: this.route.getState().routeData?.product.name,
+                    productName: this.route.getState().routeData?.product?.name,
                     productImage: getProductImageUrl(this.route.getState().routeData?.product.images[0]),
-                    productRate: this.route.getState().routeData?.product.rating.toString() || NO_RATE.toString()
+                    productRate: this.rating?.toString() || NO_RATE.toString()
                 })
             );
-            this.reviews.forEach((review) =>
+            this.reviews.forEach((review, index, arr) =>
                 processorItems.push(
                     ListViewItems.getLviReview({
                         name: review.name,
                         star: `${review.star}`,
                         comment: review.comment,
-                        showSeparator: true
+                        showSeparator: arr.length - 1 !== index
                     })
                 )
             );
@@ -90,6 +92,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             const reviewsResponse = await getReviewsByProduct(this.route.getState().routeData.productId);
             if (reviewsResponse) {
                 this.reviews = reviewsResponse;
+                this.rating = this.reviews.reduce((prev, curr) => prev + curr.star, 0) / this.reviews.length;
             }
             return reviewsResponse;
         } catch (error) {

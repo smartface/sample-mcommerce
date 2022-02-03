@@ -51,7 +51,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout .flRateProduct",
 			"hiddenComponent": false,
 			"id": "5e9b-8dc5-8c52-c5bb",
 			"props": {

@@ -24,7 +24,6 @@
 		},
 		{
 			"className": ".sf-imageView .flEmptyItem-imgEmpty",
-			"hiddenComponent": false,
 			"id": "a272-f6fb-24ce-16d4",
 			"props": {
 				"children": [],

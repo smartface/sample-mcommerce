@@ -10,7 +10,7 @@
         "alignItems": "CENTER",
         "positionType": "ABSOLUTE"
       },
-      "height": 20,
+      "height": null,
       "&-lblName": {
         "flexProps": {
           "flexGrow": 5

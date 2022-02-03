@@ -1,48 +1,48 @@
 {
-	".gviHomeCategoryItem": {
-		"flexProps": {
-			"flexGrow": 1
-		},
-		"height": 105,
-		"testId": "8BqVLbuHe",
-		"borderRadius": 18,
-		"&-flHomeCategoryWrapper": {
-			"flexProps": {
-				"flexGrow": 1,
-				"flexDirection": "ROW",
-				"justifyContent": "FLEX_START",
-				"alignItems": "CENTER"
-			},
-			"height": null,
-			"paddingBottom": 10,
-			"paddingLeft": 10,
-			"paddingRight": 10,
-			"paddingTop": 10,
-			"testId": "8P8n8FpPp",
-			"&-imgLeft": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": 80,
-				"testId": "-ICBM385d",
-				"width": null
-			},
-			"&-lblCategoryName": {
-				"flexProps": {
-					"flexGrow": 2
-				},
-				"font": {
-					"size": 20,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"marginLeft": 10,
-				"testId": "NrZ-2VxaH",
-				"textColor": "${categoryText}"
-			}
-		},
-		"minWidth": 250
-	}
+  ".gviHomeCategoryItem": {
+    "flexProps": {
+      "flexGrow": 1
+    },
+    "height": 105,
+    "testId": "8BqVLbuHe",
+    "borderRadius": 18,
+    "&-flHomeCategoryWrapper": {
+      "flexProps": {
+        "flexGrow": 1,
+        "flexDirection": "ROW",
+        "justifyContent": "FLEX_START",
+        "alignItems": "CENTER"
+      },
+      "height": null,
+      "paddingBottom": 10,
+      "paddingLeft": 10,
+      "paddingRight": 10,
+      "paddingTop": 10,
+      "testId": "8P8n8FpPp",
+      "&-imgLeft": {
+        "flexProps": {
+          "flexGrow": 1
+        },
+        "height": 80,
+        "testId": "-ICBM385d",
+        "width": null
+      },
+      "&-lblCategoryName": {
+        "flexProps": {
+          "flexGrow": 2
+        },
+        "font": {
+          "size": 20,
+          "bold": true,
+          "italic": false,
+          "family": "Nunito",
+          "style": "Bold"
+        },
+        "marginLeft": 10,
+        "testId": "NrZ-2VxaH",
+        "textColor": "${categoryText}"
+      }
+    },
+    "minWidth": 250
+  }
 }

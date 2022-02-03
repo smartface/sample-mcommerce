@@ -1,24 +1,24 @@
 {
-	".lviSpacer": {
-		"height": null,
-		"width": null,
-		".small": {
-			"height": 15
-		},
-		".medium": {
-			"height": 20
-		},
-		".xSmall": {
-			"height": 10
-		},
-		".xxSmall": {
-			"height": 5
-		},
-		".large": {
-			"height": 30
-		},
-		".xLarge": {
-			"height": 35
-		}
-	}
+  ".lviSpacer": {
+    "height": null,
+    "width": null,
+    ".small": {
+      "height": 15
+    },
+    ".medium": {
+      "height": 20
+    },
+    ".xSmall": {
+      "height": 10
+    },
+    ".xxSmall": {
+      "height": 5
+    },
+    ".large": {
+      "height": 30
+    },
+    ".xLarge": {
+      "height": 35
+    }
+  }
 }

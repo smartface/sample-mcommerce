@@ -28,7 +28,8 @@
         "&-imgStar": {
           "width": 25,
           "height": 25,
-          "imageFillType": "ASPECTFIT"
+          "imageFillType": "ASPECTFIT",
+          "marginRight": 5
         },
         "&-lblRate": {
           "flexProps": {

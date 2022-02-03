@@ -134,5 +134,6 @@ SMF.i18n.defineLanguage('tr', {
     rateProduct: 'Ürünü değerlendirin',
     tbComment: 'Yorum yaz',
     alreadySendReview: 'Bu ürünü zaten değerlendirdin.',
-    reviewsServiceError: 'Değerlendirmeler servisinde bir hata oluştu.'
+    reviewsServiceError: 'Değerlendirmeler servisinde bir hata oluştu.',
+    reviewSent: 'Değerlendirmeniz başarıyla gönderildi.'
 });

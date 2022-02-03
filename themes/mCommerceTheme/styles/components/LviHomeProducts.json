@@ -1,13 +1,13 @@
 {
-	".lviHomeProducts": {
-		"height": 250,
-		"flexProps": {
-			"alignItems": "STRETCH",
-			"justifyContent": "CENTER",
-			"alignContent": "CENTER",
-			"flexWrap": "NOWRAP"
-		},
-		"testId": "Sct2y2MyI",
-		"width": "383"
-	}
+  ".lviHomeProducts": {
+    "height": 250,
+    "flexProps": {
+      "alignItems": "STRETCH",
+      "justifyContent": "CENTER",
+      "alignContent": "CENTER",
+      "flexWrap": "NOWRAP"
+    },
+    "testId": "Sct2y2MyI",
+    "width": "383"
+  }
 }

@@ -1,20 +1,19 @@
 {
-  "printWidth": 140,
-  "proseWrap": "always",
-  "singleQuote": true,
-  "tabWidth": 4,
-  "useTabs": false,
-  "trailingComma": "none",
-  "semi": true,
-  "endOfLine": "lf",
-  "arrowParens": "always",
-  "overrides": [
-    {
-      "files": ["*.cpx", "*.pgx", "*.json"],
-      "options": {
-        "tabWidth": 4,
-        "useTabs": true
-      }
-    }
-  ]
+	"printWidth": 140,
+	"proseWrap": "always",
+	"singleQuote": true,
+	"tabWidth": 4,
+	"useTabs": false,
+	"trailingComma": "none",
+	"semi": true,
+	"endOfLine": "lf",
+	"arrowParens": "always",
+	"overrides": [
+		{
+			"files": ["*.cpx", "*.pgx", "*.json"],
+			"options": {
+				"tabWidth": 2
+			}
+		}
+	]
 }

@@ -135,6 +135,7 @@ SMF.i18n.defineLanguage('en', {
     addToCart: 'Add to Cart',
     rateProduct: 'Rate product',
     tbComment: 'Comment',
-    alreadySendReview: 'You already rate this product.',
-    reviewsServiceError: 'An error occurred on reviews service.'
+    alreadySendReview: 'You already rated this product.',
+    reviewsServiceError: 'An error occurred on reviews service.',
+    reviewSent: 'Your review has been sent succesfully.'
 });

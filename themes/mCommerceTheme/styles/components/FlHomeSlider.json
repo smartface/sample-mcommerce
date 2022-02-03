@@ -1,7 +1,7 @@
 {
-	".flHomeSlider": {
-		"flexProps": {
-			"flexGrow": 1
-		}
-	}
+  ".flHomeSlider": {
+    "flexProps": {
+      "flexGrow": 1
+    }
+  }
 }

@@ -16,7 +16,11 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 2.78,
+				"top": 63.89
+			}
 		},
 		{
 			"className": ".sf-imageView .flReviewProduct-imgProduct",

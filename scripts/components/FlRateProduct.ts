@@ -1,4 +1,3 @@
-import Image from '@smartface/native/ui/image';
 import ImageView from '@smartface/native/ui/imageview';
 import FlRateProductDesign from 'generated/my-components/FlRateProduct';
 
@@ -14,20 +13,8 @@ export default class FlRateProduct extends FlRateProductDesign {
         this.images.forEach((imageViewStar, index) => {
             imageViewStar.on(ImageView.Events.TouchEnded, () => {
                 this.rating = index + 1;
-                for (let i = 0; i < 5; i++) {
-                    if (i <= index) {
-                        console.log('IF');
-                        console.info('i -> ', i);
-                        console.info('index -> ', index);
-                        console.info('this.rating -> ', this.rating);
-                        this.images[i].image = 'images://small_star_96.png';
-                    } else {
-                        console.log('ELSE');
-                        console.info('i -> ', i);
-                        console.info('index -> ', index);
-                        console.info('this.rating -> ', this.rating);
-                        this.images[i].image = 'images://small_star_empty_96.png';
-                    }
+                for (let i = 0; i < this.images.length; i++) {
+                    this.images[i].image = i <= index ? 'images://small_star_96.png' : 'images://small_star_empty_96.png';
                 }
             });
         });

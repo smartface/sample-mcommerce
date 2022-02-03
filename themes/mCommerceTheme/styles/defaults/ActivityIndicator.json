@@ -1,16 +1,16 @@
 {
-	".sf-activityIndicator": {
-		"width": 21,
-		"height": 21,
-		"color": "${main}",
-		"flexProps": {
-			"positionType": "RELATIVE",
-			"alignSelf": "CENTER"
-		},
-		"ios": {
-			"activityIndicatorViewStyle": "NORMAL"
-		},
-		"minHeight": 21,
-		"minWidth": 21
-	}
+  ".sf-activityIndicator": {
+    "width": 21,
+    "height": 21,
+    "color": "${main}",
+    "flexProps": {
+      "positionType": "RELATIVE",
+      "alignSelf": "CENTER"
+    },
+    "ios": {
+      "activityIndicatorViewStyle": "NORMAL"
+    },
+    "minHeight": 21,
+    "minWidth": 21
+  }
 }
