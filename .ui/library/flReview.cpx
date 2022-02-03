@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flReview",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "391c-0052-8b78-9389",
 			"props": {
 				"children": [
@@ -45,7 +45,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .flReview-flContainer-lblName .review.name",
+			"className": ".sf-label .flReview-flHeader-flContainer-lblName .review.name",
 			"id": "3690-94a8-2f63-c4d9",
 			"props": {
 				"children": [],
@@ -64,7 +64,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flReview-flContainer",
+			"className": ".sf-flexLayout .flReview-flHeader-flContainer",
 			"id": "849f-c47b-d828-9450",
 			"props": {
 				"children": [
@@ -84,7 +84,7 @@
 			}
 		},
 		{
-			"className": ".sf-imageView .flReview-flContainer-imgStar",
+			"className": ".sf-imageView .flReview-flHeader-flContainer-imgStar",
 			"id": "5a83-bfe5-dd20-07e3",
 			"oldName": "imgSt",
 			"props": {
@@ -104,7 +104,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .flReview-flContainer-lblStar .review.star",
+			"className": ".sf-label .flReview-flHeader-flContainer-lblStar .review.star",
 			"id": "3941-683d-ea82-15eb",
 			"props": {
 				"children": [],
