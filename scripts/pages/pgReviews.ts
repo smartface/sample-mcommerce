@@ -14,8 +14,7 @@ import store from 'store';
 type Processor =
     | ListViewItems.ProcessorTypes.ILviReviewProduct[]
     | ListViewItems.ProcessorTypes.ILviReview[]
-    | ListViewItems.ProcessorTypes.ILviEmptyItem
-    | ListViewItems.ProcessorTypes.ILviAddReviewSection;
+    | ListViewItems.ProcessorTypes.ILviEmptyItem;
 
 export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign) {
     data: Processor;

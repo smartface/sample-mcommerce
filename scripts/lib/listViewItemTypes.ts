@@ -14,7 +14,6 @@ import LviGenericSlider from '../components/LviGenericSlider';
 import LviPdOverviewSection from '../components/LviPdOverviewSection';
 import LviPdButtonPriceSection from '../components/LviPdButtonPriceSection';
 import LviReview from '../components/LviReview';
-import LviAddReviewSection from '../components/LviAddReviewSection';
 import LviReviewProduct from '../components/LviReviewProduct';
 
 import LviRow1LineLarge from '../components/LviRow1LineLarge';
@@ -38,7 +37,6 @@ export enum LviTypes {
     LVI_ROW1_LINE_LARGE,
     LVI_GENERIC_SLIDER,
     LVI_REVIEW,
-    LVI_ADD_REVIEW_SECTION,
     LVI_REVIEW_PRODUCT
 }
 
@@ -60,7 +58,6 @@ export const LviClasses = {
     [LviTypes.LVI_ROW1_LINE_LARGE]: LviRow1LineLarge,
     [LviTypes.LVI_GENERIC_SLIDER]: LviGenericSlider,
     [LviTypes.LVI_REVIEW]: LviReview,
-    [LviTypes.LVI_ADD_REVIEW_SECTION]: LviAddReviewSection,
     [LviTypes.LVI_REVIEW_PRODUCT]: LviReviewProduct
 };
 
@@ -119,7 +116,6 @@ export namespace ProcessorTypes {
     export interface ILviRow1LineLarge extends IProcessed<LviRow1LineLarge> {}
     export interface ILviGenericSlider extends IProcessed<LviGenericSlider> {}
     export interface ILviReview extends IProcessed<LviReview> {}
-    export interface ILviAddReviewSection extends IProcessed<LviAddReviewSection> {}
     export interface ILviReviewProduct extends IProcessed<LviReviewProduct> {}
 }
 
@@ -291,17 +287,6 @@ export function getLviReview(item: Partial<LviReview>): ProcessorTypes.ILviRevie
             borders: []
         },
         height: LviReview.getHeight()
-    };
-}
-
-export function getLviAddReviewSection(item: Partial<LviAddReviewSection>): ProcessorTypes.ILviAddReviewSection {
-    return {
-        type: 'LVI_ADD_REVIEW_SECTION',
-        properties: {
-            ...item,
-            borders: []
-        },
-        height: LviAddReviewSection.getHeight()
     };
 }
 
