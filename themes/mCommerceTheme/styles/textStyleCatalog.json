@@ -208,7 +208,7 @@
 			"family": "Nunito",
 			"bold": true,
 			"italic": false,
-			"size": 12,
+			"size": 18,
 			"style": "Bold"
 		},
 		"textColor": "${white}"

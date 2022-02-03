@@ -2,6 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviReviewProduct .paddingHorizontal",
+			"hiddenComponent": true,
 			"id": "8618-402f-0792-35f3",
 			"props": {
 				"children": [
