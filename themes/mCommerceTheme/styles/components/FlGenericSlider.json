@@ -1,17 +1,17 @@
 {
-  ".flGenericSlider": {
-    "&-flRadiusDotIndicatorWrapper": {
-      "height": 24,
-      "flexProps": {
-        "positionType": "ABSOLUTE",
-        "flexDirection": "ROW",
-        "justifyContent": "CENTER",
-        "alignContent": "CENTER",
-        "alignItems": "STRETCH"
-      },
-      "left": 0,
-      "right": 0,
-      "bottom": 0
-    }
-  }
+	".flGenericSlider": {
+		"&-flRadiusDotIndicatorWrapper": {
+			"height": 24,
+			"flexProps": {
+				"positionType": "ABSOLUTE",
+				"flexDirection": "ROW",
+				"justifyContent": "CENTER",
+				"alignContent": "CENTER",
+				"alignItems": "STRETCH"
+			},
+			"left": 0,
+			"right": 0,
+			"bottom": 0
+		}
+	}
 }
