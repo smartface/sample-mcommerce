@@ -64,5 +64,23 @@
 	".borderColor": {
 		"borderWidth": 1,
 		"borderColor": "${grayBorder}"
+	},
+	".contentInset": {
+		"contentInset": {
+			"top": 15,
+			"bottom": 15
+		},
+		"&-top": {
+			"contentInset": {
+				"top": 15,
+				"bottom": 0
+			}
+		},
+		"&-bottom": {
+			"contentInset": {
+				"bottom": 15,
+				"top": 0
+			}
+		}
 	}
 }

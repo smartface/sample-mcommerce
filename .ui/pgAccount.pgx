@@ -50,7 +50,7 @@
 			}
 		},
 		{
-			"className": ".sf-listView",
+			"className": ".sf-listView .contentInset-top",
 			"id": "fc95-5a4f-f83c-ea45",
 			"props": {
 				"children": [],

@@ -1,9 +1,9 @@
 {
 	".sf-statusBar": {
 		"android": {
-			"color": "${white}"
+			"color": "${navbar}"
 		},
-		"style": "LIGHTCONTENT",
+		"style": "${statusBarContent}",
 		"visible": true
 	}
 }

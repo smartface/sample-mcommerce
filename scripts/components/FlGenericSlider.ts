@@ -9,12 +9,17 @@ export default class FlGenericSlider extends FlGenericSliderDesign {
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
+        this.dotIndicator.style = 'main';
     }
     get images(): string[] {
         return this.__images;
     }
     set images(value: string[]) {
         this.__images = value;
+        this.dotIndicator.size = this.__images.length;
+        if (System.OS === System.OSType.IOS) {
+            this.applyLayout();
+        }
         this.initSlider();
     }
     private initSlider() {
@@ -23,7 +28,9 @@ export default class FlGenericSlider extends FlGenericSliderDesign {
             page: this,
             flexGrow: 1,
             pages: this.images.map((image: string) => pgGenericSlider({ url: image })),
-            onPageSelected: (index: number) => {}
+            onPageSelected: (index: number) => {
+                this.dotIndicator.currentIndex = index;
+            }
         });
         this.flSwipeViewLayout.addChild(swipeView, 'swipeView', '.grow-relative');
         if (System.OS === System.OSType.IOS) {

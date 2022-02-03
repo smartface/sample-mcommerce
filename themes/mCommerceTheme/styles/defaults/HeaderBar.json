@@ -21,7 +21,12 @@
 			},
 			"transparent": true,
 			"titleColor": "${transparent}",
-			"leftItemEnabled": "true"
+			"backgroundColor": "${transparent}",
+			"leftItemEnabled": "true",
+			".white": {
+				"borderVisibility": false,
+				"itemColor": "${white}"
+			}
 		},
 		".dismiss": {
 			"image": "close_icon.png"

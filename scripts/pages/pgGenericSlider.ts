@@ -12,7 +12,7 @@ export default function PgGenericSlider(props) {
                 this.imgSliderItem.loadFromUrl({
                     url,
                     useHTTPCacheControl: true,
-                    fade: true
+                    fade: false
                 });
             } else {
                 this.imgSliderItem.image = image;

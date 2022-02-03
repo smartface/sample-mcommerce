@@ -11,7 +11,6 @@ export default class PgNumber extends withDismissAndBackButton(PgNumberDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
 
-        //@ts-ignore FIX THIS AFTER EVENT FIX TODO
         this.btnRoute.on(Button.Events.Press, () => {
             this.router.push('pgVerification');
         });
