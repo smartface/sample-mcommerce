@@ -11,7 +11,9 @@
       "backgroundColor": "${backgroundMain}",
       "left": 0,
       "testId": "y2_Ae0-c0",
-      "top": 0
+      "top": 0,
+      "paddingLeft": 15,
+      "paddingRight": 15
     }
   }
 }

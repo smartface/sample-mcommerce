@@ -48,7 +48,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-listView .grow .noMargin .lvMain",
+			"className": ".sf-listView .grow .noMargin",
 			"id": "53ac-d037-7a65-6f24",
 			"props": {
 				"children": [],

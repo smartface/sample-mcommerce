@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page .paddingHorizontal",
+			"className": ".sf-page",
 			"id": "e257-a066-7008-14e9",
 			"initialized": true,
 			"props": {
@@ -19,7 +19,8 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -31,7 +32,8 @@
 				"parent": "e257-a066-7008-14e9"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar.main",
@@ -43,7 +45,8 @@
 				"parent": "e257-a066-7008-14e9"
 			},
 			"type": "HeaderBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-gridView #pgCategories-categoriesGrid",
@@ -58,9 +61,10 @@
 			},
 			"type": "GridView",
 			"userProps": {
-				"testId": "vCqvlM2sm",
-				"usePageVariable": true
-			}
+				"usePageVariable": true,
+				"testId": "tJD_vXU24"
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-gridViewItem .gviCategoryItem",
@@ -77,7 +81,8 @@
 				"id": "8d80-6588-b9da-7b16"
 			},
 			"type": "GridViewItem",
-			"userProps": {}
+			"userProps": {},
+			"degree": 2
 		}
 	]
 }
