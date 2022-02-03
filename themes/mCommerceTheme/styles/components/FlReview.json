@@ -2,38 +2,6 @@
   ".flReview": {
     "flexProps": {},
     "height": 80,
-    "&-flContainer": {
-      "flexProps": {
-        "flexDirection": "ROW",
-        "justifyContent": "FLEX_START",
-        "alignContent": "FLEX_START",
-        "alignItems": "CENTER",
-        "positionType": "ABSOLUTE"
-      },
-      "height": null,
-      "&-lblName": {
-        "flexProps": {
-          "flexGrow": 5
-        },
-        "height": 30
-      },
-      "&-lblStar": {
-        "flexProps": {
-          "flexGrow": null
-        },
-        "height": 25,
-        "width": 35
-      },
-      "&-imgStar": {
-        "height": 25,
-        "width": 15,
-        "marginRight": 5
-      },
-      "right": 0,
-      "top": 0,
-      "bottom": 0,
-      "width": 50
-    },
     "&-tvComment": {
       "maxLines": 3,
       "height": 30
@@ -47,6 +15,38 @@
       "flexProps": {
         "flexDirection": "ROW",
         "alignItems": "CENTER"
+      },
+      "&-flContainer": {
+        "flexProps": {
+          "flexDirection": "ROW",
+          "justifyContent": "FLEX_START",
+          "alignContent": "FLEX_START",
+          "alignItems": "CENTER",
+          "positionType": "ABSOLUTE"
+        },
+        "height": null,
+        "&-lblName": {
+          "flexProps": {
+            "flexGrow": 5
+          },
+          "height": 30
+        },
+        "&-lblStar": {
+          "flexProps": {
+            "flexGrow": null
+          },
+          "height": 25,
+          "width": 35
+        },
+        "&-imgStar": {
+          "height": 25,
+          "width": 15,
+          "marginRight": 5
+        },
+        "right": 0,
+        "top": 0,
+        "bottom": 0,
+        "width": 50
       }
     }
   }
