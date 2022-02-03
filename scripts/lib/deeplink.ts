@@ -6,6 +6,7 @@ import genericErrorHandler from './genericErrorHandler';
 import { hideWaitDialog, showWaitDialog } from './waitDialog';
 import config from 'config.json';
 import getCurrentEnvironment from './getCurrentEnvironment';
+import System from '@smartface/native/device/system';
 
 type ApplicationCallReceivedParams = {
     url: string;
@@ -13,11 +14,17 @@ type ApplicationCallReceivedParams = {
 
 Application.on(Application.Events.ApplicationCallReceived, (params: ApplicationCallReceivedParams) => deeplinkHandler(params));
 
+Application.ios.onUserActivityWithBrowsingWeb = (url) => {
+    deeplinkHandler({ url });
+    return true;
+};
+
 export function deeplinkHandler(params: ApplicationCallReceivedParams) {
-    setTimeout(() => alert('selam' + JSON.stringify({ ...params })), 5000);
-    const { productId } = URI(params?.url || '').query(true);
-    if (productId) {
-        productDetailHandler(productId);
+    if (System.OS === System.OSType.ANDROID) {
+        const { productId } = URI(params?.url || '').query(true);
+        if (productId) {
+            productDetailHandler(productId);
+        }
     }
 }
 
