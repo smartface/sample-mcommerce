@@ -20,12 +20,10 @@ Application.ios.onUserActivityWithBrowsingWeb = (url) => {
 };
 
 export function deeplinkHandler(params: ApplicationCallReceivedParams) {
-    if (System.OS === System.OSType.ANDROID) {
         const { productId } = URI(params?.url || '').query(true);
         if (productId) {
             productDetailHandler(productId);
         }
-    }
 }
 
 export async function productDetailHandler(productId: string) {
