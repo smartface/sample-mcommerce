@@ -7,8 +7,7 @@
 			"props": {
 				"children": [
 					"eb30-8e9f-2d05-a27a",
-					"4a7d-2f27-ad2d-0f0f",
-					"9194-350c-8a74-3e4b"
+					"4a7d-2f27-ad2d-0f0f"
 				],
 				"name": "flAddReviewSection",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -17,11 +16,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 19,
-				"top": 115
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flAddReviewSection-imgStar",
@@ -59,27 +54,8 @@
 			"type": "Label",
 			"userProps": {
 				"text": "label1",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label .flAddReviewSection-lblAddReview .review.addReview",
-			"id": "9194-350c-8a74-3e4b",
-			"oldName": "lblAddRe",
-			"props": {
-				"children": [],
-				"name": "lblAddReview",
-				"parent": "7363-ceea-5ee8-bd67",
-				"text": "label1",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
+				"usePageVariable": true,
+				"width": 70
 			}
 		}
 	]

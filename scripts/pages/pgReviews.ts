@@ -3,17 +3,16 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
-import LviReview from 'components/LviReview';
-import LviAddReviewSection from 'components/LviAddReviewSection';
-import { Product, Review } from 'types';
+import { Review } from 'types';
 import { themeService } from 'theme';
-import { getReviewsByProduct } from 'service/commerce';
+import { getProductImageUrl, getReviewsByProduct } from 'service/commerce';
 import { NO_RATE } from 'constants';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
 import store from 'store';
 
 type Processor =
+    | ListViewItems.ProcessorTypes.ILviReviewProduct[]
     | ListViewItems.ProcessorTypes.ILviReview[]
     | ListViewItems.ProcessorTypes.ILviEmptyItem
     | ListViewItems.ProcessorTypes.ILviAddReviewSection;
@@ -29,7 +28,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
         this.rightItem = new HeaderBarItem({
             //Native › NTVE-435
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
-            image: Image.createFromFile('images://share.png'),
+            image: Image.createFromFile('images://rate_with_comment.png'),
             onPress: () => {
                 this.router.push('addReview', { product: this.route.getState().routeData?.product });
             }
@@ -51,7 +50,6 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
         this.lvMain.onRowHeight = onRowHeight.bind(this);
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
-        this.lvMain.onRowSelected = (item: LviAddReviewSection | LviReview, index) => {};
     }
     refreshListView() {
         this.data = this.processor();
@@ -69,8 +67,10 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             );
         } else {
             processorItems.push(
-                ListViewItems.getLviAddReviewSection({
-                    review: this.route.getState().routeData?.product?.rating?.toString() || NO_RATE.toString()
+                ListViewItems.getLviReviewProduct({
+                    productName: this.route.getState().routeData?.product.name,
+                    productImage: getProductImageUrl(this.route.getState().routeData?.product.images[0]),
+                    productRate: this.route.getState().routeData?.product.rating.toString() || NO_RATE.toString()
                 })
             );
             this.reviews.forEach((review) =>
@@ -94,8 +94,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             }
             return reviewsResponse;
         } catch (error) {
-            //TODO
-            throw new Error(global.lang.productServiceError);
+            throw new Error(global.lang.reviewsServiceError);
         } finally {
             this.refreshListView();
         }

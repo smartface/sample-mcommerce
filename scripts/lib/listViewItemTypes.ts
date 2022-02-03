@@ -16,6 +16,7 @@ import LviPdOverviewSection from '../components/LviPdOverviewSection';
 import LviPdButtonPriceSection from '../components/LviPdButtonPriceSection';
 import LviReview from '../components/LviReview';
 import LviAddReviewSection from '../components/LviAddReviewSection';
+import LviReviewProduct from '../components/LviReviewProduct';
 
 import LviRow1LineLarge from '../components/LviRow1LineLarge';
 
@@ -39,7 +40,8 @@ export enum LviTypes {
     LVI_ROW1_LINE_LARGE,
     LVI_GENERIC_SLIDER,
     LVI_REVIEW,
-    LVI_ADD_REVIEW_SECTION
+    LVI_ADD_REVIEW_SECTION,
+    LVI_REVIEW_PRODUCT
 }
 
 export const LviClasses = {
@@ -61,7 +63,8 @@ export const LviClasses = {
     [LviTypes.LVI_ROW1_LINE_LARGE]: LviRow1LineLarge,
     [LviTypes.LVI_GENERIC_SLIDER]: LviGenericSlider,
     [LviTypes.LVI_REVIEW]: LviReview,
-    [LviTypes.LVI_ADD_REVIEW_SECTION]: LviAddReviewSection
+    [LviTypes.LVI_ADD_REVIEW_SECTION]: LviAddReviewSection,
+    [LviTypes.LVI_REVIEW_PRODUCT]: LviReviewProduct
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -121,6 +124,7 @@ export namespace ProcessorTypes {
     export interface ILviGenericSlider extends IProcessed<LviGenericSlider> {}
     export interface ILviReview extends IProcessed<LviReview> {}
     export interface ILviAddReviewSection extends IProcessed<LviAddReviewSection> {}
+    export interface ILviReviewProduct extends IProcessed<LviReviewProduct> {}
 }
 
 export function getLviGenericSlider(item: Partial<LviGenericSlider>, opts?: { className: string }): ProcessorTypes.ILviGenericSlider {
@@ -307,5 +311,16 @@ export function getLviAddReviewSection(item: Partial<LviAddReviewSection>): Proc
             borders: []
         },
         height: LviAddReviewSection.getHeight()
+    };
+}
+
+export function getLviReviewProduct(item: Partial<LviReviewProduct>): ProcessorTypes.ILviReviewProduct {
+    return {
+        type: 'LVI_REVIEW_PRODUCT',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviReviewProduct.getHeight()
     };
 }

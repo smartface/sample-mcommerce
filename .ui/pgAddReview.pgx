@@ -91,7 +91,13 @@
 			},
 			"type": "Button",
 			"userProps": {
-				"testId": "Ve47S1GBZ",
+				"bottom": 5,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"left": 10,
+				"right": 10,
+				"testId": "xj0LAWOkf",
 				"text": "button1",
 				"usePageVariable": true
 			}

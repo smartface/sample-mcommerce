@@ -18,10 +18,4 @@ export default class LviAddReviewSection extends LviAddReviewSectionDesign {
     set review(value: string) {
         this.flAddReviewSection.review = value;
     }
-    get mainOnClick(): () => void {
-        return this.flAddReviewSection.mainOnClick;
-    }
-    set mainOnClick(value: () => void) {
-        this.flAddReviewSection.mainOnClick = value;
-    }
 }

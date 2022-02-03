@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flReviewProduct",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "5f7e-7ce3-3952-c302",
 			"props": {
 				"children": [

@@ -7,21 +7,11 @@ export default class FlAddReviewSection extends FlAddReviewSectionDesign {
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
-        this.lblAddReview.on(Label.Events.TouchEnded, () => {
-            this.__mainOnClick && this.__mainOnClick();
-        });
-        this.lblAddReview.text = global.lang.addReview;
     }
     get review(): string {
         return this.lblReview.text;
     }
     set review(value: string) {
         this.lblReview.text = value;
-    }
-    get mainOnClick(): (...args) => void {
-        return this.__mainOnClick;
-    }
-    set mainOnClick(value: (...args) => void) {
-        this.__mainOnClick = value;
     }
 }

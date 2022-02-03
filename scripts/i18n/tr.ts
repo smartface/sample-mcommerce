@@ -133,5 +133,6 @@ SMF.i18n.defineLanguage('tr', {
     addToCart: 'Sepete Eklendi',
     rateProduct: 'Ürünü değerlendirin',
     tbComment: 'Yorum yaz',
-    alreadySendReview: 'Bu ürünü zaten değerlendirdin.'
+    alreadySendReview: 'Bu ürünü zaten değerlendirdin.',
+    reviewsServiceError: 'Değerlendirmeler servisinde bir hata oluştu.'
 });

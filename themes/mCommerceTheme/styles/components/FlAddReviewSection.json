@@ -6,9 +6,8 @@
       "alignItems": "CENTER"
     },
     "&-lblReview": {
-      "flexProps": {
-        "flexGrow": 2
-      }
+      "flexProps": {},
+      "width": 70
     },
     "&-lblAddReview": {
       "flexProps": {
