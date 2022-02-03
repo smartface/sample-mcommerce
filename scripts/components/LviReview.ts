@@ -23,12 +23,6 @@ export default class LviReview extends LviReviewDesign {
     set star(value: string) {
         this.flReview.star = value;
     }
-    get image(): string {
-        return this.flReview.image;
-    }
-    set image(value: string) {
-        this.flReview.image = value;
-    }
     get comment(): string {
         return this.flReview.comment;
     }

@@ -12,12 +12,6 @@ export default class LviAddReviewSection extends LviAddReviewSectionDesign {
     static getHeight(): number {
         return height;
     }
-    get image(): string {
-        return this.flAddReviewSection.image;
-    }
-    set image(value: string) {
-        this.flAddReviewSection.image = value;
-    }
     get review(): string {
         return this.flAddReviewSection.review;
     }
