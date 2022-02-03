@@ -125,5 +125,15 @@ SMF.i18n.defineLanguage('tr', {
     termsLeft: 'Devam ederek kabul ediyorum; ',
     termsRight: 'Hizmet Şartlarımızı\n',
     privacyLeft: 've ',
-    privacyRight: 'Gizlilik politikamızı.'
+    privacyRight: 'Gizlilik politikamızı.',
+    emptyReviewList: 'Bu ürünün henüz incelemesi yok.',
+    addReview: 'Değerlendir',
+    reviewHeader: 'Değerlendirmeler',
+    addReviewHeader: 'Değerlendirme Yap',
+    addToCart: 'Sepete Eklendi',
+    rateProduct: 'Ürünü değerlendirin',
+    tbComment: 'Yorum yaz',
+    alreadySendReview: 'Bu ürünü zaten değerlendirdin.',
+    reviewsServiceError: 'Değerlendirmeler servisinde bir hata oluştu.',
+    reviewSent: 'Değerlendirmeniz başarıyla gönderildi.'
 });

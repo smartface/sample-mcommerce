@@ -89,6 +89,7 @@ export async function getUserInfo(): Promise<any> {
         if (response) {
             store.dispatch(storeActions.SetCurrentUser(response));
         }
+        return response;
     } catch (err) {
         genericErrorHandler(err);
         throw err;

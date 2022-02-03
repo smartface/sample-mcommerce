@@ -1,30 +1,30 @@
 {
-	".sf-page": {
-		"flexProps": {
-			"alignContent": "STRETCH",
-			"alignItems": "STRETCH",
-			"direction": "INHERIT",
-			"flexDirection": "COLUMN",
-			"flexWrap": "NOWRAP",
-			"justifyContent": "FLEX_START"
-		},
-		"paddingTop": 0,
-		"paddingLeft": 0,
-		"paddingBottom": 0,
-		"paddingRight": 0,
-		"backgroundColor": "${backgroundMain}",
-		"orientation": "PORTRAIT",
-		".backgroundMain": {
-			"backgroundColor": "${backgroundMain}"
-		},
-		".backgroundSecondary": {
-			"backgroundColor": "${backgroundSecondary}"
-		},
-		".white": {
-			"backgroundColor": "${white}"
-		},
-		".black": {
-			"backgroundColor": "${black}"
-		}
-	}
+  ".sf-page": {
+    "flexProps": {
+      "alignContent": "STRETCH",
+      "alignItems": "STRETCH",
+      "direction": "INHERIT",
+      "flexDirection": "COLUMN",
+      "flexWrap": "NOWRAP",
+      "justifyContent": "FLEX_START"
+    },
+    "paddingTop": 0,
+    "paddingLeft": 0,
+    "paddingBottom": 0,
+    "paddingRight": 0,
+    "backgroundColor": "${backgroundMain}",
+    "orientation": "PORTRAIT",
+    ".backgroundMain": {
+      "backgroundColor": "${backgroundMain}"
+    },
+    ".backgroundSecondary": {
+      "backgroundColor": "${backgroundSecondary}"
+    },
+    ".white": {
+      "backgroundColor": "${white}"
+    },
+    ".black": {
+      "backgroundColor": "${black}"
+    }
+  }
 }

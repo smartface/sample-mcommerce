@@ -28,4 +28,10 @@ export default class LviEmptyItem extends LviEmptyItemDesign {
     set emptyImage(value: string | Image) {
         this.flEmptyItem.imgEmpty.image = value;
     }
+    get mainOnClick(): () => void {
+        return this.flEmptyItem.mainOnClick;
+    }
+    set mainOnClick(value: () => void) {
+        this.flEmptyItem.mainOnClick = value;
+    }
 }

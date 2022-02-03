@@ -1,23 +1,24 @@
 {
-	".flCartCheckout": {
-		"flexProps": {
-			"flexDirection": "COLUMN",
-			"justifyContent": "CENTER",
-			"alignItems": "STRETCH",
-			"alignContent": "STRETCH",
-			"positionType": "RELATIVE"
-		},
-		"height": 80,
-		"&-lblCartCheckoutPrice": {
-			"flexProps": {
-				"positionType": "ABSOLUTE"
-			},
-			"right": 25,
-			"textAlignment": "MIDCENTER",
-			"width": 65,
-			"top": 0,
-			"bottom": 0,
-			"height": null
-		}
-	}
+  ".flCartCheckout": {
+    "flexProps": {
+      "flexDirection": "COLUMN",
+      "justifyContent": "CENTER",
+      "alignItems": "STRETCH",
+      "alignContent": "STRETCH",
+      "positionType": "RELATIVE"
+    },
+    "height": 80,
+    "&-lblCartCheckoutPrice": {
+      "flexProps": {
+        "positionType": "ABSOLUTE"
+      },
+      "right": 40,
+      "textAlignment": "MIDCENTER",
+      "top": 0,
+      "bottom": 0,
+      "height": null,
+      "ellipsizeMode": "NONE",
+      "minWidth": 65
+    }
+  }
 }

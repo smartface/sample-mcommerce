@@ -1,8 +1,8 @@
 {
-	".lviGenericSlider": {
-		"height": 350,
-		".small": {
-			"height": 150
-		}
-	}
+  ".lviGenericSlider": {
+    "height": 350,
+    ".small": {
+      "height": 150
+    }
+  }
 }

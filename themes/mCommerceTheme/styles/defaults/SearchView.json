@@ -1,9 +1,9 @@
 {
-	".sf-searchView": {
-		"marginTop": null,
-		"marginBottom": null,
-		".gray": {
-			"textFieldBackgroundColor": "${searchViewBg}"
-		}
-	}
+  ".sf-searchView": {
+    "marginTop": null,
+    "marginBottom": null,
+    ".gray": {
+      "textFieldBackgroundColor": "${searchViewBg}"
+    }
+  }
 }

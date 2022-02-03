@@ -16,7 +16,7 @@
     "backgroundColor": "#FFFFFF",
     "orientation": "PORTRAIT",
     ".backgroundMain": {
-        "backgroundColor": "${backgroundMain}"
+      "backgroundColor": "${backgroundMain}"
     }
   },
   ".page": {

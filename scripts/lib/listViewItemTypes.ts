@@ -13,6 +13,8 @@ import LviPdTitleLikeSection from '../components/LviPdTitleLikeSection';
 import LviGenericSlider from '../components/LviGenericSlider';
 import LviPdOverviewSection from '../components/LviPdOverviewSection';
 import LviPdButtonPriceSection from '../components/LviPdButtonPriceSection';
+import LviReview from '../components/LviReview';
+import LviReviewProduct from '../components/LviReviewProduct';
 
 import LviRow1LineLarge from '../components/LviRow1LineLarge';
 
@@ -33,7 +35,9 @@ export enum LviTypes {
     LVI_PD_INFO_SECTION,
     LVI_PD_OVERVIEW_SECTION,
     LVI_ROW1_LINE_LARGE,
-    LVI_GENERIC_SLIDER
+    LVI_GENERIC_SLIDER,
+    LVI_REVIEW,
+    LVI_REVIEW_PRODUCT
 }
 
 export const LviClasses = {
@@ -52,7 +56,9 @@ export const LviClasses = {
     [LviTypes.LVI_PD_INFO_SECTION]: LviPdInfoSection,
     [LviTypes.LVI_PD_OVERVIEW_SECTION]: LviPdOverviewSection,
     [LviTypes.LVI_ROW1_LINE_LARGE]: LviRow1LineLarge,
-    [LviTypes.LVI_GENERIC_SLIDER]: LviGenericSlider
+    [LviTypes.LVI_GENERIC_SLIDER]: LviGenericSlider,
+    [LviTypes.LVI_REVIEW]: LviReview,
+    [LviTypes.LVI_REVIEW_PRODUCT]: LviReviewProduct
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -109,6 +115,8 @@ export namespace ProcessorTypes {
     export interface ILviPdOverviewSection extends IProcessed<LviPdOverviewSection> {}
     export interface ILviRow1LineLarge extends IProcessed<LviRow1LineLarge> {}
     export interface ILviGenericSlider extends IProcessed<LviGenericSlider> {}
+    export interface ILviReview extends IProcessed<LviReview> {}
+    export interface ILviReviewProduct extends IProcessed<LviReviewProduct> {}
 }
 
 export function getLviGenericSlider(
@@ -268,5 +276,27 @@ export function getLviRow1LineLarge(item: Partial<LviRow1LineLarge>): ProcessorT
             borders: []
         },
         height: LviRow1LineLarge.getHeight()
+    };
+}
+
+export function getLviReview(item: Partial<LviReview>): ProcessorTypes.ILviReview {
+    return {
+        type: 'LVI_REVIEW',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviReview.getHeight()
+    };
+}
+
+export function getLviReviewProduct(item: Partial<LviReviewProduct>): ProcessorTypes.ILviReviewProduct {
+    return {
+        type: 'LVI_REVIEW_PRODUCT',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviReviewProduct.getHeight()
     };
 }

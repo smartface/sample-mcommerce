@@ -1,38 +1,38 @@
 {
-	".sf-headerBar": {
-		"visible": true,
-		"backgroundColor": "${navbar}",
-		"titleColor": "${textDark}",
-		"itemColor": "${textDark}",
-		"transparent": false,
-		"borderVisibility": false,
-		"android": {
-			"elevation": 0
-		},
-		".main": {
-			"visible": true,
-			"backgroundColor": "${navbar}",
-			"titleColor": "${textDark}",
-			"itemColor": "${textDark}"
-		},
-		".transparent": {
-			"android": {
-				"elevation": 5
-			},
-			"transparent": true,
-			"titleColor": "${transparent}",
-			"backgroundColor": "${transparent}",
-			"leftItemEnabled": "true",
-			".white": {
-				"borderVisibility": false,
-				"itemColor": "${white}"
-			}
-		},
-		".dismiss": {
-			"image": "close_icon.png"
-		},
-		".back": {
-			"image": "arrow_back.png"
-		}
-	}
+  ".sf-headerBar": {
+    "visible": true,
+    "backgroundColor": "${navbar}",
+    "titleColor": "${textDark}",
+    "itemColor": "${textDark}",
+    "transparent": false,
+    "borderVisibility": false,
+    "android": {
+      "elevation": 0
+    },
+    ".main": {
+      "visible": true,
+      "backgroundColor": "${navbar}",
+      "titleColor": "${textDark}",
+      "itemColor": "${textDark}"
+    },
+    ".transparent": {
+      "android": {
+        "elevation": 5
+      },
+      "transparent": true,
+      "titleColor": "${transparent}",
+      "backgroundColor": "${transparent}",
+      "leftItemEnabled": "true",
+      ".white": {
+        "borderVisibility": false,
+        "itemColor": "${white}"
+      }
+    },
+    ".dismiss": {
+      "image": "close_icon.png"
+    },
+    ".back": {
+      "image": "arrow_back.png"
+    }
+  }
 }

@@ -35,6 +35,7 @@ export type Product = {
     discountPrice?: number;
     discountTag?: string;
     count?: number;
+    rating?: number;
 };
 export type AccountMenus = {
     menuId: number;
@@ -60,4 +61,12 @@ export type Banner = {
     _id: string;
     productId?: string;
     categoryId?: string;
+};
+
+export type Review = {
+    star: number;
+    comment: string;
+    productId: string;
+    name: string;
+    sub: string;
 };

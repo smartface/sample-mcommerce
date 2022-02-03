@@ -1,0 +1,74 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flReviewAndRateProduct",
+			"hiddenComponent": true,
+			"id": "e268-20ad-2da1-0b48",
+			"props": {
+				"children": [
+					"1e07-3ba3-0f2a-49cf",
+					"5e9b-8dc5-8c52-c5bb"
+				],
+				"name": "flReviewAndRateProduct",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": 17,
+				"top": 66
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flReviewProduct",
+			"hiddenComponent": false,
+			"id": "1e07-3ba3-0f2a-49cf",
+			"props": {
+				"children": [],
+				"name": "flReviewProduct",
+				"parent": "e268-20ad-2da1-0b48",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flReviewProduct",
+				"id": "5f7e-7ce3-3952-c302"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRateProduct",
+			"hiddenComponent": false,
+			"id": "5e9b-8dc5-8c52-c5bb",
+			"props": {
+				"children": [],
+				"name": "flRateProduct",
+				"parent": "e268-20ad-2da1-0b48",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flRateProduct",
+				"id": "f11c-576a-b271-7c3f"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

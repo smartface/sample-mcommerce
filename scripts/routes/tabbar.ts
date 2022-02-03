@@ -62,6 +62,29 @@ function productDetailRouter(basePath: string) {
                 headerBarParams: () => ({
                     visible: true
                 })
+            }),
+            StackRouter.of({
+                path: `${basePath}/productDetail/reviews`,
+                to: `${basePath}/productDetail/reviews/main`,
+                modal: true,
+                routes: [
+                    Route.of<Pages.pgReviews>({
+                        path: `${basePath}/productDetail/reviews/main`,
+                        build(router, route) {
+                            const page = new Pages.pgReviews(router, route);
+                            router.setState({ view: page });
+                            return page;
+                        }
+                    }),
+                    Route.of<Pages.pgAddReview>({
+                        path: `${basePath}/productDetail/reviews/addReview`,
+                        build(router, route) {
+                            const page = new Pages.pgAddReview(router, route);
+                            router.setState({ view: page });
+                            return page;
+                        }
+                    })
+                ]
             })
         ]
     });

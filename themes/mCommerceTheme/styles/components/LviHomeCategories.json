@@ -1,17 +1,17 @@
 {
-	".lviHomeCategories": {
-		"height": 110,
-		"flexProps": {},
-		"testId": "7ycy14PHi",
-		"&-gvCategories": {
-			"layoutManager": {
-				"spanCount": 1,
-				"scrollDirection": "HORIZONTAL"
-			},
-			"height": null,
-			"flexProps": {
-				"flexGrow": 1
-			}
-		}
-	}
+  ".lviHomeCategories": {
+    "height": 110,
+    "flexProps": {},
+    "testId": "7ycy14PHi",
+    "&-gvCategories": {
+      "layoutManager": {
+        "spanCount": 1,
+        "scrollDirection": "HORIZONTAL"
+      },
+      "height": null,
+      "flexProps": {
+        "flexGrow": 1
+      }
+    }
+  }
 }

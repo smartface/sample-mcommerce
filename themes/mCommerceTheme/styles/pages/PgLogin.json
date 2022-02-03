@@ -1,119 +1,119 @@
 {
-	"#pgLogin": {
-		"paddingBottom": 0,
-		"paddingLeft": 0,
-		"paddingRight": 0,
-		"paddingTop": 0,
-		"&-statusbar": {
-			"android": {},
-			"style": "DEFAULT"
-		},
-		"&-flcontainer": {
-			"flexProps": {
-				"flexGrow": 1
-			},
-			"height": null,
-			"testId": "Xauh3YMK1",
-			"width": null
-		},
-		"&-logo": {
-			"height": null,
-			"imageFillType": "NORMAL",
-			"marginBottom": 10,
-			"testId": "zw0_J-c-V",
-			"width": 70,
-			"flexProps": {
-				"flexGrow": 1.5,
-				"alignSelf": "CENTER"
-			}
-		},
-		"&-title": {
-			"flexProps": {
-				"flexGrow": 0.5
-			},
-			"marginBottom": null,
-			"marginLeft": 25,
-			"marginTop": null,
-			"maxHeight": 35,
-			"testId": "ENQ28sM4T"
-		},
-		"&-text": {
-			"flexProps": {
-				"flexGrow": 0.5
-			},
-			"marginBottom": null,
-			"marginLeft": 25,
-			"marginTop": null,
-			"testId": "4NLXvX9K-"
-		},
-		"&-flform": {
-			"flexProps": {
-				"flexGrow": 5
-			},
-			"marginTop": 10,
-			"paddingLeft": 25,
-			"paddingRight": 25,
-			"testId": "jw-epfTzH"
-		},
-		"&-mtbemail": {
-			"flex": {
-				"positionType": 0
-			},
-			"flexProps": {
-				"positionType": "RELATIVE",
-				"flexGrow": 0.4
-			},
-			"left": 0,
-			"testId": "Mnb1SYj-t",
-			"top": 0
-		},
-		"&-mtbpassword": {
-			"backgroundColor": "rgba( 255, 255, 255, 0 )",
-			"borderColor": "rgba( 226, 226, 226, 1 )",
-			"flex": {
-				"positionType": 0
-			},
-			"flexProps": {
-				"positionType": "RELATIVE",
-				"flexGrow": 0.4
-			},
-			"left": 0,
-			"maxHeight": 70,
-			"testId": "GL-bPqCEz",
-			"top": 0
-		},
-		"&-lblForgotPassword": {
-			"marginBottom": 20,
-			"maxHeight": 25,
-			"testId": "g4mLeQV5F",
-			"textAlignment": "MIDRIGHT"
-		},
-		"&-flfooter": {
-			"flexProps": {
-				"flexDirection": "ROW",
-				"flexGrow": 1
-			},
-			"height": null,
-			"testId": "PGmVHNP2q",
-			"width": null
-		},
-		"&-lblLeft": {
-			"flexProps": {
-				"flexGrow": 5
-			},
-			"left": 0,
-			"testId": "JYm46Rkkf",
-			"textAlignment": "MIDRIGHT",
-			"top": 0
-		},
-		"&-lblRouteSignUp": {
-			"flexProps": {
-				"flexGrow": 3
-			},
-			"left": 0,
-			"testId": "JYm46Rkkf",
-			"textAlignment": "MIDLEFT",
-			"top": 0
-		}
-	}
+  "#pgLogin": {
+    "paddingBottom": 0,
+    "paddingLeft": 0,
+    "paddingRight": 0,
+    "paddingTop": 0,
+    "&-statusbar": {
+      "android": {},
+      "style": "DEFAULT"
+    },
+    "&-flcontainer": {
+      "flexProps": {
+        "flexGrow": 1
+      },
+      "height": null,
+      "testId": "Xauh3YMK1",
+      "width": null
+    },
+    "&-logo": {
+      "height": null,
+      "imageFillType": "NORMAL",
+      "marginBottom": 10,
+      "testId": "zw0_J-c-V",
+      "width": 70,
+      "flexProps": {
+        "flexGrow": 1.5,
+        "alignSelf": "CENTER"
+      }
+    },
+    "&-title": {
+      "flexProps": {
+        "flexGrow": 0.5
+      },
+      "marginBottom": null,
+      "marginLeft": 25,
+      "marginTop": null,
+      "maxHeight": 35,
+      "testId": "ENQ28sM4T"
+    },
+    "&-text": {
+      "flexProps": {
+        "flexGrow": 0.5
+      },
+      "marginBottom": null,
+      "marginLeft": 25,
+      "marginTop": null,
+      "testId": "4NLXvX9K-"
+    },
+    "&-flform": {
+      "flexProps": {
+        "flexGrow": 5
+      },
+      "marginTop": 10,
+      "paddingLeft": 25,
+      "paddingRight": 25,
+      "testId": "jw-epfTzH"
+    },
+    "&-mtbemail": {
+      "flex": {
+        "positionType": 0
+      },
+      "flexProps": {
+        "positionType": "RELATIVE",
+        "flexGrow": 0.4
+      },
+      "left": 0,
+      "testId": "Mnb1SYj-t",
+      "top": 0
+    },
+    "&-mtbpassword": {
+      "backgroundColor": "rgba( 255, 255, 255, 0 )",
+      "borderColor": "rgba( 226, 226, 226, 1 )",
+      "flex": {
+        "positionType": 0
+      },
+      "flexProps": {
+        "positionType": "RELATIVE",
+        "flexGrow": 0.4
+      },
+      "left": 0,
+      "maxHeight": 70,
+      "testId": "GL-bPqCEz",
+      "top": 0
+    },
+    "&-lblForgotPassword": {
+      "marginBottom": 20,
+      "maxHeight": 25,
+      "testId": "g4mLeQV5F",
+      "textAlignment": "MIDRIGHT"
+    },
+    "&-flfooter": {
+      "flexProps": {
+        "flexDirection": "ROW",
+        "flexGrow": 1
+      },
+      "height": null,
+      "testId": "PGmVHNP2q",
+      "width": null
+    },
+    "&-lblLeft": {
+      "flexProps": {
+        "flexGrow": 5
+      },
+      "left": 0,
+      "testId": "JYm46Rkkf",
+      "textAlignment": "MIDRIGHT",
+      "top": 0
+    },
+    "&-lblRouteSignUp": {
+      "flexProps": {
+        "flexGrow": 3
+      },
+      "left": 0,
+      "testId": "JYm46Rkkf",
+      "textAlignment": "MIDLEFT",
+      "top": 0
+    }
+  }
 }
