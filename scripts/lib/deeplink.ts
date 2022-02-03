@@ -15,7 +15,7 @@ Application.on(Application.Events.ApplicationCallReceived, (params: ApplicationC
 
 export function deeplinkHandler(params: ApplicationCallReceivedParams) {
     const { productId } = URI(params?.url || '').query(true);
-    alert(JSON.stringify({ ...params, productId }));
+    setTimeout(() => alert(JSON.stringify({ ...params, productId })), 5000);
     if (productId) {
         productDetailHandler(productId);
     }
@@ -44,4 +44,8 @@ export function generateProductDeeplinkUrl(productId: string) {
     return config.environments[getCurrentEnvironment()].serviceUrl + '/deeplink/redirect?productId=' + productId;
 }
 
+// Application.emit(Application.Events.ApplicationCallReceived, {
+//     //@ts-ignore
+//     url: 'https://smartapps-commerce.smartface.io/deeplink/redirect?productId=61ee8df32bd310de954a2712'
+// });
 // setTimeout(() => deeplinkHandler({ url: 'smartface-emulator://deeplink?productId=61ee8da12bd310de954a2708' }), 3000); //Deeplink tester
