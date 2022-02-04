@@ -1,8 +1,8 @@
 {
 	"components": [
 		{
-			"className": ".sf-listViewItem .lviShowcaseHeader",
-			"hiddenComponent": true,
+			"className": ".sf-listViewItem .lviShowcaseHeader .paddingHorizontal",
+			"hiddenComponent": false,
 			"id": "e452-08b3-17fd-0e31",
 			"props": {
 				"children": [
@@ -34,17 +34,6 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flex": {
-					"flexGrow": 1,
-					"positionType": 0
-				},
-				"flexProps": {
-					"flexGrow": 1,
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"testId": "M7-f82Zys",
-				"top": 0,
 				"usePageVariable": true
 			}
 		}
