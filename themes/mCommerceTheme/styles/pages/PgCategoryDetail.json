@@ -1,10 +1,5 @@
 {
   "#pgCategoryDetail": {
-    "paddingTop": 15,
-    "paddingBottom": 15,
-    "paddingRight": 10,
-    "paddingLeft": 10,
-    "backgroundColor": "${backgroundMain}",
     "&-gvProducts": {
       "flexProps": {
         "flexGrow": 1

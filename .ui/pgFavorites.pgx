@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page.backgroundMain .paddingHorizontal",
+			"className": ".sf-page",
 			"id": "e27f-743b-23a5-ea3b",
 			"initialized": true,
 			"props": {
