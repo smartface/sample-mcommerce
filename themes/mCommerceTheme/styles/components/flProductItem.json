@@ -16,12 +16,12 @@
         "flexGrow": 1
       },
       "&-productImage": {
-        "height": 62,
+        "height": 100,
         "width": 100,
         "imageFillType": "ASPECTFIT"
       },
       "&-descriptionWrapper": {
-        "height": 80,
+        "height": 60,
         "paddingTop": 5,
         "paddingBottom": 5,
         "paddingLeft": 5,
@@ -51,9 +51,9 @@
             "style": "Regular"
           },
           "flexProps": {
-            "flexGrow": 3
+            "flexGrow": 1
           },
-          "maxHeight": 50
+          "height": 25
         },
         "&-flReviewWrapper": {
           "flexProps": {
@@ -61,14 +61,14 @@
             "flexDirection": "ROW",
             "justifyContent": "FLEX_END",
             "alignContent": "FLEX_END",
-            "flexGrow": 2
+            "positionType": "ABSOLUTE"
           },
           "height": 25,
           "testId": "ge-Pb4M8C",
           "&-imgStar": {
             "height": 25,
             "testId": "LiH9AIXVX",
-            "width": 25
+            "width": 20
           },
           "&-lblReview": {
             "flexProps": {
@@ -88,16 +88,19 @@
             "textColor": "${textDark}",
             "width": null
           },
-          "paddingRight": 5
+          "paddingRight": 5,
+          "bottom": 0,
+          "top": 0,
+          "right": 0,
+          "width": 55
         },
         "&-flProductDescAndReviewWrapper": {
           "flexProps": {
             "flexDirection": "ROW",
-            "alignItems": "CENTER",
-            "justifyContent": "SPACE_BETWEEN",
-            "flexGrow": 1
+            "alignItems": "FLEX_START",
+            "justifyContent": "SPACE_BETWEEN"
           },
-          "height": 40,
+          "height": 30,
           "testId": "d92hrNH4Y",
           "maxWidth": 500
         }

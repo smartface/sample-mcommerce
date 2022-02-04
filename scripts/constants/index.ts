@@ -12,3 +12,5 @@ export const SERVICE_TIMEOUT = 120000;
 export const ON_SHOW_TIMEOUT = 500;
 export const NO_RATE = 0;
 export const BANNER_ASPECT_RATIO = 3;
+export const HOME_PRODUCT_LIMIT = 30;
+export const PRODUCT_NAME_MAX_LINE = 2;

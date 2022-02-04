@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flProductItem",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "d126-3ab9-070f-a585",
 			"props": {
 				"children": [
@@ -16,11 +16,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 18.95,
-				"top": 333.68
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flProductItem-flProductItemWrapper",
@@ -96,6 +92,7 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"maxLines": 2,
 				"text": "label1",
 				"usePageVariable": true
 			}
@@ -135,8 +132,6 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"ellipsizeMode": "WORDWRAPPING",
-				"maxLines": 2,
 				"text": "label2",
 				"usePageVariable": true
 			}
@@ -175,7 +170,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"image": "star.png",
+				"image": "small_star.png",
 				"usePageVariable": true
 			}
 		},
@@ -194,8 +189,12 @@
 			},
 			"type": "Label",
 			"userProps": {
+				"flexProps": {
+					"flexGrow": null
+				},
 				"text": "lblR",
-				"usePageVariable": true
+				"usePageVariable": true,
+				"width": 30
 			}
 		},
 		{

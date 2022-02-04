@@ -3,15 +3,15 @@ import store from '../store/index';
 import storeActions from 'store/main/actions';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
-import { Banner, HomeShowcases } from 'types';
+import { Banner, Categories, HomeShowcases, Product } from 'types';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getRefreshToken } from 'service/token';
 import { autoLogin } from 'service/auth';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
-import { getBannerImage, getBanners, getShowcases } from 'service/commerce';
+import { getBannerImage, getBanners, getCategories, getProductsByQuery, getShowcases } from 'service/commerce';
 import LviGenericSlider from 'components/LviGenericSlider';
-import { BANNER_ASPECT_RATIO } from 'constants';
+import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from 'constants';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -22,6 +22,8 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     data: Processor[];
     showcases: HomeShowcases[];
     banners: Banner[];
+    categories: Categories[];
+    products: Product[];
     initialized = false;
     sliderHeight = 0;
     constructor(private router?: Router, private route?: Route) {
@@ -65,13 +67,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                     }
                 })
             );
-            if (showcase.categories && showcase.categories.length > 0) {
-                processorItems.push(
-                    ListViewItems.getLviHomeCategories({
-                        items: showcase.categories
-                    })
-                );
-            }
+
             processorItems.push(
                 ListViewItems.getLviHomeProducts({
                     items: showcase.products,
@@ -84,7 +80,44 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             );
         });
 
+        processorItems.push(
+            ListViewItems.getLviHomeCategories({
+                items: this.categories,
+                onCategoryClick: (category) => {
+                    this.router.push('/btb/tab1/categoryDetail', {
+                        dataId: category._id,
+                        title: category.title
+                    });
+                }
+            })
+        );
+
+        for (let index = 0; index < this.products.length; index++) {
+            processorItems.push(
+                ListViewItems.getLviHomeProducts({
+                    items: [this.products[index], this.products[index + 1]],
+                    onProductClick: (product) => {
+                        this.router.push('/btb/tab1/productDetail', {
+                            productId: product._id
+                        });
+                    }
+                })
+            );
+            index = index + 1;
+        }
+
         return processorItems;
+    }
+
+    async getProducts(opts: { pageNumber: number } = { pageNumber: 1 }) {
+        try {
+            showWaitDialog();
+            const productResponse = await getProductsByQuery({ page: opts.pageNumber, limit: HOME_PRODUCT_LIMIT });
+            this.products = productResponse.products;
+        } catch (error) {
+        } finally {
+            hideWaitDialog();
+        }
     }
 
     async fetchShowcases() {
@@ -97,6 +130,16 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             return showcaseResponse;
         } catch (error) {
             throw new Error(global.lang.showcaseServiceError);
+        }
+    }
+
+    async fetchCategories() {
+        try {
+            showWaitDialog();
+            this.categories = await getCategories();
+        } catch (error) {
+        } finally {
+            hideWaitDialog();
         }
     }
 
@@ -129,7 +172,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                 return Promise.resolve();
             } else {
                 await this.initAutoLogin();
-                await Promise.all([this.fetchShowcases(), this.fetchBanners()]);
+                await Promise.all([this.fetchShowcases(), this.fetchCategories(), this.getProducts(), this.fetchBanners()]);
                 this.initialized = true;
             }
         } catch (error) {

@@ -4,6 +4,9 @@ import Button from '@smartface/native/ui/button';
 import setVisibility from 'lib/setVisibility';
 import AttributedString from '@smartface/native/ui/attributedstring';
 import { themeService } from 'theme';
+import Color from '@smartface/native/ui/color';
+import { setTextDimensions } from 'lib/setTextDimensions';
+import { PRODUCT_NAME_MAX_LINE } from 'constants';
 
 export default class FlProductItem extends FlProductItemDesign {
     private __imageUrl: string;
@@ -11,7 +14,6 @@ export default class FlProductItem extends FlProductItemDesign {
     pageName?: string | undefined;
     myActivityIndicator: ActivityIndicator;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
         this.btnAddToBasket.on(Button.Events.Press, () => {
@@ -40,6 +42,13 @@ export default class FlProductItem extends FlProductItemDesign {
     }
     set itemTitle(value: string) {
         this.lblProductItemTitle.text = value;
+        const { height } = setTextDimensions(value, this.lblProductItemTitle.font, { maxLines: PRODUCT_NAME_MAX_LINE });
+        this.lblProductItemTitle.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                height
+            }
+        });
     }
     get itemPrice(): string {
         return this.tvProductPrice.text;
@@ -54,10 +63,10 @@ export default class FlProductItem extends FlProductItemDesign {
         });
         this.tvProductPrice.attributedText = [attributeString];
     }
-    get itemReview(): any {
+    get itemReview(): string {
         return this.lblReview.text;
     }
-    set itemReview(value: any) {
+    set itemReview(value: string) {
         if (!!value) {
             this.imgStar.visible = true;
             this.lblReview.visible = true;
@@ -87,7 +96,13 @@ export default class FlProductItem extends FlProductItemDesign {
         if (!!value) {
             this.lblTag.text = value;
         }
-
+        this.checkIsHidden();
+    }
+    set itemTagColor(value: string) {
+        this.flTagWrapper.visible = !!value;
+        if (!!value) {
+            this.flTagWrapper.backgroundColor = Color.create(value);
+        }
         this.checkIsHidden();
     }
     get imageUrl(): string {

@@ -13,7 +13,6 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     private __onProductClick: (product: any) => void;
     private __items: Product[] = [];
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
         if (System.OS === System.OSType.ANDROID) {
@@ -44,13 +43,14 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     private initGridView() {
         this.gvProducts.layoutManager.onItemLength = () => Screen.width / 2;
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
-            GridViewItem.itemTag = this.items[productIndex].discountTag;
+            GridViewItem.itemTag = this.items[productIndex]?.labels[0]?.name;
+            GridViewItem.itemTagColor = this.items[productIndex]?.labels[0]?.color;
             GridViewItem.itemTitle = this.items[productIndex].name;
             GridViewItem.itemDesc = this.items[productIndex].shortDescription;
             GridViewItem.itemImage = this.items[productIndex].images ? getProductImageUrl(this.items[productIndex].images[0]) : null;
             GridViewItem.itemDiscountPrice = !!this.items[productIndex].discountPrice ? `$${this.items[productIndex].discountPrice}` : '';
             GridViewItem.itemPrice = `$${this.items[productIndex].price}`;
-            GridViewItem.itemReview = !!this.items[productIndex].review ? this.items[productIndex]?.review : false;
+            GridViewItem.itemReview = !!this.items[productIndex]?.rating ? `${this.items[productIndex]?.rating}` : '';
             this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
                 this.onProductClick(this.items[productIndex]);
             };

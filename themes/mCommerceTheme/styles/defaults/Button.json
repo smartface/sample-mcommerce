@@ -41,20 +41,20 @@
     }
   },
   ".sf-button-addToBasket": {
-    "width": 46,
-    "height": 46,
+    "width": 40,
+    "height": 40,
     "touchEnabled": true,
     "visible": true,
     "backgroundColor": "${green}",
     "borderRadius": 17,
-    "textColor": "#FFFFFF",
+    "textColor": "${white}",
     "textAlignment": "MIDCENTER",
     "font": {
       "family": "FontAwesome5FreeSolid",
       "style": null,
       "bold": false,
       "italic": false,
-      "size": 20
+      "size": 18
     },
     "flexProps": {
       "positionType": "RELATIVE",

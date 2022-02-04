@@ -2,7 +2,6 @@ import PgCategoryDetailDesign from 'generated/pages/pgCategoryDetail';
 import store from 'store/index';
 import storeActions from 'store/main/actions';
 import SearchView from '@smartface/native/ui/searchview';
-import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
 import System from '@smartface/native/device/system';
@@ -133,7 +132,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 ? `$${this.categoryProducts[productIndex].discountPrice}`
                 : '';
             GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price}`;
-            GridViewItem.itemReview = !!this.categoryProducts[productIndex].review ? this.categoryProducts[productIndex]?.review : false;
+            GridViewItem.itemReview = !!this.categoryProducts[productIndex]?.rating ? `${this.categoryProducts[productIndex]?.rating}` : '';
             GridViewItem.onActionClick = () => {
                 GridViewItem.initIndicator();
                 GridViewItem.toggleIndicator(true);
