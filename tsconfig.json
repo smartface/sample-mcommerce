@@ -5,22 +5,17 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "noEmit": false,
-    "target": "ES5",
+    "target": "ES6",
     "outDir": "./dist",
     "moduleResolution": "Node",
     "module": "CommonJS",
     "resolveJsonModule": true,
     "isolatedModules": false,
     "esModuleInterop": true,
-    "typeRoots": [
-      "./scripts/node_modules/@smartface/native/device/system"
-    ],
+    "typeRoots": ["./scripts/node_modules/@smartface/native/device/system"],
     "baseUrl": "scripts",
     "rootDir": "scripts",
-    "lib": [
-      "ES2015",
-      "ES2017"
-    ]
+    "lib": ["ES2015", "ES2017"]
   },
   "files": [
     "./typings.d.ts",
@@ -28,13 +23,6 @@
     "./scripts/node_modules/@smartface/contx/index.d.ts",
     "./scripts/node_modules/@smartface/styler/index.d.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "./dist",
-    "**/node_modules/*"
-  ],
-  "include": [
-    "./scripts",
-    "./scripts/**/*.json"
-  ]
+  "exclude": ["node_modules", "./dist", "**/node_modules/*"],
+  "include": ["./scripts", "./scripts/**/*.json"]
 }
