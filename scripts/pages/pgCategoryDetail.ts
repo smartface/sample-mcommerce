@@ -110,6 +110,12 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             this.initialized = true;
             this.paginating = false;
             hideWaitDialog();
+            this.gvProducts.onPullRefresh = () => {
+                this.pageNumber = 0;
+                this.paginating = false;
+                this.categoryProducts = [];
+                this.getCategoryProducts().then(() => this.gvProducts.stopRefresh());
+            };
         }
     }
     getShowcaseProducts() {
@@ -133,7 +139,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 ? `$${this.categoryProducts[productIndex].discountPrice}`
                 : '';
             GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price}`;
-            GridViewItem.itemReview = !!this.categoryProducts[productIndex]?.rating ? `${this.categoryProducts[productIndex]?.rating}` : '';
+            GridViewItem.itemReview = this.categoryProducts[productIndex]?.rating?.toString() || '';
             GridViewItem.onActionClick = () => {
                 GridViewItem.initIndicator();
                 GridViewItem.toggleIndicator(true);
@@ -151,14 +157,6 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             this.router.push('productDetail', {
                 productId: product._id
             });
-        };
-        this.gvProducts.onPullRefresh = () => {
-            this.pageNumber = 0;
-            this.paginating = false;
-            this.categoryProducts = [];
-            this.getCategoryProducts()
-                .then(() => this.gvProducts.stopRefresh())
-                .catch(() => this.gvProducts.stopRefresh());
         };
     }
     refreshGridView() {

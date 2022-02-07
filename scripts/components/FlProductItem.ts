@@ -18,7 +18,7 @@ const { marginRight: lblProductItemTitleWidthMarginRight, marginLeft: lblProduct
 );
 export default class FlProductItem extends FlProductItemDesign {
     private __imageUrl: string;
-    private _productNameMaxWith: number;
+    private _width: number;
     _addToBasket: (...args) => void;
     pageName?: string | undefined;
     myActivityIndicator: ActivityIndicator;
@@ -40,8 +40,8 @@ export default class FlProductItem extends FlProductItemDesign {
             }
         });
     }
-    set productNameMaxWith(value: number) {
-        this._productNameMaxWith = value;
+    set itemTitleWidth(value: number) {
+        this._width = value;
     }
     get onActionClick(): (...args) => void {
         return this._addToBasket;
@@ -56,14 +56,7 @@ export default class FlProductItem extends FlProductItemDesign {
         this.lblProductItemTitle.text = value;
         const { height } = setTextDimensions(value, this.lblProductItemTitle.font, {
             maxLines: PRODUCT_NAME_MAX_LINE,
-            maxWidth:
-                this._productNameMaxWith -
-                (productItemMarginRight +
-                    productItemMarginLeft +
-                    descriptionWrapperPaddingLeft +
-                    descriptionWrapperPaddingRight +
-                    lblProductItemTitleWidthMarginLeft +
-                    lblProductItemTitleWidthMarginRight)
+            maxWidth: this.calculateMaxWidth()
         });
         this.lblProductItemTitle.dispatch({
             type: 'updateUserStyle',
@@ -117,14 +110,14 @@ export default class FlProductItem extends FlProductItemDesign {
         return this.lblTag.text;
     }
     set itemTag(value: string) {
-        this.flTagWrapper.visible = !!value;
+        setVisibility(this.flTagWrapper, !!value);
         if (!!value) {
             this.lblTag.text = value;
         }
         this.checkIsHidden();
     }
     set itemTagColor(value: string) {
-        this.flTagWrapper.visible = !!value;
+        setVisibility(this.flTagWrapper, !!value);
         if (!!value) {
             this.flTagWrapper.backgroundColor = Color.create(value);
         }
@@ -148,5 +141,16 @@ export default class FlProductItem extends FlProductItemDesign {
     }
     private checkIsHidden() {
         setVisibility(this, !!this.itemTitle);
+    }
+    private calculateMaxWidth(): number {
+        return (
+            this._width -
+            (productItemMarginRight +
+                productItemMarginLeft +
+                descriptionWrapperPaddingLeft +
+                descriptionWrapperPaddingRight +
+                lblProductItemTitleWidthMarginLeft +
+                lblProductItemTitleWidthMarginRight)
+        );
     }
 }

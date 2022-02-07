@@ -22,7 +22,7 @@ export default class GviProductItem extends GviProductItemDesign {
         this.flProductItem.onActionClick = value;
     }
     set itemTitleWidth(value: number) {
-        this.flProductItem.productNameMaxWith = value;
+        this.flProductItem.itemTitleWidth = value;
     }
     get itemTitle(): string {
         return this.flProductItem.itemTitle;

@@ -37,12 +37,6 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
                 });
             };
         };
-        this.categoriesGrid.onPullRefresh = () => {
-            this.categories = [];
-            this.fetchCategories()
-                .then(() => this.categoriesGrid.stopRefresh())
-                .catch(() => this.categoriesGrid.stopRefresh());
-        };
     }
     refreshGridView() {
         this.categoriesGrid.itemCount = this.categories.length;
@@ -58,6 +52,10 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
         } catch (error) {
         } finally {
             hideWaitDialog();
+            this.categoriesGrid.onPullRefresh = () => {
+                this.categories = [];
+                this.fetchCategories().then(() => this.categoriesGrid.stopRefresh());
+            };
         }
     }
 
