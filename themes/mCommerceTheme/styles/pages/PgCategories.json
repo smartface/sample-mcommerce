@@ -1,6 +1,5 @@
 {
   "#pgCategories": {
-    "backgroundColor": "${backgroundMain}",
     "&-categoriesGrid": {
       "flexProps": {
         "flexGrow": 1
@@ -8,10 +7,7 @@
       "layoutManager": {
         "spanCount": 2
       },
-      "backgroundColor": "${backgroundMain}",
-      "left": 0,
-      "testId": "y2_Ae0-c0",
-      "top": 0
+      "backgroundColor": "${backgroundMain}"
     }
   }
 }
