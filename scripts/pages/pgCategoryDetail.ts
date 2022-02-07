@@ -212,11 +212,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     onLoad() {
         super.onLoad();
         this.headerBar.title = this.route.getState().routeData.title;
-        // if (System.OS === System.OSType.IOS) {
         this.addRightItem();
-        // } else {
-        //this.initSearchView(true);
-        // }
         this.initEmptyItem();
         this.initGridView();
     }
