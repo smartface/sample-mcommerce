@@ -21,8 +21,8 @@ export default class GviProductItem extends GviProductItemDesign {
     set onActionClick(value: (...args) => void) {
         this.flProductItem.onActionClick = value;
     }
-    set itemTitleWidth(value: number) {
-        this.flProductItem.itemTitleWidth = value;
+    set itemTitleMaxWidth(value: number) {
+        this.flProductItem.itemTitleMaxWidth = value;
     }
     get itemTitle(): string {
         return this.flProductItem.itemTitle;

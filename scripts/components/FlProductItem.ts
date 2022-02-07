@@ -18,7 +18,7 @@ const { marginRight: lblProductItemTitleWidthMarginRight, marginLeft: lblProduct
 );
 export default class FlProductItem extends FlProductItemDesign {
     private __imageUrl: string;
-    private _width: number;
+    private __itemTitleMaxWidth: number;
     _addToBasket: (...args) => void;
     pageName?: string | undefined;
     myActivityIndicator: ActivityIndicator;
@@ -40,8 +40,8 @@ export default class FlProductItem extends FlProductItemDesign {
             }
         });
     }
-    set itemTitleWidth(value: number) {
-        this._width = value;
+    set itemTitleMaxWidth(value: number) {
+        this.__itemTitleMaxWidth = value;
     }
     get onActionClick(): (...args) => void {
         return this._addToBasket;
@@ -110,7 +110,6 @@ export default class FlProductItem extends FlProductItemDesign {
         return this.lblTag.text;
     }
     set itemTag(value: string) {
-        setVisibility(this.flTagWrapper, !!value);
         if (!!value) {
             this.lblTag.text = value;
         }
@@ -144,7 +143,7 @@ export default class FlProductItem extends FlProductItemDesign {
     }
     private calculateMaxWidth(): number {
         return (
-            this._width -
+            this.__itemTitleMaxWidth -
             (productItemMarginRight +
                 productItemMarginLeft +
                 descriptionWrapperPaddingLeft +

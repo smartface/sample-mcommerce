@@ -110,12 +110,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             this.initialized = true;
             this.paginating = false;
             hideWaitDialog();
-            this.gvProducts.onPullRefresh = () => {
-                this.pageNumber = 0;
-                this.paginating = false;
-                this.categoryProducts = [];
-                this.getCategoryProducts().then(() => this.gvProducts.stopRefresh());
-            };
+            this.gvProducts.stopRefresh();
         }
     }
     getShowcaseProducts() {
@@ -127,6 +122,14 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     }
 
     initGridView() {
+        this.gvProducts.onPullRefresh = () => {
+            this.pageNumber = 0;
+            this.paginating = false;
+            this.categoryProducts = [];
+            this.getCategoryProducts()
+                .then(() => this.gvProducts.stopRefresh())
+                .catch(() => this.gvProducts.stopRefresh());
+        };
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             GridViewItem.itemTag = this.categoryProducts[productIndex]?.labels[0]?.name;
             GridViewItem.itemTagColor = this.categoryProducts[productIndex]?.labels[0]?.color;

@@ -44,7 +44,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     private initGridView() {
         this.gvProducts.layoutManager.onItemLength = () => HALF_OF_SCREEN_WIDTH;
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
-            GridViewItem.itemTitleWidth = HALF_OF_SCREEN_WIDTH;
+            GridViewItem.itemTitleMaxWidth = HALF_OF_SCREEN_WIDTH;
             GridViewItem.itemTag = this.items[productIndex]?.labels[0]?.name;
             GridViewItem.itemTagColor = this.items[productIndex]?.labels[0]?.color;
             GridViewItem.itemTitle = this.items[productIndex].name;
