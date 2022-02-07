@@ -5,7 +5,7 @@
     "skipLibCheck": true,
     "sourceMap": true,
     "noEmit": false,
-    "target": "ES6",
+    "target": "ES5",
     "outDir": "./dist",
     "moduleResolution": "Node",
     "module": "CommonJS",
