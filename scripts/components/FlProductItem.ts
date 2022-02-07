@@ -8,8 +8,16 @@ import Color from '@smartface/native/ui/color';
 import { setTextDimensions } from 'lib/setTextDimensions';
 import { PRODUCT_NAME_MAX_LINE } from 'constants';
 
+const { marginRight: productItemMarginRight, marginLeft: productItemMarginLeft } = themeService.getNativeStyle('.flProductItem');
+const { paddingLeft: descriptionWrapperPaddingLeft, paddingRight: descriptionWrapperPaddingRight } = themeService.getNativeStyle(
+    '.flProductItem-flProductItemWrapper-descriptionWrapper'
+);
+const { marginRight: lblProductItemTitleWidthMarginRight, marginLeft: lblProductItemTitleWidthMarginLeft } = themeService.getNativeStyle(
+    '.flProductItem-flProductItemWrapper-descriptionWrapper-lblProductTitle'
+);
 export default class FlProductItem extends FlProductItemDesign {
     private __imageUrl: string;
+    private _productNameMaxWith: number;
     _addToBasket: (...args) => void;
     pageName?: string | undefined;
     myActivityIndicator: ActivityIndicator;
@@ -31,6 +39,9 @@ export default class FlProductItem extends FlProductItemDesign {
             }
         });
     }
+    set productNameMaxWith(value: number) {
+        this._productNameMaxWith = value;
+    }
     get onActionClick(): (...args) => void {
         return this._addToBasket;
     }
@@ -42,7 +53,17 @@ export default class FlProductItem extends FlProductItemDesign {
     }
     set itemTitle(value: string) {
         this.lblProductItemTitle.text = value;
-        const { height } = setTextDimensions(value, this.lblProductItemTitle.font, { maxLines: PRODUCT_NAME_MAX_LINE });
+        const { height } = setTextDimensions(value, this.lblProductItemTitle.font, {
+            maxLines: PRODUCT_NAME_MAX_LINE,
+            maxWidth:
+                this._productNameMaxWith -
+                (productItemMarginRight +
+                    productItemMarginLeft +
+                    descriptionWrapperPaddingLeft +
+                    descriptionWrapperPaddingRight +
+                    lblProductItemTitleWidthMarginLeft +
+                    lblProductItemTitleWidthMarginRight)
+        });
         this.lblProductItemTitle.dispatch({
             type: 'updateUserStyle',
             userStyle: {

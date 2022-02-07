@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flProductItem",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "d126-3ab9-070f-a585",
 			"props": {
 				"children": [
@@ -92,7 +92,6 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"maxLines": 2,
 				"text": "label1",
 				"usePageVariable": true
 			}
@@ -189,12 +188,8 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": null
-				},
 				"text": "lblR",
-				"usePageVariable": true,
-				"width": 30
+				"usePageVariable": true
 			}
 		},
 		{

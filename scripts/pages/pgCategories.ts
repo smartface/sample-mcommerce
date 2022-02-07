@@ -21,7 +21,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
             });
         }
     }
-    async initCategoriesGrid() {
+    initCategoriesGrid() {
         this.categoriesGrid.scrollBarEnabled = false;
         this.categoriesGrid.onItemBind = (GridViewItem: categoriesItem, index: number) => {
             GridViewItem.flCategoryItemWrapper.borderWidth = 1;
@@ -36,6 +36,12 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
                     isShowcase: false
                 });
             };
+        };
+        this.categoriesGrid.onPullRefresh = () => {
+            this.categories = [];
+            this.fetchCategories()
+                .then(() => this.categoriesGrid.stopRefresh())
+                .catch(() => this.categoriesGrid.stopRefresh());
         };
     }
     refreshGridView() {

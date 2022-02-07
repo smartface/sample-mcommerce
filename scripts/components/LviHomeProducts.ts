@@ -43,6 +43,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     private initGridView() {
         this.gvProducts.layoutManager.onItemLength = () => Screen.width / 2;
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
+            GridViewItem.itemTitleWidth = Screen.width / 2;
             GridViewItem.itemTag = this.items[productIndex]?.labels[0]?.name;
             GridViewItem.itemTagColor = this.items[productIndex]?.labels[0]?.color;
             GridViewItem.itemTitle = this.items[productIndex].name;
@@ -51,9 +52,6 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
             GridViewItem.itemDiscountPrice = !!this.items[productIndex].discountPrice ? `$${this.items[productIndex].discountPrice}` : '';
             GridViewItem.itemPrice = `$${this.items[productIndex].price}`;
             GridViewItem.itemReview = !!this.items[productIndex]?.rating ? `${this.items[productIndex]?.rating}` : '';
-            this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
-                this.onProductClick(this.items[productIndex]);
-            };
             GridViewItem.onActionClick = () => {
                 GridViewItem.initIndicator();
                 GridViewItem.toggleIndicator(true);
@@ -62,6 +60,9 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
                     GridViewItem.toggleIndicator(false);
                 }, 500);
             };
+        };
+        this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
+            this.onProductClick(this.items[productIndex]);
         };
     }
     refreshGridView() {

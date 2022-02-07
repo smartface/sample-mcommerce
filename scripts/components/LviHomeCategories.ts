@@ -43,9 +43,9 @@ export default class LviHomeCategories extends LviHomeCategoriesDesign {
             GridViewItem.categoryName = this.items[categoryIndex].title;
             GridViewItem.categoryBackgroundColor = this.items[categoryIndex].menuColor;
             GridViewItem.categoryBorderColor = this.items[categoryIndex].borderColor;
-            this.gvCategories.onItemSelected = (GridViewItem: GviHomeCategoryItem, index: number) => {
-                this.onCategoryClick(this.items[index]);
-            };
+        };
+        this.gvCategories.onItemSelected = (GridViewItem: GviHomeCategoryItem, index: number) => {
+            this.onCategoryClick(this.items[index]);
         };
     }
     refreshGridView() {

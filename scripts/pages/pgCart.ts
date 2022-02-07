@@ -56,6 +56,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                         productImage: cart.images ? getProductImageUrl(cart.images[0]) : null,
                         productPrice: cart.price,
                         productCount: cart.count,
+                        minusButtonIcon: cart.count === 1 ? '' : '',
                         onActionPlus: () => {
                             this.cartOperation(cart, CartOperationEnum.Add);
                             this.refreshListView();

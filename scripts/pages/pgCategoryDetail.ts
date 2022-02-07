@@ -51,8 +51,8 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     }
     initSearchView(visible) {
         this.productSearchView = new SearchView();
+        this.headerBar.titleLayout = this.productSearchView;
         this.productSearchView.textFieldBackgroundColor = themeService.getNativeStyle('.sf-searchView.gray').textFieldBackgroundColor;
-        this.productSearchView.addToHeaderBar(this);
         if (visible) {
             this.isSearchViewVisible = true;
             this.productSearchView.onTextChanged = (searchText) => {
@@ -122,7 +122,8 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
 
     initGridView() {
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
-            GridViewItem.itemTag = this.categoryProducts[productIndex].discountTag;
+            GridViewItem.itemTag = this.categoryProducts[productIndex]?.labels[0]?.name;
+            GridViewItem.itemTagColor = this.categoryProducts[productIndex]?.labels[0]?.color;
             GridViewItem.itemTitle = this.categoryProducts[productIndex].name;
             GridViewItem.itemDesc = this.categoryProducts[productIndex].shortDescription;
             GridViewItem.itemImage = this.categoryProducts[productIndex].images
@@ -150,6 +151,14 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             this.router.push('productDetail', {
                 productId: product._id
             });
+        };
+        this.gvProducts.onPullRefresh = () => {
+            this.pageNumber = 0;
+            this.paginating = false;
+            this.categoryProducts = [];
+            this.getCategoryProducts()
+                .then(() => this.gvProducts.stopRefresh())
+                .catch(() => this.gvProducts.stopRefresh());
         };
     }
     refreshGridView() {
@@ -203,11 +212,11 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     onLoad() {
         super.onLoad();
         this.headerBar.title = this.route.getState().routeData.title;
-        if (System.OS === System.OSType.IOS) {
-            this.addRightItem();
-        } else {
-            this.initSearchView(true);
-        }
+        // if (System.OS === System.OSType.IOS) {
+        this.addRightItem();
+        // } else {
+        //this.initSearchView(true);
+        // }
         this.initEmptyItem();
         this.initGridView();
     }

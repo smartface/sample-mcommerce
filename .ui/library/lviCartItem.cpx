@@ -16,11 +16,7 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {
-				"flexProps": {},
-				"left": 6.19,
-				"top": 165.98
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .lviCartItem-flCartItem",
