@@ -71,6 +71,9 @@ export default class FlProductItem extends FlProductItemDesign {
         const discountExists = !!this.tvPriceWithDiscount.text;
         let attributeString = new AttributedString({
             strikethrough: discountExists,
+            ios: {
+                strikethroughColor: themeService.getNativeStyle('.product-price').textColor
+            },
             string: value || '',
             font: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').font,
             foregroundColor: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').textColor
