@@ -219,6 +219,7 @@
       "flexGrow": 1
     },
     "marginLeft": 10,
-    "marginBottom": 10
+    "marginBottom": 10,
+    "marginTop": 5
   }
 }

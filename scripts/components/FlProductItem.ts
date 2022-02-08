@@ -7,7 +7,6 @@ import { themeService } from 'theme';
 import Color from '@smartface/native/ui/color';
 import { setTextDimensions } from 'lib/setTextDimensions';
 import { PRODUCT_NAME_MAX_LINE } from 'constants';
-import System from '@smartface/native/device/system';
 
 const { marginRight: productItemMarginRight, marginLeft: productItemMarginLeft } = themeService.getNativeStyle('.flProductItem');
 const { paddingLeft: descriptionWrapperPaddingLeft, paddingRight: descriptionWrapperPaddingRight } = themeService.getNativeStyle(
@@ -71,9 +70,6 @@ export default class FlProductItem extends FlProductItemDesign {
     set itemPrice(value: string) {
         const discountExists = !!this.tvPriceWithDiscount.text;
         let attributeString = new AttributedString({
-            ios: {
-                strikethroughColor: themeService.getNativeStyle('.product-price').textColor,
-            },
             strikethrough: discountExists,
             string: value || '',
             font: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').font,
