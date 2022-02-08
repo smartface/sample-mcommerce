@@ -93,6 +93,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         );
 
         for (let index = 0; index < this.products.length; index++) {
+            processorItems.push(ListViewItems.getLviSpacerItem({ className: 'xSmall' }));
             processorItems.push(
                 ListViewItems.getLviHomeProducts({
                     items: [this.products[index], this.products[index + 1]],

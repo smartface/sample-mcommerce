@@ -63,7 +63,6 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                         product.name.startsWith(searchText.charAt(0).toLocaleUpperCase('tr-TR'))
                     );
                     this.categoryProducts = foundProducts;
-                    this.refreshGridView();
                 }
                 if (searchText.length === 0) {
                     this.searchStatus.isSearchActive = false;
@@ -73,7 +72,6 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                     } else {
                         this.getCategoryProducts();
                     }
-                    this.refreshGridView();
                 }
                 this.refreshGridView();
             };
@@ -126,9 +124,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             this.pageNumber = 0;
             this.paginating = false;
             this.categoryProducts = [];
-            this.getCategoryProducts()
-                .then(() => this.gvProducts.stopRefresh())
-                .catch(() => this.gvProducts.stopRefresh());
+            this.getCategoryProducts();
         };
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             GridViewItem.itemTag = this.categoryProducts[productIndex]?.labels[0]?.name;

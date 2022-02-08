@@ -64,9 +64,6 @@ export default class FlProductItem extends FlProductItemDesign {
                 height
             }
         });
-        if (System.OS === System.OSType.IOS) {
-            this.applyLayout();
-        }
     }
     get itemPrice(): string {
         return this.tvProductPrice.text;
