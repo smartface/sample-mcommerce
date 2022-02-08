@@ -19,7 +19,7 @@ export default class LviSpacer extends LviSpacerDesign {
         this.__className = value;
         this.dispatch({
             type: 'pushClassNames',
-            classNames: value
+            classNames: `.${value}`
         });
     }
     get backgroundColorClass(): string {

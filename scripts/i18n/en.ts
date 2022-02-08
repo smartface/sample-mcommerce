@@ -31,6 +31,7 @@ SMF.i18n.defineLanguage('en', {
     turkish: 'Turkish',
     welcomeText: 'Welcome\nto our store',
     welcomeSubText: 'Get your groceries in as fast as one hour',
+    categoriesServiceError: 'An error occurred on category service.',
     getStarted: 'Get Started',
     enterMobilNumberText: 'Enter your mobile number',
     mobileNumber: 'Mobile Number',

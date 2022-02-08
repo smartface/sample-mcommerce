@@ -7,6 +7,7 @@ SMF.i18n.defineLanguage('tr', {
     shoppingCartIsEmpty: 'Sepetinizde ürün yok',
     favoritesIsEmpty: 'Favorilerinizde bir ürün yok',
     categoriesIsEmpty: 'Bu kategoride ürün bulunmuyor',
+    categoriesServiceError: 'Kategori servisinde bir hata oluştu.',
     categoriesIsEmptyWithSearch: 'Aramanıza uygun ürün bulununamadı : ',
     loginHeader: 'Giriş',
     signUpHeader: 'Kayıt Ol',

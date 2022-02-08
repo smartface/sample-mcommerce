@@ -1,6 +1,6 @@
 {
   ".lviHomeCategories": {
-    "height": 110,
+    "height": 125,
     "flexProps": {},
     "testId": "7ycy14PHi",
     "&-gvCategories": {
@@ -12,6 +12,7 @@
       "flexProps": {
         "flexGrow": 1
       }
-    }
+    },
+    "paddingTop": 15
   }
 }

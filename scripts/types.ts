@@ -36,6 +36,7 @@ export type Product = {
     discountTag?: string;
     count?: number;
     rating?: number;
+    labels: Array<Label>;
 };
 export type AccountMenus = {
     menuId: number;
@@ -69,4 +70,9 @@ export type Review = {
     productId: string;
     name: string;
     sub: string;
+};
+
+export type Label = {
+    name: string;
+    color: string;
 };

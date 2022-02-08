@@ -21,7 +21,11 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
             });
         }
     }
-    async initCategoriesGrid() {
+    initCategoriesGrid() {
+        this.categoriesGrid.onPullRefresh = () => {
+            this.categories = [];
+            this.fetchCategories();
+        };
         this.categoriesGrid.scrollBarEnabled = false;
         this.categoriesGrid.onItemBind = (GridViewItem: categoriesItem, index: number) => {
             GridViewItem.flCategoryItemWrapper.borderWidth = 1;
@@ -50,7 +54,9 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
                 this.refreshGridView();
             }
         } catch (error) {
+            alert(global.lang.categoriesServiceError);
         } finally {
+            this.categoriesGrid.stopRefresh();
             hideWaitDialog();
         }
     }

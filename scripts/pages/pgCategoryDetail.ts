@@ -2,7 +2,6 @@ import PgCategoryDetailDesign from 'generated/pages/pgCategoryDetail';
 import store from 'store/index';
 import storeActions from 'store/main/actions';
 import SearchView from '@smartface/native/ui/searchview';
-import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
 import System from '@smartface/native/device/system';
@@ -52,8 +51,8 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     }
     initSearchView(visible) {
         this.productSearchView = new SearchView();
+        this.headerBar.titleLayout = this.productSearchView;
         this.productSearchView.textFieldBackgroundColor = themeService.getNativeStyle('.sf-searchView.gray').textFieldBackgroundColor;
-        this.productSearchView.addToHeaderBar(this);
         if (visible) {
             this.isSearchViewVisible = true;
             this.productSearchView.onTextChanged = (searchText) => {
@@ -64,7 +63,6 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                         product.name.startsWith(searchText.charAt(0).toLocaleUpperCase('tr-TR'))
                     );
                     this.categoryProducts = foundProducts;
-                    this.refreshGridView();
                 }
                 if (searchText.length === 0) {
                     this.searchStatus.isSearchActive = false;
@@ -74,7 +72,6 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                     } else {
                         this.getCategoryProducts();
                     }
-                    this.refreshGridView();
                 }
                 this.refreshGridView();
             };
@@ -111,6 +108,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             this.initialized = true;
             this.paginating = false;
             hideWaitDialog();
+            this.gvProducts.stopRefresh();
         }
     }
     getShowcaseProducts() {
@@ -122,8 +120,15 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     }
 
     initGridView() {
+        this.gvProducts.onPullRefresh = () => {
+            this.pageNumber = 0;
+            this.paginating = false;
+            this.categoryProducts = [];
+            this.getCategoryProducts();
+        };
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
-            GridViewItem.itemTag = this.categoryProducts[productIndex].discountTag;
+            GridViewItem.itemTag = this.categoryProducts[productIndex]?.labels[0]?.name;
+            GridViewItem.itemTagColor = this.categoryProducts[productIndex]?.labels[0]?.color;
             GridViewItem.itemTitle = this.categoryProducts[productIndex].name;
             GridViewItem.itemDesc = this.categoryProducts[productIndex].shortDescription;
             GridViewItem.itemImage = this.categoryProducts[productIndex].images
@@ -133,7 +138,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 ? `$${this.categoryProducts[productIndex].discountPrice}`
                 : '';
             GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price}`;
-            GridViewItem.itemReview = !!this.categoryProducts[productIndex].review ? this.categoryProducts[productIndex]?.review : false;
+            GridViewItem.itemReview = this.categoryProducts[productIndex]?.rating?.toString() || '';
             GridViewItem.onActionClick = () => {
                 GridViewItem.initIndicator();
                 GridViewItem.toggleIndicator(true);
@@ -204,11 +209,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     onLoad() {
         super.onLoad();
         this.headerBar.title = this.route.getState().routeData.title;
-        if (System.OS === System.OSType.IOS) {
-            this.addRightItem();
-        } else {
-            this.initSearchView(true);
-        }
+        this.addRightItem();
         this.initEmptyItem();
         this.initGridView();
     }

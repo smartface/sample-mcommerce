@@ -1,7 +1,7 @@
 import { themeService } from 'theme';
 import Button from '@smartface/native/ui/button';
-import View from '@smartface/native/ui/view';
 import LviCartItemDesign from 'generated/my-components/LviCartItem';
+import Label from '@smartface/native/ui/label';
 const originalHeight = themeService.getStyle('.lviCartItem').height;
 
 export default class LviCartItem extends LviCartItemDesign {
@@ -11,7 +11,6 @@ export default class LviCartItem extends LviCartItemDesign {
     _valueMinus: (...args) => void;
     _removeValue: (...args) => void;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
         this.btnCartPlus.on(Button.Events.Press, () => {
@@ -20,7 +19,7 @@ export default class LviCartItem extends LviCartItemDesign {
         this.btnCartMinus.on(Button.Events.Press, () => {
             this._valueMinus && this._valueMinus();
         });
-        this.lblCloseIcon.on(View.Events.Touch, () => {
+        this.lblCloseIcon.on(Label.Events.Touch, () => {
             this._removeValue && this._removeValue();
         });
     }
@@ -67,11 +66,16 @@ export default class LviCartItem extends LviCartItemDesign {
     set bottomLine(value: boolean) {
         this.flCartItemBottomLine.visible = value;
     }
+    set minusButtonIcon(value: string) {
+        this.btnCartMinus.text = value.toString();
+    }
+    get minusButtonIcon(): string {
+        return this.btnCartMinus.text;
+    }
     get onActionPlus(): (...args) => void {
         return this._value;
     }
     set onActionPlus(value: (...args) => void) {
-        //this.btnCartPlus.onTouchEnded = value;
         this._value = value;
     }
     get onActionMinus(): (...args) => void {
