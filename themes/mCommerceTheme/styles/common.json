@@ -31,8 +31,8 @@
     "paddingBottom": 15
   },
   ".paddingVertical": {
-    "paddingTop": 15,
-    "paddingBottom": 15
+    "paddingTop": 5,
+    "paddingBottom": 5
   },
   ".paddingHorizontal": {
     "paddingLeft": 15,

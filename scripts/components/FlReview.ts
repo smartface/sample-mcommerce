@@ -1,4 +1,6 @@
+import { REVIEW_MAX_LINE } from 'constants';
 import FlReviewDesign from 'generated/my-components/FlReview';
+import { setTextDimensions } from 'lib/setTextDimensions';
 import setVisibility from 'lib/setVisibility';
 
 export default class FlReview extends FlReviewDesign {
@@ -25,6 +27,13 @@ export default class FlReview extends FlReviewDesign {
     }
     set comment(value: string) {
         this.tvComment.text = value;
+        const { height } = setTextDimensions(value, this.tvComment.font, { maxLines: REVIEW_MAX_LINE });
+        this.tvComment.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                height
+            }
+        });
     }
     get showSeparator(): boolean {
         return this.__showSeparator;

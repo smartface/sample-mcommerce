@@ -4,7 +4,6 @@ import storeActions from 'store/main/actions';
 import SearchView from '@smartface/native/ui/searchview';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
-import System from '@smartface/native/device/system';
 import GviProductItem from 'components/GviProductItem';
 import Screen from '@smartface/native/device/screen';
 import { themeService } from 'theme';
@@ -36,12 +35,13 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     }
     addRightItem() {
         const rightItem = new HeaderBarItem({
-            image: Image.createFromFile('images://filtericon.png'),
+            image: Image.createFromFile('images://magnifying_glass.png'),
             //Native › NTVE-435
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
             onPress: () => {
                 if (this.isSearchViewVisible) {
                     this.initSearchView(false);
+                    this.headerBar.titleLayout = undefined;
                 } else {
                     this.initSearchView(true);
                 }
@@ -192,6 +192,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
 
     onShow() {
         super.onShow();
+        this.addRightItem();
         this.initDismissButton(this.router, {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
@@ -209,7 +210,6 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     onLoad() {
         super.onLoad();
         this.headerBar.title = this.route.getState().routeData.title;
-        this.addRightItem();
         this.initEmptyItem();
         this.initGridView();
     }

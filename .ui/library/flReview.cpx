@@ -17,11 +17,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 1.33,
-				"top": 60.67
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flReview-flHeader",

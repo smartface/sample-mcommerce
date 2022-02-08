@@ -17,3 +17,4 @@ export const BANNER_ASPECT_RATIO = 3;
 export const HOME_PRODUCT_LIMIT = 30;
 export const PRODUCT_NAME_MAX_LINE = 2;
 export const HALF_OF_SCREEN_WIDTH = Screen.width / 2;
+export const REVIEW_MAX_LINE = 3;
