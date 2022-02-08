@@ -15,11 +15,7 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {
-				"flexProps": {},
-				"left": 1.37,
-				"top": 65.75
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-gridView .lviHomeCategories-gvCategories",

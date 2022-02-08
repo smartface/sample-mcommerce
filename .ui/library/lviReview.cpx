@@ -18,7 +18,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout .flReview",
+			"className": ".sf-flexLayout .flReview .grow",
 			"hiddenComponent": false,
 			"id": "839c-e9d6-1263-0fd5",
 			"props": {
