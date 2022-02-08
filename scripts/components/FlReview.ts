@@ -1,7 +1,11 @@
+import Screen from '@smartface/native/device/screen';
 import { REVIEW_MAX_LINE } from 'constants';
 import FlReviewDesign from 'generated/my-components/FlReview';
 import { setTextDimensions } from 'lib/setTextDimensions';
 import setVisibility from 'lib/setVisibility';
+import { themeService } from 'theme';
+const { paddingLeft, paddingRight } = themeService.getNativeStyle('.flReview');
+const commentMaxWidth = Screen.width - (paddingLeft + paddingRight);
 
 export default class FlReview extends FlReviewDesign {
     pageName?: string | undefined;
@@ -23,12 +27,12 @@ export default class FlReview extends FlReviewDesign {
         this.lblStar.text = value;
     }
     get comment(): string {
-        return this.tvComment.text;
+        return this.lblComment.text;
     }
     set comment(value: string) {
-        this.tvComment.text = value;
-        const { height } = setTextDimensions(value, this.tvComment.font, { maxLines: REVIEW_MAX_LINE });
-        this.tvComment.dispatch({
+        this.lblComment.text = value;
+        const { height } = setTextDimensions(value, this.lblComment.font, { maxLines: REVIEW_MAX_LINE, maxWidth: commentMaxWidth });
+        this.lblComment.dispatch({
             type: 'updateUserStyle',
             userStyle: {
                 height

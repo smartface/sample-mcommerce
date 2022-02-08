@@ -1,12 +1,18 @@
+import Screen from '@smartface/native/device/screen';
 import { REVIEW_MAX_LINE } from 'constants';
 import LviReviewDesign from 'generated/my-components/LviReview';
 import { setTextDimensions } from 'lib/setTextDimensions';
 import { themeService } from 'theme';
-
-const { paddingBottom: reviewPaddingBottom, paddingTop: reviewPaddingTop } = themeService.getNativeStyle('.flReview');
+const {
+    paddingBottom: reviewPaddingBottom,
+    paddingTop: reviewPaddingTop,
+    paddingLeft,
+    paddingRight
+} = themeService.getNativeStyle('.flReview');
+const titleHeight = themeService.getNativeStyle('.flReview-flHeader').height;
 const { height: separatorHeight } = themeService.getNativeStyle('.separator');
-const { font: lblFont } = themeService.getNativeStyle('.review.name');
-const { font: tvFont } = themeService.getNativeStyle('.review.tvComment');
+const { font: lblFont } = themeService.getNativeStyle('.review.lblComment');
+const commentMaxWidth = Screen.width - (paddingLeft + paddingRight);
 
 export default class LviReview extends LviReviewDesign {
     pageName?: string | undefined;
@@ -14,10 +20,9 @@ export default class LviReview extends LviReviewDesign {
         super(props);
         this.pageName = pageName;
     }
-    static getHeight(tvComment: string, lblName: string): number {
-        const { height: commentHeight } = setTextDimensions(tvComment, tvFont, { maxLines: REVIEW_MAX_LINE });
-        const { height: titleHeight } = setTextDimensions(lblName, lblFont, {});
-        return reviewPaddingTop + titleHeight + commentHeight + reviewPaddingBottom + separatorHeight;
+    static getHeight(comment: string): number {
+        const { height: commentHeight } = setTextDimensions(comment, lblFont, { maxLines: REVIEW_MAX_LINE, maxWidth: commentMaxWidth });
+        return reviewPaddingTop + reviewPaddingBottom + titleHeight + commentHeight + separatorHeight;
     }
     get name(): string {
         return this.flReview.name;

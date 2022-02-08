@@ -119,12 +119,12 @@
 			}
 		},
 		{
-			"className": ".sf-textView .flReview-tvComment .review.tvComment",
+			"className": ".sf-textView .flReview-lblComment .review.lblComment",
 			"id": "f263-8261-358d-d158",
 			"props": {
 				"children": [],
 				"html": "Deneme yorum",
-				"name": "tvComment",
+				"name": "lblComment",
 				"parent": "391c-0052-8b78-9389",
 				"text": "Deneme yorum",
 				"usePageVariable": true
@@ -132,7 +132,7 @@
 			"source": {
 				"page": "__library__"
 			},
-			"type": "TextView",
+			"type": "Label",
 			"userProps": {
 				"html": "Deneme yorum",
 				"text": "Deneme yorum",

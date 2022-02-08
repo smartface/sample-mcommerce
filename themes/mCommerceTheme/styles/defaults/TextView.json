@@ -1,14 +1,15 @@
 {
-  ".sf-listViewItem": {
+  ".sf-textView": {
     "masksToBounds": true,
+    "width": null,
+    "height": 131,
+    "maxLines": 1,
+    "ellipsizeMode": "END",
+    "textAlignment": "MIDLEFT",
     "backgroundColor": "${transparent}",
-    "height": 54,
-    "width": 375,
     "flexProps": {
-      "alignSelf": "STRETCH",
-      "positionType": "RELATIVE",
-      "alignContent": "STRETCH",
-      "alignItems": "STRETCH"
+      "alignSelf": "AUTO",
+      "positionType": "RELATIVE"
     },
     "&-small": {
       "width": 100

@@ -2,7 +2,7 @@
   ".flReview": {
     "flexProps": {},
     "height": 80,
-    "&-tvComment": {
+    "&-lblComment": {
       "maxLines": 3,
       "height": 30
     },

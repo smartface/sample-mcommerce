@@ -286,7 +286,7 @@ export function getLviReview(item: Partial<LviReview>): ProcessorTypes.ILviRevie
             ...item,
             borders: []
         },
-        height: LviReview.getHeight(item.comment, item.name)
+        height: LviReview.getHeight(item.comment)
     };
 }
 
