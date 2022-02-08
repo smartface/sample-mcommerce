@@ -23,7 +23,8 @@
         },
         "height": 50,
         "testId": "-ICBM385d",
-        "width": null
+        "width": null,
+        "imageFillType": "ASPECTFIT"
       },
       "&-lblCategoryName": {
         "flexProps": {
