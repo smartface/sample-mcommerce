@@ -166,7 +166,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .grow",
+			"className": ".sf-flexLayout .grow .flProductDetailButtonPriceSection-flPrice",
 			"id": "0d4e-9ac0-154a-5319",
 			"props": {
 				"children": [
@@ -186,15 +186,14 @@
 			}
 		},
 		{
-			"className": ".sf-textView .grow",
+			"className": ".sf-textView .flProductDetailButtonPriceSection-flPrice-textbox",
 			"id": "9362-249d-85fc-bd72",
-			"oldName": "tvPric",
 			"props": {
 				"children": [],
-				"html": "<br>",
+				"html": "4.55",
 				"name": "tvPrice",
 				"parent": "0d4e-9ac0-154a-5319",
-				"text": "\n",
+				"text": "4.55",
 				"usePageVariable": true
 			},
 			"source": {
@@ -202,21 +201,20 @@
 			},
 			"type": "TextView",
 			"userProps": {
-				"html": "<br>",
-				"text": "\n",
+				"html": "4.55",
+				"text": "4.55",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-textView .grow",
+			"className": ".sf-textView .flProductDetailButtonPriceSection-flPrice-textbox",
 			"id": "cf23-bb5f-9f1e-55b3",
-			"oldName": "tvDiscou",
 			"props": {
 				"children": [],
-				"html": "<br>",
+				"html": "1222",
 				"name": "tvDiscount",
 				"parent": "0d4e-9ac0-154a-5319",
-				"text": "\n",
+				"text": "1222",
 				"usePageVariable": true
 			},
 			"source": {
@@ -224,8 +222,8 @@
 			},
 			"type": "TextView",
 			"userProps": {
-				"html": "<br>",
-				"text": "\n",
+				"html": "1222",
+				"text": "1222",
 				"usePageVariable": true
 			}
 		}

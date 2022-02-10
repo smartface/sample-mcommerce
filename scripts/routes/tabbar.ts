@@ -63,27 +63,21 @@ function productDetailRouter(basePath: string) {
                     visible: true
                 })
             }),
-            Route.of({
+            Route.of<Pages.pgReviews>({
                 path: `${basePath}/productDetail/reviews`,
-                to: `${basePath}/productDetail/reviews/main`,
-                routes: [
-                    Route.of<Pages.pgReviews>({
-                        path: `${basePath}/productDetail/reviews/main`,
-                        build(router, route) {
-                            const page = new Pages.pgReviews(router, route);
-                            router.setState({ view: page });
-                            return page;
-                        }
-                    }),
-                    Route.of<Pages.pgAddReview>({
-                        path: `${basePath}/productDetail/reviews/addReview`,
-                        build(router, route) {
-                            const page = new Pages.pgAddReview(router, route);
-                            router.setState({ view: page });
-                            return page;
-                        }
-                    })
-                ]
+                build(router, route) {
+                    const page = new Pages.pgReviews(router, route);
+                    router.setState({ view: page });
+                    return page;
+                }
+            }),
+            Route.of<Pages.pgAddReview>({
+                path: `${basePath}/productDetail/addReview`,
+                build(router, route) {
+                    const page = new Pages.pgAddReview(router, route);
+                    router.setState({ view: page });
+                    return page;
+                }
             }),
             Route.of<Pages.pgNutritions>({
                 path: `${basePath}/productDetail/nutritions`,

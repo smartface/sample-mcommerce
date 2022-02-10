@@ -31,7 +31,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
             image: Image.createFromFile('images://rate_with_comment.png'),
             onPress: () => {
-                this.router.push('reviews/addReview', { product: this.route.getState().routeData?.product });
+                this.router.push('addReview', { product: this.route.getState().routeData?.product });
             }
         });
         this.headerBar.setItems([this.rightItem]);
