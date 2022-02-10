@@ -1,0 +1,60 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flHeaderIcon",
+			"hiddenComponent": true,
+			"id": "11f0-0779-9d67-7423",
+			"props": {
+				"children": [
+					"d7dc-9135-aaa0-eee4",
+					"4f79-638b-f120-906b"
+				],
+				"name": "flHeaderIcon",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-imageView .flHeaderIcon-imgIcon",
+			"id": "d7dc-9135-aaa0-eee4",
+			"oldName": "imgI",
+			"props": {
+				"children": [],
+				"name": "imgIcon",
+				"parent": "11f0-0779-9d67-7423",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .grow",
+			"id": "4f79-638b-f120-906b",
+			"oldName": "lblHea",
+			"props": {
+				"children": [],
+				"name": "lblHeader",
+				"parent": "11f0-0779-9d67-7423",
+				"text": "Smart Commerce",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "Smart Commerce",
+				"usePageVariable": true
+			}
+		}
+	]
+}

@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flNutritions",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "cd1f-c598-7981-3343",
 			"props": {
 				"children": [
@@ -18,10 +18,9 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"alignItems": "STRETCH",
-					"justifyContent": "CENTER"
-				}
+				"flexProps": {},
+				"left": 10.96,
+				"top": 61.64
 			}
 		},
 		{
@@ -65,7 +64,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .separator",
+			"className": ".sf-flexLayout .separator.full",
 			"id": "bd9e-bebd-ac64-d758",
 			"oldName": "separato",
 			"props": {

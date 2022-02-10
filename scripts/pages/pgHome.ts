@@ -12,9 +12,7 @@ import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { getBannerImage, getBanners, getCategories, getProductsByQuery, getShowcases } from 'service/commerce';
 import LviGenericSlider from 'components/LviGenericSlider';
 import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from 'constants';
-import HeaderBarItem from '@smartface/native/ui/headerbaritem';
-import { themeService } from 'theme';
-import Image from '@smartface/native/ui/image';
+import FlHeaderIcon from 'generated/my-components/FlHeaderIcon';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -33,13 +31,9 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         super({});
         this.sliderHeight = LviGenericSlider.calculateHeightWithAspectRatio(BANNER_ASPECT_RATIO);
     }
-    addRightItem() {
-        const rightItem = new HeaderBarItem({
-            image: Image.createFromFile('images://app_icon.png'),
-            //Native › NTVE-435
-            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
-        });
-        this.headerBar.setItems([rightItem]);
+    addAppIconToHeader() {
+        this.headerBar.title = '';
+        this.headerBar.titleLayout = new FlHeaderIcon({ appName: global.lang.appName });
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -196,12 +190,11 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     }
     onShow() {
         super.onShow();
-        this.addRightItem();
+        this.addAppIconToHeader();
         this.callServices();
     }
     onLoad() {
         super.onLoad();
-        this.headerBar.title = global.lang.shop;
         this.initListView();
         this.headerBar.leftItemEnabled = false;
     }

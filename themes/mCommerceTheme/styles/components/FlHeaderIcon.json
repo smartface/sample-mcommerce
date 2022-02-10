@@ -1,0 +1,16 @@
+{
+  ".flHeaderIcon": {
+    "height": 70,
+    "width": 250,
+    "flexProps": {
+      "flexDirection": "ROW",
+      "alignItems": "CENTER"
+    },
+    "&-imgIcon": {
+      "height": 70,
+      "image": "header_icon.png",
+      "imageFillType": "ASPECTFIT",
+      "width": 70
+    }
+  }
+}

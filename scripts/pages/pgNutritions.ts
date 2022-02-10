@@ -28,9 +28,10 @@ export default class PgNutritions extends withDismissAndBackButton(PgNutritionsD
     }
     getNutritions() {
         this.nutritions = this.route.getState().routeData.product?.nutritions;
-        console.info('this.nutritions', this.nutritions);
     }
     initListView() {
+        this.lvMain.refreshEnabled = false;
+        this.lvMain.scrollEnabled = false;
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowHeight = onRowHeight.bind(this);
         this.lvMain.onRowCreate = onRowCreate.bind(this);
@@ -51,16 +52,17 @@ export default class PgNutritions extends withDismissAndBackButton(PgNutritionsD
                 })
             );
         } else {
-            for (var key in this.nutritions) {
+            Object.keys(this.nutritions).forEach((key, index, arr) => {
                 if (this.nutritions.hasOwnProperty(key)) {
                     processorItems.push(
                         ListViewItems.getLviNutritions({
                             nutritionKey: key,
-                            nutritionValue: this.nutritions[key] !== '' ? this.nutritions[key] : '-'
+                            nutritionValue: this.nutritions[key] !== '' ? this.nutritions[key] : '-',
+                            showSeparator: arr.length - 1 !== index
                         })
                     );
                 }
-            }
+            });
         }
         return processorItems;
     }

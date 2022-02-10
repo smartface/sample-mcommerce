@@ -1,12 +1,14 @@
 {
   ".flNutritions": {
-    "height": 55,
+    "height": 50,
+    "flexProps": {
+      "justifyContent": "CENTER"
+    },
     "&-lblKeyOfNutritions": {
-      "height": 30
+      "height": 25
     },
     "&-lblValueOfNutritions": {
       "height": 20
-    },
-    "flexProps": {}
+    }
   }
 }

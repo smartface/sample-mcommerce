@@ -30,4 +30,10 @@ export default class LviNutritions extends LviNutritionsDesign {
     set nutritionValue(value: string) {
         this.flNutritions.nutritionValue = value;
     }
+    get showSeparator(): boolean {
+        return this.flNutritions.showSeparator;
+    }
+    set showSeparator(value: boolean) {
+        this.flNutritions.showSeparator = value;
+    }
 }

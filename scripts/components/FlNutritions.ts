@@ -17,7 +17,7 @@ export default class FlNutritions extends FlNutritionsDesign {
         return this.lblKeyOfNutritions.text;
     }
     set nutritionKey(value: string) {
-        this.lblKeyOfNutritions.text = `${value}:`;
+        this.lblKeyOfNutritions.text = value;
     }
     get nutritionValue(): string {
         return this.lblValueOfNutritions.text;
@@ -31,5 +31,12 @@ export default class FlNutritions extends FlNutritionsDesign {
                 height
             }
         });
+    }
+    get showSeparator(): boolean {
+        return this.__showSeparator;
+    }
+    set showSeparator(value: boolean) {
+        setVisibility(this.separator, value);
+        this.__showSeparator = value;
     }
 }

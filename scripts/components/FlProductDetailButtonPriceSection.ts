@@ -51,7 +51,7 @@ export default class FlProductDetailButtonPriceSection extends FlProductDetailBu
                 strikethroughColor: themeService.getNativeStyle('.product-price').textColor
             },
             string: value || '',
-            font: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').font,
+            font: themeService.getNativeStyle(discountExists ? '.product-price.discount-detail' : '.product-price.nodiscount-detail').font,
             foregroundColor: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').textColor
         });
         this.tvPrice.attributedText = [attributeString];
@@ -62,7 +62,7 @@ export default class FlProductDetailButtonPriceSection extends FlProductDetailBu
     set productDiscount(value: string) {
         let attributeString = new AttributedString({
             string: value || '',
-            font: themeService.getNativeStyle('.product-price').font,
+            font: themeService.getNativeStyle('.product-price.nodiscount-detail').font,
             foregroundColor: themeService.getNativeStyle('.product-price').textColor
         });
         setVisibility(this.tvDiscount, !!value);

@@ -206,7 +206,7 @@
           "borderColor": "${productItemPriceBorder}",
           "borderWidth": null,
           "borderRadius": 17,
-          "top": 10
+          "top": 8
         }
       },
       "paddingTop": 5,

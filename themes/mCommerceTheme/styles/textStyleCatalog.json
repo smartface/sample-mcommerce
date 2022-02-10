@@ -227,6 +227,18 @@
       },
       "textColor": "${textLight}"
     },
+    ".discount-detail": {
+      "font": {
+        "size": 16
+      },
+      "textColor": "${textLight}"
+    },
+    ".nodiscount-detail": {
+      "font": {
+        "size": 22
+      },
+      "textColor": "${textDark}"
+    },
     ".nodiscount": {
       "font": {
         "size": 18
