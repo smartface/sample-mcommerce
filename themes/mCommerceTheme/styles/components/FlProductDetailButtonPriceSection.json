@@ -38,22 +38,6 @@
           "width": 50
         }
       }
-    },
-    "&-lblPrice": {
-      "font": {
-        "size": 24,
-        "bold": true,
-        "italic": false,
-        "family": "Nunito",
-        "style": "Bold"
-      },
-      "textColor": "${textDark}",
-      "textAlignment": "MIDRIGHT"
-    },
-    "&-flPrice": {
-      "flexProps": {
-        "justifyContent": "CENTER"
-      }
     }
   }
 }

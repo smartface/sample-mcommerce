@@ -138,7 +138,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 ? `$${this.categoryProducts[productIndex].discountPrice}`
                 : '';
             GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price}`;
-            GridViewItem.itemReview = this.categoryProducts[productIndex]?.rating?.toString() || '';
+            GridViewItem.itemReview = this.categoryProducts[productIndex]?.rating?.toFixed(1).toString() || '';
             GridViewItem.onActionClick = () => {
                 GridViewItem.initIndicator();
                 GridViewItem.toggleIndicator(true);

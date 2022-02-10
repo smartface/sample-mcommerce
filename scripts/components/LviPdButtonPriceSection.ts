@@ -30,6 +30,12 @@ export default class LviPdButtonPriceSection extends LviPdButtonPriceSectionDesi
     set productPrice(value: string) {
         this.flProductDetailButtonPriceSection.productPrice = value;
     }
+    get productDiscount(): string {
+        return this.flProductDetailButtonPriceSection.productDiscount;
+    }
+    set productDiscount(value: string) {
+        this.flProductDetailButtonPriceSection.productDiscount = value;
+    }
     get productCount(): string {
         return this.flProductDetailButtonPriceSection.productCount;
     }

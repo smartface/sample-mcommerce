@@ -12,6 +12,9 @@ import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { getBannerImage, getBanners, getCategories, getProductsByQuery, getShowcases } from 'service/commerce';
 import LviGenericSlider from 'components/LviGenericSlider';
 import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from 'constants';
+import HeaderBarItem from '@smartface/native/ui/headerbaritem';
+import { themeService } from 'theme';
+import Image from '@smartface/native/ui/image';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -29,6 +32,14 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.sliderHeight = LviGenericSlider.calculateHeightWithAspectRatio(BANNER_ASPECT_RATIO);
+    }
+    addRightItem() {
+        const rightItem = new HeaderBarItem({
+            image: Image.createFromFile('images://app_icon.png'),
+            //Native › NTVE-435
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        });
+        this.headerBar.setItems([rightItem]);
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -96,7 +107,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             processorItems.push(ListViewItems.getLviSpacerItem({ className: 'xSmall' }));
             processorItems.push(
                 ListViewItems.getLviHomeProducts({
-                    items: [this.products[index], this.products[index + 1]],
+                    items: index !== this.products.length - 1 ? [this.products[index], this.products[index + 1]] : [this.products[index]],
                     onProductClick: (product) => {
                         this.router.push('/btb/tab1/productDetail', {
                             productId: product._id
@@ -185,11 +196,12 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     }
     onShow() {
         super.onShow();
+        this.addRightItem();
         this.callServices();
     }
     onLoad() {
         super.onLoad();
-        this.headerBar.title = global.lang.homeHeader;
+        this.headerBar.title = global.lang.shop;
         this.initListView();
         this.headerBar.leftItemEnabled = false;
     }

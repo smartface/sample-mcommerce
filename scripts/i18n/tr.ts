@@ -129,12 +129,13 @@ SMF.i18n.defineLanguage('tr', {
     privacyRight: 'Gizlilik politikamızı.',
     emptyReviewList: 'Bu ürünün henüz incelemesi yok.',
     addReview: 'Değerlendir',
-    reviewHeader: 'Değerlendirmeler',
-    addReviewHeader: 'Değerlendirme Yap',
+    reviewHeader: 'Yorumlar',
+    addReviewHeader: 'Yorum Yap',
     addToCart: 'Sepete Eklendi',
     rateProduct: 'Ürünü değerlendirin',
     tbComment: 'Yorum yaz',
     alreadySendReview: 'Bu ürünü zaten değerlendirdin.',
     reviewsServiceError: 'Değerlendirmeler servisinde bir hata oluştu.',
-    reviewSent: 'Değerlendirmeniz başarıyla gönderildi.'
+    reviewSent: 'Değerlendirmeniz başarıyla gönderildi.',
+    emptyNutritions: 'Bu ürüne ait bir besin bilgisi bulunamadı.'
 });

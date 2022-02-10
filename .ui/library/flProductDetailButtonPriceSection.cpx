@@ -166,37 +166,66 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .grow .flProductDetailButtonPriceSection-flPrice",
+			"className": ".sf-flexLayout .grow",
 			"id": "0d4e-9ac0-154a-5319",
 			"props": {
 				"children": [
-					"6340-6cfc-486e-2cdb"
+					"9362-249d-85fc-bd72",
+					"cf23-bb5f-9f1e-55b3"
 				],
 				"name": "flPrice",
-				"parent": "9d51-ffe5-c389-48da"
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "FlexLayout",
-			"userProps": {}
-		},
-		{
-			"className": ".sf-label .flProductDetailButtonPriceSection-lblPrice",
-			"id": "6340-6cfc-486e-2cdb",
-			"props": {
-				"children": [],
-				"name": "lblPrice",
-				"parent": "0d4e-9ac0-154a-5319",
-				"text": "$4.99",
+				"parent": "9d51-ffe5-c389-48da",
 				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
 			},
-			"type": "Label",
+			"type": "FlexLayout",
 			"userProps": {
-				"text": "$4.99",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-textView .grow",
+			"id": "9362-249d-85fc-bd72",
+			"oldName": "tvPric",
+			"props": {
+				"children": [],
+				"html": "<br>",
+				"name": "tvPrice",
+				"parent": "0d4e-9ac0-154a-5319",
+				"text": "\n",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"html": "<br>",
+				"text": "\n",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-textView .grow",
+			"id": "cf23-bb5f-9f1e-55b3",
+			"oldName": "tvDiscou",
+			"props": {
+				"children": [],
+				"html": "<br>",
+				"name": "tvDiscount",
+				"parent": "0d4e-9ac0-154a-5319",
+				"text": "\n",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"html": "<br>",
+				"text": "\n",
 				"usePageVariable": true
 			}
 		}

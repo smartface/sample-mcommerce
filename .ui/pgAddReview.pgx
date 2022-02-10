@@ -20,8 +20,7 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a",
-			"degree": 0
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -33,8 +32,7 @@
 				"parent": "8874-9476-fc66-5308"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
 			"className": ".sf-headerBar.main",
@@ -49,8 +47,7 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgAddReview"
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-flexLayout .flReviewAndRateProduct",
@@ -69,10 +66,9 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"usePageVariable": true,
-				"testId": "J9T9oxPgg"
-			},
-			"degree": 1
+				"testId": "J9T9oxPgg",
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-button-main #pgAddReview-btnSendReview",
@@ -90,8 +86,7 @@
 				"testId": "f_9c41Kd6",
 				"text": "button1",
 				"usePageVariable": true
-			},
-			"degree": 1
+			}
 		}
 	]
 }

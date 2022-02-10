@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .paddingHorizontal",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "844f-778d-a88e-c085",
 			"props": {
 				"children": [

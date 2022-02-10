@@ -1,3 +1,5 @@
+import { pgNutritions } from 'pages';
+
 export type Categories = {
     _id: string;
     title: string;
@@ -37,6 +39,7 @@ export type Product = {
     count?: number;
     rating?: number;
     labels: Array<Label>;
+    nutritions: Nutritions;
 };
 export type AccountMenus = {
     menuId: number;
@@ -75,4 +78,10 @@ export type Review = {
 export type Label = {
     name: string;
     color: string;
+};
+
+export type Nutritions = {
+    Fat?: string;
+    Iron?: string;
+    ingredients?: string;
 };

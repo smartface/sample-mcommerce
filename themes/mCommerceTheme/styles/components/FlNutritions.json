@@ -1,0 +1,12 @@
+{
+  ".flNutritions": {
+    "height": 55,
+    "&-lblKeyOfNutritions": {
+      "height": 30
+    },
+    "&-lblValueOfNutritions": {
+      "height": 20
+    },
+    "flexProps": {}
+  }
+}

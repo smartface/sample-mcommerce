@@ -12,12 +12,14 @@
 				],
 				"name": "pgReviews",
 				"orientation": "PORTRAIT",
-				"parent": null
+				"parent": null,
+				"safeAreaEnabled": true
 			},
 			"type": "Page",
-			"userProps": {},
-			"version": "0.0.1.a",
-			"degree": 0
+			"userProps": {
+				"safeAreaEnabled": true
+			},
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -29,8 +31,7 @@
 				"parent": "8462-77a0-f1db-b5c9"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
 			"className": ".sf-headerBar.main",
@@ -45,8 +46,7 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgReviews"
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-listView .grow",
@@ -59,10 +59,9 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"usePageVariable": true,
-				"testId": "6LR7gltup"
-			},
-			"degree": 1
+				"testId": "6LR7gltup",
+				"usePageVariable": true
+			}
 		}
 	]
 }

@@ -63,10 +63,9 @@ function productDetailRouter(basePath: string) {
                     visible: true
                 })
             }),
-            StackRouter.of({
+            Route.of({
                 path: `${basePath}/productDetail/reviews`,
                 to: `${basePath}/productDetail/reviews/main`,
-                modal: true,
                 routes: [
                     Route.of<Pages.pgReviews>({
                         path: `${basePath}/productDetail/reviews/main`,
@@ -85,6 +84,14 @@ function productDetailRouter(basePath: string) {
                         }
                     })
                 ]
+            }),
+            Route.of<Pages.pgNutritions>({
+                path: `${basePath}/productDetail/nutritions`,
+                build(router, route) {
+                    const page = new Pages.pgNutritions(router, route);
+                    router.setState({ view: page });
+                    return page;
+                }
             })
         ]
     });
@@ -232,10 +239,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         visible: true
                     })
                 }),
-                StackRouter.of({
+                Route.of({
                     path: '/btb/tab5/settings',
                     to: '/btb/tab5/settings/main',
-                    modal: true,
                     routes: [
                         Route.of<Pages.pgUserSettings>({
                             path: `/btb/tab5/settings/main`,
@@ -250,10 +256,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         })
                     ]
                 }),
-                StackRouter.of({
+                Route.of({
                     path: '/btb/tab5/notifications',
                     to: '/btb/tab5/notifications/main',
-                    modal: true,
                     routes: [
                         Route.of<Pages.pgNotifications>({
                             path: `/btb/tab5/notifications/main`,

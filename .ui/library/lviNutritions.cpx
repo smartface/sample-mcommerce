@@ -1,0 +1,41 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviNutritions .paddingHorizontal",
+			"hiddenComponent": true,
+			"id": "073f-0884-24bf-9e78",
+			"props": {
+				"children": [
+					"72e1-8838-a60b-2d2c"
+				],
+				"name": "lviNutritions",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flNutritions .grow",
+			"hiddenComponent": false,
+			"id": "72e1-8838-a60b-2d2c",
+			"props": {
+				"children": [],
+				"name": "flNutritions",
+				"parent": "073f-0884-24bf-9e78",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flNutritions",
+				"id": "cd1f-c598-7981-3343"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}
