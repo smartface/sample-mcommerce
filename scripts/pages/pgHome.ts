@@ -12,7 +12,9 @@ import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { getBannerImage, getBanners, getCategories, getProductsByQuery, getShowcases } from 'service/commerce';
 import LviGenericSlider from 'components/LviGenericSlider';
 import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from 'constants';
-import FlHeaderIcon from 'generated/my-components/FlHeaderIcon';
+import FlHeaderIcon from 'components/FlHeaderIcon';
+import { themeService } from 'theme';
+import FlexLayout from '@smartface/native/ui/flexlayout';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -27,13 +29,24 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     products: Product[];
     initialized = false;
     sliderHeight = 0;
+    flHeaderIcon: FlHeaderIcon;
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.sliderHeight = LviGenericSlider.calculateHeightWithAspectRatio(BANNER_ASPECT_RATIO);
+        this.initTitleLayout();
+    }
+    initTitleLayout() {
+        this.flHeaderIcon = new FlHeaderIcon();
+        themeService.addGlobalComponent(this.flHeaderIcon as any /** to be fixed with stylingcontext next version */, 'titleLayout');
+        (this.flHeaderIcon as StyleContextComponentType<FlexLayout>).dispatch({
+            type: 'pushClassNames',
+            classNames: '.flHeaderIcon'
+        });
+        this.flHeaderIcon.appName = global.lang.appName;
     }
     addAppIconToHeader() {
         this.headerBar.title = '';
-        this.headerBar.titleLayout = new FlHeaderIcon({ appName: global.lang.appName });
+        this.headerBar.titleLayout = this.flHeaderIcon;
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);

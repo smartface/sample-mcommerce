@@ -8,7 +8,8 @@
       "height": 25
     },
     "&-lblValueOfNutritions": {
-      "height": 20
+      "height": 20,
+      "maxLines": 0
     }
   }
 }
