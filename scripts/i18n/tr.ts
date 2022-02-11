@@ -55,7 +55,7 @@ SMF.i18n.defineLanguage('tr', {
     seeAll: 'Hepsini Gör',
     account: 'Hesap',
     favourite: 'Favori',
-    cart: 'Kart',
+    cart: 'Sepet',
     explore: 'Keşfet',
     shop: 'Mağaza',
     orders: 'Siparişlerim',

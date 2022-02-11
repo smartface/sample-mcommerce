@@ -77,7 +77,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                     showcaseTitle: showcase.title,
                     showcaseLinkText: global.lang.seeAll,
                     onSeeAllClick: () => {
-                        this.router.push('/btb/tab1/categoryDetail', {
+                        this.router.push('categoryDetail', {
                             dataId: showcase._id,
                             title: showcase.title,
                             isShowcase: true
@@ -90,7 +90,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                 ListViewItems.getLviHomeProducts({
                     items: showcase.products,
                     onProductClick: (product) => {
-                        this.router.push('/btb/tab1/productDetail', {
+                        this.router.push('productDetail', {
                             productId: product._id
                         });
                     }
@@ -102,7 +102,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             ListViewItems.getLviHomeCategories({
                 items: this.categories,
                 onCategoryClick: (category) => {
-                    this.router.push('/btb/tab1/categoryDetail', {
+                    this.router.push('categoryDetail', {
                         dataId: category._id,
                         title: category.title
                     });
@@ -116,7 +116,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                 ListViewItems.getLviHomeProducts({
                     items: index !== this.products.length - 1 ? [this.products[index], this.products[index + 1]] : [this.products[index]],
                     onProductClick: (product) => {
-                        this.router.push('/btb/tab1/productDetail', {
+                        this.router.push('productDetail', {
                             productId: product._id
                         });
                     }
@@ -185,6 +185,10 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         }
     }
     async callServices() {
+        if (store.getState().main.isRateAdded) {
+            this.initialized = false;
+            store.dispatch(storeActions.AddNewRate({ isRateAdded: false }));
+        }
         try {
             showWaitDialog();
             if (this.initialized) {

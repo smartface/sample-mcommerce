@@ -3,7 +3,7 @@ import LviNutritionsDesign from 'generated/my-components/LviNutritions';
 import { setTextDimensions } from 'lib/setTextDimensions';
 import { themeService } from 'theme';
 
-const { paddingLeft, paddingRight } = themeService.getNativeStyle('.lviNutritions');
+const { paddingTop, paddingBottom, paddingLeft, paddingRight } = themeService.getNativeStyle('.lviNutritions');
 const titleHeight = themeService.getNativeStyle('.flNutritions-lblKeyOfNutritions').height;
 const { height: separatorHeight } = themeService.getNativeStyle('.separator');
 const { font: lblFont } = themeService.getNativeStyle('.review.lblComment');
@@ -16,7 +16,7 @@ export default class LviNutritions extends LviNutritionsDesign {
     }
     static getHeight(value: string): number {
         const { height: valueHeight } = setTextDimensions(value, lblFont, { maxLines: 0, maxWidth: valueMaxWidth });
-        return titleHeight + valueHeight + separatorHeight;
+        return paddingTop + paddingBottom + titleHeight + valueHeight + separatorHeight;
     }
     get nutritionKey(): string {
         return this.flNutritions.nutritionKey;

@@ -1,5 +1,4 @@
 import * as Types from 'types';
-import { Type } from 'typescript';
 
 export interface SessionState {
     products: Types.Product[];
@@ -11,6 +10,7 @@ export interface SessionState {
     favorites: Types.Favorites;
     currentUser: Types.User;
     isUserLoggedIn: boolean;
+    isRateAdded: boolean;
 }
 
 export namespace Constants {
@@ -23,6 +23,7 @@ export namespace Constants {
     export const REMOVE_FROM_FAVORITES = 'REMOVE_FROM_FAVORITES';
     export const SET_CATEGORIES = 'SET_CATEGORIES';
     export const SET_SHOWCASES = 'SET_SHOWCASES';
+    export const ADD_NEW_RATE = 'ADD_NEW_RATE';
 }
 
 declare namespace Actions {
@@ -70,6 +71,12 @@ declare namespace Actions {
         type: typeof Constants.SET_SHOWCASES;
         payload: Types.HomeShowcases[];
     }
+    export interface AddNewRate {
+        type: typeof Constants.ADD_NEW_RATE;
+        payload: {
+            isRateAdded: boolean;
+        };
+    }
 }
 
 export type ActionTypes =
@@ -81,4 +88,5 @@ export type ActionTypes =
     | Actions.AddToFavorites
     | Actions.RemoveFromFavorites
     | Actions.SetCategories
-    | Actions.SetShowcases;
+    | Actions.SetShowcases
+    | Actions.AddNewRate;

@@ -51,7 +51,8 @@ const initialState: SessionState = {
     ],
     currentUser: null,
     favorites: [],
-    isUserLoggedIn: false
+    isUserLoggedIn: false,
+    isRateAdded: false
 };
 
 export default function (state = initialState, action: ActionTypes): SessionState {
@@ -104,6 +105,10 @@ export default function (state = initialState, action: ActionTypes): SessionStat
         }
         case Constants.SET_SHOWCASES: {
             newState.showcases = [...action.payload];
+            break;
+        }
+        case Constants.ADD_NEW_RATE: {
+            newState.isRateAdded = action.payload.isRateAdded;
             break;
         }
         default: {

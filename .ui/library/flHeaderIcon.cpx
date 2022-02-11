@@ -37,7 +37,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .grow",
+			"className": ".sf-label .grow .review.name",
 			"id": "4f79-638b-f120-906b",
 			"oldName": "lblHea",
 			"props": {
