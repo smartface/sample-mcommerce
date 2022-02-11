@@ -13,6 +13,7 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductImageUrl, getProductsByQuery } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { ON_SHOW_TIMEOUT } from 'constants';
+const gridViewItemLength = themeService.getNativeStyle('.flProductItem').height;
 type searchStatus = {
     isSearchActive: boolean;
     searchText: string;
@@ -120,6 +121,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     }
 
     initGridView() {
+        this.gvProducts.layoutManager.onItemLength = () => gridViewItemLength;
         this.gvProducts.onPullRefresh = () => {
             this.pageNumber = 0;
             this.paginating = false;
