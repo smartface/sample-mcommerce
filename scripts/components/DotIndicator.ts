@@ -68,7 +68,8 @@ export default class DotIndicator extends DotIndicatorDesign {
         this.dispatch({
             type: 'updateUserStyle',
             userStyle: {
-                maxHeight: visible ? null : 0
+                maxHeight: visible ? null : 0,
+                visible
             }
         });
     }

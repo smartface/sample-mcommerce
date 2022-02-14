@@ -55,7 +55,7 @@ SMF.i18n.defineLanguage('tr', {
     seeAll: 'Hepsini Gör',
     account: 'Hesap',
     favourite: 'Favori',
-    cart: 'Kart',
+    cart: 'Sepet',
     explore: 'Keşfet',
     shop: 'Mağaza',
     orders: 'Siparişlerim',
@@ -129,12 +129,14 @@ SMF.i18n.defineLanguage('tr', {
     privacyRight: 'Gizlilik politikamızı.',
     emptyReviewList: 'Bu ürünün henüz incelemesi yok.',
     addReview: 'Değerlendir',
-    reviewHeader: 'Değerlendirmeler',
-    addReviewHeader: 'Değerlendirme Yap',
+    reviewHeader: 'Yorumlar',
+    addReviewHeader: 'Yorum Yap',
     addToCart: 'Sepete Eklendi',
     rateProduct: 'Ürünü değerlendirin',
     tbComment: 'Yorum yaz',
     alreadySendReview: 'Bu ürünü zaten değerlendirdin.',
     reviewsServiceError: 'Değerlendirmeler servisinde bir hata oluştu.',
-    reviewSent: 'Değerlendirmeniz başarıyla gönderildi.'
+    reviewSent: 'Değerlendirmeniz başarıyla gönderildi.',
+    emptyNutritions: 'Bu ürüne ait bir besin bilgisi bulunamadı.',
+    appName: 'Smart Commerce'
 });

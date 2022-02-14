@@ -13,6 +13,7 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductImageUrl, getProductsByQuery } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { ON_SHOW_TIMEOUT } from 'constants';
+const gridViewItemLength = themeService.getNativeStyle('.flProductItem').height;
 type searchStatus = {
     isSearchActive: boolean;
     searchText: string;
@@ -120,6 +121,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     }
 
     initGridView() {
+        this.gvProducts.layoutManager.onItemLength = () => gridViewItemLength;
         this.gvProducts.onPullRefresh = () => {
             this.pageNumber = 0;
             this.paginating = false;
@@ -138,7 +140,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 ? `$${this.categoryProducts[productIndex].discountPrice}`
                 : '';
             GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price}`;
-            GridViewItem.itemReview = this.categoryProducts[productIndex]?.rating?.toString() || '';
+            GridViewItem.itemReview = this.categoryProducts[productIndex]?.rating?.toFixed(1).toString() || '';
             GridViewItem.onActionClick = () => {
                 GridViewItem.initIndicator();
                 GridViewItem.toggleIndicator(true);

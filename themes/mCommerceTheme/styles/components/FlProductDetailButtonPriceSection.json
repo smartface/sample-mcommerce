@@ -1,59 +1,54 @@
 {
-  ".flProductDetailButtonPriceSection": {
-    "height": 75,
-    "flexProps": {
-      "flexDirection": "ROW"
-    },
-    "&-flMinusPlusWrapper": {
-      "flexProps": {
-        "flexGrow": 1,
-        "flexDirection": "ROW"
-      },
-      "height": null,
-      "&-flCounter": {
-        "flexProps": {
-          "flexGrow": 1,
-          "justifyContent": "CENTER"
-        },
-        "height": null,
-        "testId": "kfCLwZybh",
-        "&-lblCounter": {
-          "textColor": "${textDark}",
-          "flexProps": {
-            "alignSelf": "CENTER"
-          },
-          "font": {
-            "size": 20,
-            "bold": true,
-            "italic": false,
-            "family": "Nunito",
-            "style": "Bold"
-          },
-          "height": 50,
-          "testId": "zqg9Zmn0q",
-          "borderWidth": 1,
-          "borderColor": "${grayBorder}",
-          "borderRadius": 17,
-          "textAlignment": "MIDCENTER",
-          "width": 50
-        }
-      }
-    },
-    "&-lblPrice": {
-      "font": {
-        "size": 24,
-        "bold": true,
-        "italic": false,
-        "family": "Nunito",
-        "style": "Bold"
-      },
-      "textColor": "${textDark}",
-      "textAlignment": "MIDRIGHT"
-    },
-    "&-flPrice": {
-      "flexProps": {
-        "justifyContent": "CENTER"
-      }
-    }
-  }
+	".flProductDetailButtonPriceSection": {
+		"height": 75,
+		"flexProps": {
+			"flexDirection": "ROW"
+		},
+		"&-flMinusPlusWrapper": {
+			"flexProps": {
+				"flexGrow": 1,
+				"flexDirection": "ROW"
+			},
+			"height": null,
+			"&-flCounter": {
+				"flexProps": {
+					"flexGrow": 1,
+					"justifyContent": "CENTER"
+				},
+				"height": null,
+				"testId": "kfCLwZybh",
+				"&-lblCounter": {
+					"textColor": "${textDark}",
+					"flexProps": {
+						"alignSelf": "CENTER"
+					},
+					"font": {
+						"size": 20,
+						"bold": true,
+						"italic": false,
+						"family": "Nunito",
+						"style": "Bold"
+					},
+					"height": 50,
+					"testId": "zqg9Zmn0q",
+					"borderWidth": 1,
+					"borderColor": "${grayBorder}",
+					"borderRadius": 17,
+					"textAlignment": "MIDCENTER",
+					"width": 50
+				}
+			}
+		},
+		"&-flPrice": {
+			"&-textbox": {
+				"height": 24,
+				"maxLines": 1
+			},
+			"flexProps": {
+				"justifyContent": "CENTER",
+				"alignItems": "FLEX_END"
+			},
+			"paddingRight": 10
+		}
+	}
 }

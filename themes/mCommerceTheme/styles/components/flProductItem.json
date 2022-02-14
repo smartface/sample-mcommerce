@@ -68,7 +68,8 @@
           "&-imgStar": {
             "height": 25,
             "testId": "LiH9AIXVX",
-            "width": 20
+            "width": 15,
+            "paddingRight": 2
           },
           "&-lblReview": {
             "flexProps": {
@@ -86,13 +87,12 @@
             "testId": "xvO2dsQHZ",
             "textAlignment": "MIDLEFT",
             "textColor": "${textDark}",
-            "width": 30
+            "width": 25
           },
-          "paddingRight": 5,
           "bottom": 0,
           "top": 0,
           "right": 0,
-          "width": 55
+          "width": 40
         },
         "&-flProductDescAndReviewWrapper": {
           "flexProps": {
@@ -109,7 +109,6 @@
         "paddingTop": 5,
         "paddingBottom": 5,
         "paddingLeft": 5,
-        "paddingRight": 5,
         "flexProps": {
           "alignSelf": "STRETCH",
           "flexDirection": "ROW",
@@ -152,12 +151,12 @@
         }
       },
       "&-flTagWrapper": {
-        "paddingLeft": 10,
-        "paddingRight": 10,
-        "width": 120,
+        "paddingLeft": 5,
+        "paddingRight": 5,
+        "width": 75,
         "backgroundColor": "${tagPurple}",
         "testId": "_9ziXcn4H",
-        "height": 30,
+        "height": 25,
         "top": 0,
         "right": 5,
         "borderRadius": 10,
@@ -179,14 +178,14 @@
           "marginTop": null,
           "textAlignment": "MIDCENTER",
           "textColor": "${white}",
-          "paddingRight": 10,
-          "paddingLeft": 10
+          "paddingRight": 5,
+          "paddingLeft": 5
         }
       },
       "&-flProductItemPriceButtonWrapper": {
         "&-aiAddToCart": {
           "height": 35,
-          "right": 10,
+          "right": 5,
           "testId": "QDcEE6yvp",
           "width": 30,
           "flexProps": {
@@ -207,13 +206,13 @@
           "borderColor": "${productItemPriceBorder}",
           "borderWidth": null,
           "borderRadius": 17,
-          "top": 10
+          "top": 8
         }
       },
-      "paddingTop": 2,
+      "paddingTop": 5,
       "paddingBottom": 2
     },
-    "height": 270,
+    "height": 260,
     "width": null,
     "flexProps": {
       "flexGrow": 1

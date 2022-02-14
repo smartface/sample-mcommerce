@@ -68,11 +68,8 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
             if (item instanceof LviPdOverviewSection) {
                 if (item.overviewTitle === global.lang.reviews) {
                     this.router.push('reviews', { productId: this.product._id, product: this.product });
-                } else {
-                    alert({
-                        title: 'ALERT',
-                        message: item.overviewTitle
-                    });
+                } else if (item.overviewTitle === global.lang.nutritions) {
+                    this.router.push('nutritions', { productId: this.product._id, product: this.product });
                 }
             }
         };
@@ -123,6 +120,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
 
         processorItems.push(
             ListViewItems.getLviPdButtonPriceSection({
+                productDiscount: !!this.product.discountPrice ? `$${this.product.discountPrice}` : '',
                 productPrice: `$${this.product.price}`,
                 productCount: this.productCounter.toString(),
                 onPlusClick: () => {

@@ -12,6 +12,9 @@ import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { getBannerImage, getBanners, getCategories, getProductsByQuery, getShowcases } from 'service/commerce';
 import LviGenericSlider from 'components/LviGenericSlider';
 import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from 'constants';
+import FlHeaderIcon from 'components/FlHeaderIcon';
+import { themeService } from 'theme';
+import FlexLayout from '@smartface/native/ui/flexlayout';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -26,9 +29,24 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     products: Product[];
     initialized = false;
     sliderHeight = 0;
+    flHeaderIcon: FlHeaderIcon;
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.sliderHeight = LviGenericSlider.calculateHeightWithAspectRatio(BANNER_ASPECT_RATIO);
+        this.initTitleLayout();
+    }
+    initTitleLayout() {
+        this.flHeaderIcon = new FlHeaderIcon();
+        themeService.addGlobalComponent(this.flHeaderIcon as any /** to be fixed with stylingcontext next version */, 'titleLayout');
+        (this.flHeaderIcon as StyleContextComponentType<FlexLayout>).dispatch({
+            type: 'pushClassNames',
+            classNames: '.flHeaderIcon'
+        });
+        this.flHeaderIcon.appName = global.lang.appName;
+    }
+    addAppIconToHeader() {
+        this.headerBar.title = '';
+        this.headerBar.titleLayout = this.flHeaderIcon;
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -59,7 +77,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                     showcaseTitle: showcase.title,
                     showcaseLinkText: global.lang.seeAll,
                     onSeeAllClick: () => {
-                        this.router.push('/btb/tab1/categoryDetail', {
+                        this.router.push('categoryDetail', {
                             dataId: showcase._id,
                             title: showcase.title,
                             isShowcase: true
@@ -72,7 +90,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                 ListViewItems.getLviHomeProducts({
                     items: showcase.products,
                     onProductClick: (product) => {
-                        this.router.push('/btb/tab1/productDetail', {
+                        this.router.push('productDetail', {
                             productId: product._id
                         });
                     }
@@ -84,7 +102,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             ListViewItems.getLviHomeCategories({
                 items: this.categories,
                 onCategoryClick: (category) => {
-                    this.router.push('/btb/tab1/categoryDetail', {
+                    this.router.push('categoryDetail', {
                         dataId: category._id,
                         title: category.title
                     });
@@ -96,9 +114,9 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             processorItems.push(ListViewItems.getLviSpacerItem({ className: 'xSmall' }));
             processorItems.push(
                 ListViewItems.getLviHomeProducts({
-                    items: [this.products[index], this.products[index + 1]],
+                    items: index !== this.products.length - 1 ? [this.products[index], this.products[index + 1]] : [this.products[index]],
                     onProductClick: (product) => {
-                        this.router.push('/btb/tab1/productDetail', {
+                        this.router.push('productDetail', {
                             productId: product._id
                         });
                     }
@@ -167,6 +185,10 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         }
     }
     async callServices() {
+        if (store.getState().main.isRateAdded) {
+            this.initialized = false;
+            store.dispatch(storeActions.AddNewRate({ isRateAdded: false }));
+        }
         try {
             showWaitDialog();
             if (this.initialized) {
@@ -185,11 +207,11 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     }
     onShow() {
         super.onShow();
+        this.addAppIconToHeader();
         this.callServices();
     }
     onLoad() {
         super.onLoad();
-        this.headerBar.title = global.lang.homeHeader;
         this.initListView();
         this.headerBar.leftItemEnabled = false;
     }

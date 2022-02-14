@@ -6,7 +6,6 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import LviAccount from 'components/LviAccount';
 import profileImageMenu from 'lib/profileImageMenu';
-import Image from '@smartface/native/ui/image';
 import { themeService } from 'theme';
 import { User } from 'types';
 import LviSpacer from 'generated/my-components/LviSpacer';
@@ -15,6 +14,8 @@ import LviRow2LineButton from 'components/LviRow2LineButton';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProfileImageUrl, putProfileImage } from 'service/commerce';
+import FlHeaderIcon from 'components/FlHeaderIcon';
+import FlexLayout from '@smartface/native/ui/flexlayout';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -27,11 +28,29 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
     userInfo: User;
     rightItem: HeaderBarItem;
     unsubscribe = null;
+    flHeaderIcon: FlHeaderIcon;
     onExit: (...args) => any;
     constructor(private router?: Router, private route?: Route) {
         super({});
+        this.initTitleLayout();
     }
-
+    initTitleLayout() {
+        this.flHeaderIcon = new FlHeaderIcon();
+        themeService.addGlobalComponent(this.flHeaderIcon as any /** to be fixed with stylingcontext next version */, 'titleLayout');
+        (this.flHeaderIcon as StyleContextComponentType<FlexLayout>).dispatch({
+            type: 'pushClassNames',
+            classNames: '.flHeaderIcon'
+        });
+        this.flHeaderIcon.lblHeader.dispatch({
+            type: 'pushClassNames',
+            classNames: '.reviews.name'
+        });
+        this.flHeaderIcon.appName = global.lang.appName;
+    }
+    addAppIconToHeader() {
+        this.headerBar.title = '';
+        this.headerBar.titleLayout = this.flHeaderIcon;
+    }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowHeight = onRowHeight.bind(this);
@@ -40,9 +59,9 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
         this.lvMain.onRowSelected = (item: LviAccount | LviProfile | LviRow2LineButton | LviSpacer, index) => {
             if (item instanceof LviAccount) {
                 if (item.itemTitle === global.lang.settings) {
-                    this.router.push('/btb/tab5/settings');
+                    this.router.push('settings');
                 } else if (item.itemTitle === global.lang.notifications) {
-                    this.router.push('/btb/tab5/notifications');
+                    this.router.push('notifications');
                 } else {
                     alert({
                         title: 'ALERT',
@@ -138,6 +157,7 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
 
     onShow() {
         super.onShow();
+        this.addAppIconToHeader();
         this.unsubscribe = store.subscribe(() => this.handleChange());
         if (store.getState().main.isUserLoggedIn) {
             this.addRightItem();
@@ -149,7 +169,6 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
 
     onLoad() {
         super.onLoad();
-        this.headerBar.title = global.lang.accountHeader;
         this.initLogoutButton();
         this.initListView();
         this.headerBar.leftItemEnabled = false;

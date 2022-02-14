@@ -1,0 +1,15 @@
+{
+  ".flNutritions": {
+    "height": 50,
+    "flexProps": {
+      "justifyContent": "CENTER"
+    },
+    "&-lblKeyOfNutritions": {
+      "height": 25
+    },
+    "&-lblValueOfNutritions": {
+      "height": 20,
+      "maxLines": 0
+    }
+  }
+}

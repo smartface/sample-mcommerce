@@ -7,13 +7,23 @@ import { getProductImageUrl, postProductReview } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { NO_RATE } from 'constants';
 import Button from '@smartface/native/ui/button';
+import store from 'store';
+import storeActions from 'store/main/actions';
 
 export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDesign) {
     product: Product;
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.btnSendReview.on(Button.Events.Press, () => {
-            this.postReview(this.product._id, this.flReviewAndRateProduct.rate, this.flReviewAndRateProduct.comment);
+            if (this.flReviewAndRateProduct.rate !== 0) {
+                this.postReview(this.product._id, this.flReviewAndRateProduct.rate, this.flReviewAndRateProduct.comment)
+                    .then(() => {
+                        store.dispatch(storeActions.AddNewRate({ isRateAdded: true }));
+                    })
+                    .catch((e) => {
+                        alert(e);
+                    });
+            }
         });
     }
 

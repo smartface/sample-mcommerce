@@ -53,7 +53,10 @@
     "flexProps": {
       "positionType": "ABSOLUTE"
     },
-    "backgroundColor": "${separator}"
+    "backgroundColor": "${separator}",
+    ".full": {
+      "left": 0
+    }
   },
   ".notVisible": {
     "visible": false

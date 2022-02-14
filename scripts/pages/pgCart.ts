@@ -9,6 +9,9 @@ import store from 'store/index';
 import storeActions from 'store/main/actions';
 import { getProductImageUrl } from 'service/commerce';
 import setVisibility from 'lib/setVisibility';
+import FlHeaderIcon from 'components/FlHeaderIcon';
+import { themeService } from 'theme';
+import FlexLayout from '@smartface/native/ui/flexlayout';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -21,8 +24,27 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     cartProducts: Basket;
     data: Processor[];
     unsubscribe = null;
+    flHeaderIcon: FlHeaderIcon;
     constructor(private router?: Router, private route?: Route) {
         super({});
+        this.initTitleLayout();
+    }
+    initTitleLayout() {
+        this.flHeaderIcon = new FlHeaderIcon();
+        themeService.addGlobalComponent(this.flHeaderIcon as any /** to be fixed with stylingcontext next version */, 'titleLayout');
+        (this.flHeaderIcon as StyleContextComponentType<FlexLayout>).dispatch({
+            type: 'pushClassNames',
+            classNames: '.flHeaderIcon'
+        });
+        this.flHeaderIcon.lblHeader.dispatch({
+            type: 'pushClassNames',
+            classNames: '.reviews.name'
+        });
+        this.flHeaderIcon.appName = global.lang.appName;
+    }
+    addAppIconToHeader() {
+        this.headerBar.title = '';
+        this.headerBar.titleLayout = this.flHeaderIcon;
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -119,7 +141,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     }
     onShow() {
         super.onShow();
-        this.headerBar.title = global.lang.mycartHeader;
+        this.addAppIconToHeader();
         this.refreshListView();
         this.unsubscribe = store.subscribe(() => this.calculateCheckoutPrice());
     }

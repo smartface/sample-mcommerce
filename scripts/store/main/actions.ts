@@ -55,4 +55,10 @@ export default class Actions {
             payload: showcases
         };
     }
+    static AddNewRate(newRate: { isRateAdded: boolean }): ActionTypes {
+        return {
+            type: Constants.ADD_NEW_RATE,
+            payload: newRate
+        };
+    }
 }

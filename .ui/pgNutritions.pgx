@@ -1,0 +1,69 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "9d91-cc5c-2ddb-6a6b",
+			"initialized": true,
+			"props": {
+				"children": [
+					"6985-13b6-8afb-eb81",
+					"62dd-7f11-5c19-2228",
+					"778c-4041-214b-4002"
+				],
+				"name": "pgNutritions",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {},
+			"version": "0.0.1.a",
+			"degree": 0
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "6985-13b6-8afb-eb81",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "9d91-cc5c-2ddb-6a6b"
+			},
+			"type": "StatusBar",
+			"userProps": {},
+			"degree": 1
+		},
+		{
+			"className": ".sf-headerBar.main",
+			"id": "62dd-7f11-5c19-2228",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "9d91-cc5c-2ddb-6a6b",
+				"title": "pgNutritions"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgNutritions"
+			},
+			"degree": 1
+		},
+		{
+			"className": ".sf-listView",
+			"id": "778c-4041-214b-4002",
+			"oldName": "lvMa",
+			"props": {
+				"children": [],
+				"name": "lvMain",
+				"parent": "9d91-cc5c-2ddb-6a6b",
+				"usePageVariable": true
+			},
+			"type": "ListView",
+			"userProps": {
+				"usePageVariable": true,
+				"testId": "s0XH9RkR3"
+			},
+			"degree": 1
+		}
+	]
+}

@@ -107,14 +107,14 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
         this.addRightItem();
         this.handleRightItem();
         this.fetchProductReviews();
-        this.initDismissButton(this.router, {
+        this.initBackButton(this.router, {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
     }
 
     public onLoad() {
         super.onLoad?.();
-        this.headerBar.title = global.lang.reviewHeader;
+        this.headerBar.title = global.lang.reviews;
         this.initListView();
     }
 }
