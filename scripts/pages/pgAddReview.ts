@@ -16,8 +16,13 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
         super({});
         this.btnSendReview.on(Button.Events.Press, () => {
             if (this.flReviewAndRateProduct.rate !== 0) {
-                store.dispatch(storeActions.AddNewRate({ isRateAdded: true }));
-                this.postReview(this.product._id, this.flReviewAndRateProduct.rate, this.flReviewAndRateProduct.comment);
+                this.postReview(this.product._id, this.flReviewAndRateProduct.rate, this.flReviewAndRateProduct.comment)
+                    .then(() => {
+                        store.dispatch(storeActions.AddNewRate({ isRateAdded: true }));
+                    })
+                    .catch((e) => {
+                        alert(e);
+                    });
             }
         });
     }
