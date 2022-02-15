@@ -138,5 +138,6 @@ SMF.i18n.defineLanguage('tr', {
     reviewsServiceError: 'Değerlendirmeler servisinde bir hata oluştu.',
     reviewSent: 'Değerlendirmeniz başarıyla gönderildi.',
     emptyNutritions: 'Bu ürüne ait bir besin bilgisi bulunamadı.',
-    appName: 'Smart Commerce'
+    appName: 'Smart Commerce',
+    sureToLogout: 'Çıkış yapmak istediğinizden emin misiniz?'
 });

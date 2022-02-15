@@ -16,6 +16,7 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProfileImageUrl, putProfileImage } from 'service/commerce';
 import FlHeaderIcon from 'components/FlHeaderIcon';
 import setHeaderIcon from 'lib/setHeaderIcon';
+import AlertView from '@smartface/native/ui/alertview';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -118,7 +119,7 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
         this.rightItem = new HeaderBarItem({
             //Native › NTVE-435
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
-            image: 'images://logouticon.png',
+            image: 'images://logout_icon.png',
             onPress: () => {
                 return this.onExit();
             }
@@ -127,8 +128,25 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
     }
     initLogoutButton() {
         this.onExit = () => {
-            store.dispatch(storeActions.logout());
-            this.refreshListView();
+            alert({
+                title: global.lang.warning,
+                message: global.lang.sureToLogout,
+                buttons: [
+                    {
+                        text: global.lang.yes,
+                        type: AlertView.Android.ButtonType.POSITIVE,
+                        onClick: () => {
+                            store.dispatch(storeActions.logout());
+                            this.refreshListView();
+                        }
+                    },
+                    {
+                        text: global.lang.cancel,
+                        type: AlertView.Android.ButtonType.NEGATIVE,
+                        onClick: () => {}
+                    }
+                ]
+            });
         };
     }
     handleChange() {

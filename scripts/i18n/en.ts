@@ -140,5 +140,6 @@ SMF.i18n.defineLanguage('en', {
     reviewsServiceError: 'An error occurred on reviews service.',
     reviewSent: 'Your review has been sent succesfully.',
     emptyNutritions: 'This product has no nutritions.',
-    appName: 'Smart Commerce'
+    appName: 'Smart Commerce',
+    sureToLogout: 'Are you sure to logout?'
 });
