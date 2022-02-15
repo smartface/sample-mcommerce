@@ -8,14 +8,13 @@ import { themeService } from 'theme';
 import { getCategories } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import FlHeaderIcon from 'components/FlHeaderIcon';
-import FlexLayout from '@smartface/native/ui/flexlayout';
+import setHeaderIcon from 'lib/setHeaderIcon';
 
 export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
     categories: Categories[];
     flHeaderIcon: FlHeaderIcon;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.initTitleLayout();
         if (System.OS === System.OSType.ANDROID) {
             //Android item widths fails after theme change this fixes it
             themeService.onChange(() => {
@@ -24,22 +23,9 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
             });
         }
     }
-    initTitleLayout() {
-        this.flHeaderIcon = new FlHeaderIcon();
-        themeService.addGlobalComponent(this.flHeaderIcon as any /** to be fixed with stylingcontext next version */, 'titleLayout');
-        (this.flHeaderIcon as StyleContextComponentType<FlexLayout>).dispatch({
-            type: 'pushClassNames',
-            classNames: '.flHeaderIcon'
-        });
-        this.flHeaderIcon.lblHeader.dispatch({
-            type: 'pushClassNames',
-            classNames: '.reviews.name'
-        });
-        this.flHeaderIcon.appName = global.lang.appName;
-    }
     addAppIconToHeader() {
         this.headerBar.title = '';
-        this.headerBar.titleLayout = this.flHeaderIcon;
+        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
     }
     initCategoriesGrid() {
         this.categoriesGrid.onPullRefresh = () => {
@@ -83,7 +69,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
 
     onShow() {
         super.onShow();
-        this.addAppIconToHeader()
+        this.addAppIconToHeader();
         this.fetchCategories();
     }
     onLoad() {

@@ -52,7 +52,7 @@ SMF.i18n.defineLanguage('tr', {
     alreadyhaveanaccount: 'Zaten hesabınız var mı? ',
     bestSeller: 'En Çok Satanlar',
     exclusiveOffer: 'Özel Teklif',
-    seeAll: 'Hepsini Gör',
+    seeAll: 'Hepsini Gör($1)',
     account: 'Hesap',
     favourite: 'Favori',
     cart: 'Sepet',

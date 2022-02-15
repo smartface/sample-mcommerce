@@ -10,8 +10,7 @@ import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductImageUrl } from 'service/commerce';
 import FlHeaderIcon from 'components/FlHeaderIcon';
-import FlexLayout from '@smartface/native/ui/flexlayout';
-import { themeService } from 'theme';
+import setHeaderIcon from 'lib/setHeaderIcon';
 
 type Processor = ListViewItems.ProcessorTypes.ILviFavorites;
 
@@ -21,24 +20,10 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
     flHeaderIcon: FlHeaderIcon;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.initTitleLayout();
-    }
-    initTitleLayout() {
-        this.flHeaderIcon = new FlHeaderIcon();
-        themeService.addGlobalComponent(this.flHeaderIcon as any /** to be fixed with stylingcontext next version */, 'titleLayout');
-        (this.flHeaderIcon as StyleContextComponentType<FlexLayout>).dispatch({
-            type: 'pushClassNames',
-            classNames: '.flHeaderIcon'
-        });
-        this.flHeaderIcon.lblHeader.dispatch({
-            type: 'pushClassNames',
-            classNames: '.reviews.name'
-        });
-        this.flHeaderIcon.appName = global.lang.appName;
     }
     addAppIconToHeader() {
         this.headerBar.title = '';
-        this.headerBar.titleLayout = this.flHeaderIcon;
+        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
     }
     applyDimension(index: number, item: any): void {
         if (index == 0) {

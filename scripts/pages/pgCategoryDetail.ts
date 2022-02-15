@@ -13,6 +13,7 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductImageUrl, getProductsByQuery } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { ON_SHOW_TIMEOUT } from 'constants';
+import setVisibility from 'lib/setVisibility';
 const gridViewItemLength = themeService.getNativeStyle('.flProductItem').height;
 type searchStatus = {
     isSearchActive: boolean;
@@ -89,12 +90,20 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             this.getCategoryProducts({ pageNumber: this.pageNumber });
         }
     }
-
+    isNewRateAdded() {
+        if (store.getState().main.isRateAdded) {
+            this.initialized = false;
+            store.dispatch(storeActions.AddNewRate({ isRateAdded: false }));
+        }
+    }
     async getCategoryProducts(opts: { pageNumber: number } = { pageNumber: 1 }) {
         try {
             showWaitDialog();
             this.paginating = true;
-            const productResponse = await getProductsByQuery({ page: opts.pageNumber, categoryId: this.route.getState().routeData.dataId });
+            const productResponse = await getProductsByQuery({
+                page: opts.pageNumber,
+                categoryId: this.route.getState().routeData.dataId
+            });
             this.totalCount = productResponse.metadata.totalCount;
             if (productResponse && productResponse?.products.length > 0) {
                 if (opts.pageNumber !== 1) {
@@ -105,6 +114,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 this.refreshGridView();
             }
         } catch (error) {
+            alert(global.lang.productServiceError);
         } finally {
             this.initialized = true;
             this.paginating = false;
@@ -123,10 +133,14 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     initGridView() {
         this.gvProducts.layoutManager.onItemLength = () => gridViewItemLength;
         this.gvProducts.onPullRefresh = () => {
-            this.pageNumber = 0;
-            this.paginating = false;
-            this.categoryProducts = [];
-            this.getCategoryProducts();
+            if (!this.route.getState().routeData.isShowcase) {
+                this.pageNumber = 0;
+                this.paginating = false;
+                this.categoryProducts = [];
+                this.getCategoryProducts();
+            } else {
+                this.gvProducts.stopRefresh();
+            }
         };
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             GridViewItem.itemTag = this.categoryProducts[productIndex]?.labels[0]?.name;
@@ -176,19 +190,9 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             } else {
                 this.flEmptyItem.emptyTitle = global.lang.categoriesIsEmpty;
             }
-            this.flEmptyItem.dispatch({
-                type: 'updateUserStyle',
-                userStyle: {
-                    visible: true
-                }
-            });
+            setVisibility(this.flEmptyItem, true);
         } else {
-            this.flEmptyItem.dispatch({
-                type: 'updateUserStyle',
-                userStyle: {
-                    visible: false
-                }
-            });
+            setVisibility(this.flEmptyItem, false);
         }
     }
 
@@ -198,6 +202,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         this.initDismissButton(this.router, {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
+        this.isNewRateAdded();
         if (!this.initialized) {
             setTimeout(() => {
                 if (this.route.getState().routeData.isShowcase) {

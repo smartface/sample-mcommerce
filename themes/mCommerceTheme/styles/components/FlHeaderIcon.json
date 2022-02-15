@@ -8,7 +8,6 @@
     },
     "&-imgIcon": {
       "height": 50,
-      "image": "header_icon.png",
       "imageFillType": "ASPECTFIT",
       "width": 50
     }

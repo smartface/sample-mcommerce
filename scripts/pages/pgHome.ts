@@ -13,8 +13,7 @@ import { getBannerImage, getBanners, getCategories, getProductsByQuery, getShowc
 import LviGenericSlider from 'components/LviGenericSlider';
 import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from 'constants';
 import FlHeaderIcon from 'components/FlHeaderIcon';
-import { themeService } from 'theme';
-import FlexLayout from '@smartface/native/ui/flexlayout';
+import setHeaderIcon from 'lib/setHeaderIcon';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -33,20 +32,10 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.sliderHeight = LviGenericSlider.calculateHeightWithAspectRatio(BANNER_ASPECT_RATIO);
-        this.initTitleLayout();
-    }
-    initTitleLayout() {
-        this.flHeaderIcon = new FlHeaderIcon();
-        themeService.addGlobalComponent(this.flHeaderIcon as any /** to be fixed with stylingcontext next version */, 'titleLayout');
-        (this.flHeaderIcon as StyleContextComponentType<FlexLayout>).dispatch({
-            type: 'pushClassNames',
-            classNames: '.flHeaderIcon'
-        });
-        this.flHeaderIcon.appName = global.lang.appName;
     }
     addAppIconToHeader() {
         this.headerBar.title = '';
-        this.headerBar.titleLayout = this.flHeaderIcon;
+        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -75,7 +64,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             processorItems.push(
                 ListViewItems.getLviShowcaseHeader({
                     showcaseTitle: showcase.title,
-                    showcaseLinkText: global.lang.seeAll,
+                    showcaseLinkText: global.lang.seeAll.replace('$1', showcase.products.length),
                     onSeeAllClick: () => {
                         this.router.push('categoryDetail', {
                             dataId: showcase._id,
@@ -134,6 +123,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             const productResponse = await getProductsByQuery({ page: opts.pageNumber, limit: HOME_PRODUCT_LIMIT });
             this.products = productResponse.products;
         } catch (error) {
+            throw new Error(global.lang.productServiceError);
         } finally {
             hideWaitDialog();
         }
@@ -157,6 +147,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             showWaitDialog();
             this.categories = await getCategories();
         } catch (error) {
+            throw new Error(global.lang.categoriesServiceError);
         } finally {
             hideWaitDialog();
         }
