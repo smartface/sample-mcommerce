@@ -15,7 +15,7 @@ import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProfileImageUrl, putProfileImage } from 'service/commerce';
 import FlHeaderIcon from 'components/FlHeaderIcon';
-import FlexLayout from '@smartface/native/ui/flexlayout';
+import setHeaderIcon from 'lib/setHeaderIcon';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -32,24 +32,10 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
     onExit: (...args) => any;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.initTitleLayout();
-    }
-    initTitleLayout() {
-        this.flHeaderIcon = new FlHeaderIcon();
-        themeService.addGlobalComponent(this.flHeaderIcon as any /** to be fixed with stylingcontext next version */, 'titleLayout');
-        (this.flHeaderIcon as StyleContextComponentType<FlexLayout>).dispatch({
-            type: 'pushClassNames',
-            classNames: '.flHeaderIcon'
-        });
-        this.flHeaderIcon.lblHeader.dispatch({
-            type: 'pushClassNames',
-            classNames: '.reviews.name'
-        });
-        this.flHeaderIcon.appName = global.lang.appName;
     }
     addAppIconToHeader() {
         this.headerBar.title = '';
-        this.headerBar.titleLayout = this.flHeaderIcon;
+        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);

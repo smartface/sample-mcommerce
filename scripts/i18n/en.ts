@@ -51,7 +51,7 @@ SMF.i18n.defineLanguage('en', {
     alreadyhaveanaccount: 'Already have an account? ',
     bestSeller: 'Best Seller',
     exclusiveOffer: 'Exclusive Offer',
-    seeAll: 'See All',
+    seeAll: 'See All($1)',
     account: 'Account',
     favourite: 'Favourite',
     cart: 'Cart',
