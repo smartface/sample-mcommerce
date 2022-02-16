@@ -10,7 +10,7 @@ import { themeService } from 'theme';
 import { Product } from 'types';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
-import { getProductImageUrl, getProductsByQuery } from 'service/commerce';
+import { getProductImageUrl, getProductsByQuery, getShowcases } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { ON_SHOW_TIMEOUT } from 'constants';
 import setVisibility from 'lib/setVisibility';
@@ -93,6 +93,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     isNewRateAdded() {
         if (store.getState().main.isRateAdded) {
             this.initialized = false;
+            this.fetchShowcaseProducts();
             store.dispatch(storeActions.AddNewRate({ isRateAdded: false }));
         }
     }
@@ -122,6 +123,19 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             this.gvProducts.stopRefresh();
         }
     }
+    async fetchShowcaseProducts() {
+        try {
+            const showcaseResponse = await getShowcases();
+            if (showcaseResponse && showcaseResponse.length > 0) {
+                this.categoryProducts = showcaseResponse;
+                store.dispatch(storeActions.SetShowcases(showcaseResponse));
+            }
+            return showcaseResponse;
+        } catch (error) {
+            throw new Error(global.lang.showcaseServiceError);
+        }
+    }
+
     getShowcaseProducts() {
         this.categoryProducts = store
             .getState()

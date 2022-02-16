@@ -13,6 +13,7 @@ import setHeaderIcon from 'lib/setHeaderIcon';
 export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
     categories: Categories[];
     flHeaderIcon: FlHeaderIcon;
+    initialized = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
         if (System.OS === System.OSType.ANDROID) {
@@ -63,6 +64,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
             alert(global.lang.categoriesServiceError);
         } finally {
             this.categoriesGrid.stopRefresh();
+            this.initialized = true;
             hideWaitDialog();
         }
     }
@@ -70,7 +72,9 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
     onShow() {
         super.onShow();
         this.addAppIconToHeader();
-        this.fetchCategories();
+        if (!this.initialized) {
+            this.fetchCategories();
+        }
     }
     onLoad() {
         super.onLoad();
