@@ -226,6 +226,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "rightarrow.png",
 				"usePageVariable": true
 			}
 		}
