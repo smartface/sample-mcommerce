@@ -2,6 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flSmartface",
+			"hiddenComponent": true,
 			"id": "f497-3d69-d937-6c61",
 			"props": {
 				"children": [
@@ -66,7 +67,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .flSmartface-flPoweredBySmartface-lblPoweredBy .review.addReview",
+			"className": ".sf-label .flSmartface-flPoweredBySmartface-lblPoweredBy .review.lblComment",
 			"id": "d14c-bf28-9c20-a3a1",
 			"oldName": "label1",
 			"props": {

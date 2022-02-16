@@ -10,7 +10,7 @@
       "testId": "Vzknacpd4",
       "&-lblOverviewTitle": {
         "flexProps": {
-          "flexGrow": 4
+          "flexGrow": 2
         },
         "textColor": "${textDark}",
         "font": {
@@ -27,6 +27,31 @@
         "tintColor": "${textDark}",
         "testId": "dtVNM0nNK",
         "width": 50
+      },
+      "&-flRateWrapper": {
+        "flexProps": {
+          "flexGrow": 4,
+          "flexDirection": "ROW",
+          "alignItems": "CENTER"
+        },
+        "height": 50,
+        "&-flStars": {
+          "flexProps": {
+            "flexDirection": "ROW",
+            "alignItems": "CENTER"
+          },
+          "height": 50,
+          "&-image": {
+            "width": 25,
+            "height": 25
+          },
+          "width": 125,
+          "marginRight": 5
+        },
+        "&-lblReviewCount": {
+          "height": 25,
+          "width": 50
+        }
       }
     }
   }

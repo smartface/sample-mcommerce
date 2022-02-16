@@ -146,12 +146,16 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         );
         processorItems.push(
             ListViewItems.getLviPdOverviewSection({
-                overviewTitle: global.lang.nutritions
+                overviewTitle: global.lang.nutritions,
+                showRating: false
             })
         );
         processorItems.push(
             ListViewItems.getLviPdOverviewSection({
-                overviewTitle: global.lang.reviews
+                overviewTitle: global.lang.reviews,
+                rating: this.product?.rating?.toString(),
+                countOfReviews: `(${this.product?.reviews?.length})`,
+                showRating: true
             })
         );
 
