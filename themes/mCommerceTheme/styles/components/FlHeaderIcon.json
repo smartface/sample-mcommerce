@@ -1,24 +1,23 @@
 {
-	".flHeaderIcon": {
-		"height": 50,
-		"width": 250,
-		"flexProps": {
-			"flexDirection": "ROW",
-			"alignItems": "CENTER"
-		},
-		"&-imgIcon": {
-			"imageFillType": "ASPECTFIT",
-			"width": 50,
-			"flexProps": {
-				"positionType": "ABSOLUTE"
-			},
-			"top": 10,
-			"bottom": 10,
-			"left": 0,
-			"height": null
-		},
-		"&-lblHeader": {
-			"marginLeft": 55
-		}
-	}
+  ".flHeaderIcon": {
+    "height": 50,
+    "width": 250,
+    "flexProps": {
+      "flexDirection": "ROW",
+      "alignItems": "CENTER"
+    },
+    "&-imgIcon": {
+      "imageFillType": "ASPECTFIT",
+      "width": 50,
+      "flexProps": {
+        "positionType": "ABSOLUTE"
+      },
+      "top": 10,
+      "bottom": 10,
+      "height": null
+    },
+    "&-lblHeader": {
+      "textAlignment": "MIDCENTER"
+    }
+  }
 }

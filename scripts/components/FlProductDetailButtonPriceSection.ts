@@ -54,6 +54,7 @@ export default class FlProductDetailButtonPriceSection extends FlProductDetailBu
             font: themeService.getNativeStyle(discountExists ? '.product-price.discount-detail' : '.product-price.nodiscount-detail').font,
             foregroundColor: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').textColor
         });
+        this.tvPrice.scrollEnabled = false;
         this.tvPrice.attributedText = [attributeString];
     }
     get productDiscount(): string {
@@ -66,6 +67,7 @@ export default class FlProductDetailButtonPriceSection extends FlProductDetailBu
             foregroundColor: themeService.getNativeStyle('.product-price').textColor
         });
         setVisibility(this.tvDiscount, !!value);
+        this.tvDiscount.scrollEnabled = false;
         this.tvDiscount.attributedText = [attributeString];
     }
 }

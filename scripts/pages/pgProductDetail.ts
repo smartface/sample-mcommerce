@@ -120,8 +120,8 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
 
         processorItems.push(
             ListViewItems.getLviPdButtonPriceSection({
-                productDiscount: !!this.product.discountPrice ? `$${this.product.discountPrice}` : '',
-                productPrice: `$${this.product.price}`,
+                productDiscount: !!this.product.discountPrice ? `$${this.product.discountPrice.toFixed(2)}` : '',
+                productPrice: `$${this.product.price.toFixed(2)}`,
                 productCount: this.productCounter.toString(),
                 onPlusClick: () => {
                     this.productCounter += 1;
