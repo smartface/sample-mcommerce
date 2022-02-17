@@ -48,6 +48,10 @@
         "bottom": 0,
         "width": 50
       }
+    },
+    "&-lblDate": {
+      "height": 15,
+      "marginBottom": 2
     }
   }
 }

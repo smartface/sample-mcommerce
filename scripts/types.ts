@@ -73,6 +73,8 @@ export type Review = {
     productId: string;
     name: string;
     sub: string;
+    createdAt: Date;
+    updatedAt: Date;
 };
 
 export type Label = {

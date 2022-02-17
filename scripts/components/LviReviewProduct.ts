@@ -1,6 +1,6 @@
 import LviReviewProductDesign from 'generated/my-components/LviReviewProduct';
 import { themeService } from 'theme';
-const originalHeight = themeService.getStyle('.lviReview').height;
+const originalHeight = themeService.getStyle('.lviReviewProduct').height;
 
 export default class LviReviewProduct extends LviReviewProductDesign {
     pageName?: string | undefined;
@@ -28,5 +28,35 @@ export default class LviReviewProduct extends LviReviewProductDesign {
     }
     set productRate(value: string) {
         this.flReviewProduct.productRate = value;
+    }
+    get fiveStarCount(): string {
+        return this.flReviewProduct.flRateWrapper.reviewCount;
+    }
+    set fiveStarCount(value: string) {
+        this.flReviewProduct.flRateWrapper.reviewCount = value;
+    }
+    get fourStarCount(): string {
+        return this.flReviewProduct.flRateWrapper1.reviewCount;
+    }
+    set fourStarCount(value: string) {
+        this.flReviewProduct.flRateWrapper1.reviewCount = value;
+    }
+    set threeStarCount(value: string) {
+        this.flReviewProduct.flRateWrapper2.reviewCount = value;
+    }
+    get threeStarCount(): string {
+        return this.flReviewProduct.flRateWrapper2.reviewCount;
+    }
+    set twoStarCount(value: string) {
+        this.flReviewProduct.flRateWrapper3.reviewCount = value;
+    }
+    get twoStarCount(): string {
+        return this.flReviewProduct.flRateWrapper3.reviewCount;
+    }
+    set oneStarCount(value: string) {
+        this.flReviewProduct.flRateWrapper4.reviewCount = value;
+    }
+    get oneStarCount(): string {
+        return this.flReviewProduct.flRateWrapper4.reviewCount;
     }
 }

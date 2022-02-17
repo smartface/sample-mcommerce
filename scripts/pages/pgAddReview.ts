@@ -15,8 +15,8 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.btnSendReview.on(Button.Events.Press, () => {
-            if (this.flReviewAndRateProduct.rate !== 0) {
-                this.postReview(this.product._id, this.flReviewAndRateProduct.rate, this.flReviewAndRateProduct.comment)
+            if (this.flRateProduct.rate !== 0) {
+                this.postReview(this.product._id, this.flRateProduct.rate, this.flRateProduct.comment)
                     .then(() => {
                         store.dispatch(storeActions.AddNewRate({ isRateAdded: true }));
                     })
@@ -26,17 +26,9 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
             }
         });
     }
-
-    initReviewProduct() {
-        this.flReviewAndRateProduct.productName = this.product.name;
-        this.flReviewAndRateProduct.productImage = getProductImageUrl(this.product.images[0]);
-        this.flReviewAndRateProduct.productRate = this.product?.rating?.toString() || NO_RATE.toString();
-    }
-
     initButton() {
         this.btnSendReview.text = global.lang.addReview;
     }
-
     async postReview(productId, star, comment) {
         try {
             showWaitDialog();
@@ -68,6 +60,5 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
         this.headerBar.title = global.lang.addReviewHeader;
         this.product = this.route.getState().routeData?.product;
         this.initButton();
-        this.initReviewProduct();
     }
 }

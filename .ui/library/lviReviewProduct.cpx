@@ -6,7 +6,7 @@
 			"id": "8618-402f-0792-35f3",
 			"props": {
 				"children": [
-					"24c0-f133-1153-2d5c"
+					"b517-1504-c28c-ea02"
 				],
 				"name": "lviReviewProduct",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -18,9 +18,9 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout .flReviewProduct",
+			"className": ".sf-flexLayout .flReviewProduct .grow",
 			"hiddenComponent": false,
-			"id": "24c0-f133-1153-2d5c",
+			"id": "b517-1504-c28c-ea02",
 			"props": {
 				"children": [],
 				"name": "flReviewProduct",

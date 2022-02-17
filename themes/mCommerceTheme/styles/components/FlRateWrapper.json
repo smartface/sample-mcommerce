@@ -1,0 +1,26 @@
+{
+  ".flRateWrapper": {
+    "flexProps": {
+      "flexDirection": "ROW",
+      "alignItems": "CENTER"
+    },
+    "height": 30,
+    "&-flStars": {
+      "flexProps": {
+        "flexDirection": "ROW",
+        "alignItems": "CENTER"
+      },
+      "height": 30,
+      "&-image": {
+        "width": 25,
+        "height": 25
+      },
+      "width": 125,
+      "marginRight": 5
+    },
+    "&-lblReviewCount": {
+      "height": 25,
+      "width": 50
+    }
+  }
+}
