@@ -63,7 +63,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .paddingHorizontal",
+			"className": ".sf-flexLayout .sticky.relative",
 			"id": "64a5-07e5-9032-fa6c",
 			"props": {
 				"children": [
@@ -73,10 +73,7 @@
 				"parent": "9495-c1b8-4521-aab3"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"height": 70,
-				"testId": "IlwSj9D8p"
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-button .sf-button-main",

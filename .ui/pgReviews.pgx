@@ -13,11 +13,11 @@
 				"name": "pgReviews",
 				"orientation": "PORTRAIT",
 				"parent": null,
-				"safeAreaEnabled": true
+				"safeAreaEnabled": false
 			},
 			"type": "Page",
 			"userProps": {
-				"safeAreaEnabled": true
+				"safeAreaEnabled": false
 			},
 			"version": "0.0.1.a"
 		},

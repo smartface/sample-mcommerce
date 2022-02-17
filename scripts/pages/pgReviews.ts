@@ -22,11 +22,6 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
     rightItem: HeaderBarItem;
     rating: number;
     initialized: boolean = false;
-    countOfFiveStar: number = 0;
-    countOfFourStar: number = 0;
-    countOfThreeStar: number = 0;
-    countOfTwoStar: number = 0;
-    countOfOneStar: number = 0;
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.rating = this.route.getState().routeData?.product?.rating;
@@ -76,16 +71,18 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
                 })
             );
         } else {
+            const rates = this.calculateRateCounts();
+            console.log(rates);
             processorItems.push(
                 ListViewItems.getLviReviewProduct({
                     productName: this.route.getState().routeData?.product?.name,
                     productImage: getProductImageUrl(this.route.getState().routeData?.product.images[0]),
                     productRate: this.rating?.toFixed(1).toString() || NO_RATE.toString(),
-                    fiveStarCount: `(${this.countOfFiveStar})`,
-                    fourStarCount: `(${this.countOfFourStar})`,
-                    threeStarCount: `(${this.countOfThreeStar})`,
-                    twoStarCount: `(${this.countOfTwoStar})`,
-                    oneStarCount: `(${this.countOfOneStar})`
+                    fiveStarCount: `(${rates[5] || 0})`,
+                    fourStarCount: `(${rates[4] || 0})`,
+                    threeStarCount: `(${rates[3] || 0})`,
+                    twoStarCount: `(${rates[2] || 0})`,
+                    oneStarCount: `(${rates[1] || 0})`
                 })
             );
             this.reviews.forEach((review, index, arr) =>
@@ -119,7 +116,6 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             const reviewsResponse = await getReviewsByProduct(this.route.getState().routeData.productId);
             if (reviewsResponse) {
                 this.reviews = reviewsResponse;
-                this.calculateRateCount();
                 this.rating = this.reviews.reduce((prev, curr) => prev + curr.star, 0) / this.reviews.length;
             }
             return reviewsResponse;
@@ -130,20 +126,16 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             this.refreshListView();
         }
     }
-    calculateRateCount() {
+    calculateRateCounts(): Record<string, number> {
+        const rates = {};
         this.reviews.forEach((review) => {
-            if (review.star == 5) {
-                this.countOfFiveStar += 1;
-            } else if (4 <= review.star && review.star < 5) {
-                this.countOfFourStar += 1;
-            } else if (3 <= review.star && review.star < 4) {
-                this.countOfThreeStar += 1;
-            } else if (2 <= review.star && review.star < 3) {
-                this.countOfTwoStar += 1;
-            } else if (1 <= review.star && review.star < 2) {
-                this.countOfOneStar += 1;
+            if (rates[review.star]) {
+                rates[review.star] += 1;
+            } else {
+                rates[review.star] = 1;
             }
         });
+        return rates;
     }
     public onShow() {
         super.onShow?.();

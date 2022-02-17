@@ -57,7 +57,6 @@
 		{
 			"className": ".sf-flexLayout .flProductDetailOverviewSection-flWrapper-flRateWrapper",
 			"id": "5f2e-1db8-9321-de44",
-			"oldName": "flexLayout1",
 			"props": {
 				"children": [
 					"69cd-9f3e-4271-c74a",
@@ -80,7 +79,6 @@
 			"className": ".sf-flexLayout .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars",
 			"hiddenComponent": false,
 			"id": "69cd-9f3e-4271-c74a",
-			"oldName": "flStar",
 			"props": {
 				"children": [
 					"592b-71b7-a551-ea2c",
@@ -104,7 +102,6 @@
 		{
 			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars-image",
 			"id": "592b-71b7-a551-ea2c",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar1",
@@ -122,7 +119,6 @@
 		{
 			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars-image",
 			"id": "3e84-39c6-794d-0cd9",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar2",
@@ -140,7 +136,6 @@
 		{
 			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars-image",
 			"id": "9128-8f87-a94f-f251",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar3",
@@ -158,7 +153,6 @@
 		{
 			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars-image",
 			"id": "5b76-6db9-1882-32b2",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar4",
@@ -176,7 +170,6 @@
 		{
 			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars-image",
 			"id": "f79b-66a5-f026-098f",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar5",
@@ -194,7 +187,6 @@
 		{
 			"className": ".sf-label .flProductDetailOverviewSection-flWrapper-flRateWrapper-lblReviewCount .review.star",
 			"id": "f955-14f0-1206-6bd7",
-			"oldName": "label1",
 			"props": {
 				"children": [],
 				"name": "lblReviewCount",

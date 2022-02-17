@@ -43,7 +43,6 @@
 			"className": ".sf-flexLayout .flGenericSlider-flRadiusDotIndicatorWrapper",
 			"hiddenComponent": false,
 			"id": "69f1-7c17-9ca1-b3b3",
-			"oldName": "flexLayout1",
 			"props": {
 				"children": [
 					"eca1-e966-ade3-c157"

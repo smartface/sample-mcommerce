@@ -23,7 +23,6 @@
 		{
 			"className": ".sf-flexLayout .flReview-flHeader",
 			"id": "9f2d-a25f-1cec-482d",
-			"oldName": "flH",
 			"props": {
 				"children": [
 					"3690-94a8-2f63-c4d9",
@@ -83,7 +82,6 @@
 		{
 			"className": ".sf-imageView .flReview-flHeader-flContainer-imgStar",
 			"id": "5a83-bfe5-dd20-07e3",
-			"oldName": "imgSt",
 			"props": {
 				"children": [],
 				"name": "imgStar",
@@ -121,7 +119,6 @@
 		{
 			"className": ".sf-textView .flReview-lblDate .review.lblComment",
 			"id": "490a-61e3-b878-45b0",
-			"oldName": "lblComment_1",
 			"props": {
 				"children": [],
 				"html": "Deneme yorum",
@@ -164,7 +161,6 @@
 		{
 			"className": ".sf-flexLayout .separator",
 			"id": "217f-9e03-9048-3447",
-			"oldName": "seperat",
 			"props": {
 				"children": [],
 				"name": "seperator",

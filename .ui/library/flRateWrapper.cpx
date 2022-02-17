@@ -26,7 +26,6 @@
 			"className": ".sf-flexLayout .flRateWrapper-flStars",
 			"hiddenComponent": false,
 			"id": "4019-b9cc-a650-bae1",
-			"oldName": "flStar",
 			"props": {
 				"children": [
 					"2169-ccee-0f9c-8ada",
@@ -50,7 +49,6 @@
 		{
 			"className": ".sf-imageView .flRateWrapper-flStars-image",
 			"id": "2169-ccee-0f9c-8ada",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar1",
@@ -69,7 +67,6 @@
 		{
 			"className": ".sf-imageView .flRateWrapper-flStars-image",
 			"id": "e11a-9aeb-7689-4909",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar2",
@@ -88,7 +85,6 @@
 		{
 			"className": ".sf-imageView .flRateWrapper-flStars-image",
 			"id": "5fc3-197d-471d-012b",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar3",
@@ -107,7 +103,6 @@
 		{
 			"className": ".sf-imageView .flRateWrapper-flStars-image",
 			"id": "053f-7e31-8b1f-05db",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar4",
@@ -126,7 +121,6 @@
 		{
 			"className": ".sf-imageView .flRateWrapper-flStars-image",
 			"id": "b3e6-9465-f7c2-9877",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar5",
@@ -145,7 +139,6 @@
 		{
 			"className": ".sf-label .review.star .flRateWrapper-lblReviewCount",
 			"id": "b358-3d3e-0ee2-2ec7",
-			"oldName": "label1",
 			"props": {
 				"children": [],
 				"name": "lblReviewCount",
