@@ -6,11 +6,11 @@ export default class FlReviewProduct extends FlReviewProductDesign {
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
-        this.flRateWrapper.star = 5;
-        this.flRateWrapper1.star = 4;
-        this.flRateWrapper2.star = 3;
-        this.flRateWrapper3.star = 2;
-        this.flRateWrapper4.star = 1;
+        this.flRateWrapper5.star = 5;
+        this.flRateWrapper4.star = 4;
+        this.flRateWrapper3.star = 3;
+        this.flRateWrapper2.star = 2;
+        this.flRateWrapper1.star = 1;
     }
     get productName(): string {
         return this.lblProductName.text;
@@ -35,33 +35,33 @@ export default class FlReviewProduct extends FlReviewProductDesign {
         this.lblRate.text = value;
     }
     get fiveStarCount(): string {
-        return this.flRateWrapper.reviewCount;
+        return this.flRateWrapper5.reviewCount;
     }
     set fiveStarCount(value: string) {
-        this.flRateWrapper.reviewCount = value;
+        this.flRateWrapper5.reviewCount = value;
     }
     get fourStarCount(): string {
-        return this.flRateWrapper1.reviewCount;
+        return this.flRateWrapper4.reviewCount;
     }
     set fourStarCount(value: string) {
-        this.flRateWrapper1.reviewCount = value;
-    }
-    set threeStarCount(value: string) {
-        this.flRateWrapper2.reviewCount = value;
-    }
-    get threeStarCount(): string {
-        return this.flRateWrapper2.reviewCount;
-    }
-    set twoStarCount(value: string) {
-        this.flRateWrapper3.reviewCount = value;
-    }
-    get twoStarCount(): string {
-        return this.flRateWrapper3.reviewCount;
-    }
-    set oneStarCount(value: string) {
         this.flRateWrapper4.reviewCount = value;
     }
+    set threeStarCount(value: string) {
+        this.flRateWrapper3.reviewCount = value;
+    }
+    get threeStarCount(): string {
+        return this.flRateWrapper3.reviewCount;
+    }
+    set twoStarCount(value: string) {
+        this.flRateWrapper2.reviewCount = value;
+    }
+    get twoStarCount(): string {
+        return this.flRateWrapper2.reviewCount;
+    }
+    set oneStarCount(value: string) {
+        this.flRateWrapper1.reviewCount = value;
+    }
     get oneStarCount(): string {
-        return this.flRateWrapper4.reviewCount;
+        return this.flRateWrapper1.reviewCount;
     }
 }

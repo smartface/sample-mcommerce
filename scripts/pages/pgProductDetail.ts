@@ -157,7 +157,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
             ListViewItems.getLviPdOverviewSection({
                 overviewTitle: global.lang.reviews,
                 star: this.product?.rating,
-                countOfReviews: `(${this.product?.reviews?.length})`,
+                reviewCount: `(${this.product?.reviews?.length})`,
                 showRating: true
             })
         );

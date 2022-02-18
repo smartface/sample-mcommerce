@@ -72,7 +72,6 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             );
         } else {
             const rates = this.calculateRateCounts();
-            console.log(rates);
             processorItems.push(
                 ListViewItems.getLviReviewProduct({
                     productName: this.route.getState().routeData?.product?.name,
