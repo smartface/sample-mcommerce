@@ -3,14 +3,13 @@ import FlProductDetailInfoSectionDesign from 'generated/my-components/FlProductD
 export default class FlProductDetailInfoSection extends FlProductDetailInfoSectionDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
     }
-    get productTitle(): string {
+    get overviewTitle(): string {
         return this.lblTitle.text;
     }
-    set productTitle(value: string) {
+    set overviewTitle(value: string) {
         this.lblTitle.text = value;
     }
     get productInfo(): string {

@@ -101,7 +101,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
     }
     formatDate(review: Review) {
         const date = new Date(review?.createdAt);
-        const month = date.getMonth();
+        const month = date.getMonth() + 1;
         const day = date.getDate();
         const year = date.getFullYear();
         return `${month}/${day}/${year}`;

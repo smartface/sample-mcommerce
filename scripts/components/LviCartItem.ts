@@ -48,11 +48,11 @@ export default class LviCartItem extends LviCartItemDesign {
             useHTTPCacheControl: true
         });
     }
-    get productPrice(): string | number {
+    get productPrice(): string {
         return this.lblProductPrice.text;
     }
-    set productPrice(value: string | number) {
-        this.lblProductPrice.text = `$${value}`;
+    set productPrice(value: string) {
+        this.lblProductPrice.text = value;
     }
     set productCount(value: string | number) {
         this.lblProductCount.text = value.toString();

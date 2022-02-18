@@ -113,7 +113,10 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                         itemTitle: favouritedItem.name,
                         itemDesc: favouritedItem.shortDescription,
                         itemImage: favouritedItem.images ? getProductImageUrl(favouritedItem.images[0]) : null,
-                        itemPrice: `$${favouritedItem.price}`
+                        itemPrice:
+                            favouritedItem.discountPrice != undefined
+                                ? `$${favouritedItem?.discountPrice?.toFixed(2)}`
+                                : `$${favouritedItem.price.toFixed(2)}`
                     })
                 );
             });

@@ -34,12 +34,12 @@
         "testId": "J55DGbkIj",
         "width": 50,
         "&-imgArrow": {
-          "flexProps": {
-            "flexGrow": 1
-          },
-          "height": null,
-          "imageFillType": "ASPECTFIT",
-          "testId": "6rLGeOgQJ"
+          "flexProps": {},
+          "height": 50,
+          "tintColor": "${textDark}",
+          "imageFillType": "NORMAL",
+          "testId": "6rLGeOgQJ",
+          "width": 50
         }
       }
     },

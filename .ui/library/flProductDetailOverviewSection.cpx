@@ -15,7 +15,11 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 8.82,
+				"top": 205.88
+			}
 		},
 		{
 			"className": ".sf-flexLayout .flProductDetailOverviewSection-flWrapper",
@@ -23,7 +27,7 @@
 			"props": {
 				"children": [
 					"c62a-6808-5bd5-fcdb",
-					"5f2e-1db8-9321-de44",
+					"830c-a237-e91c-80b1",
 					"efa8-13e9-32b6-84c8"
 				],
 				"name": "flWrapper",
@@ -55,152 +59,23 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flProductDetailOverviewSection-flWrapper-flRateWrapper",
-			"id": "5f2e-1db8-9321-de44",
+			"className": ".sf-flexLayout .flRateWrapper .flProductDetailOverviewSection-flWrapper-flRateWrapper",
+			"hiddenComponent": false,
+			"id": "830c-a237-e91c-80b1",
 			"props": {
-				"children": [
-					"69cd-9f3e-4271-c74a",
-					"f955-14f0-1206-6bd7"
-				],
+				"children": [],
 				"name": "flRateWrapper",
 				"parent": "4ec7-297a-dfa8-5aea",
 				"usePageVariable": true
 			},
 			"ref": null,
 			"source": {
-				"page": "__library__"
+				"page": "__library__",
+				"type": "flRateWrapper",
+				"id": "530e-01bb-f909-0e1c"
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars",
-			"hiddenComponent": false,
-			"id": "69cd-9f3e-4271-c74a",
-			"props": {
-				"children": [
-					"592b-71b7-a551-ea2c",
-					"3e84-39c6-794d-0cd9",
-					"9128-8f87-a94f-f251",
-					"5b76-6db9-1882-32b2",
-					"f79b-66a5-f026-098f"
-				],
-				"name": "flStars",
-				"parent": "5f2e-1db8-9321-de44",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars-image",
-			"id": "592b-71b7-a551-ea2c",
-			"props": {
-				"children": [],
-				"name": "imgStar1",
-				"parent": "69cd-9f3e-4271-c74a",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars-image",
-			"id": "3e84-39c6-794d-0cd9",
-			"props": {
-				"children": [],
-				"name": "imgStar2",
-				"parent": "69cd-9f3e-4271-c74a",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars-image",
-			"id": "9128-8f87-a94f-f251",
-			"props": {
-				"children": [],
-				"name": "imgStar3",
-				"parent": "69cd-9f3e-4271-c74a",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars-image",
-			"id": "5b76-6db9-1882-32b2",
-			"props": {
-				"children": [],
-				"name": "imgStar4",
-				"parent": "69cd-9f3e-4271-c74a",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-imageView .flProductDetailOverviewSection-flWrapper-flRateWrapper-flStars-image",
-			"id": "f79b-66a5-f026-098f",
-			"props": {
-				"children": [],
-				"name": "imgStar5",
-				"parent": "69cd-9f3e-4271-c74a",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label .flProductDetailOverviewSection-flWrapper-flRateWrapper-lblReviewCount .review.star",
-			"id": "f955-14f0-1206-6bd7",
-			"props": {
-				"children": [],
-				"name": "lblReviewCount",
-				"parent": "5f2e-1db8-9321-de44",
-				"text": "label1",
-				"usePageVariable": true
-			},
-			"ref": null,
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"text": "label1",
 				"usePageVariable": true
 			}
 		},

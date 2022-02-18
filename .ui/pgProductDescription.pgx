@@ -1,0 +1,71 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "e9ea-0da4-0246-faae",
+			"initialized": true,
+			"props": {
+				"children": [
+					"61bc-b802-0791-82d2",
+					"c54f-898b-7846-bf25",
+					"d8cc-236b-8fc8-89a8"
+				],
+				"name": "pgProductDescription",
+				"orientation": "PORTRAIT",
+				"parent": null,
+				"safeAreaEnabled": true
+			},
+			"type": "Page",
+			"userProps": {
+				"safeAreaEnabled": true
+			},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "61bc-b802-0791-82d2",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "e9ea-0da4-0246-faae"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-headerBar.main",
+			"id": "c54f-898b-7846-bf25",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "e9ea-0da4-0246-faae",
+				"title": "pgProductDescription"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgProductDescription"
+			}
+		},
+		{
+			"className": ".sf-textView .grow .pgProductDescription-tvDescription .review.lblComment",
+			"id": "d8cc-236b-8fc8-89a8",
+			"props": {
+				"children": [],
+				"html": "<br>",
+				"name": "tvDescription",
+				"parent": "e9ea-0da4-0246-faae",
+				"text": "\n",
+				"usePageVariable": true
+			},
+			"type": "TextView",
+			"userProps": {
+				"html": "<br>",
+				"testId": "ABJkySLnL",
+				"text": "\n",
+				"usePageVariable": true
+			}
+		}
+	]
+}

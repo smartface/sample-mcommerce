@@ -76,7 +76,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                         productName: cart.name,
                         productInfo: cart.shortDescription,
                         productImage: cart.images ? getProductImageUrl(cart.images[0]) : null,
-                        productPrice: cart.price,
+                        productPrice: cart.discountPrice != undefined ? `$${cart?.discountPrice?.toFixed(2)}` : `$${cart.price.toFixed(2)}`,
                         productCount: cart.count,
                         minusButtonIcon: cart.count === 1 ? '' : '',
                         onActionPlus: () => {
@@ -121,7 +121,12 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
             this.flCartCheckout.checkoutTitle = global.lang.goToCheckout;
             this.flCartCheckout.checkoutPrice = store
                 .getState()
-                .main.basket.reduce((total, product) => total + product.price * product.count, 0)
+                .main.basket.reduce((total, product) => {
+                    if (product.discountPrice != undefined) {
+                        return total + product.discountPrice * product.count;
+                    }
+                    return total + product.price * product.count;
+                }, 0)
                 .toFixed(2);
             setVisibility(this.flCartCheckout, true);
         } else {

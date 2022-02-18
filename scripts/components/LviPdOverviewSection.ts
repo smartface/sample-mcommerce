@@ -17,17 +17,8 @@ export default class LviPdOverviewSection extends LviPdOverviewSectionDesign {
     set overviewTitle(value: string) {
         this.flProductDetailOverviewSection.overviewTitle = value;
     }
-    get onArrowClick(): () => void {
-        return this.flProductDetailOverviewSection.onArrowClick;
-    }
-    set onArrowClick(value: () => void) {
-        this.flProductDetailOverviewSection.onArrowClick = value;
-    }
-    set rating(value: string) {
-        this.flProductDetailOverviewSection.rating = value;
-    }
-    get countOfReviews(): string {
-        return this.flProductDetailOverviewSection.countOfReviews;
+    set star(value: number) {
+        this.flProductDetailOverviewSection.star = value;
     }
     set countOfReviews(value: string) {
         this.flProductDetailOverviewSection.countOfReviews = value;

@@ -23,6 +23,6 @@ export default class FlRateProduct extends FlRateProductDesign {
         return this.rating;
     }
     get comment(): string {
-        return this.tbComment.text;
+        return this.mtbComment.materialTextBox.text;
     }
 }
