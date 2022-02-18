@@ -24,6 +24,7 @@
       "&-imgSmartface": {
         "height": 20,
         "imageFillType": "ASPECTFIT",
+        "tintColor": "${main}",
         "marginTop": 4,
         "width": 85
       }

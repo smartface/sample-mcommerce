@@ -26,7 +26,6 @@
 		{
 			"className": ".sf-label .flNutritions-lblKeyOfNutritions .review.name",
 			"id": "fa43-5b4e-a484-ce6f",
-			"oldName": "lblKeyOfNutriti",
 			"props": {
 				"children": [],
 				"name": "lblKeyOfNutritions",
@@ -46,7 +45,6 @@
 		{
 			"className": ".sf-label .flNutritions-lblValueOfNutritions .review.lblComment",
 			"id": "ff84-f97d-220c-a89d",
-			"oldName": "lblValOfNutritions",
 			"props": {
 				"children": [],
 				"name": "lblValueOfNutritions",
@@ -66,7 +64,6 @@
 		{
 			"className": ".sf-flexLayout .separator.full",
 			"id": "bd9e-bebd-ac64-d758",
-			"oldName": "separato",
 			"props": {
 				"children": [],
 				"name": "separator",

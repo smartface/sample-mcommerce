@@ -16,12 +16,15 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 30,
+				"top": 88.57
+			}
 		},
 		{
 			"className": ".sf-imageView .flHeaderIcon-imgIcon",
 			"id": "d7dc-9135-aaa0-eee4",
-			"oldName": "imgI",
 			"props": {
 				"children": [],
 				"name": "imgIcon",
@@ -38,9 +41,8 @@
 			}
 		},
 		{
-			"className": ".sf-label .grow .review.name",
+			"className": ".sf-label .grow .review.name .flHeaderIcon-lblHeader",
 			"id": "4f79-638b-f120-906b",
-			"oldName": "lblHea",
 			"props": {
 				"children": [],
 				"name": "lblHeader",

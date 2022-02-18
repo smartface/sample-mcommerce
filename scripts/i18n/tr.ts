@@ -133,11 +133,12 @@ SMF.i18n.defineLanguage('tr', {
     addReviewHeader: 'Yorum Yap',
     addToCart: 'Sepete Eklendi',
     rateProduct: 'Ürünü değerlendirin',
-    tbComment: 'Yorum yaz',
+    mtbComment: 'Yorum yaz',
     alreadySendReview: 'Bu ürünü zaten değerlendirdin.',
     reviewsServiceError: 'Değerlendirmeler servisinde bir hata oluştu.',
     reviewSent: 'Değerlendirmeniz başarıyla gönderildi.',
     emptyNutritions: 'Bu ürüne ait bir besin bilgisi bulunamadı.',
     appName: 'Smart Commerce',
-    sureToLogout: 'Çıkış yapmak istediğinizden emin misiniz?'
+    sureToLogout: 'Çıkış yapmak istediğinizden emin misiniz?',
+    noDescription: 'AÇIKLAMA BULUNAMADI'
 });

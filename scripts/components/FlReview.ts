@@ -26,6 +26,12 @@ export default class FlReview extends FlReviewDesign {
     set star(value: string) {
         this.lblStar.text = value;
     }
+    get date(): string {
+        return this.lblDate.text;
+    }
+    set date(value: string) {
+        this.lblDate.text = value;
+    }
     get comment(): string {
         return this.lblComment.text;
     }

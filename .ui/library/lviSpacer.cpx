@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviSpacer",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "9221-229c-4fe2-104e",
 			"initialized": true,
 			"props": {

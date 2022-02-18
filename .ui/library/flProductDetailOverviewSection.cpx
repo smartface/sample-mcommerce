@@ -17,8 +17,8 @@
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {},
-				"left": "27.33",
-				"top": "48.67"
+				"left": 8.82,
+				"top": 205.88
 			}
 		},
 		{
@@ -27,6 +27,7 @@
 			"props": {
 				"children": [
 					"c62a-6808-5bd5-fcdb",
+					"830c-a237-e91c-80b1",
 					"efa8-13e9-32b6-84c8"
 				],
 				"name": "flWrapper",
@@ -54,6 +55,27 @@
 			"type": "Label",
 			"userProps": {
 				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRateWrapper .flProductDetailOverviewSection-flWrapper-flRateWrapper",
+			"hiddenComponent": false,
+			"id": "830c-a237-e91c-80b1",
+			"props": {
+				"children": [],
+				"name": "flRateWrapper",
+				"parent": "4ec7-297a-dfa8-5aea",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__",
+				"type": "flRateWrapper",
+				"id": "530e-01bb-f909-0e1c"
+			},
+			"type": "FlexLayout",
+			"userProps": {
 				"usePageVariable": true
 			}
 		},

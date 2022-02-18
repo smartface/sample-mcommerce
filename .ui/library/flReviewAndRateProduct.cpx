@@ -6,7 +6,7 @@
 			"id": "e268-20ad-2da1-0b48",
 			"props": {
 				"children": [
-					"1e07-3ba3-0f2a-49cf",
+					"6f5c-adee-984a-1d9d",
 					"5e9b-8dc5-8c52-c5bb"
 				],
 				"name": "flReviewAndRateProduct",
@@ -16,16 +16,12 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 17,
-				"top": 66
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flReviewProduct",
 			"hiddenComponent": false,
-			"id": "1e07-3ba3-0f2a-49cf",
+			"id": "6f5c-adee-984a-1d9d",
 			"props": {
 				"children": [],
 				"name": "flReviewProduct",

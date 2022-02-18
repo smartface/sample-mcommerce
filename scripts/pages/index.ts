@@ -13,3 +13,4 @@ export { default as pgNotifications } from './pgNotifications';
 export { default as pgReviews } from './pgReviews';
 export { default as pgAddReview } from './pgAddReview';
 export { default as pgNutritions } from './pgNutritions';
+export { default as pgProductDescription } from './pgProductDescription';

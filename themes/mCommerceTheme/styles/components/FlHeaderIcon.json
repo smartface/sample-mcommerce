@@ -7,9 +7,17 @@
       "alignItems": "CENTER"
     },
     "&-imgIcon": {
-      "height": 50,
       "imageFillType": "ASPECTFIT",
-      "width": 50
+      "width": 50,
+      "flexProps": {
+        "positionType": "ABSOLUTE"
+      },
+      "top": 10,
+      "bottom": 10,
+      "height": null
+    },
+    "&-lblHeader": {
+      "textAlignment": "MIDCENTER"
     }
   }
 }

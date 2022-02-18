@@ -15,7 +15,11 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 1.02,
+				"top": 113.27
+			}
 		},
 		{
 			"className": ".sf-flexLayout",

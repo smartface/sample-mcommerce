@@ -2,64 +2,68 @@
 	"components": [
 		{
 			"className": ".sf-page",
-			"id": "8462-77a0-f1db-b5c9",
+			"id": "e9ea-0da4-0246-faae",
 			"initialized": true,
 			"props": {
 				"children": [
-					"6f4c-cb92-967d-fd23",
-					"f4b8-836b-9a38-904f",
-					"ec17-8b09-c2d9-6d84"
+					"61bc-b802-0791-82d2",
+					"c54f-898b-7846-bf25",
+					"d8cc-236b-8fc8-89a8"
 				],
-				"name": "pgReviews",
+				"name": "pgProductDescription",
 				"orientation": "PORTRAIT",
 				"parent": null,
-				"safeAreaEnabled": false
+				"safeAreaEnabled": true
 			},
 			"type": "Page",
 			"userProps": {
-				"safeAreaEnabled": false
+				"safeAreaEnabled": true
 			},
 			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
-			"id": "6f4c-cb92-967d-fd23",
+			"id": "61bc-b802-0791-82d2",
 			"props": {
 				"children": [],
 				"isRemovable": false,
 				"name": "statusBar",
-				"parent": "8462-77a0-f1db-b5c9"
+				"parent": "e9ea-0da4-0246-faae"
 			},
 			"type": "StatusBar",
 			"userProps": {}
 		},
 		{
 			"className": ".sf-headerBar.main",
-			"id": "f4b8-836b-9a38-904f",
+			"id": "c54f-898b-7846-bf25",
 			"props": {
 				"children": [],
 				"isRemovable": false,
 				"name": "headerBar",
-				"parent": "8462-77a0-f1db-b5c9",
-				"title": "pgReviews"
+				"parent": "e9ea-0da4-0246-faae",
+				"title": "pgProductDescription"
 			},
 			"type": "HeaderBar",
 			"userProps": {
-				"title": "pgReviews"
+				"title": "pgProductDescription"
 			}
 		},
 		{
-			"className": ".sf-listView .grow",
-			"id": "ec17-8b09-c2d9-6d84",
+			"className": ".sf-textView .grow .pgProductDescription-tvDescription .review.lblComment",
+			"id": "d8cc-236b-8fc8-89a8",
 			"props": {
 				"children": [],
-				"name": "lvMain",
-				"parent": "8462-77a0-f1db-b5c9",
+				"html": "<br>",
+				"name": "tvDescription",
+				"parent": "e9ea-0da4-0246-faae",
+				"text": "\n",
 				"usePageVariable": true
 			},
-			"type": "ListView",
+			"type": "TextView",
 			"userProps": {
-				"testId": "6LR7gltup",
+				"html": "<br>",
+				"testId": "ABJkySLnL",
+				"text": "\n",
 				"usePageVariable": true
 			}
 		}

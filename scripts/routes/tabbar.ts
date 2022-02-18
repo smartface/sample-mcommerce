@@ -86,6 +86,14 @@ function productDetailRouter(basePath: string) {
                     router.setState({ view: page });
                     return page;
                 }
+            }),
+            Route.of<Pages.pgProductDescription>({
+                path: `${basePath}/productDetail/description`,
+                build(router, route) {
+                    const page = new Pages.pgProductDescription(router, route);
+                    router.setState({ view: page });
+                    return page;
+                }
             })
         ]
     });

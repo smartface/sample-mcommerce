@@ -21,6 +21,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
     reviews: Review[];
     rightItem: HeaderBarItem;
     rating: number;
+    initialized: boolean = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.rating = this.route.getState().routeData?.product?.rating;
@@ -31,7 +32,9 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
             image: Image.createFromFile('images://rate_with_comment.png'),
             onPress: () => {
-                this.router.push('addReview', { product: this.route.getState().routeData?.product });
+                this.router.push('addReview', {
+                    product: this.route.getState().routeData?.product
+                });
             }
         });
         this.headerBar.setItems([this.rightItem]);
@@ -51,6 +54,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
         this.lvMain.onRowHeight = onRowHeight.bind(this);
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
+        this.lvMain.refreshEnabled = false;
     }
     refreshListView() {
         this.data = this.processor();
@@ -67,11 +71,18 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
                 })
             );
         } else {
+            const rates = this.calculateRateCounts();
+            console.log(rates);
             processorItems.push(
                 ListViewItems.getLviReviewProduct({
                     productName: this.route.getState().routeData?.product?.name,
                     productImage: getProductImageUrl(this.route.getState().routeData?.product.images[0]),
-                    productRate: this.rating?.toString() || NO_RATE.toString()
+                    productRate: this.rating?.toFixed(1).toString() || NO_RATE.toString(),
+                    fiveStarCount: `(${rates[5] || 0})`,
+                    fourStarCount: `(${rates[4] || 0})`,
+                    threeStarCount: `(${rates[3] || 0})`,
+                    twoStarCount: `(${rates[2] || 0})`,
+                    oneStarCount: `(${rates[1] || 0})`
                 })
             );
             this.reviews.forEach((review, index, arr) =>
@@ -79,6 +90,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
                     ListViewItems.getLviReview({
                         name: review.name,
                         star: `${review.star}`,
+                        date: this.formatDate(review),
                         comment: review.comment,
                         showSeparator: arr.length - 1 !== index
                     })
@@ -86,6 +98,18 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             );
         }
         return processorItems;
+    }
+    formatDate(review: Review) {
+        const date = new Date(review?.createdAt);
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        const year = date.getFullYear();
+        return `${month}/${day}/${year}`;
+    }
+    checkNewRateAdded() {
+        if (store.getState().main.isRateAdded) {
+            this.initialized = false;
+        }
     }
     async fetchProductReviews() {
         try {
@@ -98,15 +122,29 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
         } catch (error) {
             throw new Error(global.lang.reviewsServiceError);
         } finally {
+            this.initialized = true;
             this.refreshListView();
         }
     }
-
+    calculateRateCounts(): Record<string, number> {
+        const rates = {};
+        this.reviews.forEach((review) => {
+            if (rates[review.star]) {
+                rates[review.star] += 1;
+            } else {
+                rates[review.star] = 1;
+            }
+        });
+        return rates;
+    }
     public onShow() {
         super.onShow?.();
+        this.checkNewRateAdded();
+        if (!this.initialized) {
+            this.fetchProductReviews();
+        }
         this.addRightItem();
         this.handleRightItem();
-        this.fetchProductReviews();
         this.initBackButton(this.router, {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });

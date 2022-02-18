@@ -8,7 +8,7 @@
 				"children": [
 					"7503-9ce8-7070-4e50",
 					"9564-ebfd-d1e3-2cdd",
-					"6e7f-f833-5ab6-1481"
+					"ee4f-af66-fbde-ef00"
 				],
 				"name": "flRateProduct",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -22,7 +22,6 @@
 		{
 			"className": ".sf-label .flRateProduct-lblHeader .review.name",
 			"id": "7503-9ce8-7070-4e50",
-			"oldName": "lblHead",
 			"props": {
 				"children": [],
 				"name": "lblHeader",
@@ -43,7 +42,6 @@
 			"className": ".sf-flexLayout .flRateProduct-flStars",
 			"hiddenComponent": false,
 			"id": "9564-ebfd-d1e3-2cdd",
-			"oldName": "flStar",
 			"props": {
 				"children": [
 					"b5ff-19b3-6ba3-92db",
@@ -67,7 +65,6 @@
 		{
 			"className": ".sf-imageView .flRateProduct-flStars-image",
 			"id": "b5ff-19b3-6ba3-92db",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar1",
@@ -86,7 +83,6 @@
 		{
 			"className": ".sf-imageView .flRateProduct-flStars-image",
 			"id": "1cd6-3766-37b7-6958",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar2",
@@ -105,7 +101,6 @@
 		{
 			"className": ".sf-imageView .flRateProduct-flStars-image",
 			"id": "4ab2-8d69-f69c-fe9b",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar3",
@@ -124,7 +119,6 @@
 		{
 			"className": ".sf-imageView .flRateProduct-flStars-image",
 			"id": "25b3-104d-ad74-0287",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar4",
@@ -143,7 +137,6 @@
 		{
 			"className": ".sf-imageView .flRateProduct-flStars-image",
 			"id": "72dc-4bc3-39f7-b211",
-			"oldName": "imgStar",
 			"props": {
 				"children": [],
 				"name": "imgStar5",
@@ -160,22 +153,23 @@
 			}
 		},
 		{
-			"className": ".sf-textBox .flRateProduct-tbComment .review.tb",
-			"id": "6e7f-f833-5ab6-1481",
-			"oldName": "tbComm",
+			"className": ".flexLayout .materialTextBox-wrapper .grow",
+			"hiddenComponent": false,
+			"id": "ee4f-af66-fbde-ef00",
+			"initialized": false,
 			"props": {
 				"children": [],
-				"hint": "Comment",
-				"name": "tbComment",
+				"name": "mtbComment",
 				"parent": "f11c-576a-b271-7c3f",
 				"usePageVariable": true
 			},
 			"source": {
-				"page": "__library__"
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
 			},
-			"type": "TextBox",
+			"type": "FlexLayout",
 			"userProps": {
-				"hint": "Comment",
 				"usePageVariable": true
 			}
 		}

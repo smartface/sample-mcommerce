@@ -14,6 +14,7 @@ import { Product } from 'types';
 import LviPdOverviewSection from 'components/LviPdOverviewSection';
 import Share from '@smartface/native/global/share';
 import { generateProductDeeplinkUrl } from 'lib/deeplink';
+import LviPdInfoSection from 'components/LviPdInfoSection';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviGenericSlider
@@ -64,12 +65,14 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.refreshEnabled = false;
-        this.lvMain.onRowSelected = (item: LviPdOverviewSection, index) => {
-            if (item instanceof LviPdOverviewSection) {
+        this.lvMain.onRowSelected = (item: LviPdOverviewSection | LviPdInfoSection, index) => {
+            if (item instanceof LviPdOverviewSection || item instanceof LviPdInfoSection) {
                 if (item.overviewTitle === global.lang.reviews) {
                     this.router.push('reviews', { productId: this.product._id, product: this.product });
                 } else if (item.overviewTitle === global.lang.nutritions) {
                     this.router.push('nutritions', { productId: this.product._id, product: this.product });
+                } else if (item.overviewTitle === global.lang.productDetail) {
+                    this.router.push('description', { productDescription: this.product.description });
                 }
             }
         };
@@ -120,8 +123,8 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
 
         processorItems.push(
             ListViewItems.getLviPdButtonPriceSection({
-                productDiscount: !!this.product.discountPrice ? `$${this.product.discountPrice}` : '',
-                productPrice: `$${this.product.price}`,
+                productDiscount: !!this.product.discountPrice ? `$${this.product.discountPrice.toFixed(2)}` : '',
+                productPrice: `$${this.product.price.toFixed(2)}`,
                 productCount: this.productCounter.toString(),
                 onPlusClick: () => {
                     this.productCounter += 1;
@@ -140,18 +143,22 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
 
         processorItems.push(
             ListViewItems.getLviPdInfoSection({
-                productTitle: global.lang.productDetail,
+                overviewTitle: global.lang.productDetail,
                 productInfo: this.product.description
             })
         );
         processorItems.push(
             ListViewItems.getLviPdOverviewSection({
-                overviewTitle: global.lang.nutritions
+                overviewTitle: global.lang.nutritions,
+                showRating: false
             })
         );
         processorItems.push(
             ListViewItems.getLviPdOverviewSection({
-                overviewTitle: global.lang.reviews
+                overviewTitle: global.lang.reviews,
+                star: this.product?.rating,
+                countOfReviews: `(${this.product?.reviews?.length})`,
+                showRating: true
             })
         );
 

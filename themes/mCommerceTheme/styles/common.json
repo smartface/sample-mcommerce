@@ -22,7 +22,16 @@
     "bottom": 0,
     "left": 0,
     "right": 0,
-    "height": 100
+    "height": 87,
+    "paddingTop": 10,
+    "paddingLeft": 15,
+    "paddingRight": 15,
+    "backgroundColor": "${backgroundMain}",
+    ".relative": {
+      "flexProps": {
+        "positionType": "RELATIVE"
+      }
+    }
   },
   ".padding": {
     "paddingLeft": 25,
@@ -37,6 +46,14 @@
   ".paddingHorizontal": {
     "paddingLeft": 15,
     "paddingRight": 15
+  },
+  ".marginVertical": {
+    "marginTop": 15,
+    "marginBottom": 15
+  },
+  ".marginHorizontal": {
+    "marginLeft": 15,
+    "marginRight": 15
   },
   ".rowFlex": {
     "flexProps": {

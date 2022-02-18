@@ -2,6 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flSmartface",
+			"hiddenComponent": true,
 			"id": "f497-3d69-d937-6c61",
 			"props": {
 				"children": [
@@ -25,7 +26,6 @@
 		{
 			"className": ".sf-label .flSmartface-lblVersion .review.name",
 			"id": "9fde-3f04-e1f4-58ce",
-			"oldName": "label1",
 			"props": {
 				"children": [],
 				"name": "lblVersion",
@@ -46,7 +46,6 @@
 		{
 			"className": ".sf-flexLayout .flSmartface-flPoweredBySmartface",
 			"id": "356d-9c88-d0ae-16f9",
-			"oldName": "flexLayout1",
 			"props": {
 				"children": [
 					"d14c-bf28-9c20-a3a1",
@@ -66,9 +65,8 @@
 			}
 		},
 		{
-			"className": ".sf-label .flSmartface-flPoweredBySmartface-lblPoweredBy .review.addReview",
+			"className": ".sf-label .flSmartface-flPoweredBySmartface-lblPoweredBy .review.lblComment",
 			"id": "d14c-bf28-9c20-a3a1",
-			"oldName": "label1",
 			"props": {
 				"children": [],
 				"name": "lblPoweredBy",
@@ -89,7 +87,6 @@
 		{
 			"className": ".sf-imageView .flSmartface-flPoweredBySmartface-imgSmartface",
 			"id": "7942-7514-fc2e-6244",
-			"oldName": "imageView1",
 			"props": {
 				"children": [],
 				"name": "imgSmartface",

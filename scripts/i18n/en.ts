@@ -135,11 +135,12 @@ SMF.i18n.defineLanguage('en', {
     addReviewHeader: 'Add Review',
     addToCart: 'Add to Cart',
     rateProduct: 'Rate product',
-    tbComment: 'Comment',
+    mtbComment: 'Comment',
     alreadySendReview: 'You already rated this product.',
     reviewsServiceError: 'An error occurred on reviews service.',
     reviewSent: 'Your review has been sent succesfully.',
     emptyNutritions: 'This product has no nutritions.',
     appName: 'Smart Commerce',
-    sureToLogout: 'Are you sure to logout?'
+    sureToLogout: 'Are you sure to logout?',
+    noDescription: 'NO DESCRIPTION'
 });

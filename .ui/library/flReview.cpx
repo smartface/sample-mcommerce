@@ -7,6 +7,7 @@
 			"props": {
 				"children": [
 					"9f2d-a25f-1cec-482d",
+					"490a-61e3-b878-45b0",
 					"f263-8261-358d-d158",
 					"217f-9e03-9048-3447"
 				],
@@ -22,7 +23,6 @@
 		{
 			"className": ".sf-flexLayout .flReview-flHeader",
 			"id": "9f2d-a25f-1cec-482d",
-			"oldName": "flH",
 			"props": {
 				"children": [
 					"3690-94a8-2f63-c4d9",
@@ -82,7 +82,6 @@
 		{
 			"className": ".sf-imageView .flReview-flHeader-flContainer-imgStar",
 			"id": "5a83-bfe5-dd20-07e3",
-			"oldName": "imgSt",
 			"props": {
 				"children": [],
 				"name": "imgStar",
@@ -95,8 +94,7 @@
 			"type": "ImageView",
 			"userProps": {
 				"image": "small_star.png",
-				"usePageVariable": true,
-				"width": 20
+				"usePageVariable": true
 			}
 		},
 		{
@@ -115,6 +113,27 @@
 			"type": "Label",
 			"userProps": {
 				"text": "4.3",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-textView .flReview-lblDate .review.lblComment",
+			"id": "490a-61e3-b878-45b0",
+			"props": {
+				"children": [],
+				"html": "Deneme yorum",
+				"name": "lblDate",
+				"parent": "391c-0052-8b78-9389",
+				"text": "15.02.2022",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"html": "Deneme yorum",
+				"text": "15.02.2022",
 				"usePageVariable": true
 			}
 		},
@@ -142,7 +161,6 @@
 		{
 			"className": ".sf-flexLayout .separator",
 			"id": "217f-9e03-9048-3447",
-			"oldName": "seperat",
 			"props": {
 				"children": [],
 				"name": "seperator",

@@ -8,7 +8,6 @@ export default class LviFavorites extends LviFavoritesDesign {
     pageName?: string | undefined;
     private __imageUrl: string;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
     }

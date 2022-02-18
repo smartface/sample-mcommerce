@@ -33,7 +33,7 @@ export type Product = {
     price: number;
     images?: Array<string>;
     category: Categories;
-    review?: number;
+    reviews?: Array<Review>;
     discountPrice?: number;
     discountTag?: string;
     count?: number;
@@ -73,6 +73,8 @@ export type Review = {
     productId: string;
     name: string;
     sub: string;
+    createdAt: Date;
+    updatedAt: Date;
 };
 
 export type Label = {

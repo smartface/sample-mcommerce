@@ -27,6 +27,7 @@ export default class FlGenericSlider extends FlGenericSliderDesign {
         const swipeView = new SwipeView({
             page: this,
             flexGrow: 1,
+            //@ts-ignore
             pages: this.images.map((image: string) => pgGenericSlider({ url: image })),
             onPageSelected: (index: number) => {
                 this.dotIndicator.currentIndex = index;
