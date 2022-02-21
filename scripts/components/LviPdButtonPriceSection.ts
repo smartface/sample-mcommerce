@@ -1,7 +1,7 @@
 import LviPdButtonPriceSectionDesign from 'generated/my-components/LviPdButtonPriceSection';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 
-const { height } = getCombinedStyle('.lviPdButtonPriceSection');
+const { height } = themeService.getStyle('.lviPdButtonPriceSection');
 export default class LviPdButtonPriceSection extends LviPdButtonPriceSectionDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {
@@ -29,6 +29,12 @@ export default class LviPdButtonPriceSection extends LviPdButtonPriceSectionDesi
     }
     set productPrice(value: string) {
         this.flProductDetailButtonPriceSection.productPrice = value;
+    }
+    get productDiscount(): string {
+        return this.flProductDetailButtonPriceSection.productDiscount;
+    }
+    set productDiscount(value: string) {
+        this.flProductDetailButtonPriceSection.productDiscount = value;
     }
     get productCount(): string {
         return this.flProductDetailButtonPriceSection.productCount;

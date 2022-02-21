@@ -1,0 +1,20 @@
+{
+  ".sf-switch": {
+    "toggleOnColor": "${iconsMain}",
+    "android": {
+      "toggleOffColor": "${textLight}",
+      "thumbOffColor": "${boxColor}"
+    },
+    "+Device:Device.os === \"Android\"": {
+      "thumbOnColor": "${iconsMain}"
+    },
+    "flexProps": {
+      "alignSelf": "AUTO",
+      "positionType": "RELATIVE"
+    },
+    "minHeight": null,
+    "minWidth": null,
+    "marginTop": null,
+    "marginBottom": null
+  }
+}

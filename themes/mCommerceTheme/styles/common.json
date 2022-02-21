@@ -1,60 +1,106 @@
 {
-	".grow": {
-		"flexProps": {
-			"flexGrow": 1
-		},
-		"height": null
-	},
-	".noPadding": {
-		"paddingLeft": null,
-		"paddingRight": null,
-		"paddingTop": null,
-		"paddingBottom": null
-	},
-	".noMargin": {
-		"marginTop": null,
-		"marginBottom": null
-	},
-	".sticky": {
-		"flexProps": {
-			"positionType": "ABSOLUTE"
-		},
-		"bottom": 0,
-		"left": 0,
-		"right": 0,
-		"height": 100
-	},
-	".padding": {
-		"paddingLeft": 25,
-		"paddingRight": 25,
-		"paddingTop": 15,
-		"paddingBottom": 15
-	},
-	".paddingVertical": {
-		"paddingTop": 15,
-		"paddingBottom": 15
-	},
-	".paddingHorizontal": {
-		"paddingLeft": 15,
-		"paddingRight": 15
-	},
-	".rowFlex": {
-		"flexProps": {
-			"flexDirection": "ROW"
-		}
-	},
-	".seperator": {
-		"height": 1,
-		"left": 15,
-		"right": 0,
-		"bottom": 0,
-		"marginTop": null,
-		"marginBottom": null,
-		"flexProps": {
-			"positionType": "ABSOLUTE"
-		}
-	},
-	".notVisible": {
-		"visible": false
-	}
+  ".grow": {
+    "flexProps": {
+      "flexGrow": 1
+    },
+    "height": null
+  },
+  ".noPadding": {
+    "paddingLeft": null,
+    "paddingRight": null,
+    "paddingTop": null,
+    "paddingBottom": null
+  },
+  ".noMargin": {
+    "marginTop": null,
+    "marginBottom": null
+  },
+  ".sticky": {
+    "flexProps": {
+      "positionType": "ABSOLUTE"
+    },
+    "bottom": 0,
+    "left": 0,
+    "right": 0,
+    "height": 87,
+    "paddingTop": 10,
+    "paddingLeft": 15,
+    "paddingRight": 15,
+    "backgroundColor": "${backgroundMain}",
+    ".relative": {
+      "flexProps": {
+        "positionType": "RELATIVE"
+      }
+    }
+  },
+  ".padding": {
+    "paddingLeft": 25,
+    "paddingRight": 25,
+    "paddingTop": 15,
+    "paddingBottom": 15
+  },
+  ".paddingVertical": {
+    "paddingTop": 15,
+    "paddingBottom": 15
+  },
+  ".paddingHorizontal": {
+    "paddingLeft": 15,
+    "paddingRight": 15
+  },
+  ".marginVertical": {
+    "marginTop": 15,
+    "marginBottom": 15
+  },
+  ".marginHorizontal": {
+    "marginLeft": 15,
+    "marginRight": 15
+  },
+  ".rowFlex": {
+    "flexProps": {
+      "flexDirection": "ROW"
+    }
+  },
+  ".separator": {
+    "height": 1,
+    "left": 15,
+    "right": 0,
+    "bottom": 0,
+    "marginTop": null,
+    "marginBottom": null,
+    "flexProps": {
+      "positionType": "ABSOLUTE"
+    },
+    "backgroundColor": "${separator}",
+    ".full": {
+      "left": 0
+    }
+  },
+  ".notVisible": {
+    "visible": false
+  },
+  ".radius": {
+    "borderRadius": 15
+  },
+  ".borderColor": {
+    "borderWidth": 1,
+    "borderColor": "${grayBorder}"
+  },
+  ".contentInset": {
+    "contentInset": {
+      "top": 15,
+      "bottom": 15
+    },
+    "&-top": {
+      "contentInset": {
+        "top": 15,
+        "bottom": 0
+      }
+    },
+    "&-bottom": {
+      "contentInset": {
+        "bottom": 15,
+        "top": 0
+      }
+    }
+  }
 }

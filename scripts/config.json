@@ -1,4 +1,16 @@
 {
-  "key1": "value1",
-  "key2": "value2"
+	"defaultEnvironment": "prod",
+	"environments": {
+		"dev": {},
+		"prep": {},
+		"prod": {
+			"realm": "smartcommerce",
+			"serviceUrl": "https://smartapps-commerce.smartface.io",
+			"auth": {
+				"serviceUrl": "https://auth-smartapps.smartface.io",
+				"client_id": "smartcommerce-app",
+				"client_secret": "WMfGrSp7rxtg1rxP7RwSM57wTow5IE5S"
+			}
+		}
+	}
 }

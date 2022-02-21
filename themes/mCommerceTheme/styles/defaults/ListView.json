@@ -1,12 +1,14 @@
 {
-	".sf-listView": {
-		"height": null,
-		"width": null,
-		"backgroundColor": "${backgroundMain}",
-		"flexProps": {
-			"alignSelf": "AUTO",
-			"positionType": "RELATIVE",
-			"flexGrow": 1
-		}
-	}
+  ".sf-listView": {
+    "height": null,
+    "width": null,
+    "marginTop": null,
+    "marginBottom": null,
+    "backgroundColor": "${backgroundMain}",
+    "flexProps": {
+      "alignSelf": "AUTO",
+      "positionType": "RELATIVE",
+      "flexGrow": 1
+    }
+  }
 }

@@ -1,5 +1,4 @@
-import { NativeStackRouter as StackRouter, Route } from '@smartface/router';
-import buildExtender from '@smartface/extension-utils/lib/router/buildExtender';
+import { NativeStackRouter as StackRouter, Route, Router } from '@smartface/router';
 import * as Pages from 'pages';
 
 export default function (basePath: string) {
@@ -8,39 +7,59 @@ export default function (basePath: string) {
         to: `${basePath}/pages/pgWelcome`,
         modal: true,
         routes: [
-            Route.of({
+            Route.of<Pages.pgWelcome>({
                 path: `${basePath}/pages/pgWelcome`,
-                build: buildExtender({
-                    getPageClass: () => Pages.pgWelcome,
-                    headerBarStyle: { visible: true }
+                build(router, route) {
+                    const page = new Pages.pgWelcome(router, route);
+                    Router.getActiveRouter().setState({ view: page });
+                    return page;
+                },
+                headerBarParams: () => ({
+                    visible: true
                 })
             }),
-            Route.of({
-                path: `${basePath}/pages/pgNumber`,
-                build: buildExtender({
-                    getPageClass: () => Pages.pgNumber,
-                    headerBarStyle: { visible: true }
-                })
-            }),
-            Route.of({
-                path: `${basePath}/pages/pgVerification`,
-                build: buildExtender({
-                    getPageClass: () => Pages.pgVerification,
-                    headerBarStyle: { visible: true }
-                })
-            }),
-            Route.of({
+            // Route.of<Pages.pgNumber>({
+            //     path: `${basePath}/pages/pgNumber`,
+            //     build(router, route) {
+            //         const page = new Pages.pgNumber(router, route);
+            //         Router.getActiveRouter().setState({ view: page });
+            //         return page;
+            //     },
+            //     headerBarParams: () => ({
+            //         visible: true
+            //     })
+            // }),
+            // Route.of<Pages.pgVerification>({
+            //     path: `${basePath}/pages/pgVerification`,
+            //     build(router, route) {
+            //         const page = new Pages.pgVerification(router, route);
+            //         Router.getActiveRouter().setState({ view: page });
+            //         return page;
+            //     },
+            //     headerBarParams: () => ({
+            //         visible: true
+            //     })
+            // }),
+            Route.of<Pages.pgLogin>({
                 path: `${basePath}/pages/pgLogin`,
-                build: buildExtender({
-                    getPageClass: () => Pages.pgLogin,
-                    headerBarStyle: { visible: false }
+                build(router, route) {
+                    const page = new Pages.pgLogin(router, route);
+                    Router.getActiveRouter().setState({ view: page });
+                    return page;
+                },
+                headerBarParams: () => ({
+                    visible: false
                 })
             }),
-            Route.of({
+            Route.of<Pages.pgSignUp>({
                 path: `${basePath}/pages/pgSignUp`,
-                build: buildExtender({
-                    getPageClass: () => Pages.pgSignUp,
-                    headerBarStyle: { visible: true }
+                build(router, route) {
+                    const page = new Pages.pgSignUp(router, route);
+                    Router.getActiveRouter().setState({ view: page });
+                    return page;
+                },
+                headerBarParams: () => ({
+                    visible: true
                 })
             })
         ]

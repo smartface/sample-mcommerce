@@ -1,27 +1,25 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import Button from '@smartface/native/ui/button';
-import Image from '@smartface/native/ui/image';
-import Label from '@smartface/native/ui/label';
-import View from '@smartface/native/ui/view';
 import LviCartItemDesign from 'generated/my-components/LviCartItem';
-const originalHeight = getCombinedStyle('.lviCartItem').height;
+import Label from '@smartface/native/ui/label';
+const originalHeight = themeService.getStyle('.lviCartItem').height;
 
 export default class LviCartItem extends LviCartItemDesign {
     pageName?: string | undefined;
+    private __imageUrl: string;
     _value: (...args) => void;
     _valueMinus: (...args) => void;
     _removeValue: (...args) => void;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-        this.btnCartPlus.on(Button.Events.TouchEnded, () => {
+        this.btnCartPlus.on(Button.Events.Press, () => {
             this._value && this._value();
         });
-        this.btnCartMinus.on(Button.Events.TouchEnded, () => {
+        this.btnCartMinus.on(Button.Events.Press, () => {
             this._valueMinus && this._valueMinus();
         });
-        this.lblCloseIcon.on(View.Events.Touch, () => {
+        this.lblCloseIcon.on(Label.Events.Touch, () => {
             this._removeValue && this._removeValue();
         });
     }
@@ -40,17 +38,21 @@ export default class LviCartItem extends LviCartItemDesign {
     set productInfo(value: string) {
         this.lblProductInfo.text = value;
     }
-    get productImage(): string | Image {
-        return this.imgProduct.image;
+    get productImage(): string {
+        return this.__imageUrl;
     }
-    set productImage(value: string | Image) {
-        this.imgProduct.image = Image.createFromFile(`images://${value}`);
+    set productImage(value: string) {
+        this.__imageUrl = value;
+        this.imgProduct.loadFromUrl({
+            url: this.__imageUrl,
+            useHTTPCacheControl: true
+        });
     }
-    get productPrice(): string | number {
+    get productPrice(): string {
         return this.lblProductPrice.text;
     }
-    set productPrice(value: string | number) {
-        this.lblProductPrice.text = `$${value}`;
+    set productPrice(value: string) {
+        this.lblProductPrice.text = value;
     }
     set productCount(value: string | number) {
         this.lblProductCount.text = value.toString();
@@ -64,11 +66,16 @@ export default class LviCartItem extends LviCartItemDesign {
     set bottomLine(value: boolean) {
         this.flCartItemBottomLine.visible = value;
     }
+    set minusButtonIcon(value: string) {
+        this.btnCartMinus.text = value.toString();
+    }
+    get minusButtonIcon(): string {
+        return this.btnCartMinus.text;
+    }
     get onActionPlus(): (...args) => void {
         return this._value;
     }
     set onActionPlus(value: (...args) => void) {
-        //this.btnCartPlus.onTouchEnded = value;
         this._value = value;
     }
     get onActionMinus(): (...args) => void {

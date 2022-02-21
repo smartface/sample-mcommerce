@@ -1,26 +1,26 @@
 import PgWelcomeDesign from 'generated/pages/pgWelcome';
-import View from '@smartface/native/ui/view';
-import { NativeStackRouter } from '@smartface/router';
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
+import Button from '@smartface/native/ui/button';
+import { themeService } from 'theme';
 
-export default class PgWelcome extends PgWelcomeDesign {
-    router: NativeStackRouter;
-    constructor() {
-        super();
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-        this.btnStart.on(View.Events.Touch, () => {
-            this.router.push('pgNumber');
+export default class PgWelcome extends withDismissAndBackButton(PgWelcomeDesign) {
+    constructor(private router?: Router, private route?: Route) {
+        super({});
+        this.btnStart.on(Button.Events.Press, () => {
+            this.router.push('pgLogin');
         });
         this.lblWelcome.text = global.lang.welcomeText;
         this.lblSubtext.text = global.lang.welcomeSubText;
         this.btnStart.text = global.lang.getStarted;
     }
-}
-
-function onShow(this: PgWelcome, superOnShow: () => void) {
-    superOnShow();
-}
-
-function onLoad(this: PgWelcome, superOnLoad: () => void) {
-    superOnLoad();
+    onShow() {
+        super.onShow();
+        this.initDismissButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.transparent.white').itemColor
+        });
+    }
+    onLoad() {
+        super.onLoad();
+    }
 }

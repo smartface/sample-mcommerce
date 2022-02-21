@@ -1,14 +1,13 @@
 import View from '@smartface/native/ui/view';
-import { ThemeService } from 'theme';
+import { themeService } from 'theme';
 import System from '@smartface/native/device/system';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
 import Color from '@smartface/native/ui/color';
-let { backgroundColor, paddingLeft, paddingRight } = getCombinedStyle('.lviRowNLine-flMain');
+let { backgroundColor, paddingLeft, paddingRight } = themeService.getNativeStyle('.lviRowNLine-flMain');
 
 const isIOS = System.OS === System.OSType.IOS;
 
-ThemeService.onChange(() => {
-    backgroundColor = getCombinedStyle('.lviRowNLine-flMain').backgroundColor;
+themeService.onChange(() => {
+    backgroundColor = themeService.getStyle('.lviRowNLine-flMain').backgroundColor;
 });
 
 function setBordersForGridViewItem(item: any, borders?: Array<string>) {

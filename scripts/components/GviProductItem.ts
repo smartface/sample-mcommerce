@@ -1,23 +1,13 @@
 import ActivityIndicator from '@smartface/native/ui/activityindicator';
-import Button from '@smartface/native/ui/button';
-import Image from '@smartface/native/ui/image';
-import View from '@smartface/native/ui/view';
 import GviProductItemDesign from 'generated/my-components/GviProductItem';
-import setVisibility from 'lib/setVisibility';
-import store from 'store';
 
 export default class GviProductItem extends GviProductItemDesign {
     __onActionClick: (...args) => void;
     pageName?: string | undefined;
     myActivityIndicator: ActivityIndicator;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-
-        // this.flProductItem.btnAddToBasket.on(Button.Events.TouchEnded, () => {
-        //     this.__onActionClick && this.__onActionClick();
-        // });
     }
     initIndicator() {
         this.flProductItem.initIndicator();
@@ -31,28 +21,31 @@ export default class GviProductItem extends GviProductItemDesign {
     set onActionClick(value: (...args) => void) {
         this.flProductItem.onActionClick = value;
     }
+    set itemTitleMaxWidth(value: number) {
+        this.flProductItem.itemTitleMaxWidth = value;
+    }
     get itemTitle(): string {
         return this.flProductItem.itemTitle;
     }
     set itemTitle(value: string) {
         this.flProductItem.itemTitle = value;
     }
-    get itemPrice(): any {
-        return this.flProductItem.itemPrice.text;
+    get itemPrice(): string {
+        return this.flProductItem.itemPrice;
     }
-    set itemPrice(value: any) {
+    set itemPrice(value: string) {
         this.flProductItem.itemPrice = value;
     }
-    get itemReview(): any {
+    get itemReview(): string {
         return this.flProductItem.itemReview;
     }
-    set itemReview(value: any) {
+    set itemReview(value: string) {
         this.flProductItem.itemReview = value;
     }
-    get itemDiscountPrice(): any {
-        return this.flProductItem.itemDiscountPrice.text;
+    get itemDiscountPrice(): string {
+        return this.flProductItem.itemDiscountPrice;
     }
-    set itemDiscountPrice(value: any) {
+    set itemDiscountPrice(value: string) {
         this.flProductItem.itemDiscountPrice = value;
     }
     get itemTag(): string {
@@ -61,11 +54,14 @@ export default class GviProductItem extends GviProductItemDesign {
     set itemTag(value: string) {
         this.flProductItem.itemTag = value;
     }
-    get itemImage(): string | Image {
-        return this.flProductItem.itemImage;
+    set itemTagColor(value: string) {
+        this.flProductItem.itemTagColor = value;
     }
-    set itemImage(value: string | Image) {
-        this.flProductItem.itemImage = value;
+    get itemImage(): string {
+        return this.flProductItem.imageUrl;
+    }
+    set itemImage(value: string) {
+        this.flProductItem.imageUrl = value;
     }
     get itemDesc(): string {
         return this.flProductItem.itemDesc;

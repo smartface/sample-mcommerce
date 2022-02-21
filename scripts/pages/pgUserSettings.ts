@@ -1,27 +1,24 @@
-import Application from '@smartface/native/application';
 import Data from '@smartface/native/global/data';
-import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import { CURRENT_THEME } from 'constants/deviceVariables.json';
-import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { getLviRow1LineLarge } from 'lib/listViewItemTypes';
 import PgUserSettingsDesign from 'generated/pages/pgUserSettings';
-import { ThemeService } from 'theme';
-import Image from '@smartface/native/ui/image';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
-import { NativeStackRouter } from '@smartface/router';
-const { image } = getCombinedStyle('.sf-headerBar.close');
+import { themeService } from 'theme';
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
 
-export default class PgUserSettings extends PgUserSettingsDesign {
-    router: NativeStackRouter;
+export default class PgUserSettings extends withDismissAndBackButton(PgUserSettingsDesign) {
     private data: ReturnType<typeof getLviRow1LineLarge>[];
+    private static _instance: PgUserSettings;
     private __isBusy = false;
     leftItem: HeaderBarItem;
-    constructor() {
-        super();
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    constructor(public router?: Router, public route?: Route) {
+        super({});
+        themeService.onChange(() => this.onShow());
+    }
+    public static getInstance(router?: Router, route?: Route) {
+        return this._instance || (this._instance = new this(router, route));
     }
     initListView() {
         this.lvMain.refreshEnabled = false;
@@ -45,7 +42,7 @@ export default class PgUserSettings extends PgUserSettingsDesign {
                 setTimeout(() => {
                     const currentTheme = Data.getStringVariable(CURRENT_THEME);
                     const targetTheme = currentTheme === 'mCommerceDarkTheme' ? 'mCommerceTheme' : 'mCommerceDarkTheme';
-                    ThemeService.changeTheme(targetTheme);
+                    themeService.changeTheme(targetTheme);
                     Data.setStringVariable(CURRENT_THEME, targetTheme);
                     setTimeout(() => {
                         this.__isBusy = false;
@@ -65,15 +62,19 @@ export default class PgUserSettings extends PgUserSettingsDesign {
         this.lvMain.itemCount = this.data.length;
         this.lvMain.refreshData();
     }
-}
-
-function onShow(this: PgUserSettings, superOnShow: () => void) {
-    superOnShow();
-    this.headerBar.title = global.lang.settingsHeader;
-    this.refreshListView();
-}
-
-function onLoad(this: PgUserSettings, superOnLoad: () => void) {
-    superOnLoad();
-    this.initListView();
+    onShow() {
+        super.onShow();
+        this.headerBar.title = global.lang.settingsHeader;
+        this.refreshListView();
+        this.initBackButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        });
+    }
+    /**
+     * This class is used singleton, onLoad will be triggered once
+     */
+    onLoad() {
+        super.onLoad();
+        this.initListView();
+    }
 }

@@ -74,6 +74,12 @@
 					android:windowSoftInputMode="adjustPan"
 					android:screenOrientation="${Orientation}"
 					android:theme="@style/defaultTheme" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="https" android:host="smartapps-commerce.smartface.io" android:pathPrefix="/deeplink/redirect"/>
+            </intent-filter>
 			<intent-filter>
 				<action android:name="android.intent.action.SEARCH" />
 			</intent-filter>
@@ -139,4 +145,11 @@
 			But to use this feature in published apps, you must define it-->
 		<!--<activity android:name="io.smartface.android.sfcore.device.multimedia.crop.SFCropActivity" android:screenOrientation="portrait" android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>-->
 	</application>
+        <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:mimeType="*/*" />
+            <data android:scheme="*" />
+        </intent>
+    </queries>
 </manifest>

@@ -1,9 +1,17 @@
 import PgCartDesign from 'generated/pages/pgCart';
-import store from 'store';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import AlertView from '@smartface/native/ui/alertview';
 import { Basket, Product } from 'types';
+import { withDismissAndBackButton } from '@smartface/mixins';
+import { Route, BaseRouter as Router } from '@smartface/router';
+import store from 'store/index';
+import storeActions from 'store/main/actions';
+import { getProductImageUrl } from 'service/commerce';
+import setVisibility from 'lib/setVisibility';
+import FlHeaderIcon from 'components/FlHeaderIcon';
+import { themeService } from 'theme';
+import FlexLayout from '@smartface/native/ui/flexlayout';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -12,13 +20,31 @@ enum CartOperationEnum {
     Remove = -1,
     Clear = 0
 }
-export default class PgCart extends PgCartDesign {
+export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     cartProducts: Basket;
     data: Processor[];
-    constructor() {
-        super();
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    unsubscribe = null;
+    flHeaderIcon: FlHeaderIcon;
+    constructor(private router?: Router, private route?: Route) {
+        super({});
+        this.initTitleLayout();
+    }
+    initTitleLayout() {
+        this.flHeaderIcon = new FlHeaderIcon();
+        themeService.addGlobalComponent(this.flHeaderIcon as any /** to be fixed with stylingcontext next version */, 'titleLayout');
+        (this.flHeaderIcon as StyleContextComponentType<FlexLayout>).dispatch({
+            type: 'pushClassNames',
+            classNames: '.flHeaderIcon'
+        });
+        this.flHeaderIcon.lblHeader.dispatch({
+            type: 'pushClassNames',
+            classNames: '.reviews.name'
+        });
+        this.flHeaderIcon.appName = global.lang.appName;
+    }
+    addAppIconToHeader() {
+        this.headerBar.title = '';
+        this.headerBar.titleLayout = this.flHeaderIcon;
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -34,8 +60,9 @@ export default class PgCart extends PgCartDesign {
     }
     processor(): Processor[] {
         const processorItems = [];
-        this.cartProducts = store.getState().basket;
+        this.cartProducts = store.getState().main.basket;
         if (this.cartProducts.length === 0) {
+            this.flCartCheckout.visible = false;
             processorItems.push(
                 ListViewItems.getLviEmptyItem({
                     emptyImage: 'images://empty_cart.png',
@@ -47,10 +74,11 @@ export default class PgCart extends PgCartDesign {
                 processorItems.push(
                     ListViewItems.getLviCartProducts({
                         productName: cart.name,
-                        productInfo: cart.description,
-                        productImage: cart.image,
-                        productPrice: cart.price,
+                        productInfo: cart.shortDescription,
+                        productImage: cart.images ? getProductImageUrl(cart.images[0]) : null,
+                        productPrice: cart.discountPrice != undefined ? `$${cart?.discountPrice?.toFixed(2)}` : `$${cart.price.toFixed(2)}`,
                         productCount: cart.count,
+                        minusButtonIcon: cart.count === 1 ? '' : '',
                         onActionPlus: () => {
                             this.cartOperation(cart, CartOperationEnum.Add);
                             this.refreshListView();
@@ -74,7 +102,8 @@ export default class PgCart extends PgCartDesign {
                                     },
                                     {
                                         text: global.lang.cancel,
-                                        type: AlertView.Android.ButtonType.NEGATIVE
+                                        type: AlertView.Android.ButtonType.NEGATIVE,
+                                        onClick: () => {}
                                     }
                                 ]
                             });
@@ -82,69 +111,49 @@ export default class PgCart extends PgCartDesign {
                     })
                 );
             });
+            this.calculateCheckoutPrice();
         }
 
         return processorItems;
     }
+    calculateCheckoutPrice() {
+        if (store.getState().main.basket.length > 0) {
+            this.flCartCheckout.checkoutTitle = global.lang.goToCheckout;
+            this.flCartCheckout.checkoutPrice = store
+                .getState()
+                .main.basket.reduce((total, product) => {
+                    if (product.discountPrice != undefined) {
+                        return total + product.discountPrice * product.count;
+                    }
+                    return total + product.price * product.count;
+                }, 0)
+                .toFixed(2);
+            setVisibility(this.flCartCheckout, true);
+        } else {
+            setVisibility(this.flCartCheckout, false);
+            this.unsubscribe();
+        }
+    }
     cartOperation(cart: Product, type: CartOperationEnum) {
         switch (type) {
             case CartOperationEnum.Add:
-                return store.dispatch({
-                    type: 'ADD_TO_BASKET',
-                    payload: {
-                        data: {
-                            product: cart,
-                            count: 1
-                        }
-                    }
-                });
-                break;
+                return store.dispatch(storeActions.AddToBasket({ product: cart, count: 1 }));
             case CartOperationEnum.Remove:
-                return store.dispatch({
-                    type: 'ADD_TO_BASKET',
-                    payload: {
-                        data: {
-                            product: cart,
-                            count: -1
-                        }
-                    }
-                });
-                break;
+                return store.dispatch(storeActions.AddToBasket({ product: cart, count: -1 }));
             case CartOperationEnum.Clear:
-                return store.dispatch({
-                    type: 'REMOVE_FROM_BASKET',
-                    payload: {
-                        data: {
-                            productId: cart.id
-                        }
-                    }
-                });
-
-            default:
-                break;
+                return store.dispatch(storeActions.RemoveFromBasket({ productId: cart._id }));
         }
     }
-}
+    onShow() {
+        super.onShow();
+        this.addAppIconToHeader();
+        this.refreshListView();
+        this.unsubscribe = store.subscribe(() => this.calculateCheckoutPrice());
+    }
 
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
-function onShow(this: PgCart, superOnShow: () => void) {
-    superOnShow();
-    this.headerBar.title = global.lang.mycartHeader;
-    this.refreshListView();
-}
-
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
-function onLoad(this: PgCart, superOnLoad: () => void) {
-    superOnLoad();
-    this.headerBar.leftItemEnabled = false;
-    this.initListView();
+    onLoad() {
+        super.onLoad();
+        this.headerBar.leftItemEnabled = false;
+        this.initListView();
+    }
 }

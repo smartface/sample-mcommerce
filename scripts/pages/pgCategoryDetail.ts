@@ -1,24 +1,25 @@
 import PgCategoryDetailDesign from 'generated/pages/pgCategoryDetail';
-import store from 'store';
-import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
-import * as ListViewItems from 'lib/listViewItemTypes';
+import store from 'store/index';
+import storeActions from 'store/main/actions';
 import SearchView from '@smartface/native/ui/searchview';
-import MySearchBar from 'components/FlSearchBar';
-import Color from '@smartface/native/ui/color';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
-import System from '@smartface/native/device/system';
 import GviProductItem from 'components/GviProductItem';
 import Screen from '@smartface/native/device/screen';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import { Product } from 'types';
-type Processor = ListViewItems.ProcessorTypes.ILviRow2ProductItem | ListViewItems.ProcessorTypes.ILviSpacer;
-
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
+import { getProductImageUrl, getProductsByQuery, getShowcases } from 'service/commerce';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+import { ON_SHOW_TIMEOUT } from 'constants';
+import setVisibility from 'lib/setVisibility';
+const gridViewItemLength = themeService.getNativeStyle('.flProductItem').height;
 type searchStatus = {
     isSearchActive: boolean;
     searchText: string;
 };
-export default class PgCategoryDetail extends PgCategoryDetailDesign {
+export default class PgCategoryDetail extends withDismissAndBackButton(PgCategoryDetailDesign) {
     productSearchView: SearchView;
     routeData: any;
     isSearchViewVisible = false;
@@ -27,18 +28,22 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
         isSearchActive: false,
         searchText: null
     };
-    constructor() {
-        super();
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    pageNumber = 1;
+    totalCount = 0;
+    initialized = false;
+    paginating = false;
+    constructor(private router?: Router, private route?: Route) {
+        super({});
     }
     addRightItem() {
         const rightItem = new HeaderBarItem({
-            image: Image.createFromFile('images://filtericon.png'),
-            color: Color.BLACK,
+            image: Image.createFromFile('images://magnifying_glass.png'),
+            //Native › NTVE-435
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
             onPress: () => {
                 if (this.isSearchViewVisible) {
                     this.initSearchView(false);
+                    this.headerBar.titleLayout = undefined;
                 } else {
                     this.initSearchView(true);
                 }
@@ -48,8 +53,8 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
     }
     initSearchView(visible) {
         this.productSearchView = new SearchView();
-        this.productSearchView.textFieldBackgroundColor = getCombinedStyle('.commerceSearchView').textFieldBackgroundColor;
-        this.productSearchView.addToHeaderBar(this);
+        this.headerBar.titleLayout = this.productSearchView;
+        this.productSearchView.textFieldBackgroundColor = themeService.getNativeStyle('.sf-searchView.gray').textFieldBackgroundColor;
         if (visible) {
             this.isSearchViewVisible = true;
             this.productSearchView.onTextChanged = (searchText) => {
@@ -60,17 +65,15 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
                         product.name.startsWith(searchText.charAt(0).toLocaleUpperCase('tr-TR'))
                     );
                     this.categoryProducts = foundProducts;
-                    this.refreshGridView();
                 }
                 if (searchText.length === 0) {
                     this.searchStatus.isSearchActive = false;
                     this.searchStatus.searchText = null;
-                    if (this.routeData.isShowcase) {
+                    if (this.route.getState().routeData.isShowcase) {
                         this.getShowcaseProducts();
                     } else {
                         this.getCategoryProducts();
                     }
-                    this.refreshGridView();
                 }
                 this.refreshGridView();
             };
@@ -79,42 +82,110 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
             this.productSearchView.visible = false;
         }
     }
-    getCategoryProducts() {
-        this.categoryProducts = store.getState().products.filter((product) => product.categoryId === this.routeData.dataId);
+
+    paginate() {
+        const currentCount = this.categoryProducts?.length || 0;
+        if (currentCount < this.totalCount && !this.paginating) {
+            this.pageNumber = this.pageNumber + 1;
+            this.getCategoryProducts({ pageNumber: this.pageNumber });
+        }
     }
+    isNewRateAdded() {
+        if (store.getState().main.isRateAdded) {
+            this.initialized = false;
+            this.fetchShowcaseProducts();
+            store.dispatch(storeActions.AddNewRate({ isRateAdded: false }));
+        }
+    }
+    async getCategoryProducts(opts: { pageNumber: number } = { pageNumber: 1 }) {
+        try {
+            showWaitDialog();
+            this.paginating = true;
+            const productResponse = await getProductsByQuery({
+                page: opts.pageNumber,
+                categoryId: this.route.getState().routeData.dataId
+            });
+            this.totalCount = productResponse.metadata.totalCount;
+            if (productResponse && productResponse?.products.length > 0) {
+                if (opts.pageNumber !== 1) {
+                    this.categoryProducts = this.categoryProducts.concat(productResponse.products);
+                } else {
+                    this.categoryProducts = productResponse.products;
+                }
+                this.refreshGridView();
+            }
+        } catch (error) {
+            alert(global.lang.productServiceError);
+        } finally {
+            this.initialized = true;
+            this.paginating = false;
+            hideWaitDialog();
+            this.gvProducts.stopRefresh();
+        }
+    }
+    async fetchShowcaseProducts() {
+        try {
+            const showcaseResponse = await getShowcases();
+            if (showcaseResponse && showcaseResponse.length > 0) {
+                this.categoryProducts = showcaseResponse;
+                store.dispatch(storeActions.SetShowcases(showcaseResponse));
+            }
+            return showcaseResponse;
+        } catch (error) {
+            throw new Error(global.lang.showcaseServiceError);
+        }
+    }
+
     getShowcaseProducts() {
         this.categoryProducts = store
             .getState()
-            .showcaseProducts.find((showcase) => showcase.showcaseId === this.routeData.dataId).products;
+            .main.showcases.find((showcase) => showcase._id === this.route.getState().routeData.dataId).products;
+        this.refreshGridView();
+        this.initialized = true;
     }
 
     initGridView() {
+        this.gvProducts.layoutManager.onItemLength = () => gridViewItemLength;
+        this.gvProducts.onPullRefresh = () => {
+            if (!this.route.getState().routeData.isShowcase) {
+                this.pageNumber = 0;
+                this.paginating = false;
+                this.categoryProducts = [];
+                this.getCategoryProducts();
+            } else {
+                this.gvProducts.stopRefresh();
+            }
+        };
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
-            GridViewItem.itemTag = this.categoryProducts[productIndex].discountTag;
+            GridViewItem.itemTag = this.categoryProducts[productIndex]?.labels[0]?.name;
+            GridViewItem.itemTagColor = this.categoryProducts[productIndex]?.labels[0]?.color;
             GridViewItem.itemTitle = this.categoryProducts[productIndex].name;
-            GridViewItem.itemDesc = this.categoryProducts[productIndex].description;
-            GridViewItem.itemImage = this.categoryProducts[productIndex].image;
-            GridViewItem.itemDiscountPrice = !!this.categoryProducts[productIndex].discount
-                ? `$${this.categoryProducts[productIndex].discount}`
-                : false;
-            GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price}`;
-            GridViewItem.itemReview = !!this.categoryProducts[productIndex].review ? this.categoryProducts[productIndex]?.review : false;
+            GridViewItem.itemDesc = this.categoryProducts[productIndex].shortDescription;
+            GridViewItem.itemImage = this.categoryProducts[productIndex].images
+                ? getProductImageUrl(this.categoryProducts[productIndex].images[0])
+                : null;
+            GridViewItem.itemDiscountPrice = !!this.categoryProducts[productIndex].discountPrice
+                ? `$${this.categoryProducts[productIndex].discountPrice.toFixed(2)}`
+                : '';
+            GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price.toFixed(2)}`;
+            GridViewItem.itemReview = this.categoryProducts[productIndex]?.rating?.toFixed(1).toString() || '';
             GridViewItem.onActionClick = () => {
                 GridViewItem.initIndicator();
                 GridViewItem.toggleIndicator(true);
-                store.dispatch({
-                    type: 'ADD_TO_BASKET',
-                    payload: {
-                        data: {
-                            product: this.categoryProducts[productIndex],
-                            count: 1
-                        }
-                    }
-                });
+                store.dispatch(storeActions.AddToBasket({ product: this.categoryProducts[productIndex], count: 1 }));
                 setTimeout(() => {
                     GridViewItem.toggleIndicator(false);
                 }, 500);
             };
+            if (this.categoryProducts.length - 1 === productIndex) {
+                this.paginate();
+            }
+        };
+        this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
+            const product = this.categoryProducts[productIndex];
+            this.router.push('productDetail', {
+                productId: product._id
+            });
         };
     }
     refreshGridView() {
@@ -133,41 +204,34 @@ export default class PgCategoryDetail extends PgCategoryDetailDesign {
             } else {
                 this.flEmptyItem.emptyTitle = global.lang.categoriesIsEmpty;
             }
-            this.flEmptyItem.dispatch({
-                type: 'updateUserStyle',
-                userStyle: {
-                    visible: true
-                }
-            });
+            setVisibility(this.flEmptyItem, true);
         } else {
-            this.flEmptyItem.dispatch({
-                type: 'updateUserStyle',
-                userStyle: {
-                    visible: false
-                }
-            });
+            setVisibility(this.flEmptyItem, false);
         }
     }
-}
 
-function onShow(this: PgCategoryDetail, superOnShow: () => void) {
-    superOnShow();
-    this.refreshGridView();
-}
-
-function onLoad(this: PgCategoryDetail, superOnLoad: () => void) {
-    superOnLoad();
-    this.headerBar.title = this.routeData.title;
-    if (this.routeData.isShowcase) {
-        this.getShowcaseProducts();
-    } else {
-        this.getCategoryProducts();
-    }
-    if (System.OS === System.OSType.IOS) {
+    onShow() {
+        super.onShow();
         this.addRightItem();
-    } else {
-        this.initSearchView(true);
+        this.initDismissButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        });
+        this.isNewRateAdded();
+        if (!this.initialized) {
+            setTimeout(() => {
+                if (this.route.getState().routeData.isShowcase) {
+                    this.getShowcaseProducts();
+                } else {
+                    this.getCategoryProducts();
+                }
+            }, ON_SHOW_TIMEOUT);
+        }
     }
-    this.initEmptyItem();
-    this.initGridView();
+
+    onLoad() {
+        super.onLoad();
+        this.headerBar.title = this.route.getState().routeData.title;
+        this.initEmptyItem();
+        this.initGridView();
+    }
 }

@@ -21,8 +21,7 @@
 				"orientation": "PORTRAIT",
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a",
-			"degree": 0
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -35,11 +34,10 @@
 				"parent": "7356-6c24-0e4a-1427"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar.transparent.white",
 			"id": "c9be-d152-52cc-8c62",
 			"props": {
 				"children": [],
@@ -48,8 +46,7 @@
 				"parent": "7356-6c24-0e4a-1427"
 			},
 			"type": "HeaderBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView #pgWelcome-imagebackground",
@@ -62,17 +59,17 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "welcome.png",
 				"testId": "JvD12jmVV",
 				"usePageVariable": true
-			},
-			"degree": 1
+			}
 		},
 		{
 			"className": ".sf-flexLayout #pgWelcome-container",
 			"id": "8e00-78aa-472b-5b87",
 			"props": {
 				"children": [
-					"e771-04a3-b9b3-a40a",
+					"26eb-887e-6f7e-22ea",
 					"a0e2-d99e-d2b4-ddbc",
 					"f664-6802-0481-ec51",
 					"a103-2d14-a7a4-303e"
@@ -85,20 +82,37 @@
 			"userProps": {
 				"testId": "1lYMqIp1o",
 				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout #pgWelcome-container-imageWrapper",
+			"id": "26eb-887e-6f7e-22ea",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"7d85-5648-b169-d2f0"
+				],
+				"name": "flLogoWrapper",
+				"parent": "8e00-78aa-472b-5b87"
 			},
-			"degree": 1
+			"type": "FlexLayout",
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView #pgWelcome-container-logo",
-			"id": "e771-04a3-b9b3-a40a",
+			"id": "7d85-5648-b169-d2f0",
 			"props": {
 				"children": [],
 				"name": "imgLogo",
-				"parent": "8e00-78aa-472b-5b87"
+				"parent": "26eb-887e-6f7e-22ea",
+				"usePageVariable": true
 			},
 			"type": "ImageView",
-			"userProps": {},
-			"degree": 2
+			"userProps": {
+				"image": "iconlarge.png",
+				"testId": "oj4Z32W7h",
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-label #pgWelcome-container-lblWelcome .welcome.main",
@@ -113,8 +127,7 @@
 			"userProps": {
 				"testId": "H4AWmKXYB",
 				"usePageVariable": true
-			},
-			"degree": 2
+			}
 		},
 		{
 			"className": ".sf-label #pgWelcome-container-subtext .welcome.sub",
@@ -129,8 +142,7 @@
 			"userProps": {
 				"testId": "d1b8nai5i",
 				"usePageVariable": true
-			},
-			"degree": 2
+			}
 		},
 		{
 			"className": ".sf-button .sf-button-main",
@@ -143,10 +155,9 @@
 			},
 			"type": "Button",
 			"userProps": {
-				"usePageVariable": true,
-				"testId": "kTjgNUe-y"
-			},
-			"degree": 2
+				"testId": "kTjgNUe-y",
+				"usePageVariable": true
+			}
 		}
 	]
 }

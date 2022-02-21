@@ -1,23 +1,22 @@
 import LviPdInfoSectionDesign from 'generated/my-components/LviPdInfoSection';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 
-const { height } = getCombinedStyle('.lviPdInfoSection');
+const { height } = themeService.getStyle('.lviPdInfoSection');
 
 export default class LviPdInfoSection extends LviPdInfoSectionDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
     }
     static getHeight(): number {
         return height;
     }
-    get productTitle(): string {
-        return this.flProductDetailInfoSection.productTitle;
+    get overviewTitle(): string {
+        return this.flProductDetailInfoSection.overviewTitle;
     }
-    set productTitle(value: string) {
-        this.flProductDetailInfoSection.productTitle = value;
+    set overviewTitle(value: string) {
+        this.flProductDetailInfoSection.overviewTitle = value;
     }
     get productInfo(): string {
         return this.flProductDetailInfoSection.productInfo;

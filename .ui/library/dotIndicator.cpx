@@ -1,0 +1,61 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .dotIndicator",
+			"hiddenComponent": true,
+			"id": "99ec-6b1e-4810-7a4d",
+			"initialized": true,
+			"props": {
+				"children": [
+					"51c2-c7d4-d23a-f57e",
+					"03e9-9040-6228-64f7"
+				],
+				"name": "dotIndicator",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": 50,
+				"top": 150
+			}
+		},
+		{
+			"className": ".sf-flexLayout .dotIndicator-dot .dotIndicator-dot.main.active",
+			"id": "51c2-c7d4-d23a-f57e",
+			"props": {
+				"children": [],
+				"name": "dot0",
+				"parent": "99ec-6b1e-4810-7a4d",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .dotIndicator-dot",
+			"id": "03e9-9040-6228-64f7",
+			"props": {
+				"children": [],
+				"name": "dot1",
+				"parent": "99ec-6b1e-4810-7a4d",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

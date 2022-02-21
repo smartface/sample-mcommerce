@@ -1,70 +1,70 @@
 {
-	".flProductContainer": {
-		"flexProps": {
-			"flexGrow": 1
-		},
-		"testId": "8gXp0YRzt",
-		"&-flProductHeader": {
-			"flexProps": {
-				"flexDirection": "ROW",
-				"flexGrow": 1
-			},
-			"height": 50,
-			"testId": "UpFCsZXn6",
-			"&-lblTitle": {
-				"flexProps": {
-					"flexGrow": 2
-				},
-				"font": {
-					"size": 20,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"testId": "YrEYk4SF3",
-				"textColor": "${textDark}"
-			},
-			"&-lblSeeAll": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"font": {
-					"size": 12,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"testId": "vjc6uzjKI",
-				"textAlignment": "MIDRIGHT",
-				"textColor": "${green}"
-			}
-		},
-		"&-gvProducts": {
-			"flexProps": {
-				"flexGrow": 1
-			},
-			"height": null,
-			"layoutManager": {
-				"spanCount": 1,
-				"scrollDirection": "HORIZONTAL"
-			},
-			"testId": "x6u9wYXc7"
-		},
-		"&-gviProductItem": {
-			"flex": {
-				"positionType": 0
-			},
-			"flexProps": {
-				"positionType": "RELATIVE"
-			},
-			"height": 250,
-			"left": 0,
-			"testId": "yW_9gIzxP",
-			"top": 0,
-			"width": 174
-		},
-		"height": null
-	}
+  ".flProductContainer": {
+    "flexProps": {
+      "flexGrow": 1
+    },
+    "testId": "8gXp0YRzt",
+    "&-flProductHeader": {
+      "flexProps": {
+        "flexDirection": "ROW",
+        "flexGrow": 1
+      },
+      "height": 50,
+      "testId": "UpFCsZXn6",
+      "&-lblTitle": {
+        "flexProps": {
+          "flexGrow": 2
+        },
+        "font": {
+          "size": 20,
+          "bold": true,
+          "italic": false,
+          "family": "Nunito",
+          "style": "Bold"
+        },
+        "testId": "YrEYk4SF3",
+        "textColor": "${textDark}"
+      },
+      "&-lblSeeAll": {
+        "flexProps": {
+          "flexGrow": 1
+        },
+        "font": {
+          "size": 12,
+          "bold": true,
+          "italic": false,
+          "family": "Nunito",
+          "style": "Bold"
+        },
+        "testId": "vjc6uzjKI",
+        "textAlignment": "MIDRIGHT",
+        "textColor": "${green}"
+      }
+    },
+    "&-gvProducts": {
+      "flexProps": {
+        "flexGrow": 1
+      },
+      "height": null,
+      "layoutManager": {
+        "spanCount": 1,
+        "scrollDirection": "HORIZONTAL"
+      },
+      "testId": "x6u9wYXc7"
+    },
+    "&-gviProductItem": {
+      "flex": {
+        "positionType": 0
+      },
+      "flexProps": {
+        "positionType": "RELATIVE"
+      },
+      "height": 250,
+      "left": 0,
+      "testId": "yW_9gIzxP",
+      "top": 0,
+      "width": 174
+    },
+    "height": null
+  }
 }

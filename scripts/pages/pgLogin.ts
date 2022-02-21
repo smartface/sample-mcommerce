@@ -1,20 +1,21 @@
 import PgLoginDesign from 'generated/pages/pgLogin';
 import View from '@smartface/native/ui/view';
-import store from 'store/index';
-import { NativeStackRouter } from '@smartface/router';
-export default class PgLogin extends PgLoginDesign {
-    router: NativeStackRouter;
-    constructor() {
-        super();
-        // Overrides super.onShow method
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
-
+import { Route, NativeStackRouter, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
+import Button from '@smartface/native/ui/button';
+import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constants';
+import { login } from 'service/auth';
+import { themeService } from 'theme';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
+    isMailValid = false;
+    isPasswordValid = false;
+    constructor(private router?: Router, private route?: Route) {
+        super({});
         this.lblRouteSignUp.on(View.Events.Touch, () => {
-            this.router.push('/pages/pgSignUp');
+            this.router.push('pgSignUp');
         });
-        this.btnLogIn.on(View.Events.Touch, () => {
+        this.btnLogIn.on(Button.Events.Press, () => {
             this.initUserLogin();
         });
         this.lblTitle.text = global.lang.login;
@@ -26,6 +27,11 @@ export default class PgLogin extends PgLoginDesign {
         this.lblRouteSignUp.text = global.lang.signup;
     }
     initMaterialTextBoxes() {
+        this.mtbLogin.materialTextBox.ios.clearButtonEnabled = true;
+        this.mtbLogin.enableErrorMessage = true;
+        this.mtbPassword.materialTextBox.ios.clearButtonEnabled = true;
+        this.mtbPassword.enableErrorMessage = true;
+
         this.mtbLogin.options = {
             hint: global.lang.email
         };
@@ -34,47 +40,72 @@ export default class PgLogin extends PgLoginDesign {
         };
         this.mtbPassword.materialTextBox.isPassword = true;
     }
-    initUserLogin() {
-        if (
-            this.mtbLogin.materialTextBox.text &&
-            this.mtbLogin.materialTextBox.text !== '' &&
-            this.mtbPassword.materialTextBox.text &&
-            this.mtbPassword.materialTextBox.text !== ''
-        ) {
-            const found = store.getState().users.find((usr) => usr.email === this.mtbLogin.materialTextBox.text);
-            if (found) {
-                const isPasswordTrue = found.password == this.mtbPassword.materialTextBox.text;
-                if (isPasswordTrue) {
-                    store.dispatch({
-                        type: 'SET_CURRENT_USER',
-                        payload: {
-                            data: found
-                        }
-                    });
-                    this.router.dismiss();
+    async initUserLogin() {
+        if (this.initValidate()) {
+            try {
+                showWaitDialog();
+                const response = await login({
+                    username: this.mtbLogin.materialTextBox.text,
+                    password: this.mtbPassword.materialTextBox.text
+                });
+                if (response && !!response?.access_token) {
+                    if (this.router instanceof NativeStackRouter) {
+                        this.router.dismiss();
+                    }
                 }
+            } catch (error) {
+                alert({
+                    title: global.lang.warning,
+                    message: global.lang.userNotFoundWithThisCredentials
+                });
+            } finally {
+                hideWaitDialog();
             }
+        } else {
+            hideWaitDialog();
+            return;
         }
     }
-}
+    initValidate() {
+        let mailExist = !!this.mtbLogin.materialTextBox.text.replace(/\s+/g, '').trim();
+        let passwordExists = !!this.mtbPassword.materialTextBox.text.replace(/\s+/g, '').trim();
 
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
-function onShow(this: PgLogin, superOnShow: () => void) {
-    superOnShow();
-}
+        if (mailExist && this.checkIsEmailValid(this.mtbLogin.materialTextBox.text)) {
+            this.isMailValid = true;
+            this.mtbLogin.materialTextBox.errorMessage = '';
+        } else {
+            this.isMailValid = false;
+            this.mtbLogin.materialTextBox.errorMessage = global.lang.invalidEmail;
+        }
 
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
-function onLoad(this: PgLogin, superOnLoad: () => void) {
-    superOnLoad();
-    this.headerBar.title = global.lang.loginHeader;
-    this.initMaterialTextBoxes();
+        if (passwordExists && this.mtbPassword.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD) {
+            this.isPasswordValid = true;
+            this.mtbPassword.materialTextBox.errorMessage = '';
+        } else {
+            this.isPasswordValid = false;
+            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword.replace(
+                '$1',
+                MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD
+            );
+        }
+        if (this.isMailValid && this.isPasswordValid) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    checkIsEmailValid(email: string) {
+        return EMAIL_REGEXP.test(email);
+    }
+    onShow() {
+        super.onShow();
+        this.initBackButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        });
+    }
+    onLoad() {
+        super.onLoad();
+        this.headerBar.title = global.lang.loginHeader;
+        this.initMaterialTextBoxes();
+    }
 }

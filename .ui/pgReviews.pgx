@@ -1,0 +1,67 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "8462-77a0-f1db-b5c9",
+			"initialized": true,
+			"props": {
+				"children": [
+					"6f4c-cb92-967d-fd23",
+					"f4b8-836b-9a38-904f",
+					"ec17-8b09-c2d9-6d84"
+				],
+				"name": "pgReviews",
+				"orientation": "PORTRAIT",
+				"parent": null,
+				"safeAreaEnabled": false
+			},
+			"type": "Page",
+			"userProps": {
+				"safeAreaEnabled": false
+			},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "6f4c-cb92-967d-fd23",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "8462-77a0-f1db-b5c9"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-headerBar.main",
+			"id": "f4b8-836b-9a38-904f",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "8462-77a0-f1db-b5c9",
+				"title": "pgReviews"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgReviews"
+			}
+		},
+		{
+			"className": ".sf-listView .grow",
+			"id": "ec17-8b09-c2d9-6d84",
+			"props": {
+				"children": [],
+				"name": "lvMain",
+				"parent": "8462-77a0-f1db-b5c9",
+				"usePageVariable": true
+			},
+			"type": "ListView",
+			"userProps": {
+				"testId": "6LR7gltup",
+				"usePageVariable": true
+			}
+		}
+	]
+}

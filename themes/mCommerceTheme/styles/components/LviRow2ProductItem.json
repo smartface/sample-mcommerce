@@ -1,9 +1,9 @@
 {
-	".lviRow2ProductItem": {
-		"height": 250,
-		"flexProps": {
-			"flexDirection": "ROW"
-		},
-		"width": null
-	}
+  ".lviRow2ProductItem": {
+    "height": 250,
+    "flexProps": {
+      "flexDirection": "ROW"
+    },
+    "width": null
+  }
 }

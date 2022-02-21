@@ -1,118 +1,102 @@
 {
-	"#pgVerification": {
-		"paddingBottom": 0,
-		"paddingLeft": 0,
-		"paddingRight": 0,
-		"paddingTop": 0,
-		"&-statusbar": {
-			"style": "DEFAULT"
-		},
-		"&-imagebackground": {
-			"bottom": 0,
-			"flexProps": {
-				"positionType": "ABSOLUTE",
-				"flexGrow": 1
-			},
-			"height": null,
-			"image": "background.png",
-			"imageFillType": "ASPECTFILL",
-			"left": 0,
-			"marginBottom": null,
-			"marginTop": null,
-			"right": 0,
-			"testId": "TbyQ33W2-",
-			"top": 0
-		},
-		"&-flheader": {
-			"flexProps": {
-				"justifyContent": "FLEX_END",
-				"alignContent": "FLEX_END",
-				"alignItems": "AUTO"
-			},
-			"height": 200,
-			"left": 0,
-			"marginBottom": null,
-			"marginTop": null,
-			"paddingLeft": 25,
-			"testId": "MXghN9hMo",
-			"top": 0
-		},
-		"&-title": {
-			"flexProps": {
-				"flexGrow": 1,
-				"alignSelf": "STRETCH"
-			},
-			"left": 0,
-			"marginBottom": null,
-			"marginTop": null,
-			"maxHeight": 80,
-			"testId": "zxfcFhKam",
-			"textColor": "rgba( 24, 23, 37, 1 )",
-			"top": 0
-		},
-		"&-text": {
-			"flexProps": {
-				"flexGrow": 1,
-				"alignSelf": "STRETCH"
-			},
-			"left": 0,
-			"maxHeight": 40,
-			"testId": "2i8YmmjN6",
-			"textColor": "rgba( 124, 124, 124, 1 )",
-			"top": 0
-		},
-		"&-flcontainer": {
-			"flexProps": {
-				"flexGrow": 1,
-				"flexDirection": "ROW"
-			},
-			"height": null,
-			"left": 0,
-			"paddingLeft": 25,
-			"paddingRight": 25,
-			"testId": "nMjwnwI42",
-			"top": 0
-		},
-		"&-mtbCode": {
-			"flex": {
-				"positionType": 0
-			},
-			"flexProps": {
-				"positionType": "RELATIVE",
-				"alignItems": "STRETCH",
-				"flexGrow": 1
-			},
-			"left": 0,
-			"marginLeft": null,
-			"marginRight": null,
-			"testId": "x_F3cBMmG",
-			"top": 0
-		},
-		"&-flfooter": {
-			"flexProps": {
-				"flexDirection": "ROW",
-				"flexGrow": 2
-			},
-			"height": 200,
-			"testId": "2UoNUpnKT"
-		},
-		"&-lblResend": {
-			"flexProps": {
-				"flexGrow": 1
-			},
-			"marginLeft": 25,
-			"testId": "JmUyde_sD"
-		},
-		"&-btnroute": {
-			"font": {
-				"size": 20,
-				"bold": false,
-				"italic": false,
-				"family": "FontAwesome5FreeSolid",
-				"style": null
-			},
-			"marginRight": 25,
-			"testId": "jK_FdN5qg"
-		}
-	}
+  "#pgVerification": {
+    "paddingBottom": 0,
+    "paddingLeft": 0,
+    "paddingRight": 0,
+    "paddingTop": 0,
+    "&-statusbar": {
+      "style": "DEFAULT"
+    },
+    "&-flheader": {
+      "flexProps": {
+        "justifyContent": "FLEX_END",
+        "alignContent": "FLEX_END",
+        "alignItems": "AUTO"
+      },
+      "height": 200,
+      "left": 0,
+      "marginBottom": null,
+      "marginTop": null,
+      "paddingLeft": 25,
+      "testId": "MXghN9hMo",
+      "top": 0
+    },
+    "&-title": {
+      "flexProps": {
+        "flexGrow": 1,
+        "alignSelf": "STRETCH"
+      },
+      "left": 0,
+      "marginBottom": null,
+      "marginTop": null,
+      "maxHeight": 80,
+      "testId": "zxfcFhKam",
+      "textColor": "rgba( 24, 23, 37, 1 )",
+      "top": 0
+    },
+    "&-text": {
+      "flexProps": {
+        "flexGrow": 1,
+        "alignSelf": "STRETCH"
+      },
+      "left": 0,
+      "maxHeight": 40,
+      "testId": "2i8YmmjN6",
+      "textColor": "rgba( 124, 124, 124, 1 )",
+      "top": 0
+    },
+    "&-flcontainer": {
+      "flexProps": {
+        "flexGrow": 1,
+        "flexDirection": "ROW"
+      },
+      "height": null,
+      "left": 0,
+      "paddingLeft": 25,
+      "paddingRight": 25,
+      "testId": "nMjwnwI42",
+      "top": 0
+    },
+    "&-mtbCode": {
+      "flex": {
+        "positionType": 0
+      },
+      "flexProps": {
+        "positionType": "RELATIVE",
+        "alignItems": "STRETCH",
+        "flexGrow": 1
+      },
+      "left": 0,
+      "marginLeft": null,
+      "marginRight": null,
+      "testId": "x_F3cBMmG",
+      "top": 0
+    },
+    "&-flfooter": {
+      "flexProps": {
+        "flexDirection": "ROW",
+        "flexGrow": 2
+      },
+      "height": 200,
+      "testId": "2UoNUpnKT"
+    },
+    "&-lblResend": {
+      "flexProps": {
+        "flexGrow": 1
+      },
+      "marginLeft": 25,
+      "testId": "JmUyde_sD"
+    },
+    "&-btnroute": {
+      "font": {
+        "size": 20,
+        "bold": false,
+        "italic": false,
+        "family": "FontAwesome5FreeSolid",
+        "style": null
+      },
+      "marginRight": 25,
+      "testId": "jK_FdN5qg"
+    }
+  }
 }

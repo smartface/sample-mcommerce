@@ -10,6 +10,5 @@ interface IPhotoEdit {
 
 interface IPhotoMenu {
     imageUrl?: string;
-    isProfileImageExists?: boolean;
     title?: string;
 }

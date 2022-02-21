@@ -17,8 +17,8 @@
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {},
-				"left": "27.33",
-				"top": "48.67"
+				"left": 8.82,
+				"top": 205.88
 			}
 		},
 		{
@@ -27,7 +27,7 @@
 			"props": {
 				"children": [
 					"c62a-6808-5bd5-fcdb",
-					"f588-c8af-9dc9-7dae",
+					"830c-a237-e91c-80b1",
 					"efa8-13e9-32b6-84c8"
 				],
 				"name": "flWrapper",
@@ -59,31 +59,23 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flPdNutritions",
+			"className": ".sf-flexLayout .flRateWrapper .flProductDetailOverviewSection-flWrapper-flRateWrapper",
 			"hiddenComponent": false,
-			"id": "f588-c8af-9dc9-7dae",
+			"id": "830c-a237-e91c-80b1",
 			"props": {
 				"children": [],
-				"name": "flPdNutritions",
+				"name": "flRateWrapper",
 				"parent": "4ec7-297a-dfa8-5aea",
 				"usePageVariable": true
 			},
+			"ref": null,
 			"source": {
 				"page": "__library__",
-				"type": "flPdNutritions",
-				"id": "a90d-46f5-5bc0-4004"
+				"type": "flRateWrapper",
+				"id": "530e-01bb-f909-0e1c"
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"testId": "71uMqitC9",
-				"top": 0,
 				"usePageVariable": true
 			}
 		},
@@ -101,6 +93,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "rightarrow.png",
 				"usePageVariable": true
 			}
 		}

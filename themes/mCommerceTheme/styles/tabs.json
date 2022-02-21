@@ -1,29 +1,29 @@
 {
-	".tabs": {
-		"item1": {
-			"icon": "images://tabiconhome.png"
-		},
-		"item2": {
-			"icon": "images://tabiconexplore.png"
-		},
-		"item3": {
-			"icon": "images://tabiconcart.png"
-		},
-		"item4": {
-			"icon": "images://tabiconfavorite.png"
-		},
-		"item5": {
-			"icon": "images://tabiconuser.png"
-		},
-		"itemColor": {
-			"normal": "${textDark}",
-			"selected": "${green}"
-		},
-		"backgroundColor": "${backgroundMain}",
-		"&-default": {
-			"font": {
-				"size": 11
-			}
-		}
-	}
+  ".tabs": {
+    "item1": {
+      "icon": "images://tabiconhome.png"
+    },
+    "item2": {
+      "icon": "images://tabiconexplore.png"
+    },
+    "item3": {
+      "icon": "images://tabiconcart.png"
+    },
+    "item4": {
+      "icon": "images://tabiconfavorite.png"
+    },
+    "item5": {
+      "icon": "images://tabiconuser.png"
+    },
+    "itemColor": {
+      "normal": "${textDark}",
+      "selected": "${green}"
+    },
+    "backgroundColor": "${backgroundSecondary}",
+    "&-default": {
+      "font": {
+        "size": 11
+      }
+    }
+  }
 }

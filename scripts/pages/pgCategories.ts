@@ -1,58 +1,85 @@
-import Color from '@smartface/native/ui/color';
 import PgCategoriesDesign from 'generated/pages/pgCategories';
-import store from '../store/index';
 import categoriesItem from 'components/CategoryGridViewItem';
-import Image from '@smartface/native/ui/image';
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
+import { Categories } from 'types';
+import System from '@smartface/native/device/system';
+import { themeService } from 'theme';
+import { getCategories } from 'service/commerce';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+import FlHeaderIcon from 'components/FlHeaderIcon';
+import setHeaderIcon from 'lib/setHeaderIcon';
 
-export default class PgCategories extends PgCategoriesDesign {
-    router: any;
-    constructor() {
-        super();
-        // Overrides super.onShow method
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
+    categories: Categories[];
+    flHeaderIcon: FlHeaderIcon;
+    initialized = false;
+    constructor(private router?: Router, private route?: Route) {
+        super({});
+        if (System.OS === System.OSType.ANDROID) {
+            //Android item widths fails after theme change this fixes it
+            themeService.onChange(() => {
+                this.categoriesGrid.itemCount = this.categories.length;
+                this.categoriesGrid.refreshData();
+            });
+        }
+    }
+    addAppIconToHeader() {
+        this.headerBar.title = '';
+        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
     }
     initCategoriesGrid() {
-        const categories = store.getState().categories;
+        this.categoriesGrid.onPullRefresh = () => {
+            this.categories = [];
+            this.fetchCategories();
+        };
         this.categoriesGrid.scrollBarEnabled = false;
         this.categoriesGrid.onItemBind = (GridViewItem: categoriesItem, index: number) => {
             GridViewItem.flCategoryItemWrapper.borderWidth = 1;
-            GridViewItem.flCategoryItemWrapperBorderColor = categories[index].menuBorderColor;
-            GridViewItem.flCategoryItemWrapperBackgroundColor = categories[index].menuColor;
-            GridViewItem.categoryTitle = categories[index].title;
-            GridViewItem.categoryImage = categories[index].categoryImg;
-            this.categoriesGrid.onItemSelected = (GridViewItem: categoriesItem, index: number) => {
-                this.router.push('/btb/tab2/categoryDetail', {
-                    dataId: categories[index].id,
-                    title: categories[index].title,
-                    isShowcase: false
-                });
-            };
+            GridViewItem.flCategoryItemWrapperBorderColor = this.categories[index].borderColor;
+            GridViewItem.flCategoryItemWrapperBackgroundColor = this.categories[index].menuColor;
+            GridViewItem.categoryTitle = this.categories[index].title;
+            GridViewItem.imageUrl = this.categories[index]._id;
         };
-
-        this.categoriesGrid.itemCount = categories.length;
+        this.categoriesGrid.onItemSelected = (GridViewItem: categoriesItem, index: number) => {
+            this.router.push('categoryDetail', {
+                dataId: this.categories[index]._id,
+                title: this.categories[index].title,
+                isShowcase: false
+            });
+        };
     }
-}
+    refreshGridView() {
+        this.categoriesGrid.itemCount = this.categories.length;
+        this.categoriesGrid.refreshData();
+    }
+    async fetchCategories() {
+        try {
+            showWaitDialog();
+            this.categories = await getCategories();
+            if (this.categories) {
+                this.refreshGridView();
+            }
+        } catch (error) {
+            alert(global.lang.categoriesServiceError);
+        } finally {
+            this.categoriesGrid.stopRefresh();
+            this.initialized = true;
+            hideWaitDialog();
+        }
+    }
 
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
-function onShow(this: PgCategories, superOnShow: () => void) {
-    superOnShow();
-}
-
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
-function onLoad(this: PgCategories, superOnLoad: () => void) {
-    superOnLoad();
-    this.headerBar.title = global.lang.categoriesHeader;
-    this.headerBar.android.elevation = 0;
-    this.initCategoriesGrid();
+    onShow() {
+        super.onShow();
+        this.addAppIconToHeader();
+        if (!this.initialized) {
+            this.fetchCategories();
+        }
+    }
+    onLoad() {
+        super.onLoad();
+        this.headerBar.title = global.lang.categoriesHeader;
+        this.headerBar.leftItemEnabled = false;
+        this.initCategoriesGrid();
+    }
 }

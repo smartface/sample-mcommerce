@@ -1,0 +1,38 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flWaitDialog",
+			"hiddenComponent": true,
+			"id": "9052-1c0f-2d56-74fb",
+			"props": {
+				"children": [
+					"4bd2-69f2-a94e-4c3a"
+				],
+				"name": "flWaitDialog",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-activityIndicator .flWaitDialog-ai",
+			"id": "4bd2-69f2-a94e-4c3a",
+			"props": {
+				"children": [],
+				"name": "activityIndicatorMain",
+				"parent": "9052-1c0f-2d56-74fb",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ActivityIndicator",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

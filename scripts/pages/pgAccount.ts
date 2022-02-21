@@ -1,19 +1,22 @@
 import PgAccountDesign from 'generated/pages/pgAccount';
 import store from '../store/index';
+import storeActions from '../store/main/actions';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import LviAccount from 'components/LviAccount';
 import profileImageMenu from 'lib/profileImageMenu';
-import Blob from '@smartface/native/blob';
-import Image from '@smartface/native/ui/image';
-import { NativeStackRouter } from '@smartface/router';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import { User } from 'types';
 import LviSpacer from 'generated/my-components/LviSpacer';
 import LviProfile from 'components/LviProfile';
 import LviRow2LineButton from 'components/LviRow2LineButton';
-const { image } = getCombinedStyle('.lviRow2LineButton.leftIcon');
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
+import { getProfileImageUrl, putProfileImage } from 'service/commerce';
+import FlHeaderIcon from 'components/FlHeaderIcon';
+import setHeaderIcon from 'lib/setHeaderIcon';
+import AlertView from '@smartface/native/ui/alertview';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
@@ -21,20 +24,20 @@ type Processor =
     | ListViewItems.ProcessorTypes.ILviRow2LineButton
     | ListViewItems.ProcessorTypes.ILviSpacer;
 
-export default class PgAccount extends PgAccountDesign {
-    router: NativeStackRouter;
+export default class PgAccount extends withDismissAndBackButton(PgAccountDesign) {
     data: Processor[];
     userInfo: User;
     rightItem: HeaderBarItem;
-    updatedImage: Image;
     unsubscribe = null;
+    flHeaderIcon: FlHeaderIcon;
     onExit: (...args) => any;
-    constructor() {
-        super();
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    constructor(private router?: Router, private route?: Route) {
+        super({});
     }
-
+    addAppIconToHeader() {
+        this.headerBar.title = '';
+        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
+    }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowHeight = onRowHeight.bind(this);
@@ -43,9 +46,9 @@ export default class PgAccount extends PgAccountDesign {
         this.lvMain.onRowSelected = (item: LviAccount | LviProfile | LviRow2LineButton | LviSpacer, index) => {
             if (item instanceof LviAccount) {
                 if (item.itemTitle === global.lang.settings) {
-                    this.router.push('/btb/tab5/settings');
+                    this.router.push('settings');
                 } else if (item.itemTitle === global.lang.notifications) {
-                    this.router.push('/btb/tab5/notifications');
+                    this.router.push('notifications');
                 } else {
                     alert({
                         title: 'ALERT',
@@ -63,23 +66,22 @@ export default class PgAccount extends PgAccountDesign {
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
-        this.userInfo = store.getState().currentUser;
-        console.info('userInfo: ', this.userInfo);
+        this.userInfo = store.getState().main.currentUser;
         const accountItem = this.userInfo
             ? ListViewItems.getLviProfile({
-                  userName: this.userInfo.fullName,
+                  userName: this.userInfo.name,
                   userEmail: this.userInfo.email,
                   userEditIcon: '',
-                  userImage: this.updatedImage || this.userInfo.profileImage,
+                  userImage: getProfileImageUrl(),
                   onAction: () => {
-                      console.info('onActionClicked');
                       profileImageMenu({
-                          imageUrl: 'https://i.picsum.photos/id/49/800/800.jpg?hmac=rAzFhjqrfdnRPLR5_nFV49tMbvavk1xvsaEngwbDUfc',
-                          isProfileImageExists: true
+                          imageUrl: getProfileImageUrl()
                       })
-                          .then((base64) => {
-                              this.updatedImage = Image.createFromBlob(Blob.createFromBase64(base64));
-                              this.refreshListView();
+                          .then(async (base64) => {
+                              const response = await putProfileImage(base64);
+                              if (response && response?.success) {
+                                  this.refreshListView();
+                              }
                           })
                           .catch((err) => {
                               console.error(err);
@@ -87,7 +89,6 @@ export default class PgAccount extends PgAccountDesign {
                   }
               })
             : ListViewItems.getLviRow2LineButton({
-                  leftIcon: image,
                   mainButtonText: global.lang.loginHeader,
                   bottomLeftButtonText: global.lang.signup,
                   bottomRightButtonText: global.lang.forgotPassword,
@@ -95,14 +96,14 @@ export default class PgAccount extends PgAccountDesign {
                       this.router.push('pages/pgWelcome');
                   },
                   bottomLeftOnClick: () => {
-                      console.info('bottomLeftOnClick');
+                      this.router.push('pages/pgSignUp');
                   },
                   bottomRightOnClick: () => {
-                      console.info('bottomRightOnClick');
+                      alert('todo');
                   }
               });
         const processorItems = [accountItem, ListViewItems.getLviSpacerItem({ className: 'small' })];
-        const accountMenus = store.getState().accountMenus;
+        const accountMenus = store.getState().main.accountMenus;
         accountMenus.forEach((menu, index) => {
             processorItems.push(
                 ListViewItems.getLviAccount({
@@ -116,7 +117,9 @@ export default class PgAccount extends PgAccountDesign {
     }
     addRightItem() {
         this.rightItem = new HeaderBarItem({
-            image: 'images://logouticon.png',
+            //Native › NTVE-435
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
+            image: 'images://logout_icon.png',
             onPress: () => {
                 return this.onExit();
             }
@@ -125,14 +128,29 @@ export default class PgAccount extends PgAccountDesign {
     }
     initLogoutButton() {
         this.onExit = () => {
-            store.dispatch({
-                type: 'LOGOUT'
+            alert({
+                title: global.lang.warning,
+                message: global.lang.sureToLogout,
+                buttons: [
+                    {
+                        text: global.lang.yes,
+                        type: AlertView.Android.ButtonType.POSITIVE,
+                        onClick: () => {
+                            store.dispatch(storeActions.logout());
+                            this.refreshListView();
+                        }
+                    },
+                    {
+                        text: global.lang.cancel,
+                        type: AlertView.Android.ButtonType.NEGATIVE,
+                        onClick: () => {}
+                    }
+                ]
             });
-            this.refreshListView();
         };
     }
     handleChange() {
-        if (store.getState().isUserLoggedIn) {
+        if (store.getState().main.isUserLoggedIn) {
             this.addRightItem();
         } else {
             this.headerBar.setItems([]);
@@ -140,19 +158,23 @@ export default class PgAccount extends PgAccountDesign {
             this.unsubscribe();
         }
     }
-}
 
-function onShow(this: PgAccount, superOnShow: () => void) {
-    superOnShow();
-    this.unsubscribe = store.subscribe(() => this.handleChange());
-    setTimeout(() => {
-        this.refreshListView();
-    }, 500);
-}
+    onShow() {
+        super.onShow();
+        this.addAppIconToHeader();
+        this.unsubscribe = store.subscribe(() => this.handleChange());
+        if (store.getState().main.isUserLoggedIn) {
+            this.addRightItem();
+        }
+        setTimeout(() => {
+            this.refreshListView();
+        }, 500);
+    }
 
-function onLoad(this: PgAccount, superOnLoad: () => void) {
-    superOnLoad();
-    this.headerBar.title = global.lang.accountHeader;
-    this.initLogoutButton();
-    this.initListView();
+    onLoad() {
+        super.onLoad();
+        this.initLogoutButton();
+        this.initListView();
+        this.headerBar.leftItemEnabled = false;
+    }
 }

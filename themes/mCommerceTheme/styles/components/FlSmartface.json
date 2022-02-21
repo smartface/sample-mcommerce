@@ -1,0 +1,33 @@
+{
+  ".flSmartface": {
+    "height": 55,
+    "&-lblVersion": {
+      "height": 25,
+      "textAlignment": "MIDCENTER"
+    },
+    "&-flPoweredBySmartface": {
+      "flexProps": {
+        "alignContent": "CENTER",
+        "alignItems": "CENTER",
+        "flexDirection": "ROW",
+        "justifyContent": "CENTER"
+      },
+      "height": 20,
+      "marginBottom": 10,
+      "width": null,
+      "&-lblPoweredBy": {
+        "height": 40,
+        "marginRight": 3,
+        "textAlignment": "MIDRIGHT",
+        "width": 100
+      },
+      "&-imgSmartface": {
+        "height": 20,
+        "imageFillType": "ASPECTFIT",
+        "tintColor": "${main}",
+        "marginTop": 4,
+        "width": 85
+      }
+    }
+  }
+}

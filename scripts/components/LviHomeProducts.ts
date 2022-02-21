@@ -1,27 +1,38 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import LviHomeProductsDesign from 'generated/my-components/LviHomeProducts';
 import GviProductItem from './GviProductItem';
 import store from 'store/index';
-const originalHeight = getCombinedStyle('.lviHomeProducts').height;
-import { Router } from '@smartface/router';
+import storeActions from 'store/main/actions';
+const originalHeight = themeService.getStyle('.lviHomeProducts').height;
+import System from '@smartface/native/device/system';
+import { getProductImageUrl } from 'service/commerce';
+import { Product } from 'types';
+import { HALF_OF_SCREEN_WIDTH } from 'constants';
 export default class LviHomeProducts extends LviHomeProductsDesign {
     pageName?: string | undefined;
     private __onProductClick: (product: any) => void;
-    private __items: any[] = [];
+    private __items: Product[] = [];
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
+        if (System.OS === System.OSType.ANDROID) {
+            //Android item widths fails after theme change this fixes it
+            themeService.onChange(() => {
+                this.gvProducts.itemCount = this.__items.length;
+                this.gvProducts.refreshData();
+            });
+        }
     }
     static getHeight(): number {
         return originalHeight;
     }
-    get items(): any[] {
+    get items(): Product[] {
         return this.__items;
     }
-    set items(value: any[]) {
+    set items(value: Product[]) {
         this.__items = value;
         this.initGridView();
+        this.refreshGridView();
     }
     get onProductClick(): (product: any) => void {
         return this.__onProductClick;
@@ -30,34 +41,33 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
         this.__onProductClick = value;
     }
     private initGridView() {
+        this.gvProducts.layoutManager.onItemLength = () => HALF_OF_SCREEN_WIDTH;
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
-            GridViewItem.itemTag = this.items[productIndex].discountTag;
+            GridViewItem.itemTitleMaxWidth = HALF_OF_SCREEN_WIDTH;
+            GridViewItem.itemTag = this.items[productIndex]?.labels[0]?.name;
+            GridViewItem.itemTagColor = this.items[productIndex]?.labels[0]?.color;
             GridViewItem.itemTitle = this.items[productIndex].name;
-            GridViewItem.itemDesc = this.items[productIndex].description;
-            GridViewItem.itemImage = this.items[productIndex].image;
-            GridViewItem.itemDiscountPrice = !!this.items[productIndex].discount ? `$${this.items[productIndex].discount}` : false;
-            GridViewItem.itemPrice = `$${this.items[productIndex].price}`;
-            GridViewItem.itemReview = !!this.items[productIndex].review ? this.items[productIndex]?.review : false;
-            this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
-                this.onProductClick(this.items[productIndex]);
-            };
+            GridViewItem.itemDesc = this.items[productIndex].shortDescription;
+            GridViewItem.itemImage = this.items[productIndex].images ? getProductImageUrl(this.items[productIndex].images[0]) : null;
+            GridViewItem.itemDiscountPrice = !!this.items[productIndex].discountPrice
+                ? `$${this.items[productIndex].discountPrice.toFixed(2)}`
+                : '';
+            GridViewItem.itemPrice = `$${this.items[productIndex].price.toFixed(2)}`;
+            GridViewItem.itemReview = this.items[productIndex]?.rating?.toFixed(1).toString() || '';
             GridViewItem.onActionClick = () => {
                 GridViewItem.initIndicator();
                 GridViewItem.toggleIndicator(true);
-                store.dispatch({
-                    type: 'ADD_TO_BASKET',
-                    payload: {
-                        data: {
-                            product: this.items[productIndex],
-                            count: 1
-                        }
-                    }
-                });
+                store.dispatch(storeActions.AddToBasket({ product: this.items[productIndex], count: 1 }));
                 setTimeout(() => {
                     GridViewItem.toggleIndicator(false);
                 }, 500);
             };
         };
+        this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
+            this.onProductClick(this.items[productIndex]);
+        };
+    }
+    refreshGridView() {
         this.gvProducts.itemCount = this.items.length;
         this.gvProducts.refreshData();
     }

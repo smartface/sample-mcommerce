@@ -1,10 +1,10 @@
 {
-	"#pgNotifications": {
-		"backgroundColor": "${backgroundMain}",
-		"&-headerBar": {
-			"backgroundColor": "${backgroundMain}",
-			"visible": true,
-			"titleColor": "${textDark}"
-		}
-	}
+  "#pgNotifications": {
+    "backgroundColor": "${backgroundMain}",
+    "&-headerBar": {
+      "backgroundColor": "${backgroundMain}",
+      "visible": true,
+      "titleColor": "${textDark}"
+    }
+  }
 }

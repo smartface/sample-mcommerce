@@ -1,0 +1,112 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "8874-9476-fc66-5308",
+			"initialized": true,
+			"props": {
+				"children": [
+					"1967-d11b-7550-d2f5",
+					"a01d-991b-2f1c-4972",
+					"da67-fe1c-a244-2beb",
+					"3ae6-015d-1c83-5b82"
+				],
+				"name": "pgAddReview",
+				"orientation": "PORTRAIT",
+				"parent": null,
+				"safeAreaEnabled": true
+			},
+			"type": "Page",
+			"userProps": {
+				"safeAreaEnabled": true
+			},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "1967-d11b-7550-d2f5",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "8874-9476-fc66-5308"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-headerBar.main",
+			"id": "a01d-991b-2f1c-4972",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "8874-9476-fc66-5308",
+				"title": "pgAddReview"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgAddReview"
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRateProduct .grow .marginHorizontal .marginVertical",
+			"hiddenComponent": false,
+			"id": "da67-fe1c-a244-2beb",
+			"props": {
+				"children": [],
+				"name": "flRateProduct",
+				"parent": "8874-9476-fc66-5308",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flRateProduct",
+				"id": "f11c-576a-b271-7c3f"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"testId": "sMOOCWAid",
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .sticky.relative",
+			"id": "3ae6-015d-1c83-5b82",
+			"props": {
+				"children": [
+					"c44d-622e-89ea-fd74"
+				],
+				"name": "flButtonWrapper",
+				"parent": "8874-9476-fc66-5308"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-button-main",
+			"id": "c44d-622e-89ea-fd74",
+			"props": {
+				"children": [],
+				"name": "btnSendReview",
+				"parent": "3ae6-015d-1c83-5b82",
+				"text": "button1",
+				"usePageVariable": true
+			},
+			"type": "Button",
+			"userProps": {
+				"testId": "1Ms51DwB7",
+				"text": "button1",
+				"usePageVariable": true
+			}
+		}
+	]
+}

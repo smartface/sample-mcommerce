@@ -1,37 +1,37 @@
 {
-	".flAlert": {
-		"flexProps": {
-			"positionType": "ABSOLUTE"
-		},
-		"height": 50,
-		"testId": "gcdo42Pac",
-		"&-flAlertWrapper": {
-			"borderRadius": 20,
-			"borderWidth": 2,
-			"borderColor": "${green}",
-			"backgroundColor": "#AFE3C2",
-			"flexProps": {
-				"flexGrow": 1,
-				"justifyContent": "CENTER"
-			},
-			"height": null,
-			"paddingBottom": 10,
-			"paddingLeft": 10,
-			"paddingRight": 10,
-			"paddingTop": 10,
-			"testId": "INXToBXH4",
-			"&-lblAlertMessage": {
-				"font": {
-					"size": 13,
-					"bold": false,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Medium"
-				},
-				"textColor": "${textDark}",
-				"testId": "V9Rd-6CVt",
-				"textAlignment": "MIDCENTER"
-			}
-		}
-	}
+  ".flAlert": {
+    "flexProps": {
+      "positionType": "ABSOLUTE"
+    },
+    "height": 50,
+    "testId": "gcdo42Pac",
+    "&-flAlertWrapper": {
+      "borderRadius": 20,
+      "borderWidth": 2,
+      "borderColor": "${green}",
+      "backgroundColor": "#AFE3C2",
+      "flexProps": {
+        "flexGrow": 1,
+        "justifyContent": "CENTER"
+      },
+      "height": null,
+      "paddingBottom": 10,
+      "paddingLeft": 10,
+      "paddingRight": 10,
+      "paddingTop": 10,
+      "testId": "INXToBXH4",
+      "&-lblAlertMessage": {
+        "font": {
+          "size": 13,
+          "bold": false,
+          "italic": false,
+          "family": "Nunito",
+          "style": "Medium"
+        },
+        "textColor": "${textDark}",
+        "testId": "V9Rd-6CVt",
+        "textAlignment": "MIDCENTER"
+      }
+    }
+  }
 }

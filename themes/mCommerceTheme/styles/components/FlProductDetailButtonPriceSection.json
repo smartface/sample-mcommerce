@@ -39,21 +39,16 @@
 				}
 			}
 		},
-		"&-lblPrice": {
-			"font": {
-				"size": 24,
-				"bold": true,
-				"italic": false,
-				"family": "Nunito",
-				"style": "Bold"
-			},
-			"textColor": "${textDark}",
-			"textAlignment": "MIDRIGHT"
-		},
 		"&-flPrice": {
+			"&-textbox": {
+				"height": 24,
+				"maxLines": 1
+			},
 			"flexProps": {
-				"justifyContent": "CENTER"
-			}
+				"justifyContent": "CENTER",
+				"alignItems": "FLEX_END"
+			},
+			"paddingRight": 10
 		}
 	}
 }

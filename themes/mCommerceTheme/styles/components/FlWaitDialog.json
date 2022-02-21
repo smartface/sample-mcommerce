@@ -1,0 +1,25 @@
+{
+  ".flWaitDialog": {
+    "top": 0,
+    "bottom": 0,
+    "left": 0,
+    "right": 0,
+    "height": null,
+    "flexProps": {
+      "positionType": "ABSOLUTE",
+      "alignContent": "CENTER",
+      "alignItems": "CENTER",
+      "justifyContent": "CENTER"
+    },
+    "&-ai": {
+      "color": "${green}",
+      "width": 70,
+      "height": 70,
+      "minHeight": 70,
+      "minWidth": 70,
+      "ios": {
+        "activityIndicatorViewStyle": "LARGE"
+      }
+    }
+  }
+}

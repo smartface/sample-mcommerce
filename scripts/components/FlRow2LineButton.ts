@@ -8,27 +8,29 @@ export default class FlRow2LineButton extends FlRow2LineButtonDesign {
     __mainOnClick: (...args) => void;
     __bottomLeftOnClick: (...args) => void;
     __bottomRightOnClick: (...args) => void;
+    private __leftImage: string;
     private __ID: string;
     constructor(props?: any, pageName?: string) {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
 
-        this.btnMain.on(Button.Events.TouchEnded, () => {
+        this.btnMain.on(Button.Events.Press, () => {
             this.__mainOnClick && this.__mainOnClick();
         });
-        this.btnBottomLeft.on(Button.Events.TouchEnded, () => {
+        this.btnBottomLeft.on(Button.Events.Press, () => {
             this.__bottomLeftOnClick && this.__bottomLeftOnClick();
         });
-        this.btnBottomRight.on(Button.Events.TouchEnded, () => {
+        this.btnBottomRight.on(Button.Events.Press, () => {
             this.__bottomRightOnClick && this.__bottomRightOnClick();
         });
     }
     get leftIcon() {
-        return this.imgLeft.image;
+        return this.__leftImage;
     }
-    set leftIcon(value: string | Image) {
-        this.imgLeft.image = value;
+    set leftIcon(value: string) {
+        this.__leftImage = value;
+        this.imgLeft.image = this.__leftImage;
     }
     get mainButtonText() {
         return this.btnMain.text;

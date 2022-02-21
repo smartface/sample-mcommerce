@@ -1,67 +1,67 @@
 import LviAccount from '../components/LviAccount';
 import LviHomeProducts from '../components/LviHomeProducts';
-import LviHomeSlider from '../components/LviHomeSlider';
 import LviCartItem from '../components/LviCartItem';
 import LviFavorites from '../components/LviFavorites';
 import LviProfile from '../components/LviProfile';
 import LviRow2LineButton from '../components/LviRow2LineButton';
 import LviSpacer from '../components/LviSpacer';
-import LviProductItem from '../components/LviProductItem';
-import LviRow2ProductItem from '../components/LviRow2ProductItem';
 import LviEmptyItem from '../components/LviEmptyItem';
 import LviShowcaseHeader from '../components/LviShowcaseHeader';
 import LviHomeCategories from '../components/LviHomeCategories';
-
 import LviPdInfoSection from '../components/LviPdInfoSection';
 import LviPdTitleLikeSection from '../components/LviPdTitleLikeSection';
-import LviPdSlider from '../components/LviPdSlider';
+import LviGenericSlider from '../components/LviGenericSlider';
 import LviPdOverviewSection from '../components/LviPdOverviewSection';
 import LviPdButtonPriceSection from '../components/LviPdButtonPriceSection';
+import LviReview from '../components/LviReview';
+import LviReviewProduct from '../components/LviReviewProduct';
+import LviNutritions from '../components/LviNutritions';
 
 import LviRow1LineLarge from '../components/LviRow1LineLarge';
 
 export enum LviTypes {
     LVI_ACCOUNT,
     LVI_HOME_PRODUCTS,
-    LVI_HOME_SLIDER,
     LVI_CART_PRODUCTS,
     LVI_FAVOURITES,
     LVI_PROFILE,
     LVI_ROW2_LINE_BUTTON,
     LVI_SPACER,
-    LVI_PRODUCT_ITEM,
     LVI_ROW_2_PRODUCT_ITEM,
     LVI_EMPTY_ITEM,
     LVI_SHOWCASE_HEADER,
     LVI_HOME_CATEGORIES,
-    LVI_PD_SLIDER,
     LVI_PD_TITLE_LIKE_SECTION,
     LVI_PD_BUTTON_PRICE_SECTION,
     LVI_PD_INFO_SECTION,
     LVI_PD_OVERVIEW_SECTION,
-    LVI_ROW1_LINE_LARGE
+    LVI_ROW1_LINE_LARGE,
+    LVI_GENERIC_SLIDER,
+    LVI_REVIEW,
+    LVI_REVIEW_PRODUCT,
+    LVI_NUTRITIONS
 }
 
 export const LviClasses = {
     [LviTypes.LVI_ACCOUNT]: LviAccount,
     [LviTypes.LVI_HOME_PRODUCTS]: LviHomeProducts,
-    [LviTypes.LVI_HOME_SLIDER]: LviHomeSlider,
     [LviTypes.LVI_CART_PRODUCTS]: LviCartItem,
     [LviTypes.LVI_FAVOURITES]: LviFavorites,
     [LviTypes.LVI_PROFILE]: LviProfile,
     [LviTypes.LVI_ROW2_LINE_BUTTON]: LviRow2LineButton,
     [LviTypes.LVI_SPACER]: LviSpacer,
-    [LviTypes.LVI_PRODUCT_ITEM]: LviProductItem,
-    [LviTypes.LVI_ROW_2_PRODUCT_ITEM]: LviRow2ProductItem,
     [LviTypes.LVI_EMPTY_ITEM]: LviEmptyItem,
     [LviTypes.LVI_SHOWCASE_HEADER]: LviShowcaseHeader,
     [LviTypes.LVI_HOME_CATEGORIES]: LviHomeCategories,
-    [LviTypes.LVI_PD_SLIDER]: LviPdSlider,
     [LviTypes.LVI_PD_TITLE_LIKE_SECTION]: LviPdTitleLikeSection,
     [LviTypes.LVI_PD_BUTTON_PRICE_SECTION]: LviPdButtonPriceSection,
     [LviTypes.LVI_PD_INFO_SECTION]: LviPdInfoSection,
     [LviTypes.LVI_PD_OVERVIEW_SECTION]: LviPdOverviewSection,
-    [LviTypes.LVI_ROW1_LINE_LARGE]: LviRow1LineLarge
+    [LviTypes.LVI_ROW1_LINE_LARGE]: LviRow1LineLarge,
+    [LviTypes.LVI_GENERIC_SLIDER]: LviGenericSlider,
+    [LviTypes.LVI_REVIEW]: LviReview,
+    [LviTypes.LVI_REVIEW_PRODUCT]: LviReviewProduct,
+    [LviTypes.LVI_NUTRITIONS]: LviNutritions
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -104,25 +104,38 @@ export interface IProcessed<T> {
 export namespace ProcessorTypes {
     export interface ILviAccount extends IProcessed<LviAccount> {}
     export interface ILviHomeProducts extends IProcessed<LviHomeProducts> {}
-    export interface ILviHomeSlider extends IProcessed<LviHomeSlider> {}
     export interface ILviCartItem extends IProcessed<LviCartItem> {}
     export interface ILviFavorites extends IProcessed<LviFavorites> {}
     export interface ILviProfile extends IProcessed<LviProfile> {}
     export interface ILviRow2LineButton extends IProcessed<LviRow2LineButton> {}
     export interface ILviSpacer extends IProcessed<LviSpacer> {}
-    export interface ILviProductItem extends IProcessed<LviProductItem> {}
-    export interface ILviRow2ProductItem extends IProcessed<LviRow2ProductItem> {}
     export interface ILviEmptyItem extends IProcessed<LviEmptyItem> {}
     export interface ILviShowcaseHeader extends IProcessed<LviShowcaseHeader> {}
     export interface ILviHomeCategories extends IProcessed<LviHomeCategories> {}
-    export interface ILviPdSlider extends IProcessed<LviPdSlider> {}
     export interface ILviPdTitleLikeSection extends IProcessed<LviPdTitleLikeSection> {}
     export interface ILviPdButtonPriceSection extends IProcessed<LviPdButtonPriceSection> {}
     export interface ILviPdInfoSection extends IProcessed<LviPdInfoSection> {}
     export interface ILviPdOverviewSection extends IProcessed<LviPdOverviewSection> {}
     export interface ILviRow1LineLarge extends IProcessed<LviRow1LineLarge> {}
+    export interface ILviGenericSlider extends IProcessed<LviGenericSlider> {}
+    export interface ILviReview extends IProcessed<LviReview> {}
+    export interface ILviReviewProduct extends IProcessed<LviReviewProduct> {}
+    export interface ILviNutritions extends IProcessed<LviNutritions> {}
 }
 
+export function getLviGenericSlider(
+    item: Partial<LviGenericSlider>,
+    opts?: { className?: string; height?: number }
+): ProcessorTypes.ILviGenericSlider {
+    return {
+        type: 'LVI_GENERIC_SLIDER',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviGenericSlider.getHeight(opts)
+    };
+}
 export function getLviAccount(item: Partial<LviAccount>): ProcessorTypes.ILviAccount {
     return {
         type: 'LVI_ACCOUNT',
@@ -142,17 +155,6 @@ export function getLviHomeProducts(item: Partial<LviHomeProducts>): ProcessorTyp
             borders: []
         },
         height: LviHomeProducts.getHeight()
-    };
-}
-
-export function getLviHomeSlider(item: Partial<LviHomeSlider>): ProcessorTypes.ILviHomeSlider {
-    return {
-        type: 'LVI_HOME_SLIDER',
-        properties: {
-            ...item,
-            borders: []
-        },
-        height: LviHomeSlider.getHeight()
     };
 }
 
@@ -207,22 +209,6 @@ export function getLviSpacerItem(item: Partial<LviSpacer>): ProcessorTypes.ILviS
     };
 }
 
-export function getLviProductItem(item: Partial<LviProductItem>): ProcessorTypes.ILviProductItem {
-    return {
-        type: 'LVI_PRODUCT_ITEM',
-        properties: { ...item, borders: [] },
-        height: LviProductItem.getHeight()
-    };
-}
-
-export function getLviRow2ProductItem(item: Partial<LviRow2ProductItem>): ProcessorTypes.ILviRow2ProductItem {
-    return {
-        type: 'LVI_ROW_2_PRODUCT_ITEM',
-        properties: { ...item, borders: [] },
-        height: LviRow2ProductItem.getHeight()
-    };
-}
-
 export function getLviEmptyItem(item: Partial<LviEmptyItem>): ProcessorTypes.ILviEmptyItem {
     return {
         type: 'LVI_EMPTY_ITEM',
@@ -246,18 +232,6 @@ export function getLviHomeCategories(item: Partial<LviHomeCategories>): Processo
         height: LviHomeCategories.getHeight()
     };
 }
-
-export function getLviPdSlider(item: Partial<LviPdSlider>): ProcessorTypes.ILviPdSlider {
-    return {
-        type: 'LVI_PD_SLIDER',
-        properties: {
-            ...item,
-            borders: []
-        },
-        height: LviPdSlider.getHeight()
-    };
-}
-
 export function getLviPdTitleLikeSection(item: Partial<LviPdTitleLikeSection>): ProcessorTypes.ILviPdTitleLikeSection {
     return {
         type: 'LVI_PD_TITLE_LIKE_SECTION',
@@ -306,5 +280,38 @@ export function getLviRow1LineLarge(item: Partial<LviRow1LineLarge>): ProcessorT
             borders: []
         },
         height: LviRow1LineLarge.getHeight()
+    };
+}
+
+export function getLviReview(item: Partial<LviReview>): ProcessorTypes.ILviReview {
+    return {
+        type: 'LVI_REVIEW',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviReview.getHeight(item.comment)
+    };
+}
+
+export function getLviReviewProduct(item: Partial<LviReviewProduct>): ProcessorTypes.ILviReviewProduct {
+    return {
+        type: 'LVI_REVIEW_PRODUCT',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviReviewProduct.getHeight()
+    };
+}
+
+export function getLviNutritions(item: Partial<LviNutritions>): ProcessorTypes.ILviNutritions {
+    return {
+        type: 'LVI_NUTRITIONS',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviReview.getHeight(item.nutritionValue)
     };
 }

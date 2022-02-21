@@ -8,7 +8,8 @@
 				"children": [
 					"3d32-baaa-2b3f-c691",
 					"64f0-4598-a7d6-2aa7",
-					"fc95-5a4f-f83c-ea45"
+					"fc95-5a4f-f83c-ea45",
+					"1d6e-f962-26f5-0ab9"
 				],
 				"name": "pgAccount",
 				"orientation": "PORTRAIT",
@@ -50,7 +51,7 @@
 			}
 		},
 		{
-			"className": ".sf-listView",
+			"className": ".sf-listView .contentInset-top .grow",
 			"id": "fc95-5a4f-f83c-ea45",
 			"props": {
 				"children": [],
@@ -60,8 +61,35 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"testId": "3mYMYSMmX",
+				"testId": "0CWrAelRq",
 				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flSmartface",
+			"hiddenComponent": false,
+			"id": "1d6e-f962-26f5-0ab9",
+			"props": {
+				"children": [],
+				"name": "flSmartface",
+				"parent": "1f1d-7f9b-25d3-8c1b"
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__",
+				"type": "flSmartface",
+				"id": "f497-3d69-d937-6c61"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0
 			}
 		}
 	]

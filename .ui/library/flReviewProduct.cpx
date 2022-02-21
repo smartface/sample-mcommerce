@@ -1,0 +1,305 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flReviewProduct",
+			"hiddenComponent": true,
+			"id": "5f7e-7ce3-3952-c302",
+			"props": {
+				"children": [
+					"e34a-21f1-2434-9909",
+					"5219-dc66-d146-1ec5"
+				],
+				"name": "flReviewProduct",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flReviewProduct-flImageAndRate",
+			"id": "e34a-21f1-2434-9909",
+			"props": {
+				"children": [
+					"a89d-2c24-6e22-376e",
+					"ce1d-01b5-00ce-fde8"
+				],
+				"name": "flImageAndRate",
+				"parent": "5f7e-7ce3-3952-c302",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView .flReviewProduct-flImageAndRate-imgProduct",
+			"id": "a89d-2c24-6e22-376e",
+			"props": {
+				"children": [],
+				"name": "imgProduct",
+				"parent": "e34a-21f1-2434-9909",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flReviewProduct-flImageAndRate-flProductRate",
+			"id": "ce1d-01b5-00ce-fde8",
+			"props": {
+				"children": [
+					"9bb5-247c-4a31-369d",
+					"7655-e5f6-1a6f-2ce8"
+				],
+				"name": "flProductRate",
+				"parent": "e34a-21f1-2434-9909",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView .flReviewProduct-flImageAndRate-flProductRate-imgStar",
+			"id": "9bb5-247c-4a31-369d",
+			"props": {
+				"children": [],
+				"name": "imgStar",
+				"parent": "ce1d-01b5-00ce-fde8",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"image": "small_star.png",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .review.star .flReviewProduct-flImageAndRate-flProductRate-lblRate",
+			"id": "7655-e5f6-1a6f-2ce8",
+			"props": {
+				"children": [],
+				"name": "lblRate",
+				"parent": "ce1d-01b5-00ce-fde8",
+				"text": "5",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "5",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flReviewProduct-flProductInfo",
+			"id": "5219-dc66-d146-1ec5",
+			"props": {
+				"children": [
+					"0ec1-501a-e069-55e7",
+					"9f20-814d-a86d-d2c2",
+					"7bcd-ad02-4e91-77e7",
+					"95a4-1dbf-f3b1-2ad7",
+					"20ba-9b40-3abc-b6d0",
+					"d3d5-7f54-ae43-df26"
+				],
+				"name": "flProductInfo",
+				"parent": "5f7e-7ce3-3952-c302",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flReviewProduct-flProductInfo-lblProductName .review.name",
+			"id": "0ec1-501a-e069-55e7",
+			"props": {
+				"children": [],
+				"name": "lblProductName",
+				"parent": "5219-dc66-d146-1ec5",
+				"text": "product name",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "product name",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRateWrapper",
+			"hiddenComponent": false,
+			"id": "9f20-814d-a86d-d2c2",
+			"props": {
+				"children": [],
+				"name": "flRateWrapper5",
+				"parent": "5219-dc66-d146-1ec5",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__",
+				"type": "flRateWrapper",
+				"id": "530e-01bb-f909-0e1c"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRateWrapper",
+			"hiddenComponent": false,
+			"id": "7bcd-ad02-4e91-77e7",
+			"props": {
+				"children": [],
+				"name": "flRateWrapper4",
+				"parent": "5219-dc66-d146-1ec5",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__",
+				"type": "flRateWrapper",
+				"id": "530e-01bb-f909-0e1c"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRateWrapper",
+			"hiddenComponent": false,
+			"id": "95a4-1dbf-f3b1-2ad7",
+			"props": {
+				"children": [],
+				"name": "flRateWrapper3",
+				"parent": "5219-dc66-d146-1ec5",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__",
+				"type": "flRateWrapper",
+				"id": "530e-01bb-f909-0e1c"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRateWrapper",
+			"hiddenComponent": false,
+			"id": "20ba-9b40-3abc-b6d0",
+			"props": {
+				"children": [],
+				"name": "flRateWrapper2",
+				"parent": "5219-dc66-d146-1ec5",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__",
+				"type": "flRateWrapper",
+				"id": "530e-01bb-f909-0e1c"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flRateWrapper",
+			"hiddenComponent": false,
+			"id": "d3d5-7f54-ae43-df26",
+			"props": {
+				"children": [],
+				"name": "flRateWrapper1",
+				"parent": "5219-dc66-d146-1ec5",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__",
+				"type": "flRateWrapper",
+				"id": "530e-01bb-f909-0e1c"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0,
+				"usePageVariable": true
+			}
+		}
+	]
+}

@@ -8,7 +8,6 @@
 				"children": [
 					"ffcc-86c1-d7c3-5754",
 					"9935-0f44-a5e2-85dd",
-					"0745-b8d6-1ef0-a1db",
 					"bc97-52fe-89a2-3552",
 					"7e8d-bae5-76ba-2340",
 					"d5b7-091a-cdf0-06b6"
@@ -46,18 +45,6 @@
 				"parent": "8492-4718-26bc-e27d"
 			},
 			"type": "HeaderBar",
-			"userProps": {}
-		},
-		{
-			"className": ".sf-imageView #pgVerification-imagebackground",
-			"hiddenComponent": false,
-			"id": "0745-b8d6-1ef0-a1db",
-			"props": {
-				"children": [],
-				"name": "imgBackground",
-				"parent": "8492-4718-26bc-e27d"
-			},
-			"type": "ImageView",
 			"userProps": {}
 		},
 		{

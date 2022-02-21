@@ -1,12 +1,10 @@
 import LviPdOverviewSectionDesign from 'generated/my-components/LviPdOverviewSection';
+import { themeService } from 'theme';
 
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
-
-const { height } = getCombinedStyle('.lviPdOverviewSection');
+const { height } = themeService.getStyle('.lviPdOverviewSection');
 export default class LviPdOverviewSection extends LviPdOverviewSectionDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
     }
@@ -19,10 +17,16 @@ export default class LviPdOverviewSection extends LviPdOverviewSectionDesign {
     set overviewTitle(value: string) {
         this.flProductDetailOverviewSection.overviewTitle = value;
     }
-    get onArrowClick(): () => void {
-        return this.flProductDetailOverviewSection.onArrowClick;
+    set star(value: number) {
+        this.flProductDetailOverviewSection.star = value;
     }
-    set onArrowClick(value: () => void) {
-        this.flProductDetailOverviewSection.onArrowClick = value;
+    set reviewCount(value: string) {
+        this.flProductDetailOverviewSection.reviewCount = value;
+    }
+    get showRating(): boolean {
+        return this.flProductDetailOverviewSection.showRating;
+    }
+    set showRating(value: boolean) {
+        this.flProductDetailOverviewSection.showRating = value;
     }
 }

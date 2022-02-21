@@ -1,21 +1,30 @@
 import FlProductItemDesign from 'generated/my-components/FlProductItem';
 import ActivityIndicator from '@smartface/native/ui/activityindicator';
 import Button from '@smartface/native/ui/button';
-import Image from '@smartface/native/ui/image';
 import setVisibility from 'lib/setVisibility';
 import AttributedString from '@smartface/native/ui/attributedstring';
-import Font from '@smartface/native/ui/font';
+import { themeService } from 'theme';
 import Color from '@smartface/native/ui/color';
+import { setTextDimensions } from 'lib/setTextDimensions';
+import { PRODUCT_NAME_MAX_LINE } from 'constants';
 
+const { marginRight: productItemMarginRight, marginLeft: productItemMarginLeft } = themeService.getNativeStyle('.flProductItem');
+const { paddingLeft: descriptionWrapperPaddingLeft, paddingRight: descriptionWrapperPaddingRight } = themeService.getNativeStyle(
+    '.flProductItem-flProductItemWrapper-descriptionWrapper'
+);
+const { marginRight: lblProductItemTitleWidthMarginRight, marginLeft: lblProductItemTitleWidthMarginLeft } = themeService.getNativeStyle(
+    '.flProductItem-flProductItemWrapper-descriptionWrapper-lblProductTitle'
+);
 export default class FlProductItem extends FlProductItemDesign {
+    private __imageUrl: string;
+    private __itemTitleMaxWidth: number;
     _addToBasket: (...args) => void;
     pageName?: string | undefined;
     myActivityIndicator: ActivityIndicator;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-        this.btnAddToBasket.on(Button.Events.TouchEnded, () => {
+        this.btnAddToBasket.on(Button.Events.Press, () => {
             this._addToBasket && this._addToBasket();
         });
     }
@@ -30,6 +39,9 @@ export default class FlProductItem extends FlProductItemDesign {
             }
         });
     }
+    set itemTitleMaxWidth(value: number) {
+        this.__itemTitleMaxWidth = value;
+    }
     get onActionClick(): (...args) => void {
         return this._addToBasket;
     }
@@ -41,30 +53,37 @@ export default class FlProductItem extends FlProductItemDesign {
     }
     set itemTitle(value: string) {
         this.lblProductItemTitle.text = value;
+        const { height } = setTextDimensions(value, this.lblProductItemTitle.font, {
+            maxLines: PRODUCT_NAME_MAX_LINE,
+            maxWidth: this.calculateMaxWidth()
+        });
+        this.lblProductItemTitle.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                height
+            }
+        });
     }
-    get itemPrice(): any {
+    get itemPrice(): string {
         return this.tvProductPrice.text;
     }
-    set itemPrice(value: any) {
-        let attributeString = new AttributedString();
-        if (!!value) {
-            if (this.tvPriceWithDiscount.text) {
-                attributeString.strikethrough = true;
-                attributeString.string = value;
-                attributeString.font = Font.create('Nunito', 14);
-                attributeString.foregroundColor = Color.create('#7c7c7c');
-            } else {
-                // TODO: get combined color ve fontlar icin
-                attributeString.font = Font.create('Nunito', 18);
-                attributeString.string = value;
-            }
-        }
+    set itemPrice(value: string) {
+        const discountExists = !!this.tvPriceWithDiscount.text;
+        let attributeString = new AttributedString({
+            strikethrough: discountExists,
+            ios: {
+                strikethroughColor: themeService.getNativeStyle('.product-price').textColor
+            },
+            string: value || '',
+            font: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').font,
+            foregroundColor: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').textColor
+        });
         this.tvProductPrice.attributedText = [attributeString];
     }
-    get itemReview(): any {
+    get itemReview(): string {
         return this.lblReview.text;
     }
-    set itemReview(value: any) {
+    set itemReview(value: string) {
         if (!!value) {
             this.imgStar.visible = true;
             this.lblReview.visible = true;
@@ -74,38 +93,43 @@ export default class FlProductItem extends FlProductItemDesign {
             this.lblReview.visible = false;
         }
     }
-    get itemDiscountPrice(): any {
+    get itemDiscountPrice(): string {
         return this.tvPriceWithDiscount.text;
     }
-    set itemDiscountPrice(value: any) {
-        let attributeString = new AttributedString();
-        if (!!value) {
-            this.tvPriceWithDiscount.visible = true;
-            attributeString.string = value;
-            attributeString.font = Font.create('Nunito', 18);
-        } else {
-            this.tvPriceWithDiscount.visible = false;
-        }
+    set itemDiscountPrice(value: string) {
+        let attributeString = new AttributedString({
+            string: value || '',
+            font: themeService.getNativeStyle('.product-price').font,
+            foregroundColor: themeService.getNativeStyle('.product-price').textColor
+        });
+        setVisibility(this.tvPriceWithDiscount, !!value);
         this.tvPriceWithDiscount.attributedText = [attributeString];
     }
     get itemTag(): string {
         return this.lblTag.text;
     }
     set itemTag(value: string) {
-        this.flTagWrapper.visible = !!value;
         if (!!value) {
             this.lblTag.text = value;
         }
-
         this.checkIsHidden();
     }
-    get itemImage(): string | Image {
-        return this.imgProduct.image;
-    }
-    set itemImage(value: string | Image) {
-        if (value) {
-            this.imgProduct.image = Image.createFromFile(`images://${value}`);
+    set itemTagColor(value: string) {
+        setVisibility(this.flTagWrapper, !!value);
+        if (!!value) {
+            this.flTagWrapper.backgroundColor = Color.create(value);
         }
+        this.checkIsHidden();
+    }
+    get imageUrl(): string {
+        return this.__imageUrl;
+    }
+    set imageUrl(value: string) {
+        this.__imageUrl = value;
+        this.imgProduct.loadFromUrl({
+            url: this.__imageUrl,
+            useHTTPCacheControl: true
+        });
     }
     get itemDesc(): string {
         return this.lblProductItemDesc.text;
@@ -115,5 +139,16 @@ export default class FlProductItem extends FlProductItemDesign {
     }
     private checkIsHidden() {
         setVisibility(this, !!this.itemTitle);
+    }
+    private calculateMaxWidth(): number {
+        return (
+            this.__itemTitleMaxWidth -
+            (productItemMarginRight +
+                productItemMarginLeft +
+                descriptionWrapperPaddingLeft +
+                descriptionWrapperPaddingRight +
+                lblProductItemTitleWidthMarginLeft +
+                lblProductItemTitleWidthMarginRight)
+        );
     }
 }

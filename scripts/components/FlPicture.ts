@@ -1,5 +1,8 @@
 import Image from '@smartface/native/ui/image';
+import { getProfileImagePlaceholder } from 'constants/style';
 import FlPictureDesign from 'generated/my-components/FlPicture';
+import { getAccessToken } from 'service/token';
+import { isCurrentThemeLight } from 'theme';
 
 export default class FlPicture extends FlPictureDesign {
     pageName?: string | undefined;
@@ -21,14 +24,15 @@ export default class FlPicture extends FlPictureDesign {
     }
     set imageUrl(url: string) {
         this.__imageUrl = url;
+        this.imgPicture.image = undefined;
         this.imgPicture.loadFromUrl({
             url,
-            //headers: defaultHeaders(),
+            headers: { Authorization: `Bearer ${getAccessToken()}` },
             useHTTPCacheControl: true,
-            fade: !this.imgPicture.image,
-            onFailure: () => {
-                //TODO Placeholder?
-            }
+            android: {
+                useMemoryCache: false
+            },
+            placeholder: getProfileImagePlaceholder(isCurrentThemeLight())
         });
     }
 }

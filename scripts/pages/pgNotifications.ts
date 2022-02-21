@@ -1,16 +1,15 @@
 import PgNotificationsDesign from 'generated/pages/pgNotifications';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { getLviRow1LineLarge } from 'lib/listViewItemTypes';
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
+import { themeService } from 'theme';
 
-export default class PgNotifications extends PgNotificationsDesign {
+export default class PgNotifications extends withDismissAndBackButton(PgNotificationsDesign) {
     private data: ReturnType<typeof getLviRow1LineLarge>[];
     private __isBusy = false;
-    constructor() {
-        super();
-        // Overrides super.onShow method
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        // Overrides super.onLoad method
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    constructor(private router?: Router, private route?: Route) {
+        super({});
     }
     initListView() {
         this.lvMain.refreshEnabled = false;
@@ -41,15 +40,16 @@ export default class PgNotifications extends PgNotificationsDesign {
         this.lvMain.itemCount = this.data.length;
         this.lvMain.refreshData();
     }
-}
-
-function onShow(this: PgNotifications, superOnShow: () => void) {
-    superOnShow();
-    this.refreshListView();
-}
-
-function onLoad(this: PgNotifications, superOnLoad: () => void) {
-    superOnLoad();
-    this.headerBar.title = global.lang.notifications;
-    this.initListView();
+    onShow() {
+        super.onShow();
+        this.refreshListView();
+        this.initBackButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        });
+    }
+    onLoad() {
+        super.onLoad();
+        this.headerBar.title = global.lang.notifications;
+        this.initListView();
+    }
 }

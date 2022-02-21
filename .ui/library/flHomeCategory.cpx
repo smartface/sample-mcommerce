@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-flexLayout .flHomeCategory",
+			"className": ".sf-flexLayout .flHomeCategory .borderColor",
 			"hiddenComponent": true,
 			"id": "cf17-9bcb-510e-509a",
 			"props": {
@@ -38,7 +38,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-imageView .flHomeCategory-flHomeCategoryWrapper-imgLeft",
+			"className": ".sf-imageView .flHomeCategory-flHomeCategoryWrapper-imgLeft .radius",
 			"id": "85ae-453f-93e9-0aa7",
 			"props": {
 				"children": [],
@@ -51,8 +51,6 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"borderRadius": 15,
-				"height": 50,
 				"usePageVariable": true
 			}
 		},

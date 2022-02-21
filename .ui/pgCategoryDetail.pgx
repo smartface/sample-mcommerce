@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page #pgCategoryDetail",
+			"className": ".sf-page",
 			"id": "7dd3-eb16-f5e0-3035",
 			"initialized": true,
 			"props": {
@@ -31,7 +31,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar",
+			"className": ".sf-headerBar.main",
 			"id": "319e-211d-a87b-8d37",
 			"props": {
 				"children": [],

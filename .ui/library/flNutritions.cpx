@@ -1,0 +1,82 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flNutritions",
+			"hiddenComponent": true,
+			"id": "cd1f-c598-7981-3343",
+			"props": {
+				"children": [
+					"fa43-5b4e-a484-ce6f",
+					"ff84-f97d-220c-a89d",
+					"bd9e-bebd-ac64-d758"
+				],
+				"name": "flNutritions",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": 10.96,
+				"top": 61.64
+			}
+		},
+		{
+			"className": ".sf-label .flNutritions-lblKeyOfNutritions .review.name",
+			"id": "fa43-5b4e-a484-ce6f",
+			"props": {
+				"children": [],
+				"name": "lblKeyOfNutritions",
+				"parent": "cd1f-c598-7981-3343",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flNutritions-lblValueOfNutritions .review.lblComment",
+			"id": "ff84-f97d-220c-a89d",
+			"props": {
+				"children": [],
+				"name": "lblValueOfNutritions",
+				"parent": "cd1f-c598-7981-3343",
+				"text": "label2",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label2",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .separator.full",
+			"id": "bd9e-bebd-ac64-d758",
+			"props": {
+				"children": [],
+				"name": "separator",
+				"parent": "cd1f-c598-7981-3343",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

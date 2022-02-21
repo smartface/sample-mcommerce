@@ -1,6 +1,6 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import LviAccountDesign from 'generated/my-components/LviAccount';
-const originalHeight = getCombinedStyle('.lviAccount').height;
+const originalHeight = themeService.getStyle('.lviAccount').height;
 
 export default class LviAccount extends LviAccountDesign {
     pageName?: string | undefined;

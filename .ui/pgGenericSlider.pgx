@@ -1,0 +1,64 @@
+{
+	"components": [
+		{
+			"className": ".sf-page",
+			"id": "4233-8edf-a2da-0763",
+			"initialized": false,
+			"props": {
+				"children": [
+					"9316-ccae-83e9-7292",
+					"31b8-c02b-bc62-379b",
+					"4dbc-6d7b-d817-027b"
+				],
+				"name": "pgGenericSlider",
+				"orientation": "PORTRAIT",
+				"parent": null
+			},
+			"type": "Page",
+			"userProps": {},
+			"version": "0.0.1.a"
+		},
+		{
+			"className": ".sf-statusBar",
+			"id": "9316-ccae-83e9-7292",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "statusBar",
+				"parent": "4233-8edf-a2da-0763"
+			},
+			"type": "StatusBar",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-headerBar",
+			"id": "31b8-c02b-bc62-379b",
+			"props": {
+				"children": [],
+				"isRemovable": false,
+				"name": "headerBar",
+				"parent": "4233-8edf-a2da-0763",
+				"title": "pgHomeSlider"
+			},
+			"type": "HeaderBar",
+			"userProps": {
+				"title": "pgHomeSlider"
+			}
+		},
+		{
+			"className": ".sf-imageView #pgHomeSlider-imgSliderItem",
+			"id": "4dbc-6d7b-d817-027b",
+			"props": {
+				"children": [],
+				"name": "imgSliderItem",
+				"parent": "4233-8edf-a2da-0763",
+				"usePageVariable": true
+			},
+			"type": "ImageView",
+			"userProps": {
+				"testId": "5CkMvLsN4",
+				"usePageVariable": true
+			}
+		}
+	]
+}

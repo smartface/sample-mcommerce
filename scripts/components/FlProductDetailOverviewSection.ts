@@ -1,11 +1,12 @@
+import ImageView from '@smartface/native/ui/imageview';
 import FlProductDetailOverviewSectionDesign from 'generated/my-components/FlProductDetailOverviewSection';
+import setVisibility from 'lib/setVisibility';
 
 export default class FlProductDetailOverviewSection extends FlProductDetailOverviewSectionDesign {
-    private __onArrowClick: () => void;
-
     pageName?: string | undefined;
+    private images: Array<ImageView>;
+    private __showRating: boolean;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
     }
@@ -15,11 +16,17 @@ export default class FlProductDetailOverviewSection extends FlProductDetailOverv
     set overviewTitle(value: string) {
         this.lblOverviewTitle.text = value;
     }
-    get onArrowClick(): () => void {
-        return this.__onArrowClick;
+    set star(value: number) {
+        this.flRateWrapper.star = value;
     }
-    set onArrowClick(value: () => void) {
-        this.__onArrowClick = value;
-        this.imgRouteArrow.onTouchEnded = value;
+    set reviewCount(value: string) {
+        this.flRateWrapper.reviewCount = value;
+    }
+    get showRating(): boolean {
+        return this.__showRating;
+    }
+    set showRating(value: boolean) {
+        setVisibility(this.flRateWrapper, value);
+        this.__showRating = value;
     }
 }

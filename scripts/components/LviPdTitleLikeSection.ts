@@ -1,8 +1,8 @@
 import LviPdTitleLikeSectionDesign from 'generated/my-components/LviPdTitleLikeSection';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import Image from '@smartface/native/ui/image';
 import store from 'store';
-const { height } = getCombinedStyle('.lviProductDetailTitleSection');
+const { height } = themeService.getStyle('.lviProductDetailTitleSection');
 export default class LviPdTitleLikeSection extends LviPdTitleLikeSectionDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {

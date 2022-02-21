@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-listViewItem",
+			"className": ".sf-listViewItem .paddingHorizontal",
 			"hiddenComponent": true,
 			"id": "844f-778d-a88e-c085",
 			"props": {
@@ -17,9 +17,8 @@
 			"type": "ListViewItem",
 			"userProps": {
 				"flexProps": {},
-				"height": "160.67",
-				"testId": "jFkvviy6q",
-				"width": "392.67"
+				"left": 1.02,
+				"top": 113.27
 			}
 		},
 		{

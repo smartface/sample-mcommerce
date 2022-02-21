@@ -21,8 +21,7 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a",
-			"degree": 0
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -34,11 +33,10 @@
 				"parent": "9495-c1b8-4521-aab3"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar #pgProductDetail-headerBar",
+			"className": ".sf-headerBar.transparent",
 			"id": "5616-03c8-f54a-9abb",
 			"props": {
 				"children": [],
@@ -47,11 +45,10 @@
 				"parent": "9495-c1b8-4521-aab3"
 			},
 			"type": "HeaderBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
-			"className": ".sf-listView .grow .noMargin .lvMain",
+			"className": ".sf-listView .grow .noMargin",
 			"id": "53ac-d037-7a65-6f24",
 			"props": {
 				"children": [],
@@ -61,13 +58,12 @@
 			},
 			"type": "ListView",
 			"userProps": {
-				"usePageVariable": true,
-				"testId": "VW_GyS6Fo"
-			},
-			"degree": 1
+				"testId": "VW_GyS6Fo",
+				"usePageVariable": true
+			}
 		},
 		{
-			"className": ".sf-flexLayout .paddingHorizontal",
+			"className": ".sf-flexLayout .sticky.relative",
 			"id": "64a5-07e5-9032-fa6c",
 			"props": {
 				"children": [
@@ -77,11 +73,24 @@
 				"parent": "9495-c1b8-4521-aab3"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"height": 70,
-				"testId": "IlwSj9D8p"
+			"userProps": {}
+		},
+		{
+			"className": ".sf-button .sf-button-main",
+			"id": "a22d-2c0d-39f5-f1dd",
+			"props": {
+				"children": [],
+				"name": "btnAddToBasket",
+				"parent": "64a5-07e5-9032-fa6c",
+				"text": "Add to Basket",
+				"usePageVariable": true
 			},
-			"degree": 1
+			"type": "Button",
+			"userProps": {
+				"testId": "sIzwSD6Oc",
+				"text": "Add to Basket",
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-flexLayout .flAlert",
@@ -107,26 +116,7 @@
 				"top": 250,
 				"usePageVariable": true,
 				"visible": false
-			},
-			"degree": 1
-		},
-		{
-			"className": ".sf-button .sf-button-main",
-			"id": "a22d-2c0d-39f5-f1dd",
-			"props": {
-				"children": [],
-				"name": "btnAddToBasket",
-				"parent": "64a5-07e5-9032-fa6c",
-				"text": "Add to Basket",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"testId": "sIzwSD6Oc",
-				"text": "Add to Basket",
-				"usePageVariable": true
-			},
-			"degree": 2
+			}
 		}
 	]
 }

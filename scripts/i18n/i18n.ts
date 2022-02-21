@@ -9,36 +9,36 @@
 global.lang = {};
 
 SMF.i18n = {
-  currentLang: null,
-  defaultLang: 'en',
-  languageKV: {},
-  get: function (key, languageCode) {
-    languageCode = languageCode || this.currentLang;
-    if (typeof this.languageKV[languageCode] === 'undefined') {
-      return '';
-    }
-    return this.languageKV[languageCode][key];
-  },
-  defineLanguage: function (languageCode, obj) {
-    this.languageKV[languageCode] = obj;
-  },
-  switchLanguage: function (languageCode) {
-    if (typeof this.languageKV[languageCode] === 'undefined') {
-      if (typeof this.languageKV[this.defaultLang] === 'undefined') {
-        const languageCodes = Object.keys(this.languageKV);
-        if (languageCodes.length === 0) {
-          return;
+    currentLang: null,
+    defaultLang: 'en',
+    languageKV: {},
+    get: function (key, languageCode) {
+        languageCode = languageCode || this.currentLang;
+        if (typeof this.languageKV[languageCode] === 'undefined') {
+            return '';
         }
-        // In case default options did not work, pick the first one.
-        this.switchLanguage(languageCodes[0]);
-      } else {
-        this.switchLanguage(this.defaultLang);
-      }
-    } else {
-      this.currentLang = languageCode;
-      global.lang = this.languageKV[languageCode];
+        return this.languageKV[languageCode][key];
+    },
+    defineLanguage: function (languageCode, obj) {
+        this.languageKV[languageCode] = obj;
+    },
+    switchLanguage: function (languageCode) {
+        if (typeof this.languageKV[languageCode] === 'undefined') {
+            if (typeof this.languageKV[this.defaultLang] === 'undefined') {
+                const languageCodes = Object.keys(this.languageKV);
+                if (languageCodes.length === 0) {
+                    return;
+                }
+                // In case default options did not work, pick the first one.
+                this.switchLanguage(languageCodes[0]);
+            } else {
+                this.switchLanguage(this.defaultLang);
+            }
+        } else {
+            this.currentLang = languageCode;
+            global.lang = this.languageKV[languageCode];
+        }
     }
-  },
 };
 
 import Data from '@smartface/native/global/data';
@@ -46,5 +46,5 @@ import 'i18n/de';
 import 'i18n/en';
 import 'i18n/fi';
 import 'i18n/tr';
-//Data.getStringVariable('language') ? Data.getStringVariable('language') : 
+//Data.getStringVariable('language') ? Data.getStringVariable('language') :
 SMF.i18n.switchLanguage(Data.getStringVariable('language') ? Data.getStringVariable('language') : Device.language);

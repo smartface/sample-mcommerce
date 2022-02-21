@@ -1,0 +1,107 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flSmartface",
+			"hiddenComponent": true,
+			"id": "f497-3d69-d937-6c61",
+			"props": {
+				"children": [
+					"9fde-3f04-e1f4-58ce",
+					"356d-9c88-d0ae-16f9"
+				],
+				"name": "flSmartface",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": 10,
+				"top": 172.86
+			}
+		},
+		{
+			"className": ".sf-label .flSmartface-lblVersion .review.name",
+			"id": "9fde-3f04-e1f4-58ce",
+			"props": {
+				"children": [],
+				"name": "lblVersion",
+				"parent": "f497-3d69-d937-6c61",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flSmartface-flPoweredBySmartface",
+			"id": "356d-9c88-d0ae-16f9",
+			"props": {
+				"children": [
+					"d14c-bf28-9c20-a3a1",
+					"7942-7514-fc2e-6244"
+				],
+				"name": "flPoweredBySmartface",
+				"parent": "f497-3d69-d937-6c61",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flSmartface-flPoweredBySmartface-lblPoweredBy .review.lblComment",
+			"id": "d14c-bf28-9c20-a3a1",
+			"props": {
+				"children": [],
+				"name": "lblPoweredBy",
+				"parent": "356d-9c88-d0ae-16f9",
+				"text": "Powered by",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "Powered by",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-imageView .flSmartface-flPoweredBySmartface-imgSmartface",
+			"id": "7942-7514-fc2e-6244",
+			"props": {
+				"children": [],
+				"name": "imgSmartface",
+				"parent": "356d-9c88-d0ae-16f9",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"image": "smartface_logo.png",
+				"usePageVariable": true
+			}
+		}
+	]
+}

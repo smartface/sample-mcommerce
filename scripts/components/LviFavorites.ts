@@ -1,13 +1,13 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import Image from '@smartface/native/ui/image';
 import LviFavoritesDesign from 'generated/my-components/LviFavorites';
-const originalHeight = getCombinedStyle('.lviFavorites').height;
+const originalHeight = themeService.getStyle('.lviFavorites').height;
 
 export default class LviFavorites extends LviFavoritesDesign {
     private __onDeleteProduct: (product: any) => void;
     pageName?: string | undefined;
+    private __imageUrl: string;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
     }
@@ -26,11 +26,15 @@ export default class LviFavorites extends LviFavoritesDesign {
     set itemPrice(value: any) {
         this.lblFavoriteItemPrice.text = value;
     }
-    get itemImage(): any {
-        return this.imgFavoriteItem.image;
+    get itemImage(): string {
+        return this.__imageUrl;
     }
-    set itemImage(value: any) {
-        this.imgFavoriteItem.image = Image.createFromFile(`images://${value}`);
+    set itemImage(value: string) {
+        this.__imageUrl = value;
+        this.imgFavoriteItem.loadFromUrl({
+            url: this.__imageUrl,
+            useHTTPCacheControl: true
+        });
     }
     get itemDesc(): string {
         return this.lblFavroiteItemDescription.text;

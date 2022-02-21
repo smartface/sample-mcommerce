@@ -1,136 +1,134 @@
 {
-	".flRow1LineLarge": {
-		"flexProps": {
-			"flexDirection": "ROW",
-			"flexGrow": 1,
-			"justifyContent": "CENTER"
-		},
-		"height": 70,
-		"left": 1,
-		"marginBottom": null,
-		"marginTop": null,
-		"paddingBottom": 12,
-		"paddingLeft": 15,
-		"paddingRight": 15,
-		"paddingTop": 12,
-		"right": 6,
-		"top": 267,
-		"&-flImageWrapper": {
-			"borderRadius": 20,
-			"flexProps": {
-				"alignSelf": "CENTER",
-				"alignItems": "CENTER",
-				"justifyContent": "CENTER",
-				"alignContent": "CENTER"
-			},
-			"height": 0,
-			"marginBottom": null,
-			"marginTop": null,
-			"width": 0,
-			".active": {
-				"height": 40,
-				"width": 40
-			},
-			"&-imgIcon": {
-				"height": 24,
-				"imageFillType": "ASPECTFIT",
-				"width": 24,
-				"tintColor": "${textDark}"
-			}
-		},
-		"&-lblTitle": {
-			"flexProps": {
-				"flexGrow": 2,
-				"alignSelf": "STRETCH"
-			},
-			"font": {
-				"size": 15,
-				"bold": true,
-				"italic": false,
-				"family": "Nunito",
-				"style": "Bold"
-			},
-			"height": null,
-			"marginBottom": null,
-			"marginLeft": 0,
-			"marginTop": null,
-			"textColor": "${textDark}",
-			".active": {
-				"marginLeft": 10
-			}
-		},
-		"&-flSwitch": {
-			"flexProps": {
-				"flexGrow": 1,
-				"alignSelf": "CENTER",
-				"positionType": "ABSOLUTE",
-				"flexDirection": "ROW"
-			},
-			"height": 40,
-			"marginBottom": null,
-			"marginTop": null,
-			"right": 15,
-			"width": 90,
-			"&-flLeft": {
-				"borderWidth": 1,
-				"flexProps": {
-					"justifyContent": "CENTER",
-					"flexGrow": 1
-				},
-				"height": null,
-				"marginBottom": null,
-				"marginTop": null,
-				"width": null,
-				"&-imgDark": {
-					"flexProps": {
-						"alignSelf": "CENTER"
-					},
-					"tintColor": "${main}",
-					"height": 20,
-					"image": "ayarlar_karanlik.png",
-					"imageFillType": "ASPECTFIT",
-					"width": 20
-				},
-				"backgroundColor": "${textDark}",
-				"borderColor": "${green}"
-			},
-			"&-flRight": {
-				"borderWidth": 1,
-				"flexProps": {
-					"justifyContent": "CENTER",
-					"flexGrow": 1
-				},
-				"height": null,
-				"marginBottom": null,
-				"marginTop": null,
-				"width": null,
-				"&-imgLight": {
-					"flexProps": {
-						"alignSelf": "CENTER"
-					},
-					"height": 20,
-					"tintColor": "${main}",
-					"image": "ayarlar_aydinlik.png",
-					"imageFillType": "ASPECTFIT",
-					"width": 20
-				},
-				"backgroundColor": "${backgroundMain}",
-				"borderColor": "${green}"
-			},
-			".borderRadius": {
-				"borderRadius": 8
-			}
-		},
-		"&-sw": {
-			"right": 15,
-			"minWidth": null,
-			"minHeight": null,
-			"marginTop": null,
-			"marginBottom": null,
-			"flexProps": {
-				"alignSelf": "CENTER",
-				"positionType": "ABSOLUTE"
-			}
-		}
-	}
+  ".flRow1LineLarge": {
+    "flexProps": {
+      "flexDirection": "ROW",
+      "flexGrow": 1,
+      "justifyContent": "CENTER"
+    },
+    "height": 70,
+    "left": 1,
+    "marginBottom": null,
+    "marginTop": null,
+    "paddingBottom": 12,
+    "paddingLeft": 15,
+    "paddingRight": 15,
+    "paddingTop": 12,
+    "right": 6,
+    "top": 267,
+    "&-flImageWrapper": {
+      "borderRadius": 20,
+      "flexProps": {
+        "alignSelf": "CENTER",
+        "alignItems": "CENTER",
+        "justifyContent": "CENTER",
+        "alignContent": "CENTER"
+      },
+      "height": 0,
+      "marginBottom": null,
+      "marginTop": null,
+      "width": 0,
+      ".active": {
+        "height": 40,
+        "width": 40
+      },
+      "&-imgIcon": {
+        "height": 24,
+        "imageFillType": "ASPECTFIT",
+        "width": 24,
+        "tintColor": "${textDark}"
+      }
+    },
+    "&-lblTitle": {
+      "flexProps": {
+        "flexGrow": 2,
+        "alignSelf": "STRETCH"
+      },
+      "font": {
+        "size": 15,
+        "bold": true,
+        "italic": false,
+        "family": "Nunito",
+        "style": "Bold"
+      },
+      "height": null,
+      "marginBottom": null,
+      "marginLeft": 0,
+      "marginTop": null,
+      "textColor": "${textDark}",
+      ".active": {
+        "marginLeft": 10
+      }
+    },
+    "&-flSwitch": {
+      "flexProps": {
+        "flexGrow": 1,
+        "alignSelf": "CENTER",
+        "positionType": "ABSOLUTE",
+        "flexDirection": "ROW"
+      },
+      "height": 40,
+      "marginBottom": null,
+      "marginTop": null,
+      "right": 15,
+      "width": 90,
+      "&-flLeft": {
+        "borderWidth": 1,
+        "flexProps": {
+          "justifyContent": "CENTER",
+          "flexGrow": 1
+        },
+        "height": null,
+        "marginBottom": null,
+        "marginTop": null,
+        "width": null,
+        "&-imgDark": {
+          "flexProps": {
+            "alignSelf": "CENTER"
+          },
+          "tintColor": "${deActiveSwitch}",
+          "height": 20,
+          "imageFillType": "ASPECTFIT",
+          "width": 20
+        },
+        "backgroundColor": "${themeDarkSwitch}",
+        "borderColor": "${textLight}"
+      },
+      "&-flRight": {
+        "borderWidth": 1,
+        "flexProps": {
+          "justifyContent": "CENTER",
+          "flexGrow": 1
+        },
+        "height": null,
+        "marginBottom": null,
+        "marginTop": null,
+        "width": null,
+        "&-imgLight": {
+          "flexProps": {
+            "alignSelf": "CENTER"
+          },
+          "height": 20,
+          "tintColor": "${activeSwitch}",
+          "imageFillType": "ASPECTFIT",
+          "width": 20
+        },
+        "backgroundColor": "${themeLightSwitch}",
+        "borderColor": "${textLight}"
+      },
+      ".borderRadius": {
+        "borderRadius": 8
+      }
+    },
+    "&-sw": {
+      "right": 15,
+      "minWidth": null,
+      "minHeight": null,
+      "marginTop": null,
+      "marginBottom": null,
+      "flexProps": {
+        "alignSelf": "CENTER",
+        "positionType": "ABSOLUTE"
+      }
+    }
+  }
 }

@@ -129,6 +129,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "ayarlar_karanlik.png",
 				"usePageVariable": true
 			}
 		},
@@ -165,11 +166,12 @@
 			},
 			"type": "ImageView",
 			"userProps": {
+				"image": "ayarlar_aydinlik.png",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-flexLayout .seperator",
+			"className": ".sf-flexLayout .separator",
 			"hiddenComponent": false,
 			"id": "93aa-a396-0a44-b14f",
 			"props": {

@@ -1,6 +1,6 @@
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
+import { themeService } from 'theme';
 import LviRow1LineLargeDesign from 'generated/my-components/LviRow1LineLarge';
-const { height } = getCombinedStyle('.lviRow1LineLarge');
+const { height } = themeService.getStyle('.lviRow1LineLarge');
 export default class LviRow1LineLarge extends LviRow1LineLargeDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {

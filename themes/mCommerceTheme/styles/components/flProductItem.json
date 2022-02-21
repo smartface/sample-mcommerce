@@ -1,218 +1,224 @@
 {
-	".flProductItem": {
-		"paddingTop": 10,
-		"marginRight": 15,
-		"&-flProductItemWrapper": {
-			"paddingLeft": 10,
-			"paddingRight": 10,
-			"borderRadius": 25,
-			"borderColor": "#E2E2E2",
-			"borderWidth": 1,
-			"backgroundColor": "${transparent}",
-			"flexProps": {
-				"flexDirection": "COLUMN",
-				"justifyContent": "CENTER",
-				"alignItems": "CENTER",
-				"flexGrow": 1
-			},
-			"&-productImage": {
-				"height": 62,
-				"width": 100,
-				"imageFillType": "ASPECTFIT"
-			},
-			"&-descriptionWrapper": {
-				"height": 80,
-				"paddingTop": 5,
-				"paddingBottom": 5,
-				"paddingLeft": 5,
-				"paddingRight": 5,
-				"flexProps": {
-					"alignSelf": "STRETCH",
-					"flexDirection": "COLUMN",
-					"justifyContent": "FLEX_START",
-					"alignItems": "STRETCH"
-				},
-				"&-lblProductTitle": {
-					"height": 20,
-					"backgroundColor": "${backgroundMain}",
-					"textColor": "${textDark}",
-					"font": {
-						"size": 16,
-						"family": "Nunito",
-						"style": "Bold"
-					}
-				},
-				"&-lblProductDimension": {
-					"width": null,
-					"textColor": "${textLight}",
-					"font": {
-						"size": 14,
-						"family": "Nunito",
-						"style": "Regular"
-					},
-					"flexProps": {
-						"flexGrow": 3
-					},
-					"maxHeight": 50
-				},
-				"&-flReviewWrapper": {
-					"flexProps": {
-						"alignItems": "FLEX_END",
-						"flexDirection": "ROW",
-						"justifyContent": "FLEX_END",
-						"alignContent": "FLEX_END",
-						"flexGrow": 2
-					},
-					"height": 25,
-					"testId": "ge-Pb4M8C",
-					"&-imgStar": {
-						"height": 25,
-						"image": "star.png",
-						"testId": "LiH9AIXVX",
-						"width": 25
-					},
-					"&-lblReview": {
-						"flexProps": {
-							"flexGrow": 1
-						},
-						"font": {
-							"size": 14,
-							"bold": false,
-							"italic": false,
-							"family": "Nunito",
-							"style": "Medium"
-						},
-						"backgroundColor": "${backgroundMain}",
-						"height": 25,
-						"testId": "xvO2dsQHZ",
-						"textAlignment": "MIDLEFT",
-						"textColor": "${textDark}",
-						"width": null
-					},
-					"paddingRight": 5
-				},
-				"&-flProductDescAndReviewWrapper": {
-					"flexProps": {
-						"flexDirection": "ROW",
-						"alignItems": "CENTER",
-						"justifyContent": "SPACE_BETWEEN",
-						"flexGrow": 1
-					},
-					"height": 40,
-					"testId": "d92hrNH4Y",
-					"maxWidth": 500
-				}
-			},
-			"&-priceButtonWrapper": {
-				"height": 60,
-				"paddingTop": 5,
-				"paddingBottom": 5,
-				"paddingLeft": 5,
-				"paddingRight": 5,
-				"flexProps": {
-					"alignSelf": "STRETCH",
-					"flexDirection": "ROW",
-					"justifyContent": "SPACE_BETWEEN",
-					"alignItems": "STRETCH"
-				},
-				"&-flProductItemPrice": {
-					"flexProps": {
-						"flexGrow": 1
-					},
-					"height": 50,
-					"testId": "xrz-EzbFP",
-					"&-tvPriceWithDiscount": {
-						"flexProps": {},
-						"font": {
-							"size": 19,
-							"bold": true,
-							"italic": false,
-							"family": "Nunito",
-							"style": "Bold"
-						},
-						"testId": "Cw4YoZ5Bi",
-						"height": null,
-						"backgroundColor": "${backgroundMain}",
-						"textColor": "${textDark}",
-						"minHeight": 25
-					}
-				},
-				"&-tvProductPrice": {
-					"testId": "tvOK1ghZM",
-					"height": 25,
-					"textColor": "${textDark}",
-					"backgroundColor": "${backgroundMain}",
-					"font": {
-						"size": 18,
-						"family": "Nunito",
-						"style": "Bold"
-					},
-					"flexProps": {}
-				}
-			},
-			"&-flTagWrapper": {
-				"paddingLeft": 10,
-				"paddingRight": 10,
-				"width": 120,
-				"backgroundColor": "${tagPurple}",
-				"testId": "_9ziXcn4H",
-				"height": 30,
-				"top": 0,
-				"right": 5,
-				"borderRadius": 10,
-				"flexProps": {
-					"positionType": "ABSOLUTE",
-					"justifyContent": "CENTER"
-				},
-				"&-lblTag": {
-					"ellipsizeMode": "MIDDLE",
-					"flexProps": {},
-					"font": {
-						"size": 10,
-						"bold": true,
-						"italic": false,
-						"family": "Nunito",
-						"style": "Medium"
-					},
-					"marginBottom": null,
-					"marginTop": null,
-					"textAlignment": "MIDCENTER",
-					"textColor": "${white}",
-					"paddingRight": 10,
-					"paddingLeft": 10
-				}
-			},
-			"&-flProductItemPriceButtonWrapper": {
-				"&-aiAddToCart": {
-					"height": 35,
-					"right": 10,
-					"testId": "QDcEE6yvp",
-					"width": 35,
-					"flexProps": {
-						"positionType": "ABSOLUTE",
-						"alignSelf": "CENTER"
-					},
-					"color": "rgba(255,255,255,1)",
-					"ios": {
-						"activityIndicatorViewStyle": "NORMAL"
-					},
-					"visible": false,
-					"backgroundColor": "${green}",
-					"android": {
-						"elevation": 0
-					},
-					"marginTop": null,
-					"marginBottom": null,
-					"borderColor": "rgba( 255, 255, 255, 0 )",
-					"borderWidth": null,
-					"borderRadius": 17
-				}
-			}
-		},
-		"height": 270,
-		"width": null,
-		"flexProps": {
-			"flexGrow": 1
-		}
-	}
+  ".flProductItem": {
+    "marginRight": 10,
+    "&-flProductItemWrapper": {
+      "paddingLeft": 10,
+      "paddingRight": 10,
+      "borderRadius": 25,
+      "borderColor": "${grayBorder}",
+      "borderWidth": 1,
+      "backgroundColor": "${transparent}",
+      "flexProps": {
+        "flexDirection": "COLUMN",
+        "justifyContent": "CENTER",
+        "alignItems": "CENTER",
+        "flexGrow": 1
+      },
+      "&-productImage": {
+        "height": 100,
+        "width": 100,
+        "imageFillType": "ASPECTFIT"
+      },
+      "&-descriptionWrapper": {
+        "height": 80,
+        "paddingTop": 5,
+        "paddingBottom": 5,
+        "paddingLeft": 5,
+        "paddingRight": 5,
+        "flexProps": {
+          "alignSelf": "STRETCH",
+          "flexDirection": "COLUMN",
+          "justifyContent": "FLEX_START",
+          "alignItems": "STRETCH"
+        },
+        "&-lblProductTitle": {
+          "backgroundColor": "${backgroundMain}",
+          "textColor": "${textDark}",
+          "font": {
+            "size": 16,
+            "family": "Nunito",
+            "style": "Bold"
+          },
+          "flexProps": {
+            "flexGrow": 1
+          },
+          "maxLines": 2,
+          "height": 20
+        },
+        "&-lblProductDimension": {
+          "textColor": "${textLight}",
+          "font": {
+            "size": 14,
+            "family": "Nunito",
+            "style": "Regular"
+          },
+          "flexProps": {},
+          "height": 20
+        },
+        "&-flReviewWrapper": {
+          "flexProps": {
+            "alignItems": "FLEX_END",
+            "flexDirection": "ROW",
+            "justifyContent": "FLEX_END",
+            "alignContent": "FLEX_END",
+            "positionType": "ABSOLUTE"
+          },
+          "height": 25,
+          "testId": "ge-Pb4M8C",
+          "&-imgStar": {
+            "height": 25,
+            "testId": "LiH9AIXVX",
+            "width": 15,
+            "paddingRight": 2
+          },
+          "&-lblReview": {
+            "flexProps": {
+              "flexGrow": null
+            },
+            "font": {
+              "size": 14,
+              "bold": false,
+              "italic": false,
+              "family": "Nunito",
+              "style": "Medium"
+            },
+            "backgroundColor": "${backgroundMain}",
+            "height": 25,
+            "testId": "xvO2dsQHZ",
+            "textAlignment": "MIDLEFT",
+            "textColor": "${textDark}",
+            "width": 25
+          },
+          "bottom": 0,
+          "top": 0,
+          "right": 0,
+          "width": 40
+        },
+        "&-flProductDescAndReviewWrapper": {
+          "flexProps": {
+            "flexDirection": "COLUMN",
+            "alignItems": "STRETCH",
+            "justifyContent": "SPACE_BETWEEN"
+          },
+          "height": 25,
+          "testId": "d92hrNH4Y"
+        }
+      },
+      "&-priceButtonWrapper": {
+        "height": 60,
+        "paddingTop": 5,
+        "paddingBottom": 5,
+        "paddingLeft": 5,
+        "flexProps": {
+          "alignSelf": "STRETCH",
+          "flexDirection": "ROW",
+          "justifyContent": "SPACE_BETWEEN",
+          "alignItems": "STRETCH"
+        },
+        "&-flProductItemPrice": {
+          "flexProps": {
+            "flexGrow": 1
+          },
+          "height": 50,
+          "testId": "xrz-EzbFP",
+          "&-tvPriceWithDiscount": {
+            "flexProps": {},
+            "font": {
+              "size": 19,
+              "bold": true,
+              "italic": false,
+              "family": "Nunito",
+              "style": "Bold"
+            },
+            "testId": "Cw4YoZ5Bi",
+            "height": null,
+            "backgroundColor": "${backgroundMain}",
+            "textColor": "${textDark}",
+            "minHeight": 25
+          }
+        },
+        "&-tvProductPrice": {
+          "testId": "tvOK1ghZM",
+          "height": 25,
+          "textColor": "${textDark}",
+          "backgroundColor": "${backgroundMain}",
+          "font": {
+            "size": 18,
+            "family": "Nunito",
+            "style": "Bold"
+          },
+          "flexProps": {}
+        }
+      },
+      "&-flTagWrapper": {
+        "paddingLeft": 5,
+        "paddingRight": 5,
+        "width": 75,
+        "backgroundColor": "${tagPurple}",
+        "testId": "_9ziXcn4H",
+        "height": 25,
+        "top": 0,
+        "right": 5,
+        "borderRadius": 10,
+        "flexProps": {
+          "positionType": "ABSOLUTE",
+          "justifyContent": "CENTER"
+        },
+        "&-lblTag": {
+          "ellipsizeMode": "MIDDLE",
+          "flexProps": {},
+          "font": {
+            "size": 10,
+            "bold": true,
+            "italic": false,
+            "family": "Nunito",
+            "style": "Medium"
+          },
+          "marginBottom": null,
+          "marginTop": null,
+          "textAlignment": "MIDCENTER",
+          "textColor": "${white}",
+          "paddingRight": 5,
+          "paddingLeft": 5
+        }
+      },
+      "&-flProductItemPriceButtonWrapper": {
+        "&-aiAddToCart": {
+          "height": 35,
+          "right": 5,
+          "testId": "QDcEE6yvp",
+          "width": 30,
+          "flexProps": {
+            "positionType": "ABSOLUTE",
+            "alignSelf": "CENTER"
+          },
+          "color": "${white}",
+          "ios": {
+            "activityIndicatorViewStyle": "NORMAL"
+          },
+          "visible": false,
+          "backgroundColor": "${green}",
+          "android": {
+            "elevation": 0
+          },
+          "marginTop": null,
+          "marginBottom": null,
+          "borderColor": "${productItemPriceBorder}",
+          "borderWidth": null,
+          "borderRadius": 17,
+          "top": 8
+        }
+      },
+      "paddingTop": 5,
+      "paddingBottom": 2
+    },
+    "height": 260,
+    "width": null,
+    "flexProps": {
+      "flexGrow": 1
+    },
+    "marginLeft": 10,
+    "marginBottom": 10,
+    "marginTop": 5
+  }
 }

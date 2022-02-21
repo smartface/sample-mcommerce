@@ -2,86 +2,157 @@ import PgSignUpDesign from 'generated/pages/pgSignUp';
 import Color from '@smartface/native/ui/color';
 import View from '@smartface/native/ui/view';
 import Application from '@smartface/native/application';
-import store from 'store/index';
 import System from '@smartface/native/device/system';
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
+import Button from '@smartface/native/ui/button';
+import { themeService } from 'theme';
+import { register } from 'service/commerce';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD, MINIMUM_CHARACTERS_REQUIRED } from 'constants';
+import AttributedString from '@smartface/native/ui/attributedstring';
 
-export default class PgSignUp extends PgSignUpDesign {
-  router: any;
-  constructor() {
-    super();
-    // Overrides super.onShow method
-    this.onShow = onShow.bind(this, this.onShow.bind(this));
-    // Overrides super.onLoad method
-    this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
+    isMailValid = false;
+    isPasswordValid = false;
+    namesValid = false;
+    constructor(private router?: Router, private route?: Route) {
+        super({});
+        this.lblRouteLogin.on(View.Events.TouchEnded, () => {
+            this.router.push('pgLogin');
+        });
+        this.btnSignUp.on(Button.Events.Press, () => {
+            this.initUserSignup();
+        });
+        this.lblTitle.text = global.lang.signup;
+        this.lblText.text = global.lang.signupSubText;
+        this.btnSignUp.text = global.lang.signup;
+        this.lblFooterLeft.text = global.lang.alreadyhaveanaccount;
+        this.lblRouteLogin.text = global.lang.login;
+    }
+    initAttributedStrings() {
+        let termsLeft = new AttributedString({
+            string: global.lang.termsLeft,
+            font: themeService.getNativeStyle('.signup.termsLeft').font,
+            foregroundColor: themeService.getNativeStyle('.signup.termsLeft').textColor
+        });
+        let termsRight = new AttributedString({
+            string: global.lang.termsRight,
+            font: themeService.getNativeStyle('.signup.termsPrivacyRight').font,
+            foregroundColor: themeService.getNativeStyle('.signup.termsPrivacyRight').textColor
+        });
+        let privacyLeft = new AttributedString({
+            string: global.lang.privacyLeft,
+            font: themeService.getNativeStyle('.signup.privacyLeft').font,
+            foregroundColor: themeService.getNativeStyle('.signup.privacyLeft').textColor
+        });
+        let privacyRight = new AttributedString({
+            string: global.lang.privacyRight,
+            font: themeService.getNativeStyle('.signup.termsPrivacyRight').font,
+            foregroundColor: themeService.getNativeStyle('.signup.termsPrivacyRight').textColor
+        });
+        this.tvTermsAndPrivacy.attributedText = [termsLeft, termsRight, privacyLeft, privacyRight];
+    }
+    initMaterialTextBoxes() {
+        this.mtbFirstName.options = {
+            hint: global.lang.firstName
+        };
+        this.mtbLastName.options = {
+            hint: global.lang.lastName
+        };
+        this.mtbEmail.options = {
+            hint: global.lang.email
+        };
+        this.mtbPassword.options = {
+            hint: global.lang.password
+        };
+        this.mtbPassword.materialTextBox.isPassword = true;
+    }
+    async initUserSignup() {
+        if (this.initValidate()) {
+            try {
+                showWaitDialog();
+                const registerResponse = await register({
+                    firstName: this.mtbFirstName.materialTextBox.text.trim(),
+                    lastName: this.mtbLastName.materialTextBox.text.trim(),
+                    email: this.mtbEmail.materialTextBox.text.trim(),
+                    password: this.mtbPassword.materialTextBox.text.trim()
+                });
+                if (registerResponse && registerResponse.success) {
+                    this.router.push('pgLogin');
+                }
+            } catch (error) {
+                alert({
+                    title: global.lang.warning,
+                    message: global.lang.alreadyExist
+                });
+            } finally {
+                hideWaitDialog();
+            }
+        }
+    }
+    initValidate() {
+        let firstNameExist = !!this.mtbFirstName.materialTextBox.text.replace(/\s+/g, '').trim();
+        let lastNameExist = !!this.mtbLastName.materialTextBox.text.replace(/\s+/g, '').trim();
+        let mailExist = !!this.mtbEmail.materialTextBox.text.replace(/\s+/g, '').trim();
+        let passwordExists = !!this.mtbPassword.materialTextBox.text.replace(/\s+/g, '').trim();
 
-    this.lblRouteLogin.on(View.Events.Touch, () => {
-      this.router.goBack();
-    });
-    this.btnSignUp.on(View.Events.Touch, () => {
-      this.initUserSignup();
-    });
-    this.lblTitle.text = global.lang.signup;
-    this.lblText.text = global.lang.signupSubText;
-    this.btnSignUp.text = global.lang.signup;
-    this.lblFooterLeft.text = global.lang.alreadyhaveanaccount;
-    this.lblRouteLogin.text = global.lang.login;
-  }
-  initMaterialTextBoxes() {
-    this.mtbUsername.options = {
-      hint: global.lang.username,
-    };
-    this.mtbEmail.options = {
-      hint: global.lang.email,
-    };
-    this.mtbPassword.options = {
-      hint: global.lang.password,
-    };
-    this.mtbPassword.materialTextBox.isPassword = true;
-  }
-  initUserSignup() {
-    let userPayload = {
-      fullName: null,
-      username: null,
-      password: null,
-      email: null,
-      profileImage: 'userprofilephoto.png',
-    };
-    userPayload.email = this.mtbEmail.materialTextBox.text.trim();
-    userPayload.username = this.mtbUsername.materialTextBox.text.trim();
-    userPayload.fullName = this.mtbUsername.materialTextBox.text.trim();
-    userPayload.password = this.mtbPassword.materialTextBox.text.trim();
+        if (
+            firstNameExist &&
+            lastNameExist &&
+            this.mtbFirstName.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED &&
+            this.mtbLastName.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED
+        ) {
+            this.namesValid = true;
+            this.mtbFirstName.materialTextBox.errorMessage = '';
+            this.mtbLastName.materialTextBox.errorMessage = '';
+        } else {
+            this.namesValid = false;
+            this.mtbFirstName.materialTextBox.errorMessage = global.lang.invalidName.replace('$1', MINIMUM_CHARACTERS_REQUIRED);
+            this.mtbLastName.materialTextBox.errorMessage = global.lang.invalidName.replace('$1', MINIMUM_CHARACTERS_REQUIRED);
+        }
 
-    store.dispatch({
-      type: 'SET_NEW_USER',
-      payload: {
-        data: userPayload,
-      },
-    });
-    this.router.push('/pages/pgLogin');
-  }
-}
+        if (mailExist && this.checkIsEmailValid(this.mtbEmail.materialTextBox.text)) {
+            this.isMailValid = true;
+            this.mtbEmail.materialTextBox.errorMessage = '';
+        } else {
+            this.isMailValid = false;
+            this.mtbEmail.materialTextBox.errorMessage = global.lang.invalidEmail;
+        }
 
-/**
- * @event onShow
- * This event is called when a page appears on the screen (everytime).
- * @param {function} superOnShow super onShow function
- * @param {Object} parameters passed from Router.go function
- */
-function onShow(this: PgSignUp, superOnShow: () => void) {
-  superOnShow();
-  if (System.OS !== 'iOS') {
-    Application.statusBar.visible = true;
-    Application.statusBar.backgroundColor = Color.WHITE;
-  }
-}
-
-/**
- * @event onLoad
- * This event is called once when page is created.
- * @param {function} superOnLoad super onLoad function
- */
-function onLoad(this: PgSignUp, superOnLoad: () => void) {
-  superOnLoad();
-  this.headerBar.title = global.lang.signUpHeader;
-  this.initMaterialTextBoxes();
+        if (passwordExists && this.mtbPassword.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD) {
+            this.isPasswordValid = true;
+            this.mtbPassword.materialTextBox.errorMessage = '';
+        } else {
+            this.isPasswordValid = false;
+            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword.replace(
+                '$1',
+                MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD
+            );
+        }
+        if (this.isMailValid && this.isPasswordValid) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    checkIsEmailValid(email: string) {
+        return EMAIL_REGEXP.test(email);
+    }
+    onShow() {
+        super.onShow();
+        if (System.OS !== 'iOS') {
+            Application.statusBar.visible = true;
+            Application.statusBar.backgroundColor = Color.WHITE;
+        }
+        this.initBackButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        });
+    }
+    onLoad() {
+        super.onLoad();
+        this.headerBar.title = global.lang.signUpHeader;
+        this.initMaterialTextBoxes();
+        this.initAttributedStrings();
+    }
 }

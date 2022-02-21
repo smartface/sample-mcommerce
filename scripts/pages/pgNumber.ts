@@ -1,21 +1,17 @@
 import PgNumberDesign from 'generated/pages/pgNumber';
-import View from '@smartface/native/ui/view';
 import KeyboardType from '@smartface/native/ui/keyboardtype';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
-import { NativeStackRouter } from '@smartface/router';
-import { getCombinedStyle } from '@smartface/extension-utils/lib/getCombinedStyle';
-import Image from '@smartface/native/ui/image';
-const { image } = getCombinedStyle('.sf-headerBar.close');
+import { themeService } from 'theme';
+import { Route, BaseRouter as Router } from '@smartface/router';
+import { withDismissAndBackButton } from '@smartface/mixins';
+import Button from '@smartface/native/ui/button';
 
-export default class PgNumber extends PgNumberDesign {
-    router: NativeStackRouter;
+export default class PgNumber extends withDismissAndBackButton(PgNumberDesign) {
     leftItem: HeaderBarItem;
-    constructor() {
-        super();
-        this.onShow = onShow.bind(this, this.onShow.bind(this));
-        this.onLoad = onLoad.bind(this, this.onLoad.bind(this));
+    constructor(private router?: Router, private route?: Route) {
+        super({});
 
-        this.btnRoute.on(View.Events.Touch, () => {
+        this.btnRoute.on(Button.Events.Press, () => {
             this.router.push('pgVerification');
         });
         this.lblTitle.text = global.lang.enterMobilNumberText;
@@ -27,23 +23,14 @@ export default class PgNumber extends PgNumberDesign {
         };
         this.mtbNumber.materialTextBox.keyboardType = KeyboardType.NUMBER;
     }
-    addHeaderWithDirectImage() {
-        this.leftItem = new HeaderBarItem({
-            image: Image.createFromFile(image),
-            onPress: () => {
-                this.router.goBack();
-            }
+    onShow() {
+        super.onShow();
+        this.initBackButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
-        this.headerBar.setLeftItem(this.leftItem);
     }
-}
-
-function onShow(this: PgNumber, superOnShow: () => void) {
-    superOnShow();
-    this.addHeaderWithDirectImage();
-}
-
-function onLoad(this: PgNumber, superOnLoad: () => void) {
-    superOnLoad();
-    this.initMaterialTextBox();
+    onLoad() {
+        super.onLoad();
+        this.initMaterialTextBox();
+    }
 }

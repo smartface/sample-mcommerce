@@ -1,94 +1,92 @@
 {
-	".sf-textBox": {
-		"masksToBounds": true,
-		"height": 54,
-		"width": null,
-		"borderColor": "#E2E2E2",
-		"borderWidth": 1,
-		"borderRadius": 4,
-		"textColor": "#000000",
-		"textAlignment": "MIDLEFT",
-		"marginTop": 1,
-		"marginBottom": 1,
-		"font": {
-			"size": 16,
-			"bold": false,
-			"italic": false,
-			"family": "Nunito",
-			"style": "Regular"
-		},
-		"flexProps": {
-			"alignSelf": "AUTO",
-			"positionType": "RELATIVE"
-		},
-		"&-small": {
-			"width": 100
-		},
-		"&-medium": {
-			"width": 250
-		},
-		"&-large": {
-			"width": 350
-		}
-	},
-	".textBox": {
-		"masksToBounds": true,
-		"height": 54,
-		"width": null,
-		"borderColor": "#00a1f1",
-		"textColor": "#000000",
-		"textAlignment": "MIDLEFT",
-		"font": {
-			"size": 16,
-			"bold": false,
-			"italic": false,
-			"family": "SFProText",
-			"style": "Regular"
-		},
-		"flexProps": {
-			"alignSelf": "AUTO",
-			"positionType": "RELATIVE"
-		},
-		"&-small": {
-			"width": 100
-		},
-		"&-medium": {
-			"width": 250
-		},
-		"&-large": {
-			"width": 350
-		}
-	},
-	".default_textBox": {
-		"masksToBounds": true
-	},
-	".sf": {
-		"&-headerBar": {
-			"backgroundColor": "rgba( 74, 162, 226, 1 )",
-			"titleColor": "rgba( 0, 0, 0, 1 )",
-			"visible": false
-		},
-		"&-statusBar": {
-			"style": "DEFAULT",
-			"android": {
-				"color": "rgba( 255, 255, 255, 1 )"
-			}
-		},
-		"&-button": {
-			"&-addToBasket": {
-				"&-countplus": {},
-				"&-countminus": {
-					"borderWidth": 0
-				}
-			}
-		},
-		"&-listViewItem": {
-			"&-simple": {
-				"&-line": {
-					"left": 16,
-					"right": 16
-				}
-			}
-		}
-	}
+  ".sf-textBox": {
+    "masksToBounds": true,
+    "height": 54,
+    "width": null,
+    "borderColor": "#E2E2E2",
+    "borderWidth": 1,
+    "borderRadius": 4,
+    "textColor": "#000000",
+    "textAlignment": "MIDLEFT",
+    "font": {
+      "size": 16,
+      "bold": false,
+      "italic": false,
+      "family": "Nunito",
+      "style": "Regular"
+    },
+    "flexProps": {
+      "alignSelf": "AUTO",
+      "positionType": "RELATIVE"
+    },
+    "&-small": {
+      "width": 100
+    },
+    "&-medium": {
+      "width": 250
+    },
+    "&-large": {
+      "width": 350
+    }
+  },
+  ".textBox": {
+    "masksToBounds": true,
+    "height": 54,
+    "width": null,
+    "borderColor": "#00a1f1",
+    "textColor": "#000000",
+    "textAlignment": "MIDLEFT",
+    "font": {
+      "size": 16,
+      "bold": false,
+      "italic": false,
+      "family": "SFProText",
+      "style": "Regular"
+    },
+    "flexProps": {
+      "alignSelf": "AUTO",
+      "positionType": "RELATIVE"
+    },
+    "&-small": {
+      "width": 100
+    },
+    "&-medium": {
+      "width": 250
+    },
+    "&-large": {
+      "width": 350
+    }
+  },
+  ".default_textBox": {
+    "masksToBounds": true
+  },
+  ".sf": {
+    "&-headerBar": {
+      "backgroundColor": "rgba( 74, 162, 226, 1 )",
+      "titleColor": "rgba( 0, 0, 0, 1 )",
+      "visible": false
+    },
+    "&-statusBar": {
+      "style": "DEFAULT",
+      "android": {
+        "color": "rgba( 255, 255, 255, 1 )"
+      }
+    },
+    "&-button": {
+      "&-addToBasket": {
+        "&-countplus": {},
+        "&-countminus": {
+          "borderWidth": 0
+        }
+      }
+    },
+    "&-listViewItem": {
+      "&-simple": {
+        "&-line": {
+          "left": 16,
+          "right": 16
+        }
+      }
+    }
+  }
 }
