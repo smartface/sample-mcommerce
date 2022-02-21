@@ -20,8 +20,8 @@ export default class LviPdOverviewSection extends LviPdOverviewSectionDesign {
     set star(value: number) {
         this.flProductDetailOverviewSection.star = value;
     }
-    set countOfReviews(value: string) {
-        this.flProductDetailOverviewSection.countOfReviews = value;
+    set reviewCount(value: string) {
+        this.flProductDetailOverviewSection.reviewCount = value;
     }
     get showRating(): boolean {
         return this.flProductDetailOverviewSection.showRating;

@@ -30,7 +30,7 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
     }
     initMaterialTextBox() {
         this.flRateProduct.mtbComment.options = {
-            hint: global.lang.mtbComment,
+            hint: global.lang.comment,
             multiline: true
         };
         this.flRateProduct.mtbComment.materialTextBox.onTextChanged = () => {

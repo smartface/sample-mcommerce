@@ -49,7 +49,7 @@
 			}
 		},
 		{
-			"className": ".sf-textView .grow .pgProductDescription-tvDescription .review.lblComment",
+			"className": ".sf-textView .grow .pgProductDescription-tvDescription .review.lblComment .paddingHorizontal .paddingVertical",
 			"id": "d8cc-236b-8fc8-89a8",
 			"props": {
 				"children": [],

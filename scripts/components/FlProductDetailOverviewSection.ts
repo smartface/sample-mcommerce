@@ -19,7 +19,7 @@ export default class FlProductDetailOverviewSection extends FlProductDetailOverv
     set star(value: number) {
         this.flRateWrapper.star = value;
     }
-    set countOfReviews(value: string) {
+    set reviewCount(value: string) {
         this.flRateWrapper.reviewCount = value;
     }
     get showRating(): boolean {

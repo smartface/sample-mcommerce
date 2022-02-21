@@ -1,10 +1,7 @@
 {
 	".pgProductDescription": {
 		"&-tvDescription": {
-			"textAlignment": "TOPLEFT",
-			"paddingLeft": 15,
-			"paddingRight": 15,
-			"paddingTop": 15
+			"textAlignment": "TOPLEFT"
 		}
 	}
 }

@@ -135,7 +135,7 @@ SMF.i18n.defineLanguage('en', {
     addReviewHeader: 'Add Review',
     addToCart: 'Add to Cart',
     rateProduct: 'Rate product',
-    mtbComment: 'Comment',
+    comment: 'Comment',
     alreadySendReview: 'You already rated this product.',
     reviewsServiceError: 'An error occurred on reviews service.',
     reviewSent: 'Your review has been sent succesfully.',

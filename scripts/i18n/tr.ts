@@ -133,7 +133,7 @@ SMF.i18n.defineLanguage('tr', {
     addReviewHeader: 'Yorum Yap',
     addToCart: 'Sepete Eklendi',
     rateProduct: 'Ürünü değerlendirin',
-    mtbComment: 'Yorum yaz',
+    comment: 'Yorum yaz',
     alreadySendReview: 'Bu ürünü zaten değerlendirdin.',
     reviewsServiceError: 'Değerlendirmeler servisinde bir hata oluştu.',
     reviewSent: 'Değerlendirmeniz başarıyla gönderildi.',
