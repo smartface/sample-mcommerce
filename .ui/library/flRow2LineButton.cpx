@@ -16,11 +16,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 12,
-				"top": 70.67
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flRow2LineButton-imgLeft",
@@ -58,7 +54,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-button .sf-button-main",
+			"className": ".sf-button .sf-button-main .flRow2LineButton-flButtons-btnMain",
 			"id": "d70a-1ba6-547c-eff2",
 			"props": {
 				"children": [],
@@ -77,14 +73,15 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flRow2LineButton-flButtons-flOtherButtons",
+			"className": ".sf-flexLayout .flRow2LineButton-flButtons-flOtherActions",
 			"id": "05b1-21e2-b480-12b9",
 			"props": {
 				"children": [
-					"3555-1810-4996-c1dc",
-					"05de-8a53-16ec-c8e5"
+					"fe75-a692-2900-e016",
+					"eb36-e0bc-2f0b-8221",
+					"0d58-4627-96d7-2310"
 				],
-				"name": "flOtherButtons",
+				"name": "flOtherActions",
 				"parent": "20e3-2b6c-c9a1-20e4"
 			},
 			"source": {
@@ -94,40 +91,57 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-button .grow .flRow2LineButton-flButtons-secondary .flRow2LineButton-flButtons-flOtherButtons-btnBottomLeft",
-			"id": "3555-1810-4996-c1dc",
+			"className": ".sf-label .grow-relative .textCenter .review.lblComment",
+			"id": "fe75-a692-2900-e016",
 			"props": {
 				"children": [],
-				"name": "btnBottomLeft",
+				"name": "lblLeft",
 				"parent": "05b1-21e2-b480-12b9",
-				"text": "button1",
+				"text": "label1",
 				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
 			},
-			"type": "Button",
+			"type": "Label",
 			"userProps": {
-				"text": "button1",
+				"text": "label1",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-button .grow .flRow2LineButton-flButtons-secondary .flRow2LineButton-flButtons-flOtherButtons-btnBottomRight",
-			"id": "05de-8a53-16ec-c8e5",
+			"className": ".sf-flexLayout .flRow2LineButton-flButtons-flOtherActions-verticalSeparator",
+			"id": "eb36-e0bc-2f0b-8221",
 			"props": {
 				"children": [],
-				"name": "btnBottomRight",
+				"name": "verticalSeparator",
 				"parent": "05b1-21e2-b480-12b9",
-				"text": "button1",
 				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
 			},
-			"type": "Button",
+			"type": "FlexLayout",
 			"userProps": {
-				"text": "button1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .grow-relative .textCenter .review.lblComment",
+			"id": "0d58-4627-96d7-2310",
+			"props": {
+				"children": [],
+				"name": "lblRight",
+				"parent": "05b1-21e2-b480-12b9",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
 				"usePageVariable": true
 			}
 		}

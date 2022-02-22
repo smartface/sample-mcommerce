@@ -1,20 +1,21 @@
 {
   ".flRow2LineButton": {
-    "height": 145,
+    "height": 120,
     "&-imgLeft": {
-      "width": 60,
-      "height": 60,
+      "width": 70,
+      "height": 70,
       "marginRight": 15,
       "tintColor": "${textDark}",
       "flexProps": {
         "alignSelf": "CENTER"
-      }
+      },
+      "borderRadius": 35
     },
     "flexProps": {
       "flexDirection": "ROW"
     },
     "&-flButtons": {
-      "&-flOtherButtons": {
+      "&-flOtherActions": {
         "flexProps": {
           "flexDirection": "ROW"
         },
@@ -24,7 +25,13 @@
         "&-btnBottomRight": {
           "marginLeft": 10
         },
-        "marginTop": 10
+        "marginTop": 10,
+        "height": 25,
+        "&-verticalSeparator": {
+          "backgroundColor": "${textDark}",
+          "height": 25,
+          "width": 2
+        }
       },
       "&-secondary": {
         "backgroundColor": "${backgroundSecondary}",
@@ -32,6 +39,9 @@
         "borderColor": "${textDark}",
         "borderWidth": 2,
         "height": 60
+      },
+      "&-btnMain": {
+        "height": 50
       }
     }
   }

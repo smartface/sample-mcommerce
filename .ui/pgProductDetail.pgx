@@ -9,8 +9,7 @@
 					"a15a-7cf2-a4a9-f958",
 					"5616-03c8-f54a-9abb",
 					"53ac-d037-7a65-6f24",
-					"64a5-07e5-9032-fa6c",
-					"9ded-29fe-1660-25ad"
+					"64a5-07e5-9032-fa6c"
 				],
 				"name": "pgProductDetail",
 				"orientation": "PORTRAIT",
@@ -90,32 +89,6 @@
 				"testId": "sIzwSD6Oc",
 				"text": "Add to Basket",
 				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout .flAlert",
-			"hiddenComponent": false,
-			"id": "9ded-29fe-1660-25ad",
-			"props": {
-				"children": [],
-				"name": "flAlert",
-				"parent": "9495-c1b8-4521-aab3",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "flAlert",
-				"id": "2828-6214-d267-443c"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"bottom": 0,
-				"left": 100,
-				"right": 100,
-				"testId": "Gy0TPpubN",
-				"top": 250,
-				"usePageVariable": true,
-				"visible": false
 			}
 		}
 	]

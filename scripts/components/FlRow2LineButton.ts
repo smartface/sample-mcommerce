@@ -2,6 +2,7 @@ import FlRow2LineButtonDesign from 'generated/my-components/FlRow2LineButton';
 import Image from '@smartface/native/ui/image';
 import { setID } from 'lib/testAutomation';
 import Button from '@smartface/native/ui/button';
+import Label from '@smartface/native/ui/label';
 
 export default class FlRow2LineButton extends FlRow2LineButtonDesign {
     pageName?: string | undefined;
@@ -9,19 +10,17 @@ export default class FlRow2LineButton extends FlRow2LineButtonDesign {
     __bottomLeftOnClick: (...args) => void;
     __bottomRightOnClick: (...args) => void;
     private __leftImage: string;
-    private __ID: string;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
 
         this.btnMain.on(Button.Events.Press, () => {
             this.__mainOnClick && this.__mainOnClick();
         });
-        this.btnBottomLeft.on(Button.Events.Press, () => {
+        this.lblLeft.on(Label.Events.TouchEnded, () => {
             this.__bottomLeftOnClick && this.__bottomLeftOnClick();
         });
-        this.btnBottomRight.on(Button.Events.Press, () => {
+        this.lblRight.on(Label.Events.TouchEnded, () => {
             this.__bottomRightOnClick && this.__bottomRightOnClick();
         });
     }
@@ -38,17 +37,17 @@ export default class FlRow2LineButton extends FlRow2LineButtonDesign {
     set mainButtonText(value: string) {
         this.btnMain.text = value;
     }
-    get bottomLeftButtonText() {
-        return this.btnBottomLeft.text;
+    get bottomLeftLabelText() {
+        return this.lblLeft.text;
     }
-    set bottomLeftButtonText(value: string) {
-        this.btnBottomLeft.text = value;
+    set bottomLeftLabelText(value: string) {
+        this.lblLeft.text = value;
     }
-    get bottomRightButtonText() {
-        return this.btnBottomRight.text;
+    get bottomRightLabelText() {
+        return this.lblRight.text;
     }
-    set bottomRightButtonText(value: string) {
-        this.btnBottomRight.text = value;
+    set bottomRightLabelText(value: string) {
+        this.lblRight.text = value;
     }
     get mainOnClick(): (...args) => void {
         return this.__mainOnClick;
@@ -67,12 +66,5 @@ export default class FlRow2LineButton extends FlRow2LineButtonDesign {
     }
     set bottomRightOnClick(value: (...args) => void) {
         this.__bottomRightOnClick = value;
-    }
-    set ID(value: string) {
-        setID(this, (this.__ID = value));
-        setID(this.imgLeft, `${this.ID}/imgLeft`);
-        setID(this.btnMain, `${this.ID}/btnMain`);
-        setID(this.btnBottomLeft, `${this.ID}/btnLeft`);
-        setID(this.btnBottomRight, `${this.ID}/btnRight`);
     }
 }

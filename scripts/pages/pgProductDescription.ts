@@ -19,7 +19,7 @@ export default class PgProductDescription extends withDismissAndBackButton(PgPro
         this.headerBar.title = global.lang.productDetail;
     }
     initTextView() {
-        this.tvDescription.maxLines = 0;
+        //IOS NATIVE-569
         this.tvDescription.text = this.route.getState().routeData?.productDescription || global.lang.noDescription;
     }
 }
