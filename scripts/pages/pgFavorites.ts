@@ -25,28 +25,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.headerBar.title = '';
         this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
     }
-    applyDimension(index: number, item: any): void {
-        if (index == 0) {
-            item.android.borderTopRightRadius = 5;
-            item.android.borderTopLeftRadius = 5;
-            item.android.borderBottomLeftRadius = 5;
-            item.android.borderBottomRightRadius = 5;
-        } else if (index == store.getState().main.products.length - 1) {
-            item.android.borderTopRightRadius = 5;
-            item.android.borderTopLeftRadius = 5;
-            item.android.borderBottomLeftRadius = 5;
-            item.android.borderBottomRightRadius = 5;
-        } else {
-            item.android.borderTopRightRadius = 5;
-            item.android.borderTopLeftRadius = 5;
-            item.android.borderBottomLeftRadius = 5;
-            item.android.borderBottomRightRadius = 5;
-        }
-        item.android.paddingLeft = 230;
-        item.android.paddingTop = 30;
-        item.android.paddingRight = 15;
-        item.android.paddingBottom = 20;
-    }
     deleteAndRefresh(e: { index: number }): void {
         let length = this.favoriteProducts.length;
         let removedItem = this.favoriteProducts.find((product, index) => index === e.index);
@@ -65,24 +43,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.lvMain.onRowCanSwipe = (index: number) => {
             return [ListView.SwipeDirection.RIGHTTOLEFT];
         };
-        this.lvMain.onRowSwipe = (e: any): ListView.SwipeItem[] => {
-            if (e.direction == ListView.SwipeDirection.RIGHTTOLEFT) {
-                e.ios.expansionSettings.buttonIndex = 0;
-                e.ios.expansionSettings.threshold = 1.5;
-                e.ios.expansionSettings.fillOnTrigger = true;
-                let deleteItem = new ListView.SwipeItem();
-                deleteItem.text = 'Delete';
-                deleteItem.backgroundColor = Color.RED;
-                deleteItem.textColor = Color.create('#FFFFFF');
-                deleteItem.icon = Image.createFromFile('images://cross.png');
-                deleteItem.ios.isAutoHide = false;
-                deleteItem.onPress = (e: any) => {
-                    this.deleteAndRefresh(e);
-                };
-                this.applyDimension(e.index, deleteItem);
-                return [deleteItem];
-            }
-        };
+        this.lvMain.onRowSwipe = onRowSwipe.bind(this);
     }
     refreshListView() {
         this.data = this.processor();
@@ -109,15 +70,26 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         } else {
             this.favoriteProducts.forEach((favouritedItem) => {
                 processorItems.push(
-                    ListViewItems.getLviFavorites({
-                        itemTitle: favouritedItem.name,
-                        itemDesc: favouritedItem.shortDescription,
-                        itemImage: favouritedItem.images ? getProductImageUrl(favouritedItem.images[0]) : null,
-                        itemPrice:
-                            favouritedItem.discountPrice != undefined
-                                ? `$${favouritedItem?.discountPrice?.toFixed(2)}`
-                                : `$${favouritedItem.price.toFixed(2)}`
-                    })
+                    ListViewItems.getLviFavorites(
+                        {
+                            itemTitle: favouritedItem.name,
+                            itemDesc: favouritedItem.shortDescription,
+                            itemImage: favouritedItem.images ? getProductImageUrl(favouritedItem.images[0]) : null,
+                            itemPrice:
+                                favouritedItem.discountPrice != undefined
+                                    ? `$${favouritedItem?.discountPrice?.toFixed(2)}`
+                                    : `$${favouritedItem.price.toFixed(2)}`
+                        },
+                        {
+                            onDelete: () => {
+                                return new Promise((resolve) => {
+                                    console.log('test');
+                                    this.refreshListView();
+                                    resolve();
+                                });
+                            }
+                        }
+                    )
                 );
             });
         }
