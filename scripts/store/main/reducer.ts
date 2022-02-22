@@ -1,3 +1,4 @@
+import { TOAST_OPEN_HIDE_DURATION } from 'constants';
 import { hideToastDialog, showToastDialog } from 'lib/toast';
 import { clearTokens } from 'service/token';
 import { SessionState, Constants, ActionTypes } from '.';
@@ -87,7 +88,7 @@ export default function (state = initialState, action: ActionTypes): SessionStat
                 action.payload.product.count = action.payload.count;
                 newState.basket.push(action.payload.product);
             }
-            setTimeout(() => hideToastDialog(), 200);
+            setTimeout(() => hideToastDialog(), TOAST_OPEN_HIDE_DURATION);
             break;
         }
         case Constants.REMOVE_FROM_BASKET: {
