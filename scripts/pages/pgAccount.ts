@@ -90,8 +90,8 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
               })
             : ListViewItems.getLviRow2LineButton({
                   mainButtonText: global.lang.loginHeader,
-                  bottomLeftButtonText: global.lang.signup,
-                  bottomRightButtonText: global.lang.forgotPassword,
+                  bottomLeftLabelText: global.lang.signup,
+                  bottomRightLabelText: global.lang.forgotPassword,
                   mainOnClick: () => {
                       this.router.push('pages/pgWelcome');
                   },

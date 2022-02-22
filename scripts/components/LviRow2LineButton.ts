@@ -7,9 +7,7 @@ const { height } = themeService.getStyle('.lviRow2LineButton');
 
 export default class LviRow2LineButton extends LviRow2LineButtonDesign {
     pageName?: string | undefined;
-    private __ID: string;
     constructor(props?: any, pageName?: string) {
-        // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
     }
@@ -25,17 +23,17 @@ export default class LviRow2LineButton extends LviRow2LineButtonDesign {
     set mainButtonText(value: string) {
         this.flRow2LineButton.mainButtonText = value;
     }
-    get bottomLeftButtonText() {
-        return this.flRow2LineButton.bottomLeftButtonText;
+    get bottomLeftLabelText() {
+        return this.flRow2LineButton.bottomLeftLabelText;
     }
-    set bottomLeftButtonText(value: string) {
-        this.flRow2LineButton.bottomLeftButtonText = value;
+    set bottomLeftLabelText(value: string) {
+        this.flRow2LineButton.bottomLeftLabelText = value;
     }
-    get bottomRightButtonText() {
-        return this.flRow2LineButton.bottomRightButtonText;
+    get bottomRightLabelText() {
+        return this.flRow2LineButton.bottomRightLabelText;
     }
-    set bottomRightButtonText(value: string) {
-        this.flRow2LineButton.bottomRightButtonText = value;
+    set bottomRightLabelText(value: string) {
+        this.flRow2LineButton.bottomRightLabelText = value;
     }
     get mainOnClick(): () => void {
         return this.flRow2LineButton.mainOnClick;
@@ -54,10 +52,6 @@ export default class LviRow2LineButton extends LviRow2LineButtonDesign {
     }
     set bottomRightOnClick(value: () => void) {
         this.flRow2LineButton.bottomRightOnClick = value;
-    }
-    set ID(value: string) {
-        setID(this, (this.__ID = value));
-        this.flRow2LineButton.ID = value;
     }
     static getHeight(): number {
         return height;

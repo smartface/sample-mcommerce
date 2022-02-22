@@ -1,14 +1,14 @@
 {
 	"components": [
 		{
-			"className": ".sf-flexLayout .flAlert",
+			"className": ".sf-flexLayout .flToast .shadow",
 			"hiddenComponent": true,
-			"id": "2828-6214-d267-443c",
+			"id": "2ec2-e38e-9081-eac3",
 			"props": {
 				"children": [
-					"6d4d-6ed8-a215-58e5"
+					"b4b4-3b11-71be-fa23"
 				],
-				"name": "flAlert",
+				"name": "flToast",
 				"parent": "57f4-201f-4bfc-5fc6"
 			},
 			"source": {
@@ -18,14 +18,14 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout .flAlert-flAlertWrapper",
-			"id": "6d4d-6ed8-a215-58e5",
+			"className": ".sf-flexLayout .flToast-flTextWrapper .grow-relative .paddingHorizontal",
+			"id": "b4b4-3b11-71be-fa23",
 			"props": {
 				"children": [
-					"c9c2-14ff-bf76-579a"
+					"5468-e1eb-843a-6ae7"
 				],
-				"name": "flAlertWrapper",
-				"parent": "2828-6214-d267-443c",
+				"name": "flTextWrapper",
+				"parent": "2ec2-e38e-9081-eac3",
 				"usePageVariable": true
 			},
 			"source": {
@@ -37,12 +37,12 @@
 			}
 		},
 		{
-			"className": ".sf-label .flAlert-flAlertWrapper-lblAlertMessage",
-			"id": "c9c2-14ff-bf76-579a",
+			"className": ".sf-label .review.name .flToast-flTextWrapper-lblText .grow-relative",
+			"id": "5468-e1eb-843a-6ae7",
 			"props": {
 				"children": [],
-				"name": "lblAlertMessage",
-				"parent": "6d4d-6ed8-a215-58e5",
+				"name": "lblText",
+				"parent": "b4b4-3b11-71be-fa23",
 				"text": "label1",
 				"usePageVariable": true
 			},
@@ -51,9 +51,6 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"alignSelf": "AUTO"
-				},
 				"text": "label1",
 				"usePageVariable": true
 			}

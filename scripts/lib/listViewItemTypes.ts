@@ -168,12 +168,16 @@ export function getLviCartProducts(item: Partial<LviCartItem>): ProcessorTypes.I
         height: LviCartItem.getHeight()
     };
 }
-export function getLviFavorites(item: Partial<LviFavorites>): ProcessorTypes.ILviFavorites {
+export function getLviFavorites(
+    item: Partial<LviFavorites>,
+    opts?: { onDelete?: (...args: any[]) => Promise<void> }
+): ProcessorTypes.ILviFavorites {
     return {
         type: 'LVI_FAVOURITES',
         properties: {
             ...item,
-            borders: []
+            borders: [],
+            onDelete: opts?.onDelete
         },
         height: LviFavorites.getHeight()
     };

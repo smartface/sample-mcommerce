@@ -43,19 +43,6 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
     addToBasket() {
         this.btnAddToBasket.on(Button.Events.Press, () => {
             store.dispatch(storeActions.AddToBasket({ product: this.product, count: this.productCounter }));
-            this.toggleToast(true);
-            this.flAlert.title = global.lang.addToCart;
-            setTimeout(() => {
-                this.toggleToast(false);
-            }, 2000);
-        });
-    }
-    toggleToast(toggle: boolean): void {
-        this.flAlert.dispatch({
-            type: 'updateUserStyle',
-            userStyle: {
-                visible: toggle
-            }
         });
     }
 

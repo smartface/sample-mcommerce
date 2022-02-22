@@ -1,7 +1,8 @@
 {
-	".pgProductDescription": {
-		"&-tvDescription": {
-			"textAlignment": "TOPLEFT"
-		}
-	}
+  ".pgProductDescription": {
+    "&-tvDescription": {
+      "textAlignment": "TOPLEFT",
+      "maxLines": 0
+    }
+  }
 }

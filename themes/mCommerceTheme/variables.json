@@ -94,5 +94,6 @@
   "reverseBackground": "rgba(0,0,0,1.0)",
   "productItemPriceBorder": "rgba(255, 255, 255, 0)",
   "themeDarkSwitch": "rgba(255,255,255,1.0)",
-  "themeLightSwitch": "#53b175"
+  "themeLightSwitch": "#53b175",
+  "toast": "rgba(41,41,41,0.8)"
 }

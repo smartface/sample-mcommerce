@@ -16,11 +16,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": "14.85",
-				"top": "135.64"
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flAccountUser-imgUserAccount",

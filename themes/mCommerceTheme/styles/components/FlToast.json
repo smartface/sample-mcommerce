@@ -1,0 +1,29 @@
+{
+  ".flToast": {
+    "height": 50,
+    "flexProps": {
+      "positionType": "ABSOLUTE"
+    },
+    "top": 80,
+    "left": 0,
+    "right": 0,
+    "&-bottomSpace": {
+      "height": 250
+    },
+    "marginLeft": null,
+    "marginRight": null,
+    "width": null,
+    "paddingLeft": 30,
+    "paddingRight": 30,
+    "&-flTextWrapper": {
+      "backgroundColor": "${toast}",
+      "&-lblText": {
+        "textColor": "${white}",
+        "textAlignment": "MIDCENTER"
+      },
+      "borderRadius": 8,
+      "borderWidth": 1,
+      "borderColor": "${textLight}"
+    }
+  }
+}
