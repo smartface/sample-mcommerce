@@ -2,7 +2,7 @@ import Dialog from '@smartface/native/ui/dialog';
 import componentContextPatch from '@smartface/contx/lib/smartface/componentContextPatch';
 import { themeService } from 'theme';
 import FlexLayout from '@smartface/native/ui/flexlayout';
-import FlToast from 'generated/my-components/FlToast';
+import FlToast from 'components/FlToast';
 
 var toastDialog = null;
 var activeDialogCounter = 0;
@@ -15,7 +15,8 @@ function initToast() {
             isTransparent: true
         }
     }) as StyleContextComponentType<Dialog>;
-    const component = new FlToast();
+    const component = new FlToast()
+    component.title = global.lang.addToBasket;
     themeService.addGlobalComponent(component as any, 'flToast');
     (component as StyleContextComponentType<FlexLayout>).dispatch({
         type: 'pushClassNames',

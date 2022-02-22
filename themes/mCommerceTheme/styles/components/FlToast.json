@@ -4,7 +4,7 @@
     "flexProps": {
       "positionType": "ABSOLUTE"
     },
-    "bottom": -55,
+    "top": 80,
     "left": 0,
     "right": 0,
     "&-bottomSpace": {

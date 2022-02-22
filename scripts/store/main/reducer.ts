@@ -87,7 +87,7 @@ export default function (state = initialState, action: ActionTypes): SessionStat
                 action.payload.product.count = action.payload.count;
                 newState.basket.push(action.payload.product);
             }
-            setTimeout(() => hideToastDialog(), 500);
+            setTimeout(() => hideToastDialog(), 200);
             break;
         }
         case Constants.REMOVE_FROM_BASKET: {
