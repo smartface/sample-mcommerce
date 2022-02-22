@@ -1,0 +1,22 @@
+{
+  ".swipeItem": {
+    "textColor": "${white}",
+    "font": {
+      "family": "Nunito",
+      "bold": false,
+      "italic": false,
+      "size": 14
+    },
+    "ios": {
+      "iconTextSpacing": 5,
+      "padding": 30
+    },
+    "android": {
+      "paddingLeft": 15,
+      "paddingRight": 15
+    },
+    ".delete": {
+      "backgroundColor": "${deny}"
+    }
+  }
+}

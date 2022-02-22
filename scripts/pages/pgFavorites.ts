@@ -15,7 +15,7 @@ import setHeaderIcon from 'lib/setHeaderIcon';
 type Processor = ListViewItems.ProcessorTypes.ILviFavorites;
 
 export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDesign) {
-    favoriteProducts: any;
+    favoriteProducts: any[];
     data: Processor[];
     flHeaderIcon: FlHeaderIcon;
     constructor(private router?: Router, private route?: Route) {
@@ -68,7 +68,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                 })
             );
         } else {
-            this.favoriteProducts.forEach((favouritedItem) => {
+            this.favoriteProducts.forEach((favouritedItem, index) => {
                 processorItems.push(
                     ListViewItems.getLviFavorites(
                         {
@@ -83,8 +83,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                         {
                             onDelete: () => {
                                 return new Promise((resolve) => {
-                                    console.log('test');
-                                    this.refreshListView();
+                                    this.deleteAndRefresh({ index });
                                     resolve();
                                 });
                             }
