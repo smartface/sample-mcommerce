@@ -1,7 +1,7 @@
 {
   ".sf-button-main": {
     "width": null,
-    "height": 67,
+    "height": 50,
     "touchEnabled": true,
     "visible": true,
     "backgroundColor": "${green}",

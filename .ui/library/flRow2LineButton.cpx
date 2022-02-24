@@ -16,7 +16,11 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 11.76,
+				"top": 123.53
+			}
 		},
 		{
 			"className": ".sf-imageView .flRow2LineButton-imgLeft",
@@ -32,12 +36,12 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"image": "tabiconuser.png",
+				"image": "profile_placeholder.png",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-flexLayout .grow",
+			"className": ".sf-flexLayout .grow .flRow2LineButton-flButtons",
 			"id": "20e3-2b6c-c9a1-20e4",
 			"props": {
 				"children": [
@@ -54,7 +58,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-button .sf-button-main .flRow2LineButton-flButtons-btnMain",
+			"className": ".sf-button .sf-button-main .review.lblComment .flRow2LineButton-flButtons-btnMain",
 			"id": "d70a-1ba6-547c-eff2",
 			"props": {
 				"children": [],
@@ -91,7 +95,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-label .grow-relative .textCenter .review.lblComment",
+			"className": ".sf-label .grow-relative .review.lblComment .flRow2LineButton-flButtons-flOtherActions-lblLeft",
 			"id": "fe75-a692-2900-e016",
 			"props": {
 				"children": [],
@@ -110,7 +114,8 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flRow2LineButton-flButtons-flOtherActions-verticalSeparator",
+			"className": ".sf-flexLayout .flRow2LineButton-flButtons-flOtherActions-verticalSeparator .marginHorizontal",
+			"hiddenComponent": false,
 			"id": "eb36-e0bc-2f0b-8221",
 			"props": {
 				"children": [],
@@ -127,7 +132,7 @@
 			}
 		},
 		{
-			"className": ".sf-label .grow-relative .textCenter .review.lblComment",
+			"className": ".sf-label .grow-relative .review.lblComment .flRow2LineButton-flButtons-flOtherActions-lblRight",
 			"id": "0d58-4627-96d7-2310",
 			"props": {
 				"children": [],

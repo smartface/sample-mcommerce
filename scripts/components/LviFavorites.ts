@@ -1,12 +1,14 @@
 import { themeService } from 'theme';
-import Image from '@smartface/native/ui/image';
 import LviFavoritesDesign from 'generated/my-components/LviFavorites';
+import setVisibility from 'lib/setVisibility';
 const originalHeight = themeService.getStyle('.lviFavorites').height;
 
 export default class LviFavorites extends LviFavoritesDesign {
     private __onDeleteProduct: (product: any) => void;
     pageName?: string | undefined;
     private __imageUrl: string;
+    private __showCheck: boolean;
+    private __showArrow: boolean;
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
@@ -48,5 +50,30 @@ export default class LviFavorites extends LviFavoritesDesign {
     set onDeleteProduct(value: (product: any) => void) {
         this.__onDeleteProduct = value;
     }
-    private initSwipe() {}
+    get showCheck(): boolean {
+        return this.__showCheck;
+    }
+    set showCheck(value: boolean) {
+        setVisibility(this.flCheck, value);
+        this.__showCheck = value;
+    }
+    get showArrow(): boolean {
+        return this.__showArrow;
+    }
+    set showArrow(value: boolean) {
+        setVisibility(this.lblFavoriteItemChevron, value);
+        this.__showArrow = value;
+    }
+    get toggle() {
+        return this.flCheck.toggle;
+    }
+    set toggle(value: boolean) {
+        this.flCheck.toggle = value;
+    }
+    get onToggleChange(): (toggle: boolean) => void {
+        return this.flCheck.onToggleChange;
+    }
+    set onToggleChange(value: (toggle: boolean) => void) {
+        this.flCheck.onToggleChange = value;
+    }
 }

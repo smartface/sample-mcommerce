@@ -27,28 +27,8 @@ const initialState: SessionState = {
         },
         {
             menuId: 4,
-            menuTitle: 'paymentMethods',
-            menuLeftIcon: ''
-        },
-        {
-            menuId: 5,
-            menuTitle: 'promo',
-            menuLeftIcon: ''
-        },
-        {
-            menuId: 6,
             menuTitle: 'notifications',
             menuLeftIcon: ''
-        },
-        {
-            menuId: 7,
-            menuTitle: 'help',
-            menuLeftIcon: ''
-        },
-        {
-            menuId: 8,
-            menuTitle: 'about',
-            menuLeftIcon: ''
         }
     ],
     currentUser: null,
