@@ -56,7 +56,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
             GridViewItem.itemReview = this.items[productIndex]?.rating?.toFixed(1).toString() || '';
             GridViewItem.showHideMinusButton = false;
             GridViewItem.buttonMinusText = this.items[productIndex].count === 1 ? '' : '';
-            GridViewItem.productCount = this.items[productIndex].count ? this.items[productIndex].count.toString() : '';
+            GridViewItem.productCount = this.items[productIndex].count == undefined ? '' : this.items[productIndex]?.count?.toString();
             GridViewItem.onActionClickPlus = () => {
                 GridViewItem.toggleIndicatorPlus(true);
                 store.dispatch(storeActions.AddToBasket({ product: this.items[productIndex], count: 1 }));

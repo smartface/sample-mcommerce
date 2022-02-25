@@ -172,9 +172,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             GridViewItem.showHideMinusButton = false;
             GridViewItem.buttonMinusText = this.categoryProducts[productIndex].count === 1 ? '' : '';
             GridViewItem.productCount =
-                this.categoryProducts[productIndex].count == this.categoryProducts[productIndex].count
-                    ? this.categoryProducts[productIndex].count.toString()
-                    : '';
+                this.categoryProducts[productIndex].count == undefined ? '' : this.categoryProducts[productIndex]?.count?.toString();
             GridViewItem.onActionClickPlus = () => {
                 GridViewItem.toggleIndicatorPlus(true);
                 store.dispatch(storeActions.AddToBasket({ product: this.categoryProducts[productIndex], count: 1 }));
