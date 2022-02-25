@@ -206,7 +206,8 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     headerBarParams: () => ({
                         visible: true
                     })
-                })
+                }),
+                productDetailRouter('/btb/tab3')
             ]
         }),
         StackRouter.of({
@@ -223,7 +224,8 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     headerBarParams: () => ({
                         visible: true
                     })
-                })
+                }),
+                productDetailRouter('/btb/tab4')
             ]
         }),
         StackRouter.of({

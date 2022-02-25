@@ -29,49 +29,31 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         super({});
     }
     initAddToCartButton() {
-        this.flAddToCart.title = global.lang.addToBasket;
+        this.flCartCheckout.checkoutTitle = global.lang.addToBasket;
+        setVisibility(this.flCartCheckout.lblCartCheckoutPrice, false);
     }
     addToCartSelectedProducts() {
-        if (this.selectedProducts.length) {
-            this.flAddToCart.btnAddToCart.onPress = () => {
-                this.selectedProducts.forEach((product, index) => {
-                    store.dispatch(storeActions.AddToBasket({ product, count: 1 }));
-                    store.dispatch(storeActions.RemoveFromFavorites({ productId: product._id }));
-                });
-            };
-            this.selectedProducts = [];
-        }
-    }
-    setRightItem() {
-        this.rightItemSelect.title = this.changeHeaderText ? 'iptal' : 'sec';
-        this.rightItemSelect.onPress = () => {
-            this.changeHeaderText = true;
-            this.refreshListView();
-            this.selectable = !this.selectable;
-            if (!this.selectable) {
-                this.selectedProducts = [];
-            }
-            this.headerBar.setItems(this.changeHeaderText ? [this.rightItemSelect] : [this.rightItemSelect]);
-            this.rightItemCancel.title = this.changeHeaderText ? 'nane' : 'limon';
-        };
-        this.rightItemCancel.onPress = () => {
-            this.changeHeaderText = false;
+        this.flCartCheckout.btnCartCheckout.onPress = () => {
+            this.selectedProducts.forEach((product, index) => {
+                store.dispatch(storeActions.AddToBasket({ product, count: 1 }));
+                store.dispatch(storeActions.RemoveFromFavorites({ productId: product._id }));
+                this.selectedProducts.splice(index, 1);
+            });
             this.refreshListView();
         };
-        this.headerBar.setItems(!this.changeHeaderText ? [this.rightItemSelect] : [this.rightItemCancel]);
     }
     handleChange() {
         if (this.favoriteProducts.length !== 0) {
             if (this.changeHeaderText) {
                 this.addCancelToHeaderBar();
-                setVisibility(this.flAddToCart, true);
+                setVisibility(this.flCartCheckout, true);
             } else {
                 this.addSelectToHeaderBar();
-                setVisibility(this.flAddToCart, false);
+                setVisibility(this.flCartCheckout, false);
             }
             this.layout.applyLayout();
         } else {
-            setVisibility(this.flAddToCart, false);
+            setVisibility(this.flCartCheckout, false);
             this.headerBar.setItems([]);
             this.layout.applyLayout();
         }
@@ -118,8 +100,23 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.onRowSwipe = onRowSwipe.bind(this);
         this.lvMain.refreshEnabled = false;
+        this.lvMain.onRowSelected = (item, index: number) => {
+            if (!this.changeHeaderText) {
+                this.router.push('productDetail', {
+                    productId: this.favoriteProducts[index]._id
+                });
+            } else {
+                if (!this.selectedProducts.includes(this.favoriteProducts[index])) {
+                    this.selectedProducts.push(this.favoriteProducts[index]);
+                } else {
+                    this.selectedProducts.splice(index, 1);
+                }
+                this.refreshListView();
+            }
+        };
         this.lvMain.onRowCanSwipe = (index: number) => {
             if (!this.changeHeaderText) {
+                this.selectedProducts.splice(index, 1);
                 return [ListView.SwipeDirection.RIGHTTOLEFT];
             } else {
                 return [];
@@ -165,14 +162,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                                     : `$${favouritedItem.price.toFixed(2)}`,
                             showCheck: this.changeHeaderText,
                             showArrow: !this.changeHeaderText,
-                            toggle: selected,
-                            onToggleChange: () => {
-                                this.selectable = !this.selectable;
-                                if (this.selectable && !this.selectedProducts.includes(favouritedItem)) {
-                                    this.addItemToSelectedProducts(selected);
-                                } else if (selected == false && this.selectedProducts.includes(favouritedItem)) {
-                                }
-                            }
+                            toggle: selected
                         },
                         {
                             onDelete: () => {
@@ -187,9 +177,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
             });
         }
         return processorItems;
-    }
-    addItemToSelectedProducts(product) {
-        this.selectedProducts.push(product);
     }
     onShow() {
         super.onShow();

@@ -9,16 +9,18 @@
 					"5e52-8223-5aed-6626",
 					"23ce-fa2e-9d68-e404",
 					"e97d-0545-2a49-4ba2",
-					"750e-1819-c16f-2b3e"
+					"db65-9795-a87b-5e63"
 				],
 				"name": "pgFavorites",
 				"orientation": "PORTRAIT",
-				"parent": null
+				"parent": null,
+				"safeAreaEnabled": true
 			},
 			"type": "Page",
-			"userProps": {},
-			"version": "0.0.1.a",
-			"degree": 0
+			"userProps": {
+				"safeAreaEnabled": true
+			},
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -30,8 +32,7 @@
 				"parent": "e27f-743b-23a5-ea3b"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
 			"className": ".sf-headerBar.main",
@@ -43,8 +44,7 @@
 				"parent": "e27f-743b-23a5-ea3b"
 			},
 			"type": "HeaderBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
 			"className": ".sf-listView .grow",
@@ -59,23 +59,22 @@
 			"userProps": {
 				"testId": "Z_mKSpk5P",
 				"usePageVariable": true
-			},
-			"degree": 1
+			}
 		},
 		{
-			"className": ".sf-flexLayout .flCartCheckout .paddingHorizontal",
+			"className": ".sf-flexLayout .paddingHorizontal .flCartCheckout",
 			"hiddenComponent": false,
-			"id": "750e-1819-c16f-2b3e",
+			"id": "db65-9795-a87b-5e63",
 			"props": {
 				"children": [],
-				"name": "flAddToCart",
+				"name": "flCartCheckout",
 				"parent": "e27f-743b-23a5-ea3b",
 				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__",
-				"type": "flAddToCart",
-				"id": "f84c-5f45-c160-233c"
+				"type": "flCartCheckout",
+				"id": "97a7-de34-7dcc-2791"
 			},
 			"type": "FlexLayout",
 			"userProps": {
@@ -86,11 +85,10 @@
 					"positionType": "RELATIVE"
 				},
 				"left": 0,
+				"testId": "HvlsVe-8Z",
 				"top": 0,
-				"usePageVariable": true,
-				"testId": "HiTqdgoQP"
-			},
-			"degree": 1
+				"usePageVariable": true
+			}
 		}
 	]
 }
