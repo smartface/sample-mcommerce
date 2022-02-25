@@ -8,14 +8,18 @@
 				"children": [
 					"5e52-8223-5aed-6626",
 					"23ce-fa2e-9d68-e404",
-					"e97d-0545-2a49-4ba2"
+					"e97d-0545-2a49-4ba2",
+					"db65-9795-a87b-5e63"
 				],
 				"name": "pgFavorites",
 				"orientation": "PORTRAIT",
-				"parent": null
+				"parent": null,
+				"safeAreaEnabled": true
 			},
 			"type": "Page",
-			"userProps": {},
+			"userProps": {
+				"safeAreaEnabled": true
+			},
 			"version": "0.0.1.a"
 		},
 		{
@@ -54,6 +58,35 @@
 			"type": "ListView",
 			"userProps": {
 				"testId": "Z_mKSpk5P",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .paddingHorizontal .flCartCheckout",
+			"hiddenComponent": false,
+			"id": "db65-9795-a87b-5e63",
+			"props": {
+				"children": [],
+				"name": "flCartCheckout",
+				"parent": "e27f-743b-23a5-ea3b",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flCartCheckout",
+				"id": "97a7-de34-7dcc-2791"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"testId": "HvlsVe-8Z",
+				"top": 0,
 				"usePageVariable": true
 			}
 		}

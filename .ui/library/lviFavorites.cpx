@@ -15,17 +15,15 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {
-				"flexProps": {},
-				"left": 1.02,
-				"top": 113.27
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout",
+			"hiddenComponent": false,
 			"id": "d1fa-0982-fbca-7168",
 			"props": {
 				"children": [
+					"a54d-e5fc-88f2-a922",
 					"1de2-28a0-d7fd-a528",
 					"39cc-c0dc-ea1a-ad69",
 					"d2d1-933c-543a-2950"
@@ -47,6 +45,34 @@
 				"paddingBottom": 30,
 				"paddingTop": 30,
 				"testId": "CGtTj-pmP",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheck .flCheck.inactive",
+			"hiddenComponent": false,
+			"id": "a54d-e5fc-88f2-a922",
+			"props": {
+				"children": [],
+				"name": "flCheck",
+				"parent": "d1fa-0982-fbca-7168",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flCheck",
+				"id": "a0b0-235a-c858-6e90"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0,
 				"usePageVariable": true
 			}
 		},

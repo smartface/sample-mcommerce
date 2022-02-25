@@ -1,8 +1,6 @@
 import PgFavoritesDesign from 'generated/pages/pgFavorites';
 import store from '../store/index';
 import storeActions from 'store/main/actions';
-import Image from '@smartface/native/ui/image';
-import Color from '@smartface/native/ui/color';
 import ListView from '@smartface/native/ui/listview';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/listView';
@@ -11,15 +9,77 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductImageUrl } from 'service/commerce';
 import FlHeaderIcon from 'components/FlHeaderIcon';
 import setHeaderIcon from 'lib/setHeaderIcon';
+import HeaderBarItem from '@smartface/native/ui/headerbaritem';
+import { themeService } from 'theme';
+import setVisibility from 'lib/setVisibility';
+import { Product } from 'types';
 
 type Processor = ListViewItems.ProcessorTypes.ILviFavorites;
 
 export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDesign) {
-    favoriteProducts: any[];
+    private selectedProducts: Product[] = [];
+    private selectable: boolean = false;
+    favoriteProducts: Product[];
     data: Processor[];
+    rightItemCancel: HeaderBarItem;
+    rightItemSelect: HeaderBarItem;
     flHeaderIcon: FlHeaderIcon;
+    changeHeaderText: boolean = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
+    }
+    initAddToCartButton() {
+        this.flCartCheckout.checkoutTitle = global.lang.addToBasket;
+        setVisibility(this.flCartCheckout.lblCartCheckoutPrice, false);
+    }
+    addToCartSelectedProducts() {
+        this.flCartCheckout.btnCartCheckout.onPress = () => {
+            this.selectedProducts.forEach((product, index) => {
+                store.dispatch(storeActions.AddToBasket({ product, count: 1 }));
+                store.dispatch(storeActions.RemoveFromFavorites({ productId: product._id }));
+                this.selectedProducts.splice(index, 1);
+            });
+            this.refreshListView();
+        };
+    }
+    handleChange() {
+        if (this.favoriteProducts.length !== 0) {
+            if (this.changeHeaderText) {
+                this.addCancelToHeaderBar();
+                setVisibility(this.flCartCheckout, true);
+            } else {
+                this.addSelectToHeaderBar();
+                setVisibility(this.flCartCheckout, false);
+            }
+            this.layout.applyLayout();
+        } else {
+            setVisibility(this.flCartCheckout, false);
+            this.headerBar.setItems([]);
+            this.layout.applyLayout();
+        }
+    }
+    addCancelToHeaderBar() {
+        this.rightItemCancel = new HeaderBarItem({
+            title: global.lang.cancel,
+            color: themeService.getNativeStyle('.sf-headerBar.cancel').itemColor,
+            onPress: () => {
+                this.changeHeaderText = false;
+                this.refreshListView();
+            }
+        });
+        this.headerBar.setItems([this.rightItemCancel]);
+    }
+    addSelectToHeaderBar() {
+        this.rightItemSelect = new HeaderBarItem({
+            //Native › NTVE-435
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
+            title: global.lang.select,
+            onPress: () => {
+                this.changeHeaderText = true;
+                this.refreshListView();
+            }
+        });
+        this.headerBar.setItems([this.rightItemSelect]);
     }
     addAppIconToHeader() {
         this.headerBar.title = '';
@@ -29,7 +89,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         let length = this.favoriteProducts.length;
         let removedItem = this.favoriteProducts.find((product, index) => index === e.index);
         this.favoriteProducts.splice(e.index, 1);
-        store.dispatch(storeActions.RemoveFromBasket({ productId: removedItem.id }));
+        store.dispatch(storeActions.RemoveFromFavorites({ productId: removedItem._id }));
         this.refreshListView();
     }
 
@@ -40,8 +100,27 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.onRowSwipe = onRowSwipe.bind(this);
         this.lvMain.refreshEnabled = false;
+        this.lvMain.onRowSelected = (item, index: number) => {
+            if (!this.changeHeaderText) {
+                this.router.push('productDetail', {
+                    productId: this.favoriteProducts[index]._id
+                });
+            } else {
+                if (!this.selectedProducts.includes(this.favoriteProducts[index])) {
+                    this.selectedProducts.push(this.favoriteProducts[index]);
+                } else {
+                    this.selectedProducts.splice(index, 1);
+                }
+                this.refreshListView();
+            }
+        };
         this.lvMain.onRowCanSwipe = (index: number) => {
-            return [ListView.SwipeDirection.RIGHTTOLEFT];
+            if (!this.changeHeaderText) {
+                this.selectedProducts.splice(index, 1);
+                return [ListView.SwipeDirection.RIGHTTOLEFT];
+            } else {
+                return [];
+            }
         };
         this.lvMain.onRowSwipe = onRowSwipe.bind(this);
     }
@@ -56,6 +135,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
             }
         }
         this.lvMain.refreshData();
+        this.handleChange();
     }
     processor(): Processor[] {
         const processorItems = [];
@@ -69,6 +149,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
             );
         } else {
             this.favoriteProducts.forEach((favouritedItem, index) => {
+                let selected = this.selectedProducts.some((sp) => favouritedItem._id === sp._id);
                 processorItems.push(
                     ListViewItems.getLviFavorites(
                         {
@@ -78,7 +159,10 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                             itemPrice:
                                 favouritedItem.discountPrice != undefined
                                     ? `$${favouritedItem?.discountPrice?.toFixed(2)}`
-                                    : `$${favouritedItem.price.toFixed(2)}`
+                                    : `$${favouritedItem.price.toFixed(2)}`,
+                            showCheck: this.changeHeaderText,
+                            showArrow: !this.changeHeaderText,
+                            toggle: selected
                         },
                         {
                             onDelete: () => {
@@ -96,11 +180,14 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
     }
     onShow() {
         super.onShow();
+        this.handleChange();
+        this.addToCartSelectedProducts();
         this.addAppIconToHeader();
         this.refreshListView();
     }
     onLoad() {
         super.onLoad();
+        this.initAddToCartButton();
         this.initListView();
         this.refreshListView();
         this.headerBar.leftItemEnabled = false;

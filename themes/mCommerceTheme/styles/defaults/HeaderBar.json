@@ -33,6 +33,9 @@
     },
     ".back": {
       "image": "arrow_back.png"
+    },
+    ".cancel": {
+      "itemColor": "${deny}"
     }
   }
 }

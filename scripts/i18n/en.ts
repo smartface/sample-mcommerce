@@ -142,5 +142,6 @@ SMF.i18n.defineLanguage('en', {
     emptyNutritions: 'This product has no nutritions.',
     appName: 'Smart Commerce',
     sureToLogout: 'Are you sure to logout?',
-    noDescription: 'NO DESCRIPTION'
+    noDescription: 'NO DESCRIPTION',
+    select: 'Select'
 });

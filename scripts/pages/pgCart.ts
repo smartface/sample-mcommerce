@@ -10,8 +10,7 @@ import storeActions from 'store/main/actions';
 import { getProductImageUrl } from 'service/commerce';
 import setVisibility from 'lib/setVisibility';
 import FlHeaderIcon from 'components/FlHeaderIcon';
-import { themeService } from 'theme';
-import FlexLayout from '@smartface/native/ui/flexlayout';
+import setHeaderIcon from 'lib/setHeaderIcon';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -27,30 +26,21 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     flHeaderIcon: FlHeaderIcon;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.initTitleLayout();
-    }
-    initTitleLayout() {
-        this.flHeaderIcon = new FlHeaderIcon();
-        themeService.addGlobalComponent(this.flHeaderIcon as any /** to be fixed with stylingcontext next version */, 'titleLayout');
-        (this.flHeaderIcon as StyleContextComponentType<FlexLayout>).dispatch({
-            type: 'pushClassNames',
-            classNames: '.flHeaderIcon'
-        });
-        this.flHeaderIcon.lblHeader.dispatch({
-            type: 'pushClassNames',
-            classNames: '.reviews.name'
-        });
-        this.flHeaderIcon.appName = global.lang.appName;
     }
     addAppIconToHeader() {
         this.headerBar.title = '';
-        this.headerBar.titleLayout = this.flHeaderIcon;
+        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowHeight = onRowHeight.bind(this);
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
+        this.lvMain.onRowSelected = (item, index: number) => {
+            this.router.push('productDetail', {
+                productId: this.cartProducts[index]._id
+            });
+        };
         this.lvMain.refreshEnabled = false;
     }
     refreshListView() {

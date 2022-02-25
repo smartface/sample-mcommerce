@@ -1,0 +1,38 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flCheck .flCheck.inactive",
+			"hiddenComponent": true,
+			"id": "a0b0-235a-c858-6e90",
+			"props": {
+				"children": [
+					"3182-8d5a-b995-7155"
+				],
+				"name": "flCheck",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-imageView .flCheck-imgCheck .flCheck-imgCheck.hidden",
+			"id": "3182-8d5a-b995-7155",
+			"props": {
+				"children": [],
+				"name": "imgCheck",
+				"parent": "a0b0-235a-c858-6e90",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}
