@@ -8,7 +8,7 @@
 			"flexProps": {
 				"alignSelf": "CENTER"
 			},
-			"borderRadius": 50,
+			"borderRadius": 17,
 			"imageFillType": "ASPECTFIT"
 		},
 		"flexProps": {
