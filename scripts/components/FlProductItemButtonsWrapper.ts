@@ -16,12 +16,8 @@ export default class FlProductItemButtonsWrapper extends FlProductItemButtonsWra
         this.btnMinus.on(Button.Events.Press, () => {
             this._valueMinus && this._valueMinus();
         });
-    }
-    initIndicatorMinus() {
-        this.aiMinus.android.zIndex = this.btnMinus.android.zIndex + 2;
-    }
-    initIndicatorPlus() {
-        this.aiPlus.android.zIndex = this.btnPlus.android.zIndex + 2;
+        this.aiMinus.android.zIndex = 99;
+        this.aiPlus.android.zIndex = 99;
     }
     showHideMinusButton(toggle: boolean): void {
         setVisibility(this.btnMinus, toggle);
