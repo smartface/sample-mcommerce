@@ -16,7 +16,11 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 25,
+				"top": 153.5
+			}
 		},
 		{
 			"className": ".sf-button-main",

@@ -10,8 +10,6 @@ import storeActions from 'store/main/actions';
 import { getProductImageUrl } from 'service/commerce';
 import setVisibility from 'lib/setVisibility';
 import FlHeaderIcon from 'components/FlHeaderIcon';
-import { themeService } from 'theme';
-import FlexLayout from '@smartface/native/ui/flexlayout';
 import setHeaderIcon from 'lib/setHeaderIcon';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;

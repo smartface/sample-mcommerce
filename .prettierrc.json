@@ -1,19 +1,11 @@
 {
-	"printWidth": 140,
-	"proseWrap": "always",
-	"singleQuote": true,
-	"tabWidth": 4,
-	"useTabs": false,
-	"trailingComma": "none",
-	"semi": true,
-	"endOfLine": "lf",
-	"arrowParens": "always",
-	"overrides": [
-		{
-			"files": ["*.cpx", "*.pgx", "*.json"],
-			"options": {
-				"tabWidth": 2
-			}
-		}
-	]
+  "printWidth": 140,
+  "proseWrap": "always",
+  "singleQuote": true,
+  "tabWidth": 4,
+  "useTabs": false,
+  "trailingComma": "none",
+  "semi": true,
+  "endOfLine": "lf",
+  "arrowParens": "always"
 }
