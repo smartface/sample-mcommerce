@@ -169,21 +169,21 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 : '';
             GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price.toFixed(2)}`;
             GridViewItem.itemReview = this.categoryProducts[productIndex]?.rating?.toFixed(1).toString() || '';
-            GridViewItem.showHideMinusButton(false);
+            GridViewItem.showHideMinusButton = false;
             GridViewItem.buttonMinusText = this.categoryProducts[productIndex].count === 1 ? '' : '';
             GridViewItem.productCount =
-                this.categoryProducts[productIndex].count == undefined ? '' : this.categoryProducts[productIndex].count.toString();
+                this.categoryProducts[productIndex].count == this.categoryProducts[productIndex].count
+                    ? this.categoryProducts[productIndex].count.toString()
+                    : '';
             GridViewItem.onActionClickPlus = () => {
-                GridViewItem.initIndicatorPlus();
                 GridViewItem.toggleIndicatorPlus(true);
                 store.dispatch(storeActions.AddToBasket({ product: this.categoryProducts[productIndex], count: 1 }));
                 setTimeout(() => {
                     GridViewItem.toggleIndicatorPlus(false);
                 }, 500);
-                GridViewItem.showHideMinusButton(true);
+                GridViewItem.showHideMinusButton = true;
             };
             GridViewItem.onActionClickMinus = () => {
-                GridViewItem.initIndicatorMinus();
                 GridViewItem.toggleIndicatorMinus(true);
                 store.dispatch(storeActions.AddToBasket({ product: this.categoryProducts[productIndex], count: -1 }));
                 setTimeout(() => {
@@ -191,7 +191,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 }, 500);
             };
             if (this.categoryProducts[productIndex].count == 0) {
-                GridViewItem.showHideMinusButton(false);
+                GridViewItem.showHideMinusButton = false;
             }
             if (this.categoryProducts.length - 1 === productIndex) {
                 this.paginate();

@@ -21,18 +21,17 @@ export default class FlProductItem extends FlProductItemDesign {
         super(props);
         this.pageName = pageName;
     }
-    initIndicatorMinus() {
-        this.flProductItemButtonsWrapper.initIndicatorMinus;
-    }
-    initIndicatorPlus() {
-        this.flProductItemButtonsWrapper.initIndicatorPlus;
-    }
-    showHideMinusButton(toggle: boolean): void {
-        this.flProductItemButtonsWrapper.showHideMinusButton(toggle);
+    set showHideMinusButton(toggle: boolean) {
+        this.flProductItemButtonsWrapper.showHideMinusButton = toggle;
         if (toggle) {
             this.flProductItemWrapper.dispatch({
                 type: 'pushClassNames',
                 classNames: '.flProductItem-flProductItemWrapper.active'
+            });
+        } else {
+            this.flProductItemWrapper.dispatch({
+                type: 'removeClassName',
+                className: '.flProductItem-flProductItemWrapper.active'
             });
         }
     }

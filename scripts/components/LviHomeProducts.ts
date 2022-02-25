@@ -54,27 +54,25 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
                 : '';
             GridViewItem.itemPrice = `$${this.items[productIndex].price.toFixed(2)}`;
             GridViewItem.itemReview = this.items[productIndex]?.rating?.toFixed(1).toString() || '';
-            GridViewItem.showHideMinusButton(false);
+            GridViewItem.showHideMinusButton = false;
             GridViewItem.buttonMinusText = this.items[productIndex].count === 1 ? '' : '';
-            GridViewItem.productCount = this.items[productIndex].count == undefined ? '' : this.items[productIndex].count.toString();
+            GridViewItem.productCount = this.items[productIndex].count ? this.items[productIndex].count.toString() : '';
             GridViewItem.onActionClickPlus = () => {
-                GridViewItem.initIndicatorPlus();
                 GridViewItem.toggleIndicatorPlus(true);
                 store.dispatch(storeActions.AddToBasket({ product: this.items[productIndex], count: 1 }));
                 setTimeout(() => {
                     GridViewItem.toggleIndicatorPlus(false);
                 }, 500);
-                GridViewItem.showHideMinusButton(true);
+                GridViewItem.showHideMinusButton = true;
             };
             GridViewItem.onActionClickMinus = () => {
-                GridViewItem.initIndicatorMinus();
                 GridViewItem.toggleIndicatorMinus(true);
                 store.dispatch(storeActions.AddToBasket({ product: this.items[productIndex], count: -1 }));
                 setTimeout(() => {
                     GridViewItem.toggleIndicatorMinus(false);
                 }, 500);
                 if (this.items[productIndex].count == 0) {
-                    GridViewItem.showHideMinusButton(false);
+                    GridViewItem.showHideMinusButton = false;
                 }
             };
         };

@@ -5,21 +5,21 @@ import { themeService } from 'theme';
 
 export default class FlProductItemButtonsWrapper extends FlProductItemButtonsWrapperDesign {
     pageName?: string | undefined;
-    _valuePlus: (...args) => void;
-    _valueMinus: (...args) => void;
+    _plusClick: (...args) => void;
+    _minusClick: (...args) => void;
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
         this.btnPlus.on(Button.Events.Press, () => {
-            this._valuePlus && this._valuePlus();
+            this._plusClick && this._plusClick();
         });
         this.btnMinus.on(Button.Events.Press, () => {
-            this._valueMinus && this._valueMinus();
+            this._minusClick && this._minusClick();
         });
         this.aiMinus.android.zIndex = 99;
         this.aiPlus.android.zIndex = 99;
     }
-    showHideMinusButton(toggle: boolean): void {
+    set showHideMinusButton(toggle: boolean) {
         setVisibility(this.btnMinus, toggle);
         setVisibility(this.lblCount, toggle);
         if (toggle) {
@@ -53,15 +53,15 @@ export default class FlProductItemButtonsWrapper extends FlProductItemButtonsWra
         return this.lblCount.text;
     }
     get onActionClickPlus(): (...args) => void {
-        return this._valuePlus;
+        return this._plusClick;
     }
     set onActionClickPlus(value: (...args) => void) {
-        this._valuePlus = value;
+        this._plusClick = value;
     }
     get onActionClickMinus(): (...args) => void {
-        return this._valueMinus;
+        return this._minusClick;
     }
     set onActionClickMinus(value: (...args) => void) {
-        this._valueMinus = value;
+        this._minusClick = value;
     }
 }

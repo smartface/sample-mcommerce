@@ -9,12 +9,6 @@ export default class GviProductItem extends GviProductItemDesign {
         super(props);
         this.pageName = pageName;
     }
-    initIndicatorMinus() {
-        this.flProductItem.initIndicatorMinus;
-    }
-    initIndicatorPlus() {
-        this.flProductItem.initIndicatorPlus;
-    }
     get buttonMinusText(): string {
         return this.flProductItem.buttonMinusText;
     }
@@ -27,8 +21,8 @@ export default class GviProductItem extends GviProductItemDesign {
     get productCount(): string {
         return this.flProductItem.productCount;
     }
-    showHideMinusButton(toggle: boolean): void {
-        this.flProductItem.showHideMinusButton(toggle);
+    set showHideMinusButton(toggle: boolean) {
+        this.flProductItem.showHideMinusButton = toggle;
     }
     toggleIndicatorMinus(toggle: boolean): void {
         this.flProductItem.toggleIndicatorMinus(toggle);
