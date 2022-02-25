@@ -32,7 +32,7 @@ export default class FlProductItem extends FlProductItemDesign {
         if (toggle) {
             this.flProductItemWrapper.dispatch({
                 type: 'pushClassNames',
-                classNames: '.flProductItem.flProductItemWrapper.active'
+                classNames: '.flProductItem-flProductItemWrapper.active'
             });
         }
     }

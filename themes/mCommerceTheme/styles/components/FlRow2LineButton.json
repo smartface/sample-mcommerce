@@ -2,13 +2,13 @@
 	".flRow2LineButton": {
 		"height": 120,
 		"&-imgLeft": {
-			"width": 70,
-			"height": 70,
+			"width": 80,
+			"height": 80,
 			"marginRight": 20,
 			"flexProps": {
 				"alignSelf": "CENTER"
 			},
-			"borderRadius": 35,
+			"borderRadius": 50,
 			"imageFillType": "ASPECTFIT"
 		},
 		"flexProps": {
@@ -25,7 +25,7 @@
 				"&-btnBottomRight": {
 					"marginLeft": 10
 				},
-				"marginTop": 10,
+				"marginTop": 15,
 				"height": 25,
 				"&-verticalSeparator": {
 					"backgroundColor": "${textDark}",

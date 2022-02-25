@@ -16,11 +16,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 11.76,
-				"top": 123.53
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flRow2LineButton-imgLeft",
@@ -36,7 +32,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"image": "profile_placeholder.png",
+				"image": "profile_placeholder_dark.png",
 				"usePageVariable": true
 			}
 		},

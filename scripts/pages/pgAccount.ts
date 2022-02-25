@@ -14,8 +14,6 @@ import LviRow2LineButton from 'components/LviRow2LineButton';
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProfileImageUrl, putProfileImage } from 'service/commerce';
-import FlHeaderIcon from 'components/FlHeaderIcon';
-import setHeaderIcon from 'lib/setHeaderIcon';
 import AlertView from '@smartface/native/ui/alertview';
 
 type Processor =
@@ -29,14 +27,9 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
     userInfo: User;
     rightItem: HeaderBarItem;
     unsubscribe = null;
-    flHeaderIcon: FlHeaderIcon;
     onExit: (...args) => any;
     constructor(private router?: Router, private route?: Route) {
         super({});
-    }
-    addAppIconToHeader() {
-        this.headerBar.title = '';
-        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -161,7 +154,6 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
 
     onShow() {
         super.onShow();
-        this.addAppIconToHeader();
         this.unsubscribe = store.subscribe(() => this.handleChange());
         if (store.getState().main.isUserLoggedIn) {
             this.addRightItem();
@@ -176,5 +168,6 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
         this.initLogoutButton();
         this.initListView();
         this.headerBar.leftItemEnabled = false;
+        this.headerBar.title = global.lang.accountHeader;
     }
 }

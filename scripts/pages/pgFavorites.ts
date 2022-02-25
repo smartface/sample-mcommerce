@@ -7,8 +7,6 @@ import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductImageUrl } from 'service/commerce';
-import FlHeaderIcon from 'components/FlHeaderIcon';
-import setHeaderIcon from 'lib/setHeaderIcon';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import { themeService } from 'theme';
 import setVisibility from 'lib/setVisibility';
@@ -27,7 +25,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
     data: Processor[];
     rightItemCancel: HeaderBarItem;
     rightItemSelect: HeaderBarItem;
-    flHeaderIcon: FlHeaderIcon;
     changeHeaderText: boolean = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
@@ -84,10 +81,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
             }
         });
         this.headerBar.setItems([this.rightItemSelect]);
-    }
-    addAppIconToHeader() {
-        this.headerBar.title = '';
-        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
     }
     deleteAndRefresh(e: { index: number }): void {
         let length = this.favoriteProducts.length;
@@ -153,7 +146,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
             );
         } else {
             this.favoriteProducts.forEach((favouritedItem, index) => {
-                let selected;
+                let selected = this.selectedProducts.some((sp) => favouritedItem._id === sp._id);
                 processorItems.push(
                     ListViewItems.getLviFavorites(
                         {
@@ -186,7 +179,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         super.onShow();
         this.handleChange();
         this.addToCartSelectedProducts();
-        this.addAppIconToHeader();
         this.refreshListView();
     }
     onLoad() {
@@ -195,5 +187,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.initListView();
         this.refreshListView();
         this.headerBar.leftItemEnabled = false;
+        this.headerBar.title = global.lang.favouriteHeader;
     }
 }
