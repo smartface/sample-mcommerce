@@ -89,11 +89,11 @@
     "height": 45,
     "touchEnabled": true,
     "visible": true,
-    "backgroundColor": "${backgroundMain}",
+    "backgroundColor": "${backgroundSecondary}",
     "borderRadius": 17,
     "borderColor": "${grayLightBorder}",
     "borderWidth": 1,
-    "textColor": "${grayTextColor}",
+    "textColor": "${main}",
     "textAlignment": "MIDCENTER",
     "font": {
       "family": "FontAwesome5FreeSolid",

@@ -207,10 +207,18 @@
           "borderWidth": null,
           "borderRadius": 17,
           "top": 8
+        },
+        "&-flProductItemButtonsWrapper": {
+          "flexProps": {
+            "flexGrow": 2
+          }
         }
       },
       "paddingTop": 5,
-      "paddingBottom": 2
+      "paddingBottom": 2,
+      ".active": {
+        "borderColor": "${main}"
+      }
     },
     "height": 260,
     "width": null,

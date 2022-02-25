@@ -66,7 +66,7 @@ SMF.i18n.defineLanguage('en', {
     notifications: 'Notifications',
     help: 'Help',
     about: 'About',
-    cancel: 'Cancel',
+    cancel: 'CANCEL',
     copy: 'Copy',
     done: 'Done',
     copyURL: 'Copy URL',
@@ -143,5 +143,5 @@ SMF.i18n.defineLanguage('en', {
     appName: 'Smart Commerce',
     sureToLogout: 'Are you sure to logout?',
     noDescription: 'NO DESCRIPTION',
-    select: 'Select'
+    select: 'SELECT'
 });

@@ -9,17 +9,44 @@ export default class GviProductItem extends GviProductItemDesign {
         super(props);
         this.pageName = pageName;
     }
-    initIndicator() {
-        this.flProductItem.initIndicator();
+    initIndicatorMinus() {
+        this.flProductItem.initIndicatorMinus;
     }
-    toggleIndicator(toggle: boolean): void {
-        this.flProductItem.toggleIndicator(toggle);
+    initIndicatorPlus() {
+        this.flProductItem.initIndicatorPlus;
     }
-    get onActionClick(): (...args) => void {
-        return this.flProductItem.onActionClick;
+    get buttonMinusText(): string {
+        return this.flProductItem.buttonMinusText;
     }
-    set onActionClick(value: (...args) => void) {
-        this.flProductItem.onActionClick = value;
+    set buttonMinusText(value: string) {
+        this.flProductItem.buttonMinusText = value;
+    }
+    set productCount(value: string) {
+        this.flProductItem.productCount = value;
+    }
+    get productCount(): string {
+        return this.flProductItem.productCount;
+    }
+    showHideMinusButton(toggle: boolean): void {
+        this.flProductItem.showHideMinusButton(toggle);
+    }
+    toggleIndicatorMinus(toggle: boolean): void {
+        this.flProductItem.toggleIndicatorMinus(toggle);
+    }
+    toggleIndicatorPlus(toggle: boolean): void {
+        this.flProductItem.toggleIndicatorPlus(toggle);
+    }
+    get onActionClickPlus(): (...args) => void {
+        return this.flProductItem.onActionClickPlus;
+    }
+    set onActionClickPlus(value: (...args) => void) {
+        this.flProductItem.onActionClickPlus = value;
+    }
+    get onActionClickMinus(): (...args) => void {
+        return this.flProductItem.onActionClickMinus;
+    }
+    set onActionClickMinus(value: (...args) => void) {
+        this.flProductItem.onActionClickMinus = value;
     }
     set itemTitleMaxWidth(value: number) {
         this.flProductItem.itemTitleMaxWidth = value;

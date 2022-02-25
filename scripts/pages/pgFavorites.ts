@@ -15,7 +15,11 @@ import setVisibility from 'lib/setVisibility';
 import { Product } from 'types';
 
 type Processor = ListViewItems.ProcessorTypes.ILviFavorites;
-
+enum HeaderEnum {
+    Select = 1,
+    Cancel = -1,
+    NoHeader = 0
+}
 export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDesign) {
     private selectedProducts: Product[] = [];
     private selectable: boolean = false;
@@ -39,26 +43,8 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                     store.dispatch(storeActions.RemoveFromFavorites({ productId: product._id }));
                 });
             };
-            this.selectedProducts = [];
         }
-    }
-    setRightItem() {
-        this.rightItemSelect.title = this.changeHeaderText ? 'iptal' : 'sec';
-        this.rightItemSelect.onPress = () => {
-            this.changeHeaderText = true;
-            this.refreshListView();
-            this.selectable = !this.selectable;
-            if (!this.selectable) {
-                this.selectedProducts = [];
-            }
-            this.headerBar.setItems(this.changeHeaderText ? [this.rightItemSelect] : [this.rightItemSelect]);
-            this.rightItemCancel.title = this.changeHeaderText ? 'nane' : 'limon';
-        };
-        this.rightItemCancel.onPress = () => {
-            this.changeHeaderText = false;
-            this.refreshListView();
-        };
-        this.headerBar.setItems(!this.changeHeaderText ? [this.rightItemSelect] : [this.rightItemCancel]);
+        this.refreshListView();
     }
     handleChange() {
         if (this.favoriteProducts.length !== 0) {
@@ -118,6 +104,19 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.onRowSwipe = onRowSwipe.bind(this);
         this.lvMain.refreshEnabled = false;
+        this.lvMain.onRowSelected = (item, index: number) => {
+            this.selectable = !this.selectable;
+            if (!this.changeHeaderText) {
+                this.router.push('productDetail', {
+                    productId: this.favoriteProducts[index]._id
+                });
+            } else {
+                if (this.selectedProducts.includes(this.favoriteProducts[index])) {
+                    this.selectedProducts.push(this.favoriteProducts[index]);
+                }
+                this.selectable = !this.selectable;
+            }
+        };
         this.lvMain.onRowCanSwipe = (index: number) => {
             if (!this.changeHeaderText) {
                 return [ListView.SwipeDirection.RIGHTTOLEFT];
@@ -152,7 +151,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
             );
         } else {
             this.favoriteProducts.forEach((favouritedItem, index) => {
-                let selected = this.selectedProducts.some((sp) => favouritedItem._id === sp._id);
+                let selected;
                 processorItems.push(
                     ListViewItems.getLviFavorites(
                         {
@@ -165,11 +164,14 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                                     : `$${favouritedItem.price.toFixed(2)}`,
                             showCheck: this.changeHeaderText,
                             showArrow: !this.changeHeaderText,
-                            toggle: selected,
+                            toggle: !this.selectable,
                             onToggleChange: () => {
-                                this.selectable = !this.selectable;
-                                if (this.selectable && !this.selectedProducts.includes(favouritedItem)) {
-                                    this.addItemToSelectedProducts(selected);
+                                if (this.selectable) {
+                                    this.addItemToSelectedProducts(favouritedItem);
+                                    selected = this.selectedProducts.some((sp) => favouritedItem._id === sp._id);
+                                    if (selected) {
+                                        this.addToCartSelectedProducts();
+                                    }
                                 } else if (selected == false && this.selectedProducts.includes(favouritedItem)) {
                                 }
                             }

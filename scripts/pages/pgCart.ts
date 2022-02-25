@@ -38,6 +38,11 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
         this.lvMain.onRowHeight = onRowHeight.bind(this);
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
+        this.lvMain.onRowSelected = (item, index: number) => {
+            this.router.push('productDetail', {
+                productId: this.cartProducts[index]._id
+            });
+        };
         this.lvMain.refreshEnabled = false;
     }
     refreshListView() {
