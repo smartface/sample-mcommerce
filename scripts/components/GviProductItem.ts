@@ -2,7 +2,6 @@ import ActivityIndicator from '@smartface/native/ui/activityindicator';
 import GviProductItemDesign from 'generated/my-components/GviProductItem';
 
 export default class GviProductItem extends GviProductItemDesign {
-    __onActionClick: (...args) => void;
     pageName?: string | undefined;
     myActivityIndicator: ActivityIndicator;
     constructor(props?: any, pageName?: string) {

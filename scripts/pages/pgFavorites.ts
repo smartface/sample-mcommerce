@@ -35,11 +35,16 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
     }
     addToCartSelectedProducts() {
         this.flCartCheckout.btnCartCheckout.onPress = () => {
-            this.selectedProducts.forEach((product, index) => {
-                store.dispatch(storeActions.AddToBasket({ product, count: 1 }));
-                store.dispatch(storeActions.RemoveFromFavorites({ productId: product._id }));
-                this.selectedProducts.splice(index, 1);
+            let ids = [];
+            const dispatches = this.selectedProducts.map((product, index) => {
+                return () => {
+                    store.dispatch(storeActions.AddToBasket({ product, count: 1 }));
+                    store.dispatch(storeActions.RemoveFromFavorites({ productId: product._id }));
+                    ids.push(product._id);
+                };
             });
+            dispatches.forEach((d) => d());
+            this.selectedProducts = this.selectedProducts.filter((product, index) => !ids.includes(product._id));
             this.refreshListView();
         };
     }
@@ -103,10 +108,10 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                     productId: this.favoriteProducts[index]._id
                 });
             } else {
-                if (!this.selectedProducts.includes(this.favoriteProducts[index])) {
+                if (!this.selectedProducts.some((a) => a._id === this.favoriteProducts[index]._id)) {
                     this.selectedProducts.push(this.favoriteProducts[index]);
                 } else {
-                    this.selectedProducts.splice(index, 1);
+                    this.selectedProducts = this.selectedProducts.filter((sp) => sp._id !== this.favoriteProducts[index]._id);
                 }
                 this.refreshListView();
             }

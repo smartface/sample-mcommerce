@@ -12,7 +12,7 @@
         "borderRadius": 7,
         "marginRight": 10,
         ".inactive": {
-            "borderColor": "${hintTextColor}"
+            "borderColor": "${grayBorder}"
         },
         "&-imgCheck": {
             "width": 14,
