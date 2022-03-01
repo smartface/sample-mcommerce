@@ -1,19 +1,20 @@
 import Button from '@smartface/native/ui/button';
 import FlProductItemButtonsWrapperDesign from 'generated/my-components/FlProductItemButtonsWrapper';
 import setVisibility from 'lib/setVisibility';
+import { themeService } from 'theme';
 
 export default class FlProductItemButtonsWrapper extends FlProductItemButtonsWrapperDesign {
     pageName?: string | undefined;
-    _plusClick: (...args) => void;
-    _minusClick: (...args) => void;
+    private _plusClick: (...args) => void;
+    private _minusClick: (...args) => void;
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
         this.btnPlus.on(Button.Events.Press, () => {
-            this._plusClick && this._plusClick();
+            this?._plusClick();
         });
         this.btnMinus.on(Button.Events.Press, () => {
-            this._minusClick && this._minusClick();
+            this?._minusClick();
         });
         this.aiMinus.android.zIndex = 99;
         this.aiPlus.android.zIndex = 99;
@@ -32,17 +33,17 @@ export default class FlProductItemButtonsWrapper extends FlProductItemButtonsWra
     toggleIndicatorPlus(toggle: boolean): void {
         setVisibility(this.aiPlus, toggle);
     }
-    get buttonMinusText(): string {
-        return this.btnMinus.text;
-    }
-    set buttonMinusText(value: string) {
-        this.btnMinus.text = value;
-    }
     set productCount(value: string) {
         this.lblCount.text = value;
     }
     get productCount(): string {
         return this.lblCount.text;
+    }
+    get buttonMinusText(): string {
+        return this.btnMinus.text;
+    }
+    set buttonMinusText(value: string) {
+        this.btnMinus.text = value;
     }
     get onActionClickPlus(): (...args) => void {
         return this._plusClick;
