@@ -110,6 +110,7 @@ export function getProductImageUrl(imageId: string): string {
 }
 
 export function getBannerImage(bannerId: string): string {
+    console.info(`${serviceUrl}/commerce/banners/${bannerId}/image`);
     return `${serviceUrl}/commerce/banners/${bannerId}/image`;
 }
 

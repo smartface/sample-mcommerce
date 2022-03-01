@@ -158,6 +158,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             const bannersResponse = await getBanners();
             if (bannersResponse && bannersResponse.length > 0) {
                 this.banners = bannersResponse;
+                console.warn(this.banners);
             }
             return bannersResponse;
         } catch (error) {

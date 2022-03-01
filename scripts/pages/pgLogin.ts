@@ -12,19 +12,12 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     isPasswordValid = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.lblRouteSignUp.on(View.Events.Touch, () => {
-            this.router.push('pgSignUp');
-        });
         this.btnLogIn.on(Button.Events.Press, () => {
             this.initUserLogin();
         });
         this.lblTitle.text = global.lang.login;
         this.lblText.text = global.lang.loginSubText;
-        this.lblForgotPassword.text = global.lang.forgotPassword;
         this.btnLogIn.text = global.lang.login;
-
-        this.lblLeft.text = global.lang.donthaveanaccount;
-        this.lblRouteSignUp.text = global.lang.signup;
     }
     initMaterialTextBoxes() {
         this.mtbLogin.materialTextBox.ios.clearButtonEnabled = true;
@@ -99,8 +92,8 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     }
     onShow() {
         super.onShow();
-        this.initBackButton(this.router, {
-            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        this.initDismissButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.transparent.white').itemColor
         });
     }
     onLoad() {

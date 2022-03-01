@@ -119,9 +119,7 @@
 				"children": [
 					"2357-5cc8-f049-3396",
 					"530e-ea35-e6ca-1809",
-					"bdfa-6292-509e-bad0",
-					"98b3-fdb6-61f4-2eb9",
-					"73b4-1e9e-72b6-ee15"
+					"98b3-fdb6-61f4-2eb9"
 				],
 				"name": "flForm",
 				"parent": "9503-8d4b-931f-3afe"
@@ -174,21 +172,6 @@
 			}
 		},
 		{
-			"className": ".sf-label #pgLogin-lblForgotPassword .login.labelForgotPassword",
-			"id": "bdfa-6292-509e-bad0",
-			"props": {
-				"children": [],
-				"name": "lblForgotPassword",
-				"parent": "b572-513a-69d9-501f",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"testId": "oM3iP7eQ7",
-				"usePageVariable": true
-			}
-		},
-		{
 			"className": ".sf-button .sf-button-main",
 			"id": "98b3-fdb6-61f4-2eb9",
 			"props": {
@@ -200,60 +183,6 @@
 			"type": "Button",
 			"userProps": {
 				"testId": "LGkCVcClMB",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout #pgLogin-flfooter",
-			"id": "73b4-1e9e-72b6-ee15",
-			"props": {
-				"children": [
-					"e85e-6514-edb3-f609",
-					"b60f-803f-5f9e-4650"
-				],
-				"name": "flFooter",
-				"parent": "b572-513a-69d9-501f",
-				"usePageVariable": true
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"testId": "lohe2xjAZ",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label #pgLogin-lblLeft .login.labelLeft",
-			"hiddenComponent": true,
-			"id": "e85e-6514-edb3-f609",
-			"props": {
-				"children": [],
-				"name": "lblLeft",
-				"parent": "73b4-1e9e-72b6-ee15",
-				"text": "Don’t have an account? ",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"testId": "tpVhjtcbD",
-				"text": "Don’t have an account? ",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label #pgLogin-lblRouteSignUp .login.labelRoute",
-			"hiddenComponent": true,
-			"id": "b60f-803f-5f9e-4650",
-			"props": {
-				"children": [],
-				"name": "lblRouteSignUp",
-				"parent": "73b4-1e9e-72b6-ee15",
-				"text": "Singup",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"testId": "LItobv3NmQ",
-				"text": "Singup",
 				"usePageVariable": true
 			}
 		}

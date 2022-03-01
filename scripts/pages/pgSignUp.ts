@@ -18,17 +18,12 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
     namesValid = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.lblRouteLogin.on(View.Events.TouchEnded, () => {
-            this.router.push('pgLogin');
-        });
         this.btnSignUp.on(Button.Events.Press, () => {
             this.initUserSignup();
         });
         this.lblTitle.text = global.lang.signup;
         this.lblText.text = global.lang.signupSubText;
         this.btnSignUp.text = global.lang.signup;
-        this.lblFooterLeft.text = global.lang.alreadyhaveanaccount;
-        this.lblRouteLogin.text = global.lang.login;
     }
     initAttributedStrings() {
         let termsLeft = new AttributedString({
@@ -145,8 +140,8 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
             Application.statusBar.visible = true;
             Application.statusBar.backgroundColor = Color.WHITE;
         }
-        this.initBackButton(this.router, {
-            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        this.initDismissButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.transparent.white').itemColor
         });
     }
     onLoad() {

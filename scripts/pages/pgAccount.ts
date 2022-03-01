@@ -86,7 +86,7 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                   bottomLeftLabelText: global.lang.signup,
                   bottomRightLabelText: global.lang.forgotPassword,
                   mainOnClick: () => {
-                      this.router.push('pages/pgWelcome');
+                      this.router.push('pages/pgLogin');
                   },
                   bottomLeftOnClick: () => {
                       this.router.push('pages/pgSignUp');
