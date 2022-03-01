@@ -7,6 +7,7 @@
 			"props": {
 				"children": [
 					"962d-7142-fcff-fc38",
+					"bcf4-332c-ae41-c53c",
 					"2357-b1c4-5a52-30b7"
 				],
 				"name": "flAccountUser",
@@ -16,7 +17,11 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 12.86,
+				"top": 97.14
+			}
 		},
 		{
 			"className": ".sf-imageView .flAccountUser-imgUserAccount",
@@ -33,6 +38,40 @@
 			"type": "ImageView",
 			"userProps": {
 				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label",
+			"id": "bcf4-332c-ae41-c53c",
+			"props": {
+				"children": [],
+				"name": "lblEditIcon",
+				"parent": "f4e3-277e-950f-74f8",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"bottom": 20,
+				"flexProps": {
+					"positionType": "ABSOLUTE"
+				},
+				"font": {
+					"size": 17,
+					"bold": false,
+					"italic": false,
+					"family": "FontAwesome5FreeSolid",
+					"style": null
+				},
+				"height": 25,
+				"left": 65,
+				"text": "label1",
+				"textColor": "rgba( 83, 177, 117, 1 )",
+				"usePageVariable": true,
+				"width": 25
 			}
 		},
 		{
@@ -60,8 +99,7 @@
 			"id": "5525-7f8e-944c-5f9d",
 			"props": {
 				"children": [
-					"3c09-4b0e-2322-62d6",
-					"a6dd-7535-427f-40d4"
+					"3c09-4b0e-2322-62d6"
 				],
 				"name": "flAccountTop",
 				"parent": "2357-b1c4-5a52-30b7"
@@ -91,25 +129,6 @@
 			"userProps": {
 				"height": null,
 				"text": "label1",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label .flAccountUser-lblAccountEditIcon",
-			"id": "a6dd-7535-427f-40d4",
-			"props": {
-				"children": [],
-				"name": "lblAccountEditIcon",
-				"parent": "5525-7f8e-944c-5f9d",
-				"text": "label2",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"text": "label2",
 				"usePageVariable": true
 			}
 		},

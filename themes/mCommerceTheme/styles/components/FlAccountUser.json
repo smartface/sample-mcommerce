@@ -1,109 +1,109 @@
 {
-	".flAccountUser": {
-		"flexProps": {
-			"flexDirection": "ROW",
-			"flexGrow": 1
-		},
-		"paddingBottom": 10,
-		"paddingRight": 10,
-		"paddingLeft": 15,
-		"paddingTop": 10,
-		"backgroundColor": "${backgroundMain}",
-		"height": 100,
-		"&-imgUserAccount": {
-			"flexProps": {
-				"alignSelf": "CENTER"
-			},
-			"testId": "PSD2wLj0u",
-			"borderRadius": 40,
-			"width": 80,
-			"height": 80,
-			"imageFillType": "ASPECTFIT",
-			".placeholder": {
-				"image": {
-					"src": "${profilePlaceholder}"
-				}
-			}
-		},
-		"&-flAccountRightWrapper": {
-			"flexProps": {
-				"flexGrow": 1,
-				"justifyContent": "CENTER"
-			},
-			"height": null,
-			"marginLeft": 20,
-			"testId": "OE7mL7f4M",
-			"&-flAccountRightTopWrapper": {
-				"height": null,
-				"flexProps": {
-					"flexDirection": "ROW",
-					"flexGrow": 1
-				},
-				"testId": "hFJc5ecen",
-				"&-lblAccountName": {
-					"flexProps": {
-						"flexGrow": 1
-					},
-					"height": null,
-					"testId": "FxBN6WHWO",
-					"font": {
-						"family": "Nunito",
-						"style": "Bold",
-						"bold": true,
-						"italic": false
-					}
-				},
-				"maxHeight": 30,
-				"marginBottom": 0,
-				"marginTop": 0
-			},
-			"marginTop": 0,
-			"marginBottom": 0
-		},
-		"&-lblAccountName": {
-			"flexProps": {
-				"flexGrow": 1
-			},
-			"font": {
-				"family": "Nunito",
-				"style": "Bold",
-				"bold": true,
-				"italic": false,
-				"size": 20
-			},
-			"textColor": "${textDark}"
-		},
-		"&-lblAccountEditIcon": {
-			"flexProps": {
-				"flexGrow": 1
-			},
-			"textColor": "${green}",
-			"height": null,
-			"testId": "6CQsyavfZ",
-			"font": {
-				"family": "FontAwesome5FreeSolid",
-				"style": null,
-				"bold": false,
-				"italic": false
-			}
-		},
-		"&-lblAccountEmail": {
-			"flexProps": {
-				"flexGrow": 1
-			},
-			"textColor": "${textLight}",
-			"height": null,
-			"testId": "URBRTUozX",
-			"font": {
-				"size": 16,
-				"family": "Nunito",
-				"style": "Medium",
-				"bold": false,
-				"italic": false
-			},
-			"marginBottom": 0,
-			"marginTop": 0,
-			"maxHeight": 30
-		}
-	}
+    ".flAccountUser": {
+        "flexProps": {
+            "flexDirection": "ROW",
+            "flexGrow": 1
+        },
+        "paddingBottom": 10,
+        "paddingRight": 10,
+        "paddingLeft": 15,
+        "paddingTop": 10,
+        "backgroundColor": "${backgroundMain}",
+        "height": 100,
+        "&-imgUserAccount": {
+            "flexProps": {
+                "alignSelf": "CENTER"
+            },
+            "testId": "PSD2wLj0u",
+            "borderRadius": 40,
+            "width": 80,
+            "height": 80,
+            "imageFillType": "ASPECTFIT",
+            ".placeholder": {
+                "image": {
+                    "src": "${profilePlaceholder}"
+                }
+            }
+        },
+        "&-flAccountRightWrapper": {
+            "flexProps": {
+                "flexGrow": 1,
+                "justifyContent": "CENTER"
+            },
+            "height": null,
+            "marginLeft": 20,
+            "testId": "OE7mL7f4M",
+            "&-flAccountRightTopWrapper": {
+                "height": null,
+                "flexProps": {
+                    "flexDirection": "ROW",
+                    "flexGrow": 1
+                },
+                "testId": "hFJc5ecen",
+                "&-lblAccountName": {
+                    "flexProps": {
+                        "flexGrow": 1
+                    },
+                    "height": null,
+                    "testId": "FxBN6WHWO",
+                    "font": {
+                        "family": "Nunito",
+                        "style": "Bold",
+                        "bold": true,
+                        "italic": false
+                    }
+                },
+                "maxHeight": 30,
+                "marginBottom": 0,
+                "marginTop": 0
+            },
+            "marginTop": 0,
+            "marginBottom": 0
+        },
+        "&-lblAccountName": {
+            "flexProps": {
+                "flexGrow": 1
+            },
+            "font": {
+                "family": "Nunito",
+                "style": "Bold",
+                "bold": true,
+                "italic": false,
+                "size": 20
+            },
+            "textColor": "${textDark}"
+        },
+        "&-lblAccountEditIcon": {
+            "flexProps": {
+                "flexGrow": 1
+            },
+            "textColor": "${green}",
+            "height": null,
+            "testId": "6CQsyavfZ",
+            "font": {
+                "family": "FontAwesome5FreeSolid",
+                "style": null,
+                "bold": false,
+                "italic": false
+            }
+        },
+        "&-lblAccountEmail": {
+            "flexProps": {
+                "flexGrow": 1
+            },
+            "textColor": "${textLight}",
+            "height": null,
+            "testId": "URBRTUozX",
+            "font": {
+                "size": 16,
+                "family": "Nunito",
+                "style": "Medium",
+                "bold": false,
+                "italic": false
+            },
+            "marginBottom": 0,
+            "marginTop": 0,
+            "maxHeight": 30
+        }
+    }
 }

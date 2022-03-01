@@ -245,6 +245,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgAccount>({
                     path: `/btb/tab5/account`,
+                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgAccount(router, route);
                         router.setState({ view: page });
