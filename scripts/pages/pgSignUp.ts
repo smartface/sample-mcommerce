@@ -1,9 +1,8 @@
 import PgSignUpDesign from 'generated/pages/pgSignUp';
 import Color from '@smartface/native/ui/color';
-import View from '@smartface/native/ui/view';
 import Application from '@smartface/native/application';
 import System from '@smartface/native/device/system';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Route, NativeStackRouter, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
 import { themeService } from 'theme';
@@ -74,7 +73,9 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
                     password: this.mtbPassword.materialTextBox.text.trim()
                 });
                 if (registerResponse && registerResponse.success) {
-                    this.router.push('pgLogin');
+                    if (this.router instanceof NativeStackRouter) {
+                        this.router.dismiss();
+                    }
                 }
             } catch (error) {
                 alert({
