@@ -56,6 +56,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
             GridViewItem.itemPrice = `$${this.items[productIndex].price.toFixed(2)}`;
             GridViewItem.itemReview = this.items[productIndex]?.rating?.toFixed(1).toString() || '';
             GridViewItem.showHideMinusButton = !!basketItem;
+            GridViewItem.minusTextColor = basketItem?.count === 1 ? '.danger' : '.main';
             GridViewItem.buttonMinusText = basketItem?.count === 1 ? '' : '';
             GridViewItem.productCount = basketItem?.count?.toString() || '';
             GridViewItem.onActionClickPlus = () => {

@@ -157,44 +157,44 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             }
         };
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
-            let basketItem = store.getState().main.basket.find((bp) => bp._id === this.categoryProducts[productIndex]._id);
-            GridViewItem.itemTag = this.categoryProducts[productIndex]?.labels[0]?.name;
-            GridViewItem.itemTagColor = this.categoryProducts[productIndex]?.labels[0]?.color;
-            GridViewItem.itemTitle = this.categoryProducts[productIndex].name;
-            GridViewItem.itemDesc = this.categoryProducts[productIndex].shortDescription;
-            GridViewItem.itemImage = this.categoryProducts[productIndex].images
-                ? getProductImageUrl(this.categoryProducts[productIndex].images[0])
-                : null;
-            GridViewItem.itemDiscountPrice = !!this.categoryProducts[productIndex].discountPrice
-                ? `$${this.categoryProducts[productIndex].discountPrice.toFixed(2)}`
-                : '';
-            GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price.toFixed(2)}`;
-            GridViewItem.itemReview = this.categoryProducts[productIndex]?.rating?.toFixed(1).toString() || '';
-            GridViewItem.showHideMinusButton = !!basketItem;
-            GridViewItem.buttonMinusText = basketItem?.count === 1 ? '' : '';
-            GridViewItem.productCount = basketItem?.count?.toString() || '';
-            GridViewItem.onActionClickPlus = () => {
-                GridViewItem.toggleIndicatorPlus(true);
-                store.dispatch(storeActions.AddToBasket({ product: this.categoryProducts[productIndex], count: 1 }));
-                setTimeout(() => {
-                    GridViewItem.toggleIndicatorPlus(false);
-                    this.refreshGridView();
-                    GridViewItem.showHideMinusButton = true;
-                }, 500);
-            };
-            GridViewItem.onActionClickMinus = () => {
-                GridViewItem.toggleIndicatorMinus(true);
-                store.dispatch(storeActions.AddToBasket({ product: this.categoryProducts[productIndex], count: -1 }));
-                setTimeout(() => {
-                    GridViewItem.toggleIndicatorMinus(false);
-                    this.refreshGridView();
-                    if (basketItem?.count === 0) {
-                        GridViewItem.showHideMinusButton = false;
-                    }
-                }, 500);
-            };
-            if (this.categoryProducts.length - 1 === productIndex) {
-                this.paginate();
+            const selectedProduct = this.categoryProducts[productIndex];
+            if (selectedProduct) {
+                GridViewItem.itemTagColor = selectedProduct?.labels[0]?.color;
+                const basketItem = store.getState().main.basket.find((bp) => bp._id === selectedProduct._id);
+                GridViewItem.itemTag = selectedProduct?.labels[0]?.name;
+                GridViewItem.itemTitle = selectedProduct?.name;
+                GridViewItem.itemDesc = selectedProduct.shortDescription;
+                GridViewItem.itemImage = selectedProduct.images ? getProductImageUrl(selectedProduct.images[0]) : null;
+                GridViewItem.itemDiscountPrice = !!selectedProduct.discountPrice ? `$${selectedProduct.discountPrice.toFixed(2)}` : '';
+                GridViewItem.itemPrice = `$${selectedProduct.price.toFixed(2)}`;
+                GridViewItem.itemReview = selectedProduct?.rating?.toFixed(1).toString() || '';
+                GridViewItem.showHideMinusButton = !!basketItem;
+                GridViewItem.minusTextColor = basketItem?.count === 1 ? '.danger' : '.main';
+                GridViewItem.buttonMinusText = basketItem?.count === 1 ? '' : '';
+                GridViewItem.productCount = basketItem?.count?.toString() || '';
+                GridViewItem.onActionClickPlus = () => {
+                    GridViewItem.toggleIndicatorPlus(true);
+                    store.dispatch(storeActions.AddToBasket({ product: selectedProduct, count: 1 }));
+                    setTimeout(() => {
+                        GridViewItem.toggleIndicatorPlus(false);
+                        this.refreshGridView();
+                        GridViewItem.showHideMinusButton = true;
+                    }, 500);
+                };
+                GridViewItem.onActionClickMinus = () => {
+                    GridViewItem.toggleIndicatorMinus(true);
+                    store.dispatch(storeActions.AddToBasket({ product: selectedProduct, count: -1 }));
+                    setTimeout(() => {
+                        GridViewItem.toggleIndicatorMinus(false);
+                        this.refreshGridView();
+                        if (basketItem?.count === 0) {
+                            GridViewItem.showHideMinusButton = false;
+                        }
+                    }, 500);
+                };
+                if (this.categoryProducts.length - 1 === productIndex) {
+                    this.paginate();
+                }
             }
         };
         this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {

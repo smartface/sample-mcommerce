@@ -17,11 +17,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 12.86,
-				"top": 97.14
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flAccountUser-imgUserAccount",
@@ -41,7 +37,7 @@
 			}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label .flAccountUser-lblEditIcon",
 			"id": "bcf4-332c-ae41-c53c",
 			"props": {
 				"children": [],
@@ -55,23 +51,8 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"bottom": 20,
-				"flexProps": {
-					"positionType": "ABSOLUTE"
-				},
-				"font": {
-					"size": 17,
-					"bold": false,
-					"italic": false,
-					"family": "FontAwesome5FreeSolid",
-					"style": null
-				},
-				"height": 25,
-				"left": 65,
 				"text": "label1",
-				"textColor": "rgba( 83, 177, 117, 1 )",
-				"usePageVariable": true,
-				"width": 25
+				"usePageVariable": true
 			}
 		},
 		{

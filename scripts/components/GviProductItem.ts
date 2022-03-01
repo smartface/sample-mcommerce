@@ -20,6 +20,9 @@ export default class GviProductItem extends GviProductItemDesign {
     get productCount(): string {
         return this.flProductItem.productCount;
     }
+    set minusTextColor(value: string) {
+        this.flProductItem.minusTextColor = value;
+    }
     set showHideMinusButton(toggle: boolean) {
         this.flProductItem.showHideMinusButton = toggle;
     }

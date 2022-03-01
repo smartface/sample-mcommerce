@@ -21,6 +21,9 @@ export default class FlProductItem extends FlProductItemDesign {
         super(props);
         this.pageName = pageName;
     }
+    set minusTextColor(value: string) {
+        this.flProductItemButtonsWrapper.minusTextColor = value;
+    }
     set showHideMinusButton(toggle: boolean) {
         this.flProductItemButtonsWrapper.showHideMinusButton = toggle;
         if (toggle) {

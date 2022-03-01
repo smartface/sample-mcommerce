@@ -73,20 +73,6 @@
             },
             "textColor": "${textDark}"
         },
-        "&-lblAccountEditIcon": {
-            "flexProps": {
-                "flexGrow": 1
-            },
-            "textColor": "${green}",
-            "height": null,
-            "testId": "6CQsyavfZ",
-            "font": {
-                "family": "FontAwesome5FreeSolid",
-                "style": null,
-                "bold": false,
-                "italic": false
-            }
-        },
         "&-lblAccountEmail": {
             "flexProps": {
                 "flexGrow": 1
@@ -104,6 +90,24 @@
             "marginBottom": 0,
             "marginTop": 0,
             "maxHeight": 30
+        },
+        "&-lblEditIcon": {
+            "bottom": 20,
+            "flexProps": {
+                "positionType": "ABSOLUTE"
+            },
+            "font": {
+                "size": 17,
+                "bold": false,
+                "italic": false,
+                "family": "FontAwesome5FreeSolid",
+                "style": null
+            },
+            "height": 25,
+            "left": 60,
+            "textColor": "rgba( 83, 177, 117, 1 )",
+            "width": 25,
+            "textAlignment": "MIDLEFT"
         }
     }
 }

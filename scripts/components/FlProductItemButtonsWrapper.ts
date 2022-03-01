@@ -19,6 +19,13 @@ export default class FlProductItemButtonsWrapper extends FlProductItemButtonsWra
         this.aiMinus.android.zIndex = 99;
         this.aiPlus.android.zIndex = 99;
     }
+    set minusTextColor(value: string) {
+        const defaultClass = '.flProductItemButtonsWrapper-btnMinus';
+        this.btnMinus.dispatch({
+            type: 'pushClassNames',
+            classNames: defaultClass + value
+        });
+    }
     set showHideMinusButton(toggle: boolean) {
         setVisibility(this.btnMinus, toggle);
         setVisibility(this.lblCount, toggle);

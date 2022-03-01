@@ -297,6 +297,7 @@
 		},
 		{
 			"className": ".sf-flexLayout .flProductItem-flProductItemWrapper-flTagWrapper",
+			"hiddenComponent": false,
 			"id": "6477-2b35-9f70-2a57",
 			"props": {
 				"children": [

@@ -181,7 +181,8 @@
 					"textColor": "${white}",
 					"paddingRight": 5,
 					"paddingLeft": 5
-				}
+				},
+				"visible": false
 			},
 			"&-flProductItemPriceButtonWrapper": {
 				"&-aiAddToCart": {
