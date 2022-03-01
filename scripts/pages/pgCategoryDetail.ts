@@ -170,9 +170,9 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 : '';
             GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price.toFixed(2)}`;
             GridViewItem.itemReview = this.categoryProducts[productIndex]?.rating?.toFixed(1).toString() || '';
-            GridViewItem.showHideMinusButton = basketItem ? true : false;
+            GridViewItem.showHideMinusButton = !!basketItem;
             GridViewItem.buttonMinusText = basketItem?.count === 1 ? '' : '';
-            GridViewItem.productCount = basketItem?.count == undefined ? '' : basketItem?.count?.toString();
+            GridViewItem.productCount = basketItem?.count?.toString() || '';
             GridViewItem.onActionClickPlus = () => {
                 GridViewItem.toggleIndicatorPlus(true);
                 store.dispatch(storeActions.AddToBasket({ product: this.categoryProducts[productIndex], count: 1 }));
