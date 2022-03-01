@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-flexLayout .flProductItemButtonsWrapper",
+			"className": ".sf-flexLayout .flProductItemButtonsWrapper .flProductItemButtonsWrapper.inactive",
 			"hiddenComponent": true,
 			"id": "e605-6f16-e23e-ed52",
 			"props": {
@@ -19,7 +19,11 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 17.33,
+				"top": 182
+			}
 		},
 		{
 			"className": ".sf-activityIndicator .flProductItemButtonsWrapper-aiMinus",

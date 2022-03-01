@@ -1,9 +1,13 @@
 import FlRow2LineButtonDesign from 'generated/my-components/FlRow2LineButton';
-import Image from '@smartface/native/ui/image';
-import { setID } from 'lib/testAutomation';
 import Button from '@smartface/native/ui/button';
 import Label from '@smartface/native/ui/label';
+import Screen from '@smartface/native/device/screen';
+import { themeService } from 'theme';
 
+const { marginRight: verticalSeparatorMarginRight, marginLeft: verticalSeparatorMarginLeft } = themeService.getNativeStyle(
+    '.flRow2LineButton-flButtons-flOtherActions-verticalSeparator'
+);
+const { width: buttonWidth } = themeService.getNativeStyle('.flRow2LineButton-flButtons-flOtherActions-btnMain');
 export default class FlRow2LineButton extends FlRow2LineButtonDesign {
     pageName?: string | undefined;
     __mainOnClick: (...args) => void;
@@ -42,12 +46,24 @@ export default class FlRow2LineButton extends FlRow2LineButtonDesign {
     }
     set bottomLeftLabelText(value: string) {
         this.lblLeft.text = value;
+        this.lblLeft.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                width: this.lblLeft.font.sizeOfString(value, Screen.width).width
+            }
+        });
     }
     get bottomRightLabelText() {
         return this.lblRight.text;
     }
     set bottomRightLabelText(value: string) {
         this.lblRight.text = value;
+        this.lblRight.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                width: this.lblRight.font.sizeOfString(value, Screen.width).width
+            }
+        });
     }
     get mainOnClick(): (...args) => void {
         return this.__mainOnClick;

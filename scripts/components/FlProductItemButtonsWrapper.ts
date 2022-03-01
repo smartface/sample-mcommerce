@@ -1,7 +1,6 @@
 import Button from '@smartface/native/ui/button';
 import FlProductItemButtonsWrapperDesign from 'generated/my-components/FlProductItemButtonsWrapper';
 import setVisibility from 'lib/setVisibility';
-import { themeService } from 'theme';
 
 export default class FlProductItemButtonsWrapper extends FlProductItemButtonsWrapperDesign {
     pageName?: string | undefined;
@@ -22,17 +21,10 @@ export default class FlProductItemButtonsWrapper extends FlProductItemButtonsWra
     set showHideMinusButton(toggle: boolean) {
         setVisibility(this.btnMinus, toggle);
         setVisibility(this.lblCount, toggle);
-        if (toggle) {
-            this.dispatch({
-                type: 'pushClassNames',
-                classNames: '.flProductItemButtonsWrapper.active'
-            });
-        } else {
-            this.dispatch({
-                type: 'removeClassName',
-                className: '.flProductItemButtonsWrapper.active'
-            });
-        }
+        this.dispatch({
+            type: 'pushClassNames',
+            classNames: toggle ? '.flProductItemButtonsWrapper.active' : '.flProductItemButtonsWrapper.inactive'
+        });
     }
     toggleIndicatorMinus(toggle: boolean): void {
         setVisibility(this.aiMinus, toggle);
