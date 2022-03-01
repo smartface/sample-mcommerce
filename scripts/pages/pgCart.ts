@@ -9,6 +9,8 @@ import store from 'store/index';
 import storeActions from 'store/main/actions';
 import { getProductImageUrl } from 'service/commerce';
 import setVisibility from 'lib/setVisibility';
+import System from '@smartface/native/device/system';
+import Invocation from '@smartface/native/util/iOS/invocation';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -63,10 +65,12 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                         productCount: cart.count,
                         minusButtonIcon: cart.count === 1 ? '' : '',
                         onActionPlus: () => {
+                            this.callVibrate(100);
                             this.cartOperation(cart, CartOperationEnum.Add);
                             this.refreshListView();
                         },
                         onActionMinus: () => {
+                            this.callVibrate(50);
                             this.cartOperation(cart, CartOperationEnum.Remove);
                             this.refreshListView();
                         },
@@ -125,6 +129,29 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                 return store.dispatch(storeActions.AddToBasket({ product: cart, count: -1 }));
             case CartOperationEnum.Clear:
                 return store.dispatch(storeActions.RemoveFromBasket({ productId: cart._id }));
+        }
+    }
+    callVibrate(millisecond: number) {
+        if (System.OS === System.OSType.ANDROID) {
+            console.warn('AND');
+            System.vibrate({ millisecond: millisecond });
+        } else if (System.OS === System.OSType.IOS) {
+            console.warn('IOS');
+            let feedbackAlloc = Invocation.invokeClassMethod('UIImpactFeedbackGenerator', 'alloc', [], 'id');
+            // 0: Light , 1: Medium , 2: Heavy
+            //@ts-ignore
+            let argStyle = new Invocation.Argument({
+                type: 'NSInteger',
+                value: 2
+            });
+            //@ts-ignore
+            let feedbackGenerator = Invocation.invokeInstanceMethod(feedbackAlloc, 'initWithStyle:', [argStyle], 'NSObject');
+            //@ts-ignore
+            Invocation.invokeInstanceMethod(feedbackGenerator, 'prepare', []);
+            //@ts-ignore
+            Invocation.invokeInstanceMethod(feedbackGenerator, 'impactOccurred', []);
+            feedbackGenerator = undefined;
+            feedbackAlloc = undefined;
         }
     }
     onShow() {
