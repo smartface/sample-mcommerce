@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-listViewItem .paddingHorizontal",
+			"className": ".sf-listViewItem .paddingHorizontal .lviFavorites",
 			"hiddenComponent": true,
 			"id": "844f-778d-a88e-c085",
 			"props": {
@@ -15,7 +15,11 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {}
+			"userProps": {
+				"flexProps": {},
+				"left": 2,
+				"top": 128
+			}
 		},
 		{
 			"className": ".sf-flexLayout .grow .lviFavorites-lviFavoritesWrapper",
@@ -41,7 +45,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flCheck .flCheck.inactive",
+			"className": ".sf-flexLayout .flCheck .flCheck.inactive .lviFavorites-flCheck",
 			"hiddenComponent": false,
 			"id": "a54d-e5fc-88f2-a922",
 			"props": {
@@ -57,14 +61,6 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"top": 0,
 				"usePageVariable": true
 			}
 		},
@@ -103,8 +99,6 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"imageFillType": "ASPECTFIT",
-				"testId": "rP-vhokHM",
 				"usePageVariable": true
 			}
 		},
@@ -125,7 +119,6 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"testId": "3uEQan6xS",
 				"usePageVariable": true
 			}
 		},
@@ -144,11 +137,6 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "6ghoZ6dVH",
 				"text": "label1",
 				"usePageVariable": true
 			}
@@ -168,11 +156,6 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "gvHxA3b_G",
 				"text": "label2",
 				"usePageVariable": true
 			}
