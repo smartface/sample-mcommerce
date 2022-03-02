@@ -35,6 +35,23 @@ store.subscribe(() => {
         btbItemCart.badge.text = '10+';
     }
 });
+let btbItemFavorite = new TabBarItem();
+btbItemFavorite.title = global.lang.favourite;
+btbItemFavorite.badge.backgroundColor = itemColor.selected;
+btbItemFavorite.badge.visible = false;
+btbItemFavorite.icon = Image.createFromFile('images://tabiconfavorite.png');
+store.subscribe(() => {
+    if (getFavoritesCounter() !== '') {
+        btbItemFavorite.badge.visible = true;
+        btbItemFavorite.badge.move(0, 0);
+        btbItemFavorite.badge.text = getFavoritesCounter();
+    } else {
+        btbItemFavorite.badge.visible = false;
+    }
+    if (parseInt(btbItemFavorite.badge.text) > 10) {
+        btbItemFavorite.badge.text = '10+';
+    }
+});
 
 const getBasketCounter = () => {
     if (store.getState().main.basket && store.getState().main.basket.length > 0) {
@@ -47,6 +64,13 @@ const getBasketCounter = () => {
     }
 };
 
+const getFavoritesCounter = () => {
+    if (store.getState().main.favorites && store.getState().main.favorites.length > 0) {
+        return store.getState().main.favorites.length.toString();
+    } else {
+        return '';
+    }
+};
 const androidModalDismiss = (router, route) => {
     const { view, action } = route.getState();
     if (System.OS === System.OSType.ANDROID && view && action === 'POP') {
@@ -120,7 +144,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
         { title: global.lang.shop, icon: Image.createFromFile('images://tabiconhome.png') },
         { title: global.lang.explore, icon: Image.createFromFile('images://tabiconexplore.png') },
         btbItemCart,
-        { title: global.lang.favourite, icon: Image.createFromFile('images://tabiconfavorite.png') },
+        btbItemFavorite,
         { title: global.lang.account, icon: Image.createFromFile('images://tabiconuser.png') }
     ],
     // tab1

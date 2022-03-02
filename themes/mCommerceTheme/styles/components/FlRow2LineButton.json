@@ -42,7 +42,7 @@
 				"&-lblRight": {
 					"textAlignment": "MIDLEFT"
 				},
-				"marginRight": 25
+				"marginRight": 10
 			},
 			"&-secondary": {
 				"backgroundColor": "${backgroundSecondary}",

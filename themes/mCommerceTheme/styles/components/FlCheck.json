@@ -22,8 +22,8 @@
             "flexProps": {
                 "alignSelf": "CENTER"
             },
-            "imageFillType": "ASPECTFILL",
-            "visible": "true",
+            "imageFillType": "ASPECTFIT",
+            "visible": true,
             ".hidden": {
                 "visible": false
             }

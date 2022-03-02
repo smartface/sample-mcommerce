@@ -8,7 +8,6 @@ export default class LviFavorites extends LviFavoritesDesign {
     pageName?: string | undefined;
     private __imageUrl: string;
     private __showCheck: boolean;
-    private __showArrow: boolean;
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
@@ -56,13 +55,6 @@ export default class LviFavorites extends LviFavoritesDesign {
     set showCheck(value: boolean) {
         setVisibility(this.flCheck, value);
         this.__showCheck = value;
-    }
-    get showArrow(): boolean {
-        return this.__showArrow;
-    }
-    set showArrow(value: boolean) {
-        setVisibility(this.lblFavoriteItemChevron, value);
-        this.__showArrow = value;
     }
     get toggle() {
         return this.flCheck.toggle;

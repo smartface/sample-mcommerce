@@ -129,7 +129,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
                 }
             })
         );
-
+        processorItems.push(ListViewItems.getLviSpacerItem({ className: 'xSmall' }));
         processorItems.push(
             ListViewItems.getLviPdInfoSection({
                 overviewTitle: global.lang.productDetail,

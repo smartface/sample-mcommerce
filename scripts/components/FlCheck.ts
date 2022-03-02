@@ -1,5 +1,6 @@
 import ImageView from '@smartface/native/ui/imageview';
 import FlCheckDesign from 'generated/my-components/FlCheck';
+import setVisibility from 'lib/setVisibility';
 
 export default class FlCheck extends FlCheckDesign {
     pageName?: string | undefined;
@@ -26,14 +27,11 @@ export default class FlCheck extends FlCheckDesign {
         this.__onToggleChange = value;
     }
     private toggleActiveInActive(value: boolean) {
+        setVisibility(this.imgCheck, value);
         if (value) {
             this.dispatch({
                 type: 'removeClassName',
                 className: '.flCheck.inactive'
-            });
-            this.imgCheck.dispatch({
-                type: 'removeClassName',
-                className: '.flCheck-imgCheck.hidden'
             });
             this.active = true;
         } else {
@@ -41,11 +39,8 @@ export default class FlCheck extends FlCheckDesign {
                 type: 'pushClassNames',
                 classNames: '.flCheck.inactive'
             });
-            this.imgCheck.dispatch({
-                type: 'pushClassNames',
-                classNames: '.flCheck-imgCheck.hidden'
-            });
             this.active = false;
         }
+        this.applyLayout();
     }
 }

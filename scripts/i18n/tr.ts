@@ -20,7 +20,7 @@ SMF.i18n.defineLanguage('tr', {
     updatePhoto: 'Profil Fotoğrafını Güncelle',
     openCamera: 'Kamerayı Aç',
     selectFromGallery: 'Fotoğraf Galerisinden Seç',
-    cancel: 'İPTAL',
+    cancel: 'İptal',
     categoriesHeader: 'Kategoriler',
     favouriteHeader: 'Favoriler',
     addAllToCart: 'Hepsini Sepete Ekle',
@@ -140,6 +140,6 @@ SMF.i18n.defineLanguage('tr', {
     emptyNutritions: 'Bu ürüne ait bir besin bilgisi bulunamadı.',
     appName: 'Smart Commerce',
     sureToLogout: 'Çıkış yapmak istediğinizden emin misiniz?',
-    noDescription: 'AÇIKLAMA BULUNAMADI',
-    select: 'SEÇ'
+    select: 'Seç',
+    emptyDescription: 'Bu ürüne ait bir açıklama bulunamadı.'
 });

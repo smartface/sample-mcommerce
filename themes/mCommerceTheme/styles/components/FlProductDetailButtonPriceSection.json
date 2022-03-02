@@ -48,7 +48,7 @@
 				"justifyContent": "CENTER",
 				"alignItems": "FLEX_END"
 			},
-			"paddingRight": 10
+			"paddingRight": 5
 		}
 	}
 }

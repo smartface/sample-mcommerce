@@ -1,5 +1,11 @@
 {
-  ".lviFavorites": {
-    "height": 120
-  }
+	".lviFavorites": {
+		"height": 120,
+		"&-lviFavoritesWrapper": {
+			"testId": "CGtTj-pmP",
+			"flexProps": {
+				"flexDirection": "ROW"
+			}
+		}
+	}
 }

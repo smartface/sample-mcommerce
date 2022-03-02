@@ -1,4 +1,5 @@
-import { TOAST_OPEN_HIDE_DURATION } from 'constants';
+import { TOAST_OPEN_HIDE_DURATION, VIBRATION_ADD_TIME, VIBRATION_REMOVE_TIME } from 'constants';
+import { callVibrate } from 'lib/callVibration';
 import { hideToastDialog, showToastDialog } from 'lib/toast';
 import { clearTokens } from 'service/token';
 import { SessionState, Constants, ActionTypes } from '.';
@@ -57,6 +58,7 @@ export default function (state = initialState, action: ActionTypes): SessionStat
         }
         case Constants.ADD_TO_BASKET: {
             showToastDialog();
+            action.payload.count == 1 ? callVibrate(VIBRATION_ADD_TIME) : callVibrate(VIBRATION_REMOVE_TIME);
             if (newState.basket.some((pId) => pId._id === action.payload.product._id)) {
                 let updatedData = newState.basket.map((basketItem) =>
                     basketItem._id === action.payload.product._id

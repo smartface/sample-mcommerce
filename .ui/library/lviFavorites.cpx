@@ -18,7 +18,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout .grow .lviFavorites-lviFavoritesWrapper",
 			"hiddenComponent": false,
 			"id": "d1fa-0982-fbca-7168",
 			"props": {
@@ -37,14 +37,6 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1,
-					"flexDirection": "ROW"
-				},
-				"height": null,
-				"paddingBottom": 30,
-				"paddingTop": 30,
-				"testId": "CGtTj-pmP",
 				"usePageVariable": true
 			}
 		},
@@ -190,8 +182,7 @@
 			"id": "39cc-c0dc-ea1a-ad69",
 			"props": {
 				"children": [
-					"f161-4c45-94b8-59c3",
-					"438a-4e9e-d5fa-c2a4"
+					"f161-4c45-94b8-59c3"
 				],
 				"name": "flFavoriteItemRight",
 				"parent": "d1fa-0982-fbca-7168",
@@ -232,35 +223,6 @@
 				"testId": "W3t2Dys8S",
 				"text": "label2",
 				"textAlignment": "MIDCENTER",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label .favoritesListViewItem-flFavListRight-lblFavListItemChevron",
-			"id": "438a-4e9e-d5fa-c2a4",
-			"props": {
-				"children": [],
-				"name": "lblFavoriteItemChevron",
-				"parent": "39cc-c0dc-ea1a-ad69",
-				"text": "",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Label",
-			"userProps": {
-				"font": {
-					"size": 17,
-					"bold": false,
-					"italic": false,
-					"family": "FontAwesome5FreeSolid",
-					"style": null
-				},
-				"height": null,
-				"testId": "uMwEKkfwI",
-				"text": "",
-				"textAlignment": "MIDRIGHT",
 				"usePageVariable": true
 			}
 		},
