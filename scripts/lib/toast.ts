@@ -1,54 +1,29 @@
-import Dialog from '@smartface/native/ui/dialog';
-import componentContextPatch from '@smartface/contx/lib/smartface/componentContextPatch';
 import { themeService } from 'theme';
-import FlexLayout from '@smartface/native/ui/flexlayout';
-import FlToast from 'components/FlToast';
+import Toast from '@smartface/native/ui/toast';
+import Screen from '@smartface/native/device/screen';
+import System from '@smartface/native/device/system';
 
-var toastDialog = null;
-var activeDialogCounter = 0;
+//header height ~ 55px, ios and android difference ~ 50px
+const bottomOffsetIOS = Screen.height - 150;
+const bottomOffsetAnd = Screen.height - 200;
 
-function initToast() {
-    let dialog = new Dialog({
-        android: {
-            themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
-            cancelable: false,
-            isTransparent: true
-        }
-    }) as StyleContextComponentType<Dialog>;
-    const component = new FlToast()
-    component.title = global.lang.addToBasket;
-    themeService.addGlobalComponent(component as any, 'flToast');
-    (component as StyleContextComponentType<FlexLayout>).dispatch({
-        type: 'pushClassNames',
-        classNames: '.flToast'
+export const addToBasketToast = () => {
+    System.OS === System.OSType.ANDROID ? console.info('AND') : console.info('IOS');
+    const myToastMessage = new Toast({
+        message: global.lang.addedToBasket,
+        bottomOffset: System.OS === System.OSType.ANDROID ? bottomOffsetAnd : bottomOffsetIOS,
+        backgroundColor: themeService.getNativeStyle('.flProductItemButtonsWrapper-btnMinus.main').textColor,
+        duration: 1
     });
-    themeService.addGlobalComponent(dialog.layout as any, 'toast');
-    (dialog.layout as StyleContextComponentType<FlexLayout>).dispatch({
-        type: 'pushClassNames',
-        classNames: '.dialog-transparent'
-    });
-    component.onTouch = () => {
-        return true;
-    };
-    //@ts-ignore
-    dialog.layout.addChild(component, 'toastComp');
-    dialog.layout.applyLayout();
-    return dialog;
-}
-
-export const showToastDialog = () => {
-    if (!toastDialog) {
-        toastDialog = initToast();
-    }
-    activeDialogCounter++ === 0 && toastDialog.show();
+    myToastMessage.show();
 };
 
-export const hideToastDialog = (timeout = 0) => {
-    if (toastDialog && activeDialogCounter > 0 && --activeDialogCounter === 0) {
-        if (timeout) {
-            setTimeout(() => toastDialog.hide(), timeout);
-        } else {
-            toastDialog.hide();
-        }
-    }
+export const removeFromBasketToast = () => {
+    const myToastMessage = new Toast({
+        message: global.lang.removedFromBasket,
+        bottomOffset: System.OS === System.OSType.ANDROID ? bottomOffsetAnd : bottomOffsetIOS,
+        backgroundColor: themeService.getNativeStyle('.flProductItemButtonsWrapper-btnMinus.danger').textColor,
+        duration: 1
+    });
+    myToastMessage.show();
 };

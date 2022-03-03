@@ -4,7 +4,7 @@
 		"&-imgLeft": {
 			"width": 80,
 			"height": 80,
-			"marginRight": 20,
+			"marginRight": 15,
 			"flexProps": {
 				"alignSelf": "CENTER"
 			},
@@ -37,12 +37,13 @@
 					"marginTop": 3
 				},
 				"&-lblLeft": {
-					"textAlignment": "MIDRIGHT"
+					"textAlignment": "MIDRIGHT",
+					"flexProps": {}
 				},
 				"&-lblRight": {
-					"textAlignment": "MIDLEFT"
-				},
-				"marginRight": 10
+					"textAlignment": "MIDLEFT",
+					"flexProps": {}
+				}
 			},
 			"&-secondary": {
 				"backgroundColor": "${backgroundSecondary}",

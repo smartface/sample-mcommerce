@@ -70,7 +70,8 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                         productName: cart.name,
                         productInfo: cart.shortDescription,
                         productImage: cart.images ? getProductImageUrl(cart.images[0]) : null,
-                        productPrice: cart.discountPrice != undefined ? `$${cart?.discountPrice?.toFixed(2)}` : `$${cart.price.toFixed(2)}`,
+                        productDiscount: cart.discountPrice != undefined ? `$${cart?.discountPrice?.toFixed(2)}` : '',
+                        productPrice: `$${cart.price.toFixed(2)}`,
                         productCount: cart.count,
                         minusButtonIcon: cart.count === 1 ? '' : '',
                         onActionPlus: () => {

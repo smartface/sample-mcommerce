@@ -2,6 +2,8 @@ import { themeService } from 'theme';
 import Button from '@smartface/native/ui/button';
 import LviCartItemDesign from 'generated/my-components/LviCartItem';
 import Label from '@smartface/native/ui/label';
+import AttributedString from '@smartface/native/ui/attributedstring';
+import setVisibility from 'lib/setVisibility';
 const originalHeight = themeService.getStyle('.lviCartItem').height;
 
 export default class LviCartItem extends LviCartItemDesign {
@@ -49,10 +51,34 @@ export default class LviCartItem extends LviCartItemDesign {
         });
     }
     get productPrice(): string {
-        return this.lblProductPrice.text;
+        return this.tvPrice.text;
     }
     set productPrice(value: string) {
-        this.lblProductPrice.text = value;
+        const discountExists = !!this.tvDiscount.text;
+        let attributeString = new AttributedString({
+            strikethrough: discountExists,
+            ios: {
+                strikethroughColor: themeService.getNativeStyle('.product-price').textColor
+            },
+            string: value || '',
+            font: themeService.getNativeStyle(discountExists ? '.product-price.discount-detail' : '.product-price.nodiscount-detail').font,
+            foregroundColor: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').textColor
+        });
+        this.tvPrice.scrollEnabled = false;
+        this.tvPrice.attributedText = [attributeString];
+    }
+    get productDiscount(): string {
+        return this.tvDiscount.text;
+    }
+    set productDiscount(value: string) {
+        let attributeString = new AttributedString({
+            string: value || '',
+            font: themeService.getNativeStyle('.product-price.nodiscount-detail').font,
+            foregroundColor: themeService.getNativeStyle('.product-price').textColor
+        });
+        setVisibility(this.tvDiscount, !!value);
+        this.tvDiscount.scrollEnabled = false;
+        this.tvDiscount.attributedText = [attributeString];
     }
     set productCount(value: string | number) {
         this.lblProductCount.text = value.toString();

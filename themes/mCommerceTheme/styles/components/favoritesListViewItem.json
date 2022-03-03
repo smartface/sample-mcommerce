@@ -70,8 +70,8 @@
 			"height": null,
 			"width": null,
 			"flexProps": {
-				"flexDirection": "ROW",
-				"justifyContent": "FLEX_START",
+				"flexDirection": "COLUMN",
+				"justifyContent": "CENTER",
 				"alignItems": "STRETCH",
 				"alignContent": "STRETCH",
 				"flexGrow": 1

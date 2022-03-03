@@ -7,12 +7,18 @@
 				"alignItems": "STRETCH"
 			},
 			"paddingBottom": 15,
-			"paddingTop": 15
-		},
-		"&-flCheck": {
-			"flexProps": {},
-			"marginTop": 15,
-			"marginBottom": 15
+			"paddingTop": 15,
+			"&-flCheck": {
+				"flexProps": {},
+				"marginTop": 30,
+				"marginBottom": 30
+			},
+			"&-flFavoriteItemRight": {
+				"&-tv": {
+					"height": 25,
+					"textAlignment": "MIDRIGHT"
+				}
+			}
 		}
 	}
 }

@@ -1,6 +1,7 @@
 import { themeService } from 'theme';
 import LviFavoritesDesign from 'generated/my-components/LviFavorites';
 import setVisibility from 'lib/setVisibility';
+import AttributedString from '@smartface/native/ui/attributedstring';
 const originalHeight = themeService.getStyle('.lviFavorites').height;
 
 export default class LviFavorites extends LviFavoritesDesign {
@@ -21,11 +22,35 @@ export default class LviFavorites extends LviFavoritesDesign {
     set itemTitle(value: string) {
         this.lblFavoriteItemTitle.text = value;
     }
-    get itemPrice(): any {
-        return this.lblFavoriteItemPrice.text;
+    get itemPrice(): string {
+        return this.tvPrice.text;
     }
-    set itemPrice(value: any) {
-        this.lblFavoriteItemPrice.text = value;
+    set itemPrice(value: string) {
+        const discountExists = !!this.tvDiscount.text;
+        let attributeString = new AttributedString({
+            strikethrough: discountExists,
+            ios: {
+                strikethroughColor: themeService.getNativeStyle('.product-price').textColor
+            },
+            string: value || '',
+            font: themeService.getNativeStyle(discountExists ? '.product-price.discount-detail' : '.product-price.nodiscount-detail').font,
+            foregroundColor: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').textColor
+        });
+        this.tvPrice.scrollEnabled = false;
+        this.tvPrice.attributedText = [attributeString];
+    }
+    get itemDiscount(): string {
+        return this.tvDiscount.text;
+    }
+    set itemDiscount(value: string) {
+        let attributeString = new AttributedString({
+            string: value || '',
+            font: themeService.getNativeStyle('.product-price.nodiscount-detail').font,
+            foregroundColor: themeService.getNativeStyle('.product-price').textColor
+        });
+        setVisibility(this.tvDiscount, !!value);
+        this.tvDiscount.scrollEnabled = false;
+        this.tvDiscount.attributedText = [attributeString];
     }
     get itemImage(): string {
         return this.__imageUrl;
