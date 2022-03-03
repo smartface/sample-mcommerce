@@ -21,7 +21,7 @@ export default class LviCartItem extends LviCartItemDesign {
         this.btnCartMinus.on(Button.Events.Press, () => {
             this._valueMinus && this._valueMinus();
         });
-        this.lblCloseIcon.on(Label.Events.Touch, () => {
+        this.btnClose.on(Button.Events.Press, () => {
             this._removeValue && this._removeValue();
         });
     }
@@ -61,7 +61,7 @@ export default class LviCartItem extends LviCartItemDesign {
                 strikethroughColor: themeService.getNativeStyle('.product-price').textColor
             },
             string: value || '',
-            font: themeService.getNativeStyle(discountExists ? '.product-price.discount-detail' : '.product-price.nodiscount-detail').font,
+            font: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').font,
             foregroundColor: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').textColor
         });
         this.tvPrice.scrollEnabled = false;
@@ -73,7 +73,7 @@ export default class LviCartItem extends LviCartItemDesign {
     set productDiscount(value: string) {
         let attributeString = new AttributedString({
             string: value || '',
-            font: themeService.getNativeStyle('.product-price.nodiscount-detail').font,
+            font: themeService.getNativeStyle('.product-price.nodiscount').font,
             foregroundColor: themeService.getNativeStyle('.product-price').textColor
         });
         setVisibility(this.tvDiscount, !!value);

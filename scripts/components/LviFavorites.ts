@@ -33,7 +33,7 @@ export default class LviFavorites extends LviFavoritesDesign {
                 strikethroughColor: themeService.getNativeStyle('.product-price').textColor
             },
             string: value || '',
-            font: themeService.getNativeStyle(discountExists ? '.product-price.discount-detail' : '.product-price.nodiscount-detail').font,
+            font: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').font,
             foregroundColor: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').textColor
         });
         this.tvPrice.scrollEnabled = false;
@@ -45,7 +45,7 @@ export default class LviFavorites extends LviFavoritesDesign {
     set itemDiscount(value: string) {
         let attributeString = new AttributedString({
             string: value || '',
-            font: themeService.getNativeStyle('.product-price.nodiscount-detail').font,
+            font: themeService.getNativeStyle('.product-price.nodiscount').font,
             foregroundColor: themeService.getNativeStyle('.product-price').textColor
         });
         setVisibility(this.tvDiscount, !!value);

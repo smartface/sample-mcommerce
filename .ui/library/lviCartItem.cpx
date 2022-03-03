@@ -86,7 +86,7 @@
 			"props": {
 				"children": [
 					"87b3-be31-5849-7e65",
-					"22a3-dab8-93f5-71d9"
+					"d30f-20fc-ec21-6ef7"
 				],
 				"name": "flCartItemHead",
 				"parent": "f952-22fb-543b-46c7"
@@ -117,11 +117,11 @@
 			}
 		},
 		{
-			"className": ".sf-label .lviCartItem-lblCloseIcon",
-			"id": "22a3-dab8-93f5-71d9",
+			"className": ".sf-button-addToBasket-countminus .lviCartItem-flCartItem-flCartDetail-flCartItemHead-btnClose",
+			"id": "d30f-20fc-ec21-6ef7",
 			"props": {
 				"children": [],
-				"name": "lblCloseIcon",
+				"name": "btnClose",
 				"parent": "0572-6011-46f2-93c7",
 				"text": "",
 				"usePageVariable": true
@@ -129,7 +129,7 @@
 			"source": {
 				"page": "__library__"
 			},
-			"type": "Label",
+			"type": "Button",
 			"userProps": {
 				"text": "",
 				"usePageVariable": true

@@ -1,132 +1,161 @@
 {
-	".lviCartItem": {
-		"height": 140,
-		"&-flCartItem": {
-			"flexProps": {
-				"flexDirection": "ROW",
-				"flexGrow": 1
-			},
-			"height": null,
-			"testId": "8t_Itsu-4",
-			"&-imgProduct": {
-				"flexProps": {
-					"alignSelf": "CENTER"
-				},
-				"height": 70,
-				"imageFillType": "ASPECTFIT",
-				"testId": "XfDQCq2bR",
-				"width": 70
-			},
-			"&-flCartDetail": {
-				"flexProps": {
-					"flexGrow": 3
-				},
-				"height": null,
-				"marginLeft": 20,
-				"testId": "faXwQMbW_",
-				"&-flCartItemHead": {
-					"flexProps": {
-						"flexDirection": "ROW"
-					},
-					"height": 30,
-					"maxHeight": 40,
-					"testId": "X7ApqAdS-",
-					"marginTop": null,
-					"marginBottom": null
-				},
-				"&-lblProductInfo": {
-					"font": {
-						"size": 14,
-						"bold": true,
-						"italic": false,
-						"family": "Nunito",
-						"style": "Bold"
-					},
-					"height": 25,
-					"testId": "DhxO3bzI2",
-					"textColor": "${textLight}",
-					"flexProps": {},
-					"marginBottom": null,
-					"marginTop": null
-				},
-				"&-flCartBottom": {
-					"flexProps": {
-						"flexDirection": "ROW",
-						"justifyContent": "CENTER",
-						"alignContent": "STRETCH",
-						"alignItems": "CENTER"
-					},
-					"height": 45,
-					"testId": "uYyO0G5Tq",
-					"&-lblProductCount": {
-						"flexProps": {
-							"flexGrow": 1
-						},
-						"font": {
-							"size": 17,
-							"bold": true,
-							"italic": false,
-							"family": "Nunito",
-							"style": "Bold"
-						},
-						"height": 40,
-						"testId": "LGnWBeATD",
-						"textAlignment": "MIDCENTER",
-						"textColor": "${textDark}"
-					},
-					"&-lblProductPrice": {
-						"flexProps": {
-							"flexGrow": 4
-						},
-						"font": {
-							"size": 18,
-							"bold": true,
-							"italic": false,
-							"family": "Nunito",
-							"style": "Bold"
-						},
-						"height": 40,
-						"testId": "juWT9KqSV",
-						"textAlignment": "MIDRIGHT",
-						"textColor": "${textDark}"
-					}
-				}
-			},
-			"paddingBottom": 15,
-			"paddingLeft": 15,
-			"paddingRight": 15,
-			"paddingTop": 15
-		},
-		"&-lblCloseIcon": {
-			"flexProps": {
-				"alignSelf": "CENTER"
-			},
-			"font": {
-				"size": 20,
-				"bold": false,
-				"italic": false,
-				"family": "FontAwesome5FreeSolid",
-				"style": null
-			},
-			"testId": "V7hXg88Aj",
-			"textAlignment": "MIDRIGHT",
-			"textColor": "${textLight}",
-			"width": 25
-		},
-		"&-lblProductName": {
-			"flexProps": {
-				"flexGrow": 3,
-				"alignSelf": "CENTER"
-			},
-			"font": {
-				"size": 16,
-				"bold": true,
-				"italic": false,
-				"family": "Nunito",
-				"style": "Bold"
-			},
-			"testId": "lmfuMkXN_",
-			"textColor": "${textDark}"
-		}
-	}
+    ".lviCartItem": {
+        "height": 140,
+        "&-flCartItem": {
+            "flexProps": {
+                "flexDirection": "ROW",
+                "flexGrow": 1
+            },
+            "height": null,
+            "testId": "8t_Itsu-4",
+            "&-imgProduct": {
+                "flexProps": {
+                    "alignSelf": "CENTER"
+                },
+                "height": 70,
+                "imageFillType": "ASPECTFIT",
+                "testId": "XfDQCq2bR",
+                "width": 70
+            },
+            "&-flCartDetail": {
+                "flexProps": {
+                    "flexGrow": 3
+                },
+                "height": null,
+                "marginLeft": 20,
+                "testId": "faXwQMbW_",
+                "&-flCartItemHead": {
+                    "flexProps": {
+                        "flexDirection": "ROW"
+                    },
+                    "height": 40,
+                    "maxHeight": 40,
+                    "testId": "X7ApqAdS-",
+                    "marginTop": null,
+                    "marginBottom": null,
+                    "&-btnClose": {
+                        "backgroundColor": "${backgroundMain}",
+                        "borderRadius": 15,
+                        "borderWidth": null,
+                        "flexProps": {
+                            "alignSelf": "CENTER"
+                        },
+                        "font": {
+                            "family": "FontAwesome5FreeSolid",
+                            "style": null,
+                            "bold": false,
+                            "italic": false,
+                            "size": 13
+                        },
+                        "height": 35,
+                        "marginLeft": 2,
+                        "marginRight": 2,
+                        "textColor": "${darkGray}",
+                        "width": 35
+                    }
+                },
+                "&-lblProductInfo": {
+                    "font": {
+                        "size": 14,
+                        "bold": true,
+                        "italic": false,
+                        "family": "Nunito",
+                        "style": "Bold"
+                    },
+                    "height": 25,
+                    "testId": "DhxO3bzI2",
+                    "textColor": "${textLight}",
+                    "flexProps": {},
+                    "marginBottom": null,
+                    "marginTop": null
+                },
+                "&-flCartBottom": {
+                    "flexProps": {
+                        "flexDirection": "ROW",
+                        "justifyContent": "FLEX_START",
+                        "alignContent": "STRETCH",
+                        "alignItems": "CENTER"
+                    },
+                    "height": 45,
+                    "testId": "uYyO0G5Tq",
+                    "&-lblProductCount": {
+                        "flexProps": {},
+                        "font": {
+                            "size": 17,
+                            "bold": true,
+                            "italic": false,
+                            "family": "Nunito",
+                            "style": "Bold"
+                        },
+                        "height": 40,
+                        "testId": "LGnWBeATD",
+                        "textAlignment": "MIDCENTER",
+                        "textColor": "${textDark}",
+                        "width": 60
+                    },
+                    "&-lblProductPrice": {
+                        "flexProps": {
+                            "flexGrow": 4
+                        },
+                        "font": {
+                            "size": 18,
+                            "bold": true,
+                            "italic": false,
+                            "family": "Nunito",
+                            "style": "Bold"
+                        },
+                        "height": 40,
+                        "testId": "juWT9KqSV",
+                        "textAlignment": "MIDRIGHT",
+                        "textColor": "${textDark}"
+                    },
+                    "&-flPriceWrapper": {
+                        "height": 50,
+                        "flexProps": {
+                            "flexGrow": 1
+                        },
+                        "&-tv": {
+                            "height": 25,
+                            "textAlignment": "MIDRIGHT"
+                        }
+                    }
+                }
+            },
+            "paddingBottom": 15,
+            "paddingLeft": 15,
+            "paddingRight": 15,
+            "paddingTop": 15
+        },
+        "&-lblCloseIcon": {
+            "flexProps": {
+                "flexGrow": 1,
+                "alignSelf": "CENTER"
+            },
+            "font": {
+                "size": 20,
+                "bold": false,
+                "italic": false,
+                "family": "FontAwesome5FreeSolid",
+                "style": null
+            },
+            "testId": "V7hXg88Aj",
+            "textAlignment": "MIDRIGHT",
+            "textColor": "${textLight}"
+        },
+        "&-lblProductName": {
+            "flexProps": {
+                "flexGrow": 3,
+                "alignSelf": "CENTER"
+            },
+            "font": {
+                "size": 16,
+                "bold": true,
+                "italic": false,
+                "family": "Nunito",
+                "style": "Bold"
+            },
+            "testId": "lmfuMkXN_",
+            "textColor": "${textDark}"
+        }
+    }
 }
