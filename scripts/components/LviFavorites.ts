@@ -4,6 +4,11 @@ import setVisibility from 'lib/setVisibility';
 import AttributedString from '@smartface/native/ui/attributedstring';
 const originalHeight = themeService.getStyle('.lviFavorites').height;
 
+const priceFontWithDiscount = themeService.getNativeStyle('.product-price.discount').font;
+const priceFontWithNoDiscount = themeService.getNativeStyle('.product-price.nodiscount').font;
+const textColorPriceWithDiscount = themeService.getNativeStyle('.product-price.discount').textColor;
+const textColorPriceWithNoDiscount = themeService.getNativeStyle('.product-price.nodiscount').textColor;
+
 export default class LviFavorites extends LviFavoritesDesign {
     private __onDeleteProduct: (product: any) => void;
     pageName?: string | undefined;
@@ -27,14 +32,14 @@ export default class LviFavorites extends LviFavoritesDesign {
     }
     set itemPrice(value: string) {
         const discountExists = !!this.tvDiscount.text;
-        let attributeString = new AttributedString({
+        const attributeString = new AttributedString({
             strikethrough: discountExists,
             ios: {
-                strikethroughColor: themeService.getNativeStyle('.product-price').textColor
+                strikethroughColor: textColorPriceWithNoDiscount
             },
             string: value || '',
-            font: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').font,
-            foregroundColor: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').textColor
+            font: discountExists ? priceFontWithDiscount : priceFontWithNoDiscount,
+            foregroundColor: discountExists ? textColorPriceWithDiscount : textColorPriceWithNoDiscount
         });
         this.tvPrice.scrollEnabled = false;
         this.tvPrice.attributedText = [attributeString];
@@ -43,10 +48,10 @@ export default class LviFavorites extends LviFavoritesDesign {
         return this.tvDiscount.text;
     }
     set itemDiscount(value: string) {
-        let attributeString = new AttributedString({
+        const attributeString = new AttributedString({
             string: value || '',
-            font: themeService.getNativeStyle('.product-price.nodiscount').font,
-            foregroundColor: themeService.getNativeStyle('.product-price').textColor
+            font: priceFontWithNoDiscount,
+            foregroundColor: textColorPriceWithNoDiscount
         });
         setVisibility(this.tvDiscount, !!value);
         this.tvDiscount.scrollEnabled = false;

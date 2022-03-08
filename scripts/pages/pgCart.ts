@@ -9,6 +9,7 @@ import store from 'store/index';
 import storeActions from 'store/main/actions';
 import { getProductImageUrl } from 'service/commerce';
 import setVisibility from 'lib/setVisibility';
+import { moneyFormatter } from 'lib/moneyFormatter';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -70,8 +71,8 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                         productName: cart.name,
                         productInfo: cart.shortDescription,
                         productImage: cart.images ? getProductImageUrl(cart.images[0]) : null,
-                        productDiscount: cart.discountPrice != undefined ? `$${cart?.discountPrice?.toFixed(2)}` : '',
-                        productPrice: `$${cart.price.toFixed(2)}`,
+                        productDiscount: cart.discountPrice != undefined ? moneyFormatter(cart?.discountPrice) : '',
+                        productPrice: moneyFormatter(cart.price),
                         productCount: cart.count,
                         minusButtonIcon: cart.count === 1 ? '' : '',
                         onActionPlus: () => {

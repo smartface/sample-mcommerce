@@ -57,7 +57,7 @@ export default function (state = initialState, action: ActionTypes): SessionStat
             break;
         }
         case Constants.ADD_TO_BASKET: {
-            if (action.payload.count == -1) {
+            if (action.payload.count === -1) {
                 removeFromBasketToast();
                 callVibrate(VIBRATION_REMOVE_TIME);
             } else {
@@ -65,7 +65,7 @@ export default function (state = initialState, action: ActionTypes): SessionStat
                 callVibrate(VIBRATION_ADD_TIME);
             }
             if (newState.basket.some((pId) => pId._id === action.payload.product._id)) {
-                let updatedData = newState.basket.map((basketItem) =>
+                const updatedData = newState.basket.map((basketItem) =>
                     basketItem._id === action.payload.product._id
                         ? { ...basketItem, count: (basketItem.count += action.payload.count) }
                         : basketItem
@@ -75,7 +75,6 @@ export default function (state = initialState, action: ActionTypes): SessionStat
                 action.payload.product.count = action.payload.count;
                 newState.basket.push(action.payload.product);
             }
-            //setTimeout(() => hideToastDialog(), TOAST_OPEN_HIDE_DURATION);
             break;
         }
         case Constants.REMOVE_FROM_BASKET: {

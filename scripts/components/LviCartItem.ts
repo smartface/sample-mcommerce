@@ -6,6 +6,11 @@ import AttributedString from '@smartface/native/ui/attributedstring';
 import setVisibility from 'lib/setVisibility';
 const originalHeight = themeService.getStyle('.lviCartItem').height;
 
+const priceFontWithDiscount = themeService.getNativeStyle('.product-price.discount').font;
+const priceFontWithNoDiscount = themeService.getNativeStyle('.product-price.nodiscount').font;
+const textColorPriceWithDiscount = themeService.getNativeStyle('.product-price.discount').textColor;
+const textColorPriceWithNoDiscount = themeService.getNativeStyle('.product-price.nodiscount').textColor;
+
 export default class LviCartItem extends LviCartItemDesign {
     pageName?: string | undefined;
     private __imageUrl: string;
@@ -16,13 +21,13 @@ export default class LviCartItem extends LviCartItemDesign {
         super(props);
         this.pageName = pageName;
         this.btnCartPlus.on(Button.Events.Press, () => {
-            this._value && this._value();
+            this._value?.();
         });
         this.btnCartMinus.on(Button.Events.Press, () => {
-            this._valueMinus && this._valueMinus();
+            this._valueMinus?.();
         });
         this.btnClose.on(Button.Events.Press, () => {
-            this._removeValue && this._removeValue();
+            this._removeValue?.();
         });
     }
     static getHeight(): number {
@@ -55,14 +60,14 @@ export default class LviCartItem extends LviCartItemDesign {
     }
     set productPrice(value: string) {
         const discountExists = !!this.tvDiscount.text;
-        let attributeString = new AttributedString({
+        const attributeString = new AttributedString({
             strikethrough: discountExists,
             ios: {
-                strikethroughColor: themeService.getNativeStyle('.product-price').textColor
+                strikethroughColor: textColorPriceWithNoDiscount
             },
             string: value || '',
-            font: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').font,
-            foregroundColor: themeService.getNativeStyle(discountExists ? '.product-price.discount' : '.product-price.nodiscount').textColor
+            font: discountExists ? priceFontWithDiscount : priceFontWithNoDiscount,
+            foregroundColor: discountExists ? textColorPriceWithDiscount : textColorPriceWithNoDiscount
         });
         this.tvPrice.scrollEnabled = false;
         this.tvPrice.attributedText = [attributeString];
@@ -71,10 +76,10 @@ export default class LviCartItem extends LviCartItemDesign {
         return this.tvDiscount.text;
     }
     set productDiscount(value: string) {
-        let attributeString = new AttributedString({
+        const attributeString = new AttributedString({
             string: value || '',
-            font: themeService.getNativeStyle('.product-price.nodiscount').font,
-            foregroundColor: themeService.getNativeStyle('.product-price').textColor
+            font: priceFontWithNoDiscount,
+            foregroundColor: textColorPriceWithNoDiscount
         });
         setVisibility(this.tvDiscount, !!value);
         this.tvDiscount.scrollEnabled = false;
