@@ -141,5 +141,7 @@ SMF.i18n.defineLanguage('tr', {
     appName: 'Smart Commerce',
     sureToLogout: 'Çıkış yapmak istediğinizden emin misiniz?',
     select: 'Seç',
-    emptyDescription: 'Bu ürüne ait bir açıklama bulunamadı.'
+    emptyDescription: 'Bu ürüne ait bir açıklama bulunamadı.',
+    removeFromBasket: 'Sepetten çıkarıldı',
+    addedToBasket: 'Sepette eklendi'
 });

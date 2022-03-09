@@ -143,5 +143,7 @@ SMF.i18n.defineLanguage('en', {
     appName: 'Smart Commerce',
     sureToLogout: 'Are you sure to logout?',
     select: 'Select',
-    emptyDescription: 'This product has no description.'
+    emptyDescription: 'This product has no description.',
+    removedFromBasket: 'Removed from Basket',
+    addedToBasket: 'Added to Basket'
 });

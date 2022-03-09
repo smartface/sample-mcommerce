@@ -11,6 +11,7 @@ import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import { themeService } from 'theme';
 import setVisibility from 'lib/setVisibility';
 import { Product } from 'types';
+import { moneyFormatter } from 'lib/moneyFormatter';
 
 type Processor = ListViewItems.ProcessorTypes.ILviFavorites;
 enum HeaderEnum {
@@ -161,10 +162,8 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                             itemTitle: favouritedItem.name,
                             itemDesc: favouritedItem.shortDescription,
                             itemImage: favouritedItem.images ? getProductImageUrl(favouritedItem.images[0]) : null,
-                            itemPrice:
-                                favouritedItem.discountPrice != undefined
-                                    ? `$${favouritedItem?.discountPrice?.toFixed(2)}`
-                                    : `$${favouritedItem.price.toFixed(2)}`,
+                            itemDiscount: favouritedItem.discountPrice != undefined ? moneyFormatter(favouritedItem?.discountPrice) : '',
+                            itemPrice: moneyFormatter(favouritedItem.price),
                             showCheck: this.changeHeaderText,
                             toggle: selected
                         },
