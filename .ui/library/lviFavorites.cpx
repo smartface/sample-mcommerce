@@ -45,7 +45,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flCheck .flCheck.inactive .lviFavorites-flCheck",
+			"className": ".sf-flexLayout .flCheck .flCheck.inactive .lviFavorites-lviFavoritesWrapper-flCheck",
 			"hiddenComponent": false,
 			"id": "a54d-e5fc-88f2-a922",
 			"props": {
@@ -165,7 +165,8 @@
 			"id": "39cc-c0dc-ea1a-ad69",
 			"props": {
 				"children": [
-					"f161-4c45-94b8-59c3"
+					"c223-59dd-a922-7c63",
+					"b862-c18a-990c-4d56"
 				],
 				"name": "flFavoriteItemRight",
 				"parent": "d1fa-0982-fbca-7168",
@@ -176,36 +177,48 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1,
-					"flexDirection": "ROW"
-				},
-				"height": null,
-				"testId": "ywa57Xn4B",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label .favoritesListViewItem-flFavListRight-lblFavListItemPrice",
-			"id": "f161-4c45-94b8-59c3",
+			"className": ".sf-textView .lviFavorites-lviFavoritesWrapper-flFavoriteItemRight-tv",
+			"id": "c223-59dd-a922-7c63",
 			"props": {
 				"children": [],
-				"name": "lblFavoriteItemPrice",
+				"html": "<font face=\"SFProText-Regular\"><span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\">$43.24</span></font>",
+				"name": "tvPrice",
 				"parent": "39cc-c0dc-ea1a-ad69",
-				"text": "label2",
+				"text": "$43.24",
 				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 3
-				},
-				"testId": "W3t2Dys8S",
-				"text": "label2",
-				"textAlignment": "MIDCENTER",
+				"html": "<font face=\"SFProText-Regular\"><span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\">$43.24</span></font>",
+				"text": "$43.24",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-textView .lviFavorites-lviFavoritesWrapper-flFavoriteItemRight-tv",
+			"id": "b862-c18a-990c-4d56",
+			"props": {
+				"children": [],
+				"html": "<font face=\"SFProText-Regular\"><span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\">$21.20</span></font>",
+				"name": "tvDiscount",
+				"parent": "39cc-c0dc-ea1a-ad69",
+				"text": "$21.20",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "TextView",
+			"userProps": {
+				"html": "<font face=\"SFProText-Regular\"><span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\">$21.20</span></font>",
+				"text": "$21.20",
 				"usePageVariable": true
 			}
 		},

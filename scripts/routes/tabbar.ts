@@ -174,6 +174,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     routes: [
                         Route.of<Pages.pgCategoryDetail>({
                             path: `/btb/tab1/categoryDetail/main`,
+                            routeDidEnter: androidModalDismiss,
                             build(router, route) {
                                 const page = new Pages.pgCategoryDetail(router, route);
                                 router.setState({ view: page });
@@ -211,6 +212,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     routes: [
                         Route.of<Pages.pgCategoryDetail>({
                             path: `/btb/tab2/categoryDetail/main`,
+                            routeDidEnter: androidModalDismiss,
                             build(router, route) {
                                 const page = new Pages.pgCategoryDetail(router, route);
                                 router.setState({ view: page });
