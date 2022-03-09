@@ -3,7 +3,7 @@ import FlCartCheckoutDesign from 'generated/my-components/FlCartCheckout';
 
 export default class FlCartCheckout extends FlCartCheckoutDesign {
     pageName?: string | undefined;
-    private _onCheckoutClick: (...args) => void;
+    private _onCheckoutClick: (...args: any[]) => void;
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
@@ -13,10 +13,10 @@ export default class FlCartCheckout extends FlCartCheckoutDesign {
             this?._onCheckoutClick();
         });
     }
-    get onCheckoutClick(): (...args) => void {
+    get onCheckoutClick(): (...args: any[]) => void {
         return this._onCheckoutClick;
     }
-    set onCheckoutClick(value: (...args) => void) {
+    set onCheckoutClick(value: (...args: any[]) => void) {
         this._onCheckoutClick = value;
     }
     get checkoutTitle(): string {

@@ -18,7 +18,7 @@ themeService.onChange(() => {
     }
 });
 
-let btbItemCart = new TabBarItem();
+const btbItemCart = new TabBarItem();
 btbItemCart.title = global.lang.cart;
 btbItemCart.badge.backgroundColor = itemColor.selected;
 btbItemCart.badge.visible = false;
@@ -35,7 +35,7 @@ store.subscribe(() => {
         btbItemCart.badge.text = '10+';
     }
 });
-let btbItemFavorite = new TabBarItem();
+const btbItemFavorite = new TabBarItem();
 btbItemFavorite.title = global.lang.favourite;
 btbItemFavorite.badge.backgroundColor = itemColor.selected;
 btbItemFavorite.badge.visible = false;

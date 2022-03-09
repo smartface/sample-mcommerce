@@ -1,3 +1,4 @@
+import System from '@smartface/native/device/system';
 import ImageView from '@smartface/native/ui/imageview';
 import FlCheckDesign from 'generated/my-components/FlCheck';
 import setVisibility from 'lib/setVisibility';
@@ -41,6 +42,6 @@ export default class FlCheck extends FlCheckDesign {
             });
             this.active = false;
         }
-        this.applyLayout();
+        System.OS === System.OSType.IOS && this.applyLayout();
     }
 }
