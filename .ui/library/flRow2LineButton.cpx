@@ -18,8 +18,8 @@
 			"type": "FlexLayout",
 			"userProps": {
 				"flexProps": {},
-				"left": 11.76,
-				"top": 123.53
+				"left": 23.33,
+				"top": 58
 			}
 		},
 		{
@@ -36,7 +36,7 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"image": "profile_placeholder.png",
+				"image": "profile_placeholder_dark.png",
 				"usePageVariable": true
 			}
 		},
@@ -64,7 +64,7 @@
 				"children": [],
 				"name": "btnMain",
 				"parent": "20e3-2b6c-c9a1-20e4",
-				"text": "button1",
+				"text": "Login",
 				"usePageVariable": true
 			},
 			"source": {
@@ -72,7 +72,7 @@
 			},
 			"type": "Button",
 			"userProps": {
-				"text": "button1",
+				"text": "Login",
 				"usePageVariable": true
 			}
 		},
@@ -101,7 +101,7 @@
 				"children": [],
 				"name": "lblLeft",
 				"parent": "05b1-21e2-b480-12b9",
-				"text": "label1",
+				"text": "Sign Up",
 				"usePageVariable": true
 			},
 			"source": {
@@ -109,12 +109,12 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"text": "label1",
+				"text": "Sign Up",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flRow2LineButton-flButtons-flOtherActions-verticalSeparator .marginHorizontal",
+			"className": ".sf-flexLayout .flRow2LineButton-flButtons-flOtherActions-verticalSeparator",
 			"hiddenComponent": false,
 			"id": "eb36-e0bc-2f0b-8221",
 			"props": {
@@ -138,7 +138,7 @@
 				"children": [],
 				"name": "lblRight",
 				"parent": "05b1-21e2-b480-12b9",
-				"text": "label1",
+				"text": "Forgot Password?",
 				"usePageVariable": true
 			},
 			"source": {
@@ -146,7 +146,7 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"text": "label1",
+				"text": "Forgot Password?",
 				"usePageVariable": true
 			}
 		}

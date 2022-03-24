@@ -157,6 +157,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             }
         };
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
+            let basketItem = store.getState().main.basket.find((bp) => bp._id === this.categoryProducts[productIndex]._id);
             GridViewItem.itemTag = this.categoryProducts[productIndex]?.labels[0]?.name;
             GridViewItem.itemTagColor = this.categoryProducts[productIndex]?.labels[0]?.color;
             GridViewItem.itemTitle = this.categoryProducts[productIndex].name;
@@ -169,12 +170,27 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 : '';
             GridViewItem.itemPrice = `$${this.categoryProducts[productIndex].price.toFixed(2)}`;
             GridViewItem.itemReview = this.categoryProducts[productIndex]?.rating?.toFixed(1).toString() || '';
-            GridViewItem.onActionClick = () => {
-                GridViewItem.initIndicator();
-                GridViewItem.toggleIndicator(true);
+            GridViewItem.showHideMinusButton = !!basketItem;
+            GridViewItem.buttonMinusText = basketItem?.count === 1 ? '' : '';
+            GridViewItem.productCount = basketItem?.count?.toString() || '';
+            GridViewItem.onActionClickPlus = () => {
+                GridViewItem.toggleIndicatorPlus(true);
                 store.dispatch(storeActions.AddToBasket({ product: this.categoryProducts[productIndex], count: 1 }));
                 setTimeout(() => {
-                    GridViewItem.toggleIndicator(false);
+                    GridViewItem.toggleIndicatorPlus(false);
+                    this.refreshGridView();
+                    GridViewItem.showHideMinusButton = true;
+                }, 500);
+            };
+            GridViewItem.onActionClickMinus = () => {
+                GridViewItem.toggleIndicatorMinus(true);
+                store.dispatch(storeActions.AddToBasket({ product: this.categoryProducts[productIndex], count: -1 }));
+                setTimeout(() => {
+                    GridViewItem.toggleIndicatorMinus(false);
+                    this.refreshGridView();
+                    if (basketItem?.count === 0) {
+                        GridViewItem.showHideMinusButton = false;
+                    }
                 }, 500);
             };
             if (this.categoryProducts.length - 1 === productIndex) {

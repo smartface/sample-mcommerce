@@ -7,15 +7,17 @@ import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/
 import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductImageUrl } from 'service/commerce';
-import FlHeaderIcon from 'components/FlHeaderIcon';
-import setHeaderIcon from 'lib/setHeaderIcon';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import { themeService } from 'theme';
 import setVisibility from 'lib/setVisibility';
 import { Product } from 'types';
 
 type Processor = ListViewItems.ProcessorTypes.ILviFavorites;
-
+enum HeaderEnum {
+    Select = 1,
+    Cancel = -1,
+    NoHeader = 0
+}
 export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDesign) {
     private selectedProducts: Product[] = [];
     private selectable: boolean = false;
@@ -23,7 +25,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
     data: Processor[];
     rightItemCancel: HeaderBarItem;
     rightItemSelect: HeaderBarItem;
-    flHeaderIcon: FlHeaderIcon;
     changeHeaderText: boolean = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
@@ -34,11 +35,16 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
     }
     addToCartSelectedProducts() {
         this.flCartCheckout.btnCartCheckout.onPress = () => {
-            this.selectedProducts.forEach((product, index) => {
-                store.dispatch(storeActions.AddToBasket({ product, count: 1 }));
-                store.dispatch(storeActions.RemoveFromFavorites({ productId: product._id }));
-                this.selectedProducts.splice(index, 1);
+            let ids = [];
+            const dispatches = this.selectedProducts.map((product, index) => {
+                return () => {
+                    store.dispatch(storeActions.AddToBasket({ product, count: 1 }));
+                    store.dispatch(storeActions.RemoveFromFavorites({ productId: product._id }));
+                    ids.push(product._id);
+                };
             });
+            dispatches.forEach((d) => d());
+            this.selectedProducts = this.selectedProducts.filter((product, index) => !ids.includes(product._id));
             this.refreshListView();
         };
     }
@@ -81,10 +87,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         });
         this.headerBar.setItems([this.rightItemSelect]);
     }
-    addAppIconToHeader() {
-        this.headerBar.title = '';
-        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
-    }
     deleteAndRefresh(e: { index: number }): void {
         let length = this.favoriteProducts.length;
         let removedItem = this.favoriteProducts.find((product, index) => index === e.index);
@@ -106,10 +108,10 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                     productId: this.favoriteProducts[index]._id
                 });
             } else {
-                if (!this.selectedProducts.includes(this.favoriteProducts[index])) {
+                if (!this.selectedProducts.some((a) => a._id === this.favoriteProducts[index]._id)) {
                     this.selectedProducts.push(this.favoriteProducts[index]);
                 } else {
-                    this.selectedProducts.splice(index, 1);
+                    this.selectedProducts = this.selectedProducts.filter((sp) => sp._id !== this.favoriteProducts[index]._id);
                 }
                 this.refreshListView();
             }
@@ -182,7 +184,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         super.onShow();
         this.handleChange();
         this.addToCartSelectedProducts();
-        this.addAppIconToHeader();
         this.refreshListView();
     }
     onLoad() {
@@ -191,5 +192,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.initListView();
         this.refreshListView();
         this.headerBar.leftItemEnabled = false;
+        this.headerBar.title = global.lang.favouriteHeader;
     }
 }

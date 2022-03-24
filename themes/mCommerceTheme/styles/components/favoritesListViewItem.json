@@ -1,99 +1,99 @@
 {
-  ".favoritesListViewItem": {
-    "paddingTop": 5,
-    "paddingBottom": 5,
-    "paddingLeft": 5,
-    "paddingRight": 5,
-    "flexProps": {
-      "flexDirection": "ROW",
-      "justifyContent": "CENTER",
-      "alignItems": "STRETCH"
-    },
-    "&-flFavListLeft": {
-      "height": null,
-      "width": null,
-      "flexProps": {
-        "flexDirection": "ROW",
-        "justifyContent": "FLEX_START",
-        "alignItems": "STRETCH",
-        "alignContent": "STRETCH",
-        "flexGrow": 2.5
-      },
-      "&-imgFavList": {
-        "maxHeight": 55,
-        "maxWidth": 55,
-        "height": null,
-        "width": null,
-        "flexProps": {
-          "flexGrow": 0.5
-        }
-      },
-      "&-flFavListTitleDesc": {
-        "height": null,
-        "width": null,
-        "paddingLeft": 30,
-        "flexProps": {
-          "flexDirection": "COLUMN",
-          "justifyContent": "FLEX_START",
-          "alignItems": "STRETCH",
-          "alignContent": "STRETCH",
-          "flexGrow": 1
-        },
-        "&-lblFavListItemTitle": {
-          "flexProps": {
-            "flexGrow": 1
-          },
-          "textColor": "${textDark}",
-          "font": {
-            "size": 16,
-            "family": "Nunito",
-            "style": "Bold"
-          }
-        },
-        "&-lblFavListItemDesc": {
-          "flexProps": {
-            "flexGrow": 1
-          },
-          "textColor": "${textLight}",
-          "font": {
-            "size": 14,
-            "family": "Nunito",
-            "style": "Semibold"
-          }
-        }
-      }
-    },
-    "&-flFavListRight": {
-      "height": null,
-      "width": null,
-      "flexProps": {
-        "flexDirection": "ROW",
-        "justifyContent": "FLEX_START",
-        "alignItems": "STRETCH",
-        "alignContent": "STRETCH",
-        "flexGrow": 1
-      },
-      "&-lblFavListItemPrice": {
-        "flexProps": {
-          "alignSelf": "CENTER",
-          "flexGrow": 2
-        },
-        "textColor": "${textDark}",
-        "font": {
-          "size": 16,
-          "family": "Nunito",
-          "style": "Semibold"
-        }
-      },
-      "&-lblFavListItemChevron": {
-        "textColor": "${textDark}",
-        "flexProps": {
-          "flexGrow": 1
-        },
-        "font": {
-          "family": "FontAwesome5FreeSolid"
-        }
-      }
-    }
-  }
+	".favoritesListViewItem": {
+		"paddingTop": 5,
+		"paddingBottom": 5,
+		"paddingLeft": 5,
+		"paddingRight": 5,
+		"flexProps": {
+			"flexDirection": "ROW",
+			"justifyContent": "CENTER",
+			"alignItems": "STRETCH"
+		},
+		"&-flFavListLeft": {
+			"height": null,
+			"width": null,
+			"flexProps": {
+				"flexDirection": "ROW",
+				"justifyContent": "FLEX_START",
+				"alignItems": "STRETCH",
+				"alignContent": "STRETCH",
+				"flexGrow": 2.5
+			},
+			"&-imgFavList": {
+				"maxHeight": 70,
+				"maxWidth": 70,
+				"height": null,
+				"width": null,
+				"flexProps": {
+					"flexGrow": 0.5
+				}
+			},
+			"&-flFavListTitleDesc": {
+				"height": null,
+				"width": null,
+				"paddingLeft": 30,
+				"flexProps": {
+					"flexDirection": "COLUMN",
+					"justifyContent": "FLEX_START",
+					"alignItems": "STRETCH",
+					"alignContent": "STRETCH",
+					"flexGrow": 1
+				},
+				"&-lblFavListItemTitle": {
+					"flexProps": {
+						"flexGrow": 1
+					},
+					"textColor": "${textDark}",
+					"font": {
+						"size": 16,
+						"family": "Nunito",
+						"style": "Bold"
+					}
+				},
+				"&-lblFavListItemDesc": {
+					"flexProps": {
+						"flexGrow": 1
+					},
+					"textColor": "${textLight}",
+					"font": {
+						"size": 14,
+						"family": "Nunito",
+						"style": "Semibold"
+					}
+				}
+			}
+		},
+		"&-flFavListRight": {
+			"height": null,
+			"width": null,
+			"flexProps": {
+				"flexDirection": "ROW",
+				"justifyContent": "FLEX_START",
+				"alignItems": "STRETCH",
+				"alignContent": "STRETCH",
+				"flexGrow": 1
+			},
+			"&-lblFavListItemPrice": {
+				"flexProps": {
+					"alignSelf": "CENTER",
+					"flexGrow": 2
+				},
+				"textColor": "${textDark}",
+				"font": {
+					"size": 16,
+					"family": "Nunito",
+					"style": "Semibold"
+				}
+			},
+			"&-lblFavListItemChevron": {
+				"textColor": "${textDark}",
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"font": {
+					"family": "FontAwesome5FreeSolid"
+				}
+			}
+		}
+	}
 }

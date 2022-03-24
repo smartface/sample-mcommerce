@@ -1,6 +1,4 @@
 import FlProductItemDesign from 'generated/my-components/FlProductItem';
-import ActivityIndicator from '@smartface/native/ui/activityindicator';
-import Button from '@smartface/native/ui/button';
 import setVisibility from 'lib/setVisibility';
 import AttributedString from '@smartface/native/ui/attributedstring';
 import { themeService } from 'theme';
@@ -18,35 +16,57 @@ const { marginRight: lblProductItemTitleWidthMarginRight, marginLeft: lblProduct
 export default class FlProductItem extends FlProductItemDesign {
     private __imageUrl: string;
     private __itemTitleMaxWidth: number;
-    _addToBasket: (...args) => void;
     pageName?: string | undefined;
-    myActivityIndicator: ActivityIndicator;
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
-        this.btnAddToBasket.on(Button.Events.Press, () => {
-            this._addToBasket && this._addToBasket();
-        });
     }
-    initIndicator() {
-        this.aiAddToCart.android.zIndex = this.btnAddToBasket.android.zIndex + 1;
+    set showHideMinusButton(toggle: boolean) {
+        this.flProductItemButtonsWrapper.showHideMinusButton = toggle;
+        if (toggle) {
+            this.flProductItemWrapper.dispatch({
+                type: 'pushClassNames',
+                classNames: '.flProductItem-flProductItemWrapper.active'
+            });
+        } else {
+            this.flProductItemWrapper.dispatch({
+                type: 'removeClassName',
+                className: '.flProductItem-flProductItemWrapper.active'
+            });
+        }
     }
-    toggleIndicator(toggle: boolean): void {
-        this.aiAddToCart.dispatch({
-            type: 'updateUserStyle',
-            userStyle: {
-                visible: toggle
-            }
-        });
+    toggleIndicatorMinus(toggle: boolean): void {
+        this.flProductItemButtonsWrapper.toggleIndicatorMinus(toggle);
+    }
+    toggleIndicatorPlus(toggle: boolean): void {
+        this.flProductItemButtonsWrapper.toggleIndicatorPlus(toggle);
+    }
+    get buttonMinusText(): string {
+        return this.flProductItemButtonsWrapper.buttonMinusText;
+    }
+    set buttonMinusText(value: string) {
+        this.flProductItemButtonsWrapper.buttonMinusText = value;
+    }
+    set productCount(value: string) {
+        this.flProductItemButtonsWrapper.productCount = value;
+    }
+    get productCount(): string {
+        return this.flProductItemButtonsWrapper.productCount;
     }
     set itemTitleMaxWidth(value: number) {
         this.__itemTitleMaxWidth = value;
     }
-    get onActionClick(): (...args) => void {
-        return this._addToBasket;
+    get onActionClickPlus(): (...args) => void {
+        return this.flProductItemButtonsWrapper.onActionClickPlus;
     }
-    set onActionClick(value: (...args) => void) {
-        this._addToBasket = value;
+    set onActionClickPlus(value: (...args) => void) {
+        this.flProductItemButtonsWrapper.onActionClickPlus = value;
+    }
+    get onActionClickMinus(): (...args) => void {
+        return this.flProductItemButtonsWrapper.onActionClickMinus;
+    }
+    set onActionClickMinus(value: (...args) => void) {
+        this.flProductItemButtonsWrapper.onActionClickMinus = value;
     }
     get itemTitle(): string {
         return this.lblProductItemTitle.text;

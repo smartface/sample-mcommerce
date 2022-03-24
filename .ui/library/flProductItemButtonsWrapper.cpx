@@ -1,0 +1,123 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flProductItemButtonsWrapper .flProductItemButtonsWrapper.inactive",
+			"hiddenComponent": true,
+			"id": "e605-6f16-e23e-ed52",
+			"props": {
+				"children": [
+					"0f0f-b294-521e-2c70",
+					"ed3d-0432-4f36-bc35",
+					"4839-3c7e-11e2-d820",
+					"51b8-11f6-28ae-3a83",
+					"5267-0660-1eda-9e7f"
+				],
+				"name": "flProductItemButtonsWrapper",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": 17.33,
+				"top": 182
+			}
+		},
+		{
+			"className": ".sf-label .review.lblComment .textCenter .flProductItemButtonsWrapper-lblCount",
+			"id": "0f0f-b294-521e-2c70",
+			"props": {
+				"children": [],
+				"name": "lblCount",
+				"parent": "e605-6f16-e23e-ed52",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-activityIndicator .flProductItemButtonsWrapper-aiMinus",
+			"hiddenComponent": false,
+			"id": "ed3d-0432-4f36-bc35",
+			"props": {
+				"children": [],
+				"name": "aiMinus",
+				"parent": "e605-6f16-e23e-ed52",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ActivityIndicator",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button-addToBasket-countminus .flProductItemButtonsWrapper-btnMinus",
+			"hiddenComponent": false,
+			"id": "4839-3c7e-11e2-d820",
+			"props": {
+				"children": [],
+				"name": "btnMinus",
+				"parent": "e605-6f16-e23e-ed52",
+				"text": "-",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "-",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button-addToBasket .flProductItemButtonsWrapper-btnPlus",
+			"hiddenComponent": false,
+			"id": "51b8-11f6-28ae-3a83",
+			"props": {
+				"children": [],
+				"name": "btnPlus",
+				"parent": "e605-6f16-e23e-ed52",
+				"text": "",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-activityIndicator .flProductItemButtonsWrapper-aiPlus",
+			"id": "5267-0660-1eda-9e7f",
+			"props": {
+				"children": [],
+				"name": "aiPlus",
+				"parent": "e605-6f16-e23e-ed52",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ActivityIndicator",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

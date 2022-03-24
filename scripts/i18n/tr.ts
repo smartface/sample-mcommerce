@@ -20,7 +20,7 @@ SMF.i18n.defineLanguage('tr', {
     updatePhoto: 'Profil Fotoğrafını Güncelle',
     openCamera: 'Kamerayı Aç',
     selectFromGallery: 'Fotoğraf Galerisinden Seç',
-    cancel: 'İptal',
+    cancel: 'İPTAL',
     categoriesHeader: 'Kategoriler',
     favouriteHeader: 'Favoriler',
     addAllToCart: 'Hepsini Sepete Ekle',
@@ -141,5 +141,5 @@ SMF.i18n.defineLanguage('tr', {
     appName: 'Smart Commerce',
     sureToLogout: 'Çıkış yapmak istediğinizden emin misiniz?',
     noDescription: 'AÇIKLAMA BULUNAMADI',
-    select: 'Seç'
+    select: 'SEÇ'
 });

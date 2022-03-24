@@ -6,6 +6,7 @@ import authRouteGenerator from './auth';
 import { themeService } from 'theme';
 import BottomTabBarController from '@smartface/native/ui/bottomtabbarcontroller';
 import * as Pages from 'pages';
+import System from '@smartface/native/device/system';
 const { backgroundColor, itemColor } = themeService.getNativeStyle('.tabs');
 
 themeService.onChange(() => {
@@ -43,6 +44,13 @@ const getBasketCounter = () => {
             .toString();
     } else {
         return '';
+    }
+};
+
+const androidModalDismiss = (router, route) => {
+    const { view, action } = route.getState();
+    if (System.OS === System.OSType.ANDROID && view && action === 'POP') {
+        view.onShow && view.onShow();
     }
 };
 
@@ -124,6 +132,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgHome>({
                     path: `/btb/tab1/home`,
+                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgHome(router, route);
                         router.setState({ view: page });
@@ -198,6 +207,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgCart>({
                     path: `/btb/tab3/cart`,
+                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgCart(router, route);
                         router.setState({ view: page });
@@ -216,6 +226,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgFavorites>({
                     path: `/btb/tab4/favorites`,
+                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgFavorites(router, route);
                         router.setState({ view: page });

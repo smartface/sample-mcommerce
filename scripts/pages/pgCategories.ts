@@ -7,12 +7,9 @@ import System from '@smartface/native/device/system';
 import { themeService } from 'theme';
 import { getCategories } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
-import FlHeaderIcon from 'components/FlHeaderIcon';
-import setHeaderIcon from 'lib/setHeaderIcon';
 
 export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
     categories: Categories[];
-    flHeaderIcon: FlHeaderIcon;
     initialized = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
@@ -23,10 +20,6 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
                 this.categoriesGrid.refreshData();
             });
         }
-    }
-    addAppIconToHeader() {
-        this.headerBar.title = '';
-        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
     }
     initCategoriesGrid() {
         this.categoriesGrid.onPullRefresh = () => {
@@ -71,7 +64,6 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
 
     onShow() {
         super.onShow();
-        this.addAppIconToHeader();
         if (!this.initialized) {
             this.fetchCategories();
         }
