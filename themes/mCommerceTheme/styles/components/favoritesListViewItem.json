@@ -26,7 +26,8 @@
 				"width": null,
 				"flexProps": {
 					"flexGrow": 0.5
-				}
+				},
+				"imageFillType": "ASPECTFIT"
 			},
 			"&-flFavListTitleDesc": {
 				"height": null,
@@ -48,7 +49,8 @@
 						"size": 16,
 						"family": "Nunito",
 						"style": "Bold"
-					}
+					},
+					"height": 30
 				},
 				"&-lblFavListItemDesc": {
 					"flexProps": {
@@ -59,7 +61,8 @@
 						"size": 14,
 						"family": "Nunito",
 						"style": "Semibold"
-					}
+					},
+					"height": 30
 				}
 			}
 		},
@@ -67,8 +70,8 @@
 			"height": null,
 			"width": null,
 			"flexProps": {
-				"flexDirection": "ROW",
-				"justifyContent": "FLEX_START",
+				"flexDirection": "COLUMN",
+				"justifyContent": "CENTER",
 				"alignItems": "STRETCH",
 				"alignContent": "STRETCH",
 				"flexGrow": 1

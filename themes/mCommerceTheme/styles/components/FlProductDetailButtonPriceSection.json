@@ -42,13 +42,14 @@
 		"&-flPrice": {
 			"&-textbox": {
 				"height": 24,
-				"maxLines": 1
+				"maxLines": 1,
+				"textAlignment": "MIDRIGHT"
 			},
 			"flexProps": {
 				"justifyContent": "CENTER",
-				"alignItems": "FLEX_END"
+				"alignItems": "STRETCH"
 			},
-			"paddingRight": 10
+			"paddingRight": 5
 		}
 	}
 }

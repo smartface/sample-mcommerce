@@ -21,3 +21,5 @@ export const HALF_OF_SCREEN_HEIGHT = Screen.height / 2;
 export const REVIEW_MAX_LINE = 3;
 export const TOAST_DEFAULT_ANIMATION_DURATION = 3000;
 export const TOAST_OPEN_HIDE_DURATION = 200;
+export const VIBRATION_ADD_TIME = 50;
+export const VIBRATION_REMOVE_TIME = 100;

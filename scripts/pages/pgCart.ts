@@ -9,8 +9,7 @@ import store from 'store/index';
 import storeActions from 'store/main/actions';
 import { getProductImageUrl } from 'service/commerce';
 import setVisibility from 'lib/setVisibility';
-import System from '@smartface/native/device/system';
-import Invocation from '@smartface/native/util/iOS/invocation';
+import { moneyFormatter } from 'lib/moneyFormatter';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -25,22 +24,33 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     unsubscribe = null;
     constructor(private router?: Router, private route?: Route) {
         super({});
+        this.flCartCheckout.onCheckoutClick = () => {
+            alert('todo');
+        };
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowHeight = onRowHeight.bind(this);
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
-        this.lvMain.onRowSelected = (item, index: number) => {
-            this.router.push('productDetail', {
-                productId: this.cartProducts[index]._id
-            });
-        };
         this.lvMain.refreshEnabled = false;
     }
     refreshListView() {
         this.data = this.processor();
         this.lvMain.itemCount = this.data.length;
+        if (this.data && this.data.length > 0) {
+            if (this.data[0].type === 'LVI_EMPTY_ITEM') {
+                this.lvMain.onRowSelected = (item, index: number) => {
+                    return;
+                };
+            } else if (this.data[0].type === 'LVI_CART_PRODUCTS') {
+                this.lvMain.onRowSelected = (item, index: number) => {
+                    this.router.push('productDetail', {
+                        productId: this.cartProducts[index]._id
+                    });
+                };
+            }
+        }
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
@@ -61,16 +71,15 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                         productName: cart.name,
                         productInfo: cart.shortDescription,
                         productImage: cart.images ? getProductImageUrl(cart.images[0]) : null,
-                        productPrice: cart.discountPrice != undefined ? `$${cart?.discountPrice?.toFixed(2)}` : `$${cart.price.toFixed(2)}`,
+                        productDiscount: cart.discountPrice != undefined ? moneyFormatter(cart?.discountPrice) : '',
+                        productPrice: moneyFormatter(cart.price),
                         productCount: cart.count,
                         minusButtonIcon: cart.count === 1 ? '' : '',
                         onActionPlus: () => {
-                            this.callVibrate(100);
                             this.cartOperation(cart, CartOperationEnum.Add);
                             this.refreshListView();
                         },
                         onActionMinus: () => {
-                            this.callVibrate(50);
                             this.cartOperation(cart, CartOperationEnum.Remove);
                             this.refreshListView();
                         },
@@ -129,29 +138,6 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                 return store.dispatch(storeActions.AddToBasket({ product: cart, count: -1 }));
             case CartOperationEnum.Clear:
                 return store.dispatch(storeActions.RemoveFromBasket({ productId: cart._id }));
-        }
-    }
-    callVibrate(millisecond: number) {
-        if (System.OS === System.OSType.ANDROID) {
-            console.warn('AND');
-            System.vibrate({ millisecond: millisecond });
-        } else if (System.OS === System.OSType.IOS) {
-            console.warn('IOS');
-            let feedbackAlloc = Invocation.invokeClassMethod('UIImpactFeedbackGenerator', 'alloc', [], 'id');
-            // 0: Light , 1: Medium , 2: Heavy
-            //@ts-ignore
-            let argStyle = new Invocation.Argument({
-                type: 'NSInteger',
-                value: 2
-            });
-            //@ts-ignore
-            let feedbackGenerator = Invocation.invokeInstanceMethod(feedbackAlloc, 'initWithStyle:', [argStyle], 'NSObject');
-            //@ts-ignore
-            Invocation.invokeInstanceMethod(feedbackGenerator, 'prepare', []);
-            //@ts-ignore
-            Invocation.invokeInstanceMethod(feedbackGenerator, 'impactOccurred', []);
-            feedbackGenerator = undefined;
-            feedbackAlloc = undefined;
         }
     }
     onShow() {

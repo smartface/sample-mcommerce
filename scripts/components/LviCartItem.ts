@@ -2,7 +2,14 @@ import { themeService } from 'theme';
 import Button from '@smartface/native/ui/button';
 import LviCartItemDesign from 'generated/my-components/LviCartItem';
 import Label from '@smartface/native/ui/label';
+import AttributedString from '@smartface/native/ui/attributedstring';
+import setVisibility from 'lib/setVisibility';
 const originalHeight = themeService.getStyle('.lviCartItem').height;
+
+const priceFontWithDiscount = themeService.getNativeStyle('.product-price.discount').font;
+const priceFontWithNoDiscount = themeService.getNativeStyle('.product-price.nodiscount').font;
+const textColorPriceWithDiscount = themeService.getNativeStyle('.product-price.discount').textColor;
+const textColorPriceWithNoDiscount = themeService.getNativeStyle('.product-price.nodiscount').textColor;
 
 export default class LviCartItem extends LviCartItemDesign {
     pageName?: string | undefined;
@@ -14,13 +21,13 @@ export default class LviCartItem extends LviCartItemDesign {
         super(props);
         this.pageName = pageName;
         this.btnCartPlus.on(Button.Events.Press, () => {
-            this._value && this._value();
+            this._value?.();
         });
         this.btnCartMinus.on(Button.Events.Press, () => {
-            this._valueMinus && this._valueMinus();
+            this._valueMinus?.();
         });
-        this.lblCloseIcon.on(Label.Events.Touch, () => {
-            this._removeValue && this._removeValue();
+        this.btnClose.on(Button.Events.Press, () => {
+            this._removeValue?.();
         });
     }
     static getHeight(): number {
@@ -49,10 +56,34 @@ export default class LviCartItem extends LviCartItemDesign {
         });
     }
     get productPrice(): string {
-        return this.lblProductPrice.text;
+        return this.tvPrice.text;
     }
     set productPrice(value: string) {
-        this.lblProductPrice.text = value;
+        const discountExists = !!this.tvDiscount.text;
+        const attributeString = new AttributedString({
+            strikethrough: discountExists,
+            ios: {
+                strikethroughColor: textColorPriceWithNoDiscount
+            },
+            string: value || '',
+            font: discountExists ? priceFontWithDiscount : priceFontWithNoDiscount,
+            foregroundColor: discountExists ? textColorPriceWithDiscount : textColorPriceWithNoDiscount
+        });
+        this.tvPrice.scrollEnabled = false;
+        this.tvPrice.attributedText = [attributeString];
+    }
+    get productDiscount(): string {
+        return this.tvDiscount.text;
+    }
+    set productDiscount(value: string) {
+        const attributeString = new AttributedString({
+            string: value || '',
+            font: priceFontWithNoDiscount,
+            foregroundColor: textColorPriceWithNoDiscount
+        });
+        setVisibility(this.tvDiscount, !!value);
+        this.tvDiscount.scrollEnabled = false;
+        this.tvDiscount.attributedText = [attributeString];
     }
     set productCount(value: string | number) {
         this.lblProductCount.text = value.toString();

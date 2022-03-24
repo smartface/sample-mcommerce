@@ -11,6 +11,7 @@ import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import { themeService } from 'theme';
 import setVisibility from 'lib/setVisibility';
 import { Product } from 'types';
+import { moneyFormatter } from 'lib/moneyFormatter';
 
 type Processor = ListViewItems.ProcessorTypes.ILviFavorites;
 enum HeaderEnum {
@@ -102,20 +103,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.onRowSwipe = onRowSwipe.bind(this);
         this.lvMain.refreshEnabled = false;
-        this.lvMain.onRowSelected = (item, index: number) => {
-            if (!this.changeHeaderText) {
-                this.router.push('productDetail', {
-                    productId: this.favoriteProducts[index]._id
-                });
-            } else {
-                if (!this.selectedProducts.some((a) => a._id === this.favoriteProducts[index]._id)) {
-                    this.selectedProducts.push(this.favoriteProducts[index]);
-                } else {
-                    this.selectedProducts = this.selectedProducts.filter((sp) => sp._id !== this.favoriteProducts[index]._id);
-                }
-                this.refreshListView();
-            }
-        };
         this.lvMain.onRowCanSwipe = (index: number) => {
             if (!this.changeHeaderText) {
                 this.selectedProducts.splice(index, 1);
@@ -131,8 +118,25 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.lvMain.itemCount = this.data.length;
         if (this.data && this.data.length > 0) {
             if (this.data[0].type === 'LVI_EMPTY_ITEM') {
+                this.lvMain.onRowSelected = (item, index: number) => {
+                    return;
+                };
                 this.lvMain.swipeEnabled = false;
             } else {
+                this.lvMain.onRowSelected = (item, index: number) => {
+                    if (!this.changeHeaderText) {
+                        this.router.push('productDetail', {
+                            productId: this.favoriteProducts[index]._id
+                        });
+                    } else {
+                        if (!this.selectedProducts.some((a) => a._id === this.favoriteProducts[index]._id)) {
+                            this.selectedProducts.push(this.favoriteProducts[index]);
+                        } else {
+                            this.selectedProducts = this.selectedProducts.filter((sp) => sp._id !== this.favoriteProducts[index]._id);
+                        }
+                        this.refreshListView();
+                    }
+                };
                 this.lvMain.swipeEnabled = true;
             }
         }
@@ -158,12 +162,9 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                             itemTitle: favouritedItem.name,
                             itemDesc: favouritedItem.shortDescription,
                             itemImage: favouritedItem.images ? getProductImageUrl(favouritedItem.images[0]) : null,
-                            itemPrice:
-                                favouritedItem.discountPrice != undefined
-                                    ? `$${favouritedItem?.discountPrice?.toFixed(2)}`
-                                    : `$${favouritedItem.price.toFixed(2)}`,
+                            itemDiscount: favouritedItem.discountPrice != undefined ? moneyFormatter(favouritedItem?.discountPrice) : '',
+                            itemPrice: moneyFormatter(favouritedItem.price),
                             showCheck: this.changeHeaderText,
-                            showArrow: !this.changeHeaderText,
                             toggle: selected
                         },
                         {

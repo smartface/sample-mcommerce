@@ -1,7 +1,7 @@
 SMF.i18n.defineLanguage('en', {
     verificationCode: 'Verification Code',
     productDetail: 'Product Detail',
-    goToCheckout: 'Go To Checkout',
+    goToCheckout: 'Go to Checkout',
     accept: 'Accept',
     shoppingCartIsEmpty: 'Your shopping cart is empty',
     favoritesIsEmpty: 'There is no product in your favorites',
@@ -21,7 +21,7 @@ SMF.i18n.defineLanguage('en', {
     addToBasket: 'Add to basket',
     favouriteHeader: 'Favourites',
     categoriesHeader: 'Categories',
-    addAllToCart: 'Add All To Cart',
+    addAllToCart: 'Add All to Cart',
     settingsHeader: 'Settings',
     themeText: 'Theme',
     lightTheme: 'Light Theme',
@@ -66,7 +66,7 @@ SMF.i18n.defineLanguage('en', {
     notifications: 'Notifications',
     help: 'Help',
     about: 'About',
-    cancel: 'CANCEL',
+    cancel: 'Cancel',
     copy: 'Copy',
     done: 'Done',
     copyURL: 'Copy URL',
@@ -142,6 +142,8 @@ SMF.i18n.defineLanguage('en', {
     emptyNutritions: 'This product has no nutritions.',
     appName: 'Smart Commerce',
     sureToLogout: 'Are you sure to logout?',
-    noDescription: 'NO DESCRIPTION',
-    select: 'SELECT'
+    select: 'Select',
+    emptyDescription: 'This product has no description.',
+    removedFromBasket: 'Removed from Basket',
+    addedToBasket: 'Added to Basket'
 });
