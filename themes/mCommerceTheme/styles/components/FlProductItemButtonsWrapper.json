@@ -1,94 +1,95 @@
 {
-    ".flProductItemButtonsWrapper": {
-        "flexProps": {
-            "flexDirection": "ROW",
-            "alignItems": "CENTER"
-        },
-        "width": null,
-        "borderRadius": 20,
-        "height": 40,
-        "&-aiMinus": {
-            "color": "${main}",
-            "bottom": 0,
-            "flexProps": {
-                "positionType": "ABSOLUTE"
-            },
-            "backgroundColor": "${backgroundSecondary}",
-            "borderWidth": null,
-            "borderRadius": 17,
-            "height": 35,
-            "left": 2,
-            "top": 1,
-            "width": 35,
-            "visible": false
-        },
-        "&-aiPlus": {
-            "color": "${white}",
-            "ios": {
-                "activityIndicatorViewStyle": "NORMAL"
-            },
-            "backgroundColor": "${green}",
-            "android": {
-                "elevation": 0
-            },
-            "marginTop": null,
-            "marginBottom": null,
-            "borderColor": "${productItemPriceBorder}",
-            "borderWidth": null,
-            "borderRadius": 17,
-            "bottom": 0,
-            "flexProps": {
-                "positionType": "ABSOLUTE",
-                "alignSelf": "CENTER"
-            },
-            "height": 35,
-            "right": 2,
-            "top": 2,
-            "width": 35,
-            "visible": false
-        },
-        "&-btnPlus": {
-            "borderRadius": 20,
-            "bottom": 1,
-            "flexProps": {
-                "positionType": "ABSOLUTE"
-            },
-            "height": 40,
-            "right": 0,
-            "top": 0,
-            "width": 40
-        },
-        "&-lblCount": {
-            "height": 30,
-            "width": null,
-            "flexProps": {
-                "flexGrow": 1
-            }
-        },
-        "&-btnMinus": {
-            "borderRadius": 20,
-            "bottom": 0,
-            "flexProps": {
-                "positionType": "ABSOLUTE"
-            },
-            "height": 40,
-            "left": -1,
-            "top": -1,
-            "width": 40,
-            ".main": {
-                "textColor": "${green}"
-            },
-            ".danger": {
-                "textColor": "${deny}"
-            }
-        },
-        ".active": {
-            "borderColor": "${grayBorder}",
-            "borderWidth": 1
-        },
-        ".inactive": {
-            "borderWidth": 0,
-            "height": 40
-        }
-    }
+  ".flProductItemButtonsWrapper": {
+    "flexProps": {
+      "flexDirection": "ROW",
+      "alignItems": "CENTER"
+    },
+    "width": null,
+    "borderRadius": 20,
+    "height": 40,
+    "&-aiMinus": {
+      "color": "${main}",
+      "bottom": 0,
+      "flexProps": {
+        "positionType": "ABSOLUTE"
+      },
+      "backgroundColor": "${backgroundSecondary}",
+      "borderWidth": null,
+      "borderRadius": 17,
+      "height": 35,
+      "left": 2,
+      "top": 1,
+      "width": 35,
+      "visible": false
+    },
+    "&-aiPlus": {
+      "color": "${white}",
+      "ios": {
+        "activityIndicatorViewStyle": "NORMAL"
+      },
+      "backgroundColor": "${green}",
+      "android": {
+        "elevation": 0
+      },
+      "marginTop": null,
+      "marginBottom": null,
+      "borderColor": "${productItemPriceBorder}",
+      "borderWidth": null,
+      "borderRadius": 17,
+      "bottom": 0,
+      "flexProps": {
+        "positionType": "ABSOLUTE",
+        "alignSelf": "CENTER"
+      },
+      "height": 35,
+      "right": 2,
+      "top": 2,
+      "width": 35,
+      "visible": false
+    },
+    "&-btnPlus": {
+      "borderRadius": 20,
+      "bottom": 1,
+      "flexProps": {
+        "positionType": "ABSOLUTE"
+      },
+      "height": 40,
+      "right": 0,
+      "top": 0,
+      "width": 40
+    },
+    "&-lblCount": {
+      "height": 30,
+      "width": null,
+      "flexProps": {
+        "flexGrow": 1
+      }
+    },
+    "&-btnMinus": {
+      "borderRadius": 20,
+      "bottom": 0,
+      "flexProps": {
+        "positionType": "ABSOLUTE"
+      },
+      "height": 40,
+      "left": -1,
+      "top": -1,
+      "width": 40,
+      ".main": {
+        "textColor": "${green}"
+      },
+      ".danger": {
+        "textColor": "${deny}"
+      }
+    },
+    ".active": {
+      "borderColor": "${grayBorder}",
+      "borderWidth": 1
+    },
+    ".inactive": {
+      "borderWidth": 0,
+      "height": 40
+    },
+    "left": null
+  }
 }

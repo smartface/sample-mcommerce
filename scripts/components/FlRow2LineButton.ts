@@ -49,7 +49,7 @@ export default class FlRow2LineButton extends FlRow2LineButtonDesign {
         this.lblLeft.dispatch({
             type: 'updateUserStyle',
             userStyle: {
-                width: this.lblLeft.font.sizeOfString(value, Screen.width).width
+                width: this.lblLeft.font.sizeOfString(value, Screen.width)?.width || 120
             }
         });
     }
@@ -61,7 +61,7 @@ export default class FlRow2LineButton extends FlRow2LineButtonDesign {
         this.lblRight.dispatch({
             type: 'updateUserStyle',
             userStyle: {
-                width: this.lblRight.font.sizeOfString(value, Screen.width).width
+                width: this.lblRight.font.sizeOfString(value, Screen.width)?.width || 120
             }
         });
     }

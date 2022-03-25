@@ -12,6 +12,8 @@ import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD, MINIMUM_CHARACTERS_REQUIRED } from 'constants';
 import AttributedString from '@smartface/native/ui/attributedstring';
 
+const itemColor = themeService.getNativeStyle('.sf-headerBar.transparent.white').itemColor
+
 export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
     isMailValid = false;
     isPasswordValid = false;
@@ -26,22 +28,22 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         this.btnSignUp.text = global.lang.signup;
     }
     initAttributedStrings() {
-        let termsLeft = new AttributedString({
+        const termsLeft = new AttributedString({
             string: global.lang.termsLeft,
             font: themeService.getNativeStyle('.signup.termsLeft').font,
             foregroundColor: themeService.getNativeStyle('.signup.termsLeft').textColor
         });
-        let termsRight = new AttributedString({
+        const termsRight = new AttributedString({
             string: global.lang.termsRight,
             font: themeService.getNativeStyle('.signup.termsPrivacyRight').font,
             foregroundColor: themeService.getNativeStyle('.signup.termsPrivacyRight').textColor
         });
-        let privacyLeft = new AttributedString({
+        const privacyLeft = new AttributedString({
             string: global.lang.privacyLeft,
             font: themeService.getNativeStyle('.signup.privacyLeft').font,
             foregroundColor: themeService.getNativeStyle('.signup.privacyLeft').textColor
         });
-        let privacyRight = new AttributedString({
+        const privacyRight = new AttributedString({
             string: global.lang.privacyRight,
             font: themeService.getNativeStyle('.signup.termsPrivacyRight').font,
             foregroundColor: themeService.getNativeStyle('.signup.termsPrivacyRight').textColor
@@ -87,10 +89,10 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
         }
     }
     initValidate() {
-        let firstNameExist = !!this.mtbFirstName.materialTextBox.text.replace(/\s+/g, '').trim();
-        let lastNameExist = !!this.mtbLastName.materialTextBox.text.replace(/\s+/g, '').trim();
-        let mailExist = !!this.mtbEmail.materialTextBox.text.replace(/\s+/g, '').trim();
-        let passwordExists = !!this.mtbPassword.materialTextBox.text.replace(/\s+/g, '').trim();
+        const firstNameExist = !!this.mtbFirstName.materialTextBox.text.replace(/\s+/g, '').trim();
+        const lastNameExist = !!this.mtbLastName.materialTextBox.text.replace(/\s+/g, '').trim();
+        const mailExist = !!this.mtbEmail.materialTextBox.text.replace(/\s+/g, '').trim();
+        const passwordExists = !!this.mtbPassword.materialTextBox.text.replace(/\s+/g, '').trim();
 
         if (
             firstNameExist &&
@@ -141,7 +143,7 @@ export default class PgSignUp extends withDismissAndBackButton(PgSignUpDesign) {
             Application.statusBar.backgroundColor = Color.WHITE;
         }
         this.initDismissButton(this.router, {
-            color: themeService.getNativeStyle('.sf-headerBar.transparent.white').itemColor
+            color: itemColor
         });
     }
     onLoad() {

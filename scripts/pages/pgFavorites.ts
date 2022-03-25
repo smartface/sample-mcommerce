@@ -36,7 +36,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
     }
     addToCartSelectedProducts() {
         this.flCartCheckout.btnCartCheckout.onPress = () => {
-            let ids = [];
+            const ids = [];
             const dispatches = this.selectedProducts.map((product, index) => {
                 return () => {
                     store.dispatch(storeActions.AddToBasket({ product, count: 1 }));
@@ -89,8 +89,8 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.headerBar.setItems([this.rightItemSelect]);
     }
     deleteAndRefresh(e: { index: number }): void {
-        let length = this.favoriteProducts.length;
-        let removedItem = this.favoriteProducts.find((product, index) => index === e.index);
+        const length = this.favoriteProducts.length;
+        const removedItem = this.favoriteProducts.find((product, index) => index === e.index);
         this.favoriteProducts.splice(e.index, 1);
         store.dispatch(storeActions.RemoveFromFavorites({ productId: removedItem._id }));
         this.refreshListView();
@@ -155,7 +155,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
             );
         } else {
             this.favoriteProducts.forEach((favouritedItem, index) => {
-                let selected = this.selectedProducts.some((sp) => favouritedItem._id === sp._id);
+                const selected = this.selectedProducts.some((sp) => favouritedItem._id === sp._id);
                 processorItems.push(
                     ListViewItems.getLviFavorites(
                         {

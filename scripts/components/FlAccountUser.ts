@@ -57,7 +57,6 @@ export default class FlAccountUser extends FlAccountUserDesign {
     }
     set onProfileClick(value: () => Promise<any>) {
         this.__onProfileClick = value;
-        this.lblEditIcon.onTouchEnded = (isInside) => isInside && value();
     }
     get onPhotoClick(): () => Promise<any> {
         return this.__onPhotoClick;
@@ -65,7 +64,6 @@ export default class FlAccountUser extends FlAccountUserDesign {
     set onPhotoClick(value: () => Promise<any>) {
         if (value) {
             this.__onPhotoClick = value;
-            this.lblEditIcon.onTouchEnded = (isInside) => isInside && value();
         }
     }
     get onAction(): (...args) => void {

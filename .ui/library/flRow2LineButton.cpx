@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flRow2LineButton",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "6680-6456-32b9-4718",
 			"props": {
 				"children": [
@@ -17,9 +17,7 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {},
-				"left": 4,
-				"top": 71
+				"flexProps": {}
 			}
 		},
 		{

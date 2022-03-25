@@ -15,11 +15,7 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {
-				"flexProps": {},
-				"left": 2,
-				"top": 128
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .grow .lviFavorites-lviFavoritesWrapper",

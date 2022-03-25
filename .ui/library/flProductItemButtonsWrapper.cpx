@@ -19,11 +19,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 17.33,
-				"top": 182
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .review.lblComment .textCenter .flProductItemButtonsWrapper-lblCount",

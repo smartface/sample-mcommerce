@@ -1,24 +1,26 @@
 {
-	".lviFavorites": {
-		"height": 100,
-		"&-lviFavoritesWrapper": {
-			"flexProps": {
-				"flexDirection": "ROW",
-				"alignItems": "STRETCH"
-			},
-			"paddingBottom": 15,
-			"paddingTop": 15,
-			"&-flCheck": {
-				"flexProps": {},
-				"marginTop": 30,
-				"marginBottom": 30
-			},
-			"&-flFavoriteItemRight": {
-				"&-tv": {
-					"height": 25,
-					"textAlignment": "MIDRIGHT"
-				}
-			}
-		}
-	}
+  ".lviFavorites": {
+    "height": 100,
+    "&-lviFavoritesWrapper": {
+      "flexProps": {
+        "flexDirection": "ROW",
+        "alignItems": "STRETCH"
+      },
+      "paddingBottom": 15,
+      "paddingTop": 15,
+      "&-flCheck": {
+        "flexProps": {},
+        "marginTop": 30,
+        "marginBottom": 30
+      },
+      "&-flFavoriteItemRight": {
+        "&-tv": {
+          "height": 25,
+          "textAlignment": "MIDRIGHT"
+        }
+      }
+    },
+    "left": 2,
+    "top": 128
+  }
 }
