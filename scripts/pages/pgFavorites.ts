@@ -37,7 +37,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
             this.selectedProducts.forEach((product, index) => {
                 store.dispatch(storeActions.AddToBasket({ product, count: 1 }));
                 store.dispatch(storeActions.RemoveFromFavorites({ productId: product._id }));
-                this.selectedProducts.splice(index, 1);
+                this.selectedProducts = this.selectedProducts.filter((selectedProduct) => selectedProduct._id !== product._id)
             });
             this.refreshListView();
         };
@@ -107,9 +107,9 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
                 });
             } else {
                 if (!this.selectedProducts.includes(this.favoriteProducts[index])) {
-                    this.selectedProducts.push(this.favoriteProducts[index]);
+                    this.selectedProducts = [...this.selectedProducts, this.favoriteProducts[index]];
                 } else {
-                    this.selectedProducts.splice(index, 1);
+                    this.selectedProducts = this.selectedProducts.filter((product) => product._id !== this.favoriteProducts[index]._id)
                 }
                 this.refreshListView();
             }

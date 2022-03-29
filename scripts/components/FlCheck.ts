@@ -9,9 +9,7 @@ export default class FlCheck extends FlCheckDesign {
         super(props);
         this.pageName = pageName;
         this.onToggleChange = () => (this.toggle = !this.active);
-        this.imgCheck.on(ImageView.Events.TouchEnded, (value) => {
-            this.__onToggleChange && this.__onToggleChange(value);
-        });
+        
     }
     get toggle(): boolean {
         return this.active;
