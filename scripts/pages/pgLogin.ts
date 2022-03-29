@@ -32,7 +32,7 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
         this.mtbLogin.enableErrorMessage = true;
         this.mtbPassword.materialTextBox.ios.clearButtonEnabled = true;
         this.mtbPassword.enableErrorMessage = true;
-
+        
         this.mtbLogin.options = {
             hint: global.lang.email
         };
@@ -40,6 +40,33 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
             hint: global.lang.password
         };
         this.mtbPassword.materialTextBox.isPassword = true;
+        this.mtbLogin.materialTextBox.onEditBegins = ()=>{
+            this.changeFlexLayoutHeightForKeyboard(true);
+        }
+        this.mtbLogin.materialTextBox.onEditEnds = () => {
+            this.changeFlexLayoutHeightForKeyboard(false);
+            this.flContainer.applyLayout();
+        }
+        this.mtbPassword.materialTextBox.onEditBegins = ()=>{
+            this.changeFlexLayoutHeightForKeyboard(true);
+        }
+        this.mtbPassword.materialTextBox.onEditEnds = () => {
+            this.changeFlexLayoutHeightForKeyboard(false);
+            this.flContainer.applyLayout();
+        }
+    }
+    changeFlexLayoutHeightForKeyboard(addHeight:boolean){
+        if(addHeight){
+            this.flBottom.dispatch({
+                type:'removeClassName',
+                className:'#pgLogin-flBottom'
+            })
+        }else{
+            this.flBottom.dispatch({
+                type:'pushClassNames',
+                classNames:'#pgLogin-flBottom'
+            })
+        }
     }
     async initUserLogin() {
         if (this.initValidate()) {
