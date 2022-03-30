@@ -19,7 +19,8 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -31,7 +32,8 @@
 				"parent": "aa9f-e1cb-2f7f-92d5"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar.transparent",
@@ -46,7 +48,8 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgLogin"
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-flexLayout #pgLogin-flcontainer",
@@ -56,7 +59,8 @@
 					"ecf9-7bb6-8155-123e",
 					"3a60-cc2c-259e-ab70",
 					"73fb-0516-a060-3970",
-					"b572-513a-69d9-501f"
+					"b572-513a-69d9-501f",
+					"d06d-e448-80e3-b9eb"
 				],
 				"name": "flContainer",
 				"parent": "aa9f-e1cb-2f7f-92d5",
@@ -66,7 +70,8 @@
 			"userProps": {
 				"testId": "MWUP6dCpO",
 				"usePageVariable": true
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-imageView #pgLogin-logo",
@@ -79,7 +84,8 @@
 			"type": "ImageView",
 			"userProps": {
 				"image": "logo.png"
-			}
+			},
+			"degree": 2
 		},
 		{
 			"className": ".sf-label #pgLogin-title .login.text-26-bold",
@@ -94,7 +100,8 @@
 			"userProps": {
 				"testId": "CmwM08kTW",
 				"usePageVariable": true
-			}
+			},
+			"degree": 2
 		},
 		{
 			"className": ".sf-label #pgLogin-text .login.text-16-bold",
@@ -109,7 +116,8 @@
 			"userProps": {
 				"testId": "r-xPY55LwX",
 				"usePageVariable": true
-			}
+			},
+			"degree": 2
 		},
 		{
 			"className": ".sf-flexLayout #pgLogin-flform",
@@ -125,7 +133,25 @@
 				"parent": "9503-8d4b-931f-3afe"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {},
+			"degree": 2
+		},
+		{
+			"className": ".sf-flexLayout #pgLogin-flBottom",
+			"id": "d06d-e448-80e3-b9eb",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [],
+				"name": "flBottom",
+				"parent": "9503-8d4b-931f-3afe",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true,
+				"testId": "rEN3Y-7tN"
+			},
+			"degree": 2
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper",
@@ -147,7 +173,8 @@
 			"userProps": {
 				"testId": "cBMa7uQlv",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper",
@@ -169,7 +196,24 @@
 			"userProps": {
 				"testId": "TE1-YGpfO",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
+		},
+		{
+			"className": ".sf-label #pgLogin-lblForgotPassword .login.labelForgotPassword",
+			"id": "bdfa-6292-509e-bad0",
+			"props": {
+				"children": [],
+				"name": "lblForgotPassword",
+				"parent": "b572-513a-69d9-501f",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "oM3iP7eQ7",
+				"usePageVariable": true
+			},
+			"degree": 3
 		},
 		{
 			"className": ".sf-button .sf-button-main",
@@ -184,7 +228,65 @@
 			"userProps": {
 				"testId": "LGkCVcClMB",
 				"usePageVariable": true
-			}
+			},
+			"degree": 3
+		},
+		{
+			"className": ".sf-flexLayout #pgLogin-flfooter",
+			"id": "73b4-1e9e-72b6-ee15",
+			"props": {
+				"children": [
+					"e85e-6514-edb3-f609",
+					"b60f-803f-5f9e-4650"
+				],
+				"name": "flFooter",
+				"parent": "b572-513a-69d9-501f",
+				"usePageVariable": true
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"testId": "lohe2xjAZ",
+				"usePageVariable": true
+			},
+			"degree": 3
+		},
+		{
+			"className": ".sf-label #pgLogin-lblLeft .login.labelLeft",
+			"hiddenComponent": true,
+			"id": "e85e-6514-edb3-f609",
+			"props": {
+				"children": [],
+				"name": "lblLeft",
+				"parent": "73b4-1e9e-72b6-ee15",
+				"text": "Don’t have an account? ",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "tpVhjtcbD",
+				"text": "Don’t have an account? ",
+				"usePageVariable": true
+			},
+			"degree": 4
+		},
+		{
+			"className": ".sf-label #pgLogin-lblRouteSignUp .login.labelRoute",
+			"hiddenComponent": true,
+			"id": "b60f-803f-5f9e-4650",
+			"props": {
+				"children": [],
+				"name": "lblRouteSignUp",
+				"parent": "73b4-1e9e-72b6-ee15",
+				"text": "Singup",
+				"usePageVariable": true
+			},
+			"type": "Label",
+			"userProps": {
+				"testId": "LItobv3NmQ",
+				"text": "Singup",
+				"usePageVariable": true
+			},
+			"degree": 4
 		}
 	]
 }
