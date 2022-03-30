@@ -103,6 +103,20 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.onRowSwipe = onRowSwipe.bind(this);
         this.lvMain.refreshEnabled = false;
+        this.lvMain.onRowSelected = (item, index: number) => {
+            if (!this.changeHeaderText) {
+                this.router.push('productDetail', {
+                    productId: this.favoriteProducts[index]._id
+                });
+            } else {
+                if (!this.selectedProducts.includes(this.favoriteProducts[index])) {
+                    this.selectedProducts = [...this.selectedProducts, this.favoriteProducts[index]];
+                } else {
+                    this.selectedProducts = this.selectedProducts.filter((product) => product._id !== this.favoriteProducts[index]._id)
+                }
+                this.refreshListView();
+            }
+        };
         this.lvMain.onRowCanSwipe = (index: number) => {
             if (!this.changeHeaderText) {
                 this.selectedProducts.splice(index, 1);

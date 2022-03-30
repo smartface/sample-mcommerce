@@ -114,6 +114,9 @@
       "testId": "JYm46Rkkf",
       "textAlignment": "MIDLEFT",
       "top": 0
+    },
+    "&-flBottom": {
+      "height": 1
     }
   }
 }
