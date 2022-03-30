@@ -1,59 +1,64 @@
 {
-	".flRow2LineButton": {
-		"height": 120,
-		"&-imgLeft": {
-			"width": 70,
-			"height": 70,
-			"marginRight": 20,
-			"flexProps": {
-				"alignSelf": "CENTER"
-			},
-			"borderRadius": 35,
-			"imageFillType": "ASPECTFIT"
-		},
-		"flexProps": {
-			"flexDirection": "ROW"
-		},
-		"&-flButtons": {
-			"&-flOtherActions": {
-				"flexProps": {
-					"flexDirection": "ROW"
-				},
-				"&-btnBottomLeft": {
-					"marginRight": 10
-				},
-				"&-btnBottomRight": {
-					"marginLeft": 10
-				},
-				"marginTop": 10,
-				"height": 25,
-				"&-verticalSeparator": {
-					"backgroundColor": "${textDark}",
-					"height": 20,
-					"width": 1
-				},
-				"&-lblLeft": {
-					"textAlignment": "MIDRIGHT"
-				},
-				"&-lblRight": {
-					"textAlignment": "MIDLEFT"
-				}
-			},
-			"&-secondary": {
-				"backgroundColor": "${backgroundSecondary}",
-				"textColor": "${textDark}",
-				"borderColor": "${textDark}",
-				"borderWidth": 2,
-				"height": 60
-			},
-			"&-btnMain": {
-				"height": 40,
-				"textColor": "${white}"
-			},
-			"flexProps": {
-				"justifyContent": "CENTER"
-			},
-			"paddingRight": 25
-		}
-	}
+  ".flRow2LineButton": {
+    "height": 120,
+    "&-imgLeft": {
+      "width": 70,
+      "height": 70,
+      "marginRight": 20,
+      "flexProps": {
+        "alignSelf": "CENTER"
+      },
+      "borderRadius": 35,
+      "imageFillType": "ASPECTFIT"
+    },
+    "flexProps": {
+      "flexDirection": "ROW"
+    },
+    "&-flButtons": {
+      "&-flOtherActions": {
+        "flexProps": {
+          "flexDirection": "ROW"
+        },
+        "&-btnBottomLeft": {
+          "marginRight": 10
+        },
+        "&-btnBottomRight": {
+          "marginLeft": 10
+        },
+        "marginTop": 10,
+        "height": 25,
+        "&-verticalSeparator": {
+          "backgroundColor": "${textDark}",
+          "height": 20,
+          "width": 1
+        },
+        "&-lblLeft": {
+          "textAlignment": "MIDCENTER",
+          "flexProps": {
+            "flexGrow": 0.7
+          }
+        },
+        "&-lblRight": {
+          "textAlignment": "MIDLEFT"
+        },
+        "paddingRight": 20,
+        "paddingLeft": 20
+      },
+      "&-secondary": {
+        "backgroundColor": "${backgroundSecondary}",
+        "textColor": "${textDark}",
+        "borderColor": "${textDark}",
+        "borderWidth": 2,
+        "height": 60
+      },
+      "&-btnMain": {
+        "height": 40,
+        "textColor": "${white}"
+      },
+      "flexProps": {
+        "justifyContent": "CENTER"
+      },
+      "paddingRight": 25
+    }
+  }
 }

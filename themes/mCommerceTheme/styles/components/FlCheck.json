@@ -1,32 +1,32 @@
 {
-    ".flCheck": {
-        "flexProps": {
-            "alignContent": "CENTER",
-            "justifyContent": "CENTER",
-            "alignSelf": "CENTER"
-        },
-        "height": 23,
-        "width": 23,
-        "borderWidth": 1,
-        "borderColor": "${main}",
-        "borderRadius": 7,
-        "marginRight": 10,
-        ".inactive": {
-            "borderColor": "${hintTextColor}"
-        },
-        "&-imgCheck": {
-            "width": 14,
-            "height": 11,
-            "image": "icon_check.png",
-            "tintColor": "${main}",
-            "flexProps": {
-                "alignSelf": "CENTER"
-            },
-            "imageFillType": "ASPECTFILL",
-            "visible": "true",
-            ".hidden": {
-                "visible": false
-            }
-        }
+  ".flCheck": {
+    "flexProps": {
+      "alignContent": "CENTER",
+      "justifyContent": "CENTER",
+      "alignSelf": "CENTER"
+    },
+    "height": 23,
+    "width": 23,
+    "borderWidth": 1,
+    "borderColor": "${main}",
+    "borderRadius": 7,
+    "marginRight": 10,
+    ".inactive": {
+      "borderColor": "${hintTextColor}"
+    },
+    "&-imgCheck": {
+      "width": 14,
+      "height": 11,
+      "image": "icon_check.png",
+      "tintColor": "${main}",
+      "flexProps": {
+        "alignSelf": "CENTER"
+      },
+      "imageFillType": "ASPECTFILL",
+      "visible": "true",
+      ".hidden": {
+        "visible": false
+      }
     }
+  }
 }

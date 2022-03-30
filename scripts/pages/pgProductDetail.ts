@@ -145,7 +145,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
                 overviewTitle: global.lang.reviews,
                 star: this.product?.rating,
                 reviewCount: `(${this.product?.reviews?.length})`,
-                showRating: true
+                showRating: this.product?.rating ? true : false 
             })
         );
 
