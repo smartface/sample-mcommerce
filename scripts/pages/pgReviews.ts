@@ -6,10 +6,11 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { Review } from 'types';
 import { themeService } from 'theme';
 import { getProductImageUrl, getReviewsByProduct } from 'service/commerce';
-import { NO_RATE } from 'constants';
+import { NO_RATE, ON_SHOW_TIMEOUT } from 'constants';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
 import store from 'store';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviReviewProduct[]
@@ -112,6 +113,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
     }
     async fetchProductReviews() {
         try {
+            showWaitDialog();
             const reviewsResponse = await getReviewsByProduct(this.route.getState().routeData.productId);
             if (reviewsResponse) {
                 this.reviews = reviewsResponse;
@@ -123,6 +125,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
         } finally {
             this.initialized = true;
             this.refreshListView();
+            hideWaitDialog();
         }
     }
     calculateRateCounts(): Record<string, number> {
@@ -140,7 +143,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
         super.onShow?.();
         this.checkNewRateAdded();
         if (!this.initialized) {
-            this.fetchProductReviews();
+            setTimeout(() => this.fetchProductReviews(), ON_SHOW_TIMEOUT);
         }
         this.addRightItem();
         this.handleRightItem();

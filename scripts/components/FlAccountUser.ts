@@ -14,7 +14,7 @@ export default class FlAccountUser extends FlAccountUserDesign {
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
-        this.lblAccountEditIcon.on(View.Events.TouchEnded, () => {
+        this.lblEditIcon.on(View.Events.TouchEnded, () => {
             this._value && this._value();
         });
     }
@@ -25,10 +25,10 @@ export default class FlAccountUser extends FlAccountUserDesign {
         this.lblAccountName.text = value;
     }
     get userEditIcon(): string {
-        return this.lblAccountEditIcon.text;
+        return this.lblEditIcon.text;
     }
     set userEditIcon(value: string) {
-        this.lblAccountEditIcon.text = value;
+        this.lblEditIcon.text = value;
     }
     get userEmail(): string {
         return this.lblAccountEmail.text;
@@ -57,7 +57,6 @@ export default class FlAccountUser extends FlAccountUserDesign {
     }
     set onProfileClick(value: () => Promise<any>) {
         this.__onProfileClick = value;
-        this.lblAccountEditIcon.onTouchEnded = (isInside) => isInside && value();
     }
     get onPhotoClick(): () => Promise<any> {
         return this.__onPhotoClick;
@@ -65,7 +64,6 @@ export default class FlAccountUser extends FlAccountUserDesign {
     set onPhotoClick(value: () => Promise<any>) {
         if (value) {
             this.__onPhotoClick = value;
-            this.lblAccountEditIcon.onTouchEnded = (isInside) => isInside && value();
         }
     }
     get onAction(): (...args) => void {

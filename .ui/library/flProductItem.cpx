@@ -198,8 +198,7 @@
 			"props": {
 				"children": [
 					"1b62-bcf2-70cd-cb71",
-					"a1f4-0480-6f27-a191",
-					"3314-2be8-ad7c-4822"
+					"f52d-c79e-24b7-f7a3"
 				],
 				"name": "flProductItemPriceButtonWrapper",
 				"parent": "d9b4-8ba5-e284-4e97",
@@ -277,44 +276,28 @@
 			}
 		},
 		{
-			"className": ".sf-button .sf-button-addToBasket",
-			"id": "a1f4-0480-6f27-a191",
-			"props": {
-				"children": [],
-				"name": "btnAddToBasket",
-				"parent": "de76-7e81-c1d8-5e75",
-				"text": "",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Button",
-			"userProps": {
-				"text": "",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-activityIndicator .flProductItem-flProductItemWrapper-flProductItemPriceButtonWrapper-aiAddToCart",
+			"className": ".sf-flexLayout .flProductItemButtonsWrapper .flProductItem-flProductItemWrapper-flProductItemPriceButtonWrapper-flProductItemButtonsWrapper",
 			"hiddenComponent": false,
-			"id": "3314-2be8-ad7c-4822",
+			"id": "f52d-c79e-24b7-f7a3",
 			"props": {
 				"children": [],
-				"name": "aiAddToCart",
+				"name": "flProductItemButtonsWrapper",
 				"parent": "de76-7e81-c1d8-5e75",
 				"usePageVariable": true
 			},
 			"source": {
-				"page": "__library__"
+				"page": "__library__",
+				"type": "flProductItemButtonsWrapper",
+				"id": "e605-6f16-e23e-ed52"
 			},
-			"type": "ActivityIndicator",
+			"type": "FlexLayout",
 			"userProps": {
 				"usePageVariable": true
 			}
 		},
 		{
 			"className": ".sf-flexLayout .flProductItem-flProductItemWrapper-flTagWrapper",
+			"hiddenComponent": false,
 			"id": "6477-2b35-9f70-2a57",
 			"props": {
 				"children": [

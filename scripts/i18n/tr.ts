@@ -140,6 +140,8 @@ SMF.i18n.defineLanguage('tr', {
     emptyNutritions: 'Bu ürüne ait bir besin bilgisi bulunamadı.',
     appName: 'Smart Commerce',
     sureToLogout: 'Çıkış yapmak istediğinizden emin misiniz?',
-    noDescription: 'AÇIKLAMA BULUNAMADI',
-    select: 'Seç'
+    select: 'Seç',
+    emptyDescription: 'Bu ürüne ait bir açıklama bulunamadı.',
+    removeFromBasket: 'Sepetten çıkarıldı',
+    addedToBasket: 'Sepette eklendi'
 });

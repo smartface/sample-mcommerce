@@ -6,6 +6,7 @@ import authRouteGenerator from './auth';
 import { themeService } from 'theme';
 import BottomTabBarController from '@smartface/native/ui/bottomtabbarcontroller';
 import * as Pages from 'pages';
+import System from '@smartface/native/device/system';
 const { backgroundColor, itemColor } = themeService.getNativeStyle('.tabs');
 
 themeService.onChange(() => {
@@ -17,7 +18,7 @@ themeService.onChange(() => {
     }
 });
 
-let btbItemCart = new TabBarItem();
+const btbItemCart = new TabBarItem();
 btbItemCart.title = global.lang.cart;
 btbItemCart.badge.backgroundColor = itemColor.selected;
 btbItemCart.badge.visible = false;
@@ -34,6 +35,23 @@ store.subscribe(() => {
         btbItemCart.badge.text = '10+';
     }
 });
+const btbItemFavorite = new TabBarItem();
+btbItemFavorite.title = global.lang.favourite;
+btbItemFavorite.badge.backgroundColor = itemColor.selected;
+btbItemFavorite.badge.visible = false;
+btbItemFavorite.icon = Image.createFromFile('images://tabiconfavorite.png');
+store.subscribe(() => {
+    if (getFavoritesCounter() !== '') {
+        btbItemFavorite.badge.visible = true;
+        btbItemFavorite.badge.move(0, 0);
+        btbItemFavorite.badge.text = getFavoritesCounter();
+    } else {
+        btbItemFavorite.badge.visible = false;
+    }
+    if (parseInt(btbItemFavorite.badge.text) > 10) {
+        btbItemFavorite.badge.text = '10+';
+    }
+});
 
 const getBasketCounter = () => {
     if (store.getState().main.basket && store.getState().main.basket.length > 0) {
@@ -43,6 +61,20 @@ const getBasketCounter = () => {
             .toString();
     } else {
         return '';
+    }
+};
+
+const getFavoritesCounter = () => {
+    if (store.getState().main.favorites && store.getState().main.favorites.length > 0) {
+        return store.getState().main.favorites.length.toString();
+    } else {
+        return '';
+    }
+};
+const androidModalDismiss = (router, route) => {
+    const { view, action } = route.getState();
+    if (System.OS === System.OSType.ANDROID && view && action === 'POP') {
+        view.onShow && view.onShow();
     }
 };
 
@@ -112,7 +144,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
         { title: global.lang.shop, icon: Image.createFromFile('images://tabiconhome.png') },
         { title: global.lang.explore, icon: Image.createFromFile('images://tabiconexplore.png') },
         btbItemCart,
-        { title: global.lang.favourite, icon: Image.createFromFile('images://tabiconfavorite.png') },
+        btbItemFavorite,
         { title: global.lang.account, icon: Image.createFromFile('images://tabiconuser.png') }
     ],
     // tab1
@@ -124,6 +156,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgHome>({
                     path: `/btb/tab1/home`,
+                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgHome(router, route);
                         router.setState({ view: page });
@@ -141,6 +174,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     routes: [
                         Route.of<Pages.pgCategoryDetail>({
                             path: `/btb/tab1/categoryDetail/main`,
+                            routeDidEnter: androidModalDismiss,
                             build(router, route) {
                                 const page = new Pages.pgCategoryDetail(router, route);
                                 router.setState({ view: page });
@@ -178,6 +212,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     routes: [
                         Route.of<Pages.pgCategoryDetail>({
                             path: `/btb/tab2/categoryDetail/main`,
+                            routeDidEnter: androidModalDismiss,
                             build(router, route) {
                                 const page = new Pages.pgCategoryDetail(router, route);
                                 router.setState({ view: page });
@@ -198,6 +233,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgCart>({
                     path: `/btb/tab3/cart`,
+                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgCart(router, route);
                         router.setState({ view: page });
@@ -216,6 +252,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgFavorites>({
                     path: `/btb/tab4/favorites`,
+                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgFavorites(router, route);
                         router.setState({ view: page });
@@ -234,6 +271,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgAccount>({
                     path: `/btb/tab5/account`,
+                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgAccount(router, route);
                         router.setState({ view: page });

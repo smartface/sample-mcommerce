@@ -16,6 +16,7 @@ import LviPdButtonPriceSection from '../components/LviPdButtonPriceSection';
 import LviReview from '../components/LviReview';
 import LviReviewProduct from '../components/LviReviewProduct';
 import LviNutritions from '../components/LviNutritions';
+import LviDescription from '../components/LviDescription';
 
 import LviRow1LineLarge from '../components/LviRow1LineLarge';
 
@@ -39,7 +40,8 @@ export enum LviTypes {
     LVI_GENERIC_SLIDER,
     LVI_REVIEW,
     LVI_REVIEW_PRODUCT,
-    LVI_NUTRITIONS
+    LVI_NUTRITIONS,
+    LVI_DESCRIPTION
 }
 
 export const LviClasses = {
@@ -61,7 +63,8 @@ export const LviClasses = {
     [LviTypes.LVI_GENERIC_SLIDER]: LviGenericSlider,
     [LviTypes.LVI_REVIEW]: LviReview,
     [LviTypes.LVI_REVIEW_PRODUCT]: LviReviewProduct,
-    [LviTypes.LVI_NUTRITIONS]: LviNutritions
+    [LviTypes.LVI_NUTRITIONS]: LviNutritions,
+    [LviTypes.LVI_DESCRIPTION]: LviDescription
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -121,6 +124,7 @@ export namespace ProcessorTypes {
     export interface ILviReview extends IProcessed<LviReview> {}
     export interface ILviReviewProduct extends IProcessed<LviReviewProduct> {}
     export interface ILviNutritions extends IProcessed<LviNutritions> {}
+    export interface ILviDescription extends IProcessed<LviDescription> {}
 }
 
 export function getLviGenericSlider(
@@ -317,5 +321,16 @@ export function getLviNutritions(item: Partial<LviNutritions>): ProcessorTypes.I
             borders: []
         },
         height: LviReview.getHeight(item.nutritionValue)
+    };
+}
+
+export function getLviDescription(item: Partial<LviDescription>): ProcessorTypes.ILviDescription {
+    return {
+        type: 'LVI_DESCRIPTION',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviDescription.getHeight({ text: item.description })
     };
 }
