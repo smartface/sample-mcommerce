@@ -43,7 +43,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     private initGridView() {
         this.gvProducts.layoutManager.onItemLength = () => HALF_OF_SCREEN_WIDTH;
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
-            let basketItem = store.getState().main.basket.find((bp) => bp._id === this.items[productIndex]._id);
+            const basketItem = store.getState().main.basket.find((bp) => bp._id === this.items[productIndex]._id);
             GridViewItem.itemTitleMaxWidth = HALF_OF_SCREEN_WIDTH;
             GridViewItem.itemTag = this.items[productIndex]?.labels[0]?.name;
             GridViewItem.itemTagColor = this.items[productIndex]?.labels[0]?.color;
@@ -80,7 +80,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
                 }, 500);
             };
         };
-        this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
+        this.gvProducts.onItemSelected = (gridViewItem: GviProductItem, productIndex: number) => {
             this.onProductClick(this.items[productIndex]);
         };
     }

@@ -156,39 +156,39 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 this.gvProducts.stopRefresh();
             }
         };
-        this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
+        this.gvProducts.onItemBind = (gridViewItem: GviProductItem, productIndex: number) => {
             const selectedProduct = this.categoryProducts[productIndex];
             if (selectedProduct) {
-                GridViewItem.itemTagColor = selectedProduct?.labels[0]?.color;
+                gridViewItem.itemTagColor = selectedProduct?.labels[0]?.color;
                 const basketItem = store.getState().main.basket.find((bp) => bp._id === selectedProduct._id);
-                GridViewItem.itemTag = selectedProduct?.labels[0]?.name;
-                GridViewItem.itemTitle = selectedProduct?.name;
-                GridViewItem.itemDesc = selectedProduct.shortDescription;
-                GridViewItem.itemImage = selectedProduct.images ? getProductImageUrl(selectedProduct.images[0]) : null;
-                GridViewItem.itemDiscountPrice = !!selectedProduct.discountPrice ? `$${selectedProduct.discountPrice.toFixed(2)}` : '';
-                GridViewItem.itemPrice = `$${selectedProduct.price.toFixed(2)}`;
-                GridViewItem.itemReview = selectedProduct?.rating?.toFixed(1).toString() || '';
-                GridViewItem.showHideMinusButton = !!basketItem;
-                GridViewItem.minusTextColor = basketItem?.count === 1 ? '.danger' : '.main';
-                GridViewItem.buttonMinusText = basketItem?.count === 1 ? '' : '';
-                GridViewItem.productCount = basketItem?.count?.toString() || '';
-                GridViewItem.onActionClickPlus = () => {
-                    GridViewItem.toggleIndicatorPlus(true);
+                gridViewItem.itemTag = selectedProduct?.labels[0]?.name;
+                gridViewItem.itemTitle = selectedProduct?.name;
+                gridViewItem.itemDesc = selectedProduct.shortDescription;
+                gridViewItem.itemImage = selectedProduct.images ? getProductImageUrl(selectedProduct.images[0]) : null;
+                gridViewItem.itemDiscountPrice = !!selectedProduct.discountPrice ? `$${selectedProduct.discountPrice.toFixed(2)}` : '';
+                gridViewItem.itemPrice = `$${selectedProduct.price.toFixed(2)}`;
+                gridViewItem.itemReview = selectedProduct?.rating?.toFixed(1).toString() || '';
+                gridViewItem.showHideMinusButton = !!basketItem;
+                gridViewItem.minusTextColor = basketItem?.count === 1 ? '.danger' : '.main';
+                gridViewItem.buttonMinusText = basketItem?.count === 1 ? '' : '';
+                gridViewItem.productCount = basketItem?.count?.toString() || '';
+                gridViewItem.onActionClickPlus = () => {
+                    gridViewItem.toggleIndicatorPlus(true);
                     store.dispatch(storeActions.AddToBasket({ product: selectedProduct, count: 1 }));
                     setTimeout(() => {
-                        GridViewItem.toggleIndicatorPlus(false);
+                        gridViewItem.toggleIndicatorPlus(false);
                         this.refreshGridView();
-                        GridViewItem.showHideMinusButton = true;
+                        gridViewItem.showHideMinusButton = true;
                     }, 500);
                 };
-                GridViewItem.onActionClickMinus = () => {
-                    GridViewItem.toggleIndicatorMinus(true);
+                gridViewItem.onActionClickMinus = () => {
+                    gridViewItem.toggleIndicatorMinus(true);
                     store.dispatch(storeActions.AddToBasket({ product: selectedProduct, count: -1 }));
                     setTimeout(() => {
-                        GridViewItem.toggleIndicatorMinus(false);
+                        gridViewItem.toggleIndicatorMinus(false);
                         this.refreshGridView();
                         if (basketItem?.count === 0) {
-                            GridViewItem.showHideMinusButton = false;
+                            gridViewItem.showHideMinusButton = false;
                         }
                     }, 500);
                 };
@@ -197,7 +197,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 }
             }
         };
-        this.gvProducts.onItemSelected = (GridViewItem: GviProductItem, productIndex: number) => {
+        this.gvProducts.onItemSelected = (gridViewItem: GviProductItem, productIndex: number) => {
             const product = this.categoryProducts[productIndex];
             this.router.push('productDetail', {
                 productId: product._id
