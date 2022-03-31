@@ -1,0 +1,33 @@
+{
+    ".flNoAdress": {
+        "flexProps": {
+            "flexGrow": 1,
+            "alignContent": "CENTER",
+            "justifyContent": "CENTER"
+        },
+        "&-imgIcon": {
+            "height": 100,
+            "imageFillType": "ASPECTFIT",
+            "width": null,
+            "tintColor": "${textDark}"
+        },
+        "&-lblTitle": {
+            "font": {
+                "bold": true,
+                "family": "Nunito",
+                "style": "SemiBold",
+                "italic": false,
+                "size": 17
+            },
+            "height": 30,
+            "marginTop": 15,
+            "textAlignment": "MIDCENTER",
+            "textColor": "${textDark}"
+        },
+        "&-btnAddAddress": {
+            "marginTop": 15,
+            "marginLeft": 20,
+            "marginRight": 20
+        }
+    }
+}

@@ -4,9 +4,7 @@ import { Route, BaseRouter as Router } from '@smartface/router';
 import { themeService } from 'theme';
 import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/listView';
 import * as ListViewItems from 'lib/listViewItemTypes';
-
 type Processor = ListViewItems.ProcessorTypes.ILviNoAddress;
-
 
 export default class PgAddress extends withDismissAndBackButton(PgAddressDesign) {
     data: Processor[];
