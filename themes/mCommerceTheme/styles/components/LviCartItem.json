@@ -28,11 +28,31 @@
           "flexProps": {
             "flexDirection": "ROW"
           },
-          "height": 30,
+          "height": 40,
           "maxHeight": 40,
           "testId": "X7ApqAdS-",
           "marginTop": null,
-          "marginBottom": null
+          "marginBottom": null,
+          "&-btnClose": {
+            "backgroundColor": "${backgroundMain}",
+            "borderRadius": 15,
+            "borderWidth": null,
+            "flexProps": {
+              "alignSelf": "CENTER"
+            },
+            "font": {
+              "family": "FontAwesome5FreeSolid",
+              "style": null,
+              "bold": false,
+              "italic": false,
+              "size": 13
+            },
+            "height": 35,
+            "marginLeft": 2,
+            "marginRight": 2,
+            "textColor": "${darkGray}",
+            "width": 35
+          }
         },
         "&-lblProductInfo": {
           "font": {
@@ -52,16 +72,14 @@
         "&-flCartBottom": {
           "flexProps": {
             "flexDirection": "ROW",
-            "justifyContent": "CENTER",
+            "justifyContent": "FLEX_START",
             "alignContent": "STRETCH",
             "alignItems": "CENTER"
           },
           "height": 45,
           "testId": "uYyO0G5Tq",
           "&-lblProductCount": {
-            "flexProps": {
-              "flexGrow": 1
-            },
+            "flexProps": {},
             "font": {
               "size": 17,
               "bold": true,
@@ -72,7 +90,8 @@
             "height": 40,
             "testId": "LGnWBeATD",
             "textAlignment": "MIDCENTER",
-            "textColor": "${textDark}"
+            "textColor": "${textDark}",
+            "width": 60
           },
           "&-lblProductPrice": {
             "flexProps": {
@@ -89,6 +108,16 @@
             "testId": "juWT9KqSV",
             "textAlignment": "MIDRIGHT",
             "textColor": "${textDark}"
+          },
+          "&-flPriceWrapper": {
+            "height": 50,
+            "flexProps": {
+              "flexGrow": 1
+            },
+            "&-tv": {
+              "height": 25,
+              "textAlignment": "MIDRIGHT"
+            }
           }
         }
       },
@@ -127,6 +156,8 @@
       },
       "testId": "lmfuMkXN_",
       "textColor": "${textDark}"
-    }
+    },
+    "left": 4,
+    "top": 56.67
   }
 }

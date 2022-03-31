@@ -9,8 +9,7 @@ import store from 'store/index';
 import storeActions from 'store/main/actions';
 import { getProductImageUrl } from 'service/commerce';
 import setVisibility from 'lib/setVisibility';
-import FlHeaderIcon from 'components/FlHeaderIcon';
-import setHeaderIcon from 'lib/setHeaderIcon';
+import { moneyFormatter } from 'lib/moneyFormatter';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -23,29 +22,35 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     cartProducts: Basket;
     data: Processor[];
     unsubscribe = null;
-    flHeaderIcon: FlHeaderIcon;
     constructor(private router?: Router, private route?: Route) {
         super({});
-    }
-    addAppIconToHeader() {
-        this.headerBar.title = '';
-        this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
+        this.flCartCheckout.onCheckoutClick = () => {
+            alert('todo');
+        };
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowHeight = onRowHeight.bind(this);
         this.lvMain.onRowCreate = onRowCreate.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
-        this.lvMain.onRowSelected = (item, index: number) => {
-            this.router.push('productDetail', {
-                productId: this.cartProducts[index]._id
-            });
-        };
         this.lvMain.refreshEnabled = false;
     }
     refreshListView() {
         this.data = this.processor();
         this.lvMain.itemCount = this.data.length;
+        if (this.data && this.data.length > 0) {
+            if (this.data[0].type === 'LVI_EMPTY_ITEM') {
+                this.lvMain.onRowSelected = (item, index: number) => {
+                    return;
+                };
+            } else if (this.data[0].type === 'LVI_CART_PRODUCTS') {
+                this.lvMain.onRowSelected = (item, index: number) => {
+                    this.router.push('productDetail', {
+                        productId: this.cartProducts[index]._id
+                    });
+                };
+            }
+        }
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
@@ -66,7 +71,8 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                         productName: cart.name,
                         productInfo: cart.shortDescription,
                         productImage: cart.images ? getProductImageUrl(cart.images[0]) : null,
-                        productPrice: cart.discountPrice != undefined ? `$${cart?.discountPrice?.toFixed(2)}` : `$${cart.price.toFixed(2)}`,
+                        productDiscount: cart.discountPrice != undefined ? moneyFormatter(cart?.discountPrice) : '',
+                        productPrice: moneyFormatter(cart.price),
                         productCount: cart.count,
                         minusButtonIcon: cart.count === 1 ? '' : '',
                         onActionPlus: () => {
@@ -136,7 +142,6 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     }
     onShow() {
         super.onShow();
-        this.addAppIconToHeader();
         this.refreshListView();
         this.unsubscribe = store.subscribe(() => this.calculateCheckoutPrice());
     }
@@ -144,6 +149,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     onLoad() {
         super.onLoad();
         this.headerBar.leftItemEnabled = false;
+        this.headerBar.title = global.lang.mycartHeader;
         this.initListView();
     }
 }

@@ -144,5 +144,9 @@ SMF.i18n.defineLanguage('tr', {
     select: 'Seç',
     addressInformation:'Adres Bilgilerim',
     noAddressTitle:'Kayıtlı adresiniz bulunmamaktadır.',
-    addAddress:'Adres Ekle'
+    addAddress:'Adres Ekle',
+    emptyDescription: 'Bu ürüne ait bir açıklama bulunamadı.',
+    removeFromBasket: 'Sepetten çıkarıldı',
+    addedToBasket: 'Sepette eklendi'
+
 });

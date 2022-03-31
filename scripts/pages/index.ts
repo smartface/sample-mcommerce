@@ -1,5 +1,4 @@
 export { default as pgHome } from './pgHome';
-export { default as pgWelcome } from './pgWelcome';
 export { default as pgLogin } from './pgLogin';
 export { default as pgSignUp } from './pgSignUp';
 export { default as pgCategories } from './pgCategories';

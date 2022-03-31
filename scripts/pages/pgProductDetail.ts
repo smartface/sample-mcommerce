@@ -15,6 +15,8 @@ import LviPdOverviewSection from 'components/LviPdOverviewSection';
 import Share from '@smartface/native/global/share';
 import { generateProductDeeplinkUrl } from 'lib/deeplink';
 import LviPdInfoSection from 'components/LviPdInfoSection';
+import { ON_SHOW_TIMEOUT } from 'constants';
+import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviGenericSlider
@@ -127,7 +129,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
                 }
             })
         );
-
+        processorItems.push(ListViewItems.getLviSpacerItem({ className: 'xSmall' }));
         processorItems.push(
             ListViewItems.getLviPdInfoSection({
                 overviewTitle: global.lang.productDetail,
@@ -145,7 +147,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
                 overviewTitle: global.lang.reviews,
                 star: this.product?.rating,
                 reviewCount: `(${this.product?.reviews?.length})`,
-                showRating: true
+                showRating: this.product?.rating ? true : false 
             })
         );
 
@@ -154,6 +156,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
 
     async fetchProduct() {
         try {
+            showWaitDialog();
             const productResponse = await getProduct(this.route.getState().routeData.productId);
             if (productResponse) {
                 this.product = productResponse;
@@ -163,16 +166,17 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
             throw new Error(global.lang.productServiceError);
         } finally {
             this.refreshListView();
+            hideWaitDialog();
         }
     }
 
     onShow() {
         super.onShow();
-        this.fetchProduct();
         this.addRightItem();
         this.initDismissButton(this.router, {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
+        setTimeout(() => this.fetchProduct(), ON_SHOW_TIMEOUT);
     }
 
     onLoad() {
