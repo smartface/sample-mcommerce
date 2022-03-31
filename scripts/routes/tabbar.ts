@@ -261,6 +261,20 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     ]
                 }),
                 Route.of({
+                    path:'/btb/tab5/myDetails',
+                    to: '/btb/tab5/myDetails/main',
+                    routes:[
+                        Route.of<Pages.pgMyDetails>({
+                            path: '/btb/tab5/myDetails/main',
+                            build(router,route){
+                                const page = new Pages.pgMyDetails(router, route);
+                                router.setState({ view: page })
+                                return page;
+                            }
+                        })
+                    ]
+                }),
+                Route.of({
                     path: '/btb/tab5/notifications',
                     to: '/btb/tab5/notifications/main',
                     routes: [
@@ -274,6 +288,21 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                             headerBarParams: () => ({
                                 visible: true
                             })
+                        })
+                    ]
+                }),
+                
+                Route.of({
+                    path:'/btb/tab5/addressInformation',
+                    to: '/btb/tab5/addressInformation/main',
+                    routes:[
+                        Route.of<Pages.pgAddress>({
+                            path: '/btb/tab5/addressInformation/main',
+                            build(router,route){
+                                const page = new Pages.pgAddress(router, route);
+                                router.setState({ view: page })
+                                return page;
+                            }
                         })
                     ]
                 }),

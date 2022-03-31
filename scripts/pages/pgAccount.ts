@@ -49,7 +49,9 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                     this.router.push('settings');
                 } else if (item.itemTitle === global.lang.notifications) {
                     this.router.push('notifications');
-                } else {
+                } else if(item.itemTitle === global.lang.myDetails){
+                    this.router.push('myDetails');
+                }else {
                     alert({
                         title: 'ALERT',
                         message: item.itemTitle

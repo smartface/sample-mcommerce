@@ -14,3 +14,5 @@ export { default as pgReviews } from './pgReviews';
 export { default as pgAddReview } from './pgAddReview';
 export { default as pgNutritions } from './pgNutritions';
 export { default as pgProductDescription } from './pgProductDescription';
+export { default as pgMyDetails } from './pgMyDetails';
+export { default as pgAddress } from './pgAddress';

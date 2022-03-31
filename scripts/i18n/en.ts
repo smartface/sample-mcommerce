@@ -143,5 +143,8 @@ SMF.i18n.defineLanguage('en', {
     appName: 'Smart Commerce',
     sureToLogout: 'Are you sure to logout?',
     noDescription: 'NO DESCRIPTION',
-    select: 'Select'
+    select: 'Select',
+    addressInformation:'My Address Information',
+    noAddressTitle:'You do not have a registered address.',
+    addAddress:'Add Address'
 });

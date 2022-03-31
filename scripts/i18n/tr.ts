@@ -141,5 +141,8 @@ SMF.i18n.defineLanguage('tr', {
     appName: 'Smart Commerce',
     sureToLogout: 'Çıkış yapmak istediğinizden emin misiniz?',
     noDescription: 'AÇIKLAMA BULUNAMADI',
-    select: 'Seç'
+    select: 'Seç',
+    addressInformation:'Adres Bilgilerim',
+    noAddressTitle:'Kayıtlı adresiniz bulunmamaktadır.',
+    addAddress:'Adres Ekle'
 });
