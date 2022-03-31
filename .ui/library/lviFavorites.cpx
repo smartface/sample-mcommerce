@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-listViewItem .paddingHorizontal",
+			"className": ".sf-listViewItem .paddingHorizontal .lviFavorites",
 			"hiddenComponent": true,
 			"id": "844f-778d-a88e-c085",
 			"props": {
@@ -18,7 +18,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout .grow .lviFavorites-lviFavoritesWrapper",
 			"hiddenComponent": false,
 			"id": "d1fa-0982-fbca-7168",
 			"props": {
@@ -37,19 +37,11 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1,
-					"flexDirection": "ROW"
-				},
-				"height": null,
-				"paddingBottom": 30,
-				"paddingTop": 30,
-				"testId": "CGtTj-pmP",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flCheck .flCheck.inactive",
+			"className": ".sf-flexLayout .flCheck .flCheck.inactive .lviFavorites-lviFavoritesWrapper-flCheck",
 			"hiddenComponent": false,
 			"id": "a54d-e5fc-88f2-a922",
 			"props": {
@@ -65,14 +57,6 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"top": 0,
 				"usePageVariable": true
 			}
 		},
@@ -111,8 +95,6 @@
 			},
 			"type": "ImageView",
 			"userProps": {
-				"imageFillType": "ASPECTFIT",
-				"testId": "rP-vhokHM",
 				"usePageVariable": true
 			}
 		},
@@ -133,7 +115,6 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"testId": "3uEQan6xS",
 				"usePageVariable": true
 			}
 		},
@@ -152,11 +133,6 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "6ghoZ6dVH",
 				"text": "label1",
 				"usePageVariable": true
 			}
@@ -176,11 +152,6 @@
 			},
 			"type": "Label",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "gvHxA3b_G",
 				"text": "label2",
 				"usePageVariable": true
 			}
@@ -190,8 +161,8 @@
 			"id": "39cc-c0dc-ea1a-ad69",
 			"props": {
 				"children": [
-					"f161-4c45-94b8-59c3",
-					"438a-4e9e-d5fa-c2a4"
+					"c223-59dd-a922-7c63",
+					"b862-c18a-990c-4d56"
 				],
 				"name": "flFavoriteItemRight",
 				"parent": "d1fa-0982-fbca-7168",
@@ -202,65 +173,48 @@
 			},
 			"type": "FlexLayout",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 1,
-					"flexDirection": "ROW"
-				},
-				"height": null,
-				"testId": "ywa57Xn4B",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label .favoritesListViewItem-flFavListRight-lblFavListItemPrice",
-			"id": "f161-4c45-94b8-59c3",
+			"className": ".sf-textView .lviFavorites-lviFavoritesWrapper-flFavoriteItemRight-tv",
+			"id": "c223-59dd-a922-7c63",
 			"props": {
 				"children": [],
-				"name": "lblFavoriteItemPrice",
+				"html": "<font face=\"SFProText-Regular\"><span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\">$43.24</span></font>",
+				"name": "tvPrice",
 				"parent": "39cc-c0dc-ea1a-ad69",
-				"text": "label2",
+				"text": "$43.24",
 				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
-				"flexProps": {
-					"flexGrow": 3
-				},
-				"testId": "W3t2Dys8S",
-				"text": "label2",
-				"textAlignment": "MIDCENTER",
+				"html": "<font face=\"SFProText-Regular\"><span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\">$43.24</span></font>",
+				"text": "$43.24",
 				"usePageVariable": true
 			}
 		},
 		{
-			"className": ".sf-label .favoritesListViewItem-flFavListRight-lblFavListItemChevron",
-			"id": "438a-4e9e-d5fa-c2a4",
+			"className": ".sf-textView .lviFavorites-lviFavoritesWrapper-flFavoriteItemRight-tv",
+			"id": "b862-c18a-990c-4d56",
 			"props": {
 				"children": [],
-				"name": "lblFavoriteItemChevron",
+				"html": "<font face=\"SFProText-Regular\"><span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\">$21.20</span></font>",
+				"name": "tvDiscount",
 				"parent": "39cc-c0dc-ea1a-ad69",
-				"text": "",
+				"text": "$21.20",
 				"usePageVariable": true
 			},
 			"source": {
 				"page": "__library__"
 			},
-			"type": "Label",
+			"type": "TextView",
 			"userProps": {
-				"font": {
-					"size": 17,
-					"bold": false,
-					"italic": false,
-					"family": "FontAwesome5FreeSolid",
-					"style": null
-				},
-				"height": null,
-				"testId": "uMwEKkfwI",
-				"text": "",
-				"textAlignment": "MIDRIGHT",
+				"html": "<font face=\"SFProText-Regular\"><span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\">$21.20</span></font>",
+				"text": "$21.20",
 				"usePageVariable": true
 			}
 		},

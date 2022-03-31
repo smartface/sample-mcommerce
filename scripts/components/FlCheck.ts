@@ -1,5 +1,7 @@
+import System from '@smartface/native/device/system';
 import ImageView from '@smartface/native/ui/imageview';
 import FlCheckDesign from 'generated/my-components/FlCheck';
+import setVisibility from 'lib/setVisibility';
 
 export default class FlCheck extends FlCheckDesign {
     pageName?: string | undefined;
@@ -9,9 +11,7 @@ export default class FlCheck extends FlCheckDesign {
         super(props);
         this.pageName = pageName;
         this.onToggleChange = () => (this.toggle = !this.active);
-        this.imgCheck.on(ImageView.Events.TouchEnded, (value) => {
-            this.__onToggleChange && this.__onToggleChange(value);
-        });
+        
     }
     get toggle(): boolean {
         return this.active;
@@ -26,14 +26,11 @@ export default class FlCheck extends FlCheckDesign {
         this.__onToggleChange = value;
     }
     private toggleActiveInActive(value: boolean) {
+        setVisibility(this.imgCheck, value);
         if (value) {
             this.dispatch({
                 type: 'removeClassName',
                 className: '.flCheck.inactive'
-            });
-            this.imgCheck.dispatch({
-                type: 'removeClassName',
-                className: '.flCheck-imgCheck.hidden'
             });
             this.active = true;
         } else {
@@ -41,11 +38,8 @@ export default class FlCheck extends FlCheckDesign {
                 type: 'pushClassNames',
                 classNames: '.flCheck.inactive'
             });
-            this.imgCheck.dispatch({
-                type: 'pushClassNames',
-                classNames: '.flCheck-imgCheck.hidden'
-            });
             this.active = false;
         }
+        System.OS === System.OSType.IOS && this.applyLayout();
     }
 }

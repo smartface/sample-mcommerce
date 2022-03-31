@@ -1,7 +1,7 @@
 SMF.i18n.defineLanguage('en', {
     verificationCode: 'Verification Code',
     productDetail: 'Product Detail',
-    goToCheckout: 'Go To Checkout',
+    goToCheckout: 'Go to Checkout',
     accept: 'Accept',
     shoppingCartIsEmpty: 'Your shopping cart is empty',
     favoritesIsEmpty: 'There is no product in your favorites',
@@ -21,7 +21,7 @@ SMF.i18n.defineLanguage('en', {
     addToBasket: 'Add to basket',
     favouriteHeader: 'Favourites',
     categoriesHeader: 'Categories',
-    addAllToCart: 'Add All To Cart',
+    addAllToCart: 'Add All to Cart',
     settingsHeader: 'Settings',
     themeText: 'Theme',
     lightTheme: 'Light Theme',
@@ -146,5 +146,9 @@ SMF.i18n.defineLanguage('en', {
     select: 'Select',
     addressInformation:'My Address Information',
     noAddressTitle:'You do not have a registered address.',
-    addAddress:'Add Address'
+    addAddress:'Add Address',
+    emptyDescription: 'This product has no description.',
+    removedFromBasket: 'Removed from Basket',
+    addedToBasket: 'Added to Basket'
+
 });

@@ -1,14 +1,19 @@
 import { themeService } from 'theme';
 import LviFavoritesDesign from 'generated/my-components/LviFavorites';
 import setVisibility from 'lib/setVisibility';
+import AttributedString from '@smartface/native/ui/attributedstring';
 const originalHeight = themeService.getStyle('.lviFavorites').height;
+
+const priceFontWithDiscount = themeService.getNativeStyle('.product-price.discount').font;
+const priceFontWithNoDiscount = themeService.getNativeStyle('.product-price.nodiscount').font;
+const textColorPriceWithDiscount = themeService.getNativeStyle('.product-price.discount').textColor;
+const textColorPriceWithNoDiscount = themeService.getNativeStyle('.product-price.nodiscount').textColor;
 
 export default class LviFavorites extends LviFavoritesDesign {
     private __onDeleteProduct: (product: any) => void;
     pageName?: string | undefined;
     private __imageUrl: string;
     private __showCheck: boolean;
-    private __showArrow: boolean;
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
@@ -22,11 +27,35 @@ export default class LviFavorites extends LviFavoritesDesign {
     set itemTitle(value: string) {
         this.lblFavoriteItemTitle.text = value;
     }
-    get itemPrice(): any {
-        return this.lblFavoriteItemPrice.text;
+    get itemPrice(): string {
+        return this.tvPrice.text;
     }
-    set itemPrice(value: any) {
-        this.lblFavoriteItemPrice.text = value;
+    set itemPrice(value: string) {
+        const discountExists = !!this.tvDiscount.text;
+        const attributeString = new AttributedString({
+            strikethrough: discountExists,
+            ios: {
+                strikethroughColor: textColorPriceWithNoDiscount
+            },
+            string: value || '',
+            font: discountExists ? priceFontWithDiscount : priceFontWithNoDiscount,
+            foregroundColor: discountExists ? textColorPriceWithDiscount : textColorPriceWithNoDiscount
+        });
+        this.tvPrice.scrollEnabled = false;
+        this.tvPrice.attributedText = [attributeString];
+    }
+    get itemDiscount(): string {
+        return this.tvDiscount.text;
+    }
+    set itemDiscount(value: string) {
+        const attributeString = new AttributedString({
+            string: value || '',
+            font: priceFontWithNoDiscount,
+            foregroundColor: textColorPriceWithNoDiscount
+        });
+        setVisibility(this.tvDiscount, !!value);
+        this.tvDiscount.scrollEnabled = false;
+        this.tvDiscount.attributedText = [attributeString];
     }
     get itemImage(): string {
         return this.__imageUrl;
@@ -56,13 +85,6 @@ export default class LviFavorites extends LviFavoritesDesign {
     set showCheck(value: boolean) {
         setVisibility(this.flCheck, value);
         this.__showCheck = value;
-    }
-    get showArrow(): boolean {
-        return this.__showArrow;
-    }
-    set showArrow(value: boolean) {
-        setVisibility(this.lblFavoriteItemChevron, value);
-        this.__showArrow = value;
     }
     get toggle() {
         return this.flCheck.toggle;

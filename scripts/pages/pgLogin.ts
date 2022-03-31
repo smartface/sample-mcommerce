@@ -7,31 +7,25 @@ import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constant
 import { login } from 'service/auth';
 import { themeService } from 'theme';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+
 export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     isMailValid = false;
     isPasswordValid = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.lblRouteSignUp.on(View.Events.Touch, () => {
-            this.router.push('pgSignUp');
-        });
         this.btnLogIn.on(Button.Events.Press, () => {
             this.initUserLogin();
         });
         this.lblTitle.text = global.lang.login;
         this.lblText.text = global.lang.loginSubText;
-        this.lblForgotPassword.text = global.lang.forgotPassword;
         this.btnLogIn.text = global.lang.login;
-
-        this.lblLeft.text = global.lang.donthaveanaccount;
-        this.lblRouteSignUp.text = global.lang.signup;
     }
     initMaterialTextBoxes() {
         this.mtbLogin.materialTextBox.ios.clearButtonEnabled = true;
         this.mtbLogin.enableErrorMessage = true;
         this.mtbPassword.materialTextBox.ios.clearButtonEnabled = true;
         this.mtbPassword.enableErrorMessage = true;
-
+        
         this.mtbLogin.options = {
             hint: global.lang.email
         };
@@ -39,6 +33,33 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
             hint: global.lang.password
         };
         this.mtbPassword.materialTextBox.isPassword = true;
+        this.mtbLogin.materialTextBox.onEditBegins = ()=>{
+            this.changeFlexLayoutHeightForKeyboard(true);
+        }
+        this.mtbLogin.materialTextBox.onEditEnds = () => {
+            this.changeFlexLayoutHeightForKeyboard(false);
+            this.flContainer.applyLayout();
+        }
+        this.mtbPassword.materialTextBox.onEditBegins = ()=>{
+            this.changeFlexLayoutHeightForKeyboard(true);
+        }
+        this.mtbPassword.materialTextBox.onEditEnds = () => {
+            this.changeFlexLayoutHeightForKeyboard(false);
+            this.flContainer.applyLayout();
+        }
+    }
+    changeFlexLayoutHeightForKeyboard(addHeight:boolean){
+        if(addHeight){
+            this.flBottom.dispatch({
+                type:'removeClassName',
+                className:'#pgLogin-flBottom'
+            })
+        }else{
+            this.flBottom.dispatch({
+                type:'pushClassNames',
+                classNames:'#pgLogin-flBottom'
+            })
+        }
     }
     async initUserLogin() {
         if (this.initValidate()) {
@@ -99,6 +120,9 @@ export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
     }
     onShow() {
         super.onShow();
+        this.initDismissButton(this.router, {
+            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
+        })
         this.initBackButton(this.router, {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
