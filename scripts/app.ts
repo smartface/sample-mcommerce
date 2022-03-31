@@ -19,4 +19,4 @@ Application.onUnhandledError = function (e: UnhandledError) {
     });
 };
 
-router.push('/btb');
+router.push('/launchScreen/main');

@@ -3,6 +3,7 @@ import Application from '@smartface/native/application';
 import authRouteGenerator from './auth';
 import TabbarRoute from './tabbar';
 import isEmulator from '@smartface/extension-utils/lib/isEmulator';
+import launchScreen from "./launch"
 
 Application.on(Application.Events.BackButtonPressed, () => {
     Router.getActiveRouter()?.goBack();
@@ -11,7 +12,7 @@ Application.on(Application.Events.BackButtonPressed, () => {
 const router = Router.of({
     path: '/',
     isRoot: true,
-    routes: [authRouteGenerator(''), TabbarRoute]
+    routes: [launchScreen(),authRouteGenerator(''), TabbarRoute]
 });
 
 router.listen((location) => {
