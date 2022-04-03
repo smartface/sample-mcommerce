@@ -19,6 +19,7 @@ import LviNutritions from '../components/LviNutritions';
 import LviDescription from '../components/LviDescription';
 import LviRow1LineLarge from '../components/LviRow1LineLarge';
 import LviNoAddress from '../components/LviNoAdress';
+import LviAddressList from '../components/LviAddressList';
 
 export enum LviTypes {
     LVI_ACCOUNT,
@@ -42,7 +43,8 @@ export enum LviTypes {
     LVI_REVIEW_PRODUCT,
     LVI_NUTRITIONS,
     LVI_NO_ADDRESS,
-    LVI_DESCRIPTION
+    LVI_DESCRIPTION,
+    LVI_ADDRESS_LIST
 }
 
 export const LviClasses = {
@@ -66,7 +68,8 @@ export const LviClasses = {
     [LviTypes.LVI_REVIEW_PRODUCT]: LviReviewProduct,
     [LviTypes.LVI_NUTRITIONS]: LviNutritions,
     [LviTypes.LVI_NO_ADDRESS]: LviNoAddress,
-    [LviTypes.LVI_DESCRIPTION]: LviDescription
+    [LviTypes.LVI_DESCRIPTION]: LviDescription,
+    [LviTypes.LVI_ADDRESS_LIST]: LviAddressList
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -128,6 +131,7 @@ export namespace ProcessorTypes {
     export interface ILviNutritions extends IProcessed<LviNutritions> {}
     export interface ILviNoAddress extends IProcessed<LviNoAddress> {}
     export interface ILviDescription extends IProcessed<LviDescription> {}
+    export interface ILviAddressList extends IProcessed<LviAddressList> {}
 }
 
 export function getLviGenericSlider(
@@ -342,5 +346,15 @@ export function getLviDescription(item: Partial<LviDescription>): ProcessorTypes
             borders: []
         },
         height: LviDescription.getHeight({ text: item.description })
+    };
+}
+export function getLviAddressList(item: Partial<LviAddressList>): ProcessorTypes.ILviAddressList {
+    return {
+        type: 'LVI_ADDRESS_LIST',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviAddressList.getHeight()
     };
 }

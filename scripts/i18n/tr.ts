@@ -147,6 +147,9 @@ SMF.i18n.defineLanguage('tr', {
     addAddress:'Adres Ekle',
     emptyDescription: 'Bu ürüne ait bir açıklama bulunamadı.',
     removeFromBasket: 'Sepetten çıkarıldı',
-    addedToBasket: 'Sepette eklendi'
+    addedToBasket: 'Sepette eklendi',
+    address:'Adres',
+    addressTitle:'Adres Başlığı',
+    save:'Kaydet'
 
 });

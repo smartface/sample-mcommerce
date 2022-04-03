@@ -30,7 +30,9 @@
         "&-verticalSeparator": {
           "backgroundColor": "${textDark}",
           "height": 20,
-          "width": 1
+          "width": 1,
+          "marginLeft": 3,
+          "marginRight": 3
         },
         "&-lblLeft": {
           "textAlignment": "MIDCENTER",
@@ -39,7 +41,7 @@
           }
         },
         "&-lblRight": {
-          "textAlignment": "MIDLEFT"
+          "textAlignment": "MIDCENTER"
         },
         "paddingRight": 20,
         "paddingLeft": 20

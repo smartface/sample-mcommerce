@@ -344,6 +344,20 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         })
                     ]
                 }),
+                Route.of({
+                    path:'/btb/tab5/addAddress',
+                    to: '/btb/tab5/addAddress/main',
+                    routes:[
+                        Route.of<Pages.pgAddAddress>({
+                            path: '/btb/tab5/addAddress/main',
+                            build(router,route){
+                                const page = new Pages.pgAddAddress(router, route);
+                                router.setState({ view: page })
+                                return page;
+                            }
+                        })
+                    ]
+                }),
                 authRouteGenerator('/btb/tab5')
             ]
         })

@@ -1,0 +1,13 @@
+{
+  ".flAddAddress": {
+    "flexProps": {},
+    "paddingLeft": 20,
+    "paddingRight": 20,
+    "&-btnAddAddress": {
+      "marginTop": 20
+    },
+    "&-mtbTitle": {
+      "marginTop": 5
+    }
+  }
+}

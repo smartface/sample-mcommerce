@@ -87,3 +87,11 @@ export type Nutritions = {
     Iron?: string;
     ingredients?: string;
 };
+
+export type Address = {
+    fullAddress: string,
+    title: string,
+    firstName: string,
+    lastName: string,
+    userId: number
+}

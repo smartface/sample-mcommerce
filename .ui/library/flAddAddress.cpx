@@ -1,0 +1,135 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flAddAddress",
+			"hiddenComponent": true,
+			"id": "3bb4-1730-8915-de6f",
+			"props": {
+				"children": [
+					"5f34-9655-3eb5-3e11",
+					"117e-f0f2-48bc-f6fa",
+					"846d-5426-6e21-5b81",
+					"9abe-53c3-dc77-fd8e",
+					"707c-9149-3fe2-e78c"
+				],
+				"name": "flAddAddress",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "5f34-9655-3eb5-3e11",
+			"initialized": false,
+			"oldName": "materialTextBox",
+			"props": {
+				"children": [],
+				"name": "mtbName",
+				"parent": "3bb4-1730-8915-de6f",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "117e-f0f2-48bc-f6fa",
+			"initialized": false,
+			"oldName": "materialTextBox",
+			"props": {
+				"children": [],
+				"name": "mtbLastName",
+				"parent": "3bb4-1730-8915-de6f",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "846d-5426-6e21-5b81",
+			"initialized": false,
+			"oldName": "materialTextBox",
+			"props": {
+				"children": [],
+				"name": "mtbAddress",
+				"parent": "3bb4-1730-8915-de6f",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper .flAddAddress-mtbTitle",
+			"hiddenComponent": false,
+			"id": "9abe-53c3-dc77-fd8e",
+			"initialized": false,
+			"oldName": "materialTextBox",
+			"props": {
+				"children": [],
+				"name": "mtbTitle",
+				"parent": "3bb4-1730-8915-de6f",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button-main .flAddAddress-btnAddAddress",
+			"id": "707c-9149-3fe2-e78c",
+			"oldName": "button1",
+			"props": {
+				"children": [],
+				"name": "btnAddAddress",
+				"parent": "3bb4-1730-8915-de6f",
+				"text": "button1",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "button1",
+				"usePageVariable": true
+			}
+		}
+	]
+}

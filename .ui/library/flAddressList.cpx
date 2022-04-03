@@ -1,0 +1,192 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flAddressList",
+			"id": "486d-16c3-668d-75b4",
+			"props": {
+				"children": [
+					"b9e1-10f4-78b7-15fe",
+					"6621-8cc0-6ad6-fd70",
+					"d484-d1ae-2229-9d4b"
+				],
+				"name": "flAddressList",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flAddressList-flTopline",
+			"id": "b9e1-10f4-78b7-15fe",
+			"oldName": "flTopline",
+			"props": {
+				"children": [],
+				"name": "flTopLine",
+				"parent": "486d-16c3-668d-75b4"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .grow .flAddressList-flMain",
+			"id": "6621-8cc0-6ad6-fd70",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"eb99-168f-ca05-6c52",
+					"cbb1-9963-ad72-a945",
+					"358f-9c16-d748-fdeb",
+					"f533-d7e6-744b-b5bf"
+				],
+				"name": "flMain",
+				"parent": "486d-16c3-668d-75b4",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flAddressList-flWrapper",
+			"id": "eb99-168f-ca05-6c52",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"4da3-8ed4-f71a-9575",
+					"6c83-b5e5-239b-88ac"
+				],
+				"name": "flWrapper",
+				"parent": "6621-8cc0-6ad6-fd70",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flAddressList-lblTitle",
+			"id": "4da3-8ed4-f71a-9575",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblTitle",
+				"parent": "eb99-168f-ca05-6c52",
+				"text": "lblTitle",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblTitle",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flAddressList-lblArrow",
+			"id": "6c83-b5e5-239b-88ac",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblArrow",
+				"parent": "eb99-168f-ca05-6c52",
+				"text": "angle-right",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "angle-right",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flAddressList-flLine",
+			"id": "cbb1-9963-ad72-a945",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [],
+				"name": "flLine",
+				"parent": "6621-8cc0-6ad6-fd70"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-label .flAddressList-lblFullName",
+			"id": "358f-9c16-d748-fdeb",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblFullName",
+				"parent": "6621-8cc0-6ad6-fd70",
+				"text": "lblFullName",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblFullName",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flAddressList-lblAddress",
+			"id": "f533-d7e6-744b-b5bf",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblAddress",
+				"parent": "6621-8cc0-6ad6-fd70",
+				"text": "lblAddress",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblAddress",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flAddressList-flBottomLine",
+			"id": "d484-d1ae-2229-9d4b",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [],
+				"name": "flBottomLine",
+				"parent": "486d-16c3-668d-75b4"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		}
+	]
+}

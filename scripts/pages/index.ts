@@ -15,3 +15,4 @@ export { default as pgNutritions } from './pgNutritions';
 export { default as pgProductDescription } from './pgProductDescription';
 export { default as pgMyDetails } from './pgMyDetails';
 export { default as pgAddress } from './pgAddress';
+export { default as pgAddAddress } from './pgAddAddress';

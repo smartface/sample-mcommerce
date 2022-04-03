@@ -1,5 +1,7 @@
+import Button from '@smartface/native/ui/button';
 import Image from '@smartface/native/ui/image';
 import FlNoAddressDesign from 'generated/my-components/FlNoAddress';
+import router from 'routes';
 
 export default class FlNoAddress extends FlNoAddressDesign {
     pageName?: string | undefined;
@@ -7,6 +9,9 @@ export default class FlNoAddress extends FlNoAddressDesign {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
+        this.btnAddAddress.on(Button.Events.Press, ()=>{
+            router.push('/btb/tab5/addAddress')
+        })
     }
     get title():string{
         return this.lblTitle.text;

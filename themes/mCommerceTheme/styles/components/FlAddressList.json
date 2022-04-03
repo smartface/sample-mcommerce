@@ -1,0 +1,94 @@
+{
+  ".flAddressList": {
+    "height": 180,
+    "marginTop": null,
+    "flexProps": {
+      "flexDirection": "COLUMN"
+    },
+    "&-flTopline": {
+      "alpha": 1,
+      "backgroundColor": "rgba( 200, 200, 200, 1 )",
+      "height": 1,
+      "marginBottom": 0,
+      "marginTop": 15
+    },
+    "&-flBottomLine": {
+      "backgroundColor": "rgba( 200, 200, 200, 1 )",
+      "height": 1,
+      "marginLeft": 0,
+      "marginTop": 5
+    },
+    "&-lblTitle": {
+      "flexProps": {
+        "flexGrow": 1
+      },
+      "font": {
+        "size": 17,
+        "bold": true,
+        "italic": false,
+        "family": "Nunito",
+        "style": "Bold"
+      },
+      "height": 25,
+      "textAlignment": "MIDLEFT",
+      "textColor": "${textDark}"
+    },
+    "&-lblArrow": {
+      "flexProps": {
+        "flexGrow": 0.1
+      },
+      "font": {
+        "size": 17,
+        "bold": false,
+        "italic": false,
+        "family": "FontAwesome5FreeSolid",
+        "style": null
+      },
+      "height": 25,
+      "marginTop": null,
+      "textAlignment": "MIDLEFT",
+      "textColor": "${textDark}"
+    },
+    "&-lblFullName": {
+      "font": {
+        "size": 16,
+        "bold": true,
+        "italic": false,
+        "family": "Nunito",
+        "style": "SemiBold"
+      },
+      "height": 25,
+      "textColor": "${textDark}"
+    },
+    "&-lblAddress": {
+      "bottom": 5,
+      "font": {
+        "size": 16,
+        "bold": false,
+        "italic": false,
+        "family": "Nunito",
+        "style": "Medium"
+      },
+      "height": 90,
+      "marginRight": 30,
+      "maxLines": 5,
+      "textAlignment": "MIDLEFT",
+      "textColor": "${textDark}"
+    },
+    "&-flWrapper": {
+      "flexProps": {
+        "flexDirection": "ROW"
+      },
+      "height": 50,
+      "paddingTop": 10
+    },
+    "&-flLine": {
+      "alpha": 0.4,
+      "backgroundColor": "rgba( 226, 226, 226, 1 )",
+      "height": 1
+    },
+    "&-flMain": {
+      "paddingLeft": 15
+    }
+  }
+}

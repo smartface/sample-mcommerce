@@ -149,6 +149,9 @@ SMF.i18n.defineLanguage('en', {
     addAddress:'Add Address',
     emptyDescription: 'This product has no description.',
     removedFromBasket: 'Removed from Basket',
-    addedToBasket: 'Added to Basket'
+    addedToBasket: 'Added to Basket',
+    address: 'Address',
+    addressTitle:'Address Title',
+    save:'Save'
 
 });
