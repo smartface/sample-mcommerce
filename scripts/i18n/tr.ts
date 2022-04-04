@@ -140,7 +140,7 @@ SMF.i18n.defineLanguage('tr', {
     emptyNutritions: 'Bu ürüne ait bir besin bilgisi bulunamadı.',
     appName: 'Smart Commerce',
     sureToLogout: 'Çıkış yapmak istediğinizden emin misiniz?',
-    noDescription: 'AÇIKLAMA BULUNAMADI',
+    noDescription: 'Açıklama Bulunamadı',
     select: 'Seç',
     addressInformation:'Adres Bilgilerim',
     noAddressTitle:'Kayıtlı adresiniz bulunmamaktadır.',

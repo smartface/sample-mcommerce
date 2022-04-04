@@ -21,7 +21,7 @@ export default class PgAddress extends withDismissAndBackButton(PgAddressDesign)
     rightItemAdd: HeaderBarItem;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.hasAddress = false;
+        this.hasAddress = true;
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
