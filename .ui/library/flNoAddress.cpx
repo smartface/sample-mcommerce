@@ -18,11 +18,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 16.07,
-				"top": 430.36
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flNoAdress-imgIcon",

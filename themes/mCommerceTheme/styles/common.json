@@ -132,7 +132,8 @@
     "flexProps": {
       "flexGrow": 1,
       "alignContent": "CENTER",
-      "justifyContent": "CENTER"
+      "justifyContent": "CENTER",
+      "positionType": "RELATIVE"
     },
     "&-imgIcon": {
       "height": 100,
@@ -157,7 +158,9 @@
       "marginTop": 15,
       "marginLeft": 20,
       "marginRight": 20
-    }
+    },
+    "left": 0,
+    "top": 0
   },
   ".lviNoAddress": {
     "height": 350,
