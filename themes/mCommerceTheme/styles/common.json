@@ -127,45 +127,5 @@
   },
   ".textCenter": {
     "textAlignment": "MIDCENTER"
-  },
-  ".flNoAdress": {
-    "flexProps": {
-      "flexGrow": 1,
-      "alignContent": "CENTER",
-      "justifyContent": "CENTER",
-      "positionType": "RELATIVE"
-    },
-    "&-imgIcon": {
-      "height": 100,
-      "imageFillType": "ASPECTFIT",
-      "width": null,
-      "tintColor": "rgba( 24, 23, 37, 1 )"
-    },
-    "&-lblTitle": {
-      "font": {
-        "bold": true,
-        "family": "Nunito",
-        "style": "SemiBold",
-        "italic": false,
-        "size": 17
-      },
-      "height": 30,
-      "marginTop": 15,
-      "textAlignment": "MIDCENTER",
-      "textColor": "rgba( 24, 23, 37, 1 )"
-    },
-    "&-btnAddAddress": {
-      "marginTop": 15,
-      "marginLeft": 20,
-      "marginRight": 20
-    },
-    "left": 0,
-    "top": 0
-  },
-  ".lviNoAddress": {
-    "height": 350,
-    "flexProps": {
-      "alignContent": "CENTER"
-    }
   }
 }
