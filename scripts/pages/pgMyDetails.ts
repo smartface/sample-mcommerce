@@ -21,7 +21,7 @@ export default class PgMyDetails extends withDismissAndBackButton(PgMyDetailsDes
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.onRowSelected = (item:LviAccount) => {
-            if (item.itemTitle === global.lang.addressInformation) {
+            if (item.itemTitle === global.lang.addressBook) {
                 this.router.push('addressInformation');
             }
                 
@@ -31,7 +31,7 @@ export default class PgMyDetails extends withDismissAndBackButton(PgMyDetailsDes
 
     refreshListView() {
         const addressItem = getLviAccount({
-            itemTitle: 'addressInformation',
+            itemTitle: 'addressBook',
             leftIcon: 'map-marker-alt',
             bottomLine: true
         });

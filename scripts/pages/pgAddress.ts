@@ -10,9 +10,9 @@ type Processor = | ListViewItems.ProcessorTypes.ILviNoAddress |
     ListViewItems.ProcessorTypes.ILviAddressList;
 
 const addresses = [
-    { title: 'Ev', address: 'Yeni Mah. Cumhuriyet Cad. no:37 daire:2', name: "Süleyman", lastName: "Başbuğ" },
-    { title: 'Ev', address: 'Yeni Mah. Cumhuriyet Cad. no:37 daire:2', name: "Süleyman", lastName: "Başbuğ" },
-    { title: 'Ev', address: 'Yeni Mah. Cumhuriyet Cad. no:37 daire:2', name: "Süleyman", lastName: "Başbuğ" },
+    { title: 'Ev', address: 'Kurtuluş Mah. 4 eylül Cad. No:2', name: "Ahmet", lastName: "Yalçın" },
+    { title: 'Ev', address: 'Kurtuluş Mah. 4 eylül Cad. No:2', name: "Emre", lastName: "Güven" },
+    { title: 'Ev', address: 'Kurtuluş Mah. 4 eylül Cad. No:2', name: "Ahmet", lastName: "Yalçın" },
 
 ]
 export default class PgAddress extends withDismissAndBackButton(PgAddressDesign) {
@@ -82,7 +82,7 @@ export default class PgAddress extends withDismissAndBackButton(PgAddressDesign)
 
     public onLoad() {
         super.onLoad?.();
-        this.headerBar.title = global.lang.addressInformation;
+        this.headerBar.title = global.lang.addressBook;
         this.initListView();
 
     }

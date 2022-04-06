@@ -144,7 +144,7 @@ SMF.i18n.defineLanguage('en', {
     sureToLogout: 'Are you sure to logout?',
     noDescription: 'No Description',
     select: 'Select',
-    addressInformation:'My Address Information',
+    addressBook:'Address Book',
     noAddressTitle:'You do not have a registered address.',
     addAddress:'Add Address',
     emptyDescription: 'This product has no description.',

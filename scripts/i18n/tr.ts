@@ -142,7 +142,7 @@ SMF.i18n.defineLanguage('tr', {
     sureToLogout: 'Çıkış yapmak istediğinizden emin misiniz?',
     noDescription: 'Açıklama Bulunamadı',
     select: 'Seç',
-    addressInformation:'Adres Bilgilerim',
+    addressBook:'Adres Bilgilerim',
     noAddressTitle:'Kayıtlı adresiniz bulunmamaktadır.',
     addAddress:'Adres Ekle',
     emptyDescription: 'Bu ürüne ait bir açıklama bulunamadı.',

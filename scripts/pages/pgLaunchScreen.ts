@@ -29,6 +29,8 @@ export default class PgLaunchScreen extends withDismissAndBackButton(PgLaunchScr
         this.gifImageView = new GifImageView({
             //@ts-ignore
             gifImage : this.gifImage,
+            height: 400,
+            width: 400
         })
         this.launchDialog.layout.addChild(this.gifImageView);
         this.launchDialog.layout.applyLayout();
