@@ -20,6 +20,8 @@ import LviDescription from '../components/LviDescription';
 
 import LviRow1LineLarge from '../components/LviRow1LineLarge';
 import LviCheckoutSuccessful from '../components/LviCheckoutSuccessful';
+import LviCheckout from '../components/LviCheckout';
+
 export enum LviTypes {
     LVI_ACCOUNT,
     LVI_HOME_PRODUCTS,
@@ -42,7 +44,8 @@ export enum LviTypes {
     LVI_REVIEW_PRODUCT,
     LVI_NUTRITIONS,
     LVI_DESCRIPTION,
-    LVI_CHECKOUT_SUCCESSFUL
+    LVI_CHECKOUT_SUCCESSFUL,
+    LVI_CHECKOUT
 }
 
 export const LviClasses = {
@@ -66,7 +69,9 @@ export const LviClasses = {
     [LviTypes.LVI_REVIEW_PRODUCT]: LviReviewProduct,
     [LviTypes.LVI_NUTRITIONS]: LviNutritions,
     [LviTypes.LVI_DESCRIPTION]: LviDescription,
-    [LviTypes.LVI_CHECKOUT_SUCCESSFUL]: LviCheckoutSuccessful
+    [LviTypes.LVI_CHECKOUT_SUCCESSFUL]: LviCheckoutSuccessful,
+    [LviTypes.LVI_CHECKOUT]: LviCheckout,
+
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -128,6 +133,7 @@ export namespace ProcessorTypes {
     export interface ILviNutritions extends IProcessed<LviNutritions> {}
     export interface ILviDescription extends IProcessed<LviDescription> {}
     export interface ILviCheckoutSuccessful extends IProcessed<LviCheckoutSuccessful> {}
+    export interface ILviCheckout extends IProcessed<LviCheckout> {}
 
 }
 
@@ -344,5 +350,16 @@ export function getLviCheckoutSuccessful(item: Partial<LviCheckoutSuccessful>): 
         type: 'LVI_CHECKOUT_SUCCESSFUL',
         properties: { ...item, borders: [] },
         height: LviCheckoutSuccessful.getScreenHeight()
+    };
+}
+
+export function getLviCheckout(item: Partial<LviCheckout>): ProcessorTypes.ILviCheckout {
+    return {
+        type: 'LVI_CHECKOUT',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height: LviCheckout.getHeight()
     };
 }

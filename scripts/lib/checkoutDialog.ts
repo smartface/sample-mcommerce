@@ -5,11 +5,18 @@ import FlexLayout from '@smartface/native/ui/flexlayout';
 import router from 'routes';
 import store from 'store/index';
 import storeActions from 'store/main/actions';
+import { CheckoutListItem } from 'types';
 
 let checkoutDialog = null;
 let activeDialogCounter = 0;
 
 function initDialog(totalCost: string | number) {
+    const checkoutListItems: CheckoutListItem[] = [
+        { title: global.lang.delivery, description: 'Home' }, 
+        { title: global.lang.payment, description: global.lang.payAtTheDoor }, 
+        { title: global.lang.promoCode, description: 'No Promo Code' },
+        { title: global.lang.totalCost, description: totalCost.toString() }
+        ]
     let dialog = new Dialog({
         android: {
             themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
@@ -18,16 +25,10 @@ function initDialog(totalCost: string | number) {
     }) as StyleContextComponentType<Dialog>
 
     const component = new FlCheckout();
+    component.items = checkoutListItems;
     component.lblCheckout.text = global.lang.checkout;
-    component.lblDeliveryTitle.text = global.lang.delivery;
-    component.lblCostTitle.text = global.lang.totalCost;
-    component.lblPaymentTitle.text = global.lang.payment;
     component.lblTermsAndCond.text = global.lang.checkoutTermsAndCond;
-    component.lblPromoTitle.text = global.lang.promoCode;
     component.btnPlaceOrder.text = global.lang.placeOrder;
-    component.lblPaymentDescription.text = global.lang.payAtTheDoor;
-    component.lblCostDescription.text = totalCost.toString();
-    component.lblPromoDescription.text = "No Promo Code"
     component.lblDissmisIcon.onTouchEnded = () => {
         hideCheckoutDialog();
     }
@@ -45,7 +46,7 @@ function initDialog(totalCost: string | number) {
     });
 
     dialog.android.isTransparent = false;
-    
+
     //@ts-ignore
     dialog.layout.addChild(component, 'checkoutDialogComp');
     dialog.layout.applyLayout();
