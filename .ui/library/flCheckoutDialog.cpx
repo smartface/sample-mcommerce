@@ -1,0 +1,652 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog",
+			"hiddenComponent": true,
+			"id": "f4ac-c5e6-f7ae-938a",
+			"props": {
+				"children": [
+					"e5de-16b4-c99e-aa80",
+					"e9b6-6f79-4535-e69c",
+					"f7a0-943e-2aec-041e"
+				],
+				"name": "flCheckoutDialog",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flHeader",
+			"id": "e5de-16b4-c99e-aa80",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"ff80-ea06-f147-a99b",
+					"de50-98f4-a259-e78b"
+				],
+				"name": "flHeader",
+				"parent": "f4ac-c5e6-f7ae-938a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblCheckout",
+			"id": "ff80-ea06-f147-a99b",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblCheckout",
+				"parent": "e5de-16b4-c99e-aa80",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblDissmisIcon",
+			"id": "de50-98f4-a259-e78b",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblDissmisIcon",
+				"parent": "e5de-16b4-c99e-aa80",
+				"text": "times",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "times",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flListView",
+			"id": "e9b6-6f79-4535-e69c",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"8dc2-dff1-5d24-3cfb",
+					"58be-6b8d-7046-8dfa",
+					"5e38-35a0-2421-af97",
+					"fb05-155b-0920-5903"
+				],
+				"name": "flListView",
+				"parent": "f4ac-c5e6-f7ae-938a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flItem",
+			"id": "8dc2-dff1-5d24-3cfb",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"5a04-f906-d394-4be9",
+					"614c-d4c0-b4ab-c214"
+				],
+				"name": "flDelivery",
+				"parent": "e9b6-6f79-4535-e69c",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-fliContent",
+			"id": "5a04-f906-d394-4be9",
+			"oldName": "flContent",
+			"props": {
+				"children": [
+					"fc44-0a30-b10f-fe04",
+					"0a21-bf3c-faa9-958a",
+					"8c7b-99ed-6581-ce67"
+				],
+				"name": "flDeliveryContent",
+				"parent": "8dc2-dff1-5d24-3cfb",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblTitle",
+			"id": "fc44-0a30-b10f-fe04",
+			"oldName": "lblTitle",
+			"props": {
+				"children": [],
+				"name": "lblDeliveryTitle",
+				"parent": "5a04-f906-d394-4be9",
+				"text": "lblTitle",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblTitle",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblDescription",
+			"id": "0a21-bf3c-faa9-958a",
+			"oldName": "lblDescription",
+			"props": {
+				"children": [],
+				"name": "lblDeliveryDescription",
+				"parent": "5a04-f906-d394-4be9",
+				"text": "lblDescription",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblDescription",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblRightArrow",
+			"id": "8c7b-99ed-6581-ce67",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblRightArrow",
+				"parent": "5a04-f906-d394-4be9",
+				"text": "angle-right",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "angle-right",
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flBottomLine",
+			"id": "614c-d4c0-b4ab-c214",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [],
+				"name": "flBottomLine",
+				"parent": "8dc2-dff1-5d24-3cfb",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flItem",
+			"id": "58be-6b8d-7046-8dfa",
+			"oldName": "flPayment_1",
+			"props": {
+				"children": [
+					"1082-53a6-544b-0a3c",
+					"677f-e14e-24df-1042"
+				],
+				"name": "flPayment",
+				"parent": "e9b6-6f79-4535-e69c",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-fliContent",
+			"id": "1082-53a6-544b-0a3c",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"a939-f975-d5bb-fa6a",
+					"392f-bc30-8b46-6362",
+					"ca62-b820-fde4-6563"
+				],
+				"name": "flContent",
+				"parent": "58be-6b8d-7046-8dfa",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblTitle",
+			"id": "a939-f975-d5bb-fa6a",
+			"oldName": "lblTitle",
+			"props": {
+				"children": [],
+				"name": "lblPaymentTitle",
+				"parent": "1082-53a6-544b-0a3c",
+				"text": "lblTitle",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblTitle",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblDescription",
+			"id": "392f-bc30-8b46-6362",
+			"oldName": "lblDescription",
+			"props": {
+				"children": [],
+				"name": "lblPaymentDescription",
+				"parent": "1082-53a6-544b-0a3c",
+				"text": "lblDescription",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblDescription",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblRightArrow",
+			"id": "ca62-b820-fde4-6563",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblRightArrow",
+				"parent": "1082-53a6-544b-0a3c",
+				"text": "angle-right",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "angle-right",
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flBottomLine",
+			"id": "677f-e14e-24df-1042",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [],
+				"name": "flBottomLine",
+				"parent": "58be-6b8d-7046-8dfa",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flItem",
+			"id": "5e38-35a0-2421-af97",
+			"oldName": "flPayment",
+			"props": {
+				"children": [
+					"59d0-abc3-a3a9-3c34",
+					"41a1-f152-2a6f-621d"
+				],
+				"name": "flPromo",
+				"parent": "e9b6-6f79-4535-e69c",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-fliContent",
+			"id": "59d0-abc3-a3a9-3c34",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"6a26-4019-7fbd-490c",
+					"0a7a-d619-9d6d-6452",
+					"bc35-1f51-3232-61a0"
+				],
+				"name": "flContent",
+				"parent": "5e38-35a0-2421-af97",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblTitle",
+			"id": "6a26-4019-7fbd-490c",
+			"oldName": "lblPaymentTitle",
+			"props": {
+				"children": [],
+				"name": "lblPromoTitle",
+				"parent": "59d0-abc3-a3a9-3c34",
+				"text": "lblTitle",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblTitle",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblDescription",
+			"id": "0a7a-d619-9d6d-6452",
+			"oldName": "lblPaymentDescription",
+			"props": {
+				"children": [],
+				"name": "lblPromoDescription",
+				"parent": "59d0-abc3-a3a9-3c34",
+				"text": "lblDescription",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblDescription",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblRightArrow",
+			"id": "bc35-1f51-3232-61a0",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblRightArrow",
+				"parent": "59d0-abc3-a3a9-3c34",
+				"text": "angle-right",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "angle-right",
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flBottomLine",
+			"id": "41a1-f152-2a6f-621d",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [],
+				"name": "flBottomLine",
+				"parent": "5e38-35a0-2421-af97",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flItem",
+			"id": "fb05-155b-0920-5903",
+			"oldName": "fl",
+			"props": {
+				"children": [
+					"8fb2-7b43-2417-bcdb",
+					"ce06-0503-8b5e-1f43"
+				],
+				"name": "flCost",
+				"parent": "e9b6-6f79-4535-e69c",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-fliContent",
+			"id": "8fb2-7b43-2417-bcdb",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"3451-c1a0-ff41-5af0",
+					"cc08-3243-3e4a-4dfb",
+					"6f72-c36c-2890-c291"
+				],
+				"name": "flContent",
+				"parent": "fb05-155b-0920-5903",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblTitle",
+			"id": "3451-c1a0-ff41-5af0",
+			"oldName": "lblPromoTitle",
+			"props": {
+				"children": [],
+				"name": "lblCostTitle",
+				"parent": "8fb2-7b43-2417-bcdb",
+				"text": "lblTitle",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblTitle",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblDescription",
+			"id": "cc08-3243-3e4a-4dfb",
+			"oldName": "lblPromoDescription",
+			"props": {
+				"children": [],
+				"name": "lblCostDescription",
+				"parent": "8fb2-7b43-2417-bcdb",
+				"text": "lblDescription",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblDescription",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblRightArrow",
+			"id": "6f72-c36c-2890-c291",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblRightArrow",
+				"parent": "8fb2-7b43-2417-bcdb",
+				"text": "angle-right",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "angle-right",
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flBottomLine",
+			"id": "ce06-0503-8b5e-1f43",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [],
+				"name": "flBottomLine",
+				"parent": "fb05-155b-0920-5903",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flBottom",
+			"id": "f7a0-943e-2aec-041e",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"1016-6e3e-6655-7d37",
+					"abf1-c7e6-c972-6d5f"
+				],
+				"name": "flBottom",
+				"parent": "f4ac-c5e6-f7ae-938a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblTermsAndCond",
+			"id": "1016-6e3e-6655-7d37",
+			"oldName": "lbl",
+			"props": {
+				"children": [],
+				"name": "lblTermsAndCond",
+				"parent": "f7a0-943e-2aec-041e",
+				"text": "lblTerm",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblTerm",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button-main .flCheckoutDialog-btnPlaceOrder",
+			"id": "abf1-c7e6-c972-6d5f",
+			"oldName": "button1",
+			"props": {
+				"children": [],
+				"name": "btnPlaceOrder",
+				"parent": "f7a0-943e-2aec-041e",
+				"text": "btnPlaceOrder",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "btnPlaceOrder",
+				"usePageVariable": true
+			}
+		}
+	]
+}

@@ -101,6 +101,9 @@ export default function (state = initialState, action: ActionTypes): SessionStat
             newState.isRateAdded = action.payload.isRateAdded;
             break;
         }
+        case Constants.EMPTY_THE_BASKET: {
+            newState.basket = []
+        }
         default: {
             break;
         }

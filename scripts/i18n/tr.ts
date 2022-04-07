@@ -143,5 +143,17 @@ SMF.i18n.defineLanguage('tr', {
     select: 'Seç',
     emptyDescription: 'Bu ürüne ait bir açıklama bulunamadı.',
     removeFromBasket: 'Sepetten çıkarıldı',
-    addedToBasket: 'Sepette eklendi'
+    addedToBasket: 'Sepette eklendi',
+    checkout: 'Ödeme',
+    delivery: 'Dağıtım',
+    payment: 'Ödeme Yöntemi',
+    promoCode: 'Promosyon Kodu',
+    totalCost: 'Toplam Tutar',
+    checkoutTermsAndCond: 'Sipariş vererek, Şartlarımızı ve Koşullarımızı kabul etmiş olursunuz',
+    placeOrder: 'Sipariş Ver',
+    payAtTheDoor: 'Kapıda Ödeme',
+    orderAccepted: 'Siparişiniz kabul edildi',
+    onDelivery: 'Siparişiniz hazırlandı ve teslim edilmek üzere yola çıktı',
+    trackOrder: 'Siparişi takip et',
+    backHome: 'Anasayfaya geri dön'
 });
