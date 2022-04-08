@@ -22,12 +22,12 @@
       "height": 70,
       "marginTop": 25,
       "textAlignment": "MIDCENTER",
-      "textColor": "rgba( 77, 77, 77, 1 )",
+      "textColor": "${darkGray}",
       "maxLines": 2
     },
     "&-lblDescription": {
       "textAlignment": "MIDCENTER",
-      "textColor": "rgba( 87, 87, 87, 1 )",
+      "textColor": "${textLight}",
       "font": {
         "size": 17,
         "bold": false,
@@ -49,7 +49,7 @@
         "style": "Bold"
       },
       "textAlignment": "MIDCENTER",
-      "textColor": "rgba( 0, 0, 0, 1 )"
+      "textColor": "${darkGray}"
     },
     "paddingLeft": 50,
     "paddingRight": 50
