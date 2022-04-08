@@ -142,7 +142,7 @@ SMF.i18n.defineLanguage('tr', {
     sureToLogout: 'Çıkış yapmak istediğinizden emin misiniz?',
     select: 'Seç',
     emptyDescription: 'Bu ürüne ait bir açıklama bulunamadı.',
-    removeFromBasket: 'Sepetten çıkarıldı',
+    removedFromBasket: 'Sepetten çıkarıldı',
     addedToBasket: 'Sepette eklendi',
     checkout: 'Ödeme',
     delivery: 'Dağıtım',
