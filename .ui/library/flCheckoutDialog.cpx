@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flCheckoutDialog",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "f4ac-c5e6-f7ae-938a",
 			"props": {
 				"children": [

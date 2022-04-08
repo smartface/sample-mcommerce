@@ -8,8 +8,7 @@
     "&-imgSuccess": {
       "height": 200,
       "imageFillType": "ASPECTFIT",
-      "width": null,
-      "tintColor": "rgba( 83, 177, 117, 1 )"
+      "width": null
     },
     "&-lblTitle": {
       "font": {
@@ -22,12 +21,12 @@
       "height": 70,
       "marginTop": 25,
       "textAlignment": "MIDCENTER",
-      "textColor": "${darkGray}",
+      "textColor": "${textDark}",
       "maxLines": 2
     },
     "&-lblDescription": {
       "textAlignment": "MIDCENTER",
-      "textColor": "${textLight}",
+      "textColor": "${darkGray}",
       "font": {
         "size": 17,
         "bold": false,
@@ -49,7 +48,7 @@
         "style": "Bold"
       },
       "textAlignment": "MIDCENTER",
-      "textColor": "${darkGray}"
+      "textColor": "${textDark}"
     },
     "paddingLeft": 50,
     "paddingRight": 50
