@@ -10,6 +10,7 @@ import storeActions from 'store/main/actions';
 import { getProductImageUrl } from 'service/commerce';
 import setVisibility from 'lib/setVisibility';
 import { moneyFormatter } from 'lib/moneyFormatter';
+import { showCheckoutDialog } from 'lib/checkoutDialog';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -25,7 +26,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.flCartCheckout.onCheckoutClick = () => {
-            alert('todo');
+            showCheckoutDialog(this.flCartCheckout.checkoutPrice);
         };
     }
     initListView() {

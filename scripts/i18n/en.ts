@@ -145,5 +145,17 @@ SMF.i18n.defineLanguage('en', {
     select: 'Select',
     emptyDescription: 'This product has no description.',
     removedFromBasket: 'Removed from Basket',
-    addedToBasket: 'Added to Basket'
+    addedToBasket: 'Added to Basket',
+    checkout: 'Checkout',
+    delivery: 'Delivery',
+    payment: 'Payment',
+    promoCode: 'Promo Code',
+    totalCost: 'Total Cost',
+    checkoutTermsAndCond: 'By placing an order you agree to our Terms and Conditions',
+    placeOrder: 'Place Order',
+    payAtTheDoor: 'Pay at the door',
+    orderAccepted: 'Your order has been accepted',
+    onDelivery: 'Your items has been placed and is on it’s way to being processed',
+    trackOrder: 'Track Order',
+    backHome: 'Back to home'
 });

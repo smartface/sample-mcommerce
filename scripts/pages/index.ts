@@ -14,3 +14,4 @@ export { default as pgAddReview } from './pgAddReview';
 export { default as pgNutritions } from './pgNutritions';
 export { default as pgProductDescription } from './pgProductDescription';
 export { default as pgLaunchScreen } from './pgLaunchScreen';
+export { default as pgCheckoutSuccessful } from './pgCheckoutSuccessful';

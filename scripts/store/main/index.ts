@@ -24,6 +24,7 @@ export namespace Constants {
     export const SET_CATEGORIES = 'SET_CATEGORIES';
     export const SET_SHOWCASES = 'SET_SHOWCASES';
     export const ADD_NEW_RATE = 'ADD_NEW_RATE';
+    export const EMPTY_THE_BASKET = 'EMPTY_THE_BASKET';
 }
 
 declare namespace Actions {
@@ -77,6 +78,9 @@ declare namespace Actions {
             isRateAdded: boolean;
         };
     }
+    export interface EmptyTheBasket {
+        type: typeof Constants.EMPTY_THE_BASKET
+    }
 }
 
 export type ActionTypes =
@@ -89,4 +93,5 @@ export type ActionTypes =
     | Actions.RemoveFromFavorites
     | Actions.SetCategories
     | Actions.SetShowcases
-    | Actions.AddNewRate;
+    | Actions.AddNewRate
+    | Actions.EmptyTheBasket;

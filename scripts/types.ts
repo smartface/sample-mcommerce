@@ -87,3 +87,8 @@ export type Nutritions = {
     Iron?: string;
     ingredients?: string;
 };
+
+export type CheckoutListItem = {
+    title: string,
+    description: string
+}

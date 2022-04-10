@@ -1,0 +1,184 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog",
+			"hiddenComponent": true,
+			"id": "f4ac-c5e6-f7ae-938a",
+			"props": {
+				"children": [
+					"e5de-16b4-c99e-aa80",
+					"e9b6-6f79-4535-e69c",
+					"f7a0-943e-2aec-041e"
+				],
+				"name": "flCheckoutDialog",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flHeader",
+			"id": "e5de-16b4-c99e-aa80",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"ff80-ea06-f147-a99b",
+					"de50-98f4-a259-e78b"
+				],
+				"name": "flHeader",
+				"parent": "f4ac-c5e6-f7ae-938a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblCheckout",
+			"id": "ff80-ea06-f147-a99b",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblCheckout",
+				"parent": "e5de-16b4-c99e-aa80",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblDissmisIcon",
+			"id": "de50-98f4-a259-e78b",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblDissmisIcon",
+				"parent": "e5de-16b4-c99e-aa80",
+				"text": "times",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "times",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flListView",
+			"hiddenComponent": false,
+			"id": "e9b6-6f79-4535-e69c",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"f4df-2d8f-6181-1561"
+				],
+				"name": "flListView",
+				"parent": "f4ac-c5e6-f7ae-938a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-listView",
+			"id": "f4df-2d8f-6181-1561",
+			"oldName": "listView1",
+			"props": {
+				"children": [],
+				"name": "lvMain",
+				"parent": "e9b6-6f79-4535-e69c",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flCheckoutDialog-flBottom",
+			"id": "f7a0-943e-2aec-041e",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"1016-6e3e-6655-7d37",
+					"abf1-c7e6-c972-6d5f"
+				],
+				"name": "flBottom",
+				"parent": "f4ac-c5e6-f7ae-938a",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutDialog-lblTermsAndCond",
+			"id": "1016-6e3e-6655-7d37",
+			"oldName": "lbl",
+			"props": {
+				"children": [],
+				"name": "lblTermsAndCond",
+				"parent": "f7a0-943e-2aec-041e",
+				"text": "lblTerm",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "lblTerm",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button-main .flCheckoutDialog-btnPlaceOrder",
+			"id": "abf1-c7e6-c972-6d5f",
+			"oldName": "button1",
+			"props": {
+				"children": [],
+				"name": "btnPlaceOrder",
+				"parent": "f7a0-943e-2aec-041e",
+				"text": "btnPlaceOrder",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "btnPlaceOrder",
+				"usePageVariable": true
+			}
+		}
+	]
+}

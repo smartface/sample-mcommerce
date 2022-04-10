@@ -61,4 +61,9 @@ export default class Actions {
             payload: newRate
         };
     }
+    static EmptyTheBasket(){
+        return {
+            type: Constants.EMPTY_THE_BASKET
+        }
+    }
 }
