@@ -1,0 +1,56 @@
+{
+  ".flCheckoutSuccessful": {
+    "flexProps": {
+      "alignContent": "CENTER",
+      "justifyContent": "CENTER",
+      "flexGrow": 1
+    },
+    "&-imgSuccess": {
+      "height": 200,
+      "imageFillType": "ASPECTFIT",
+      "width": null
+    },
+    "&-lblTitle": {
+      "font": {
+        "bold": true,
+        "family": "Nunito",
+        "style": "Bold",
+        "italic": false,
+        "size": 25
+      },
+      "height": 70,
+      "marginTop": 25,
+      "textAlignment": "MIDCENTER",
+      "textColor": "${textDark}",
+      "maxLines": 2
+    },
+    "&-lblDescription": {
+      "textAlignment": "MIDCENTER",
+      "textColor": "${darkGray}",
+      "font": {
+        "size": 17,
+        "bold": false,
+        "italic": false,
+        "family": "Nunito",
+        "style": "Regular"
+      },
+      "maxLines": 2
+    },
+    "&-btnTrackOrder": {
+      "marginTop": 100
+    },
+    "&-lblHome": {
+      "font": {
+        "size": 16,
+        "bold": true,
+        "italic": false,
+        "family": "Nunito",
+        "style": "Bold"
+      },
+      "textAlignment": "MIDCENTER",
+      "textColor": "${textDark}"
+    },
+    "paddingLeft": 50,
+    "paddingRight": 50
+  }
+}

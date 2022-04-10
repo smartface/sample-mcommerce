@@ -152,6 +152,17 @@ SMF.i18n.defineLanguage('en', {
     addedToBasket: 'Added to Basket',
     address: 'Address',
     addressTitle:'Address Title',
-    save:'Save'
-
+    save:'Save',
+    checkout: 'Checkout',
+    delivery: 'Delivery',
+    payment: 'Payment',
+    promoCode: 'Promo Code',
+    totalCost: 'Total Cost',
+    checkoutTermsAndCond: 'By placing an order you agree to our Terms and Conditions',
+    placeOrder: 'Place Order',
+    payAtTheDoor: 'Pay at the door',
+    orderAccepted: 'Your order has been accepted',
+    onDelivery: 'Your items has been placed and is on it’s way to being processed',
+    trackOrder: 'Track Order',
+    backHome: 'Back to home'
 });

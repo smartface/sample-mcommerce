@@ -20,6 +20,8 @@ import LviDescription from '../components/LviDescription';
 import LviRow1LineLarge from '../components/LviRow1LineLarge';
 import LviNoAddress from '../components/LviNoAdress';
 import LviAddressList from '../components/LviAddressList';
+import LviCheckoutSuccessful from '../components/LviCheckoutSuccessful';
+import LviCheckout from '../components/LviCheckout';
 
 export enum LviTypes {
     LVI_ACCOUNT,
@@ -44,7 +46,9 @@ export enum LviTypes {
     LVI_NUTRITIONS,
     LVI_NO_ADDRESS,
     LVI_DESCRIPTION,
-    LVI_ADDRESS_LIST
+    LVI_ADDRESS_LIST,
+    LVI_CHECKOUT_SUCCESSFUL,
+    LVI_CHECKOUT
 }
 
 export const LviClasses = {
@@ -69,7 +73,10 @@ export const LviClasses = {
     [LviTypes.LVI_NUTRITIONS]: LviNutritions,
     [LviTypes.LVI_NO_ADDRESS]: LviNoAddress,
     [LviTypes.LVI_DESCRIPTION]: LviDescription,
-    [LviTypes.LVI_ADDRESS_LIST]: LviAddressList
+    [LviTypes.LVI_ADDRESS_LIST]: LviAddressList,
+    [LviTypes.LVI_CHECKOUT_SUCCESSFUL]: LviCheckoutSuccessful,
+    [LviTypes.LVI_CHECKOUT]: LviCheckout,
+
 };
 
 type SwipeAction = (...args: any[]) => Promise<void>;
@@ -132,6 +139,9 @@ export namespace ProcessorTypes {
     export interface ILviNoAddress extends IProcessed<LviNoAddress> {}
     export interface ILviDescription extends IProcessed<LviDescription> {}
     export interface ILviAddressList extends IProcessed<LviAddressList> {}
+    export interface ILviCheckoutSuccessful extends IProcessed<LviCheckoutSuccessful> {}
+    export interface ILviCheckout extends IProcessed<LviCheckout> {}
+
 }
 
 export function getLviGenericSlider(
@@ -351,10 +361,26 @@ export function getLviDescription(item: Partial<LviDescription>): ProcessorTypes
 export function getLviAddressList(item: Partial<LviAddressList>): ProcessorTypes.ILviAddressList {
     return {
         type: 'LVI_ADDRESS_LIST',
+        properties: { ...item, borders: [] },
+        height: LviAddressList.getHeight()
+    }
+}
+
+export function getLviCheckoutSuccessful(item: Partial<LviCheckoutSuccessful>): ProcessorTypes.ILviCheckoutSuccessful {
+    return {
+        type: 'LVI_CHECKOUT_SUCCESSFUL',
+        properties: { ...item, borders: [] },
+        height: LviCheckoutSuccessful.getScreenHeight()
+    };
+}
+
+export function getLviCheckout(item: Partial<LviCheckout>): ProcessorTypes.ILviCheckout {
+    return {
+        type: 'LVI_CHECKOUT',
         properties: {
             ...item,
             borders: []
         },
-        height: LviAddressList.getHeight()
-    };
+        height: LviCheckout.getHeight()
+    }
 }

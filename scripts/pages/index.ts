@@ -17,3 +17,4 @@ export { default as pgMyDetails } from './pgMyDetails';
 export { default as pgAddress } from './pgAddress';
 export { default as pgAddAddress } from './pgAddAddress';
 export { default as pgLaunchScreen } from './pgLaunchScreen';
+export { default as pgCheckoutSuccessful } from './pgCheckoutSuccessful';
