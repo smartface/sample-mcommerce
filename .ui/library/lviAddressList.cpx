@@ -1,0 +1,43 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviAddressList",
+			"hiddenComponent": true,
+			"id": "89f0-2e7b-24af-0117",
+			"props": {
+				"children": [
+					"f4bc-a4ba-7b19-f72a"
+				],
+				"name": "lviAddressList",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .lviAddressList-flAddressList",
+			"hiddenComponent": false,
+			"id": "f4bc-a4ba-7b19-f72a",
+			"props": {
+				"children": [],
+				"name": "flAddressList",
+				"parent": "89f0-2e7b-24af-0117",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__",
+				"type": "flAddressList",
+				"id": "486d-16c3-668d-75b4"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

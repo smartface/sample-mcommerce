@@ -1,0 +1,82 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flNoAdress",
+			"hiddenComponent": true,
+			"id": "30ba-d898-6d12-cddd",
+			"props": {
+				"children": [
+					"a69a-1c8a-ca29-ff94",
+					"a4f2-c43b-3138-1718",
+					"e055-0aaf-05fe-99b0"
+				],
+				"name": "flNoAddress",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-imageView .flNoAdress-imgIcon",
+			"id": "a69a-1c8a-ca29-ff94",
+			"oldName": "imgNoAddress",
+			"props": {
+				"children": [],
+				"name": "imgIcon",
+				"parent": "30ba-d898-6d12-cddd",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flNoAdress-lblTitle",
+			"id": "a4f2-c43b-3138-1718",
+			"oldName": "lblNoAddress",
+			"props": {
+				"children": [],
+				"name": "lblTitle",
+				"parent": "30ba-d898-6d12-cddd",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button-main .flNoAdress-btnAddAddress",
+			"id": "e055-0aaf-05fe-99b0",
+			"oldName": "btnAddAdress",
+			"props": {
+				"children": [],
+				"name": "btnAddAddress",
+				"parent": "30ba-d898-6d12-cddd",
+				"text": "Add Address",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "Add Address",
+				"usePageVariable": true
+			}
+		}
+	]
+}

@@ -29,6 +29,8 @@ export default class PgLaunchScreen extends withDismissAndBackButton(PgLaunchScr
         this.gifImageView = new GifImageView({
             //@ts-ignore
             gifImage : this.gifImage,
+            height: 400,
+            width: 400
         })
         this.launchDialog.layout.addChild(this.gifImageView);
         this.launchDialog.layout.applyLayout();
@@ -40,7 +42,7 @@ export default class PgLaunchScreen extends withDismissAndBackButton(PgLaunchScr
         setTimeout(() => { 
             this.launchDialog.hide();
             this.router.push("/btb/tab1/home");
-        }, 5000)
+        }, 2000)
 
     }
 

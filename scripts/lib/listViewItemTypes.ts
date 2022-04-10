@@ -17,8 +17,9 @@ import LviReview from '../components/LviReview';
 import LviReviewProduct from '../components/LviReviewProduct';
 import LviNutritions from '../components/LviNutritions';
 import LviDescription from '../components/LviDescription';
-
 import LviRow1LineLarge from '../components/LviRow1LineLarge';
+import LviNoAddress from '../components/LviNoAdress';
+import LviAddressList from '../components/LviAddressList';
 import LviCheckoutSuccessful from '../components/LviCheckoutSuccessful';
 import LviCheckout from '../components/LviCheckout';
 
@@ -43,7 +44,9 @@ export enum LviTypes {
     LVI_REVIEW,
     LVI_REVIEW_PRODUCT,
     LVI_NUTRITIONS,
+    LVI_NO_ADDRESS,
     LVI_DESCRIPTION,
+    LVI_ADDRESS_LIST,
     LVI_CHECKOUT_SUCCESSFUL,
     LVI_CHECKOUT
 }
@@ -68,7 +71,9 @@ export const LviClasses = {
     [LviTypes.LVI_REVIEW]: LviReview,
     [LviTypes.LVI_REVIEW_PRODUCT]: LviReviewProduct,
     [LviTypes.LVI_NUTRITIONS]: LviNutritions,
+    [LviTypes.LVI_NO_ADDRESS]: LviNoAddress,
     [LviTypes.LVI_DESCRIPTION]: LviDescription,
+    [LviTypes.LVI_ADDRESS_LIST]: LviAddressList,
     [LviTypes.LVI_CHECKOUT_SUCCESSFUL]: LviCheckoutSuccessful,
     [LviTypes.LVI_CHECKOUT]: LviCheckout,
 
@@ -131,7 +136,9 @@ export namespace ProcessorTypes {
     export interface ILviReview extends IProcessed<LviReview> {}
     export interface ILviReviewProduct extends IProcessed<LviReviewProduct> {}
     export interface ILviNutritions extends IProcessed<LviNutritions> {}
+    export interface ILviNoAddress extends IProcessed<LviNoAddress> {}
     export interface ILviDescription extends IProcessed<LviDescription> {}
+    export interface ILviAddressList extends IProcessed<LviAddressList> {}
     export interface ILviCheckoutSuccessful extends IProcessed<LviCheckoutSuccessful> {}
     export interface ILviCheckout extends IProcessed<LviCheckout> {}
 
@@ -334,6 +341,13 @@ export function getLviNutritions(item: Partial<LviNutritions>): ProcessorTypes.I
     };
 }
 
+export function getLviNoAddress(item: Partial<LviNoAddress>): ProcessorTypes.ILviNoAddress {
+    return {
+        type: 'LVI_NO_ADDRESS',
+        properties: { ...item, borders: [] },
+        height: LviNoAddress.getScreenHeightDivide2()
+    };
+}
 export function getLviDescription(item: Partial<LviDescription>): ProcessorTypes.ILviDescription {
     return {
         type: 'LVI_DESCRIPTION',
@@ -343,6 +357,13 @@ export function getLviDescription(item: Partial<LviDescription>): ProcessorTypes
         },
         height: LviDescription.getHeight({ text: item.description })
     };
+}
+export function getLviAddressList(item: Partial<LviAddressList>): ProcessorTypes.ILviAddressList {
+    return {
+        type: 'LVI_ADDRESS_LIST',
+        properties: { ...item, borders: [] },
+        height: LviAddressList.getHeight()
+    }
 }
 
 export function getLviCheckoutSuccessful(item: Partial<LviCheckoutSuccessful>): ProcessorTypes.ILviCheckoutSuccessful {
@@ -361,5 +382,5 @@ export function getLviCheckout(item: Partial<LviCheckout>): ProcessorTypes.ILviC
             borders: []
         },
         height: LviCheckout.getHeight()
-    };
+    }
 }

@@ -1,0 +1,19 @@
+{
+  ".lviAddressList": {
+    "flexProps": {},
+    "height": 180,
+    "&-flAddressList": {
+      "flex": {
+        "flexDirection": 0,
+        "positionType": 0
+      },
+      "flexProps": {
+        "flexDirection": "COLUMN",
+        "positionType": "RELATIVE"
+      },
+      "height": 180,
+      "left": 0,
+      "top": 0
+    }
+  }
+}

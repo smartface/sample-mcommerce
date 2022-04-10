@@ -88,6 +88,13 @@ export type Nutritions = {
     ingredients?: string;
 };
 
+export type Address = {
+    fullAddress: string,
+    title: string,
+    firstName: string,
+    lastName: string,
+    userId: number
+}
 export type CheckoutListItem = {
     title: string,
     description: string
