@@ -22,7 +22,7 @@ import LviNoAddress from '../components/LviNoAdress';
 import LviAddressList from '../components/LviAddressList';
 import LviCheckoutSuccessful from '../components/LviCheckoutSuccessful';
 import LviCheckout from '../components/LviCheckout';
-
+import LviSignup from '../components/LviSignup';
 export enum LviTypes {
     LVI_ACCOUNT,
     LVI_HOME_PRODUCTS,
@@ -48,7 +48,8 @@ export enum LviTypes {
     LVI_DESCRIPTION,
     LVI_ADDRESS_LIST,
     LVI_CHECKOUT_SUCCESSFUL,
-    LVI_CHECKOUT
+    LVI_CHECKOUT,
+    LVI_SIGNUP
 }
 
 export const LviClasses = {
@@ -76,6 +77,7 @@ export const LviClasses = {
     [LviTypes.LVI_ADDRESS_LIST]: LviAddressList,
     [LviTypes.LVI_CHECKOUT_SUCCESSFUL]: LviCheckoutSuccessful,
     [LviTypes.LVI_CHECKOUT]: LviCheckout,
+    [LviTypes.LVI_SIGNUP]: LviSignup
 
 };
 
@@ -141,6 +143,8 @@ export namespace ProcessorTypes {
     export interface ILviAddressList extends IProcessed<LviAddressList> {}
     export interface ILviCheckoutSuccessful extends IProcessed<LviCheckoutSuccessful> {}
     export interface ILviCheckout extends IProcessed<LviCheckout> {}
+    export interface ILviSignup extends IProcessed<LviSignup> {}
+
 
 }
 
@@ -382,5 +386,16 @@ export function getLviCheckout(item: Partial<LviCheckout>): ProcessorTypes.ILviC
             borders: []
         },
         height: LviCheckout.getHeight()
+    }
+}
+
+export function getLviSignup(item: Partial<LviSignup>): ProcessorTypes.ILviSignup {
+    return {
+        type: 'LVI_SIGNUP',
+        properties: {
+            ...item,
+            borders: []
+        },
+        height:LviSignup.getHeight()
     }
 }

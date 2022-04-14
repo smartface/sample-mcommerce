@@ -1,0 +1,50 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem",
+			"id": "3b48-2486-6f96-20f6",
+			"props": {
+				"children": [
+					"9b65-f91b-c98d-8672"
+				],
+				"name": "lviSignup",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flSignup",
+			"hiddenComponent": false,
+			"id": "9b65-f91b-c98d-8672",
+			"props": {
+				"children": [],
+				"name": "flSignup",
+				"parent": "3b48-2486-6f96-20f6",
+				"usePageVariable": true
+			},
+			"ref": null,
+			"source": {
+				"page": "__library__",
+				"type": "flSignup",
+				"id": "9f89-da80-ec50-6272"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0,
+				"usePageVariable": true
+			}
+		}
+	]
+}
