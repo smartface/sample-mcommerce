@@ -243,7 +243,9 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         visible: true
                     })
                 }),
-                productDetailRouter('/btb/tab3')
+                productDetailRouter('/btb/tab3'),
+                authRouteGenerator('/btb/tab3')
+
             ]
         }),
         StackRouter.of({

@@ -9,8 +9,8 @@
 					"2add-954c-d4b7-894b",
 					"500c-3bcb-4ec3-60b2",
 					"a911-c3a5-10e3-faa4",
-					"2cda-c1ac-9fa7-46b4",
-					"9ce3-ff54-2f48-67c6"
+					"9ce3-ff54-2f48-67c6",
+					"2cda-c1ac-9fa7-46b4"
 				],
 				"name": "flCheckoutSuccessful",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -80,26 +80,6 @@
 			}
 		},
 		{
-			"className": ".sf-button-main .flCheckoutSuccessful-btnTrackOrder",
-			"id": "2cda-c1ac-9fa7-46b4",
-			"oldName": "button1",
-			"props": {
-				"children": [],
-				"name": "btnTrackOrder",
-				"parent": "f729-014b-21c4-4386",
-				"text": "button1",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__"
-			},
-			"type": "Button",
-			"userProps": {
-				"text": "button1",
-				"usePageVariable": true
-			}
-		},
-		{
 			"className": ".sf-label .flCheckoutSuccessful-lblHome",
 			"id": "9ce3-ff54-2f48-67c6",
 			"oldName": "label1",
@@ -116,6 +96,26 @@
 			"type": "Label",
 			"userProps": {
 				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button-main .flCheckoutSuccessful-btnTrackOrder",
+			"id": "2cda-c1ac-9fa7-46b4",
+			"oldName": "button1",
+			"props": {
+				"children": [],
+				"name": "btnTrackOrder",
+				"parent": "f729-014b-21c4-4386",
+				"text": "button1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "button1",
 				"usePageVariable": true
 			}
 		}

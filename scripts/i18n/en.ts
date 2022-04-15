@@ -164,5 +164,6 @@ SMF.i18n.defineLanguage('en', {
     orderAccepted: 'Your order has been accepted',
     onDelivery: 'Your items has been placed and is on it’s way to being processed',
     trackOrder: 'Track Order',
-    backHome: 'Back to home'
+    backHome: 'Back to home',
+    checkoutLoginError: 'You must be logged in to go to the checkout page.'
 });

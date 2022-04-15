@@ -11,6 +11,7 @@ import { getProductImageUrl } from 'service/commerce';
 import setVisibility from 'lib/setVisibility';
 import { moneyFormatter } from 'lib/moneyFormatter';
 import { showCheckoutDialog } from 'lib/checkoutDialog';
+import {getAccessToken} from '../service/token';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -26,7 +27,28 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.flCartCheckout.onCheckoutClick = () => {
+            if(!getAccessToken()){
+                alert({
+                    title: global.lang.warning,
+                    message: global.lang.checkoutLoginError,
+                    buttons: [
+                        {
+                            text: global.lang.cancel,
+                            type: AlertView.Android.ButtonType.NEGATIVE,
+                            onClick: () => {}
+                        },
+                        {
+                            text: global.lang.login,
+                            type: AlertView.Android.ButtonType.POSITIVE,
+                            onClick: () => {
+                                router.push('pages/pgLogin');
+                            }
+                        }
+                    ]
+                });
+            }else{
             showCheckoutDialog(this.flCartCheckout.checkoutPrice);
+        }
         };
     }
     initListView() {

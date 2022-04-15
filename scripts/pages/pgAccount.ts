@@ -15,7 +15,7 @@ import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProfileImageUrl, putProfileImage } from 'service/commerce';
 import AlertView from '@smartface/native/ui/alertview';
-
+import {getAccessToken} from '../service/token';
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
     | ListViewItems.ProcessorTypes.ILviProfile
@@ -100,6 +100,9 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
         const processorItems = [accountItem, ListViewItems.getLviSpacerItem({ className: 'small' })];
         const accountMenus = store.getState().main.accountMenus;
         accountMenus.forEach((menu, index) => {
+            if(!getAccessToken() && menu.menuTitle == 'myDetails'){
+                return;
+            }
             processorItems.push(
                 ListViewItems.getLviAccount({
                     itemTitle: menu.menuTitle,
