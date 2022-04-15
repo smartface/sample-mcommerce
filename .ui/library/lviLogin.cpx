@@ -1,0 +1,41 @@
+{
+	"components": [
+		{
+			"className": ".sf-listViewItem .lviLogin",
+			"hiddenComponent": false,
+			"id": "2548-be7a-7402-2a32",
+			"props": {
+				"children": [
+					"8cfe-b3f4-e44d-d842"
+				],
+				"name": "lviLogin",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ListViewItem",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-flexLayout .flLogin",
+			"hiddenComponent": false,
+			"id": "8cfe-b3f4-e44d-d842",
+			"props": {
+				"children": [],
+				"name": "flLogin",
+				"parent": "2548-be7a-7402-2a32",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "flLogin",
+				"id": "2b60-e627-66a8-4b85"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		}
+	]
+}

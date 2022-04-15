@@ -1,0 +1,267 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flLogin",
+			"id": "2b60-e627-66a8-4b85",
+			"props": {
+				"children": [
+					"3c48-f92b-5eae-8758",
+					"9466-ac21-55ce-4b0e",
+					"b96d-67e6-cadc-39f3",
+					"9635-bef0-7984-9bd4"
+				],
+				"name": "flLogin",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {}
+		},
+		{
+			"className": ".sf-imageView .flLogin-imgLogo",
+			"hiddenComponent": false,
+			"id": "3c48-f92b-5eae-8758",
+			"oldName": "imageView1",
+			"props": {
+				"children": [],
+				"name": "imgLogo",
+				"parent": "2b60-e627-66a8-4b85"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"image": "logo.png",
+				"imageFillType": "ASPECTFIT"
+			}
+		},
+		{
+			"className": ".sf-label .flLogin-lblTitle .login.text-26-bold",
+			"id": "9466-ac21-55ce-4b0e",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblTitle",
+				"parent": "2b60-e627-66a8-4b85",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flLogin-lblText .login.text-16-bold",
+			"id": "b96d-67e6-cadc-39f3",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblText",
+				"parent": "2b60-e627-66a8-4b85",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flLogin-flForm",
+			"id": "9635-bef0-7984-9bd4",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"2fb8-b5fa-6932-d11a",
+					"c9a2-cb41-c47b-6626",
+					"aca3-ff86-72e7-5a39",
+					"a107-f987-bffb-e7a1",
+					"f517-eff5-bf7f-7990"
+				],
+				"name": "flForm",
+				"parent": "2b60-e627-66a8-4b85",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "2fb8-b5fa-6932-d11a",
+			"initialized": false,
+			"oldName": "materialTextBox",
+			"props": {
+				"children": [],
+				"name": "mtbEmail",
+				"parent": "9635-bef0-7984-9bd4",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".flexLayout .materialTextBox-wrapper",
+			"hiddenComponent": false,
+			"id": "c9a2-cb41-c47b-6626",
+			"initialized": false,
+			"oldName": "materialTextBox1",
+			"props": {
+				"children": [],
+				"name": "mtbPassword",
+				"parent": "9635-bef0-7984-9bd4",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__",
+				"type": "materialTextBox",
+				"id": "574a-10da-b765-48e5"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				},
+				"left": 0,
+				"top": 0,
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flLogin-lblForgotPassword .login.labelForgotPassword",
+			"id": "aca3-ff86-72e7-5a39",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblForgetPassword",
+				"parent": "9635-bef0-7984-9bd4",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button .sf-button-main",
+			"id": "a107-f987-bffb-e7a1",
+			"oldName": "button1",
+			"props": {
+				"children": [],
+				"name": "btnLogin",
+				"parent": "9635-bef0-7984-9bd4",
+				"text": "button1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "button1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .flLogin-flFooter",
+			"id": "f517-eff5-bf7f-7990",
+			"oldName": "flexLayout1",
+			"props": {
+				"children": [
+					"e6d4-027d-b51f-609a",
+					"1f0e-d35d-6cf0-21ec"
+				],
+				"name": "flFooter",
+				"parent": "9635-bef0-7984-9bd4",
+				"usePageVariable": false
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"usePageVariable": false
+			}
+		},
+		{
+			"className": ".sf-label .flLogin-lblLeft .login.labelLeft",
+			"id": "e6d4-027d-b51f-609a",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblLeft",
+				"parent": "f517-eff5-bf7f-7990",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flLogin-lblRouteSignUp .login.labelRoute",
+			"id": "1f0e-d35d-6cf0-21ec",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblRouteSignUp",
+				"parent": "f517-eff5-bf7f-7990",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		}
+	]
+}
