@@ -8,7 +8,7 @@
 				"children": [
 					"8b76-05f3-5f45-8c1e",
 					"5357-ac47-407b-a084",
-					"2040-54a0-940e-495a"
+					"a9a4-16dc-ab80-278c"
 				],
 				"name": "pgSignUp",
 				"orientation": "PORTRAIT",
@@ -34,7 +34,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar.transparent",
+			"className": " .sf-headerBar.main",
 			"id": "5357-ac47-407b-a084",
 			"props": {
 				"children": [],
@@ -49,206 +49,19 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout #pgSignUp-flContainer",
-			"id": "2040-54a0-940e-495a",
+			"className": ".sf-listView .grow",
+			"id": "a9a4-16dc-ab80-278c",
+			"oldName": "listView1",
 			"props": {
-				"children": [
-					"ce3e-3296-d0d0-537a",
-					"ed74-f53c-daaf-3d2f",
-					"ce9f-11e1-1af4-9da6",
-					"40d7-1892-4734-7a1b"
-				],
-				"name": "flContainer",
+				"children": [],
+				"name": "lvMain",
 				"parent": "85da-2fd3-8e39-c6d0",
 				"usePageVariable": true
 			},
-			"type": "FlexLayout",
+			"ref": null,
+			"type": "ListView",
 			"userProps": {
-				"testId": "HD_85tn3t",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-imageView #pgSignUp-flContainer-imgLogo",
-			"id": "ce3e-3296-d0d0-537a",
-			"props": {
-				"children": [],
-				"name": "imgLogo",
-				"parent": "2040-54a0-940e-495a"
-			},
-			"type": "ImageView",
-			"userProps": {
-				"image": "logo.png"
-			}
-		},
-		{
-			"className": ".sf-label #pgSignUp-flContainer-lblTitle .signup.lblTitle",
-			"id": "ed74-f53c-daaf-3d2f",
-			"props": {
-				"children": [],
-				"name": "lblTitle",
-				"parent": "2040-54a0-940e-495a",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"testId": "c0IeOywGJ",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-label #pgSignUp-flContainer-lblText .signup.lblText",
-			"id": "ce9f-11e1-1af4-9da6",
-			"props": {
-				"children": [],
-				"name": "lblText",
-				"parent": "2040-54a0-940e-495a",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"testId": "ig1_1Vjn2J",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-flexLayout #pgSignUp-flContainer-flForm",
-			"hiddenComponent": false,
-			"id": "40d7-1892-4734-7a1b",
-			"props": {
-				"children": [
-					"3bca-c747-c5c1-5e8f",
-					"ca30-4d81-0ae1-206d",
-					"efef-c8d5-44cf-b90d",
-					"8680-508c-a2b2-3977",
-					"b718-cb2e-2966-b1e1",
-					"fe91-7b0a-263b-7b5f"
-				],
-				"name": "flForm",
-				"parent": "2040-54a0-940e-495a"
-			},
-			"type": "FlexLayout",
-			"userProps": {}
-		},
-		{
-			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
-			"hiddenComponent": false,
-			"id": "3bca-c747-c5c1-5e8f",
-			"initialized": false,
-			"props": {
-				"children": [],
-				"name": "mtbFirstName",
-				"parent": "40d7-1892-4734-7a1b",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "materialTextBox",
-				"id": "574a-10da-b765-48e5"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"testId": "YF5E3mRog",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
-			"hiddenComponent": false,
-			"id": "ca30-4d81-0ae1-206d",
-			"initialized": false,
-			"props": {
-				"children": [],
-				"name": "mtbLastName",
-				"parent": "40d7-1892-4734-7a1b",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "materialTextBox",
-				"id": "574a-10da-b765-48e5"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"testId": "YF5E3mRog",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
-			"hiddenComponent": false,
-			"id": "efef-c8d5-44cf-b90d",
-			"initialized": false,
-			"props": {
-				"children": [],
-				"name": "mtbEmail",
-				"parent": "40d7-1892-4734-7a1b",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "materialTextBox",
-				"id": "574a-10da-b765-48e5"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"testId": "YF5E3mRog",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".flexLayout .materialTextBox-wrapper #pgSignUp-flContainer-flForm-mtbCommon",
-			"hiddenComponent": false,
-			"id": "8680-508c-a2b2-3977",
-			"initialized": false,
-			"props": {
-				"children": [],
-				"name": "mtbPassword",
-				"parent": "40d7-1892-4734-7a1b",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "materialTextBox",
-				"id": "574a-10da-b765-48e5"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"testId": "64dCtKq8CQ",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-textView #pgSignUp-flContainer-flForm-tvTermsAndPrivacy",
-			"id": "b718-cb2e-2966-b1e1",
-			"props": {
-				"children": [],
-				"html": "<br>",
-				"name": "tvTermsAndPrivacy",
-				"parent": "40d7-1892-4734-7a1b",
-				"text": "\n",
-				"usePageVariable": true
-			},
-			"type": "TextView",
-			"userProps": {
-				"html": "<br>",
-				"testId": "IBI6FgvPm",
-				"text": "\n",
-				"usePageVariable": true
-			}
-		},
-		{
-			"className": ".sf-button .sf-button-main",
-			"id": "fe91-7b0a-263b-7b5f",
-			"props": {
-				"children": [],
-				"name": "btnSignUp",
-				"parent": "40d7-1892-4734-7a1b",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"testId": "NudLl5Utk",
+				"testId": "RVqKo7zfr",
 				"usePageVariable": true
 			}
 		}

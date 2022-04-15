@@ -1,0 +1,50 @@
+{
+  ".flSignup": {
+    "flexProps": {
+      "flexGrow": 1
+    },
+    "&-imgLogo": {
+      "flexProps": {
+        "alignSelf": "CENTER",
+        "flexGrow": 1.5
+      },
+      "height": null,
+      "width": 70,
+      "imageFillType": "ASPECTFIT"
+    },
+    "&-lblTitle": {
+      "marginBottom": null,
+      "marginTop": null,
+      "marginLeft": 25,
+      "flexProps": {
+        "flexGrow": 0.5
+      }
+    },
+    "&-lblText": {
+      "flexProps": {
+        "flexGrow": 0.5
+      },
+      "marginBottom": 25,
+      "marginLeft": 25,
+      "marginTop": null,
+      "maxHeight": 35
+    },
+    "&-flForm": {
+      "flexProps": {
+        "flexGrow": 3
+      },
+      "height": null,
+      "paddingLeft": 25,
+      "paddingRight": 25,
+      "paddingBottom": 10
+    },
+    "&-mtbDefault": {
+      "borderColor": "${textLight}"
+    },
+    "&-tvTermsAndPrivacy": {
+      "backgroundColor": "${backgroundMain}",
+      "height": 70,
+      "maxLines": 2
+    }
+  }
+}
