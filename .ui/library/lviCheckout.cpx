@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviCheckout",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "d888-055e-1d8d-1b11",
 			"initialized": false,
 			"props": {

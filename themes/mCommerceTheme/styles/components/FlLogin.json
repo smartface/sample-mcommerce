@@ -1,0 +1,79 @@
+{
+  ".flLogin": {
+    "flexProps": {
+      "flexGrow": 1
+    },
+    "&-imgLogo": {
+      "flexProps": {
+        "alignSelf": "CENTER",
+        "flexGrow": 1.5,
+        "positionType": "RELATIVE"
+      },
+      "height": null,
+      "imageFillType": "NORMAL",
+      "marginBottom": 10,
+      "marginTop": null,
+      "width": 70
+    },
+    "&-lblTitle": {
+      "flexProps": {
+        "flexGrow": 0.5
+      },
+      "marginBottom": null,
+      "marginLeft": 25,
+      "marginTop": null,
+      "maxHeight": 35
+    },
+    "&-lblText": {
+      "flexProps": {
+        "flexGrow": 0.5
+      },
+      "marginLeft": 25,
+      "marginBottom": null,
+      "marginTop": null
+    },
+    "&-flForm": {
+      "flexProps": {
+        "flexGrow": 5
+      },
+      "": "10",
+      "marginTop": 10,
+      "marginLeft": 25,
+      "marginRight": 25
+    },
+    "&-lblForgotPassword": {
+      "marginBottom": 20,
+      "maxHeight": 25,
+      "textAlignment": "MIDRIGHT"
+    },
+    "&-flFooter": {
+      "flexProps": {
+        "flexDirection": "ROW",
+        "flexGrow": 1.5
+      },
+      "height": null,
+      "width": null
+    },
+    "&-lblLeft": {
+      "flexProps": {
+        "flexGrow": 5
+      },
+      "textAlignment": "MIDRIGHT",
+      "top": null,
+      "left": null
+    },
+    "&-lblRouteSignUp": {
+      "flexProps": {
+        "flexGrow": 3
+      },
+      "top": null,
+      "left": null,
+      "textAlignment": "MIDLEFT"
+    },
+    "&-flBottom": {
+      "flexProps": {
+        "flexGrow": 1
+      }
+    }
+  }
+}

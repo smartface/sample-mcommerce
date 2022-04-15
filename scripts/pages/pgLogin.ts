@@ -1,108 +1,55 @@
 import PgLoginDesign from 'generated/pages/pgLogin';
-import View from '@smartface/native/ui/view';
-import { Route, NativeStackRouter, BaseRouter as Router } from '@smartface/router';
+import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
-import Button from '@smartface/native/ui/button';
-import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constants';
-import { login } from 'service/auth';
 import { themeService } from 'theme';
-import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
+import * as ListViewItems from 'lib/listViewItemTypes';
+
+type Processor =
+    | ListViewItems.ProcessorTypes.ILviLogin
 
 export default class PgLogin extends withDismissAndBackButton(PgLoginDesign) {
-    isMailValid = false;
-    isPasswordValid = false;
+    private data: Processor[]
+
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.btnLogIn.on(Button.Events.Press, () => {
-            this.initUserLogin();
-        });
-        this.lblTitle.text = global.lang.login;
-        this.lblText.text = global.lang.loginSubText;
-        this.btnLogIn.text = global.lang.login;
     }
-    initMaterialTextBoxes() {
-        this.mtbLogin.materialTextBox.ios.clearButtonEnabled = true;
-        this.mtbLogin.enableErrorMessage = true;
-        this.mtbPassword.materialTextBox.ios.clearButtonEnabled = true;
-        this.mtbPassword.enableErrorMessage = true;
-        
-        this.mtbLogin.options = {
-            hint: global.lang.email
-        };
-        this.mtbPassword.options = {
-            hint: global.lang.password
-        };
-        this.mtbPassword.materialTextBox.isPassword = true;
+    initListView(){
+        this.lvMain.refreshEnabled = false;
+        this.lvMain.scrollEnabled = true;
+        this.lvMain.onRowType = onRowType.bind(this);
+        this.lvMain.onRowHeight = onRowHeight.bind(this);
+        this.lvMain.onRowCreate = onRowCreate.bind(this);
+        this.lvMain.onRowBind = onRowBind.bind(this);
     }
-    async initUserLogin() {
-        if (this.initValidate()) {
-            try {
-                showWaitDialog();
-                const response = await login({
-                    username: this.mtbLogin.materialTextBox.text,
-                    password: this.mtbPassword.materialTextBox.text
-                });
-                if (response && !!response?.access_token) {
-                    if (this.router instanceof NativeStackRouter) {
-                        this.router.dismiss();
-                    }
-                }
-            } catch (error) {
-                alert({
-                    title: global.lang.warning,
-                    message: global.lang.userNotFoundWithThisCredentials
-                });
-            } finally {
-                hideWaitDialog();
-            }
-        } else {
-            hideWaitDialog();
-            return;
-        }
+    refrestListView(){
+        this.data = this.processor();
+        this.lvMain.itemCount = this.data.length;
+        this.lvMain.refreshData();
     }
-    initValidate() {
-        let mailExist = !!this.mtbLogin.materialTextBox.text.replace(/\s+/g, '').trim();
-        let passwordExists = !!this.mtbPassword.materialTextBox.text.replace(/\s+/g, '').trim();
 
-        if (mailExist && this.checkIsEmailValid(this.mtbLogin.materialTextBox.text)) {
-            this.isMailValid = true;
-            this.mtbLogin.materialTextBox.errorMessage = '';
-        } else {
-            this.isMailValid = false;
-            this.mtbLogin.materialTextBox.errorMessage = global.lang.invalidEmail;
-        }
+    processor():Processor[]{
+        const processorItems = [];
+           processorItems.push(
+               ListViewItems.getLviLogin({
+                   router : this.router,
+               })
+           )
+        return processorItems;
+    }
+    
 
-        if (passwordExists && this.mtbPassword.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD) {
-            this.isPasswordValid = true;
-            this.mtbPassword.materialTextBox.errorMessage = '';
-        } else {
-            this.isPasswordValid = false;
-            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword.replace(
-                '$1',
-                MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD
-            );
-        }
-        if (this.isMailValid && this.isPasswordValid) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    checkIsEmailValid(email: string) {
-        return EMAIL_REGEXP.test(email);
-    }
     onShow() {
         super.onShow();
+        this.refrestListView();
         this.initDismissButton(this.router, {
-            color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
-        })
-        this.initBackButton(this.router, {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor
         });
     }
     onLoad() {
         super.onLoad();
-        this.headerBar.title = global.lang.loginHeader;
-        this.initMaterialTextBoxes();
+        this.headerBar.title = "";
+        this.initListView();
+
     }
 }

@@ -19,6 +19,7 @@ export default class PgCheckoutSuccessful extends withDismissAndBackButton(PgChe
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.onRowSwipe = onRowSwipe.bind(this);
         this.lvMain.refreshEnabled = false;
+        this.lvMain.scrollEnabled = false;
     }
     refreshListView(){
         this.data = this.processor();

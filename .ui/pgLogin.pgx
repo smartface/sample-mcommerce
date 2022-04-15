@@ -8,7 +8,7 @@
 				"children": [
 					"6e03-bc0b-218a-d1e2",
 					"f1b8-030b-a8b6-50f8",
-					"9503-8d4b-931f-3afe"
+					"ad2a-c2cd-8960-7d3b"
 				],
 				"name": "pgLogin",
 				"orientation": "PORTRAIT",
@@ -19,8 +19,7 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a",
-			"degree": 0
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -32,11 +31,10 @@
 				"parent": "aa9f-e1cb-2f7f-92d5"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
-			"className": ".sf-headerBar.transparent",
+			"className": ".sf-headerBar.main",
 			"id": "f1b8-030b-a8b6-50f8",
 			"props": {
 				"children": [],
@@ -48,247 +46,23 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgLogin"
-			},
-			"degree": 1
+			}
 		},
 		{
-			"className": ".sf-flexLayout #pgLogin-flcontainer",
-			"id": "9503-8d4b-931f-3afe",
+			"className": ".sf-listView .grow",
+			"id": "ad2a-c2cd-8960-7d3b",
+			"oldName": "lviMain",
 			"props": {
-				"children": [
-					"ecf9-7bb6-8155-123e",
-					"3a60-cc2c-259e-ab70",
-					"73fb-0516-a060-3970",
-					"b572-513a-69d9-501f",
-					"d06d-e448-80e3-b9eb"
-				],
-				"name": "flContainer",
+				"children": [],
+				"name": "lvMain",
 				"parent": "aa9f-e1cb-2f7f-92d5",
 				"usePageVariable": true
 			},
-			"type": "FlexLayout",
+			"type": "ListView",
 			"userProps": {
-				"testId": "MWUP6dCpO",
+				"testId": "psJhZ5Vor",
 				"usePageVariable": true
-			},
-			"degree": 1
-		},
-		{
-			"className": ".sf-imageView #pgLogin-logo",
-			"id": "ecf9-7bb6-8155-123e",
-			"props": {
-				"children": [],
-				"name": "imgLogo",
-				"parent": "9503-8d4b-931f-3afe"
-			},
-			"type": "ImageView",
-			"userProps": {
-				"image": "logo.png"
-			},
-			"degree": 2
-		},
-		{
-			"className": ".sf-label #pgLogin-title .login.text-26-bold",
-			"id": "3a60-cc2c-259e-ab70",
-			"props": {
-				"children": [],
-				"name": "lblTitle",
-				"parent": "9503-8d4b-931f-3afe",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"testId": "CmwM08kTW",
-				"usePageVariable": true
-			},
-			"degree": 2
-		},
-		{
-			"className": ".sf-label #pgLogin-text .login.text-16-bold",
-			"id": "73fb-0516-a060-3970",
-			"props": {
-				"children": [],
-				"name": "lblText",
-				"parent": "9503-8d4b-931f-3afe",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"testId": "r-xPY55LwX",
-				"usePageVariable": true
-			},
-			"degree": 2
-		},
-		{
-			"className": ".sf-flexLayout #pgLogin-flform",
-			"hiddenComponent": false,
-			"id": "b572-513a-69d9-501f",
-			"props": {
-				"children": [
-					"2357-5cc8-f049-3396",
-					"530e-ea35-e6ca-1809",
-					"bdfa-6292-509e-bad0",
-					"98b3-fdb6-61f4-2eb9",
-					"73b4-1e9e-72b6-ee15"
-				],
-				"name": "flForm",
-				"parent": "9503-8d4b-931f-3afe"
-			},
-			"type": "FlexLayout",
-			"userProps": {},
-			"degree": 2
-		},
-		{
-			"className": ".sf-flexLayout #pgLogin-flBottom",
-			"id": "d06d-e448-80e3-b9eb",
-			"oldName": "flexLayout1",
-			"props": {
-				"children": [],
-				"name": "flBottom",
-				"parent": "9503-8d4b-931f-3afe",
-				"usePageVariable": true
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true,
-				"testId": "rEN3Y-7tN"
-			},
-			"degree": 2
-		},
-		{
-			"className": ".flexLayout .materialTextBox-wrapper",
-			"hiddenComponent": false,
-			"id": "2357-5cc8-f049-3396",
-			"initialized": false,
-			"props": {
-				"children": [],
-				"name": "mtbLogin",
-				"parent": "b572-513a-69d9-501f",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "materialTextBox",
-				"id": "574a-10da-b765-48e5"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"testId": "cBMa7uQlv",
-				"usePageVariable": true
-			},
-			"degree": 3
-		},
-		{
-			"className": ".flexLayout .materialTextBox-wrapper",
-			"hiddenComponent": false,
-			"id": "530e-ea35-e6ca-1809",
-			"initialized": false,
-			"props": {
-				"children": [],
-				"name": "mtbPassword",
-				"parent": "b572-513a-69d9-501f",
-				"usePageVariable": true
-			},
-			"source": {
-				"page": "__library__",
-				"type": "materialTextBox",
-				"id": "574a-10da-b765-48e5"
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"testId": "TE1-YGpfO",
-				"usePageVariable": true
-			},
-			"degree": 3
-		},
-		{
-			"className": ".sf-label #pgLogin-lblForgotPassword .login.labelForgotPassword",
-			"id": "bdfa-6292-509e-bad0",
-			"props": {
-				"children": [],
-				"name": "lblForgotPassword",
-				"parent": "b572-513a-69d9-501f",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"testId": "oM3iP7eQ7",
-				"usePageVariable": true
-			},
-			"degree": 3
-		},
-		{
-			"className": ".sf-button .sf-button-main",
-			"id": "98b3-fdb6-61f4-2eb9",
-			"props": {
-				"children": [],
-				"name": "btnLogIn",
-				"parent": "b572-513a-69d9-501f",
-				"usePageVariable": true
-			},
-			"type": "Button",
-			"userProps": {
-				"testId": "LGkCVcClMB",
-				"usePageVariable": true
-			},
-			"degree": 3
-		},
-		{
-			"className": ".sf-flexLayout #pgLogin-flfooter",
-			"id": "73b4-1e9e-72b6-ee15",
-			"props": {
-				"children": [
-					"e85e-6514-edb3-f609",
-					"b60f-803f-5f9e-4650"
-				],
-				"name": "flFooter",
-				"parent": "b572-513a-69d9-501f",
-				"usePageVariable": true
-			},
-			"type": "FlexLayout",
-			"userProps": {
-				"testId": "lohe2xjAZ",
-				"usePageVariable": true
-			},
-			"degree": 3
-		},
-		{
-			"className": ".sf-label #pgLogin-lblLeft .login.labelLeft",
-			"hiddenComponent": true,
-			"id": "e85e-6514-edb3-f609",
-			"props": {
-				"children": [],
-				"name": "lblLeft",
-				"parent": "73b4-1e9e-72b6-ee15",
-				"text": "Don’t have an account? ",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"testId": "tpVhjtcbD",
-				"text": "Don’t have an account? ",
-				"usePageVariable": true
-			},
-			"degree": 4
-		},
-		{
-			"className": ".sf-label #pgLogin-lblRouteSignUp .login.labelRoute",
-			"hiddenComponent": true,
-			"id": "b60f-803f-5f9e-4650",
-			"props": {
-				"children": [],
-				"name": "lblRouteSignUp",
-				"parent": "73b4-1e9e-72b6-ee15",
-				"text": "Singup",
-				"usePageVariable": true
-			},
-			"type": "Label",
-			"userProps": {
-				"testId": "LItobv3NmQ",
-				"text": "Singup",
-				"usePageVariable": true
-			},
-			"degree": 4
+			}
 		}
 	]
 }
