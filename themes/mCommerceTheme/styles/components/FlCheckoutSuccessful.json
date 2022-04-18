@@ -37,7 +37,8 @@
       "maxLines": 2
     },
     "&-btnTrackOrder": {
-      "marginTop": 100
+      "marginTop": 100,
+      "visible": false
     },
     "&-lblHome": {
       "font": {

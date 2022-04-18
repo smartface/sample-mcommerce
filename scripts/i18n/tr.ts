@@ -163,5 +163,6 @@ SMF.i18n.defineLanguage('tr', {
     orderAccepted: 'Siparişiniz kabul edildi',
     onDelivery: 'Siparişiniz hazırlandı ve teslim edilmek üzere yola çıktı',
     trackOrder: 'Siparişi takip et',
-    backHome: 'Anasayfaya geri dön'
+    backHome: 'Anasayfaya geri dön',
+    checkoutLoginError: 'Ödeme sayfasına gitmek için giriş yapmalısınız.'
 });
