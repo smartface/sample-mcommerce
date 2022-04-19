@@ -7,6 +7,8 @@
 	<!-- Required for phone call functions. -->
 	<!-- <uses-permission android:name="android.permission.CALL_PHONE" /> -->
 	<!-- Required for Internet access by 3G, GSM and WIFI -->
+	<uses-sdk android:minSdkVersion="26"/>
+
 	<uses-permission android:name="android.permission.INTERNET" />
 	<!-- Required for GPS Usage. -->
 	<!-- <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> -->
@@ -62,7 +64,6 @@
 	${compatibleScreens}
 
 	${supportsScreens}
-	
 	
 	
 	<application  android:icon="@drawable/icon" android:supportsRtl="true" android:label="${ApplicationName}" android:largeHeap="true"  android:name="androidx.multidex.MultiDexApplication" android:requestLegacyExternalStorage="true" android:extractNativeLibs="true" android:allowNativeHeapPointerTagging="false">
