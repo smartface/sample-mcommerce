@@ -35,9 +35,9 @@ export default class FlLogin extends FlLoginDesign {
     
     private initMaterialBoxes() {
         this.mtbEmail.materialTextBox.ios.clearButtonEnabled = true;
-        this.mtbEmail.enableErrorMessage = true;
+        this.mtbEmail.android.enableErrorMessage = true;
         this.mtbPassword.materialTextBox.ios.clearButtonEnabled = true;
-        this.mtbPassword.enableErrorMessage = true;
+        this.mtbPassword.android.enableErrorMessage = true;
 
         this.mtbEmail.options = {
             hint: global.lang.email

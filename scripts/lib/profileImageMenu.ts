@@ -113,7 +113,7 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
 export const onCameraSelect = (opts: IPhotoEdit = {}) => {
     return permissionUtil
         .getPermission({
-            androidPermission: Application.Android.Permissions.CAMERA,
+            androidPermission: Application.Android.Permissions.CAMERA as any,
             permissionText: global.lang.cameraPermissionFail,
             iosPermission: permissionUtil.IOS_PERMISSIONS.CAMERA
         })
@@ -159,7 +159,7 @@ export const onCameraSelect = (opts: IPhotoEdit = {}) => {
 export const onGallerySelect = (opts: IPhotoEdit = {}) => {
     return permissionUtil
         .getPermission({
-            androidPermission: Application.Android.Permissions.READ_EXTERNAL_STORAGE,
+            androidPermission: Application.Android.Permissions.READ_EXTERNAL_STORAGE as any,
             permissionText: global.lang.galleryPermissionFail
         })
         .then(() => {
