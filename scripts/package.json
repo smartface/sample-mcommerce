@@ -6,7 +6,7 @@
 		"@smartface/mixins": "^5.0.0-alpha.0",
 		"@smartface/native": "^5.0.0-alpha",
 		"@smartface/router": "2.3.1",
-        "@smartface/source-map": "^5.0.0-alpha",
+		"@smartface/source-map": "^5.0.0-alpha",
 		"@smartface/styling-context": "5.0.0-alpha.5",
 		"redux": "^4.1.2",
 		"urijs": "^1.19.7"

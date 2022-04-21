@@ -635,10 +635,10 @@
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.7.0.tgz#9a06f4f137ee84d7df0460c1fdb1135ffa6c50fd"
   integrity sha512-ONhaKPIufzzrlNbqtWFFd+jlnemX6lJAgq9ZeiZtS7I1PIf/la7CW4m83rTXRnVnsMbW2k56pGYu7AUFJD9Pow==
 
-"@smartface/builder@0.9.0-rc.2":
-  version "0.9.0-rc.2"
-  resolved "https://registry.yarnpkg.com/@smartface/builder/-/builder-0.9.0-rc.2.tgz#128423a1de50af75f80e7a9983e10c172f900e8f"
-  integrity sha512-Q6nueT82nHEf4WAIFDoBPhqyjF1UI3GPs5CNsfwSdg6H1+jl+f4f2qxjGblJuZN3RXPH83SWB4GEYIWl3zbA1A==
+"@smartface/builder@^0.9.0-rc":
+  version "0.9.0-rc.6"
+  resolved "https://registry.yarnpkg.com/@smartface/builder/-/builder-0.9.0-rc.6.tgz#beae567215e9eef38eb1d431c20c3a0f7c19a1f6"
+  integrity sha512-MfQjX6GVKwNQGxhcD6cX76+QnAOzt8EJKZhyrI1YaLLp2UQuIh6MgNgCDZVxgKASLoQyFrt3BcU5TWsgkgIQ2g==
   dependencies:
     "@smartface/html-to-text" "^1.0.5"
     "@smartface/library-reader" "^0.8.4"
@@ -701,13 +701,6 @@
     minimist "^1.2.0"
     pngcrush "^3.0.0"
     rmdir "^1.2.0"
-
-"@smartface/library-reader@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@smartface/library-reader/-/library-reader-0.3.0.tgz#e8e15413dca16d26c1e4545c463e690c8ce68381"
-  integrity sha512-50phv5qLbxzoipDRsJTNp6nJkttMUfRNUR5YZAMyw1stsZvi0YNNEHDCzUr0yMkRJk1w8EkdlsrJhZ7zbGYw/A==
-  dependencies:
-    async "^2.6.1"
 
 "@smartface/library-reader@^0.8.4":
   version "0.8.4"
@@ -4676,10 +4669,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@4.6.0:
-  version "4.6.0-beta"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.0-beta.tgz#274a93fbde92a2c3a5507bbb5f70cb199cbadf40"
-  integrity sha512-xg5avH08DioTdxex568HFLHvnHWxGzpu9FK0ehLNwlqzx/kjy5/qEkBmkbPlvC9xs45bc7gbAbEhNqtczJsHAg==
+typescript@^4.6.0:
+  version "4.6.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.6.3.tgz#eefeafa6afdd31d725584c67a0eaba80f6fc6c6c"
+  integrity sha512-yNIatDa5iaofVozS/uQJEl3JRWLKKGJKh6Yaiv0GLGSuhpFJe7P3SbHZ8/yjAHRQwKRoA6YZqlfjXWmVzoVSMw==
 
 uglify-js@^3.1.4:
   version "3.15.4"

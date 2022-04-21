@@ -15,9 +15,9 @@
   integrity sha512-6vt4p7vAjb7t0te9KgBKTSbUB3UW2O3wPUaUpU9sWxeEFeXy/oTMmOtkhyj6ud0xmgglE3vYn3gyBmu8px4+uw==
 
 "@smartface/component-materialtextbox@^7.0.2":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@smartface/component-materialtextbox/-/component-materialtextbox-7.0.2.tgz#f84ce4b5c4e3929b55703aab1ac4f102047206bd"
-  integrity sha512-UDU4iJEqnrvlABnHt1odR2yw8DyuLovEV4Tc/65Lfvkqn09pBj2Dp8qpA6C0r5aBpJuvn7guKigBO+Q9HnJIeg==
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@smartface/component-materialtextbox/-/component-materialtextbox-7.0.3.tgz#d6bc57e678e7c4d78fd9a5029092786956b33520"
+  integrity sha512-w3Nu+9Oqy/leGqIdzoXPp3pq/3HwXgivCSgKbXdYcStMwOBUKO8d/potZYbSV9bss2TKCwXU2C0V3QGdSyxwjQ==
 
 "@smartface/contx@^4.2.0":
   version "4.2.6"
@@ -62,9 +62,9 @@
     "@smartface/core" "^5.0.0-alpha.0"
 
 "@smartface/native@^5.0.0-alpha":
-  version "5.0.0-alpha.46"
-  resolved "https://registry.yarnpkg.com/@smartface/native/-/native-5.0.0-alpha.46.tgz#0ec97b709afbefe2b5e309f9105e39365a956ad2"
-  integrity sha512-M422fS/cbOoatwXSoWAzxlq3JoVuVn7q2clys1/5dB7TW9uhFbib6ZPmfQ2BmNA9dqBUTrppm0tuV6+V2XSeTw==
+  version "5.0.0-beta.4"
+  resolved "https://registry.yarnpkg.com/@smartface/native/-/native-5.0.0-beta.4.tgz#6a4ceace2a72f4db5b88e38e95bc9f36b512f63e"
+  integrity sha512-Mm0bTyIQZ73GuN58IUGqEA17mS0cIZr7DKcEZDpOkILI1yeI6z1FOMGUOVePFECAnBw63OVe8bFdVaNw/uamow==
   dependencies:
     events "^3.3.0"
 
@@ -88,7 +88,7 @@
   resolved "https://registry.yarnpkg.com/@smartface/styler/-/styler-2.0.3.tgz#e144b4054faeffa4fa0432af0d84f48664dddee2"
   integrity sha512-GNYwWDQamYd6Qka9sI1kjZTsWbxEjPSRKlHOYLBaGT/CJfRXt7BOPyZS5yO8/6J/2LAdZE5VOko9By3fuJ+bWA==
 
-"@smartface/styling-context@5.0.0-alpha.8":
+"@smartface/styling-context@5.0.0-alpha.5":
   version "5.0.0-alpha.5"
   resolved "https://registry.yarnpkg.com/@smartface/styling-context/-/styling-context-5.0.0-alpha.5.tgz#141c2a2691dd44e17ed5062ffb9f31aede0c068f"
   integrity sha512-yFfza5zwlU3pl70o+hzc1RczRR4Qhp2Q6CnqZKdyfkTVRN3/DQjfHriYrZgPhyc59rCX82ILYIiE5MwCFS+QLg==
