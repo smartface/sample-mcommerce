@@ -1,4 +1,3 @@
-import { contextReducer } from '@smartface/contx/lib/smartface/pageContext';
 import AttributedString from '@smartface/native/ui/attributedstring';
 import Image from '@smartface/native/ui/image';
 import View from '@smartface/native/ui/view';

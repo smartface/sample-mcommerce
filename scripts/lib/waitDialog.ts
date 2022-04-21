@@ -1,6 +1,5 @@
 import Dialog from '@smartface/native/ui/dialog';
 import FlWaitDialog from 'components/FlWaitDialog';
-import componentContextPatch from '@smartface/contx/lib/smartface/componentContextPatch';
 import { themeService } from 'theme';
 import FlexLayout from '@smartface/native/ui/flexlayout';
 
