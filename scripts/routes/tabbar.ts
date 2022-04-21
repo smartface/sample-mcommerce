@@ -1,6 +1,6 @@
 import Image from '@smartface/native/ui/image';
 import TabBarItem from '@smartface/native/ui/tabbaritem';
-import { BottomTabBarRouter, NativeStackRouter as StackRouter, Route, Router } from '@smartface/router';
+import { BottomTabBarRouter, NativeStackRouter, Route } from '@smartface/router';
 import store from 'store/index';
 import authRouteGenerator from './auth';
 import { themeService } from 'theme';
@@ -79,7 +79,7 @@ const androidModalDismiss = (router, route) => {
 };
 
 function productDetailRouter(basePath: string) {
-    return StackRouter.of({
+    return NativeStackRouter.of({
         path: `${basePath}/productDetail`,
         to: `${basePath}/productDetail/main`,
         modal: true,
@@ -150,7 +150,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
     // tab1
     routes: [
         // tab1
-        StackRouter.of({
+        NativeStackRouter.of({
             path: '/btb/tab1',
             to: '/btb/tab1/home',
             routes: [
@@ -167,7 +167,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     })
                 }),
                 productDetailRouter('/btb/tab1'),
-                StackRouter.of({
+                NativeStackRouter.of({
                     path: '/btb/tab1/categoryDetail',
                     to: '/btb/tab1/categoryDetail/main',
                     modal: true,
@@ -190,7 +190,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             ]
         }),
         // tab2
-        StackRouter.of({
+        NativeStackRouter.of({
             path: '/btb/tab2',
             to: '/btb/tab2/categories',
             routes: [
@@ -205,7 +205,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         visible: true
                     })
                 }),
-                StackRouter.of({
+                NativeStackRouter.of({
                     path: '/btb/tab2/categoryDetail',
                     to: '/btb/tab2/categoryDetail/main',
                     modal: true,
@@ -227,7 +227,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 })
             ]
         }),
-        StackRouter.of({
+        NativeStackRouter.of({
             path: '/btb/tab3',
             to: '/btb/tab3/cart',
             routes: [
@@ -248,7 +248,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
 
             ]
         }),
-        StackRouter.of({
+        NativeStackRouter.of({
             path: '/btb/tab4',
             to: '/btb/tab4/favorites',
             routes: [
@@ -267,7 +267,7 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 productDetailRouter('/btb/tab4')
             ]
         }),
-        StackRouter.of({
+        NativeStackRouter.of({
             path: '/btb/tab5',
             to: '/btb/tab5/account',
             routes: [

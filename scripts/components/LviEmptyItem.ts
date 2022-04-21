@@ -1,7 +1,7 @@
 import { themeService } from 'theme';
 import Screen from '@smartface/native/device/screen';
-import Image from '@smartface/native/ui/image';
 import LviEmptyItemDesign from 'generated/my-components/LviEmptyItem';
+import { IImage } from '@smartface/native/ui/image/image';
 
 export default class LviEmptyItem extends LviEmptyItemDesign {
     pageName?: string | undefined;
@@ -22,10 +22,10 @@ export default class LviEmptyItem extends LviEmptyItemDesign {
     set emptyTitle(value: string) {
         this.flEmptyItem.lblEmptyTitle.text = value;
     }
-    get emptyImage(): string | Image {
+    get emptyImage(): string | IImage {
         return this.flEmptyItem.imgEmpty.image;
     }
-    set emptyImage(value: string | Image) {
+    set emptyImage(value: string | IImage) {
         this.flEmptyItem.imgEmpty.image = value;
     }
     get mainOnClick(): () => void {

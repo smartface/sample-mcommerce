@@ -1,7 +1,7 @@
 import LviNoAdressDesign from 'generated/my-components/LviNoAdress';
-import Image from '@smartface/native/ui/image';
 import Screen from '@smartface/native/device/screen';
 import { themeService } from 'theme';
+import { IImage } from '@smartface/native/ui/image/image';
 
 export default class LviNoAdress extends LviNoAdressDesign {
     pageName?: string | undefined;
@@ -22,10 +22,10 @@ export default class LviNoAdress extends LviNoAdressDesign {
     set title(value:string){
         this.flNoAddress.title = value;
     }
-    get image():string | Image{
+    get image():string | IImage{
         return this.flNoAddress.image;
     }
-    set image(value:string | Image){
+    set image(value:string | IImage){
         this.flNoAddress.image = value;
     }
     get buttonText():string{

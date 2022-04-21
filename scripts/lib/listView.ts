@@ -10,6 +10,7 @@ import genericErrorHandler from 'lib/genericErrorHandler';
 import Image from '@smartface/native/ui/image';
 import Page from '@smartface/native/ui/page';
 import { themeService } from 'theme';
+import SwipeItem from '@smartface/native/ui/swipeitem';
 
 const isIOS = System.OS === System.OSType.IOS;
 const SwipeImages = {
@@ -73,8 +74,8 @@ const swipeAndroidWorkaroundMethod = (page: Page) => {
     }
 };
 
-function initSwipeItem(itemOptions?: SwipeItemOptions): StyleContextComponentType<ListView.SwipeItem> {
-    const swipeItem = new ListView.SwipeItem() as StyleContextComponentType<ListView.SwipeItem>;
+function initSwipeItem(itemOptions?: SwipeItemOptions): StyleContextComponentWithDispatch<SwipeItem> {
+    const swipeItem = new ListView.SwipeItem() as StyleContextComponentWithDispatch<SwipeItem>;
     themeService.addPage(createPageContext(swipeItem, itemOptions.contextName), itemOptions.contextName);
     swipeItem.text = itemOptions.text || '';
     if (itemOptions.icon) {

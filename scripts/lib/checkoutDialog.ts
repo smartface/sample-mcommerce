@@ -22,7 +22,7 @@ function initDialog(totalCost: string | number) {
             themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
             cancelable: false
         }
-    }) as StyleContextComponentType<Dialog>
+    });
 
     const component = new FlCheckout();
     component.items = checkoutListItems;
@@ -31,16 +31,18 @@ function initDialog(totalCost: string | number) {
     component.btnPlaceOrder.text = global.lang.placeOrder;
     component.lblDissmisIcon.onTouchEnded = () => {
         hideCheckoutDialog();
+        return true;
     }
     component.btnPlaceOrder.onTouchEnded = () => {
         hideCheckoutDialog();
         store.dispatch(storeActions.EmptyTheBasket());
         router.push('/pgCheckoutSuccessful/main');
+        return true;
 
     }
     themeService.addGlobalComponent(component, 'flCheckout');
     themeService.addGlobalComponent(dialog.layout, 'dialogCheckout');
-    (dialog.layout as StyleContextComponentType<FlexLayout>).dispatch({
+    (dialog.layout as StyleContextComponentWithDispatch<FlexLayout>).dispatch({
         type: 'pushClassNames',
         classNames: '.dialogCheckout'
     });

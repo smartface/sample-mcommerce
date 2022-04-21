@@ -1,6 +1,6 @@
 import LviCheckoutSuccessfulDesign from 'generated/my-components/LviCheckoutSuccessful';
 import Screen from '@smartface/native/device/screen';
-import Image from '@smartface/native/ui/image';
+import { IImage } from '@smartface/native/ui/image/image';
 export default class LviCheckoutSuccessful extends LviCheckoutSuccessfulDesign {
     pageName?: string | undefined;
     constructor(props?: any, pageName?: string) {
@@ -11,10 +11,10 @@ export default class LviCheckoutSuccessful extends LviCheckoutSuccessfulDesign {
     static getScreenHeight(): number {
         return Screen.height / 1.1;
     }
-    get image():string | Image{
+    get image():string | IImage{
         return this.flCheckoutSuccessful.image;
     }
-    set image(value:string | Image){
+    set image(value:string | IImage){
         this.flCheckoutSuccessful.image = value;
     }
     get title():string{

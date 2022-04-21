@@ -11,7 +11,7 @@ import { User } from 'types';
 import LviSpacer from 'generated/my-components/LviSpacer';
 import LviProfile from 'components/LviProfile';
 import LviRow2LineButton from 'components/LviRow2LineButton';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProfileImageUrl, putProfileImage } from 'service/commerce';
 import AlertView from '@smartface/native/ui/alertview';

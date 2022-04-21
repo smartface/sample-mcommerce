@@ -1,7 +1,7 @@
 import PgNotificationsDesign from 'generated/pages/pgNotifications';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { getLviRow1LineLarge } from 'lib/listViewItemTypes';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
 

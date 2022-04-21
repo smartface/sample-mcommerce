@@ -1,4 +1,4 @@
-import Image from '@smartface/native/ui/image';
+import { IImage } from '@smartface/native/ui/image/image';
 import View from '@smartface/native/ui/view';
 import FlProductDetailTitleSectionDesign from 'generated/my-components/FlProductDetailTitleSection';
 
@@ -9,7 +9,7 @@ export default class FlProductDetailTitleSection extends FlProductDetailTitleSec
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-        this.imgFavorite.on(View.Events.TouchEnded, () => {
+        this.imgFavorite.on('touchEnded', () => {
             this.__onFavoriteClick && this.__onFavoriteClick();
         });
     }
@@ -25,10 +25,10 @@ export default class FlProductDetailTitleSection extends FlProductDetailTitleSec
     set productMeas(value: string) {
         this.lblProductMeas.text = value;
     }
-    get favoriteImg(): string | Image {
+    get favoriteImg(): string | IImage {
         return this.imgFavorite.image;
     }
-    set favoriteImg(value: string | Image) {
+    set favoriteImg(value: string | IImage) {
         this.imgFavorite.image = value;
     }
     get onFavoriteClick(): (...args) => void {

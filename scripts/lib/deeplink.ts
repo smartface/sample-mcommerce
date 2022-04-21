@@ -12,7 +12,7 @@ type ApplicationCallReceivedParams = {
     url: string;
 };
 
-Application.on(Application.Events.ApplicationCallReceived, (params: ApplicationCallReceivedParams) => deeplinkHandler(params));
+Application.on('applicationCallReceived', (params: ApplicationCallReceivedParams) => deeplinkHandler(params));
 
 Application.ios.onUserActivityWithBrowsingWeb = (url) => {
     deeplinkHandler({ url });
@@ -49,7 +49,7 @@ export function generateProductDeeplinkUrl(productId: string) {
     return config.environments[getCurrentEnvironment()].serviceUrl + '/deeplink/redirect?productId=' + productId;
 }
 
-// Application.emit(Application.Events.ApplicationCallReceived, {
+// Application.emit('applicationCallReceived', {
 //     //@ts-ignore
 //     url: 'https://smartapps-commerce.smartface.io/deeplink/redirect?productId=61ee8df32bd310de954a2712'
 // });

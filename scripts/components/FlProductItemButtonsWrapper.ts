@@ -10,10 +10,10 @@ export default class FlProductItemButtonsWrapper extends FlProductItemButtonsWra
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
-        this.btnPlus.on(Button.Events.Press, () => {
+        this.btnPlus.on('press', () => {
             this?._plusClick();
         });
-        this.btnMinus.on(Button.Events.Press, () => {
+        this.btnMinus.on('press', () => {
             this?._minusClick();
         });
         this.aiMinus.android.zIndex = 99;

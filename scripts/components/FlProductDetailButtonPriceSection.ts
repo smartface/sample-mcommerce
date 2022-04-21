@@ -15,10 +15,10 @@ export default class FlProductDetailButtonPriceSection extends FlProductDetailBu
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-        this.imgMinus.on(View.Events.TouchEnded, () => {
+        this.imgMinus.on('touchEnded', () => {
             this.__onMinusClick && this.__onMinusClick();
         });
-        this.imgPlus.on(View.Events.TouchEnded, () => {
+        this.imgPlus.on('touchEnded', () => {
             this.__onPlusClick && this.__onPlusClick();
         });
     }

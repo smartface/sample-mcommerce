@@ -9,7 +9,7 @@ export default class FlCartCheckout extends FlCartCheckoutDesign {
         this.pageName = pageName;
         //NTVE-434 related to this zIndex
         this.lblCartCheckoutPrice.android.zIndex = 99;
-        this.btnCartCheckout.on(Button.Events.Press, () => {
+        this.btnCartCheckout.on('press', () => {
             this?._onCheckoutClick();
         });
     }

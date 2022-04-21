@@ -1,6 +1,6 @@
 // import * as Actions from 'duck/actions';
 import genericErrorHandler from 'lib/genericErrorHandler';
-import Blob from '@smartface/native/blob';
+import Blob from '@smartface/native/global/blob';
 import Data from '@smartface/native/global/data';
 import { ACCESS_TOKEN, REFRESH_TOKEN, ID_TOKEN } from 'constants/deviceVariables.json';
 

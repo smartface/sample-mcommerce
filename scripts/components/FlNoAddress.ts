@@ -1,5 +1,5 @@
 import Button from '@smartface/native/ui/button';
-import Image from '@smartface/native/ui/image';
+import { IImage } from '@smartface/native/ui/image/image';
 import FlNoAddressDesign from 'generated/my-components/FlNoAddress';
 import router from 'routes';
 
@@ -9,7 +9,7 @@ export default class FlNoAddress extends FlNoAddressDesign {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-        this.btnAddAddress.on(Button.Events.Press, ()=>{
+        this.btnAddAddress.on('press', ()=>{
             router.push('/btb/tab5/addAddress')
         })
     }
@@ -19,10 +19,10 @@ export default class FlNoAddress extends FlNoAddressDesign {
     set title(value:string){
         this.lblTitle.text = value;
     }
-    get image():string | Image{
+    get image():string | IImage{
         return this.imgIcon.image;
     }
-    set image(value: string | Image){
+    set image(value: string | IImage){
         this.imgIcon.image = value;
     }
     get buttonText():string{

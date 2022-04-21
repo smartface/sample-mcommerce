@@ -2,7 +2,7 @@ import Button from '@smartface/native/ui/button';
 import FlLoginDesign from 'generated/my-components/FlLogin';
 import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constants';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
-import { NativeStackRouter, BaseRouter as Router } from '@smartface/router';
+import { NativeStackRouter, Router } from '@smartface/router';
 import { login } from 'service/auth';
 
 export default class FlLogin extends FlLoginDesign {
@@ -14,7 +14,7 @@ export default class FlLogin extends FlLoginDesign {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-        this.btnLogin.on(Button.Events.Press, () => {
+        this.btnLogin.on('press', () => {
             this.initUserLogin();
         });
         this.lblTitle.text = global.lang.login;

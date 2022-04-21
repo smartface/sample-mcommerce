@@ -18,13 +18,13 @@ export default class FlRow2LineButton extends FlRow2LineButtonDesign {
         super(props);
         this.pageName = pageName;
 
-        this.btnMain.on(Button.Events.Press, () => {
+        this.btnMain.on('press', () => {
             this.__mainOnClick && this.__mainOnClick();
         });
-        this.lblLeft.on(Label.Events.TouchEnded, () => {
+        this.lblLeft.on('touchEnded', () => {
             this.__bottomLeftOnClick && this.__bottomLeftOnClick();
         });
-        this.lblRight.on(Label.Events.TouchEnded, () => {
+        this.lblRight.on('touchEnded', () => {
             this.__bottomRightOnClick && this.__bottomRightOnClick();
         });
     }

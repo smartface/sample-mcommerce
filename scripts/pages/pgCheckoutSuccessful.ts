@@ -1,7 +1,7 @@
 import PgCheckoutSuccessfulDesign from 'generated/pages/pgCheckoutSuccessful';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/listView';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import * as ListViewItems from 'lib/listViewItemTypes';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCheckoutSuccessful;

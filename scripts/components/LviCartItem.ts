@@ -20,13 +20,13 @@ export default class LviCartItem extends LviCartItemDesign {
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
-        this.btnCartPlus.on(Button.Events.Press, () => {
+        this.btnCartPlus.on('press', () => {
             this._value?.();
         });
-        this.btnCartMinus.on(Button.Events.Press, () => {
+        this.btnCartMinus.on('press', () => {
             this._valueMinus?.();
         });
-        this.btnClose.on(Button.Events.Press, () => {
+        this.btnClose.on('press', () => {
             this._removeValue?.();
         });
     }

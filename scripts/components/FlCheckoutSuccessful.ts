@@ -1,4 +1,4 @@
-import Image from '@smartface/native/ui/image';
+import { IImage } from '@smartface/native/ui/image/image';
 import View from '@smartface/native/ui/view';
 import FlCheckoutSuccessfulDesign from 'generated/my-components/FlCheckoutSuccessful';
 import router from 'routes';
@@ -10,14 +10,14 @@ export default class FlCheckoutSuccessful extends FlCheckoutSuccessfulDesign {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-        this.lblHome.on(View.Events.TouchEnded, () => {
+        this.lblHome.on('touchEnded', () => {
             router.push('/btb')
         });
     }
-    get image(): string | Image {
+    get image(): string | IImage {
         return this.imgSuccess.image;
     }
-    set image(value: string | Image) {
+    set image(value: string | IImage) {
         this.imgSuccess.image = value;
     }
     get title(): string {

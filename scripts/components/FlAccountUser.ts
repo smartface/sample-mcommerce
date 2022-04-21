@@ -14,7 +14,7 @@ export default class FlAccountUser extends FlAccountUserDesign {
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
-        this.lblEditIcon.on(View.Events.TouchEnded, () => {
+        this.lblEditIcon.on('touchEnded', () => {
             this._value && this._value();
         });
     }

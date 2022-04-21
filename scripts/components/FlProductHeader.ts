@@ -1,4 +1,3 @@
-import { touchSupported } from '@smartface/native/device/screen';
 import View from '@smartface/native/ui/view';
 import FlProductHeaderDesign from 'generated/my-components/FlProductHeader';
 
@@ -9,7 +8,7 @@ export default class FlProductHeader extends FlProductHeaderDesign {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-        this.lblSeeAll.on(View.Events.TouchEnded, () => {
+        this.lblSeeAll.on('touchEnded', () => {
             this._onSeeAllClick && this._onSeeAllClick();
         });
     }

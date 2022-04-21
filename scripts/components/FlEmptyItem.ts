@@ -1,4 +1,4 @@
-import Image from '@smartface/native/ui/image';
+import { IImage } from '@smartface/native/ui/image/image';
 import ImageView from '@smartface/native/ui/imageview';
 import FlEmptyItemDesign from 'generated/my-components/FlEmptyItem';
 
@@ -8,7 +8,7 @@ export default class FlEmptyItem extends FlEmptyItemDesign {
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
-        this.imgEmpty.on(ImageView.Events.TouchEnded, () => {
+        this.imgEmpty.on('touchEnded', () => {
             this.__mainOnClick && this.__mainOnClick();
         });
     }
@@ -18,10 +18,10 @@ export default class FlEmptyItem extends FlEmptyItemDesign {
     set emptyTitle(value: string) {
         this.lblEmptyTitle.text = value;
     }
-    get emptyImage(): string | Image {
+    get emptyImage(): string | IImage {
         return this.imgEmpty.image;
     }
-    set emptyImage(value: string | Image) {
+    set emptyImage(value: string | IImage) {
         this.imgEmpty.image = value;
     }
     get mainOnClick(): (...args) => void {

@@ -7,21 +7,24 @@ type DialogOpts = {
     closeOnTouch?: boolean;
 };
 
-export default function (component: FlexLayout, opts?: DialogOpts): StyleContextComponentType<Dialog> {
-    const dialog: StyleContextComponentType<Dialog> = new Dialog({
+export default function (component: FlexLayout, opts?: DialogOpts): Dialog {
+    const dialog: Dialog = new Dialog({
         android: {
             themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
             cancelable: false
         }
-    }) as StyleContextComponentType<Dialog>;
+    });
     themeService.addGlobalComponent(dialog.layout as any /** to be fixed with stylingcontext next version */, 'genericDialog');
-    (dialog.layout as StyleContextComponentType<FlexLayout>).dispatch({
+    (dialog.layout as StyleContextComponentWithDispatch<FlexLayout>).dispatch({
         type: 'pushClassNames',
         classNames: [opts?.className || '.dialog']
     });
     dialog.android.isTransparent = false;
     if (opts?.closeOnTouch) {
-        dialog.layout.onTouchEnded = (isInside) => isInside && dialog.hide();
+        dialog.layout.onTouchEnded = (isInside) => {
+            isInside && dialog.hide();
+            return true;
+        };
     }
     component.onTouch = () => {
         return true;

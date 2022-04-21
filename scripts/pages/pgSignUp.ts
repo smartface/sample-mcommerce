@@ -2,7 +2,7 @@ import PgSignUpDesign from 'generated/pages/pgSignUp';
 import Color from '@smartface/native/ui/color';
 import Application from '@smartface/native/application';
 import System from '@smartface/native/device/system';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
 import * as ListViewItems from 'lib/listViewItemTypes';

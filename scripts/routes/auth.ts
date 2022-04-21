@@ -1,8 +1,8 @@
-import { NativeStackRouter as StackRouter, Route, Router } from '@smartface/router';
+import { NativeStackRouter, Route, NativeRouter } from '@smartface/router';
 import * as Pages from 'pages';
 
 export default function (basePath: string) {
-    return StackRouter.of({
+    return NativeStackRouter.of({
         path: `${basePath}/pages`,
         to: `${basePath}/pages/pgWelcome`,
         modal: true,
@@ -11,7 +11,7 @@ export default function (basePath: string) {
                 path: `${basePath}/pages/pgLogin`,
                 build(router, route) {
                     const page = new Pages.pgLogin(router, route);
-                    Router.getActiveRouter().setState({ view: page });
+                    NativeRouter.getActiveRouter().setState({ view: page });
                     return page;
                 },
                 headerBarParams: () => ({
@@ -22,7 +22,7 @@ export default function (basePath: string) {
                 path: `${basePath}/pages/pgSignUp`,
                 build(router, route) {
                     const page = new Pages.pgSignUp(router, route);
-                    Router.getActiveRouter().setState({ view: page });
+                    NativeRouter.getActiveRouter().setState({ view: page });
                     return page;
                 },
                 headerBarParams: () => ({

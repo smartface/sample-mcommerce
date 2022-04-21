@@ -1,4 +1,4 @@
-import Data from '@smartface/native/data';
+import Data from '@smartface/native/global/data';
 import config from 'config.json';
 import { CURRENT_ENVIRONMENT } from 'constants/deviceVariables.json';
 

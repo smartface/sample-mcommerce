@@ -14,11 +14,11 @@ function initWaitDialog() {
             cancelable: false,
             isTransparent: true
         }
-    }) as StyleContextComponentType<Dialog>;
+    }) as StyleContextComponentWithDispatch<Dialog>;
     const component = new FlWaitDialog();
     themeService.addGlobalComponent(component as any, 'flWaitDialog');
     themeService.addGlobalComponent(dialog.layout as any, 'waitDialog');
-    (dialog.layout as StyleContextComponentType<FlexLayout>).dispatch({
+    (dialog.layout as StyleContextComponentWithDispatch<FlexLayout>).dispatch({
         type: 'pushClassNames',
         classNames: '.dialog-transparent'
     });
