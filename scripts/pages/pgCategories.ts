@@ -9,7 +9,8 @@ import { getCategories } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 
 export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
-    categories: Categories[];
+    categories: Categories[] = Array.from({ length: 10 }).map((_, index: number) => (
+        { _id: "1", borderColor: "#D2D2D2", title: "", categoryImg: "", menuColor: "#FFFFFF" }));
     initialized = false;
     constructor(private router?: Router, private route?: Route) {
         super({});
@@ -33,6 +34,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
             GridViewItem.flCategoryItemWrapperBackgroundColor = this.categories[index].menuColor;
             GridViewItem.categoryTitle = this.categories[index].title;
             GridViewItem.imageUrl = this.categories[index]._id;
+            this.initialized ? GridViewItem.stopShimmering() : GridViewItem.startShimmering();
         };
         this.categoriesGrid.onItemSelected = (GridViewItem: categoriesItem, index: number) => {
             this.router.push('categoryDetail', {
@@ -48,7 +50,6 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
     }
     async fetchCategories() {
         try {
-            showWaitDialog();
             this.categories = await getCategories();
             if (this.categories) {
                 this.refreshGridView();
@@ -58,14 +59,17 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
         } finally {
             this.categoriesGrid.stopRefresh();
             this.initialized = true;
-            hideWaitDialog();
         }
     }
 
     onShow() {
         super.onShow();
+        this.refreshGridView();
         if (!this.initialized) {
-            this.fetchCategories();
+            setTimeout(() => {
+                this.fetchCategories();
+            }, 500);
+            
         }
     }
     onLoad() {
