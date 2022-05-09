@@ -87,10 +87,13 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
                     }
                 }, 500);
             };
+            this.initialized ? GridViewItem.stopShimmering() : GridViewItem.startShimmering()
         };
+        if(this.initialized){
         this.gvProducts.onItemSelected = (gridViewItem: GviProductItem, productIndex: number) => {
             this.onProductClick(this.items[productIndex]);
         };
+    }
 
     }
     refreshGridView() {
@@ -100,14 +103,5 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
         this.gvProducts.refreshData();
 
     }
-    startShimmering() {
-        this.sflHomeProductContainer.startShimmering();
-        this.dispatch({
-            type: 'updateUserStyle',
-            userStyle: {
-                backgroundColor: '#D2D2D2'
-            }
-        });
-
-    }
+    
 }

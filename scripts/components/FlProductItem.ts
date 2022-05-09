@@ -174,4 +174,74 @@ export default class FlProductItem extends FlProductItemDesign {
                 lblProductItemTitleWidthMarginRight)
         );
     }
+    startShimmering() {
+        this.flProductItemButtonsWrapper.visible = false;
+        this.tvProductPrice.text = ""
+
+        this.imgProduct.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                backgroundColor: '#D2D2D2'
+            }
+        })
+        this.lblProductItemTitle.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                backgroundColor: '#D2D2D2'
+            }
+        })
+        this.flProductDescAndReviewWrapper.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                backgroundColor: '#D2D2D2'
+            }
+        })
+        this.flProductItemPriceButtonWrapper.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                backgroundColor: '#D2D2D2'
+            }
+        })
+        this.tvProductPrice.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                backgroundColor: '#D2D2D2'
+            }
+        })
+
+    }
+    stopShimmering() {
+        this.flProductItemButtonsWrapper.visible = true;
+        this.imgProduct.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                backgroundColor: 'rgba(0,0,0,0)'
+            }
+        });
+        this.lblProductItemTitle.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                backgroundColor: 'rgba(0,0,0,0)'
+            }
+        })
+        this.flProductDescAndReviewWrapper.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                backgroundColor: 'rgba(0,0,0,0)'
+            }
+        })
+        this.flProductItemPriceButtonWrapper.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                backgroundColor: 'rgba(0,0,0,0)'
+            }
+        })
+        this.tvProductPrice.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+                backgroundColor: 'rgba(0,0,0,0)'
+            }
+        })
+
+    }
 }
