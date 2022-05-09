@@ -199,7 +199,11 @@ export default class FlProductItem extends FlProductItemDesign {
         this.flProductItemPriceButtonWrapper.dispatch({
             type: 'updateUserStyle',
             userStyle: {
-                backgroundColor: '#D2D2D2'
+                backgroundColor: '#D2D2D2',
+                marginBottom:30,
+                marginTop:5,
+                marginLeft:5,
+                marginRight:5
             }
         })
         this.tvProductPrice.dispatch({
@@ -233,7 +237,8 @@ export default class FlProductItem extends FlProductItemDesign {
         this.flProductItemPriceButtonWrapper.dispatch({
             type: 'updateUserStyle',
             userStyle: {
-                backgroundColor: 'rgba(0,0,0,0)'
+                backgroundColor: 'rgba(0,0,0,0)',
+                margin:0
             }
         })
         this.tvProductPrice.dispatch({
