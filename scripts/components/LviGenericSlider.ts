@@ -1,18 +1,28 @@
 import Screen from '@smartface/native/device/screen';
+import ShimmerFlexLayout from '@smartface/native/ui/shimmerflexlayout';
 import LviGenericSliderDesign from 'generated/my-components/LviGenericSlider';
 import { themeService } from 'theme';
 const originalHeight = themeService.getStyle('.lviGenericSlider').height;
 
 export default class LviGenericSlider extends LviGenericSliderDesign {
     pageName?: string | undefined;
+    private __initialized:boolean;
+
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
+    }
+    get initialized():boolean{
+        return this.__initialized;
+    }
+    set initialized(value:boolean){
+        this.__initialized = value;
     }
     get images(): string[] {
         return this.flGenericSlider.images;
     }
     set images(value: string[]) {
+        this.initialized ? this.stopShimmering() : this.startShimmering()
         this.flGenericSlider.images = value;
     }
     static calculateHeightWithAspectRatio(aspectRatio: number = 1, margin: number = 0) {
@@ -27,5 +37,26 @@ export default class LviGenericSlider extends LviGenericSliderDesign {
         } else {
             return originalHeight;
         }
+    }
+
+    private startShimmering(){
+        this.sflGenericSlider.startShimmering();
+        this.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+              backgroundColor: '#D2D2D2'
+            }
+          });
+    }
+    private stopShimmering(){
+        this.sflGenericSlider.stopShimmering();
+        this.sflGenericSlider.baseAlpha = 1;
+        this.sflGenericSlider.android.build(ShimmerFlexLayout.Android.Shimmer.AlphaHighlight);
+        this.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+              backgroundColor: 'rgba(0,0,0,0)'
+            }
+          });
     }
 }

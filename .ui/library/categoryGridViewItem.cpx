@@ -6,7 +6,7 @@
 			"id": "8d80-6588-b9da-7b16",
 			"props": {
 				"children": [
-					"f0de-b468-57d7-7e46"
+					"4244-0020-01d9-a083"
 				],
 				"name": "categoryGridViewItem",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -24,15 +24,38 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .gviCategoryItem-flCategoryItemWrapper",
-			"id": "f0de-b468-57d7-7e46",
+			"className": ".sf-shimmerFlexLayout",
+			"id": "4244-0020-01d9-a083",
+			"oldName": "shimmerFlexLayout1",
 			"props": {
 				"children": [
-					"b543-9e76-0d01-1767",
-					"89ce-8b2a-e014-df83"
+					"eb44-f4ce-3838-bece"
+				],
+				"name": "sflCategoryItem",
+				"parent": "8d80-6588-b9da-7b16",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ShimmerFlexLayout",
+			"userProps": {
+				"flexProps": {
+					"flexGrow": 1
+				},
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-flexLayout .gviCategoryItem-flCategoryItemWrapper",
+			"id": "eb44-f4ce-3838-bece",
+			"props": {
+				"children": [
+					"d167-1cd6-0db3-6e25",
+					"e56a-b896-71c5-1af7"
 				],
 				"name": "flCategoryItemWrapper",
-				"parent": "8d80-6588-b9da-7b16",
+				"parent": "4244-0020-01d9-a083",
 				"usePageVariable": true
 			},
 			"source": {
@@ -47,11 +70,11 @@
 		{
 			"className": ".sf-imageView .gviCategoryItem-flCategoryItemWrapper-imgCategoryItem",
 			"hiddenComponent": false,
-			"id": "b543-9e76-0d01-1767",
+			"id": "d167-1cd6-0db3-6e25",
 			"props": {
 				"children": [],
 				"name": "imgCategoryItem",
-				"parent": "f0de-b468-57d7-7e46",
+				"parent": "eb44-f4ce-3838-bece",
 				"usePageVariable": true
 			},
 			"source": {
@@ -67,11 +90,11 @@
 		},
 		{
 			"className": ".sf-label .gviCategoryItem-flCategoryItemWrapper-lblCategoryItemTitle",
-			"id": "89ce-8b2a-e014-df83",
+			"id": "e56a-b896-71c5-1af7",
 			"props": {
 				"children": [],
 				"name": "lblCategoryItemTitle",
-				"parent": "f0de-b468-57d7-7e46",
+				"parent": "eb44-f4ce-3838-bece",
 				"text": "Frash Fruits & Vegetable",
 				"usePageVariable": true
 			},

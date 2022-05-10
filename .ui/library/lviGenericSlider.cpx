@@ -6,7 +6,7 @@
 			"id": "934f-e2ec-7d81-92c0",
 			"props": {
 				"children": [
-					"fb3c-052e-9fae-c6b0"
+					"ffc4-f4ba-5505-de5a"
 				],
 				"name": "lviGenericSlider",
 				"parent": "57f4-201f-4bfc-5fc6"
@@ -18,13 +18,33 @@
 			"userProps": {}
 		},
 		{
+			"className": ".sf-shimmerFlexLayout .grow",
+			"id": "ffc4-f4ba-5505-de5a",
+			"oldName": "shimmerFlexLayout1",
+			"props": {
+				"children": [
+					"5160-8441-2721-4800"
+				],
+				"name": "sflGenericSlider",
+				"parent": "934f-e2ec-7d81-92c0",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ShimmerFlexLayout",
+			"userProps": {
+				"usePageVariable": true
+			}
+		},
+		{
 			"className": ".sf-flexLayout .grow",
 			"hiddenComponent": false,
-			"id": "fb3c-052e-9fae-c6b0",
+			"id": "5160-8441-2721-4800",
 			"props": {
 				"children": [],
 				"name": "flGenericSlider",
-				"parent": "934f-e2ec-7d81-92c0",
+				"parent": "ffc4-f4ba-5505-de5a",
 				"usePageVariable": true
 			},
 			"source": {

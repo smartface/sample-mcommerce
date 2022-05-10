@@ -8,7 +8,6 @@ import { Route, BaseRouter as Router } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getRefreshToken } from 'service/token';
 import { autoLogin } from 'service/auth';
-import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { getBannerImage, getBanners, getCategories, getProductsByQuery, getShowcases } from 'service/commerce';
 import LviGenericSlider from 'components/LviGenericSlider';
 import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from 'constants';
@@ -22,13 +21,38 @@ type Processor =
 
 export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     data: Processor[];
-    showcases: HomeShowcases[];
-    banners: Banner[];
     categories: Categories[];
     products: Product[];
     initialized = false;
     sliderHeight = 0;
     flHeaderIcon: FlHeaderIcon;
+    banners: Banner[] = [{ _id: '', categoryId: '', productId: '' }]
+    showcases: HomeShowcases[] = Array.from({ length: 3 }).map((_, index: number) => ({
+        _id: "",
+        title: "",
+        products: Array.from({ length: 3 }).map((_, index: number) => ({
+            _id: "",
+            name: " ",
+            shortDescription:" ",
+            price: 0,
+            labels: [
+                { name: "", color: "" }
+            ],
+            category: {
+                _id: "",
+                title: "",
+                menuColor: "",
+                borderColor: "",
+                categoryImg: ""
+            },
+            status: true,
+            nutritions: {
+                Fat: "",
+                Iron: ""
+            },
+        }))
+    }));
+
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.sliderHeight = LviGenericSlider.calculateHeightWithAspectRatio(BANNER_ASPECT_RATIO);
@@ -53,6 +77,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         const processorItems = [
             ListViewItems.getLviGenericSlider(
                 {
+                    initialized: this.initialized,
                     images: this.banners.map((image) => {
                         return getBannerImage(image._id);
                     })
@@ -61,71 +86,74 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             )
         ];
         this.showcases.forEach((showcase) => {
-            processorItems.push(
-                ListViewItems.getLviShowcaseHeader({
-                    showcaseTitle: showcase.title,
-                    showcaseLinkText: global.lang.seeAll.replace('$1', showcase.products.length),
-                    onSeeAllClick: () => {
-                        this.router.push('categoryDetail', {
-                            dataId: showcase._id,
-                            title: showcase.title,
-                            isShowcase: true
-                        });
-                    }
-                })
-            );
-
+            if(this.initialized){
+                processorItems.push(
+                    ListViewItems.getLviShowcaseHeader({
+                        showcaseTitle: showcase.title,
+                        showcaseLinkText: global.lang.seeAll.replace('$1', showcase.products.length),
+                        onSeeAllClick: () => {
+                            this.router.push('categoryDetail', {
+                                dataId: showcase._id,
+                                title: showcase.title,
+                                isShowcase: true
+                            });
+                        }
+                    })
+                );
+            }
             processorItems.push(
                 ListViewItems.getLviHomeProducts({
+                    initialized: this.initialized,
                     items: showcase.products,
                     onProductClick: (product) => {
                         this.router.push('productDetail', {
-                            productId: product._id
+                            productId: product._id,
                         });
                     }
                 })
             );
         });
-
-        processorItems.push(
-            ListViewItems.getLviHomeCategories({
-                items: this.categories,
-                onCategoryClick: (category) => {
-                    this.router.push('categoryDetail', {
-                        dataId: category._id,
-                        title: category.title
-                    });
-                }
-            })
-        );
-
-        for (let index = 0; index < this.products.length; index++) {
-            processorItems.push(ListViewItems.getLviSpacerItem({ className: 'xSmall' }));
+        if (this.initialized) {
             processorItems.push(
-                ListViewItems.getLviHomeProducts({
-                    items: index !== this.products.length - 1 ? [this.products[index], this.products[index + 1]] : [this.products[index]],
-                    onProductClick: (product) => {
-                        this.router.push('productDetail', {
-                            productId: product._id
+                ListViewItems.getLviHomeCategories({
+                    items: this.categories,
+                    onCategoryClick: (category) => {
+                        this.router.push('categoryDetail', {
+                            dataId: category._id,
+                            title: category.title
                         });
                     }
                 })
             );
-            index = index + 1;
+
+            for (let index = 0; index < this.products.length; index++) {
+                processorItems.push(ListViewItems.getLviSpacerItem({ className: 'xSmall' }));
+                processorItems.push(
+                    ListViewItems.getLviHomeProducts({
+                        initialized:this.initialized,
+                        items: index !== this.products.length - 1 ? [this.products[index], this.products[index + 1]] : [this.products[index]],
+                        onProductClick: (product) => {
+                            this.router.push('productDetail', {
+                                productId: product._id
+                            });
+                        }
+                    })
+                );
+                index = index + 1;
+            }
         }
+
 
         return processorItems;
     }
 
     async getProducts(opts: { pageNumber: number } = { pageNumber: 1 }) {
         try {
-            showWaitDialog();
             const productResponse = await getProductsByQuery({ page: opts.pageNumber, limit: HOME_PRODUCT_LIMIT });
             this.products = productResponse.products;
         } catch (error) {
             throw new Error(global.lang.productServiceError);
         } finally {
-            hideWaitDialog();
         }
     }
 
@@ -144,12 +172,10 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
 
     async fetchCategories() {
         try {
-            showWaitDialog();
             this.categories = await getCategories();
         } catch (error) {
             throw new Error(global.lang.categoriesServiceError);
         } finally {
-            hideWaitDialog();
         }
     }
 
@@ -181,7 +207,6 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             store.dispatch(storeActions.AddNewRate({ isRateAdded: false }));
         }
         try {
-            showWaitDialog();
             if (this.initialized) {
                 return Promise.resolve();
             } else {
@@ -192,14 +217,17 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         } catch (error) {
             alert(error.message);
         } finally {
-            hideWaitDialog();
             this.refreshListView();
         }
     }
     onShow() {
         super.onShow();
         this.addAppIconToHeader();
-        this.callServices();
+        this.refreshListView();
+        setTimeout(() => {
+            this.callServices();
+        }, 3000);
+        //this.callServices();
     }
     onLoad() {
         super.onLoad();
