@@ -184,28 +184,14 @@ export default class FlProductItem extends FlProductItemDesign {
                 backgroundColor: '#D2D2D2'
             }
         })
-        this.lblProductItemTitle.dispatch({
-            type: 'updateUserStyle',
-            userStyle: {
-                backgroundColor: '#D2D2D2'
-            }
-        })
+        
         this.flProductDescAndReviewWrapper.dispatch({
             type: 'updateUserStyle',
             userStyle: {
                 backgroundColor: '#D2D2D2'
             }
         })
-        this.flProductItemPriceButtonWrapper.dispatch({
-            type: 'updateUserStyle',
-            userStyle: {
-                backgroundColor: '#D2D2D2',
-                marginBottom:30,
-                marginTop:5,
-                marginLeft:5,
-                marginRight:5
-            }
-        })
+        
         this.tvProductPrice.dispatch({
             type: 'updateUserStyle',
             userStyle: {
@@ -222,23 +208,10 @@ export default class FlProductItem extends FlProductItemDesign {
                 backgroundColor: 'rgba(0,0,0,0)'
             }
         });
-        this.lblProductItemTitle.dispatch({
-            type: 'updateUserStyle',
-            userStyle: {
-                backgroundColor: 'rgba(0,0,0,0)'
-            }
-        })
         this.flProductDescAndReviewWrapper.dispatch({
             type: 'updateUserStyle',
             userStyle: {
                 backgroundColor: 'rgba(0,0,0,0)'
-            }
-        })
-        this.flProductItemPriceButtonWrapper.dispatch({
-            type: 'updateUserStyle',
-            userStyle: {
-                backgroundColor: 'rgba(0,0,0,0)',
-                margin:0
             }
         })
         this.tvProductPrice.dispatch({

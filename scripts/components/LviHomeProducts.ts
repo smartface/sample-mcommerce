@@ -98,7 +98,6 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     }
     refreshGridView() {
         this.gvProducts.itemCount = this.items.length;
-        this.gvProducts.refreshData();
         this.initialized ? this.sflHomeProductContainer.stopShimmering() : this.sflHomeProductContainer.startShimmering();
         this.gvProducts.refreshData();
 
