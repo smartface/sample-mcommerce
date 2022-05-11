@@ -20,9 +20,9 @@
   integrity sha512-w3Nu+9Oqy/leGqIdzoXPp3pq/3HwXgivCSgKbXdYcStMwOBUKO8d/potZYbSV9bss2TKCwXU2C0V3QGdSyxwjQ==
 
 "@smartface/contx@^4.2.0":
-  version "4.2.6"
-  resolved "https://registry.yarnpkg.com/@smartface/contx/-/contx-4.2.6.tgz#21aaf510a467385fb93bde8d2797ffd57fc1a958"
-  integrity sha512-PgYkQ0Adondep2gk9VPzAPWEq6FesXmqExcTC7F1oMHQh7fPC3smebeF7iWx9ZtjHpujiQ9TWuhpTtnCjM1kUg==
+  version "4.2.8"
+  resolved "https://registry.yarnpkg.com/@smartface/contx/-/contx-4.2.8.tgz#16ddbaa8f9aa56d27a8427b9f97d455648a7671a"
+  integrity sha512-zj0h2L7UPiPHaYj/j7tk8dAQM2D6WE+726zDFvin+pCkHxbeYxXdlwGUEoXCVF4wktPlQ9L/G6SdBCf5C9kYPA==
   dependencies:
     "@smartface/html-to-text" "^1.0.0"
     "@smartface/styler" "^2.0.0"
@@ -34,9 +34,9 @@
   integrity sha512-rLZ9gZU56f3SkIrXm7iM/ujCagl7CVqml21MZmqx9J327/bDI5vd7mcWdmKUhTzNadDZA20H+ub5P9KhEQl9Eg==
 
 "@smartface/extension-utils@^16.2.9":
-  version "16.4.0"
-  resolved "https://registry.yarnpkg.com/@smartface/extension-utils/-/extension-utils-16.4.0.tgz#1c332fd0ab18444fcea5f2e44a6dfea8150ecdcd"
-  integrity sha512-NCX7bA+VdMa784J9SMqAwVOxQ5IGfV5C6O+bDYW0NnlnN7BOhQo+Zpj2f3PGYAMcm1YoWexzaPxmdLJpXoguzQ==
+  version "16.4.1"
+  resolved "https://registry.yarnpkg.com/@smartface/extension-utils/-/extension-utils-16.4.1.tgz#958ca6eff13d23a02b6cbc40267e70f6fe292c45"
+  integrity sha512-D1n7VUKPyv+Pc+l8UN5pO+BSfQck5QSP8R8jewu5Ik6ntU4tBNcT8or3hUr3XCS+BuARLNQyn2vqsXL5zJb/iQ==
   dependencies:
     apexcharts "^3.26.3"
     html-parse-stringify "1.0.2"
@@ -54,7 +54,7 @@
   dependencies:
     html-parse-stringify "1.0.2"
 
-"@smartface/mixins@^5.0.0-alpha.0":
+"@smartface/mixins@^5.0.0-alpha":
   version "5.0.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@smartface/mixins/-/mixins-5.0.0-alpha.0.tgz#e657fa8cc20e027321a989aee617d24d389f100c"
   integrity sha512-oMeQWsnD/znFhA2fUGjLiLJ0mutUqAM0r1UYdUGbkh+qj5DC4Jcf0CARagrWCosrUoZ6RKXi1rq7+3hero9bDQ==
@@ -62,13 +62,13 @@
     "@smartface/core" "^5.0.0-alpha.0"
 
 "@smartface/native@^5.0.0-alpha":
-  version "5.0.0-alpha.49"
-  resolved "https://registry.yarnpkg.com/@smartface/native/-/native-5.0.0-alpha.49.tgz#e04e9389a9271d7e48ecb404c3ca99b45d4f160f"
-  integrity sha512-FJAJxmp2Sf/qN3AoQKxBZdKgYTq1CL1tLxO5pNqQCzZdI4m5qzv4ul0HQ5PsU4OVgnwa8UBC82ZD8ZluYQzaEw==
+  version "5.0.0-alpha.70"
+  resolved "https://registry.yarnpkg.com/@smartface/native/-/native-5.0.0-alpha.70.tgz#37e0e4937d495959a1940c6c80259a6939193b94"
+  integrity sha512-c4enPT5CxwM1c3IbgQxCe4yZpeLf/vU8MPIUA7FFtZZNwp7tCyjT5A6kUJiQ52yWiOCsOigjEVmmmUpYS9TYlw==
   dependencies:
     events "^3.3.0"
 
-"@smartface/router@2.3.1":
+"@smartface/router@^2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@smartface/router/-/router-2.3.1.tgz#47c24fa04b05ed27b89712c8912f128d97e3458e"
   integrity sha512-Cq/aZXNfYDbsO3XOq1WL9V9Sssv3usgMkoZyXzQIxEpKt529iMZabyNkpIQev8VYg10eF5z5MaeipTRCWxh7EA==
@@ -77,9 +77,9 @@
     resolve-pathname "^2.2.0"
 
 "@smartface/source-map@^5.0.0-alpha":
-  version "5.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/@smartface/source-map/-/source-map-5.0.0-alpha.1.tgz#d66d648a8cb2cac543737d6ad7bf8a874d5c5db2"
-  integrity sha512-S1flFX1LsbCH6mS4wWsoOcUWkWmbgPAqBdqkBBSTNHPeXkeAWnuujd0BzdE35aKQS1e7i4faYPuLb+xXRlq/Lg==
+  version "5.0.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/@smartface/source-map/-/source-map-5.0.0-alpha.9.tgz#a1d588f96b8efd562f9a3ac9a37dffd3b9c92056"
+  integrity sha512-sQgRq0qmztsa+B4EM1zrxqyGNLj+2I7ggLILqP8X+PXIIFsdxL5dDATCgbKRyA8lEq5ZWpNgFDmbbLaZVr3U0g==
   dependencies:
     source-map "0.6.1"
 
@@ -88,18 +88,18 @@
   resolved "https://registry.yarnpkg.com/@smartface/styler/-/styler-2.0.3.tgz#e144b4054faeffa4fa0432af0d84f48664dddee2"
   integrity sha512-GNYwWDQamYd6Qka9sI1kjZTsWbxEjPSRKlHOYLBaGT/CJfRXt7BOPyZS5yO8/6J/2LAdZE5VOko9By3fuJ+bWA==
 
-"@smartface/styling-context@5.0.0-alpha.7":
-  version "5.0.0-alpha.7"
-  resolved "https://registry.yarnpkg.com/@smartface/styling-context/-/styling-context-5.0.0-alpha.7.tgz#02afb278cba6155db2154465085b7c87d87dd527"
-  integrity sha512-lO42gZlCPAwGuYjWqttPjnVrBmSVOkiHcq5fNBfvPHNzad2PYCcYcJSQ8khxDPCpsc211i3d5w0PhqFJf99iig==
+"@smartface/styling-context@^5.0.0-alpha":
+  version "5.0.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/@smartface/styling-context/-/styling-context-5.0.0-alpha.9.tgz#aaae11c35c795b03eeb29f2c6faa3b2aa5d8e4f7"
+  integrity sha512-vMZ4hgWLseLRu1IIxd1RdSqYQjyHI+oXgg4lQTYQlHYw2nvyvybiQdLIT5OycoNZsmTWgBe5kh93/IqIPor1vw==
   dependencies:
     "@smartface/contx" "^4.2.0"
     "@smartface/styler" "^2.0.0"
 
 apexcharts@^3.26.3:
-  version "3.35.0"
-  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.35.0.tgz#5571f4852747359b7ef76662998f3d6a8ffe923a"
-  integrity sha512-oipJRkaxt8DPGRmn1kur6aPzML1JSpf2M3ecu+gyw+8xiNmT2C0p1uuuqPZrk+Lr2hmDxzNBPR7TvxwRl3ozgw==
+  version "3.35.2"
+  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.35.2.tgz#90faafffa055ce502f73b11008ba77238e94228f"
+  integrity sha512-VOSb25mrcSv/JjaWKjnasL8277cqnA0Gp20uV1+rlgE4U6j44fdTYW850Powl+S8RkXd/lPwzBB2jvKkEOHl0Q==
   dependencies:
     svg.draggable.js "^2.2.2"
     svg.easing.js "^2.0.0"
