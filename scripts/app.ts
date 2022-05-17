@@ -25,9 +25,5 @@ Application.onUnhandledError = (e: UnhandledError) => {
   }
 };
 
-if (!System.isEmulator) {
-  router.push('/launchScreen/main');
-}
-else {
-  router.push("/btb/tab1/home");
-}
+router.push('/launchScreen/main');
+
