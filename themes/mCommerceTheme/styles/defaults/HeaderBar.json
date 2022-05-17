@@ -19,9 +19,9 @@
       "android": {
         "elevation": 5
       },
-      "transparent": true,
+      "transparent": false,
       "titleColor": "${transparent}",
-      "backgroundColor": "${transparent}",
+      "backgroundColor": "${white}",
       "leftItemEnabled": "true",
       ".white": {
         "borderVisibility": false,
