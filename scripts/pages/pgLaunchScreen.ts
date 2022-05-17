@@ -7,6 +7,7 @@ import Color from '@smartface/native/ui/color';
 import GifImageView from "@smartface/native/ui/gifimageview";
 import GifImage from "@smartface/native/ui/gifimage";
 import { IGifImage } from '@smartface/native/ui/gifimage/gifimage';
+import { ImageFillType } from '@smartface/native/ui/imageview/imageview';
 
 export default class PgLaunchScreen extends withDismissAndBackButton(PgLaunchScreenDesign) {
     launchDialog: Dialog;
@@ -31,7 +32,8 @@ export default class PgLaunchScreen extends withDismissAndBackButton(PgLaunchScr
             //@ts-ignore
             gifImage : this.gifImage,
             height: 400,
-            width: 400
+            width: 400,
+            imageFillType: ImageFillType.ASPECTFIT
         })
         this.launchDialog.layout.addChild(this.gifImageView);
         this.launchDialog.layout.applyLayout();
