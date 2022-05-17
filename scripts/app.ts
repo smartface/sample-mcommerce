@@ -12,16 +12,22 @@ import '@smartface/native';
 // Set uncaught exception handler, all exceptions that are not caught will
 // trigger onUnhandledError callback.
 Application.onUnhandledError = (e: UnhandledError) => {
-    const error = errorStackBySourceMap(e);
-    const errorData = {
-        message: System.OS === System.OSType.ANDROID ? error.stack : e.message,
-        stack: System.OS === System.OSType.IOS ? error.stack : undefined
-    };
-    if (errorData.stack || System.OS === System.OSType.ANDROID) {
-        console.error('Unhandled Error: ', errorData.message, {
-            ...errorData
-        });
-        alert(JSON.stringify(errorData, null, 2), e.type || lang.applicationError);
-    }
+  const error = errorStackBySourceMap(e);
+  const errorData = {
+    message: System.OS === System.OSType.ANDROID ? error.stack : e.message,
+    stack: System.OS === System.OSType.IOS ? error.stack : undefined
+  };
+  if (errorData.stack || System.OS === System.OSType.ANDROID) {
+    console.error('Unhandled Error: ', errorData.message, {
+      ...errorData
+    });
+    alert(JSON.stringify(errorData, null, 2), e.type || lang.applicationError);
+  }
 };
-router.push('/launchScreen/main');
+
+if (!System.isEmulator) {
+  router.push('/launchScreen/main');
+}
+else {
+  router.push("/btb/tab1/home");
+}
