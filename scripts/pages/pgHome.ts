@@ -13,6 +13,8 @@ import LviGenericSlider from 'components/LviGenericSlider';
 import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from 'constants';
 import FlHeaderIcon from 'components/FlHeaderIcon';
 import setHeaderIcon from 'lib/setHeaderIcon';
+import Network from '@smartface/native/device/network';
+
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -52,10 +54,12 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             },
         }))
     }));
+    noConnection: boolean;
 
     constructor(private router?: Router, private route?: Route) {
         super({});
         this.sliderHeight = LviGenericSlider.calculateHeightWithAspectRatio(BANNER_ASPECT_RATIO);
+        this.noConnection = Network.connectionType === Network.ConnectionType.NONE;
     }
     addAppIconToHeader() {
         this.headerBar.title = '';
@@ -215,7 +219,9 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                 this.initialized = true;
             }
         } catch (error) {
-            alert(error.message);
+            if (!this.noConnection) {
+                alert(error.message);
+            }
         } finally {
             this.refreshListView();
         }

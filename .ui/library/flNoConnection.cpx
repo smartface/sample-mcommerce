@@ -1,0 +1,107 @@
+{
+	"components": [
+		{
+			"className": ".sf-flexLayout .flCheckoutSuccessful",
+			"hiddenComponent": false,
+			"id": "047b-22c0-79e4-ae94",
+			"props": {
+				"children": [
+					"141f-8f0c-a330-7f4d",
+					"4eae-58f3-316d-4f8c",
+					"86ce-d98c-e7a6-e7ea",
+					"2019-e5a1-d97a-9afd"
+				],
+				"name": "flNoConnection",
+				"parent": "57f4-201f-4bfc-5fc6"
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "FlexLayout",
+			"userProps": {
+				"flexProps": {},
+				"left": 15.66,
+				"top": 56.63
+			}
+		},
+		{
+			"className": ".sf-imageView .flCheckoutSuccessful-imgSuccess",
+			"id": "141f-8f0c-a330-7f4d",
+			"oldName": "imgSuccess",
+			"props": {
+				"children": [],
+				"name": "imgNoConnection",
+				"parent": "047b-22c0-79e4-ae94",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "ImageView",
+			"userProps": {
+				"image": "images://try_again.png",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutSuccessful-lblTitle",
+			"id": "4eae-58f3-316d-4f8c",
+			"oldName": "lblEmptyTitle",
+			"props": {
+				"children": [],
+				"name": "lblTitle",
+				"parent": "047b-22c0-79e4-ae94",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-label .flCheckoutSuccessful-lblDescription",
+			"id": "86ce-d98c-e7a6-e7ea",
+			"oldName": "label1",
+			"props": {
+				"children": [],
+				"name": "lblDescription",
+				"parent": "047b-22c0-79e4-ae94",
+				"text": "label1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Label",
+			"userProps": {
+				"text": "label1",
+				"usePageVariable": true
+			}
+		},
+		{
+			"className": ".sf-button-main .flNoConnection-btnTryAgain",
+			"id": "2019-e5a1-d97a-9afd",
+			"oldName": "btnTrackOrder",
+			"props": {
+				"children": [],
+				"name": "btnTryAgain",
+				"parent": "047b-22c0-79e4-ae94",
+				"text": "button1",
+				"usePageVariable": true
+			},
+			"source": {
+				"page": "__library__"
+			},
+			"type": "Button",
+			"userProps": {
+				"text": "button1",
+				"usePageVariable": true
+			}
+		}
+	]
+}

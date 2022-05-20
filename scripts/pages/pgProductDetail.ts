@@ -157,7 +157,6 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
 
     async fetchProduct() {
         try {
-            showWaitDialog();
             const productResponse = await getProduct(this.route.getState().routeData.productId);
             if (productResponse) {
                 this.product = productResponse;
@@ -167,7 +166,6 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
             throw new Error(global.lang.productServiceError);
         } finally {
             this.refreshListView();
-            hideWaitDialog();
         }
     }
 
