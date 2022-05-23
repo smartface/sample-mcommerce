@@ -29,3 +29,13 @@ export const removeFromBasketToast = () => {
     });
     myToastMessage.show();
 };
+
+export const noConnectionToast = () => {
+    const myToastMessage = new Toast({
+        message: global.lang.noInternetConnection,
+        bottomOffset: System.OS === System.OSType.ANDROID ? bottomOffsetAnd : bottomOffsetIOS,
+        backgroundColor: removeFromBasketBackground,
+        duration: 1
+    });
+    myToastMessage.show();
+}

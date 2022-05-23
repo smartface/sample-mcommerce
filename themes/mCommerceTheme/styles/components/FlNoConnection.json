@@ -1,0 +1,9 @@
+{
+  ".flNoConnection": {
+    "&-btnTryAgain": {
+      "marginTop": 15,
+      "visible": true,
+      "width": null
+    }
+  }
+}
