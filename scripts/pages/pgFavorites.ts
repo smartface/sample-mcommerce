@@ -12,6 +12,7 @@ import { themeService } from 'theme';
 import setVisibility from 'lib/setVisibility';
 import { Product } from 'types';
 import { moneyFormatter } from 'lib/moneyFormatter';
+import { i18n } from '@smartface/i18n';
 
 type Processor = ListViewItems.ProcessorTypes.ILviFavorites;
 enum HeaderEnum {
@@ -31,7 +32,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         super({});
     }
     initAddToCartButton() {
-        this.flCartCheckout.checkoutTitle = global.lang.addToBasket;
+        this.flCartCheckout.checkoutTitle = `${i18n.instance.t('addToBasket')}`;
         setVisibility(this.flCartCheckout.lblCartCheckoutPrice, false);
     }
     addToCartSelectedProducts() {
@@ -67,7 +68,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
     }
     addCancelToHeaderBar() {
         this.rightItemCancel = new HeaderBarItem({
-            title: global.lang.cancel,
+            title: `${i18n.instance.t('cancel')}`,
             color: themeService.getNativeStyle('.sf-headerBar.cancel').itemColor,
             onPress: () => {
                 this.changeHeaderText = false;
@@ -80,7 +81,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.rightItemSelect = new HeaderBarItem({
             //Native › NTVE-435
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
-            title: global.lang.select,
+            title: `${i18n.instance.t('select')}`,
             onPress: () => {
                 this.changeHeaderText = true;
                 this.refreshListView();
@@ -164,7 +165,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
             processorItems.push(
                 ListViewItems.getLviEmptyItem({
                     emptyImage: 'images://empty_favorite.png',
-                    emptyTitle: global.lang.favoritesIsEmpty
+                    emptyTitle: `${i18n.instance.t('deliveryfavoritesIsEmpty')}`
                 })
             );
         } else {
@@ -207,6 +208,6 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.initListView();
         this.refreshListView();
         this.headerBar.leftItemEnabled = false;
-        this.headerBar.title = global.lang.favouriteHeader;
+        this.headerBar.title = `${i18n.instance.t('favouriteHeader')}`;
     }
 }

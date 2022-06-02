@@ -14,6 +14,8 @@ import { getProductImageUrl, getProductsByQuery, getShowcases } from 'service/co
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { ON_SHOW_TIMEOUT } from 'constants';
 import setVisibility from 'lib/setVisibility';
+import { i18n } from '@smartface/i18n';
+
 const gridViewItemLength = themeService.getNativeStyle('.flProductItem').height;
 type searchStatus = {
     isSearchActive: boolean;
@@ -115,7 +117,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 this.refreshGridView();
             }
         } catch (error) {
-            alert(global.lang.productServiceError);
+            alert(`${i18n.instance.t('productServiceError')}`);
         } finally {
             this.initialized = true;
             this.paginating = false;
@@ -132,7 +134,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             }
             return showcaseResponse;
         } catch (error) {
-            throw new Error(global.lang.showcaseServiceError);
+            throw new Error(`${i18n.instance.t('showcaseServiceError')}`);
         }
     }
 
@@ -216,9 +218,9 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     checkIfListEmpty() {
         if (this.categoryProducts.length === 0) {
             if (this.searchStatus.isSearchActive) {
-                this.flEmptyItem.emptyTitle = `${global.lang.categoriesIsEmptyWithSearch} ${this.searchStatus.searchText}`;
+                this.flEmptyItem.emptyTitle = `${`${i18n.instance.t('categoriesIsEmptyWithSearch')}`} ${this.searchStatus.searchText}`;
             } else {
-                this.flEmptyItem.emptyTitle = global.lang.categoriesIsEmpty;
+                this.flEmptyItem.emptyTitle = `${i18n.instance.t('categoriesIsEmpty')}`;
             }
             setVisibility(this.flEmptyItem, true);
         } else {

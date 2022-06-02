@@ -5,6 +5,7 @@ import { themeService } from 'theme';
 import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/listView';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
+import { i18n } from '@smartface/i18n';
 
 type Processor = | ListViewItems.ProcessorTypes.ILviNoAddress |
     ListViewItems.ProcessorTypes.ILviAddressList;
@@ -41,8 +42,8 @@ export default class PgAddress extends withDismissAndBackButton(PgAddressDesign)
         if (!this.hasAddress) {
             processorItems.push(ListViewItems.getLviNoAddress({
                 image: 'images://location.png',
-                title: global.lang.noAddressTitle,
-                buttonText: global.lang.addAddress
+                title: `${i18n.instance.t('noAddressTitle')}`,
+                buttonText: `${i18n.instance.t('addAddress')}`
 
             }));
         } else {
@@ -60,7 +61,7 @@ export default class PgAddress extends withDismissAndBackButton(PgAddressDesign)
     addHeaderRightItem() {
         if (this.hasAddress) {
             this.rightItemAdd = new HeaderBarItem({
-                title: global.lang.addAddress,
+                title: `${i18n.instance.t('addAddress')}`,
                 color: themeService.getNativeStyle('.sf-headerBar.main').itemColor,
                 onPress: () => {
                     this.router.push('addAddress')
@@ -82,7 +83,7 @@ export default class PgAddress extends withDismissAndBackButton(PgAddressDesign)
 
     public onLoad() {
         super.onLoad?.();
-        this.headerBar.title = global.lang.addressBook;
+        this.headerBar.title = `${i18n.instance.t('addressBook')}`;
         this.initListView();
 
     }

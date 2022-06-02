@@ -6,16 +6,17 @@ import router from 'routes';
 import store from 'store/index';
 import storeActions from 'store/main/actions';
 import { CheckoutListItem } from 'types';
+import { i18n } from '@smartface/i18n';
 
 let checkoutDialog = null;
 let activeDialogCounter = 0;
 
 function initDialog(totalCost: string | number) {
     const checkoutListItems: CheckoutListItem[] = [
-        { title: global.lang.delivery, description: 'Home' }, 
-        { title: global.lang.payment, description: global.lang.payAtTheDoor }, 
-        { title: global.lang.promoCode, description: 'No Promo Code' },
-        { title: global.lang.totalCost, description: totalCost.toString() }
+        { title: `${i18n.instance.t('delivery')}`, description: 'Home' }, 
+        { title: `${i18n.instance.t('payment')}`, description: `${i18n.instance.t('payAtTheDoor')}` }, 
+        { title: `${i18n.instance.t('promoCode')}`, description: 'No Promo Code' },
+        { title: `${i18n.instance.t('totalCost')}`, description: totalCost.toString() }
         ]
     let dialog = new Dialog({
         android: {
@@ -26,9 +27,9 @@ function initDialog(totalCost: string | number) {
 
     const component = new FlCheckout();
     component.items = checkoutListItems;
-    component.lblCheckout.text = global.lang.checkout;
-    component.lblTermsAndCond.text = global.lang.checkoutTermsAndCond;
-    component.btnPlaceOrder.text = global.lang.placeOrder;
+    component.lblCheckout.text = `${i18n.instance.t('checkout')}`;
+    component.lblTermsAndCond.text = `${i18n.instance.t('checkoutTermsAndCond')}`;
+    component.btnPlaceOrder.text = `${i18n.instance.t('placeOrder')}`;
     component.lblDissmisIcon.onTouchEnded = () => {
         hideCheckoutDialog();
         return true;

@@ -4,6 +4,7 @@ import { Router, Route } from '@smartface/router';
 import { themeService } from 'theme';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import * as ListViewItems from 'lib/listViewItemTypes';
+import { i18n } from '@smartface/i18n';
 
 type Processor = ListViewItems.ProcessorTypes.ILviDescription;
 
@@ -22,7 +23,7 @@ export default class PgProductDescription extends withDismissAndBackButton(PgPro
     public onLoad() {
         super.onLoad?.();
         this.initListView();
-        this.headerBar.title = global.lang.productDetail;
+        this.headerBar.title = `${i18n.instance.t('productDetail')}`;
     }
     initListView() {
         this.lvMain.onRowType = onRowType.bind(this);
@@ -47,7 +48,7 @@ export default class PgProductDescription extends withDismissAndBackButton(PgPro
             : processorItems.push(
                   ListViewItems.getLviEmptyItem({
                       emptyImage: 'images://empty_description.png',
-                      emptyTitle: global.lang.emptyDescription
+                      emptyTitle: `${i18n.instance.t('emptyDescription')}`
                   })
               );
         return processorItems;

@@ -5,6 +5,7 @@ import { themeService } from 'theme';
 import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import Button from '@smartface/native/ui/button';
+import { i18n } from '@smartface/i18n';
 
 export default class PgNumber extends withDismissAndBackButton(PgNumberDesign) {
     leftItem: HeaderBarItem;
@@ -14,12 +15,12 @@ export default class PgNumber extends withDismissAndBackButton(PgNumberDesign) {
         this.btnRoute.on('press', () => {
             this.router.push('pgVerification');
         });
-        this.lblTitle.text = global.lang.enterMobilNumberText;
-        this.lblText.text = global.lang.mobileNumber;
+        this.lblTitle.text = `${i18n.instance.t('enterMobilNumberText')}`;
+        this.lblText.text = `${i18n.instance.t('mobileNumber')}`;
     }
     initMaterialTextBox() {
         this.mtbNumber.options = {
-            text: global.lang.phoneCode
+            text: `${i18n.instance.t('phoneCode')}`
         };
         this.mtbNumber.materialTextBox.keyboardType = KeyboardType.NUMBER;
     }

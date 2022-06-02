@@ -17,6 +17,7 @@ import { generateProductDeeplinkUrl } from 'lib/deeplink';
 import LviPdInfoSection from 'components/LviPdInfoSection';
 import { ON_SHOW_TIMEOUT } from 'constants';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+import { i18n } from '@smartface/i18n';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviGenericSlider
@@ -56,11 +57,11 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.lvMain.refreshEnabled = false;
         this.lvMain.onRowSelected = (item: LviPdOverviewSection | LviPdInfoSection, index) => {
             if (item instanceof LviPdOverviewSection || item instanceof LviPdInfoSection) {
-                if (item.overviewTitle === global.lang.reviews) {
+                if (item.overviewTitle === `${i18n.instance.t('reviews')}`) {
                     this.router.push('reviews', { productId: this.product._id, product: this.product });
-                } else if (item.overviewTitle === global.lang.nutritions) {
+                } else if (item.overviewTitle === `${i18n.instance.t('nutritions')}`) {
                     this.router.push('nutritions', { productId: this.product._id, product: this.product });
-                } else if (item.overviewTitle === global.lang.productDetail) {
+                } else if (item.overviewTitle === `${i18n.instance.t('productDetail')}`) {
                     this.router.push('description', { productDescription: this.product.description });
                 }
             }
@@ -132,19 +133,19 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         processorItems.push(ListViewItems.getLviSpacerItem({ className: 'xSmall' }));
         processorItems.push(
             ListViewItems.getLviPdInfoSection({
-                overviewTitle: global.lang.productDetail,
+                overviewTitle: `${i18n.instance.t('productDetail')}`,
                 productInfo: this.product.description
             })
         );
         processorItems.push(
             ListViewItems.getLviPdOverviewSection({
-                overviewTitle: global.lang.nutritions,
+                overviewTitle: `${i18n.instance.t('nutritions')}`,
                 showRating: false
             })
         );
         processorItems.push(
             ListViewItems.getLviPdOverviewSection({
-                overviewTitle: global.lang.reviews,
+                overviewTitle: `${i18n.instance.t('reviews')}`,
                 star: this.product?.rating,
                 reviewCount: `(${this.product?.reviews?.length})`,
                 showRating: this.product?.rating ? true : false 
@@ -163,7 +164,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
             }
             return productResponse;
         } catch (error) {
-            throw new Error(global.lang.productServiceError);
+            throw new Error(`${i18n.instance.t('productServiceError')}`);
         } finally {
             this.refreshListView();
             hideWaitDialog();
@@ -181,8 +182,8 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
 
     onLoad() {
         super.onLoad();
-        this.headerBar.title = global.lang.productDetail;
-        this.btnAddToBasket.text = global.lang.addToBasket;
+        this.headerBar.title = `${i18n.instance.t('productDetail')}`;
+        this.btnAddToBasket.text = `${i18n.instance.t('addToBasket')}`;
         this.addToBasket();
         this.initListView();
     }

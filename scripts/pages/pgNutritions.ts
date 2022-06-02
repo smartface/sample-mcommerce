@@ -5,6 +5,7 @@ import { themeService } from 'theme';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { Nutritions } from 'types';
+import { i18n } from '@smartface/i18n';
 
 type Processor = ListViewItems.ProcessorTypes.ILviEmptyItem | ListViewItems.ProcessorTypes.ILviNutritions;
 export default class PgNutritions extends withDismissAndBackButton(PgNutritionsDesign) {
@@ -24,7 +25,7 @@ export default class PgNutritions extends withDismissAndBackButton(PgNutritionsD
         super.onLoad?.();
         this.getNutritions();
         this.initListView();
-        this.headerBar.title = global.lang.nutritions;
+        this.headerBar.title = `${i18n.instance.t('nutritions')}`;
     }
     getNutritions() {
         this.nutritions = this.route.getState().routeData.product?.nutritions;
@@ -48,7 +49,7 @@ export default class PgNutritions extends withDismissAndBackButton(PgNutritionsD
             processorItems.push(
                 ListViewItems.getLviEmptyItem({
                     emptyImage: 'images://empty_nutritions_list.png',
-                    emptyTitle: global.lang.emptyNutritions
+                    emptyTitle: `${i18n.instance.t('emptyNutritions')}`
                 })
             );
         } else {

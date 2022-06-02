@@ -7,6 +7,7 @@ import { hideWaitDialog, showWaitDialog } from './waitDialog';
 import config from 'config.json';
 import getCurrentEnvironment from './getCurrentEnvironment';
 import System from '@smartface/native/device/system';
+import { i18n } from '@smartface/i18n';
 
 type ApplicationCallReceivedParams = {
     url: string;
@@ -35,11 +36,11 @@ export async function productDetailHandler(productId: string) {
                 productId: productId
             });
         } else {
-            throw new Error(global.lang.productNotFound);
+            throw new Error(`${i18n.instance.t('productNotFound')}`);
         }
     } catch (error) {
         genericErrorHandler(error);
-        alert(global.lang.productNotFound);
+        alert(`${i18n.instance.t('productNotFound')}`);
     } finally {
         hideWaitDialog();
     }

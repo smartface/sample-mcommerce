@@ -16,6 +16,8 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProfileImageUrl, putProfileImage } from 'service/commerce';
 import AlertView from '@smartface/native/ui/alertview';
 import {getAccessToken} from '../service/token';
+import { i18n } from '@smartface/i18n';
+
 type Processor =
     | ListViewItems.ProcessorTypes.ILviAccount
     | ListViewItems.ProcessorTypes.ILviProfile
@@ -38,11 +40,11 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.onRowSelected = (item: LviAccount | LviProfile | LviRow2LineButton | LviSpacer, index) => {
             if (item instanceof LviAccount) {
-                if (item.itemTitle === global.lang.settings) {
+                if (item.itemTitle === `${i18n.instance.t('settings')}`) {
                     this.router.push('settings');
-                } else if (item.itemTitle === global.lang.notifications) {
+                } else if (item.itemTitle === `${i18n.instance.t('notifications')}`) {
                     this.router.push('notifications');
-                } else if(item.itemTitle === global.lang.myDetails){
+                } else if(item.itemTitle === `${i18n.instance.t('myDetails')}`){
                     this.router.push('myDetails');
                 }else {
                     alert({
@@ -84,9 +86,9 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                   }
               })
             : ListViewItems.getLviRow2LineButton({
-                  mainButtonText: global.lang.loginHeader,
-                  bottomLeftLabelText: global.lang.signup,
-                  bottomRightLabelText: global.lang.forgotPassword,
+                  mainButtonText: `${i18n.instance.t('loginHeader')}`,
+                  bottomLeftLabelText: `${i18n.instance.t('signup')}`,
+                  bottomRightLabelText: `${i18n.instance.t('forgotPassword')}`,
                   mainOnClick: () => {
                       this.router.push('pages/pgLogin');
                   },
@@ -127,11 +129,11 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
     initLogoutButton() {
         this.onExit = () => {
             alert({
-                title: global.lang.warning,
-                message: global.lang.sureToLogout,
+                title: `${i18n.instance.t('warning')}`,
+                message: `${i18n.instance.t('sureToLogout')}`,
                 buttons: [
                     {
-                        text: global.lang.yes,
+                        text: `${i18n.instance.t('yes')}`,
                         type: AlertView.Android.ButtonType.POSITIVE,
                         onClick: () => {
                             store.dispatch(storeActions.logout());
@@ -139,7 +141,7 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
                         }
                     },
                     {
-                        text: global.lang.cancel,
+                        text: `${i18n.instance.t('cancel')}`,
                         type: AlertView.Android.ButtonType.NEGATIVE,
                         onClick: () => {}
                     }
@@ -173,6 +175,6 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
         this.initLogoutButton();
         this.initListView();
         this.headerBar.leftItemEnabled = false;
-        this.headerBar.title = global.lang.accountHeader;
+        this.headerBar.title = `${i18n.instance.t('accountHeader')}`;
     }
 }

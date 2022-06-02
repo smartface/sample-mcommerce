@@ -8,6 +8,7 @@ import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import Button from '@smartface/native/ui/button';
 import store from 'store';
 import storeActions from 'store/main/actions';
+import { i18n } from '@smartface/i18n';
 
 export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDesign) {
     product: Product;
@@ -26,11 +27,11 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
         });
     }
     initButton() {
-        this.btnSendReview.text = global.lang.addReview;
+        this.btnSendReview.text = `${i18n.instance.t('addReview')}`;
     }
     initMaterialTextBox() {
         this.flRateProduct.mtbComment.options = {
-            hint: global.lang.comment,
+            hint: `${i18n.instance.t('comment')}`,
             multiline: true
         };
         this.flRateProduct.mtbComment.materialTextBox.onTextChanged = () => {
@@ -43,13 +44,13 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
             const response = await postProductReview(productId, star, comment);
             this.router.goBack();
             alert({
-                title: global.lang.reviewHeader,
-                message: global.lang.reviewSent
+                title: `${i18n.instance.t('reviewHeader')}`,
+                message: `${i18n.instance.t('reviewSent')}`
             });
         } catch (error) {
             alert({
-                title: global.lang.warning,
-                message: global.lang.alreadySendReview
+                title: `${i18n.instance.t('warning')}`,
+                message: `${i18n.instance.t('alreadySendReview')}`
             });
         } finally {
             hideWaitDialog();
@@ -65,7 +66,7 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
 
     public onLoad() {
         super.onLoad?.();
-        this.headerBar.title = global.lang.addReviewHeader;
+        this.headerBar.title = `${i18n.instance.t('addReviewHeader')}`;
         this.product = this.route.getState().routeData?.product;
         this.initMaterialTextBox();
         this.initButton();

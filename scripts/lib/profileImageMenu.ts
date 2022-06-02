@@ -17,6 +17,8 @@ import Contacts from '@smartface/native/device/contacts';
 import { NativeRouter as Router } from '@smartface/router';
 import { themeService } from 'theme';
 import { IImage } from '@smartface/native/ui/image/image';
+import { i18n } from '@smartface/i18n';
+
 //@ts-ignore
 const contactActivity = Contacts.onActivityResult;
 //@ts-ignore
@@ -68,11 +70,11 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
     return new Promise((resolve, reject) => {
         const menu = new Menu();
         const menuItems = [];
-        menu.headerTitle = params.title ? params.title : global.lang.updatePhoto;
+        menu.headerTitle = params.title ? params.title : `${i18n.instance.t('updatePhoto')}`;
         const pictureDialog = initPictureDialog(params.imageUrl);
         menuItems.push(
             new MenuItem({
-                title: global.lang.show,
+                title:`${i18n.instance.t('show')}`,
                 onSelected: () => {
                     pictureDialog.show();
                 }
@@ -80,7 +82,7 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
         );
         menuItems.push(
             new MenuItem({
-                title: global.lang.openCamera,
+                title: `${i18n.instance.t('openCamera')}`,
                 onSelected: () => {
                     onCameraSelect().then((base64: string) => {
                         resolve(base64);
@@ -90,7 +92,7 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
         );
         menuItems.push(
             new MenuItem({
-                title: global.lang.selectFromGallery,
+                title: `${i18n.instance.t('selectFromGallery')}`,
                 onSelected: () => {
                     onGallerySelect().then((base64: string) => {
                         resolve(base64);
@@ -100,7 +102,7 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
         );
         if (System.OS === System.OSType.IOS) {
             const cancelMenuItem = new MenuItem({
-                title: global.lang.cancel
+                title: `${i18n.instance.t('cancel')}`
             });
             cancelMenuItem.ios.style = MenuItem.ios.Style.CANCEL;
             menuItems.push(cancelMenuItem);
@@ -114,7 +116,7 @@ export const onCameraSelect = (opts: IPhotoEdit = {}) => {
     return permissionUtil
         .getPermission({
             androidPermission: Application.Android.Permissions.CAMERA as any,
-            permissionText: global.lang.cameraPermissionFail,
+            permissionText: `${i18n.instance.t('cameraPermissionFail')}`,
             iosPermission: permissionUtil.IOS_PERMISSIONS.CAMERA
         })
         .then(() => {
@@ -137,10 +139,10 @@ export const onCameraSelect = (opts: IPhotoEdit = {}) => {
                     android: {
                         cropShape:
                             opts.cropShape === 'RECTANGLE' ? Multimedia.Android.CropShape.RECTANGLE : Multimedia.Android.CropShape.OVAL,
-                        rotateText: global.lang.rotate,
-                        scaleText: global.lang.stretch,
-                        cropText: global.lang.crop,
-                        headerBarTitle: global.lang.photoEditHeaderTitle,
+                        rotateText: `${i18n.instance.t('rotate')}`,
+                        scaleText: `${i18n.instance.t('stretch')}`,
+                        cropText: `${i18n.instance.t('crop')}`,
+                        headerBarTitle: `${i18n.instance.t('photoEditHeaderTitle')}`,
                         hideBottomControls: false
                     },
                     page: Router.currentRouter.getState().view
@@ -160,7 +162,7 @@ export const onGallerySelect = (opts: IPhotoEdit = {}) => {
     return permissionUtil
         .getPermission({
             androidPermission: Application.Android.Permissions.READ_EXTERNAL_STORAGE as any,
-            permissionText: global.lang.galleryPermissionFail
+            permissionText: `${i18n.instance.t('galleryPermissionFail')}`
         })
         .then(() => {
             return new Promise((resolve, reject) => {
@@ -183,10 +185,10 @@ export const onGallerySelect = (opts: IPhotoEdit = {}) => {
                     android: {
                         cropShape:
                             opts.cropShape === 'RECTANGLE' ? Multimedia.Android.CropShape.RECTANGLE : Multimedia.Android.CropShape.OVAL,
-                        rotateText: global.lang.rotate,
-                        scaleText: global.lang.stretch,
-                        cropText: global.lang.crop,
-                        headerBarTitle: global.lang.photoEditHeaderTitle,
+                        rotateText: `${i18n.instance.t('rotate')}`,
+                        scaleText: `${i18n.instance.t('stretch')}`,
+                        cropText: `${i18n.instance.t('crop')}`,
+                        headerBarTitle: `${i18n.instance.t('photoEditHeaderTitle')}`,
                         hideBottomControls: false
                     },
                     page: Router.currentRouter.getState().view

@@ -6,6 +6,7 @@ import PgVerificationDesign from 'generated/pages/pgVerification';
 const { image } = themeService.getNativeStyle('.sf-headerBar.back');
 import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
+import { i18n } from '@smartface/i18n';
 
 export default class PgVerification extends withDismissAndBackButton(PgVerificationDesign) {
     leftItem: HeaderBarItem;
@@ -15,13 +16,13 @@ export default class PgVerification extends withDismissAndBackButton(PgVerificat
         this.btnRouter.on('press', () => {
             this.router.push('pgLogin');
         });
-        this.lblTitle.text = global.lang.enterdigitcode;
-        this.lblText.text = global.lang.code;
-        this.lblResend.text = global.lang.resendCode;
+        this.lblTitle.text = `${i18n.instance.t('enterdigitcode')}`;
+        this.lblText.text = `${i18n.instance.t('code')}`;
+        this.lblResend.text = `${i18n.instance.t('resendCode')}`;
     }
     initMaterialTextBox() {
         this.mtbNumber.options = {
-            hint: global.lang.verificationCode
+            hint: `${i18n.instance.t('verificationCode')}`
         };
         this.mtbNumber.materialTextBox.keyboardType = KeyboardType.NUMBER;
     }

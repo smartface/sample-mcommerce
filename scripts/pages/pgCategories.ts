@@ -7,6 +7,7 @@ import System from '@smartface/native/device/system';
 import { themeService } from 'theme';
 import { getCategories } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+import { i18n } from '@smartface/i18n';
 
 export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
     categories: Categories[];
@@ -54,7 +55,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
                 this.refreshGridView();
             }
         } catch (error) {
-            alert(global.lang.categoriesServiceError);
+            alert(`${i18n.instance.t('categoriesServiceError')}`);
         } finally {
             this.categoriesGrid.stopRefresh();
             this.initialized = true;
@@ -70,7 +71,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
     }
     onLoad() {
         super.onLoad();
-        this.headerBar.title = global.lang.categoriesHeader;
+        this.headerBar.title = `${i18n.instance.t('categoriesHeader')}`;
         this.headerBar.leftItemEnabled = false;
         this.initCategoriesGrid();
     }
