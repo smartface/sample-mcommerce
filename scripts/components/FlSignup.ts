@@ -6,6 +6,7 @@ import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { register } from 'service/commerce';
 import AttributedString from '@smartface/native/ui/attributedstring';
 import { themeService } from 'theme';
+import { i18n } from '@smartface/i18n';
 
 export default class FlSignup extends FlSignupDesign {
     pageName?: string | undefined;
@@ -28,9 +29,9 @@ export default class FlSignup extends FlSignupDesign {
             this.mtbFirstName.materialTextBox.removeFocus();
             return true;
         }
-        this.lblTitle.text = global.lang.signup;
-        this.lblText.text = global.lang.signupSubText;
-        this.btnSignUp.text = global.lang.signup;
+        this.lblTitle.text = `${i18n.instance.t('signup')}`;
+        this.lblText.text = `${i18n.instance.t('signupSubText')}`;
+        this.btnSignUp.text = `${i18n.instance.t('signup')}`;
         
     }
     get router(): Router {
@@ -45,16 +46,16 @@ export default class FlSignup extends FlSignupDesign {
     
     initMaterialBoxes(){
         this.mtbFirstName.options = {
-            hint: global.lang.firstName
+            hint: `${i18n.instance.t('firstName')}`
         };
         this.mtbLastName.options = {
-            hint: global.lang.lastName
+            hint: `${i18n.instance.t('lastName')}`
         };
         this.mtbEmail.options = {
-            hint: global.lang.email
+            hint: `${i18n.instance.t('email')}`
         };
         this.mtbPassword.options = {
-            hint: global.lang.password
+            hint: `${i18n.instance.t('password')}`
         };
         this.mtbPassword.materialTextBox.isPassword = true;
     }
@@ -74,8 +75,8 @@ export default class FlSignup extends FlSignupDesign {
                 }
             } catch (error) {
                 alert({
-                    title: global.lang.warning,
-                    message: global.lang.alreadyExist
+                    title: `${i18n.instance.t('warning')}`,
+                    message: `${i18n.instance.t('alreadyExist')}`
                 });
             } finally {
                 hideWaitDialog();
@@ -100,8 +101,8 @@ export default class FlSignup extends FlSignupDesign {
             this.mtbLastName.materialTextBox.errorMessage = '';
         } else {
             this.namesValid = false;
-            this.mtbFirstName.materialTextBox.errorMessage = global.lang.invalidName.replace('$1', MINIMUM_CHARACTERS_REQUIRED);
-            this.mtbLastName.materialTextBox.errorMessage = global.lang.invalidName.replace('$1', MINIMUM_CHARACTERS_REQUIRED);
+            this.mtbFirstName.materialTextBox.errorMessage = `${i18n.instance.t('invalidName')}`.replace('$1', MINIMUM_CHARACTERS_REQUIRED.toString());
+            this.mtbLastName.materialTextBox.errorMessage = `${i18n.instance.t('invalidName')}`.replace('$1', MINIMUM_CHARACTERS_REQUIRED.toString());
         }
 
         if (mailExist && this.checkIsEmailValid(this.mtbEmail.materialTextBox.text)) {
@@ -109,7 +110,7 @@ export default class FlSignup extends FlSignupDesign {
             this.mtbEmail.materialTextBox.errorMessage = '';
         } else {
             this.isMailValid = false;
-            this.mtbEmail.materialTextBox.errorMessage = global.lang.invalidEmail;
+            this.mtbEmail.materialTextBox.errorMessage = `${i18n.instance.t('invalidEmail')}`;
         }
 
         if (passwordExists && this.mtbPassword.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD) {
@@ -117,9 +118,9 @@ export default class FlSignup extends FlSignupDesign {
             this.mtbPassword.materialTextBox.errorMessage = '';
         } else {
             this.isPasswordValid = false;
-            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword.replace(
+            this.mtbPassword.materialTextBox.errorMessage = `${i18n.instance.t('minimumCharacterErrorOnPassword')}`.replace(
                 '$1',
-                MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD
+                MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD.toString()
             );
         }
         if (this.isMailValid && this.isPasswordValid) {
@@ -135,22 +136,22 @@ export default class FlSignup extends FlSignupDesign {
 
     private initAttributedStrings() {
         const termsLeft = new AttributedString({
-            string: global.lang.termsLeft,
+            string: `${i18n.instance.t('termsLeft')}`,
             font: themeService.getNativeStyle('.signup.termsLeft').font,
             foregroundColor: themeService.getNativeStyle('.signup.termsLeft').textColor
         });
         const termsRight = new AttributedString({
-            string: global.lang.termsRight,
+            string: `${i18n.instance.t('termsRight')}`,
             font: themeService.getNativeStyle('.signup.termsPrivacyRight').font,
             foregroundColor: themeService.getNativeStyle('.signup.termsPrivacyRight').textColor
         });
         const privacyLeft = new AttributedString({
-            string: global.lang.privacyLeft,
+            string: `${i18n.instance.t('privacyLeft')}`,
             font: themeService.getNativeStyle('.signup.privacyLeft').font,
             foregroundColor: themeService.getNativeStyle('.signup.privacyLeft').textColor
         });
         const privacyRight = new AttributedString({
-            string: global.lang.privacyRight,
+            string: `${i18n.instance.t('privacyRight')}`,
             font: themeService.getNativeStyle('.signup.termsPrivacyRight').font,
             foregroundColor: themeService.getNativeStyle('.signup.termsPrivacyRight').textColor
         });

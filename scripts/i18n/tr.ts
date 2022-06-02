@@ -1,4 +1,4 @@
-SMF.i18n.defineLanguage('tr', {
+export default {
     verificationCode: 'Doğrulama Kodu',
     productDetail: 'Ürün Detayı',
     goToCheckout: 'Ödemeye Git',
@@ -165,4 +165,4 @@ SMF.i18n.defineLanguage('tr', {
     trackOrder: 'Siparişi takip et',
     backHome: 'Anasayfaya geri dön',
     checkoutLoginError: 'Ödeme sayfasına gitmek için giriş yapmalısınız.'
-});
+};

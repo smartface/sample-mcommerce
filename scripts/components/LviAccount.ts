@@ -1,5 +1,7 @@
 import { themeService } from 'theme';
 import LviAccountDesign from 'generated/my-components/LviAccount';
+import { i18n } from '@smartface/i18n';
+
 const originalHeight = themeService.getStyle('.lviAccount').height;
 
 export default class LviAccount extends LviAccountDesign {
@@ -28,7 +30,7 @@ export default class LviAccount extends LviAccountDesign {
         return this.lblAccountLviTitle.text;
     }
     set itemTitle(value: string) {
-        this.lblAccountLviTitle.text = global.lang[value];
+        this.lblAccountLviTitle.text = `${i18n.instance.t(`${value}`)}`;
     }
     get leftIcon(): string {
         return this.lblAccountLeftIcon.text;

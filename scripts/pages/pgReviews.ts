@@ -11,6 +11,7 @@ import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
 import store from 'store';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+import { i18n } from '@smartface/i18n';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviReviewProduct[]
@@ -68,7 +69,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             processorItems.push(
                 ListViewItems.getLviEmptyItem({
                     emptyImage: 'images://empty_star.png',
-                    emptyTitle: global.lang.emptyReviewList
+                    emptyTitle: `${i18n.instance.t('emptyReviewList')}`
                 })
             );
         } else {
@@ -121,7 +122,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             }
             return reviewsResponse;
         } catch (error) {
-            throw new Error(global.lang.reviewsServiceError);
+            throw new Error(`${i18n.instance.t('reviewsServiceError')}`);
         } finally {
             this.initialized = true;
             this.refreshListView();
@@ -154,7 +155,7 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
 
     public onLoad() {
         super.onLoad?.();
-        this.headerBar.title = global.lang.reviews;
+        this.headerBar.title = `${i18n.instance.t('reviews')}`;
         this.initListView();
     }
 }

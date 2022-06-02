@@ -3,6 +3,7 @@ import { withDismissAndBackButton } from '@smartface/mixins';
 import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/listView';
 import { Router, Route } from '@smartface/router';
 import * as ListViewItems from 'lib/listViewItemTypes';
+import { i18n } from '@smartface/i18n';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCheckoutSuccessful;
 
@@ -30,10 +31,10 @@ export default class PgCheckoutSuccessful extends withDismissAndBackButton(PgChe
         const processorItems = [];
         processorItems.push(ListViewItems.getLviCheckoutSuccessful({
             image: 'images://csuccessful.png',
-            title: global.lang.orderAccepted,
-            description: global.lang.onDelivery,
-            btnTrackOrderText: global.lang.trackOrder,
-            backHome: global.lang.backHome
+            title: `${i18n.instance.t('orderAccepted')}`,
+            description: `${i18n.instance.t('onDelivery')}`,
+            btnTrackOrderText: `${i18n.instance.t('trackOrder')}`,
+            backHome: `${i18n.instance.t('backHome')}`
         }));
         return processorItems;
     }

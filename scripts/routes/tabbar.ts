@@ -7,6 +7,8 @@ import { themeService } from 'theme';
 import BottomTabBarController from '@smartface/native/ui/bottomtabbarcontroller';
 import * as Pages from 'pages';
 import System from '@smartface/native/device/system';
+import { i18n } from '@smartface/i18n';
+
 const { backgroundColor, itemColor } = themeService.getNativeStyle('.tabs');
 
 themeService.onChange(() => {
@@ -19,7 +21,7 @@ themeService.onChange(() => {
 });
 
 const btbItemCart = new TabBarItem();
-btbItemCart.title = global.lang.cart;
+btbItemCart.title = `${i18n.instance.t('cart')}`;
 btbItemCart.badge.backgroundColor = itemColor.selected;
 btbItemCart.badge.visible = false;
 btbItemCart.icon = Image.createFromFile('images://tabiconcart.png');
@@ -36,7 +38,7 @@ store.subscribe(() => {
     }
 });
 const btbItemFavorite = new TabBarItem();
-btbItemFavorite.title = global.lang.favourite;
+btbItemFavorite.title = `${i18n.instance.t('favourite')}`;
 btbItemFavorite.badge.backgroundColor = itemColor.selected;
 btbItemFavorite.badge.visible = false;
 btbItemFavorite.icon = Image.createFromFile('images://tabiconfavorite.png');
@@ -141,11 +143,11 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
         backgroundColor: backgroundColor
     }),
     items: [
-        { title: global.lang.shop, icon: Image.createFromFile('images://tabiconhome.png') },
-        { title: global.lang.explore, icon: Image.createFromFile('images://tabiconexplore.png') },
+        { title: `${i18n.instance.t('shop')}`, icon: Image.createFromFile('images://tabiconhome.png') },
+        { title: `${i18n.instance.t('explore')}`, icon: Image.createFromFile('images://tabiconexplore.png') },
         btbItemCart,
         btbItemFavorite,
-        { title: global.lang.account, icon: Image.createFromFile('images://tabiconuser.png') }
+        { title: `${i18n.instance.t('account')}`, icon: Image.createFromFile('images://tabiconuser.png') }
     ],
     // tab1
     routes: [

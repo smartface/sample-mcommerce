@@ -14,6 +14,7 @@ import LviGenericSlider from 'components/LviGenericSlider';
 import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from 'constants';
 import FlHeaderIcon from 'components/FlHeaderIcon';
 import setHeaderIcon from 'lib/setHeaderIcon';
+import { i18n } from '@smartface/i18n';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -64,7 +65,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             processorItems.push(
                 ListViewItems.getLviShowcaseHeader({
                     showcaseTitle: showcase.title,
-                    showcaseLinkText: global.lang.seeAll.replace('$1', showcase.products.length),
+                    showcaseLinkText: `${i18n.instance.t('seeAll')}`.replace('$1', showcase.products.length.toString()),
                     onSeeAllClick: () => {
                         this.router.push('categoryDetail', {
                             dataId: showcase._id,
@@ -123,7 +124,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             const productResponse = await getProductsByQuery({ page: opts.pageNumber, limit: HOME_PRODUCT_LIMIT });
             this.products = productResponse.products;
         } catch (error) {
-            throw new Error(global.lang.productServiceError);
+            throw new Error(`${i18n.instance.t('productServiceError')}`);
         } finally {
             hideWaitDialog();
         }
@@ -138,7 +139,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             }
             return showcaseResponse;
         } catch (error) {
-            throw new Error(global.lang.showcaseServiceError);
+            throw new Error(`${i18n.instance.t('showcaseServiceError')}`);
         }
     }
 
@@ -147,7 +148,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             showWaitDialog();
             this.categories = await getCategories();
         } catch (error) {
-            throw new Error(global.lang.categoriesServiceError);
+            throw new Error(`${i18n.instance.t('categoriesServiceError')}`);
         } finally {
             hideWaitDialog();
         }
@@ -161,7 +162,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             }
             return bannersResponse;
         } catch (error) {
-            throw new Error(global.lang.bannerServiceError);
+            throw new Error(`${i18n.instance.t('bannerServiceError')}`);
         }
     }
     async initAutoLogin() {

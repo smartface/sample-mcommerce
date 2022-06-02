@@ -2,25 +2,26 @@ import PgAddAddressDesign from 'generated/pages/pgAddAddress';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { Router, Route } from '@smartface/router';
 import { themeService } from 'theme';
+import { i18n } from '@smartface/i18n';
 
 export default class PgAddAddress extends withDismissAndBackButton(PgAddAddressDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.flAddAddress.btnAddAddress.text = global.lang.save;
+        this.flAddAddress.btnAddAddress.text = `${i18n.instance.t('save')}`;
     }
     initMaterialTextBoxes(){
         this.flAddAddress.mtbName.options = {
-            hint: global.lang.firstName
+            hint: `${i18n.instance.t('firstName')}`
         }
         this.flAddAddress.mtbLastName.options = {
-            hint: global.lang.lastName
+            hint: `${i18n.instance.t('lastName')}`
         }
         this.flAddAddress.mtbAddress.options = {
-            hint: global.lang.address,
+            hint: `${i18n.instance.t('address')}`,
             multiline:true,
         }
         this.flAddAddress.mtbTitle.options = {
-            hint: global.lang.addressTitle
+            hint: `${i18n.instance.t('addressTitle')}`
         }
     }
     public onShow() {
@@ -32,7 +33,7 @@ export default class PgAddAddress extends withDismissAndBackButton(PgAddAddressD
 
     public onLoad() {
         super.onLoad?.();
-        this.headerBar.title = global.lang.addAddress;
+        this.headerBar.title = `${i18n.instance.t('addAddress')}`;
         this.initMaterialTextBoxes();
         
     }

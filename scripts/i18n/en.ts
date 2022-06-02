@@ -1,4 +1,4 @@
-SMF.i18n.defineLanguage('en', {
+export default {
     verificationCode: 'Verification Code',
     productDetail: 'Product Detail',
     goToCheckout: 'Go to Checkout',
@@ -166,4 +166,4 @@ SMF.i18n.defineLanguage('en', {
     trackOrder: 'Track Order',
     backHome: 'Back to home',
     checkoutLoginError: 'You must be logged in to go to the checkout page.'
-});
+};

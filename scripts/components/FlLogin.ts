@@ -4,6 +4,7 @@ import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constant
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { NativeStackRouter, Router } from '@smartface/router';
 import { login } from 'service/auth';
+import { i18n } from '@smartface/i18n';
 
 export default class FlLogin extends FlLoginDesign {
     pageName?: string | undefined;
@@ -17,12 +18,12 @@ export default class FlLogin extends FlLoginDesign {
         this.btnLogin.on('press', () => {
             this.initUserLogin();
         });
-        this.lblTitle.text = global.lang.login;
-        this.lblText.text = global.lang.loginSubText;
-        this.btnLogin.text = global.lang.login;
-        this.lblForgetPassword.text = global.lang.forgotPassword;
-        this.lblRouteSignUp.text = global.lang.signup;
-        this.lblLeft.text = global.lang.donthaveanaccount;
+        this.lblTitle.text = `${i18n.instance.t('login')}`;
+        this.lblText.text = `${i18n.instance.t('loginSubText')}`;
+        this.btnLogin.text = `${i18n.instance.t('login')}`;
+        this.lblForgetPassword.text = `${i18n.instance.t('forgotPassword')}`;
+        this.lblRouteSignUp.text = `${i18n.instance.t('signup')}`;
+        this.lblLeft.text = `${i18n.instance.t('donthaveanaccount')}`;
     }
     get router(): Router {
         return this._router;
@@ -40,10 +41,10 @@ export default class FlLogin extends FlLoginDesign {
         this.mtbPassword.android.enableErrorMessage = true;
 
         this.mtbEmail.options = {
-            hint: global.lang.email
+            hint: `${i18n.instance.t('email')}`
         };
         this.mtbPassword.options = {
-            hint: global.lang.password
+            hint: `${i18n.instance.t('password')}`
         };
         this.mtbPassword.materialTextBox.isPassword = true;
     }
@@ -62,8 +63,8 @@ export default class FlLogin extends FlLoginDesign {
                 }
             } catch (error) {
                 alert({
-                    title: global.lang.warning,
-                    message: global.lang.userNotFoundWithThisCredentials
+                    title: `${i18n.instance.t('warning')}`,
+                    message: `${i18n.instance.t('userNotFoundWithThisCredentials')}`
                 });
             } finally {
                 hideWaitDialog();
@@ -82,7 +83,7 @@ export default class FlLogin extends FlLoginDesign {
             this.mtbEmail.materialTextBox.errorMessage = '';
         } else {
             this.isMailValid = false;
-            this.mtbEmail.materialTextBox.errorMessage = global.lang.invalidEmail;
+            this.mtbEmail.materialTextBox.errorMessage = `${i18n.instance.t('invalidEmail')}`;
         }
 
         if (passwordExists && this.mtbPassword.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD) {
@@ -90,9 +91,9 @@ export default class FlLogin extends FlLoginDesign {
             this.mtbPassword.materialTextBox.errorMessage = '';
         } else {
             this.isPasswordValid = false;
-            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword.replace(
+            this.mtbPassword.materialTextBox.errorMessage = `${i18n.instance.t('minimumCharacterErrorOnPassword')}`.replace(
                 '$1',
-                MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD
+                MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD.toString()
             );
         }
         if (this.isMailValid && this.isPasswordValid) {

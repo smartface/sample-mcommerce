@@ -10,6 +10,7 @@ import Image from '@smartface/native/ui/image';
 import Page from '@smartface/native/ui/page';
 import { themeService } from 'theme';
 import SwipeItem from '@smartface/native/ui/swipeitem';
+import { i18n } from '@smartface/i18n';
 
 const isIOS = System.OS === System.OSType.IOS;
 const SwipeImages = {
@@ -47,7 +48,7 @@ export function onRowSwipe(event, fieldName = 'data') {
     const dataId = page[fieldName][event.index].id;
     const deleteItem = initSwipeItem({
         contextName: 'deleteItem',
-        text: global.lang.delete,
+        text: `${i18n.instance.t('delete')}`,
         onPress: properties.onDelete,
         className: '.swipeItem.delete',
         page: this,

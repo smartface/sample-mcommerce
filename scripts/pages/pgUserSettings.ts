@@ -7,6 +7,7 @@ import PgUserSettingsDesign from 'generated/pages/pgUserSettings';
 import { themeService } from 'theme';
 import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
+import { i18n } from '@smartface/i18n';
 
 export default class PgUserSettings extends withDismissAndBackButton(PgUserSettingsDesign) {
     private data: ReturnType<typeof getLviRow1LineLarge>[];
@@ -31,7 +32,7 @@ export default class PgUserSettings extends withDismissAndBackButton(PgUserSetti
     refreshListView() {
         const themeItem = getLviRow1LineLarge({
             image: 'images://ayarlar_karanlikmod.png',
-            title: global.lang.changeTheme,
+            title: `${i18n.instance.t('changeTheme')}`,
             showSeparator: true,
             themeSwitch: true,
             onTouchEnded: () => {
@@ -65,7 +66,7 @@ export default class PgUserSettings extends withDismissAndBackButton(PgUserSetti
     }
     onShow() {
         super.onShow();
-        this.headerBar.title = global.lang.settingsHeader;
+        this.headerBar.title = `${i18n.instance.t('settingsHeader')}`;
         this.refreshListView();
         this.initBackButton(this.router, {
             color: themeService.getNativeStyle('.sf-headerBar.main').itemColor

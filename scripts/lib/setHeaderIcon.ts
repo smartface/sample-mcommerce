@@ -1,6 +1,7 @@
 import FlexLayout from '@smartface/native/ui/flexlayout';
 import FlHeaderIcon from 'components/FlHeaderIcon';
 import { themeService } from 'theme';
+import { i18n } from '@smartface/i18n';
 
 export default function setHeaderIcon(flHeaderIcon: FlHeaderIcon) {
     flHeaderIcon = new FlHeaderIcon();
@@ -9,6 +10,6 @@ export default function setHeaderIcon(flHeaderIcon: FlHeaderIcon) {
         type: 'pushClassNames',
         classNames: '.flHeaderIcon'
     });
-    flHeaderIcon.appName = global.lang.appName;
+    flHeaderIcon.appName = `${i18n.instance.t('appName')}`;
     return flHeaderIcon;
 }

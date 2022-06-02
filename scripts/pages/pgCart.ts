@@ -12,6 +12,7 @@ import setVisibility from 'lib/setVisibility';
 import { moneyFormatter } from 'lib/moneyFormatter';
 import { showCheckoutDialog } from 'lib/checkoutDialog';
 import {getAccessToken} from '../service/token';
+import { i18n } from '@smartface/i18n';
 
 type Processor = ListViewItems.ProcessorTypes.ILviCartItem | ListViewItems.ProcessorTypes.ILviCartItem;
 
@@ -29,16 +30,16 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
         this.flCartCheckout.onCheckoutClick = () => {
             if(!getAccessToken()){
                 alert({
-                    title: global.lang.warning,
-                    message: global.lang.checkoutLoginError,
+                    title: `${i18n.instance.t('warning')}`,
+                    message: `${i18n.instance.t('checkoutLoginError')}`,
                     buttons: [
                         {
-                            text: global.lang.cancel,
+                            text: `${i18n.instance.t('cancel')}`,
                             type: AlertView.Android.ButtonType.NEGATIVE,
                             onClick: () => {}
                         },
                         {
-                            text: global.lang.login,
+                            text: `${i18n.instance.t('login')}`,
                             type: AlertView.Android.ButtonType.POSITIVE,
                             onClick: () => {
                                 router.push('pages/pgLogin');
@@ -84,7 +85,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
             processorItems.push(
                 ListViewItems.getLviEmptyItem({
                     emptyImage: 'images://empty_cart.png',
-                    emptyTitle: global.lang.shoppingCartIsEmpty
+                    emptyTitle: `${i18n.instance.t('shoppingCartIsEmpty')}`
                 })
             );
         } else {
@@ -108,11 +109,11 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                         },
                         onRemoveAction: () => {
                             alert({
-                                title: global.lang.delete,
-                                message: global.lang.sureToDelete,
+                                title: `${i18n.instance.t('delete')}`,
+                                message: `${i18n.instance.t('sureToDelete')}`,
                                 buttons: [
                                     {
-                                        text: global.lang.delete,
+                                        text: `${i18n.instance.t('delete')}`,
                                         type: AlertView.Android.ButtonType.POSITIVE,
                                         onClick: () => {
                                             this.cartOperation(cart, CartOperationEnum.Clear);
@@ -120,7 +121,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
                                         }
                                     },
                                     {
-                                        text: global.lang.cancel,
+                                        text: `${i18n.instance.t('cancel')}`,
                                         type: AlertView.Android.ButtonType.NEGATIVE,
                                         onClick: () => {}
                                     }
@@ -137,7 +138,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     }
     calculateCheckoutPrice() {
         if (store.getState().main.basket.length > 0) {
-            this.flCartCheckout.checkoutTitle = global.lang.goToCheckout;
+            this.flCartCheckout.checkoutTitle =`${i18n.instance.t('goToCheckout')}`;
             this.flCartCheckout.checkoutPrice = store
                 .getState()
                 .main.basket.reduce((total, product) => {
@@ -172,7 +173,7 @@ export default class PgCart extends withDismissAndBackButton(PgCartDesign) {
     onLoad() {
         super.onLoad();
         this.headerBar.leftItemEnabled = false;
-        this.headerBar.title = global.lang.mycartHeader;
+        this.headerBar.title = `${i18n.instance.t('mycartHeader')}`;
         this.initListView();
     }
 }

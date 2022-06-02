@@ -1,5 +1,5 @@
 /* globals lang */
-import 'i18n/i18n'; // Generates global lang object
+import 'i18n'; // Generates global lang object
 import '@smartface/native';
 import 'theme';
 import 'lib/deeplink';

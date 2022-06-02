@@ -5,6 +5,7 @@ import { themeService } from 'theme';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { getLviAccount } from 'lib/listViewItemTypes';
 import LviAccount from 'components/LviAccount';
+import { i18n } from '@smartface/i18n';
 
 
 export default class PgMyDetails extends withDismissAndBackButton(PgMyDetailsDesign) {
@@ -21,7 +22,7 @@ export default class PgMyDetails extends withDismissAndBackButton(PgMyDetailsDes
         this.lvMain.onRowType = onRowType.bind(this);
         this.lvMain.onRowBind = onRowBind.bind(this);
         this.lvMain.onRowSelected = (item:LviAccount) => {
-            if (item.itemTitle === global.lang.addressBook) {
+            if (item.itemTitle === `${i18n.instance.t('addressBook')}`) {
                 this.router.push('addressInformation');
             }
                 
@@ -51,7 +52,7 @@ export default class PgMyDetails extends withDismissAndBackButton(PgMyDetailsDes
 
     public onLoad() {
         super.onLoad?.();
-        this.headerBar.title = global.lang.myDetails;
+        this.headerBar.title = `${i18n.instance.t('myDetails')}`;
         this.initListView();
     }
 }

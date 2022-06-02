@@ -2,6 +2,7 @@ import { themeService } from 'theme';
 import Toast from '@smartface/native/ui/toast';
 import Screen from '@smartface/native/device/screen';
 import System from '@smartface/native/device/system';
+import { i18n } from '@smartface/i18n';
 
 //header height ~ 55px, ios and android difference ~ 50px
 const bottomOffsetIOS = Screen.height - 150;
@@ -12,7 +13,7 @@ const removeFromBasketBackground = themeService.getNativeStyle('.flProductItemBu
 
 export const addToBasketToast = () => {
     const myToastMessage = new Toast({
-        message: global.lang.addedToBasket,
+        message: `${i18n.instance.t('addedToBasket')}`,
         bottomOffset: System.OS === System.OSType.ANDROID ? bottomOffsetAnd : bottomOffsetIOS,
         backgroundColor: addToBasketBackground,
         duration: 1
@@ -22,7 +23,7 @@ export const addToBasketToast = () => {
 
 export const removeFromBasketToast = () => {
     const myToastMessage = new Toast({
-        message: global.lang.removedFromBasket,
+        message: `${i18n.instance.t('removedFromBasket')}`,
         bottomOffset: System.OS === System.OSType.ANDROID ? bottomOffsetAnd : bottomOffsetIOS,
         backgroundColor: removeFromBasketBackground,
         duration: 1

@@ -4,6 +4,7 @@ import { getLviRow1LineLarge } from 'lib/listViewItemTypes';
 import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
+import { i18n } from '@smartface/i18n';
 
 export default class PgNotifications extends withDismissAndBackButton(PgNotificationsDesign) {
     private data: ReturnType<typeof getLviRow1LineLarge>[];
@@ -49,7 +50,7 @@ export default class PgNotifications extends withDismissAndBackButton(PgNotifica
     }
     onLoad() {
         super.onLoad();
-        this.headerBar.title = global.lang.notifications;
+        this.headerBar.title = `${i18n.instance.t('notifications')}`;
         this.initListView();
     }
 }

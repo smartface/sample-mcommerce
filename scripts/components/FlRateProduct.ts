@@ -1,5 +1,6 @@
 import ImageView from '@smartface/native/ui/imageview';
 import FlRateProductDesign from 'generated/my-components/FlRateProduct';
+import { i18n } from '@smartface/i18n';
 
 export default class FlRateProduct extends FlRateProductDesign {
     pageName?: string | undefined;
@@ -8,7 +9,7 @@ export default class FlRateProduct extends FlRateProductDesign {
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
-        this.lblHeader.text = global.lang.rateProduct;
+        this.lblHeader.text = `${i18n.instance.t('rateProduct')}`;
         this.images = [this.imgStar1, this.imgStar2, this.imgStar3, this.imgStar4, this.imgStar5];
         this.images.forEach((imageViewStar, index) => {
             imageViewStar.on('touchEnded', () => {
