@@ -1,5 +1,5 @@
 import Color from '@smartface/native/ui/color';
-import Image from '@smartface/native/ui/image';
+import ShimmerFlexLayout from '@smartface/native/ui/shimmerflexlayout';
 import CategoryGridViewItemDesign from 'generated/my-components/CategoryGridViewItem';
 import { getCategoryImage } from 'service/commerce';
 
@@ -38,5 +38,37 @@ export default class CategoryGridViewItem extends CategoryGridViewItemDesign {
     }
     set flCategoryItemWrapperBackgroundColor(value: any) {
         this.flCategoryItemWrapper.backgroundColor = Color.create(value);
+    }
+    startShimmering(){
+        this.sflCategoryItem.startShimmering();
+        this.lblCategoryItemTitle.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+              backgroundColor: '#D2D2D2'
+            }
+          });
+          this.imgCategoryItem.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+              backgroundColor: '#D2D2D2'
+            }
+          });
+    }
+    stopShimmering(){
+        this.sflCategoryItem.stopShimmering();
+        this.sflCategoryItem.baseAlpha = 1;
+        this.sflCategoryItem.android.build(ShimmerFlexLayout.Android.Shimmer.AlphaHighlight);
+        this.lblCategoryItemTitle.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+              backgroundColor: 'rgba(0,0,0,0)'
+            }
+          });
+          this.imgCategoryItem.dispatch({
+            type: 'updateUserStyle',
+            userStyle: {
+              backgroundColor: 'rgba(0,0,0,0)'
+            }
+          });
     }
 }

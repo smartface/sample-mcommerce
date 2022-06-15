@@ -6,11 +6,14 @@ import { Categories } from 'types';
 import System from '@smartface/native/device/system';
 import { themeService } from 'theme';
 import { getCategories } from 'service/commerce';
-import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
+import Network from '@smartface/native/device/network';
+import { ON_SHOW_TIMEOUT } from 'constants';
 
 export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
-    categories: Categories[];
+    categories: Categories[] = Array.from({ length: 10 }).map((_, index: number) => (
+        { _id: "1", borderColor: "#D2D2D2", title: "", categoryImg: "", menuColor: "#FFFFFF" }));
     initialized = false;
+    noConnection: boolean;
     constructor(private router?: Router, private route?: Route) {
         super({});
         if (System.OS === System.OSType.ANDROID) {
@@ -20,6 +23,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
                 this.categoriesGrid.refreshData();
             });
         }
+        this.noConnection = Network.connectionType === Network.ConnectionType.NONE;
     }
     initCategoriesGrid() {
         this.categoriesGrid.onPullRefresh = () => {
@@ -33,6 +37,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
             GridViewItem.flCategoryItemWrapperBackgroundColor = this.categories[index].menuColor;
             GridViewItem.categoryTitle = this.categories[index].title;
             GridViewItem.imageUrl = this.categories[index]._id;
+            this.initialized ? GridViewItem.stopShimmering() : GridViewItem.startShimmering();
         };
         this.categoriesGrid.onItemSelected = (GridViewItem: categoriesItem, index: number) => {
             this.router.push('categoryDetail', {
@@ -48,24 +53,28 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
     }
     async fetchCategories() {
         try {
-            showWaitDialog();
             this.categories = await getCategories();
             if (this.categories) {
                 this.refreshGridView();
             }
         } catch (error) {
-            alert(global.lang.categoriesServiceError);
+            if (!this.noConnection) {
+                alert(global.lang.categoriesServiceError);
+            }
         } finally {
             this.categoriesGrid.stopRefresh();
             this.initialized = true;
-            hideWaitDialog();
         }
     }
 
     onShow() {
         super.onShow();
+        this.refreshGridView();
         if (!this.initialized) {
-            this.fetchCategories();
+            setTimeout(() => {
+                this.fetchCategories();
+            }, ON_SHOW_TIMEOUT);
+            
         }
     }
     onLoad() {

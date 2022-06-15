@@ -93,4 +93,10 @@ export default class GviProductItem extends GviProductItemDesign {
     set itemDesc(value: string) {
         this.flProductItem.itemDesc = value;
     }
+    startShimmering(){
+        this.flProductItem.startShimmering();
+    }
+    stopShimmering(){
+        this.flProductItem.stopShimmering();
+    }
 }

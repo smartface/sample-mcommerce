@@ -78,6 +78,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.productFavoriteImg = isThisProductFavourited ? 'images://favorited.png' : 'images://favourite.png';
         const processorItems = [
             ListViewItems.getLviGenericSlider({
+                initialized: true,
                 images: this.product.images.map((image) => {
                     return getProductImageUrl(image);
                 })
