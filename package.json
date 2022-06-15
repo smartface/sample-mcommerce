@@ -17,7 +17,7 @@
 		"native"
 	],
 	"dependencies": {
-		"@smartface/builder": "^0.9.0",
+		"@smartface/builder": "0.9.1",
 		"@smartface/marketplace-service": "^0.9.0",
 		"cross-env": "^7.0.3",
 		"rimraf": "^3.0.2",
@@ -34,7 +34,7 @@
 		"prettier": "prettier --write ."
 	},
 	"devDependencies": {
-		"@smartface/dispatcher": "^0.9.0",
+		"@smartface/dispatcher": "0.9.1",
 		"@smartface/image-processor": "^1.2.6",
 		"@smartface/library-reader": "^0.9.0",
 		"@smartface/tsc-watch": "^0.9.0",
