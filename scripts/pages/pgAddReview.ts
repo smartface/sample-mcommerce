@@ -1,6 +1,6 @@
 import PgAddReviewDesign from 'generated/pages/pgAddReview';
 import { withDismissAndBackButton } from '@smartface/mixins';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { themeService } from 'theme';
 import { Product } from 'types';
 import { postProductReview } from 'service/commerce';
@@ -13,7 +13,7 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
     product: Product;
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.btnSendReview.on(Button.Events.Press, () => {
+        this.btnSendReview.on('press', () => {
             if (this.flRateProduct.rate !== 0) {
                 this.postReview(this.product._id, this.flRateProduct.rate, this.flRateProduct.comment)
                     .then(() => {

@@ -1,10 +1,10 @@
 import { themeService } from 'theme';
 import Button from '@smartface/native/ui/button';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
-import KeyboardType from '@smartface/native/ui/keyboardtype';
+import KeyboardType from '@smartface/native/ui/shared/keyboardtype';
 import PgVerificationDesign from 'generated/pages/pgVerification';
 const { image } = themeService.getNativeStyle('.sf-headerBar.back');
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 
 export default class PgVerification extends withDismissAndBackButton(PgVerificationDesign) {
@@ -12,7 +12,7 @@ export default class PgVerification extends withDismissAndBackButton(PgVerificat
     constructor(private router?: Router, private route?: Route) {
         super({});
 
-        this.btnRouter.on(Button.Events.Press, () => {
+        this.btnRouter.on('press', () => {
             this.router.push('pgLogin');
         });
         this.lblTitle.text = global.lang.enterdigitcode;

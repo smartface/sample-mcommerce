@@ -4,7 +4,7 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import AlertView from '@smartface/native/ui/alertview';
 import { Basket, Product } from 'types';
 import { withDismissAndBackButton } from '@smartface/mixins';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import store from 'store/index';
 import storeActions from 'store/main/actions';
 import { getProductImageUrl } from 'service/commerce';

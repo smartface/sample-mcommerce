@@ -1,6 +1,6 @@
 import PgMyDetailsDesign from 'generated/pages/pgMyDetails';
 import { withDismissAndBackButton } from '@smartface/mixins';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { themeService } from 'theme';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { getLviAccount } from 'lib/listViewItemTypes';

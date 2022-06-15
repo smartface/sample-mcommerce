@@ -1,6 +1,5 @@
 import Dialog from '@smartface/native/ui/dialog';
 import FlWaitDialog from 'components/FlWaitDialog';
-import componentContextPatch from '@smartface/contx/lib/smartface/componentContextPatch';
 import { themeService } from 'theme';
 import FlexLayout from '@smartface/native/ui/flexlayout';
 
@@ -14,11 +13,11 @@ function initWaitDialog() {
             cancelable: false,
             isTransparent: true
         }
-    }) as StyleContextComponentType<Dialog>;
+    }) as StyleContextComponentWithDispatch<Dialog>;
     const component = new FlWaitDialog();
     themeService.addGlobalComponent(component as any, 'flWaitDialog');
     themeService.addGlobalComponent(dialog.layout as any, 'waitDialog');
-    (dialog.layout as StyleContextComponentType<FlexLayout>).dispatch({
+    (dialog.layout as StyleContextComponentWithDispatch<FlexLayout>).dispatch({
         type: 'pushClassNames',
         classNames: '.dialog-transparent'
     });

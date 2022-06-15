@@ -3,12 +3,12 @@ import Application from '@smartface/native/application';
 import authRouteGenerator from './auth';
 import TabbarRoute from './tabbar';
 import isEmulator from '@smartface/extension-utils/lib/isEmulator';
-import launchScreen from "./launch"
+import launchScreen from './launch';
 import checkoutSuccessful from './checkoutSuccessful';
 import Network from '@smartface/native/device/network';
 import noConnection from './noConnection'
 import { ON_SHOW_TIMEOUT } from 'constants'
-Application.on(Application.Events.BackButtonPressed, () => {
+Application.on('backButtonPressed', () => {
     Router.getActiveRouter()?.goBack();
 });
 

@@ -1,4 +1,4 @@
-import { NativeStackRouter as StackRouter, Route, Router } from '@smartface/router';
+import { NativeRouter as Router, NativeStackRouter as StackRouter, Route, BottomTabBarRouter } from '@smartface/router';
 import * as Pages from 'pages';
 
 export default function (basePath: string) {

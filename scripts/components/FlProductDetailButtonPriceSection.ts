@@ -1,4 +1,3 @@
-import { contextReducer } from '@smartface/contx/lib/smartface/pageContext';
 import AttributedString from '@smartface/native/ui/attributedstring';
 import Image from '@smartface/native/ui/image';
 import View from '@smartface/native/ui/view';
@@ -15,10 +14,10 @@ export default class FlProductDetailButtonPriceSection extends FlProductDetailBu
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-        this.imgMinus.on(View.Events.TouchEnded, () => {
+        this.imgMinus.on('touchEnded', () => {
             this.__onMinusClick && this.__onMinusClick();
         });
-        this.imgPlus.on(View.Events.TouchEnded, () => {
+        this.imgPlus.on('touchEnded', () => {
             this.__onPlusClick && this.__onPlusClick();
         });
     }

@@ -3,7 +3,7 @@ import System from '@smartface/native/device/system';
 import Application from '@smartface/native/application';
 import Menu from '@smartface/native/ui/menu';
 import Image from '@smartface/native/ui/image';
-import Blob from '@smartface/native/blob';
+import Blob from '@smartface/native/global/blob';
 const MenuItem = require('@smartface/native/ui/menuitem');
 import active from '@smartface/extension-utils/lib/router/active';
 import permissionUtil from '@smartface/extension-utils/lib/permission';
@@ -16,6 +16,7 @@ import genericErrorHandler from './genericErrorHandler';
 import Contacts from '@smartface/native/device/contacts';
 import { NativeRouter as Router } from '@smartface/router';
 import { themeService } from 'theme';
+import { IImage } from '@smartface/native/ui/image/image';
 //@ts-ignore
 const contactActivity = Contacts.onActivityResult;
 //@ts-ignore
@@ -27,8 +28,8 @@ Contacts.onActivityResult = function (requestCode, resultCode, data) {
 };
 // END OF WORKAROUND
 
-const compressImage = (UIImage: Image, opts?: IPhotoEdit): Promise<any> => {
-    const resize = (image: Image): Promise<Image> =>
+const compressImage = (UIImage: IImage, opts?: IPhotoEdit): Promise<any> => {
+    const resize = (image: IImage): Promise<IImage> =>
         new Promise((resolve, reject) => {
             if (opts.resizeRateMultiplier) {
                 return image.resize(
@@ -112,7 +113,7 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
 export const onCameraSelect = (opts: IPhotoEdit = {}) => {
     return permissionUtil
         .getPermission({
-            androidPermission: Application.Android.Permissions.CAMERA,
+            androidPermission: Application.Android.Permissions.CAMERA as any,
             permissionText: global.lang.cameraPermissionFail,
             iosPermission: permissionUtil.IOS_PERMISSIONS.CAMERA
         })
@@ -158,7 +159,7 @@ export const onCameraSelect = (opts: IPhotoEdit = {}) => {
 export const onGallerySelect = (opts: IPhotoEdit = {}) => {
     return permissionUtil
         .getPermission({
-            androidPermission: Application.Android.Permissions.READ_EXTERNAL_STORAGE,
+            androidPermission: Application.Android.Permissions.READ_EXTERNAL_STORAGE as any,
             permissionText: global.lang.galleryPermissionFail
         })
         .then(() => {

@@ -6,7 +6,7 @@ import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import store from 'store/index';
 import storeActions from 'store/main/actions';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { themeService } from 'theme';
 import { getProduct, getProductImageUrl } from 'service/commerce';
@@ -43,7 +43,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
         this.headerBar.setItems([rightItem]);
     }
     addToBasket() {
-        this.btnAddToBasket.on(Button.Events.Press, () => {
+        this.btnAddToBasket.on('press', () => {
             store.dispatch(storeActions.AddToBasket({ product: this.product, count: this.productCounter }));
         });
     }

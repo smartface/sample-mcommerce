@@ -1,9 +1,10 @@
 import ActivityIndicator from '@smartface/native/ui/activityindicator';
+import { IActivityIndicator } from '@smartface/native/ui/activityindicator/activityindicator';
 import GviProductItemDesign from 'generated/my-components/GviProductItem';
 
 export default class GviProductItem extends GviProductItemDesign {
     pageName?: string | undefined;
-    myActivityIndicator: ActivityIndicator;
+    myActivityIndicator: IActivityIndicator;
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;

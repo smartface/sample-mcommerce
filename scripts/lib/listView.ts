@@ -4,12 +4,12 @@ import ListViewItem from '@smartface/native/ui/listviewitem';
 import { LviTypes, LviClasses, IProcessed } from 'lib/listViewItemTypes';
 import { setBordersForSwipeItem, setBordersForListViewItem } from 'lib/border';
 import createPageContext from '@smartface/styling-context/lib/pageContext';
-import addChild from '@smartface/contx/lib/smartface/action/addChild';
 import { setID } from 'lib/testAutomation';
 import genericErrorHandler from 'lib/genericErrorHandler';
 import Image from '@smartface/native/ui/image';
 import Page from '@smartface/native/ui/page';
 import { themeService } from 'theme';
+import SwipeItem from '@smartface/native/ui/swipeitem';
 
 const isIOS = System.OS === System.OSType.IOS;
 const SwipeImages = {
@@ -73,9 +73,9 @@ const swipeAndroidWorkaroundMethod = (page: Page) => {
     }
 };
 
-function initSwipeItem(itemOptions?: SwipeItemOptions): StyleContextComponentType<ListView.SwipeItem> {
-    const swipeItem = new ListView.SwipeItem() as StyleContextComponentType<ListView.SwipeItem>;
-    themeService.addPage(createPageContext(swipeItem, itemOptions.contextName), itemOptions.contextName);
+function initSwipeItem(itemOptions?: SwipeItemOptions): StyleContextComponentWithDispatch<SwipeItem> {
+    const swipeItem = new ListView.SwipeItem() as StyleContextComponentWithDispatch<SwipeItem>;
+    themeService.addGlobalComponent(swipeItem as any, itemOptions.contextName)
     swipeItem.text = itemOptions.text || '';
     if (itemOptions.icon) {
         swipeItem.icon = itemOptions.icon;
@@ -144,7 +144,11 @@ export function onRowBind(item, index, fieldName = 'data') {
 export function onRowCreate(type: any): ListViewItem {
     const LviClass = LviClasses[type];
     const listViewItem = new LviClass();
-    this.lvMain.dispatch(addChild(`listViewItem${++currentIndex}`, listViewItem));
+    this.lvMain.dispatch({
+      type: 'addChild',
+      component: listViewItem,
+      name: `listViewItem${++currentIndex}`
+    });
     return listViewItem;
 }
 

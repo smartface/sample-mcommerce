@@ -6,7 +6,7 @@ const PREFIX = 'dot';
 
 export default class DotIndicator extends DotIndicatorDesign {
     pageName?: string | undefined;
-    private __dots: StyleContextComponentType<FlexLayout>[];
+    private __dots: StyleContextComponentWithDispatch<FlexLayout>[];
     private __lastActiveIndex: number;
     private __size: number;
     private __currentIndex: number;
@@ -59,7 +59,7 @@ export default class DotIndicator extends DotIndicatorDesign {
             const d = new FlexLayout();
             this.addChild(d, dotName, `.sf-flexLayout ${this.__style.inActiveClassName}`);
             this.addStyleableChild(d, dotName, `.sf-flexLayout ${this.__style.inActiveClassName}`);
-            this.__dots.push(d as StyleContextComponentType<FlexLayout>);
+            this.__dots.push(d as StyleContextComponentWithDispatch<FlexLayout>);
         }
         this.currentIndex = 0;
         System.OS === System.OSType.IOS ? this.getParent().applyLayout() : this.applyLayout();

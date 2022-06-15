@@ -1,6 +1,6 @@
 import PgAddressDesign from 'generated/pages/pgAddress';
 import { withDismissAndBackButton } from '@smartface/mixins';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { themeService } from 'theme';
 import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/listView';
 import * as ListViewItems from 'lib/listViewItemTypes';

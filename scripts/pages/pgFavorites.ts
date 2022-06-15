@@ -4,7 +4,7 @@ import storeActions from 'store/main/actions';
 import ListView from '@smartface/native/ui/listview';
 import * as ListViewItems from 'lib/listViewItemTypes';
 import { onRowBind, onRowCreate, onRowHeight, onRowSwipe, onRowType } from 'lib/listView';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductImageUrl } from 'service/commerce';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';

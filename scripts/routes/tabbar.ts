@@ -1,6 +1,6 @@
 import Image from '@smartface/native/ui/image';
 import TabBarItem from '@smartface/native/ui/tabbaritem';
-import { BottomTabBarRouter, NativeStackRouter as StackRouter, Route, Router } from '@smartface/router';
+import { NativeRouter as Router, NativeStackRouter as StackRouter, Route, BottomTabBarRouter } from '@smartface/router';
 import store from 'store/index';
 import authRouteGenerator from './auth';
 import { themeService } from 'theme';
@@ -245,7 +245,6 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                 }),
                 productDetailRouter('/btb/tab3'),
                 authRouteGenerator('/btb/tab3')
-
             ]
         }),
         StackRouter.of({
@@ -301,14 +300,14 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     ]
                 }),
                 Route.of({
-                    path:'/btb/tab5/myDetails',
+                    path: '/btb/tab5/myDetails',
                     to: '/btb/tab5/myDetails/main',
-                    routes:[
+                    routes: [
                         Route.of<Pages.pgMyDetails>({
                             path: '/btb/tab5/myDetails/main',
-                            build(router,route){
+                            build(router, route) {
                                 const page = new Pages.pgMyDetails(router, route);
-                                router.setState({ view: page })
+                                router.setState({ view: page });
                                 return page;
                             }
                         })
@@ -331,30 +330,30 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                         })
                     ]
                 }),
-                
+
                 Route.of({
-                    path:'/btb/tab5/addressInformation',
+                    path: '/btb/tab5/addressInformation',
                     to: '/btb/tab5/addressInformation/main',
-                    routes:[
+                    routes: [
                         Route.of<Pages.pgAddress>({
                             path: '/btb/tab5/addressInformation/main',
-                            build(router,route){
+                            build(router, route) {
                                 const page = new Pages.pgAddress(router, route);
-                                router.setState({ view: page })
+                                router.setState({ view: page });
                                 return page;
                             }
                         })
                     ]
                 }),
                 Route.of({
-                    path:'/btb/tab5/addAddress',
+                    path: '/btb/tab5/addAddress',
                     to: '/btb/tab5/addAddress/main',
-                    routes:[
+                    routes: [
                         Route.of<Pages.pgAddAddress>({
                             path: '/btb/tab5/addAddress/main',
-                            build(router,route){
+                            build(router, route) {
                                 const page = new Pages.pgAddAddress(router, route);
-                                router.setState({ view: page })
+                                router.setState({ view: page });
                                 return page;
                             }
                         })

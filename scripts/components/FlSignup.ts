@@ -1,5 +1,5 @@
 import FlSignupDesign from 'generated/my-components/FlSignup';
-import { NativeStackRouter, BaseRouter as Router } from '@smartface/router';
+import { NativeStackRouter, Router } from '@smartface/router';
 import Button from '@smartface/native/ui/button';
 import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD, MINIMUM_CHARACTERS_REQUIRED } from 'constants';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
@@ -17,14 +17,16 @@ export default class FlSignup extends FlSignupDesign {
         // Initalizes super class for this scope
         super(props);
         this.pageName = pageName;
-        this.btnSignUp.on(Button.Events.Press, () => {
+        this.btnSignUp.on('press', () => {
             this.initUserSignup();
         });
         this.flWrapper.onTouchEnded = () =>{
             this.mtbFirstName.materialTextBox.removeFocus();
+            return true;
         }
         this.tvTermsAndPrivacy.onTouchEnded = () => {
             this.mtbFirstName.materialTextBox.removeFocus();
+            return true;
         }
         this.lblTitle.text = global.lang.signup;
         this.lblText.text = global.lang.signupSubText;

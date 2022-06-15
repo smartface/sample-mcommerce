@@ -1,5 +1,5 @@
 import LviLoginDesign from 'generated/my-components/LviLogin';
-import { BaseRouter as Router } from '@smartface/router';
+import { Router } from '@smartface/router';
 import Screen from '@smartface/native/device/screen';
 
 const originalHeight = Screen.height;

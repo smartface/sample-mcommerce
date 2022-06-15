@@ -1,6 +1,6 @@
 import PgCategoriesDesign from 'generated/pages/pgCategories';
 import categoriesItem from 'components/CategoryGridViewItem';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { Categories } from 'types';
 import System from '@smartface/native/device/system';

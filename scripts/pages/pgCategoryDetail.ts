@@ -8,7 +8,7 @@ import GviProductItem from 'components/GviProductItem';
 import Screen from '@smartface/native/device/screen';
 import { themeService } from 'theme';
 import { Product } from 'types';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductImageUrl, getProductsByQuery, getShowcases } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';

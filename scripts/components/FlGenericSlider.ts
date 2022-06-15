@@ -25,7 +25,7 @@ export default class FlGenericSlider extends FlGenericSliderDesign {
     private initSlider() {
         this.flSwipeViewLayout.removeAll();
         const swipeView = new SwipeView({
-            page: this,
+            page: this as any,
             flexGrow: 1,
             //@ts-ignore
             pages: this.images.map((image: string) => pgGenericSlider({ url: image })),

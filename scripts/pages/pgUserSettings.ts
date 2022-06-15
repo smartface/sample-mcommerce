@@ -5,7 +5,7 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { getLviRow1LineLarge } from 'lib/listViewItemTypes';
 import PgUserSettingsDesign from 'generated/pages/pgUserSettings';
 import { themeService } from 'theme';
-import { Route, BaseRouter as Router } from '@smartface/router';
+import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 
 export default class PgUserSettings extends withDismissAndBackButton(PgUserSettingsDesign) {
@@ -48,6 +48,7 @@ export default class PgUserSettings extends withDismissAndBackButton(PgUserSetti
                         this.__isBusy = false;
                     }, 500);
                 }, 100);
+                return true;
             }
         });
         const biometricItem = getLviRow1LineLarge({
