@@ -1,6 +1,6 @@
 import Button from '@smartface/native/ui/button';
 import FlLoginDesign from 'generated/my-components/FlLogin';
-import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from 'constants';
+import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD } from '../constants';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { NativeStackRouter, Router } from '@smartface/router';
 import { login } from 'service/auth';
@@ -32,7 +32,7 @@ export default class FlLogin extends FlLoginDesign {
         this.initMaterialBoxes();
         this._router = value;
     }
-    
+
     private initMaterialBoxes() {
         this.mtbEmail.materialTextBox.ios.clearButtonEnabled = true;
         this.mtbEmail.android.enableErrorMessage = true;

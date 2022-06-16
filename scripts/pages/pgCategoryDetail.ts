@@ -12,7 +12,7 @@ import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getProductImageUrl, getProductsByQuery, getShowcases } from 'service/commerce';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
-import { ON_SHOW_TIMEOUT } from 'constants';
+import { ON_SHOW_TIMEOUT } from '../constants';
 import setVisibility from 'lib/setVisibility';
 const gridViewItemLength = themeService.getNativeStyle('.flProductItem').height;
 type searchStatus = {

@@ -1,4 +1,4 @@
-import { SERVICE_TIMEOUT } from 'constants';
+import { SERVICE_TIMEOUT } from '../constants';
 import System from '@smartface/native/device/system';
 import Hardware from '@smartface/native/device/hardware';
 import Application from '@smartface/native/application';

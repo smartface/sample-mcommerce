@@ -1,5 +1,5 @@
 import Screen from '@smartface/native/device/screen';
-import { REVIEW_MAX_LINE } from 'constants';
+import { REVIEW_MAX_LINE } from '../constants';
 import LviReviewDesign from 'generated/my-components/LviReview';
 import { setTextDimensions } from 'lib/setTextDimensions';
 import { themeService } from 'theme';

@@ -39,36 +39,37 @@ export default class CategoryGridViewItem extends CategoryGridViewItemDesign {
     set flCategoryItemWrapperBackgroundColor(value: any) {
         this.flCategoryItemWrapper.backgroundColor = Color.create(value);
     }
-    startShimmering(){
+    startShimmering() {
         this.sflCategoryItem.startShimmering();
         this.lblCategoryItemTitle.dispatch({
             type: 'updateUserStyle',
             userStyle: {
-              backgroundColor: '#D2D2D2'
+                backgroundColor: '#D2D2D2'
             }
-          });
-          this.imgCategoryItem.dispatch({
+        });
+        this.imgCategoryItem.dispatch({
             type: 'updateUserStyle',
             userStyle: {
-              backgroundColor: '#D2D2D2'
+                backgroundColor: '#D2D2D2'
             }
-          });
+        });
     }
-    stopShimmering(){
+    stopShimmering() {
         this.sflCategoryItem.stopShimmering();
         this.sflCategoryItem.baseAlpha = 1;
+        //@ts-ignore
         this.sflCategoryItem.android.build(ShimmerFlexLayout.Android.Shimmer.AlphaHighlight);
         this.lblCategoryItemTitle.dispatch({
             type: 'updateUserStyle',
             userStyle: {
-              backgroundColor: 'rgba(0,0,0,0)'
+                backgroundColor: 'rgba(0,0,0,0)'
             }
-          });
-          this.imgCategoryItem.dispatch({
+        });
+        this.imgCategoryItem.dispatch({
             type: 'updateUserStyle',
             userStyle: {
-              backgroundColor: 'rgba(0,0,0,0)'
+                backgroundColor: 'rgba(0,0,0,0)'
             }
-          });
+        });
     }
 }

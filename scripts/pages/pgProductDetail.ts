@@ -15,7 +15,7 @@ import LviPdOverviewSection from 'components/LviPdOverviewSection';
 import Share from '@smartface/native/global/share';
 import { generateProductDeeplinkUrl } from 'lib/deeplink';
 import LviPdInfoSection from 'components/LviPdInfoSection';
-import { ON_SHOW_TIMEOUT } from 'constants';
+import { ON_SHOW_TIMEOUT } from '../constants';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 
 type Processor =
@@ -148,7 +148,7 @@ export default class PgProductDetail extends withDismissAndBackButton(PgProductD
                 overviewTitle: global.lang.reviews,
                 star: this.product?.rating,
                 reviewCount: `(${this.product?.reviews?.length})`,
-                showRating: this.product?.rating ? true : false 
+                showRating: this.product?.rating ? true : false
             })
         );
 

@@ -6,23 +6,23 @@ const originalHeight = themeService.getStyle('.lviGenericSlider').height;
 
 export default class LviGenericSlider extends LviGenericSliderDesign {
     pageName?: string | undefined;
-    private __initialized:boolean;
+    private __initialized: boolean;
 
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
     }
-    get initialized():boolean{
+    get initialized(): boolean {
         return this.__initialized;
     }
-    set initialized(value:boolean){
+    set initialized(value: boolean) {
         this.__initialized = value;
     }
     get images(): string[] {
         return this.flGenericSlider.images;
     }
     set images(value: string[]) {
-        this.initialized ? this.stopShimmering() : this.startShimmering()
+        this.initialized ? this.stopShimmering() : this.startShimmering();
         this.flGenericSlider.images = value;
     }
     static calculateHeightWithAspectRatio(aspectRatio: number = 1, margin: number = 0) {
@@ -39,24 +39,25 @@ export default class LviGenericSlider extends LviGenericSliderDesign {
         }
     }
 
-    private startShimmering(){
+    private startShimmering() {
         this.sflGenericSlider.startShimmering();
         this.dispatch({
             type: 'updateUserStyle',
             userStyle: {
-              backgroundColor: '#D2D2D2'
+                backgroundColor: '#D2D2D2'
             }
-          });
+        });
     }
-    private stopShimmering(){
+    private stopShimmering() {
         this.sflGenericSlider.stopShimmering();
         this.sflGenericSlider.baseAlpha = 1;
+        //@ts-ignore
         this.sflGenericSlider.android.build(ShimmerFlexLayout.Android.Shimmer.AlphaHighlight);
         this.dispatch({
             type: 'updateUserStyle',
             userStyle: {
-              backgroundColor: 'rgba(0,0,0,0)'
+                backgroundColor: 'rgba(0,0,0,0)'
             }
-          });
+        });
     }
 }

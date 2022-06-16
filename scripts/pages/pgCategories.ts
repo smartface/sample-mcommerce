@@ -7,11 +7,16 @@ import System from '@smartface/native/device/system';
 import { themeService } from 'theme';
 import { getCategories } from 'service/commerce';
 import Network from '@smartface/native/device/network';
-import { ON_SHOW_TIMEOUT } from 'constants';
+import { ON_SHOW_TIMEOUT } from '../constants';
 
 export default class PgCategories extends withDismissAndBackButton(PgCategoriesDesign) {
-    categories: Categories[] = Array.from({ length: 10 }).map((_, index: number) => (
-        { _id: "1", borderColor: "#D2D2D2", title: "", categoryImg: "", menuColor: "#FFFFFF" }));
+    categories: Categories[] = Array.from({ length: 10 }).map((_, index: number) => ({
+        _id: '1',
+        borderColor: '#D2D2D2',
+        title: '',
+        categoryImg: '',
+        menuColor: '#FFFFFF'
+    }));
     initialized = false;
     noConnection: boolean;
     constructor(private router?: Router, private route?: Route) {
@@ -74,7 +79,6 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
             setTimeout(() => {
                 this.fetchCategories();
             }, ON_SHOW_TIMEOUT);
-            
         }
     }
     onLoad() {

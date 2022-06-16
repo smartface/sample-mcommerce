@@ -10,11 +10,10 @@ import { getRefreshToken } from 'service/token';
 import { autoLogin } from 'service/auth';
 import { getBannerImage, getBanners, getCategories, getProductsByQuery, getShowcases } from 'service/commerce';
 import LviGenericSlider from 'components/LviGenericSlider';
-import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from 'constants';
+import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from '../constants';
 import FlHeaderIcon from 'components/FlHeaderIcon';
 import setHeaderIcon from 'lib/setHeaderIcon';
 import Network from '@smartface/native/device/network';
-
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -28,30 +27,28 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     initialized = false;
     sliderHeight = 0;
     flHeaderIcon: FlHeaderIcon;
-    banners: Banner[] = [{ _id: '', categoryId: '', productId: '' }]
+    banners: Banner[] = [{ _id: '', categoryId: '', productId: '' }];
     showcases: HomeShowcases[] = Array.from({ length: 3 }).map((_, index: number) => ({
-        _id: "",
-        title: "",
+        _id: '',
+        title: '',
         products: Array.from({ length: 3 }).map((_, index: number) => ({
-            _id: "",
-            name: " ",
-            shortDescription:" ",
+            _id: '',
+            name: ' ',
+            shortDescription: ' ',
             price: 0,
-            labels: [
-                { name: "", color: "" }
-            ],
+            labels: [{ name: '', color: '' }],
             category: {
-                _id: "",
-                title: "",
-                menuColor: "",
-                borderColor: "",
-                categoryImg: ""
+                _id: '',
+                title: '',
+                menuColor: '',
+                borderColor: '',
+                categoryImg: ''
             },
             status: true,
             nutritions: {
-                Fat: "",
-                Iron: ""
-            },
+                Fat: '',
+                Iron: ''
+            }
         }))
     }));
     noConnection: boolean;
@@ -90,7 +87,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             )
         ];
         this.showcases.forEach((showcase) => {
-            if(this.initialized){
+            if (this.initialized) {
                 processorItems.push(
                     ListViewItems.getLviShowcaseHeader({
                         showcaseTitle: showcase.title,
@@ -111,7 +108,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                     items: showcase.products,
                     onProductClick: (product) => {
                         this.router.push('productDetail', {
-                            productId: product._id,
+                            productId: product._id
                         });
                     }
                 })
@@ -134,8 +131,9 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                 processorItems.push(ListViewItems.getLviSpacerItem({ className: 'xSmall' }));
                 processorItems.push(
                     ListViewItems.getLviHomeProducts({
-                        initialized:this.initialized,
-                        items: index !== this.products.length - 1 ? [this.products[index], this.products[index + 1]] : [this.products[index]],
+                        initialized: this.initialized,
+                        items:
+                            index !== this.products.length - 1 ? [this.products[index], this.products[index + 1]] : [this.products[index]],
                         onProductClick: (product) => {
                             this.router.push('productDetail', {
                                 productId: product._id
@@ -146,7 +144,6 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                 index = index + 1;
             }
         }
-
 
         return processorItems;
     }

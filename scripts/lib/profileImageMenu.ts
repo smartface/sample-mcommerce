@@ -7,7 +7,7 @@ import Blob from '@smartface/native/global/blob';
 const MenuItem = require('@smartface/native/ui/menuitem');
 import active from '@smartface/extension-utils/lib/router/active';
 import permissionUtil from '@smartface/extension-utils/lib/permission';
-import { PROFILE_IMAGE_DIMENSIONS } from 'constants';
+import { PROFILE_IMAGE_DIMENSIONS } from '../constants';
 import dialog from 'lib/dialog';
 import FlPicture from 'components/FlPicture';
 import genericErrorHandler from './genericErrorHandler';

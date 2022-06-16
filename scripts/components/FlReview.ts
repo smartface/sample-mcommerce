@@ -1,5 +1,5 @@
 import Screen from '@smartface/native/device/screen';
-import { REVIEW_MAX_LINE } from 'constants';
+import { REVIEW_MAX_LINE } from '../constants';
 import FlReviewDesign from 'generated/my-components/FlReview';
 import { setTextDimensions } from 'lib/setTextDimensions';
 import setVisibility from 'lib/setVisibility';

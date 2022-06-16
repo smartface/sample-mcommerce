@@ -1,6 +1,6 @@
 import PgNoConnectionDesign from 'generated/pages/pgNoConnection';
 import { withDismissAndBackButton } from '@smartface/mixins';
-import { BaseRouter as Router, Route } from '@smartface/router';
+import { Route, Router } from '@smartface/router';
 import Button from '@smartface/native/ui/button';
 import Network from '@smartface/native/device/network';
 import { noConnectionToast } from 'lib/toast';
@@ -8,18 +8,18 @@ import { noConnectionToast } from 'lib/toast';
 export default class PgNoConnection extends withDismissAndBackButton(PgNoConnectionDesign) {
     constructor(private router?: Router, private route?: Route) {
         super({});
-        this.flNoConnection.btnTryAgain.on(Button.Events.Press, () => {
+        this.flNoConnection.btnTryAgain.on('press', () => {
             const noConnection = Network.connectionType === Network.ConnectionType.NONE;
             if (!noConnection) {
-                router.push('/btb')
+                router.push('/btb');
             } else {
                 noConnectionToast();
             }
         });
-        this.flNoConnection.imgNoConnection.image = 'images://try_again.png'
-        this.flNoConnection.lblTitle.text = global.lang.noConnection
-        this.flNoConnection.lblDescription.text = global.lang.checkConnection
-        this.flNoConnection.btnTryAgain.text = global.lang.tryAgain
+        this.flNoConnection.imgNoConnection.image = 'images://try_again.png';
+        this.flNoConnection.lblTitle.text = global.lang.noConnection;
+        this.flNoConnection.lblDescription.text = global.lang.checkConnection;
+        this.flNoConnection.btnTryAgain.text = global.lang.tryAgain;
     }
 
     /**

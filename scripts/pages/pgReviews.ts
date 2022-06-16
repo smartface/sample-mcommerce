@@ -6,7 +6,7 @@ import { onRowBind, onRowCreate, onRowHeight, onRowType } from 'lib/listView';
 import { Review } from 'types';
 import { themeService } from 'theme';
 import { getProductImageUrl, getReviewsByProduct } from 'service/commerce';
-import { NO_RATE, ON_SHOW_TIMEOUT } from 'constants';
+import { NO_RATE, ON_SHOW_TIMEOUT } from '../constants';
 import HeaderBarItem from '@smartface/native/ui/headerbaritem';
 import Image from '@smartface/native/ui/image';
 import store from 'store';

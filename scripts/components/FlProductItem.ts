@@ -4,7 +4,7 @@ import AttributedString from '@smartface/native/ui/attributedstring';
 import { themeService } from 'theme';
 import Color from '@smartface/native/ui/color';
 import { setTextDimensions } from 'lib/setTextDimensions';
-import { PRODUCT_NAME_MAX_LINE } from 'constants';
+import { PRODUCT_NAME_MAX_LINE } from '../constants';
 
 const { marginRight: productItemMarginRight, marginLeft: productItemMarginLeft } = themeService.getNativeStyle('.flProductItem');
 const { paddingLeft: descriptionWrapperPaddingLeft, paddingRight: descriptionWrapperPaddingRight } = themeService.getNativeStyle(
@@ -176,29 +176,28 @@ export default class FlProductItem extends FlProductItemDesign {
     }
     startShimmering() {
         this.flProductItemButtonsWrapper.visible = false;
-        this.tvProductPrice.text = ""
+        this.tvProductPrice.text = '';
 
         this.imgProduct.dispatch({
             type: 'updateUserStyle',
             userStyle: {
                 backgroundColor: '#D2D2D2'
             }
-        })
-        
+        });
+
         this.flProductDescAndReviewWrapper.dispatch({
             type: 'updateUserStyle',
             userStyle: {
                 backgroundColor: '#D2D2D2'
             }
-        })
-        
+        });
+
         this.tvProductPrice.dispatch({
             type: 'updateUserStyle',
             userStyle: {
                 backgroundColor: '#D2D2D2'
             }
-        })
-
+        });
     }
     stopShimmering() {
         this.flProductItemButtonsWrapper.visible = true;
@@ -213,13 +212,12 @@ export default class FlProductItem extends FlProductItemDesign {
             userStyle: {
                 backgroundColor: 'rgba(0,0,0,0)'
             }
-        })
+        });
         this.tvProductPrice.dispatch({
             type: 'updateUserStyle',
             userStyle: {
                 backgroundColor: 'rgba(0,0,0,0)'
             }
-        })
-
+        });
     }
 }

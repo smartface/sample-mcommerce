@@ -1,4 +1,4 @@
-import { TOAST_OPEN_HIDE_DURATION, VIBRATION_ADD_TIME, VIBRATION_REMOVE_TIME } from 'constants';
+import { TOAST_OPEN_HIDE_DURATION, VIBRATION_ADD_TIME, VIBRATION_REMOVE_TIME } from '../../constants';
 import { callVibrate } from 'lib/callVibration';
 import { addToBasketToast, removeFromBasketToast } from 'lib/toast';
 import { clearTokens } from 'service/token';
@@ -102,7 +102,7 @@ export default function (state = initialState, action: ActionTypes): SessionStat
             break;
         }
         case Constants.EMPTY_THE_BASKET: {
-            newState.basket = []
+            newState.basket = [];
         }
         default: {
             break;

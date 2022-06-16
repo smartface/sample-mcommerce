@@ -7,7 +7,7 @@ const originalHeight = themeService.getStyle('.lviHomeProducts').height;
 import System from '@smartface/native/device/system';
 import { getProductImageUrl } from 'service/commerce';
 import { Product } from 'types';
-import { HALF_OF_SCREEN_WIDTH } from 'constants';
+import { HALF_OF_SCREEN_WIDTH } from '../constants';
 export default class LviHomeProducts extends LviHomeProductsDesign {
     pageName?: string | undefined;
     private __onProductClick: (product: any) => void;
@@ -23,7 +23,6 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
                 this.gvProducts.refreshData();
             });
         }
-
     }
     static getHeight(): number {
         return originalHeight;
@@ -87,20 +86,17 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
                     }
                 }, 500);
             };
-            this.initialized ? GridViewItem.stopShimmering() : GridViewItem.startShimmering()
+            this.initialized ? GridViewItem.stopShimmering() : GridViewItem.startShimmering();
         };
-        if(this.initialized){
-        this.gvProducts.onItemSelected = (gridViewItem: GviProductItem, productIndex: number) => {
-            this.onProductClick(this.items[productIndex]);
-        };
-    }
-
+        if (this.initialized) {
+            this.gvProducts.onItemSelected = (gridViewItem: GviProductItem, productIndex: number) => {
+                this.onProductClick(this.items[productIndex]);
+            };
+        }
     }
     refreshGridView() {
         this.gvProducts.itemCount = this.items.length;
         this.initialized ? this.sflHomeProductContainer.stopShimmering() : this.sflHomeProductContainer.startShimmering();
         this.gvProducts.refreshData();
-
     }
-    
 }

@@ -1,7 +1,7 @@
 import FlSignupDesign from 'generated/my-components/FlSignup';
 import { NativeStackRouter, Router } from '@smartface/router';
 import Button from '@smartface/native/ui/button';
-import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD, MINIMUM_CHARACTERS_REQUIRED } from 'constants';
+import { EMAIL_REGEXP, MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD, MINIMUM_CHARACTERS_REQUIRED } from '../constants';
 import { hideWaitDialog, showWaitDialog } from 'lib/waitDialog';
 import { register } from 'service/commerce';
 import AttributedString from '@smartface/native/ui/attributedstring';
@@ -20,18 +20,17 @@ export default class FlSignup extends FlSignupDesign {
         this.btnSignUp.on('press', () => {
             this.initUserSignup();
         });
-        this.flWrapper.onTouchEnded = () =>{
+        this.flWrapper.onTouchEnded = () => {
             this.mtbFirstName.materialTextBox.removeFocus();
             return true;
-        }
+        };
         this.tvTermsAndPrivacy.onTouchEnded = () => {
             this.mtbFirstName.materialTextBox.removeFocus();
             return true;
-        }
+        };
         this.lblTitle.text = global.lang.signup;
         this.lblText.text = global.lang.signupSubText;
         this.btnSignUp.text = global.lang.signup;
-        
     }
     get router(): Router {
         return this._router;
@@ -42,8 +41,8 @@ export default class FlSignup extends FlSignupDesign {
         this.initAttributedStrings();
         this._router = value;
     }
-    
-    initMaterialBoxes(){
+
+    initMaterialBoxes() {
         this.mtbFirstName.options = {
             hint: global.lang.firstName
         };
