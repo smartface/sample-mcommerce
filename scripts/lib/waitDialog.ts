@@ -2,6 +2,7 @@ import Dialog from '@smartface/native/ui/dialog';
 import FlWaitDialog from 'components/FlWaitDialog';
 import { themeService } from 'theme';
 import FlexLayout from '@smartface/native/ui/flexlayout';
+import { DialogStyle } from '@smartface/native/ui/dialog/dialog';
 
 var waitDialog = null;
 var activeDialogCounter = 0;
@@ -9,7 +10,7 @@ var activeDialogCounter = 0;
 function initWaitDialog() {
     let dialog = new Dialog({
         android: {
-            themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
+            themeStyle: DialogStyle.ThemeNoHeaderBar,
             cancelable: false,
             isTransparent: true
         }

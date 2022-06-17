@@ -23,7 +23,7 @@ type TextDimensionOptions = {
  */
 export function setTextDimensions(
     textParam: string,
-    font: Font,
+    font: any,
     options: TextDimensionOptions
 ): { width: number; height: number; maxLines: number } {
     const text = textParam || ' ';

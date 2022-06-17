@@ -62,7 +62,6 @@ export default class DotIndicator extends DotIndicatorDesign {
             this.__dots.push(d as StyleContextComponentWithDispatch<FlexLayout>);
         }
         this.currentIndex = 0;
-        System.OS === System.OSType.IOS ? this.getParent().applyLayout() : this.applyLayout();
     }
     toggleIndicator(visible: boolean): void {
         this.dispatch({

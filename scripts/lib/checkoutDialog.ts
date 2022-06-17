@@ -6,6 +6,7 @@ import router from 'routes';
 import store from 'store/index';
 import storeActions from 'store/main/actions';
 import { CheckoutListItem } from 'types';
+import { DialogStyle } from '@smartface/native/ui/dialog/dialog';
 
 let checkoutDialog = null;
 let activeDialogCounter = 0;
@@ -19,7 +20,7 @@ function initDialog(totalCost: string | number) {
         ]
     let dialog = new Dialog({
         android: {
-            themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
+            themeStyle: DialogStyle.ThemeNoHeaderBar,
             cancelable: false
         }
     });

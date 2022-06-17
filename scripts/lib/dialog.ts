@@ -1,4 +1,5 @@
 import Dialog from '@smartface/native/ui/dialog';
+import { DialogStyle } from '@smartface/native/ui/dialog/dialog';
 import FlexLayout from '@smartface/native/ui/flexlayout';
 import { themeService } from 'theme';
 
@@ -10,7 +11,7 @@ type DialogOpts = {
 export default function (component: FlexLayout, opts?: DialogOpts): Dialog {
     const dialog: Dialog = new Dialog({
         android: {
-            themeStyle: Dialog.Android.Style.ThemeNoHeaderBar,
+            themeStyle: DialogStyle.ThemeNoHeaderBar,
             cancelable: false
         }
     });

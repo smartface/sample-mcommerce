@@ -8,6 +8,7 @@ import GifImageView from '@smartface/native/ui/gifimageview';
 import GifImage from '@smartface/native/ui/gifimage';
 import { IGifImage } from '@smartface/native/ui/gifimage/gifimage';
 import { ImageFillType } from '@smartface/native/ui/imageview/imageview';
+import { DialogStyle } from '@smartface/native/ui/dialog/dialog';
 
 export default class PgLaunchScreen extends withDismissAndBackButton(PgLaunchScreenDesign) {
     launchDialog: Dialog;
@@ -21,7 +22,7 @@ export default class PgLaunchScreen extends withDismissAndBackButton(PgLaunchScr
     initDialog() {
         this.launchDialog = new Dialog({
             android: {
-                themeStyle: Dialog.Android.Style.ThemeNoHeaderBar
+                themeStyle: DialogStyle.ThemeNoHeaderBar
             }
         });
         this.launchDialog.layout.alignItems = FlexLayout.AlignItems.CENTER;
@@ -36,13 +37,13 @@ export default class PgLaunchScreen extends withDismissAndBackButton(PgLaunchScr
             imageFillType: ImageFillType.ASPECTFILL
         });
         this.launchDialog.layout.addChild(this.gifImageView);
-        this.launchDialog.layout.applyLayout();
     }
     public onShow() {
         super.onShow?.();
         this.initBackButton(this.router);
         this.launchDialog.show();
         setTimeout(() => {
+            console.log("vsa")
             this.launchDialog.hide();
             this.router.push('/btb/tab1/home');
         }, 2000);

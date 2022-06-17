@@ -12,6 +12,7 @@ import { themeService } from 'theme';
 import setVisibility from 'lib/setVisibility';
 import { Product } from 'types';
 import { moneyFormatter } from 'lib/moneyFormatter';
+import { SwipeDirection } from '@smartface/native/ui/swipeitem';
 
 type Processor = ListViewItems.ProcessorTypes.ILviFavorites;
 enum HeaderEnum {
@@ -120,7 +121,7 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.lvMain.onRowCanSwipe = (index: number) => {
             if (!this.changeHeaderText) {
                 this.selectedProducts.splice(index, 1);
-                return [ListView.SwipeDirection.RIGHTTOLEFT];
+                return [SwipeDirection.LEFTTORIGHT];
             } else {
                 return [];
             }

@@ -9,7 +9,7 @@ import genericErrorHandler from 'lib/genericErrorHandler';
 import Image from '@smartface/native/ui/image';
 import Page from '@smartface/native/ui/page';
 import { themeService } from 'theme';
-import SwipeItem from '@smartface/native/ui/swipeitem';
+import SwipeItem, { SwipeDirection } from '@smartface/native/ui/swipeitem';
 
 const isIOS = System.OS === System.OSType.IOS;
 const SwipeImages = {
@@ -57,7 +57,7 @@ export function onRowSwipe(event, fieldName = 'data') {
 
     event.ios.expansionSettings.buttonIndex = 0;
     const items = [];
-    if (event.direction === ListView.SwipeDirection.RIGHTTOLEFT) {
+    if (event.direction === SwipeDirection.RIGHTTOLEFT) {
         items.push(deleteItem);
     }
     return items.filter((item) => !!item);
@@ -74,7 +74,7 @@ const swipeAndroidWorkaroundMethod = (page: Page) => {
 };
 
 function initSwipeItem(itemOptions?: SwipeItemOptions): StyleContextComponentWithDispatch<SwipeItem> {
-    const swipeItem = new ListView.SwipeItem() as StyleContextComponentWithDispatch<SwipeItem>;
+    const swipeItem = new SwipeItem() as StyleContextComponentWithDispatch<SwipeItem>;
     themeService.addGlobalComponent(swipeItem as any, itemOptions.contextName)
     swipeItem.text = itemOptions.text || '';
     if (itemOptions.icon) {
@@ -103,9 +103,9 @@ export function onRowCanSwipe(index, fieldName = 'data') {
     const canDelete = this[fieldName][index]?.properties.onDelete;
     const canEdit = this[fieldName][index]?.properties.onEdit;
     let swipeOptions = [];
-    canDelete && swipeOptions.push(ListView.SwipeDirection.RIGHTTOLEFT);
-    canEdit && System.OS === System.OSType.IOS && (swipeOptions = [ListView.SwipeDirection.RIGHTTOLEFT]);
-    canEdit && swipeOptions.push(ListView.SwipeDirection.LEFTTORIGHT);
+    canDelete && swipeOptions.push(SwipeDirection.RIGHTTOLEFT);
+    canEdit && System.OS === System.OSType.IOS && (swipeOptions = [SwipeDirection.RIGHTTOLEFT]);
+    canEdit && swipeOptions.push(SwipeDirection.LEFTTORIGHT);
     swipeOptions.length === 0 && (swipeOptions = [0]);
     return swipeOptions;
 }
