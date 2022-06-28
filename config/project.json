@@ -91,12 +91,12 @@
         "output": {
             "ios": {
                 "outputFolder": "output/iOS",
-                "bundleIdentifier": "io.smartface.commerce",
+                "bundleIdentifier": "io.smartface.sample.commerce",
                 "targetedDeviceFamily": "universal"
             },
             "android": {
                 "outputFolder": "output/Android",
-                "packageName": "io.smartface.commerce",
+                "packageName": "io.smartface.sample.commerce",
                 "obfuscationEnabled": false
             }
         },
