@@ -8,12 +8,13 @@ import { Router, Route } from '@smartface/router';
 import { withDismissAndBackButton } from '@smartface/mixins';
 import { getRefreshToken } from 'service/token';
 import { autoLogin } from 'service/auth';
-import { getBannerImage, getBanners, getCategories, getProductsByQuery, getShowcases } from 'service/commerce';
+import { getBannerImage, getBanners, getCategories, getProductImageUrl, getProductsByQuery, getShowcases } from 'service/commerce';
 import LviGenericSlider from 'components/LviGenericSlider';
-import { BANNER_ASPECT_RATIO, HOME_PRODUCT_LIMIT } from '../constants';
+import { BANNER_ASPECT_RATIO, HALF_OF_SCREEN_WIDTH, HOME_PRODUCT_LIMIT } from '../constants';
 import FlHeaderIcon from 'components/FlHeaderIcon';
 import setHeaderIcon from 'lib/setHeaderIcon';
 import Network from '@smartface/native/device/network';
+import GviProductItem from 'components/GviProductItem';
 
 type Processor =
     | ListViewItems.ProcessorTypes.ILviHomeProducts
@@ -62,92 +63,33 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         this.headerBar.title = '';
         this.headerBar.titleLayout = setHeaderIcon(this.flHeaderIcon);
     }
-    initListView() {
-        this.lvMain.onRowType = onRowType.bind(this);
-        this.lvMain.onRowHeight = onRowHeight.bind(this);
-        this.lvMain.onRowCreate = onRowCreate.bind(this);
-        this.lvMain.onRowBind = onRowBind.bind(this);
-        this.lvMain.refreshEnabled = false;
-    }
-    refreshListView() {
-        this.data = this.processor();
-        this.lvMain.itemCount = this.data.length;
-        this.lvMain.refreshData();
-    }
-    processor(): Processor[] {
-        const processorItems = [
-            ListViewItems.getLviGenericSlider(
-                {
-                    initialized: this.initialized,
-                    images: this.banners.map((image) => {
-                        return getBannerImage(image._id);
-                    })
-                },
-                { height: this.sliderHeight }
-            )
-        ];
-        this.showcases.forEach((showcase) => {
-            if (this.initialized) {
-                processorItems.push(
-                    ListViewItems.getLviShowcaseHeader({
-                        showcaseTitle: showcase.title,
-                        showcaseLinkText: global.lang.seeAll.replace('$1', showcase.products.length),
-                        onSeeAllClick: () => {
-                            this.router.push('categoryDetail', {
-                                dataId: showcase._id,
-                                title: showcase.title,
-                                isShowcase: true
-                            });
-                        }
-                    })
-                );
-            }
-            processorItems.push(
-                ListViewItems.getLviHomeProducts({
-                    initialized: this.initialized,
-                    items: showcase.products,
-                    onProductClick: (product) => {
-                        this.router.push('productDetail', {
-                            productId: product._id
-                        });
-                    }
-                })
-            );
-        });
-        if (this.initialized) {
-            processorItems.push(
-                ListViewItems.getLviHomeCategories({
-                    items: this.categories,
-                    onCategoryClick: (category) => {
-                        this.router.push('categoryDetail', {
-                            dataId: category._id,
-                            title: category.title
-                        });
-                    }
-                })
-            );
 
-            for (let index = 0; index < this.products.length; index++) {
-                processorItems.push(ListViewItems.getLviSpacerItem({ className: 'xSmall' }));
-                processorItems.push(
-                    ListViewItems.getLviHomeProducts({
-                        initialized: this.initialized,
-                        items:
-                            index !== this.products.length - 1 ? [this.products[index], this.products[index + 1]] : [this.products[index]],
-                        onProductClick: (product) => {
-                            this.router.push('productDetail', {
-                                productId: product._id
-                            });
-                        }
-                    })
-                );
-                index = index + 1;
-            }
-        }
-
-        return processorItems;
+    initGridView(){
+        this.gvProducts.layoutManager.onItemLength = () => HALF_OF_SCREEN_WIDTH;
+        this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
+            const basketItem = store.getState().main.basket.find((bp) => bp._id === this.products[productIndex]._id);
+            GridViewItem.itemTitleMaxWidth = HALF_OF_SCREEN_WIDTH;
+            GridViewItem.itemTag = this.products[productIndex]?.labels[0]?.name;
+            GridViewItem.itemTagColor = this.products[productIndex]?.labels[0]?.color;
+            GridViewItem.itemTitle = this.products[productIndex].name;
+            GridViewItem.itemDesc = this.products[productIndex].shortDescription;
+            GridViewItem.itemImage = this.products[productIndex].images ? getProductImageUrl(this.products[productIndex].images[0]) : null;
+            GridViewItem.itemDiscountPrice = !!this.products[productIndex].discountPrice
+                ? `$${this.products[productIndex].discountPrice.toFixed(2)}`
+                : '';
+            GridViewItem.itemPrice = `$${this.products[productIndex].price.toFixed(2)}`;
+            GridViewItem.itemReview = this.products[productIndex]?.rating?.toFixed(1).toString() || '';
+            GridViewItem.showHideMinusButton = !!basketItem;
+            GridViewItem.minusTextColor = basketItem?.count === 1 ? '.danger' : '.main';
+            GridViewItem.buttonMinusText = basketItem?.count === 1 ? '' : '';
+            GridViewItem.productCount = basketItem?.count?.toString() || '';
+            
+        };
     }
-
+    refreshGridView() {
+        this.gvProducts.itemCount = this.products.length;
+        this.gvProducts.refreshData();
+    }
     async getProducts(opts: { pageNumber: number } = { pageNumber: 1 }) {
         try {
             const productResponse = await getProductsByQuery({ page: opts.pageNumber, limit: HOME_PRODUCT_LIMIT });
@@ -220,13 +162,13 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                 alert(error.message);
             }
         } finally {
-            this.refreshListView();
+            this.refreshGridView();
+            this.initGridView();
         }
     }
     onShow() {
         super.onShow();
         this.addAppIconToHeader();
-        this.refreshListView();
         setTimeout(() => {
             this.callServices();
         }, 3000);
@@ -234,7 +176,6 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
     }
     onLoad() {
         super.onLoad();
-        this.initListView();
         this.headerBar.leftItemEnabled = false;
     }
 }

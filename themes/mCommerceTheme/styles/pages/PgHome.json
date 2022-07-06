@@ -1,0 +1,20 @@
+{
+  "#pgHome": {
+    "&-gviHomeCategoryItem": {
+      "flexProps": {
+        "positionType": "RELATIVE"
+      },
+      "flex": {
+        "positionType": 0
+      }
+    },
+    "&-gviProductItem": {
+      "flexProps": {
+        "positionType": "RELATIVE"
+      },
+      "flex": {
+        "positionType": 0
+      }
+    }
+  }
+}

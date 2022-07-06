@@ -8,7 +8,7 @@
 				"children": [
 					"9eee-8878-9db7-1662",
 					"4ab0-4431-3107-8aa1",
-					"d4e5-3968-92a3-8db0"
+					"ebb9-a505-0a5b-bfbd"
 				],
 				"name": "pgHome",
 				"orientation": "PORTRAIT",
@@ -48,18 +48,54 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-listView .grow .contentInset-bottom",
-			"id": "d4e5-3968-92a3-8db0",
+			"className": ".sf-gridView .grow",
+			"id": "ebb9-a505-0a5b-bfbd",
+			"oldName": "gridView1",
+			"props": {
+				"children": [
+					"27d0-1d6e-8c2e-59d3"
+				],
+				"itemCount": 5,
+				"itemLength": 350,
+				"layoutManager": {
+					"spanCount": 2,
+					"scrollDirection": "HORIZONTAL"
+				},
+				"name": "gvProducts",
+				"parent": "0cc7-c9f0-ae49-184b"
+			},
+			"type": "GridView",
+			"userProps": {
+				"itemCount": 5,
+				"itemLength": 350,
+				"layoutManager": {
+					"spanCount": 2,
+					"scrollDirection": "HORIZONTAL"
+				}
+			}
+		},
+		{
+			"className": ".sf-gridViewItem .gviProductItem #pgHome-gviProductItem",
+			"hiddenComponent": false,
+			"id": "27d0-1d6e-8c2e-59d3",
 			"props": {
 				"children": [],
-				"name": "lvMain",
-				"parent": "0cc7-c9f0-ae49-184b",
-				"usePageVariable": true
+				"name": "gviProductItem",
+				"parent": "ebb9-a505-0a5b-bfbd"
 			},
-			"type": "ListView",
+			"source": {
+				"page": "__library__",
+				"type": "gviProductItem",
+				"id": "7208-a5eb-9be3-319f"
+			},
+			"type": "GridViewItem",
 			"userProps": {
-				"testId": "EMoLns4da",
-				"usePageVariable": true
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				}
 			}
 		}
 	]
