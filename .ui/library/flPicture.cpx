@@ -30,9 +30,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

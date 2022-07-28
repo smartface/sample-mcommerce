@@ -36,9 +36,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flCheck .flCheck.inactive .lviFavorites-lviFavoritesWrapper-flCheck",
@@ -56,9 +54,7 @@
 				"id": "a0b0-235a-c858-6e90"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .favoritesListViewItem-flFavListLeft",
@@ -76,10 +72,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"testId": "ljVk5HL3f",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .favoritesListViewItem-flFavListLeft-imgFavList",
@@ -94,9 +87,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .favoritesListViewItem-flFavListLeft-flFavListTitleDesc",
@@ -114,15 +105,14 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .favoritesListViewItem-flFavListLeft-flFavListTitleDesc-lblFavListItemTitle",
 			"id": "60b4-45b5-1203-510c",
 			"props": {
 				"children": [],
+				"maxLines": 1,
 				"name": "lblFavoriteItemTitle",
 				"parent": "989d-03b1-51c1-1d59",
 				"text": "label1",
@@ -132,10 +122,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .favoritesListViewItem-flFavListLeft-flFavListTitleDesc-lblFavListItemDesc",
@@ -151,10 +138,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label2",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .favoritesListViewItem-flFavListRight",
@@ -172,9 +156,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-textView .lviFavorites-lviFavoritesWrapper-flFavoriteItemRight-tv",
@@ -191,11 +173,7 @@
 				"page": "__library__"
 			},
 			"type": "TextView",
-			"userProps": {
-				"html": "<font face=\"SFProText-Regular\"><span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\">$43.24</span></font>",
-				"text": "$43.24",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-textView .lviFavorites-lviFavoritesWrapper-flFavoriteItemRight-tv",
@@ -212,14 +190,10 @@
 				"page": "__library__"
 			},
 			"type": "TextView",
-			"userProps": {
-				"html": "<font face=\"SFProText-Regular\"><span style=\"white-space: pre-wrap; background-color: rgb(255, 255, 255);\">$21.20</span></font>",
-				"text": "$21.20",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout .lviFavorites-lviFavoritesWrapper-flFavoriteItemHR",
 			"id": "d2d1-933c-543a-2950",
 			"props": {
 				"children": [],
@@ -230,18 +204,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"backgroundColor": "rgba( 210, 210, 210, 1 )",
-				"bottom": 0,
-				"flexProps": {
-					"positionType": "ABSOLUTE",
-					"flexDirection": "ROW"
-				},
-				"height": 1,
-				"left": 16,
-				"right": 0,
-				"testId": "2eQqAmlif"
-			}
+			"userProps": {}
 		}
 	]
 }

@@ -50,7 +50,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .flRateProduct .grow .marginHorizontal .marginVertical",
+			"className": ".sf-flexLayout .flRateProduct .grow .marginHorizontal .marginVertical #pgAddReview-flRateProduct",
 			"hiddenComponent": false,
 			"id": "da67-fe1c-a244-2beb",
 			"props": {
@@ -65,18 +65,7 @@
 				"id": "f11c-576a-b271-7c3f"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"testId": "sMOOCWAid",
-				"top": 0,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .sticky.relative",
@@ -92,7 +81,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-button-main",
+			"className": ".sf-button-main #pgAddReview-flButtonWrapper-btnSendReview",
 			"id": "c44d-622e-89ea-fd74",
 			"props": {
 				"children": [],
@@ -102,11 +91,7 @@
 				"usePageVariable": true
 			},
 			"type": "Button",
-			"userProps": {
-				"testId": "1Ms51DwB7",
-				"text": "button1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

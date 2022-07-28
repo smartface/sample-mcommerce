@@ -33,9 +33,7 @@
 				"page": "__library__"
 			},
 			"type": "ShimmerFlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flProductContainer",
@@ -62,6 +60,10 @@
 				"children": [
 					"0d0c-30da-929d-3ad5"
 				],
+				"layoutManager": {
+					"spanCount": 1,
+					"scrollDirection": "HORIZONTAL"
+				},
 				"name": "gvProducts",
 				"parent": "c484-1410-e185-066e",
 				"usePageVariable": true
@@ -70,12 +72,10 @@
 				"page": "__library__"
 			},
 			"type": "GridView",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-gridViewItem .gviProductItem",
+			"className": ".sf-gridViewItem .gviProductItem .lviHomeProducts-sflHomeContainer-flProductContainer-gvProducts-gviProductItem",
 			"hiddenComponent": false,
 			"id": "0d0c-30da-929d-3ad5",
 			"props": {
@@ -89,16 +89,7 @@
 				"id": "7208-a5eb-9be3-319f"
 			},
 			"type": "GridViewItem",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"top": 0
-			}
+			"userProps": {}
 		}
 	]
 }

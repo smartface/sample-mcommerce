@@ -1,0 +1,39 @@
+{
+    ".lviComponent": {
+        "flexProps": {},
+        "left": "23.16",
+        "testId": "JI-gpLwLk",
+        "top": "225.26",
+        "&-flexParent": {
+            "flexProps": {
+                "flexGrow": 1
+            },
+            "height": null,
+            "testId": "68wUojy2f",
+            "&-flexChild": {
+                "flexProps": {
+                    "flexGrow": 1,
+                    "flexDirection": "ROW",
+                    "alignItems": "STRETCH"
+                },
+                "height": null,
+                "testId": "OFtMBeEbW",
+                "&-label1": {
+                    "flexProps": {
+                        "flexGrow": 1
+                    },
+                    "testId": "03xf3YP1Z",
+                    "text": "label1"
+                },
+                "&-button1": {
+                    "flexProps": {
+                        "flexGrow": 1
+                    },
+                    "height": null,
+                    "testId": "A8H9_GgbM",
+                    "text": "button1"
+                }
+            }
+        }
+    }
+}

@@ -33,10 +33,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "Rate product",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flRateProduct-flStars",
@@ -58,9 +55,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flRateProduct-flStars-image",
@@ -75,10 +70,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "small_star_empty_96.png",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flRateProduct-flStars-image",
@@ -93,10 +85,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "small_star_empty_96.png",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flRateProduct-flStars-image",
@@ -111,10 +100,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "small_star_empty_96.png",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flRateProduct-flStars-image",
@@ -129,10 +115,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "small_star_empty_96.png",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flRateProduct-flStars-image",
@@ -147,10 +130,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "small_star_empty_96.png",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper .grow",
@@ -169,9 +149,7 @@
 				"id": "574a-10da-b765-48e5"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

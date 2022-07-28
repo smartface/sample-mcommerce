@@ -16,9 +16,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flHomeCategory-flHomeCategoryWrapper",
@@ -50,9 +48,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flHomeCategory-flHomeCategoryWrapper-lblCategoryName .category",
@@ -68,10 +64,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

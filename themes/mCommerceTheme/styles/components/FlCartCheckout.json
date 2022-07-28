@@ -1,24 +1,32 @@
 {
-  ".flCartCheckout": {
-    "flexProps": {
-      "flexDirection": "COLUMN",
-      "justifyContent": "CENTER",
-      "alignItems": "STRETCH",
-      "alignContent": "STRETCH",
-      "positionType": "RELATIVE"
-    },
-    "height": 80,
-    "&-lblCartCheckoutPrice": {
-      "flexProps": {
-        "positionType": "ABSOLUTE"
-      },
-      "right": 40,
-      "textAlignment": "MIDCENTER",
-      "top": 0,
-      "bottom": 0,
-      "height": null,
-      "ellipsizeMode": "NONE",
-      "minWidth": 65
+    ".flCartCheckout": {
+        "left": 25,
+        "top": 153.5,
+        "flexProps": {
+            "flexDirection": "COLUMN",
+            "justifyContent": "CENTER",
+            "alignItems": "STRETCH",
+            "alignContent": "STRETCH",
+            "positionType": "RELATIVE"
+        },
+        "height": 80,
+        "&-lblCartCheckoutPrice": {
+            "flexProps": {
+                "positionType": "ABSOLUTE"
+            },
+            "right": 40,
+            "textAlignment": "MIDCENTER",
+            "top": 0,
+            "bottom": 0,
+            "height": null,
+            "ellipsizeMode": "NONE",
+            "minWidth": 65,
+            "text": "$129.99",
+            "usePageVariable": true
+        },
+        "&-btnCartCheckout": {
+            "text": "Go to Checkout",
+            "usePageVariable": true
+        }
     }
-  }
 }

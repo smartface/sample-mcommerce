@@ -1,0 +1,15 @@
+{
+    ".lviSignup": {
+        "&-flSignup": {
+            "flex": {
+                "positionType": 0
+            },
+            "flexProps": {
+                "positionType": "RELATIVE"
+            },
+            "left": 0,
+            "top": 0,
+            "usePageVariable": true
+        }
+    }
+}

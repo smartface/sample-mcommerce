@@ -16,8 +16,7 @@
 			},
 			"type": "Page",
 			"userProps": {},
-			"version": "0.0.1.a",
-			"degree": 0
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -29,8 +28,7 @@
 				"parent": "ce3e-3d9f-f92b-684f"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
 			"className": ".sf-headerBar.main",
@@ -43,13 +41,10 @@
 				"title": "pgAddress"
 			},
 			"type": "HeaderBar",
-			"userProps": {
-				"title": "pgAddress"
-			},
-			"degree": 1
+			"userProps": {}
 		},
 		{
-			"className": ".sf-listView .grow",
+			"className": ".sf-listView .grow #pgAddress-lvMain",
 			"id": "88af-7e69-6ff9-3b83",
 			"oldName": "listView1",
 			"props": {
@@ -60,11 +55,7 @@
 			},
 			"ref": null,
 			"type": "ListView",
-			"userProps": {
-				"usePageVariable": true,
-				"testId": "uB7d-ocXS"
-			},
-			"degree": 1
+			"userProps": {}
 		}
 	]
 }

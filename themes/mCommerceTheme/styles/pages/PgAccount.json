@@ -1,0 +1,21 @@
+{
+    "#pgAccount": {
+        "safeAreaEnabled": true,
+        "&-lvMain": {
+            "testId": "0CWrAelRq",
+            "usePageVariable": true,
+            "&-flSmartface": {
+                "flexProps": {
+                    "flex": {
+                        "positionType": 0
+                    },
+                    "flexProps": {
+                        "positionType": "RELATIVE"
+                    },
+                    "left": 0,
+                    "top": 0
+                }
+            }
+        }
+    }
+}

@@ -15,18 +15,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"backgroundColor": "rgba( 242, 243, 242, 1 )",
-				"borderRadius": 15,
-				"flexProps": {
-					"flexDirection": "ROW",
-					"justifyContent": "SPACE_BETWEEN"
-				},
-				"height": 50,
-				"left": "25.74",
-				"testId": "J2CceLIhb",
-				"top": "60.40"
-			}
+			"userProps": {}
 		},
 		{
 			"className": " .flSearchBar-searchBar",
@@ -43,28 +32,7 @@
 				"page": "__library__"
 			},
 			"type": "SearchView",
-			"userProps": {
-				"borderRadius": 15,
-				"flexProps": {
-					"positionType": "RELATIVE",
-					"alignSelf": "AUTO",
-					"flexGrow": 1
-				},
-				"font": {
-					"size": 17,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"height": null,
-				"hint": "Search Store",
-				"showInToolbox": false,
-				"testId": "pqA9qBw3p",
-				"text": "",
-				"textAlignment": "MIDLEFT",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

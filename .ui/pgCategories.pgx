@@ -60,10 +60,7 @@
 				"usePageVariable": true
 			},
 			"type": "GridView",
-			"userProps": {
-				"usePageVariable": true,
-				"testId": "tJD_vXU24"
-			},
+			"userProps": {},
 			"degree": 1
 		},
 		{

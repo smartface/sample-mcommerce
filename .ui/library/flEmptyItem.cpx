@@ -16,11 +16,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 14,
-				"top": 73
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flEmptyItem-imgEmpty",
@@ -35,9 +31,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flEmptyItem-lblEmptyTitle",
@@ -53,10 +47,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

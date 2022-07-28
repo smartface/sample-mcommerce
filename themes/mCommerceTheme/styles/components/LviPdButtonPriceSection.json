@@ -1,7 +1,19 @@
 {
-  ".lviPdButtonPriceSection": {
-    "testId": "eXGCtpMoR",
-    "flexProps": {},
-    "height": 75
-  }
+    ".lviPdButtonPriceSection": {
+        "testId": "eXGCtpMoR",
+        "flexProps": {},
+        "height": 75,
+        "&-flProductDetailButtonPriceSection": {
+            "flex": {
+                "positionType": 0
+            },
+            "flexProps": {
+                "positionType": "RELATIVE"
+            },
+            "left": 0,
+            "testId": "I1CgKqUAd",
+            "top": 0,
+            "usePageVariable": true
+        }
+    }
 }

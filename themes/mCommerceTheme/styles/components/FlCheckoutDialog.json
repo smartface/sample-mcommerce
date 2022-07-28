@@ -1,144 +1,152 @@
 {
-  ".flCheckoutDialog": {
-    "backgroundColor": "${backgroundMain}",
-    "borderRadius": 32,
-    "deltaX": 0,
-    "deltaY": 0,
-    "height": 450,
-    "lastX": 8.77,
-    "lastY": 0,
-    "node": null,
-    "top": 0,
-    "x": 8.77,
-    "y": 0,
-    "flexProps": {},
-    "&-flHeader": {
-      "flexProps": {
-        "flexGrow": 1,
-        "flexDirection": "ROW"
-      },
-      "height": null,
-      "paddingLeft": 15,
-      "paddingRight": 20,
-      "paddingTop": 15
-    },
-    "&-lblCheckout": {
-      "flexProps": {
-        "flexGrow": 10
-      },
-      "font": {
-        "size": 24,
-        "bold": true,
-        "italic": false,
-        "family": "Nunito",
-        "style": "Bold"
-      },
-      "textColor": "${textDark}"
-    },
-    "&-lblDissmisIcon": {
-      "flexProps": {
-        "flexGrow": 1
-      },
-      "font": {
-        "size": 24,
-        "bold": false,
-        "italic": false,
-        "family": "FontAwesome5FreeSolid",
-        "style": null
-      },
-      "textAlignment": "MIDRIGHT",
-      "textColor": "${textDark}"
-    },
-    "&-flListView": {
-      "flexProps": {
-        "flexGrow": 3
-      },
-      "height": null
-    },
-    "&-flItem": {
-      "flexProps": {
-        "flexGrow": 1
-      },
-      "paddingLeft": 10,
-      "paddingRight": 10
-    },
-    "&-fliContent": {
-      "flexProps": {
-        "flexGrow": 1,
-        "flexDirection": "ROW"
-      }
-    },
-    "&-lblTitle": {
-      "flexProps": {
-        "flexGrow": 4
-      },
-      "font": {
-        "size": 17,
-        "bold": true,
-        "italic": false,
-        "family": "Nunito",
-        "style": "Bold"
-      },
-      "textColor": "${textLight}"
-    },
-    "&-lblDescription": {
-      "flexProps": {
-        "flexGrow": 3
-      },
-      "font": {
-        "size": 17,
-        "bold": true,
-        "italic": false,
-        "family": "Nunito",
-        "style": "Bold"
-      },
-      "textAlignment": "MIDRIGHT",
-      "textColor": "${textDark}"
-    },
-    "&-lblRightArrow": {
-      "flexProps": {
-        "flexGrow": 1
-      },
-      "font": {
-        "size": 17,
-        "bold": false,
-        "italic": false,
-        "family": "FontAwesome5FreeSolid",
-        "style": null
-      },
-      "textAlignment": "MIDCENTER",
-      "textColor": "${textDark}"
-    },
-    "&-flBottomLine": {
-      "backgroundColor": "rgba( 226, 226, 226, 0.6 )",
-      "height": 1
-    },
-    "&-flBottom": {
-      "flexProps": {
-        "flexGrow": 2
-      },
-      "height": null,
-      "paddingLeft": 10,
-      "paddingRight": 10
-    },
-    "&-lblTermsAndCond": {
-      "font": {
-        "size": 12,
-        "bold": true,
-        "italic": false,
-        "family": "Nunito",
-        "style": "Bold"
-      },
-      "marginRight": 150,
-      "marginTop": 15,
-      "maxLines": 2,
-      "textColor": "${textDark}"
-    },
-    "&-btnPlaceOrder": {
-      "marginBottom": 10,
-      "marginLeft": 25,
-      "marginRight": 25,
-      "marginTop": 10
+    ".flCheckoutDialog": {
+        "backgroundColor": "${backgroundMain}",
+        "borderRadius": 32,
+        "deltaX": 0,
+        "deltaY": 0,
+        "height": 450,
+        "lastX": 8.77,
+        "lastY": 0,
+        "node": null,
+        "top": 0,
+        "x": 8.77,
+        "y": 0,
+        "flexProps": {},
+        "&-flHeader": {
+            "usePageVariable": true,
+            "flexProps": {
+                "flexGrow": 1,
+                "flexDirection": "ROW"
+            },
+            "height": null,
+            "paddingLeft": 15,
+            "paddingRight": 20,
+            "paddingTop": 15
+        },
+        "&-lblCheckout": {
+            "flexProps": {
+                "flexGrow": 10
+            },
+            "font": {
+                "size": 24,
+                "bold": true,
+                "italic": false,
+                "family": "Nunito",
+                "style": "Bold"
+            },
+            "textColor": "${textDark}",
+            "usePageVariable": true
+        },
+        "&-lblDissmisIcon": {
+            "flexProps": {
+                "flexGrow": 1
+            },
+            "font": {
+                "size": 24,
+                "bold": false,
+                "italic": false,
+                "family": "FontAwesome5FreeSolid",
+                "style": null
+            },
+            "textAlignment": "MIDRIGHT",
+            "textColor": "${textDark}",
+            "text": "times",
+            "usePageVariable": true
+        },
+        "&-flListView": {
+            "usePageVariable": true,
+            "flexProps": {
+                "flexGrow": 3
+            },
+            "height": null
+        },
+        "&-flItem": {
+            "flexProps": {
+                "flexGrow": 1
+            },
+            "paddingLeft": 10,
+            "paddingRight": 10
+        },
+        "&-fliContent": {
+            "flexProps": {
+                "flexGrow": 1,
+                "flexDirection": "ROW"
+            }
+        },
+        "&-lblTitle": {
+            "flexProps": {
+                "flexGrow": 4
+            },
+            "font": {
+                "size": 17,
+                "bold": true,
+                "italic": false,
+                "family": "Nunito",
+                "style": "Bold"
+            },
+            "textColor": "${textLight}"
+        },
+        "&-lblDescription": {
+            "flexProps": {
+                "flexGrow": 3
+            },
+            "font": {
+                "size": 17,
+                "bold": true,
+                "italic": false,
+                "family": "Nunito",
+                "style": "Bold"
+            },
+            "textAlignment": "MIDRIGHT",
+            "textColor": "${textDark}"
+        },
+        "&-lblRightArrow": {
+            "flexProps": {
+                "flexGrow": 1
+            },
+            "font": {
+                "size": 17,
+                "bold": false,
+                "italic": false,
+                "family": "FontAwesome5FreeSolid",
+                "style": null
+            },
+            "textAlignment": "MIDCENTER",
+            "textColor": "${textDark}"
+        },
+        "&-flBottomLine": {
+            "backgroundColor": "rgba( 226, 226, 226, 0.6 )",
+            "height": 1
+        },
+        "&-flBottom": {
+            "usePageVariable": true,
+            "flexProps": {
+                "flexGrow": 2
+            },
+            "height": null,
+            "paddingLeft": 10,
+            "paddingRight": 10
+        },
+        "&-lblTermsAndCond": {
+            "font": {
+                "size": 12,
+                "bold": true,
+                "italic": false,
+                "family": "Nunito",
+                "style": "Bold"
+            },
+            "marginRight": 150,
+            "marginTop": 15,
+            "maxLines": 2,
+            "textColor": "${textDark}",
+            "usePageVariable": true
+        },
+        "&-btnPlaceOrder": {
+            "marginBottom": 10,
+            "marginLeft": 25,
+            "marginRight": 25,
+            "marginTop": 10,
+            "usePageVariable": true
+        }
     }
-  }
 }

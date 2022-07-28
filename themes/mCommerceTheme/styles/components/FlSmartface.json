@@ -1,32 +1,39 @@
 {
-  ".flSmartface": {
-    "height": 60,
-    "&-lblVersion": {
-      "height": 25,
-      "textAlignment": "MIDCENTER"
-    },
-    "&-flPoweredBySmartface": {
-      "flexProps": {
-        "alignContent": "CENTER",
-        "alignItems": "CENTER",
-        "flexDirection": "ROW",
-        "justifyContent": "CENTER"
-      },
-      "height": 25,
-      "marginBottom": 10,
-      "width": null,
-      "&-lblPoweredBy": {
-        "height": 40,
-        "marginRight": 3,
-        "textAlignment": "MIDRIGHT",
-        "width": 100
-      },
-      "&-imgSmartface": {
-        "height": 20,
-        "imageFillType": "ASPECTFIT",
-        "marginTop": 4,
-        "width": 85
-      }
+    ".flSmartface": {
+        "height": 60,
+        "left": 10,
+        "top": 172.86,
+        "&-lblVersion": {
+            "height": 25,
+            "textAlignment": "MIDCENTER"
+
+        },
+        "&-flPoweredBySmartface": {
+            "flexProps": {
+                "alignContent": "CENTER",
+                "alignItems": "CENTER",
+                "flexDirection": "ROW",
+                "justifyContent": "CENTER"
+            },
+            "height": 25,
+            "marginBottom": 10,
+            "width": null,
+            "&-lblPoweredBy": {
+                "height": 40,
+                "marginRight": 3,
+                "textAlignment": "MIDRIGHT",
+                "width": 100,
+				"text": "Powered by",
+				"usePageVariable": true
+			
+            },
+            "&-imgSmartface": {
+                "height": 20,
+                "imageFillType": "ASPECTFIT",
+                "marginTop": 4,
+                "width": 85,
+                "image": "smartface_logo.png"
+            }
+        }
     }
-  }
 }

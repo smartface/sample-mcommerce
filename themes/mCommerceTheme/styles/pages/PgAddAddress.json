@@ -1,9 +1,13 @@
 {
-  "#pgAddAddress": {
-    "&-flWrapper": {
-      "paddingLeft": 30,
-      "paddingRight": 30,
-      "paddingTop": 30
+    "#pgAddAddress": {
+        "&-flWrapper": {
+            "paddingLeft": 30,
+            "paddingRight": 30,
+            "paddingTop": 30,
+            "&-flAddAddress": {
+                "usePageVariable": true,
+                "testId": "v-2nYq-4J"
+            }
+        }
     }
-  }
 }

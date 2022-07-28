@@ -36,9 +36,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flReview-flHeader-flContainer-lblName .review.name",
@@ -54,10 +52,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "Isim",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flReview-flHeader-flContainer",
@@ -75,9 +70,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flReview-flHeader-flContainer-imgStar",
@@ -92,10 +85,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "small_star.png",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flReview-flHeader-flContainer-lblStar .review.star",
@@ -111,10 +101,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "4.3",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-textView .flReview-lblDate .review.lblComment",
@@ -131,11 +118,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"html": "Deneme yorum",
-				"text": "15.02.2022",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-textView .flReview-lblComment .review.lblComment",
@@ -143,6 +126,7 @@
 			"props": {
 				"children": [],
 				"html": "Deneme yorum",
+				"maxLines": 3,
 				"name": "lblComment",
 				"parent": "391c-0052-8b78-9389",
 				"text": "Deneme yorum",
@@ -152,11 +136,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"html": "Deneme yorum",
-				"text": "Deneme yorum",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .separator",
@@ -171,9 +151,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

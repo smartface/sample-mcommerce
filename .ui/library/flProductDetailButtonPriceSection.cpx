@@ -59,7 +59,7 @@
 			}
 		},
 		{
-			"className": ".sf-imageView",
+			"className": ".sf-imageView .flProductDetailButtonPriceSection-flMinusPlusWrapper-flMinus-imgMinus",
 			"id": "9bd9-ffce-d2bb-b128",
 			"props": {
 				"children": [],
@@ -71,15 +71,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"image": "minus.png",
-				"testId": "O2GzELplK",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flProductDetailButtonPriceSection-flMinusPlusWrapper-flCounter",
@@ -111,13 +103,10 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout .flProductDetailButtonPriceSection-flMinusPlusWrapper-flPlus",
 			"id": "cec0-e06d-e80d-0ebc",
 			"props": {
 				"children": [
@@ -130,16 +119,10 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "6_AatMiCH"
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-imageView",
+			"className": ".sf-imageView .flProductDetailButtonPriceSection-flMinusPlusWrapper-flPlus-imgPlus",
 			"id": "0025-3ed5-4c2c-5cd9",
 			"props": {
 				"children": [],
@@ -151,15 +134,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"image": "plus.png",
-				"testId": "lBtDe3Fnz",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .grow .flProductDetailButtonPriceSection-flPrice",
@@ -177,9 +152,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-textView .flProductDetailButtonPriceSection-flPrice-textbox",
@@ -187,6 +160,7 @@
 			"props": {
 				"children": [],
 				"html": "4.55",
+				"maxLines": 1,
 				"name": "tvPrice",
 				"parent": "0d4e-9ac0-154a-5319",
 				"text": "4.55",
@@ -196,11 +170,7 @@
 				"page": "__library__"
 			},
 			"type": "TextView",
-			"userProps": {
-				"html": "4.55",
-				"text": "4.55",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-textView .flProductDetailButtonPriceSection-flPrice-textbox",
@@ -208,6 +178,7 @@
 			"props": {
 				"children": [],
 				"html": "1222",
+				"maxLines": 1,
 				"name": "tvDiscount",
 				"parent": "0d4e-9ac0-154a-5319",
 				"text": "1222",
@@ -217,11 +188,7 @@
 				"page": "__library__"
 			},
 			"type": "TextView",
-			"userProps": {
-				"html": "1222",
-				"text": "1222",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

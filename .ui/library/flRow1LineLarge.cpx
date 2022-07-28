@@ -36,9 +36,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flRow1LineLarge-flImageWrapper-imgIcon",
@@ -53,9 +51,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flRow1LineLarge-lblTitle",
@@ -71,10 +67,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "Choose Theme",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flRow1LineLarge-flSwitch",
@@ -92,9 +85,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flRow1LineLarge-flSwitch-flLeft",
@@ -111,9 +102,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flRow1LineLarge-flSwitch-flLeft-imgDark",
@@ -128,10 +117,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "ayarlar_karanlik.png",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flRow1LineLarge-flSwitch-flRight",
@@ -148,9 +134,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flRow1LineLarge-flSwitch-flRight-imgLight",
@@ -165,10 +149,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "ayarlar_aydinlik.png",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .separator",
@@ -184,9 +165,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-switch .flRow1LineLarge-sw .notVisible",
@@ -202,10 +181,7 @@
 				"page": "__library__"
 			},
 			"type": "Switch",
-			"userProps": {
-				"toggle": true,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

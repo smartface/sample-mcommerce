@@ -1,0 +1,19 @@
+{
+    "#pgCart": {
+        "&-lvMain": {
+            "&-flCartCheckout": {
+                "flex": {
+                    "positionType": 0
+                },
+                "flexProps": {
+                    "positionType": "RELATIVE"
+                },
+                "left": 0,
+                "testId": "H_wgQtCwR",
+                "top": 0,
+                "usePageVariable": true,
+                "visible": false
+            }
+        }
+    }
+}

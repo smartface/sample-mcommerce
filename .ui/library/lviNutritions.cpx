@@ -33,9 +33,7 @@
 				"id": "cd1f-c598-7981-3343"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

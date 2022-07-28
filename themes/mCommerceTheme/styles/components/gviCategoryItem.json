@@ -1,38 +1,58 @@
 {
-  ".gviCategoryItem": {
-    "width": 175,
-    "height": 190,
-    "&-flCategoryItemWrapper": {
-      "marginTop": 15,
-      "marginRight": 7,
-      "marginLeft": 7,
-      "paddingTop": 10,
-      "paddingBottom": 5,
-      "paddingRight": 25,
-      "paddingLeft": 25,
-      "borderRadius": 18,
-      "flexProps": {
-        "flexDirection": "COLUMN",
-        "justifyContent": "CENTER",
-        "flexGrow": 1
-      },
-      "&-imgCategoryItem": {
-        "flexProps": {
-          "flexGrow": 0.7
-        }
-      },
-      "&-lblCategoryItemTitle": {
-        "maxHeight": 50,
-        "textColor": "${textDark}",
-        "flexProps": {
-          "flexGrow": 1
+    ".gviCategoryItem": {
+        "width": 175,
+        "height": 190,
+        "backgroundColor": "rgba( 67, 41, 195, 0.01 )",
+        "testId": "Ny1Lysucb",
+        "&-flCategoryItemWrapper": {
+            "marginTop": 15,
+            "marginRight": 7,
+            "marginLeft": 7,
+            "paddingTop": 10,
+            "paddingBottom": 5,
+            "paddingRight": 25,
+            "paddingLeft": 25,
+            "borderRadius": 18,
+            "flexProps": {
+                "flexDirection": "COLUMN",
+                "justifyContent": "CENTER",
+                "flexGrow": 1
+            },
+            "testId": "rC3J1MtVO",
+            "usePageVariable": true,
+            "&-imgCategoryItem": {
+                "flexProps": {
+                    "flexGrow": 0.7
+                },
+                "image": "catfruits.png",
+                "imageFillType": "ASPECTFIT",
+                "testId": "Ok7eFCQIb",
+                "usePageVariable": true
+            },
+            "&-lblCategoryItemTitle": {
+                "maxHeight": 50,
+                "textColor": "${textDark}",
+                "flexProps": {
+                    "flexGrow": 1
+                },
+                "font": {
+                    "size": 16,
+                    "family": "Nunito",
+                    "style": "Bold"
+                },
+                "ellipsizeMode": "END",
+                "maxLines": 2,
+                "testId": "vCTv4YbYC",
+                "text": "Frash Fruits & Vegetable",
+                "textAlignment": "MIDCENTER",
+                "usePageVariable": true
+            }
         },
-        "font": {
-          "size": 16,
-          "family": "Nunito",
-          "style": "Bold"
+        "&-sflCategoryItem": {
+            "flexProps": {
+                "flexGrow": 1
+            },
+            "usePageVariable": true
         }
-      }
     }
-  }
 }

@@ -1,7 +1,19 @@
 {
-  ".lviPdOverviewSection": {
-    "testId": "y737CACHG",
-    "flexProps": {},
-    "height": 75
-  }
+    ".lviPdOverviewSection": {
+        "testId": "y737CACHG",
+        "flexProps": {},
+        "height": 75,
+        "&-flProductDetailOverviewSection": {
+            "flex": {
+                "positionType": 0
+            },
+            "flexProps": {
+                "positionType": "RELATIVE"
+            },
+            "left": 0,
+            "testId": "eiVc3Wr-b",
+            "top": 0,
+            "usePageVariable": true
+        }
+    }
 }

@@ -1,48 +1,49 @@
 {
-  ".flReviewProduct": {
-    "height": 200,
-    "flexProps": {
-      "flexDirection": "ROW",
-      "alignItems": "FLEX_START"
-    },
-    "&-flProductInfo": {
-      "height": 180,
-      "flexProps": {
-        "flexGrow": 1
-      },
-      "&-lblProductName": {
-        "height": 30
-      },
-      "paddingLeft": 15
-    },
-    "&-flImageAndRate": {
-      "height": 100,
-      "width": 70,
-      "&-imgProduct": {
-        "height": 70,
-        "width": 70,
-        "marginRight": 15,
-        "imageFillType": "ASPECTFIT"
-      },
-      "&-flProductRate": {
-        "height": 30,
+    ".flReviewProduct": {
+        "height": 200,
         "flexProps": {
-          "flexDirection": "ROW",
-          "alignItems": "CENTER"
+            "flexDirection": "ROW",
+            "alignItems": "FLEX_START"
         },
-        "&-imgStar": {
-          "width": 25,
-          "height": 25,
-          "imageFillType": "ASPECTFIT",
-          "marginRight": 5
+        "&-flProductInfo": {
+            "height": 180,
+            "flexProps": {
+                "flexGrow": 1
+            },
+            "&-lblProductName": {
+                "height": 30
+            },
+            "paddingLeft": 15
         },
-        "&-lblRate": {
-          "flexProps": {
-            "flexGrow": 1
-          },
-          "height": 30
+        "&-flImageAndRate": {
+            "height": 100,
+            "width": 70,
+            "&-imgProduct": {
+                "height": 70,
+                "width": 70,
+                "marginRight": 15,
+                "imageFillType": "ASPECTFIT"
+            },
+            "&-flProductRate": {
+                "height": 30,
+                "flexProps": {
+                    "flexDirection": "ROW",
+                    "alignItems": "CENTER"
+                },
+                "&-imgStar": {
+                    "width": 25,
+                    "height": 25,
+                    "imageFillType": "ASPECTFIT",
+                    "marginRight": 5,
+                    "image": "small_star.png"
+                },
+                "&-lblRate": {
+                    "flexProps": {
+                        "flexGrow": 1
+                    },
+                    "height": 30
+                }
+            }
         }
-      }
     }
-  }
 }

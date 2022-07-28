@@ -75,7 +75,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-button .sf-button-main",
+			"className": ".sf-button .sf-button-main #pgProductDetail-flAddToBasket-btnAddToBasket",
 			"id": "a22d-2c0d-39f5-f1dd",
 			"props": {
 				"children": [],
@@ -85,11 +85,7 @@
 				"usePageVariable": true
 			},
 			"type": "Button",
-			"userProps": {
-				"testId": "sIzwSD6Oc",
-				"text": "Add to Basket",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

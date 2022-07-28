@@ -17,11 +17,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 10.96,
-				"top": 61.64
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flNutritions-lblKeyOfNutritions .review.name",
@@ -37,16 +33,14 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flNutritions-lblValueOfNutritions .review.lblComment",
 			"id": "ff84-f97d-220c-a89d",
 			"props": {
 				"children": [],
+				"maxLines": 0,
 				"name": "lblValueOfNutritions",
 				"parent": "cd1f-c598-7981-3343",
 				"text": "label2",
@@ -56,10 +50,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label2",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .separator.full",
@@ -74,9 +65,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

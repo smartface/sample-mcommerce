@@ -18,12 +18,7 @@
 				"page": "__library__"
 			},
 			"type": "GridViewItem",
-			"userProps": {
-				"flexProps": {},
-				"height": 227,
-				"left": 102.77777777777779,
-				"top": 88.88888888888889
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .sf-gridViewItem-simple-preview",
@@ -39,10 +34,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"autoHeight": 343.4782608695652,
-				"autoWidth": 343.4782608695652
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .sf-gridViewItem-simple-title",
@@ -58,10 +50,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"autoHeight": 20.652173913043477,
-				"text": "Grid Title Here"
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .sf-gridViewItem-simple-subtitle",
@@ -77,10 +66,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"autoHeight": 18.478260869565215,
-				"text": "Grid subtitle here"
-			}
+			"userProps": {}
 		}
 	]
 }

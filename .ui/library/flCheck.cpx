@@ -30,10 +30,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "icon_check.png",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

@@ -23,7 +23,8 @@
                 "image": {
                     "src": "${profilePlaceholder}"
                 }
-            }
+            },
+            "usePageVariable": true
         },
         "&-flAccountRightWrapper": {
             "flexProps": {
@@ -33,8 +34,10 @@
             "height": null,
             "marginLeft": 20,
             "testId": "OE7mL7f4M",
+            "usePageVariable": true,
             "&-flAccountRightTopWrapper": {
                 "height": null,
+                "maxWidth": 250,
                 "flexProps": {
                     "flexDirection": "ROW",
                     "flexGrow": 1
@@ -61,6 +64,9 @@
             "marginBottom": 0
         },
         "&-lblAccountName": {
+            "height": null,
+            "text": "label1",
+            "usePageVariable": true,
             "flexProps": {
                 "flexGrow": 1
             },
@@ -74,6 +80,8 @@
             "textColor": "${textDark}"
         },
         "&-lblAccountEmail": {
+            "text": "label2",
+            "usePageVariable": true,
             "flexProps": {
                 "flexGrow": 1
             },
@@ -107,7 +115,9 @@
             "left": 60,
             "textColor": "rgba( 83, 177, 117, 1 )",
             "width": 25,
-            "textAlignment": "MIDLEFT"
+            "textAlignment": "MIDLEFT",
+            "text": "label1",
+            "usePageVariable": true
         }
     }
 }

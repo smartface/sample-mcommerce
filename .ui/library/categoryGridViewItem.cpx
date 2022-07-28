@@ -15,16 +15,10 @@
 				"page": "__library__"
 			},
 			"type": "GridViewItem",
-			"userProps": {
-				"backgroundColor": "rgba( 67, 41, 195, 0.01 )",
-				"flexProps": {},
-				"left": "27.33",
-				"testId": "Ny1Lysucb",
-				"top": "74.67"
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-shimmerFlexLayout",
+			"className": ".sf-shimmerFlexLayout .gviCategoryItem-sflCategoryItem",
 			"id": "4244-0020-01d9-a083",
 			"oldName": "shimmerFlexLayout1",
 			"props": {
@@ -39,12 +33,7 @@
 				"page": "__library__"
 			},
 			"type": "ShimmerFlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .gviCategoryItem-flCategoryItemWrapper",
@@ -62,10 +51,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"testId": "rC3J1MtVO",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .gviCategoryItem-flCategoryItemWrapper-imgCategoryItem",
@@ -81,18 +67,14 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "catfruits.png",
-				"imageFillType": "ASPECTFIT",
-				"testId": "Ok7eFCQIb",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .gviCategoryItem-flCategoryItemWrapper-lblCategoryItemTitle",
 			"id": "e56a-b896-71c5-1af7",
 			"props": {
 				"children": [],
+				"maxLines": 2,
 				"name": "lblCategoryItemTitle",
 				"parent": "eb44-f4ce-3838-bece",
 				"text": "Frash Fruits & Vegetable",
@@ -102,14 +84,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"ellipsizeMode": "END",
-				"maxLines": 2,
-				"testId": "vCTv4YbYC",
-				"text": "Frash Fruits & Vegetable",
-				"textAlignment": "MIDCENTER",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

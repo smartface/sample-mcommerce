@@ -1,55 +1,79 @@
 {
-  ".lviAccount": {
-    "height": 50,
-    "testId": "z0eTIT50X",
-    "flexProps": {},
-    "&-flAccountWrapper": {
-      "flexProps": {
-        "flexGrow": 1,
-        "flexDirection": "ROW",
-        "alignItems": "CENTER"
-      },
-      "&-lblAccountLeftIcon": {
-        "font": {
-          "family": "FontAwesome5FreeSolid",
-          "style": null,
-          "bold": false,
-          "italic": false
-        },
+    ".lviAccount": {
+        "height": 50,
+        "testId": "z0eTIT50X",
         "flexProps": {},
-        "textColor": "${textDark}",
-        "width": 40
-      },
-      "&-lblAccountLviTitle": {
-        "testId": "LYeIs4Wj3",
-        "font": {
-          "family": "Nunito",
-          "style": "Bold",
-          "bold": true,
-          "italic": false
+        "&-flAccountWrapper": {
+            "testId": "wZR3TnE_C",
+            "flexProps": {
+                "flexGrow": 1,
+                "flexDirection": "ROW",
+                "alignItems": "CENTER"
+            },
+            "&-lblAccountLeftIcon": {
+                "font": {
+                    "family": "FontAwesome5FreeSolid",
+                    "style": null,
+                    "bold": false,
+                    "italic": false
+                },
+                "flexProps": {},
+                "textColor": "${textDark}",
+                "width": 40,
+                "testId": "4H0WkOdTv",
+                "text": "label1",
+                "usePageVariable": true
+            },
+            "&-lblAccountLviTitle": {
+                "testId": "LYeIs4Wj3",
+                "font": {
+                    "family": "Nunito",
+                    "style": "Bold",
+                    "bold": true,
+                    "italic": false
+                },
+                "flexProps": {
+                    "flexGrow": 3
+                },
+                "textColor": "${textDark}",
+                "textAlignment": "MIDLEFT",
+                "text": "label1",
+                "usePageVariable": true
+            },
+            "&-lblAccountRIghtChevron": {
+                "font": {
+                    "family": "FontAwesome5FreeSolid",
+                    "style": null,
+                    "bold": false,
+                    "italic": false
+                },
+                "flexProps": {
+                    "flexGrow": 1
+                },
+                "textColor": "${textDark}",
+                "textAlignment": "MIDRIGHT",
+                "testId": "y_Mi6yWA-",
+                "text": "",
+                "usePageVariable": true
+            },
+            "marginTop": 0,
+            "marginBottom": 0
         },
-        "flexProps": {
-          "flexGrow": 3
+        "width": 350,
+        "&-flAccountTopLine": {
+            "backgroundColor": "rgba( 226, 226, 226, 1 )",
+            "height": 1,
+            "marginBottom": null,
+            "marginTop": null,
+            "testId": "m1eyRauod",
+            "usePageVariable": true
         },
-        "textColor": "${textDark}",
-        "textAlignment": "MIDLEFT"
-      },
-      "&-lblAccountRIghtChevron": {
-        "font": {
-          "family": "FontAwesome5FreeSolid",
-          "style": null,
-          "bold": false,
-          "italic": false
-        },
-        "flexProps": {
-          "flexGrow": 1
-        },
-        "textColor": "${textDark}",
-        "textAlignment": "MIDRIGHT"
-      },
-      "marginTop": 0,
-      "marginBottom": 0
-    },
-    "width": 350
-  }
+        "&-flAccountBottomLine": {
+            "backgroundColor": "rgba( 226, 226, 226, 1 )",
+            "height": 1,
+            "marginBottom": null,
+            "testId": "m1eyRauod",
+            "usePageVariable": true
+        }
+    }
 }

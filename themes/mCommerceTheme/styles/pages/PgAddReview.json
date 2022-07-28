@@ -1,0 +1,23 @@
+{
+    "#pgAddReview": {
+        "&-flRateProduct": {
+            "flex": {
+                "positionType": 0
+            },
+            "flexProps": {
+                "positionType": "RELATIVE"
+            },
+            "left": 0,
+            "testId": "sMOOCWAid",
+            "top": 0,
+            "usePageVariable": true
+        },
+        "&-flButtonWrapper": {
+            "&-btnSendReview": {
+                "testId": "1Ms51DwB7",
+                "text": "button1",
+                "usePageVariable": true
+            }
+        }
+    }
+}

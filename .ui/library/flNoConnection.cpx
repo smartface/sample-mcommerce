@@ -1,8 +1,8 @@
 {
 	"components": [
 		{
-			"className": ".sf-flexLayout .flCheckoutSuccessful",
-			"hiddenComponent": false,
+			"className": ".sf-flexLayout .flNoConnection",
+			"hiddenComponent": true,
 			"id": "047b-22c0-79e4-ae94",
 			"props": {
 				"children": [
@@ -18,14 +18,10 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 15.66,
-				"top": 56.63
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-imageView .flCheckoutSuccessful-imgSuccess",
+			"className": ".sf-imageView .flNoConnection-imgSuccess",
 			"id": "141f-8f0c-a330-7f4d",
 			"oldName": "imgSuccess",
 			"props": {
@@ -38,17 +34,15 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "images://try_again.png",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-label .flCheckoutSuccessful-lblTitle",
+			"className": ".sf-label .flNoConnection-lblTitle",
 			"id": "4eae-58f3-316d-4f8c",
 			"oldName": "lblEmptyTitle",
 			"props": {
 				"children": [],
+				"maxLines": 2,
 				"name": "lblTitle",
 				"parent": "047b-22c0-79e4-ae94",
 				"text": "label1",
@@ -58,17 +52,15 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-label .flCheckoutSuccessful-lblDescription",
+			"className": ".sf-label .flNoConnection-lblDescription",
 			"id": "86ce-d98c-e7a6-e7ea",
 			"oldName": "label1",
 			"props": {
 				"children": [],
+				"maxLines": 2,
 				"name": "lblDescription",
 				"parent": "047b-22c0-79e4-ae94",
 				"text": "label1",
@@ -78,10 +70,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-button-main .flNoConnection-btnTryAgain",
@@ -98,10 +87,7 @@
 				"page": "__library__"
 			},
 			"type": "Button",
-			"userProps": {
-				"text": "button1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

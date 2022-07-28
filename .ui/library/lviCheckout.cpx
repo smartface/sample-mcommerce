@@ -35,9 +35,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flCheckoutDialog-fliContent",
@@ -57,9 +55,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flCheckoutDialog-lblTitle",
@@ -76,10 +72,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "lblTitle",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flCheckoutDialog-lblDescription",
@@ -96,13 +89,10 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "lblDescription",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-label .flCheckoutDialog-lblRightArrow",
+			"className": ".sf-label .lviCheckout-flCheckout-flContent-lblRightArrow",
 			"id": "fec5-9613-8c7a-d28a",
 			"oldName": "label1",
 			"props": {
@@ -116,10 +106,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "angle-right",
-				"usePageVariable": false
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flCheckoutDialog-flBottomLine",
@@ -135,9 +122,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": false
-			}
+			"userProps": {}
 		}
 	]
 }

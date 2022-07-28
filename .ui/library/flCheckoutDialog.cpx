@@ -36,9 +36,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flCheckoutDialog-lblCheckout",
@@ -55,10 +53,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flCheckoutDialog-lblDissmisIcon",
@@ -75,10 +70,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "times",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flCheckoutDialog-flListView",
@@ -97,9 +89,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-listView",
@@ -115,9 +105,7 @@
 				"page": "__library__"
 			},
 			"type": "ListView",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flCheckoutDialog-flBottom",
@@ -136,9 +124,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flCheckoutDialog-lblTermsAndCond",
@@ -146,6 +132,7 @@
 			"oldName": "lbl",
 			"props": {
 				"children": [],
+				"maxLines": 2,
 				"name": "lblTermsAndCond",
 				"parent": "f7a0-943e-2aec-041e",
 				"text": "lblTerm",
@@ -155,10 +142,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "lblTerm",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-button-main .flCheckoutDialog-btnPlaceOrder",
@@ -175,10 +159,7 @@
 				"page": "__library__"
 			},
 			"type": "Button",
-			"userProps": {
-				"text": "btnPlaceOrder",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

@@ -1,9 +1,34 @@
 {
-  ".lviRow1LineLarge": {
-    "height": 70,
-    "backgroundColor": "${backgroundMain}",
-    "flexProps": {
-      "flexDirection": "ROW"
+    ".lviRow1LineLarge": {
+        "height": 70,
+        "backgroundColor": "${backgroundMain}",
+        "flexProps": {
+            "flexDirection": "ROW"
+        },
+        "&-flRow1LineLarge": {
+            "flex": {
+                "flexDirection": 2,
+                "flexGrow": 1,
+                "justifyContent": 1,
+                "positionType": 0
+            },
+            "flexProps": {
+                "flexDirection": "ROW",
+                "flexGrow": 1,
+                "justifyContent": "CENTER",
+                "positionType": "RELATIVE"
+            },
+            "height": 70,
+            "left": 0,
+            "marginBottom": null,
+            "marginTop": null,
+            "paddingBottom": 12,
+            "paddingLeft": 15,
+            "paddingRight": 15,
+            "paddingTop": 12,
+            "right": 6,
+            "top": 0,
+            "usePageVariable": true
+        }
     }
-  }
 }

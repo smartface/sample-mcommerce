@@ -15,14 +15,10 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {
-				"flexProps": {},
-				"left": "20.22",
-				"top": "147.19"
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout .flAccountUser",
+			"className": ".sf-flexLayout .flAccountUser .lviProfile-flAccountUser",
 			"hiddenComponent": false,
 			"id": "84e5-7bcb-dc55-b8ec",
 			"props": {
@@ -37,18 +33,7 @@
 				"id": "f4e3-277e-950f-74f8"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"testId": "GONbKWSf9",
-				"top": 0,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

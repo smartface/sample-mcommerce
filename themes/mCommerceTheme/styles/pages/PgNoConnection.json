@@ -1,0 +1,16 @@
+{
+    "#pgNoConnection": {
+        "&-flNoConnection": {
+            "flex": {
+                "positionType": 0
+            },
+            "flexProps": {
+                "positionType": "RELATIVE"
+            },
+            "left": 0,
+            "testId": "sVgJ9AHxW",
+            "top": 0,
+            "usePageVariable": true
+        }
+    }
+}

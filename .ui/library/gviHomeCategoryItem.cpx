@@ -33,9 +33,7 @@
 				"id": "cf17-9bcb-510e-509a"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }
