@@ -38,9 +38,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .flSignup-imgLogo",
@@ -56,9 +54,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "logo.png"
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flSignup-lblTitle .signup.lblTitle",
@@ -76,10 +72,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "lblTitle",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flSignup-lblText .signup.lblText",
@@ -97,10 +90,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flSignup-flForm",
@@ -124,9 +114,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": false
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper .flSignup-mtbDefault",
@@ -146,17 +134,7 @@
 				"id": "574a-10da-b765-48e5"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"top": 0,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper .flSignup-mtbDefault",
@@ -176,17 +154,7 @@
 				"id": "574a-10da-b765-48e5"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"top": 0,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper .flSignup-mtbDefault",
@@ -206,17 +174,7 @@
 				"id": "574a-10da-b765-48e5"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"top": 0,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".flexLayout .materialTextBox-wrapper .flSignup-mtbDefault",
@@ -236,17 +194,7 @@
 				"id": "574a-10da-b765-48e5"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"top": 0,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-textView .flSignup-tvTermsAndPrivacy",
@@ -255,6 +203,7 @@
 			"props": {
 				"children": [],
 				"html": "<span style=\"font-family: SFProText-Regular; font-size: 16px; white-space: pre-wrap; background-color: rgb(255, 255, 255);\">Lorem ipsum dolor sit amet, consectetur \n  adipiscing elit. <span style=\"color: rgb(0, 161, 241); font-size: 17.3913px; font-family: SFProText-Regular; background-color: rgb(255, 255, 255);\">Donec quis semper justo. In  \n  ultrices metus nec sodales consectetur.</span> \n  Aliquam erat volutpat. <span style=\"font-size: 16px; font-family: SFProText-Regular; background-color: rgb(255, 255, 255); text-decoration-color: rgb(0, 0, 0); text-decoration-line: underline;\">Suspendisse</span> potenti.</span><br>",
+				"maxLines": 2,
 				"name": "tvTermsAndPrivacy",
 				"parent": "1954-86b2-9a18-321a",
 				"usePageVariable": true
@@ -264,10 +213,7 @@
 				"page": "__library__"
 			},
 			"type": "TextView",
-			"userProps": {
-				"html": "<span style=\"font-family: SFProText-Regular; font-size: 16px; white-space: pre-wrap; background-color: rgb(255, 255, 255);\">Lorem ipsum dolor sit amet, consectetur \n  adipiscing elit. <span style=\"color: rgb(0, 161, 241); font-size: 17.3913px; font-family: SFProText-Regular; background-color: rgb(255, 255, 255);\">Donec quis semper justo. In  \n  ultrices metus nec sodales consectetur.</span> \n  Aliquam erat volutpat. <span style=\"font-size: 16px; font-family: SFProText-Regular; background-color: rgb(255, 255, 255); text-decoration-color: rgb(0, 0, 0); text-decoration-line: underline;\">Suspendisse</span> potenti.</span><br>",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-button .sf-button-main",
@@ -285,10 +231,7 @@
 				"page": "__library__"
 			},
 			"type": "Button",
-			"userProps": {
-				"text": "btnSignup",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

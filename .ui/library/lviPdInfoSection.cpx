@@ -18,7 +18,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout .flProductDetailInfoSection",
+			"className": ".sf-flexLayout .flProductDetailInfoSection .lviPdInfoSection-flProductDetailInfoSection",
 			"hiddenComponent": false,
 			"id": "237a-a4ec-506e-b5e4",
 			"props": {
@@ -33,18 +33,7 @@
 				"id": "fa80-6dff-466b-3197"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"testId": "TxDLr10c-",
-				"top": 0,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

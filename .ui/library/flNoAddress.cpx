@@ -34,9 +34,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flNoAdress-lblTitle",
@@ -53,10 +51,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-button-main .flNoAdress-btnAddAddress",
@@ -73,10 +68,7 @@
 				"page": "__library__"
 			},
 			"type": "Button",
-			"userProps": {
-				"text": "Add Address",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

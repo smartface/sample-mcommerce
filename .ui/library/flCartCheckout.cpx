@@ -16,14 +16,10 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": 25,
-				"top": 153.5
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-button-main",
+			"className": ".sf-button-main .flCartCheckout-btnCartCheckout",
 			"hiddenComponent": false,
 			"id": "4019-9ec6-5080-51a2",
 			"props": {
@@ -37,10 +33,7 @@
 				"page": "__library__"
 			},
 			"type": "Button",
-			"userProps": {
-				"text": "Go to Checkout",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flCartCheckout-lblCartCheckoutPrice .checkout",
@@ -56,10 +49,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "$129.99",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

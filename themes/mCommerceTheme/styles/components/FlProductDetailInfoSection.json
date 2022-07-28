@@ -1,71 +1,72 @@
 {
-	".flProductDetailInfoSection": {
-		"flexProps": {},
-		"height": 50,
-		"testId": "ADIYA6Y9-",
-		"&-flDescTitleAndArrow": {
-			"flexProps": {
-				"flexGrow": 1,
-				"flexDirection": "ROW",
-				"alignItems": "AUTO"
-			},
-			"height": null,
-			"testId": "F8p6Ga7av",
-			"&-lblTitle": {
-				"textColor": "${textDark}",
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"font": {
-					"size": 16,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "Bold"
-				},
-				"testId": "dNO2DWoOw",
-				"height": 30
-			},
-			"&-flArrow": {
-				"height": 30,
-				"marginBottom": null,
-				"marginTop": null,
-				"paddingBottom": 1,
-				"paddingTop": 1,
-				"testId": "J55DGbkIj",
-				"width": 50,
-				"&-imgArrow": {
-					"flexProps": {},
-					"height": 25,
-					"tintColor": "${textDark}",
-					"imageFillType": "NORMAL",
-					"testId": "6rLGeOgQJ",
-					"width": 50
-				},
-				"flexProps": {
-					"justifyContent": "CENTER"
-				}
-			}
-		},
-		"&-flDetail": {
-			"flexProps": {
-				"flexGrow": 1
-			},
-			"height": null,
-			"testId": "Yt38negsX",
-			"&-lblInfo": {
-				"textColor": "${textLight}",
-				"ellipsizeMode": "END",
-				"font": {
-					"size": 13,
-					"bold": true,
-					"italic": false,
-					"family": "Nunito",
-					"style": "SemiBold"
-				},
-				"testId": "hvB8_Kw-3",
-				"height": 25
-			}
-		}
-	}
+    ".flProductDetailInfoSection": {
+        "flexProps": {},
+        "height": 50,
+        "testId": "ADIYA6Y9-",
+        "&-flDescTitleAndArrow": {
+            "flexProps": {
+                "flexGrow": 1,
+                "flexDirection": "ROW",
+                "alignItems": "AUTO"
+            },
+            "height": null,
+            "testId": "F8p6Ga7av",
+            "&-lblTitle": {
+                "textColor": "${textDark}",
+                "flexProps": {
+                    "flexGrow": 1
+                },
+                "font": {
+                    "size": 16,
+                    "bold": true,
+                    "italic": false,
+                    "family": "Nunito",
+                    "style": "Bold"
+                },
+                "testId": "dNO2DWoOw",
+                "height": 30
+            },
+            "&-flArrow": {
+                "height": 30,
+                "marginBottom": null,
+                "marginTop": null,
+                "paddingBottom": 1,
+                "paddingTop": 1,
+                "testId": "J55DGbkIj",
+                "width": 50,
+                "&-imgArrow": {
+                    "flexProps": {},
+                    "height": 25,
+                    "tintColor": "${textDark}",
+                    "imageFillType": "NORMAL",
+                    "testId": "6rLGeOgQJ",
+                    "width": 50,
+                    "image": "rightarrow.png"
+                },
+                "flexProps": {
+                    "justifyContent": "CENTER"
+                }
+            }
+        },
+        "&-flDetail": {
+            "flexProps": {
+                "flexGrow": 1
+            },
+            "height": null,
+            "testId": "Yt38negsX",
+            "&-lblInfo": {
+                "textColor": "${textLight}",
+                "ellipsizeMode": "END",
+                "font": {
+                    "size": 13,
+                    "bold": true,
+                    "italic": false,
+                    "family": "Nunito",
+                    "style": "SemiBold"
+                },
+                "testId": "hvB8_Kw-3",
+                "height": 25
+            }
+        }
+    }
 }

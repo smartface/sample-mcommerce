@@ -16,11 +16,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {},
-				"left": "29.33",
-				"top": "64"
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flProductDetailInfoSection-flDescTitleAndArrow",
@@ -38,9 +34,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flProductDetailInfoSection-flDescTitleAndArrow-lblTitle",
@@ -56,10 +50,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "Detail Title",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flProductDetailInfoSection-flDescTitleAndArrow-flArrow",
@@ -90,10 +81,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"image": "rightarrow.png",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flProductDetailInfoSection-flDetail",
@@ -125,10 +113,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label2",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

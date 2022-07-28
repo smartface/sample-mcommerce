@@ -18,7 +18,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout .lviRow1LineLarge-flRow1LineLarge",
 			"hiddenComponent": false,
 			"id": "6474-f44a-dbf7-061e",
 			"props": {
@@ -33,31 +33,7 @@
 				"id": "e973-397b-f904-99f7"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"flexDirection": 2,
-					"flexGrow": 1,
-					"justifyContent": 1,
-					"positionType": 0
-				},
-				"flexProps": {
-					"flexDirection": "ROW",
-					"flexGrow": 1,
-					"justifyContent": "CENTER",
-					"positionType": "RELATIVE"
-				},
-				"height": 70,
-				"left": 0,
-				"marginBottom": null,
-				"marginTop": null,
-				"paddingBottom": 12,
-				"paddingLeft": 15,
-				"paddingRight": 15,
-				"paddingTop": 12,
-				"right": 6,
-				"top": 0,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

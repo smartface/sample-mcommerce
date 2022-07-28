@@ -24,6 +24,10 @@
 				"children": [
 					"3b2b-3d8e-e680-fee5"
 				],
+				"layoutManager": {
+					"spanCount": 1,
+					"scrollDirection": "HORIZONTAL"
+				},
 				"name": "gvCategories",
 				"parent": "0892-218d-bc64-b1ba",
 				"usePageVariable": true
@@ -32,9 +36,7 @@
 				"page": "__library__"
 			},
 			"type": "GridView",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-gridViewItem",

@@ -1,30 +1,32 @@
 {
-  ".dotIndicator": {
-    "height": 27,
-    "paddingTop": -4,
-    "paddingBottom": 9,
-    "flexProps": {
-      "alignItems": "CENTER",
-      "flexDirection": "ROW",
-      "positionType": "RELATIVE",
-      "justifyContent": "CENTER"
-    },
-    "&-dot": {
-      "borderRadius": 3.5,
-      "height": 7,
-      "width": 7,
-      "marginLeft": 3.5,
-      "backgroundColor": "${iconsMain}",
-      ".main": {
-        "backgroundColor": "${iconsMain}",
-        ".active": {
-          "alpha": 1
+    ".dotIndicator": {
+        "height": 27,
+        "paddingTop": -4,
+        "paddingBottom": 9,
+        "flexProps": {
+            "alignItems": "CENTER",
+            "flexDirection": "ROW",
+            "positionType": "RELATIVE",
+            "justifyContent": "CENTER"
         },
-        ".inactive": {
-          "alpha": 0.5
-        }
-      }
-    },
-    "width": 77
-  }
+        "&-dot": {
+            "borderRadius": 3.5,
+            "height": 7,
+            "width": 7,
+            "marginLeft": 3.5,
+            "backgroundColor": "${iconsMain}",
+            ".main": {
+                "backgroundColor": "${iconsMain}",
+                ".active": {
+                    "alpha": 1,
+                    "usePageVariable": true
+                },
+                ".inactive": {
+                    "alpha": 0.5
+                }
+            },
+            "usePageVariable": true
+        },
+        "width": 77
+    }
 }
