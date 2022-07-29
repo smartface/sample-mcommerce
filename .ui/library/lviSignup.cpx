@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "3b48-2486-6f96-20f6",
 			"props": {
 				"children": [
@@ -19,7 +19,7 @@
 			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout .flSignup",
+			"className": ".sf-flexLayout .flSignup .lviSignup-flSignup",
 			"hiddenComponent": false,
 			"id": "9b65-f91b-c98d-8672",
 			"props": {
@@ -35,17 +35,7 @@
 				"id": "9f89-da80-ec50-6272"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"top": 0,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-listViewItem",
+			"className": ".sf-listViewItem .lviComponent",
 			"hiddenComponent": true,
 			"id": "e9df-694c-ebc4-827d",
 			"props": {
@@ -15,15 +15,10 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {
-				"flexProps": {},
-				"left": "23.16",
-				"testId": "JI-gpLwLk",
-				"top": "225.26"
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout .lviComponent-flexParent",
 			"id": "7c0f-22e0-8ced-e400",
 			"props": {
 				"children": [
@@ -36,16 +31,10 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "68wUojy2f"
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout",
+			"className": ".sf-flexLayout .lviComponent-flexParent-flexChild",
 			"id": "fb90-bb3a-faf7-d997",
 			"props": {
 				"children": [
@@ -59,18 +48,10 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1,
-					"flexDirection": "ROW",
-					"alignItems": "STRETCH"
-				},
-				"height": null,
-				"testId": "OFtMBeEbW"
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-label",
+			"className": ".sf-label .lviComponent-flexParent-flexChild-label1",
 			"id": "8457-dbca-c8d6-a0c3",
 			"props": {
 				"children": [],
@@ -82,16 +63,10 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"testId": "03xf3YP1Z",
-				"text": "label1"
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-button",
+			"className": ".sf-button .lviComponent-flexParent-flexChild-button1",
 			"id": "081c-2fa6-608e-5253",
 			"props": {
 				"children": [],
@@ -103,14 +78,7 @@
 				"page": "__library__"
 			},
 			"type": "Button",
-			"userProps": {
-				"flexProps": {
-					"flexGrow": 1
-				},
-				"height": null,
-				"testId": "A8H9_GgbM",
-				"text": "button1"
-			}
+			"userProps": {}
 		}
 	]
 }

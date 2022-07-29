@@ -1,13 +1,15 @@
 {
-  ".flAddAddress": {
-    "flexProps": {},
-    "paddingLeft": 20,
-    "paddingRight": 20,
-    "&-btnAddAddress": {
-      "marginTop": 20
-    },
-    "&-mtbTitle": {
-      "marginTop": 5
+    ".flAddAddress": {
+        "flexProps": {},
+        "paddingLeft": 20,
+        "paddingRight": 20,
+        "&-btnAddAddress": {
+            "marginTop": 20,
+            "text": "button1",
+            "usePageVariable": true
+        },
+        "&-mtbTitle": {
+            "marginTop": 5
+        }
     }
-  }
 }

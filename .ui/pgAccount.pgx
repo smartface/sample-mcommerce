@@ -1,7 +1,7 @@
 {
 	"components": [
 		{
-			"className": ".sf-page",
+			"className": ".sf-page #pgAccount",
 			"id": "1f1d-7f9b-25d3-8c1b",
 			"initialized": true,
 			"props": {
@@ -17,9 +17,7 @@
 				"safeAreaEnabled": true
 			},
 			"type": "Page",
-			"userProps": {
-				"safeAreaEnabled": true
-			},
+			"userProps": {},
 			"version": "0.0.1.a"
 		},
 		{
@@ -46,12 +44,10 @@
 				"title": "pgAccount"
 			},
 			"type": "HeaderBar",
-			"userProps": {
-				"title": "pgAccount"
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-listView .contentInset-top .grow",
+			"className": ".sf-listView .contentInset-top .grow #pgAccount-lvMain",
 			"id": "fc95-5a4f-f83c-ea45",
 			"props": {
 				"children": [],
@@ -60,13 +56,10 @@
 				"usePageVariable": true
 			},
 			"type": "ListView",
-			"userProps": {
-				"testId": "0CWrAelRq",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout .flSmartface",
+			"className": ".sf-flexLayout .flSmartface #pgAccount-lvMain-flSmartface",
 			"hiddenComponent": false,
 			"id": "1d6e-f962-26f5-0ab9",
 			"props": {
@@ -81,16 +74,7 @@
 				"id": "f497-3d69-d937-6c61"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"top": 0
-			}
+			"userProps": {}
 		}
 	]
 }

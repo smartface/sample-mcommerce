@@ -34,9 +34,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-imageView .lviCartItem-flCartItem-imgProduct",
@@ -51,9 +49,7 @@
 				"page": "__library__"
 			},
 			"type": "ImageView",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .lviCartItem-flCartItem-flCartDetail",
@@ -72,9 +68,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .lviCartItem-flCartItem-flCartDetail-flCartItemHead",
@@ -107,10 +101,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "Apple",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-button-addToBasket-countminus .lviCartItem-flCartItem-flCartDetail-flCartItemHead-btnClose",
@@ -126,10 +117,7 @@
 				"page": "__library__"
 			},
 			"type": "Button",
-			"userProps": {
-				"text": "",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .lviCartItem-flCartItem-flCartDetail-lblProductInfo",
@@ -145,10 +133,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "1kg, price",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .lviCartItem-flCartItem-flCartDetail-flCartBottom .grow",
@@ -168,9 +153,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-button .sf-button-addToBasket-countminus",
@@ -186,13 +169,7 @@
 				"page": "__library__"
 			},
 			"type": "Button",
-			"userProps": {
-				"android": {
-					"elevation": 0
-				},
-				"text": "",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .lviCartItem-flCartItem-flCartDetail-flCartBottom-lblProductCount",
@@ -208,13 +185,10 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-button .sf-button-addToBasket-countplus",
+			"className": ".sf-button .sf-button-addToBasket-countplus .lviCartItem-flCartItem-flCartDetail-flCartBottom-btnCartPlus",
 			"id": "4e67-9eff-89d7-51c9",
 			"props": {
 				"children": [],
@@ -227,13 +201,7 @@
 				"page": "__library__"
 			},
 			"type": "Button",
-			"userProps": {
-				"android": {
-					"elevation": 0
-				},
-				"text": "",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .lviCartItem-flCartItem-flCartDetail-flCartBottom-flPriceWrapper",
@@ -251,9 +219,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-textView .lviCartItem-flCartItem-flCartDetail-flCartBottom-flPriceWrapper-tv",
@@ -270,11 +236,7 @@
 				"page": "__library__"
 			},
 			"type": "TextView",
-			"userProps": {
-				"html": "$43.15",
-				"text": "$43.15",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-textView .lviCartItem-flCartItem-flCartDetail-flCartBottom-flPriceWrapper-tv",
@@ -291,14 +253,10 @@
 				"page": "__library__"
 			},
 			"type": "TextView",
-			"userProps": {
-				"html": "$21.20",
-				"text": "$21.20",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-flexLayout .sf-listViewItem-simple-line",
+			"className": ".sf-flexLayout .sf-listViewItem-simple-line .lviCartItem-flCartItemBottomLine",
 			"id": "edfa-85f5-1097-3827",
 			"props": {
 				"children": [],
@@ -310,11 +268,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"left": 14,
-				"right": 14,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

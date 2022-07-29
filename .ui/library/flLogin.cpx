@@ -54,10 +54,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flLogin-lblText .login.text-16-bold",
@@ -74,10 +71,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flLogin-flForm",
@@ -85,8 +79,8 @@
 			"oldName": "flexLayout1",
 			"props": {
 				"children": [
-					"2fb8-b5fa-6932-d11a",
-					"c9a2-cb41-c47b-6626",
+					"2def-b53c-d4e1-5e79",
+					"c164-e06b-b988-81b8",
 					"aca3-ff86-72e7-5a39",
 					"a107-f987-bffb-e7a1",
 					"f517-eff5-bf7f-7990"
@@ -99,69 +93,37 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper",
-			"hiddenComponent": false,
-			"id": "2fb8-b5fa-6932-d11a",
-			"initialized": false,
-			"oldName": "materialTextBox",
+			"className": ".materialTextBox",
+			"id": "2def-b53c-d4e1-5e79",
+			"oldName": "materialTextBox1",
 			"props": {
 				"children": [],
 				"name": "mtbEmail",
-				"parent": "9635-bef0-7984-9bd4",
-				"usePageVariable": true
+				"parent": "9635-bef0-7984-9bd4"
 			},
 			"source": {
-				"page": "__library__",
-				"type": "materialTextBox",
-				"id": "574a-10da-b765-48e5"
+				"page": "__library__"
 			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"top": 0,
-				"usePageVariable": true
-			}
+			"type": "MaterialTextBox",
+			"userProps": {}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper",
-			"hiddenComponent": false,
-			"id": "c9a2-cb41-c47b-6626",
-			"initialized": false,
+			"className": ".materialTextBox",
+			"id": "c164-e06b-b988-81b8",
 			"oldName": "materialTextBox1",
 			"props": {
 				"children": [],
 				"name": "mtbPassword",
-				"parent": "9635-bef0-7984-9bd4",
-				"usePageVariable": true
+				"parent": "9635-bef0-7984-9bd4"
 			},
 			"source": {
-				"page": "__library__",
-				"type": "materialTextBox",
-				"id": "574a-10da-b765-48e5"
+				"page": "__library__"
 			},
-			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"top": 0,
-				"usePageVariable": true
-			}
+			"type": "MaterialTextBox",
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flLogin-lblForgotPassword .login.labelForgotPassword",
@@ -178,13 +140,10 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
-			"className": ".sf-button .sf-button-main",
+			"className": ".sf-button .sf-button-main .flLogin-flForm-btnLogin",
 			"id": "a107-f987-bffb-e7a1",
 			"oldName": "button1",
 			"props": {
@@ -198,10 +157,7 @@
 				"page": "__library__"
 			},
 			"type": "Button",
-			"userProps": {
-				"text": "button1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-flexLayout .flLogin-flFooter",
@@ -220,9 +176,7 @@
 				"page": "__library__"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": false
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flLogin-lblLeft .login.labelLeft",
@@ -239,10 +193,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		},
 		{
 			"className": ".sf-label .flLogin-lblRouteSignUp .login.labelRoute",
@@ -259,10 +210,7 @@
 				"page": "__library__"
 			},
 			"type": "Label",
-			"userProps": {
-				"text": "label1",
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

@@ -43,9 +43,7 @@
 				"title": "pgAddAddress"
 			},
 			"type": "HeaderBar",
-			"userProps": {
-				"title": "pgAddAddress"
-			},
+			"userProps": {},
 			"degree": 1
 		},
 		{
@@ -81,10 +79,7 @@
 				"id": "3bb4-1730-8915-de6f"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"usePageVariable": true,
-				"testId": "v-2nYq-4J"
-			},
+			"userProps": {},
 			"degree": 2
 		}
 	]

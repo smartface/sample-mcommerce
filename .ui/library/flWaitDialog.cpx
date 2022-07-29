@@ -30,9 +30,7 @@
 				"page": "__library__"
 			},
 			"type": "ActivityIndicator",
-			"userProps": {
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }

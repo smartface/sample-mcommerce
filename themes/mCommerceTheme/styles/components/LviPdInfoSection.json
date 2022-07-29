@@ -1,7 +1,19 @@
 {
-	".lviPdInfoSection": {
-		"flexProps": {},
-		"testId": "tU94nGf3d",
-		"height": 50
-	}
+    ".lviPdInfoSection": {
+        "flexProps": {},
+        "testId": "tU94nGf3d",
+        "height": 50,
+        "&-flProductDetailInfoSection": {
+            "flex": {
+                "positionType": 0
+            },
+            "flexProps": {
+                "positionType": "RELATIVE"
+            },
+            "left": 0,
+            "testId": "TxDLr10c-",
+            "top": 0,
+            "usePageVariable": true
+        }
+    }
 }

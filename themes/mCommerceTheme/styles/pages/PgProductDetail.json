@@ -1,10 +1,17 @@
 {
-  "#pgProductDetail": {
-    "backgroundColor": "${backgroundMain}",
-    "&-headerBar": {
-      "backgroundColor": "${backgroundMain}",
-      "visible": true,
-      "titleColor": "${textDark}"
+    "#pgProductDetail": {
+        "backgroundColor": "${backgroundMain}",
+        "&-headerBar": {
+            "backgroundColor": "${backgroundMain}",
+            "visible": true,
+            "titleColor": "${textDark}"
+        },
+        "&-flAddToBasket": {
+            "&-btnAddToBasket": {
+                "testId": "sIzwSD6Oc",
+                "text": "Add to Basket",
+                "usePageVariable": true
+            }
+        }
     }
-  }
 }

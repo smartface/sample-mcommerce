@@ -1,32 +1,34 @@
 {
-  ".flEmptyItem": {
-    "flexProps": {
-      "alignContent": "CENTER",
-      "justifyContent": "CENTER",
-      "flexGrow": 1
-    },
-    "&-imgEmpty": {
-      "flexProps": {},
-      "height": 100,
-      "testId": "iK4kwHKmH",
-      "width": null,
-      "tintColor": "${textDark}",
-      "imageFillType": "ASPECTFIT"
-    },
-    "&-lblEmptyTitle": {
-      "flexProps": {},
-      "textColor": "${textDark}",
-      "font": {
-        "size": 17,
-        "bold": true,
-        "italic": false,
-        "family": "Nunito",
-        "style": "SemiBold"
-      },
-      "testId": "ae8JtxRfc",
-      "textAlignment": "MIDCENTER",
-      "height": 30,
-      "marginTop": 15
+    ".flEmptyItem": {
+        "left": 14,
+        "top": 73,
+        "flexProps": {
+            "alignContent": "CENTER",
+            "justifyContent": "CENTER",
+            "flexGrow": 1
+        },
+        "&-imgEmpty": {
+            "flexProps": {},
+            "height": 100,
+            "testId": "iK4kwHKmH",
+            "width": null,
+            "tintColor": "${textDark}",
+            "imageFillType": "ASPECTFIT"
+        },
+        "&-lblEmptyTitle": {
+            "flexProps": {},
+            "textColor": "${textDark}",
+            "font": {
+                "size": 17,
+                "bold": true,
+                "italic": false,
+                "family": "Nunito",
+                "style": "SemiBold"
+            },
+            "testId": "ae8JtxRfc",
+            "textAlignment": "MIDCENTER",
+            "height": 30,
+            "marginTop": 15
+        }
     }
-  }
 }

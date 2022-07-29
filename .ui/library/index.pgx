@@ -39,9 +39,7 @@
 				"title": "__library__"
 			},
 			"type": "HeaderBar",
-			"userProps": {
-				"title": "__library__"
-			}
+			"userProps": {}
 		}
 	]
 }

@@ -103,6 +103,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                 );
             }
             processorItems.push(
+                //@ts-ignore
                 ListViewItems.getLviHomeProducts({
                     initialized: this.initialized,
                     items: showcase.products,
@@ -130,6 +131,8 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
             for (let index = 0; index < this.products.length; index++) {
                 processorItems.push(ListViewItems.getLviSpacerItem({ className: 'xSmall' }));
                 processorItems.push(
+                //@ts-ignore
+
                     ListViewItems.getLviHomeProducts({
                         initialized: this.initialized,
                         items:

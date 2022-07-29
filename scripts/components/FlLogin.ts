@@ -34,26 +34,23 @@ export default class FlLogin extends FlLoginDesign {
     }
 
     private initMaterialBoxes() {
-        this.mtbEmail.materialTextBox.ios.clearButtonEnabled = true;
+        this.mtbEmail.ios.clearButtonEnabled = true;
+        this.mtbEmail.ios.clearButtonEnabled = true;
         this.mtbEmail.android.enableErrorMessage = true;
-        this.mtbPassword.materialTextBox.ios.clearButtonEnabled = true;
+        this.mtbPassword.ios.clearButtonEnabled = true;
         this.mtbPassword.android.enableErrorMessage = true;
 
-        this.mtbEmail.options = {
-            hint: global.lang.email
-        };
-        this.mtbPassword.options = {
-            hint: global.lang.password
-        };
-        this.mtbPassword.materialTextBox.isPassword = true;
+        this.mtbEmail.hint = global.lang.email;
+        this.mtbPassword.hint = global.lang.password;
+        this.mtbPassword.isPassword = true;
     }
     private async initUserLogin() {
         if (this.initValidate()) {
             try {
                 showWaitDialog();
                 const response = await login({
-                    username: this.mtbEmail.materialTextBox.text,
-                    password: this.mtbPassword.materialTextBox.text
+                    username: this.mtbEmail.text,
+                    password: this.mtbPassword.text
                 });
                 if (response && !!response?.access_token) {
                     if (this._router instanceof NativeStackRouter) {
@@ -74,23 +71,23 @@ export default class FlLogin extends FlLoginDesign {
         }
     }
     private initValidate() {
-        let mailExist = !!this.mtbEmail.materialTextBox.text.replace(/\s+/g, '').trim();
-        let passwordExists = !!this.mtbPassword.materialTextBox.text.replace(/\s+/g, '').trim();
+        let mailExist = !!this.mtbEmail.text.replace(/\s+/g, '').trim();
+        let passwordExists = !!this.mtbPassword.text.replace(/\s+/g, '').trim();
 
-        if (mailExist && this.checkIsEmailValid(this.mtbEmail.materialTextBox.text)) {
+        if (mailExist && this.checkIsEmailValid(this.mtbEmail.text)) {
             this.isMailValid = true;
-            this.mtbEmail.materialTextBox.errorMessage = '';
+            this.mtbEmail.errorMessage = '';
         } else {
             this.isMailValid = false;
-            this.mtbEmail.materialTextBox.errorMessage = global.lang.invalidEmail;
+            this.mtbEmail.errorMessage = global.lang.invalidEmail;
         }
 
-        if (passwordExists && this.mtbPassword.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD) {
+        if (passwordExists && this.mtbPassword.text.length >= MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD) {
             this.isPasswordValid = true;
-            this.mtbPassword.materialTextBox.errorMessage = '';
+            this.mtbPassword.errorMessage = '';
         } else {
             this.isPasswordValid = false;
-            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword.replace(
+            this.mtbPassword.errorMessage = global.lang.minimumCharacterErrorOnPassword.replace(
                 '$1',
                 MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD
             );

@@ -1,58 +1,59 @@
 {
-  ".flProductDetailOverviewSection": {
-    "height": 75,
-    "&-flWrapper": {
-      "flexProps": {
-        "flexGrow": 1,
-        "flexDirection": "ROW"
-      },
-      "height": null,
-      "testId": "Vzknacpd4",
-      "&-lblOverviewTitle": {
-        "flexProps": {
-          "flexGrow": 2
-        },
-        "textColor": "${textDark}",
-        "font": {
-          "size": 16,
-          "bold": true,
-          "italic": false,
-          "family": "Nunito",
-          "style": "Bold"
-        },
-        "testId": "4dE2tG-C4"
-      },
-      "&-imgRouteArrow": {
-        "height": 50,
-        "tintColor": "${textDark}",
-        "testId": "dtVNM0nNK",
-        "width": 50
-      },
-      "&-flRateWrapper": {
-        "flexProps": {
-          "flexGrow": 4,
-          "flexDirection": "ROW",
-          "alignItems": "CENTER"
-        },
-        "height": 50,
-        "&-flStars": {
-          "flexProps": {
-            "flexDirection": "ROW",
-            "alignItems": "CENTER"
-          },
-          "height": 50,
-          "&-image": {
-            "width": 25,
-            "height": 25
-          },
-          "width": 125,
-          "marginRight": 5
-        },
-        "&-lblReviewCount": {
-          "height": 25,
-          "width": 50
+    ".flProductDetailOverviewSection": {
+        "height": 75,
+        "&-flWrapper": {
+            "flexProps": {
+                "flexGrow": 1,
+                "flexDirection": "ROW"
+            },
+            "height": null,
+            "testId": "Vzknacpd4",
+            "&-lblOverviewTitle": {
+                "flexProps": {
+                    "flexGrow": 2
+                },
+                "textColor": "${textDark}",
+                "font": {
+                    "size": 16,
+                    "bold": true,
+                    "italic": false,
+                    "family": "Nunito",
+                    "style": "Bold"
+                },
+                "testId": "4dE2tG-C4"
+            },
+            "&-imgRouteArrow": {
+                "height": 50,
+                "tintColor": "${textDark}",
+                "testId": "dtVNM0nNK",
+                "width": 50,
+                "image": "rightarrow.png"
+            },
+            "&-flRateWrapper": {
+                "flexProps": {
+                    "flexGrow": 4,
+                    "flexDirection": "ROW",
+                    "alignItems": "CENTER"
+                },
+                "height": 50,
+                "&-flStars": {
+                    "flexProps": {
+                        "flexDirection": "ROW",
+                        "alignItems": "CENTER"
+                    },
+                    "height": 50,
+                    "&-image": {
+                        "width": 25,
+                        "height": 25
+                    },
+                    "width": 125,
+                    "marginRight": 5
+                },
+                "&-lblReviewCount": {
+                    "height": 25,
+                    "width": 50
+                }
+            }
         }
-      }
     }
-  }
 }

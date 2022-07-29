@@ -62,7 +62,7 @@
 			}
 		},
 		{
-			"className": ".sf-flexLayout .paddingHorizontal .flCartCheckout",
+			"className": ".sf-flexLayout .paddingHorizontal .flCartCheckout #pgFavorites-lvMain-flCartCheckout",
 			"hiddenComponent": false,
 			"id": "db65-9795-a87b-5e63",
 			"props": {
@@ -77,18 +77,7 @@
 				"id": "97a7-de34-7dcc-2791"
 			},
 			"type": "FlexLayout",
-			"userProps": {
-				"flex": {
-					"positionType": 0
-				},
-				"flexProps": {
-					"positionType": "RELATIVE"
-				},
-				"left": 0,
-				"testId": "HvlsVe-8Z",
-				"top": 0,
-				"usePageVariable": true
-			}
+			"userProps": {}
 		}
 	]
 }
