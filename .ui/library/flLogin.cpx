@@ -79,8 +79,8 @@
 			"oldName": "flexLayout1",
 			"props": {
 				"children": [
-					"2fb8-b5fa-6932-d11a",
-					"c9a2-cb41-c47b-6626",
+					"2def-b53c-d4e1-5e79",
+					"c164-e06b-b988-81b8",
 					"aca3-ff86-72e7-5a39",
 					"a107-f987-bffb-e7a1",
 					"f517-eff5-bf7f-7990"
@@ -96,43 +96,33 @@
 			"userProps": {}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper .flLogin-flForm-mtbEmail",
-			"hiddenComponent": false,
-			"id": "2fb8-b5fa-6932-d11a",
-			"initialized": false,
-			"oldName": "materialTextBox",
+			"className": ".materialTextBox",
+			"id": "2def-b53c-d4e1-5e79",
+			"oldName": "materialTextBox1",
 			"props": {
 				"children": [],
 				"name": "mtbEmail",
-				"parent": "9635-bef0-7984-9bd4",
-				"usePageVariable": true
+				"parent": "9635-bef0-7984-9bd4"
 			},
 			"source": {
-				"page": "__library__",
-				"type": "materialTextBox",
-				"id": "574a-10da-b765-48e5"
+				"page": "__library__"
 			},
-			"type": "FlexLayout",
+			"type": "MaterialTextBox",
 			"userProps": {}
 		},
 		{
-			"className": ".flexLayout .materialTextBox-wrapper .flLogin-flForm-mtbPassword",
-			"hiddenComponent": false,
-			"id": "c9a2-cb41-c47b-6626",
-			"initialized": false,
+			"className": ".materialTextBox",
+			"id": "c164-e06b-b988-81b8",
 			"oldName": "materialTextBox1",
 			"props": {
 				"children": [],
 				"name": "mtbPassword",
-				"parent": "9635-bef0-7984-9bd4",
-				"usePageVariable": true
+				"parent": "9635-bef0-7984-9bd4"
 			},
 			"source": {
-				"page": "__library__",
-				"type": "materialTextBox",
-				"id": "574a-10da-b765-48e5"
+				"page": "__library__"
 			},
-			"type": "FlexLayout",
+			"type": "MaterialTextBox",
 			"userProps": {}
 		},
 		{

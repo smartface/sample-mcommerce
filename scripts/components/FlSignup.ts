@@ -21,11 +21,11 @@ export default class FlSignup extends FlSignupDesign {
             this.initUserSignup();
         });
         this.flWrapper.onTouchEnded = () => {
-            this.mtbFirstName.materialTextBox.removeFocus();
+            this.mtbFirstName.removeFocus();
             return true;
         };
         this.tvTermsAndPrivacy.onTouchEnded = () => {
-            this.mtbFirstName.materialTextBox.removeFocus();
+            this.mtbFirstName.removeFocus();
             return true;
         };
         this.lblTitle.text = global.lang.signup;
@@ -43,19 +43,11 @@ export default class FlSignup extends FlSignupDesign {
     }
 
     initMaterialBoxes() {
-        this.mtbFirstName.options = {
-            hint: global.lang.firstName
-        };
-        this.mtbLastName.options = {
-            hint: global.lang.lastName
-        };
-        this.mtbEmail.options = {
-            hint: global.lang.email
-        };
-        this.mtbPassword.options = {
-            hint: global.lang.password
-        };
-        this.mtbPassword.materialTextBox.isPassword = true;
+        this.mtbFirstName.hint = global.lang.firstName;
+        this.mtbLastName.hint = global.lang.lastName;
+        this.mtbEmail.hint = global.lang.email;
+        this.mtbPassword.hint = global.lang.password;
+        this.mtbPassword.isPassword = true;
     }
 
     private async initUserSignup() {
@@ -63,10 +55,10 @@ export default class FlSignup extends FlSignupDesign {
             try {
                 showWaitDialog();
                 const registerResponse = await register({
-                    firstName: this.mtbFirstName.materialTextBox.text.trim(),
-                    lastName: this.mtbLastName.materialTextBox.text.trim(),
-                    email: this.mtbEmail.materialTextBox.text.trim(),
-                    password: this.mtbPassword.materialTextBox.text.trim()
+                    firstName: this.mtbFirstName.text.trim(),
+                    lastName: this.mtbLastName.text.trim(),
+                    email: this.mtbEmail.text.trim(),
+                    password: this.mtbPassword.text.trim()
                 });
                 if (registerResponse && registerResponse.success) {
                     this.router.push('pgLogin');
@@ -83,40 +75,40 @@ export default class FlSignup extends FlSignupDesign {
     }
 
     private initValidate() {
-        const firstNameExist = !!this.mtbFirstName.materialTextBox.text.replace(/\s+/g, '').trim();
-        const lastNameExist = !!this.mtbLastName.materialTextBox.text.replace(/\s+/g, '').trim();
-        const mailExist = !!this.mtbEmail.materialTextBox.text.replace(/\s+/g, '').trim();
-        const passwordExists = !!this.mtbPassword.materialTextBox.text.replace(/\s+/g, '').trim();
+        const firstNameExist = !!this.mtbFirstName.text.replace(/\s+/g, '').trim();
+        const lastNameExist = !!this.mtbLastName.text.replace(/\s+/g, '').trim();
+        const mailExist = !!this.mtbEmail.text.replace(/\s+/g, '').trim();
+        const passwordExists = !!this.mtbPassword.text.replace(/\s+/g, '').trim();
 
         if (
             firstNameExist &&
             lastNameExist &&
-            this.mtbFirstName.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED &&
-            this.mtbLastName.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED
+            this.mtbFirstName.text.length >= MINIMUM_CHARACTERS_REQUIRED &&
+            this.mtbLastName.text.length >= MINIMUM_CHARACTERS_REQUIRED
         ) {
             this.namesValid = true;
-            this.mtbFirstName.materialTextBox.errorMessage = '';
-            this.mtbLastName.materialTextBox.errorMessage = '';
+            this.mtbFirstName.errorMessage = '';
+            this.mtbLastName.errorMessage = '';
         } else {
             this.namesValid = false;
-            this.mtbFirstName.materialTextBox.errorMessage = global.lang.invalidName.replace('$1', MINIMUM_CHARACTERS_REQUIRED);
-            this.mtbLastName.materialTextBox.errorMessage = global.lang.invalidName.replace('$1', MINIMUM_CHARACTERS_REQUIRED);
+            this.mtbFirstName.errorMessage = global.lang.invalidName.replace('$1', MINIMUM_CHARACTERS_REQUIRED);
+            this.mtbLastName.errorMessage = global.lang.invalidName.replace('$1', MINIMUM_CHARACTERS_REQUIRED);
         }
 
-        if (mailExist && this.checkIsEmailValid(this.mtbEmail.materialTextBox.text)) {
+        if (mailExist && this.checkIsEmailValid(this.mtbEmail.text)) {
             this.isMailValid = true;
-            this.mtbEmail.materialTextBox.errorMessage = '';
+            this.mtbEmail.errorMessage = '';
         } else {
             this.isMailValid = false;
-            this.mtbEmail.materialTextBox.errorMessage = global.lang.invalidEmail;
+            this.mtbEmail.errorMessage = global.lang.invalidEmail;
         }
 
-        if (passwordExists && this.mtbPassword.materialTextBox.text.length >= MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD) {
+        if (passwordExists && this.mtbPassword.text.length >= MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD) {
             this.isPasswordValid = true;
-            this.mtbPassword.materialTextBox.errorMessage = '';
+            this.mtbPassword.errorMessage = '';
         } else {
             this.isPasswordValid = false;
-            this.mtbPassword.materialTextBox.errorMessage = global.lang.minimumCharacterErrorOnPassword.replace(
+            this.mtbPassword.errorMessage = global.lang.minimumCharacterErrorOnPassword.replace(
                 '$1',
                 MINIMUM_CHARACTERS_REQUIRED_FOR_PASSWORD
             );
