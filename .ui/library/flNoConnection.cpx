@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-flexLayout .flCheckoutSuccessful",
-			"hiddenComponent": false,
+			"hiddenComponent": true,
 			"id": "047b-22c0-79e4-ae94",
 			"props": {
 				"children": [
@@ -49,6 +49,7 @@
 			"oldName": "lblEmptyTitle",
 			"props": {
 				"children": [],
+				"maxLines": 2,
 				"name": "lblTitle",
 				"parent": "047b-22c0-79e4-ae94",
 				"text": "label1",
@@ -69,6 +70,7 @@
 			"oldName": "label1",
 			"props": {
 				"children": [],
+				"maxLines": 2,
 				"name": "lblDescription",
 				"parent": "047b-22c0-79e4-ae94",
 				"text": "label1",

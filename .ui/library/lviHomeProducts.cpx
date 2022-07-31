@@ -62,6 +62,10 @@
 				"children": [
 					"0d0c-30da-929d-3ad5"
 				],
+				"layoutManager": {
+					"spanCount": 1,
+					"scrollDirection": "HORIZONTAL"
+				},
 				"name": "gvProducts",
 				"parent": "c484-1410-e185-066e",
 				"usePageVariable": true

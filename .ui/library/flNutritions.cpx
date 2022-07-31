@@ -47,6 +47,7 @@
 			"id": "ff84-f97d-220c-a89d",
 			"props": {
 				"children": [],
+				"maxLines": 0,
 				"name": "lblValueOfNutritions",
 				"parent": "cd1f-c598-7981-3343",
 				"text": "label2",

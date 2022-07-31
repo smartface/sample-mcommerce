@@ -75,7 +75,8 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         this.lvMain.refreshData();
     }
     processor(): Processor[] {
-        const processorItems = [
+        const processorItems = [];
+        processorItems.push(
             ListViewItems.getLviGenericSlider(
                 {
                     initialized: this.initialized,
@@ -84,8 +85,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
                     })
                 },
                 { height: this.sliderHeight }
-            )
-        ];
+            ));
         this.showcases.forEach((showcase) => {
             if (this.initialized) {
                 processorItems.push(

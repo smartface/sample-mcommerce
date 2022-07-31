@@ -97,6 +97,7 @@
 			"id": "e63d-e472-a56e-b00d",
 			"props": {
 				"children": [],
+				"maxLines": 1,
 				"name": "lblFavListItemTitle",
 				"parent": "fd15-abe4-a506-21ee",
 				"text": "lblTitle",

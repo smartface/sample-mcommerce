@@ -160,6 +160,7 @@
 			"oldName": "label1",
 			"props": {
 				"children": [],
+				"maxLines": 5,
 				"name": "lblAddress",
 				"parent": "6621-8cc0-6ad6-fd70",
 				"text": "lblAddress",
