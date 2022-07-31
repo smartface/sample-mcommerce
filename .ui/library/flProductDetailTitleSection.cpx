@@ -59,6 +59,7 @@
 			"id": "2d8b-a1a4-f6a3-c132",
 			"props": {
 				"children": [],
+				"maxLines": 2,
 				"name": "lblProductTitle",
 				"parent": "3958-378b-ee73-3169",
 				"text": "label1",

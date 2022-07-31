@@ -93,6 +93,7 @@
 			"id": "e56a-b896-71c5-1af7",
 			"props": {
 				"children": [],
+				"maxLines": 2,
 				"name": "lblCategoryItemTitle",
 				"parent": "eb44-f4ce-3838-bece",
 				"text": "Frash Fruits & Vegetable",
