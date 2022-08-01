@@ -45,6 +45,7 @@
 			"oldName": "lblEmptyTitle",
 			"props": {
 				"children": [],
+				"maxLines": 2,
 				"name": "lblTitle",
 				"parent": "f729-014b-21c4-4386",
 				"text": "label1",
@@ -65,6 +66,7 @@
 			"oldName": "label1",
 			"props": {
 				"children": [],
+				"maxLines": 2,
 				"name": "lblDescription",
 				"parent": "f729-014b-21c4-4386",
 				"text": "label1",

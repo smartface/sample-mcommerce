@@ -146,6 +146,7 @@
 			"oldName": "lbl",
 			"props": {
 				"children": [],
+				"maxLines": 2,
 				"name": "lblTermsAndCond",
 				"parent": "f7a0-943e-2aec-041e",
 				"text": "lblTerm",

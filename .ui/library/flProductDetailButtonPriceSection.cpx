@@ -187,6 +187,7 @@
 			"props": {
 				"children": [],
 				"html": "4.55",
+				"maxLines": 1,
 				"name": "tvPrice",
 				"parent": "0d4e-9ac0-154a-5319",
 				"text": "4.55",
@@ -208,6 +209,7 @@
 			"props": {
 				"children": [],
 				"html": "1222",
+				"maxLines": 1,
 				"name": "tvDiscount",
 				"parent": "0d4e-9ac0-154a-5319",
 				"text": "1222",

@@ -143,6 +143,7 @@
 			"props": {
 				"children": [],
 				"html": "Deneme yorum",
+				"maxLines": 3,
 				"name": "lblComment",
 				"parent": "391c-0052-8b78-9389",
 				"text": "Deneme yorum",
