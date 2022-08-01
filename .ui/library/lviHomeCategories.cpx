@@ -2,7 +2,7 @@
 	"components": [
 		{
 			"className": ".sf-listViewItem .lviHomeCategories",
-			"hiddenComponent": true,
+			"hiddenComponent": false,
 			"id": "0892-218d-bc64-b1ba",
 			"props": {
 				"children": [
@@ -24,9 +24,11 @@
 				"children": [
 					"3b2b-3d8e-e680-fee5"
 				],
+				"itemCount": 1,
+				"itemLength": 227,
 				"layoutManager": {
 					"spanCount": 1,
-					"scrollDirection": "HORIZONTAL"
+					"scrollDirection": "VERTICAL"
 				},
 				"name": "gvCategories",
 				"parent": "0892-218d-bc64-b1ba",
@@ -36,7 +38,14 @@
 				"page": "__library__"
 			},
 			"type": "GridView",
-			"userProps": {}
+			"userProps": {
+				"itemCount": 1,
+				"itemLength": 227,
+				"layoutManager": {
+					"scrollDirection": "VERTICAL"
+				},
+				"usePageVariable": true
+			}
 		},
 		{
 			"className": ".sf-gridViewItem",
