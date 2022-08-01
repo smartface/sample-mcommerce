@@ -61,16 +61,9 @@
 				"usePageVariable": true
 			},
 			"type": "GridView",
-<<<<<<< HEAD
-			"userProps": {},
-			"degree": 1
-=======
 			"userProps": {
-				"itemLength": 250,
-				"testId": "tJD_vXU24",
-				"usePageVariable": true
+				"itemLength": 250
 			}
->>>>>>> fe297497d568ac5622fe35fd5f30f80ca552fd78
 		},
 		{
 			"className": ".sf-gridViewItem .gviCategoryItem",
