@@ -8,6 +8,7 @@ import System from '@smartface/native/device/system';
 import { getProductImageUrl } from 'service/commerce';
 import { Product } from 'types';
 import { HALF_OF_SCREEN_WIDTH } from '../constants';
+import { ShimmerHighlight } from '@smartface/native/ui/shimmerflexlayout/shimmerflexlayout';
 export default class LviHomeProducts extends LviHomeProductsDesign {
     pageName?: string | undefined;
     private __onProductClick: (product: any) => void;
@@ -96,7 +97,11 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     }
     refreshGridView() {
         this.gvProducts.itemCount = this.items.length;
-        this.initialized ? this.sflHomeProductContainer.stopShimmering() : this.sflHomeProductContainer.startShimmering();
+        if (this.initialized) { this.sflHomeProductContainer.stopShimmering() } else {
+            this.sflHomeProductContainer.baseAlpha = 0.5;
+            this.sflHomeProductContainer.android.build(ShimmerHighlight.AlphaHighlight);
+            this.sflHomeProductContainer.startShimmering();
+        }
         this.gvProducts.refreshData();
     }
 }
