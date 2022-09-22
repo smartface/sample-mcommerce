@@ -20,7 +20,8 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -32,7 +33,8 @@
 				"parent": "9495-c1b8-4521-aab3"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar.transparent",
@@ -44,7 +46,8 @@
 				"parent": "9495-c1b8-4521-aab3"
 			},
 			"type": "HeaderBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-listView .grow .noMargin",
@@ -59,7 +62,8 @@
 			"userProps": {
 				"testId": "VW_GyS6Fo",
 				"usePageVariable": true
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-flexLayout .sticky.relative",
@@ -72,7 +76,8 @@
 				"parent": "9495-c1b8-4521-aab3"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-button .sf-button-main #pgProductDetail-flAddToBasket-btnAddToBasket",
@@ -85,7 +90,10 @@
 				"usePageVariable": true
 			},
 			"type": "Button",
-			"userProps": {}
+			"userProps": {
+				"testId": "596_V6-Rr5"
+			},
+			"degree": 2
 		}
 	]
 }

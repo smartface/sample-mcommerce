@@ -20,7 +20,8 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -32,7 +33,8 @@
 				"parent": "8874-9476-fc66-5308"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar.main",
@@ -47,7 +49,8 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgAddReview"
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-flexLayout .flRateProduct .grow .marginHorizontal .marginVertical #pgAddReview-flRateProduct",
@@ -65,7 +68,10 @@
 				"id": "f11c-576a-b271-7c3f"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"testId": "ThFZU9XCgP"
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-flexLayout .sticky.relative",
@@ -78,7 +84,8 @@
 				"parent": "8874-9476-fc66-5308"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-button-main #pgAddReview-flButtonWrapper-btnSendReview",
@@ -91,7 +98,10 @@
 				"usePageVariable": true
 			},
 			"type": "Button",
-			"userProps": {}
+			"userProps": {
+				"testId": "xLzr2yTgCx"
+			},
+			"degree": 2
 		}
 	]
 }

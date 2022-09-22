@@ -16,7 +16,8 @@
 			},
 			"type": "Page",
 			"userProps": {},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -28,7 +29,8 @@
 				"parent": "9b1d-f332-0177-b0a7"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar",
@@ -43,7 +45,8 @@
 			"type": "HeaderBar",
 			"userProps": {
 				"title": "pgNoConnection"
-			}
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-flexLayout .flCheckoutSuccessful #pgNoConnection-flNoConnection",
@@ -61,7 +64,10 @@
 				"id": "047b-22c0-79e4-ae94"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {
+				"testId": "l_yQqQE5pw"
+			},
+			"degree": 1
 		}
 	]
 }

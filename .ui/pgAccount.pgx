@@ -18,7 +18,8 @@
 			},
 			"type": "Page",
 			"userProps": {},
-			"version": "0.0.1.a"
+			"version": "0.0.1.a",
+			"degree": 0
 		},
 		{
 			"className": ".sf-statusBar",
@@ -30,7 +31,8 @@
 				"parent": "1f1d-7f9b-25d3-8c1b"
 			},
 			"type": "StatusBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-headerBar.main",
@@ -44,7 +46,8 @@
 				"title": "pgAccount"
 			},
 			"type": "HeaderBar",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		},
 		{
 			"className": ".sf-listView .contentInset-top .grow #pgAccount-lvMain",
@@ -56,7 +59,10 @@
 				"usePageVariable": true
 			},
 			"type": "ListView",
-			"userProps": {}
+			"userProps": {
+				"testId": "uw0af5pk4N"
+			},
+			"degree": 1
 		},
 		{
 			"className": ".sf-flexLayout .flSmartface #pgAccount-lvMain-flSmartface",
@@ -74,7 +80,8 @@
 				"id": "f497-3d69-d937-6c61"
 			},
 			"type": "FlexLayout",
-			"userProps": {}
+			"userProps": {},
+			"degree": 1
 		}
 	]
 }

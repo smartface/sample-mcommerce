@@ -79,7 +79,9 @@
 				"id": "3bb4-1730-8915-de6f"
 			},
 			"type": "FlexLayout",
-			"userProps": {},
+			"userProps": {
+				"testId": "KV_FEXESs"
+			},
 			"degree": 2
 		}
 	]
