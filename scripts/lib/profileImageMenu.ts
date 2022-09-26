@@ -155,53 +155,65 @@ export const onCameraSelect = (opts: IPhotoEdit = {}) => {
                 .catch((err) => {
                     alert({
                         title: 'Camera Permission', // title of the alert dialog
-                        message: 'Camere permission is required to use this app', // message of the alert dialog
+                        message: 'Camera permission is required to use this app', // message of the alert dialog
                     });
                     console.error('Permission failed ' + JSON.stringify(err));
                 });
         });
 };
 
-export const onGallerySelect = (opts: IPhotoEdit = {}) => {
-    return Permission.android.requestPermissions(Permissions.ANDROID.READ_EXTERNAL_STORAGE).then(() => {
-        return new Promise((resolve, reject) => {
-            const pickFromGalleryOpts = {
-                type: Multimedia.Type.IMAGE,
-                allowsEditing: !opts.blockAllowsEditing,
-                onSuccess: ({ image }) => {
-                    return compressImage(image, opts)
-                        .then((base64) => resolve(base64))
-                        .catch(reject);
-                },
-                onCancel: () => {
-                    // WORKAROUND: SUPDEV - 2198
-                    //@ts-ignore
-                    Contacts.onActivityResult = contactActivity;
-                    // END OF WORKAROUND
-                    reject();
-                },
-                onFailure: reject,
-                android: {
-                    cropShape:
-                        opts.cropShape === 'RECTANGLE' ? Multimedia.Android.CropShape.RECTANGLE : Multimedia.Android.CropShape.OVAL,
-                    rotateText: global.lang.rotate,
-                    scaleText: global.lang.stretch,
-                    cropText: global.lang.crop,
-                    headerBarTitle: global.lang.photoEditHeaderTitle,
-                    hideBottomControls: false
-                },
-                page: Router.currentRouter.getState().view
-            };
-            !opts.freeAspectRatio && (pickFromGalleryOpts['aspectRatio'] = { x: 1, y: 1 });
-            !opts.freeMaxResultSize &&
-                (pickFromGalleryOpts['android']['maxResultSize'] = {
-                    width: PROFILE_IMAGE_DIMENSIONS.WIDTH,
-                    height: PROFILE_IMAGE_DIMENSIONS.HEIGHT
-                });
-            return Multimedia.pickFromGallery(pickFromGalleryOpts);
+export const onGallerySelect = async (opts: IPhotoEdit = {}) => {
+    try {
+        await Permission.android.requestPermissions([Permissions.ANDROID.READ_EXTERNAL_STORAGE]);
+        return openGallery(opts);
+    } catch (e) {
+        alert({
+            title: 'External Storage Permission', // title of the alert dialog
+            message: 'External Storage permission is required to use this app', // message of the alert dialog
         });
-    });
+        console.error('Permission failed ' + JSON.stringify(e));
+        throw e;
+    }
 };
+
+export function openGallery(opts: IPhotoEdit = {}) {
+    return new Promise<string>((resolve, reject) => {
+        const pickFromGalleryOpts = {
+            type: Multimedia.Type.IMAGE,
+            allowsEditing: !opts.blockAllowsEditing,
+            onSuccess: ({ image }) => {
+                return compressImage(image, opts)
+                    .then((base64) => resolve(base64))
+                    .catch(reject);
+            },
+            onCancel: () => {
+                // WORKAROUND: SUPDEV - 2198
+                //@ts-ignore
+                Contacts.onActivityResult = contactActivity;
+                // END OF WORKAROUND
+                reject();
+            },
+            onFailure: reject,
+            android: {
+                cropShape:
+                    opts.cropShape === 'RECTANGLE' ? Multimedia.Android.CropShape.RECTANGLE : Multimedia.Android.CropShape.OVAL,
+                rotateText: global.lang.rotate,
+                scaleText: global.lang.stretch,
+                cropText: global.lang.crop,
+                headerBarTitle: global.lang.photoEditHeaderTitle,
+                hideBottomControls: false
+            },
+            page: Router.currentRouter.getState().view
+        };
+        !opts.freeAspectRatio && (pickFromGalleryOpts['aspectRatio'] = { x: 1, y: 1 });
+        !opts.freeMaxResultSize &&
+            (pickFromGalleryOpts['android']['maxResultSize'] = {
+                width: PROFILE_IMAGE_DIMENSIONS.WIDTH,
+                height: PROFILE_IMAGE_DIMENSIONS.HEIGHT
+            });
+        return Multimedia.pickFromGallery(pickFromGalleryOpts);
+    });
+}
 
 
 const initPictureDialog = (imageUrl: string) => {
