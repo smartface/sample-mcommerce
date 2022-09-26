@@ -1,12 +1,9 @@
 import Multimedia from '@smartface/native/device/multimedia';
 import System from '@smartface/native/device/system';
-import Application from '@smartface/native/application';
 import Menu from '@smartface/native/ui/menu';
 import Image from '@smartface/native/ui/image';
 import Blob from '@smartface/native/global/blob';
 const MenuItem = require('@smartface/native/ui/menuitem');
-import active from '@smartface/extension-utils/lib/router/active';
-import permissionUtil from '@smartface/extension-utils/lib/permission';
 import Permission from '@smartface/native/device/permission';
 import { PROFILE_IMAGE_DIMENSIONS } from '../constants';
 import dialog from 'lib/dialog';
@@ -17,9 +14,8 @@ import Contacts from '@smartface/native/device/contacts';
 import { NativeRouter as Router } from '@smartface/router';
 import { themeService } from 'theme';
 import { IImage } from '@smartface/native/ui/image/image';
-import { PermissionResult, Permissions } from '@smartface/native/device/permission/permission';
-import CallDetection from '@smartface/native/device/calldetection';
-import { OSType } from '@smartface/native/device/system/system';
+import { Permissions } from '@smartface/native/device/permission/permission';
+
 //@ts-ignore
 const contactActivity = Contacts.onActivityResult;
 //@ts-ignore
