@@ -163,87 +163,44 @@ export const onCameraSelect = (opts: IPhotoEdit = {}) => {
 };
 
 export const onGallerySelect = (opts: IPhotoEdit = {}) => {
-    if (System.OS === System.OSType.ANDROID) {
-        return Permission.android.requestPermissions(Permissions.ANDROID.READ_EXTERNAL_STORAGE).then(() => {
-            return new Promise((resolve, reject) => {
-                const pickFromGalleryOpts = {
-                    type: Multimedia.Type.IMAGE,
-                    allowsEditing: !opts.blockAllowsEditing,
-                    onSuccess: ({ image }) => {
-                        return compressImage(image, opts)
-                            .then((base64) => resolve(base64))
-                            .catch(reject);
-                    },
-                    onCancel: () => {
-                        // WORKAROUND: SUPDEV - 2198
-                        //@ts-ignore
-                        Contacts.onActivityResult = contactActivity;
-                        // END OF WORKAROUND
-                        reject();
-                    },
-                    onFailure: reject,
-                    android: {
-                        cropShape:
-                            opts.cropShape === 'RECTANGLE' ? Multimedia.Android.CropShape.RECTANGLE : Multimedia.Android.CropShape.OVAL,
-                        rotateText: global.lang.rotate,
-                        scaleText: global.lang.stretch,
-                        cropText: global.lang.crop,
-                        headerBarTitle: global.lang.photoEditHeaderTitle,
-                        hideBottomControls: false
-                    },
-                    page: Router.currentRouter.getState().view
-                };
-                !opts.freeAspectRatio && (pickFromGalleryOpts['aspectRatio'] = { x: 1, y: 1 });
-                !opts.freeMaxResultSize &&
-                    (pickFromGalleryOpts['android']['maxResultSize'] = {
-                        width: PROFILE_IMAGE_DIMENSIONS.WIDTH,
-                        height: PROFILE_IMAGE_DIMENSIONS.HEIGHT
-                    });
-                return Multimedia.pickFromGallery(pickFromGalleryOpts);
-            });
+    return Permission.android.requestPermissions(Permissions.ANDROID.READ_EXTERNAL_STORAGE).then(() => {
+        return new Promise((resolve, reject) => {
+            const pickFromGalleryOpts = {
+                type: Multimedia.Type.IMAGE,
+                allowsEditing: !opts.blockAllowsEditing,
+                onSuccess: ({ image }) => {
+                    return compressImage(image, opts)
+                        .then((base64) => resolve(base64))
+                        .catch(reject);
+                },
+                onCancel: () => {
+                    // WORKAROUND: SUPDEV - 2198
+                    //@ts-ignore
+                    Contacts.onActivityResult = contactActivity;
+                    // END OF WORKAROUND
+                    reject();
+                },
+                onFailure: reject,
+                android: {
+                    cropShape:
+                        opts.cropShape === 'RECTANGLE' ? Multimedia.Android.CropShape.RECTANGLE : Multimedia.Android.CropShape.OVAL,
+                    rotateText: global.lang.rotate,
+                    scaleText: global.lang.stretch,
+                    cropText: global.lang.crop,
+                    headerBarTitle: global.lang.photoEditHeaderTitle,
+                    hideBottomControls: false
+                },
+                page: Router.currentRouter.getState().view
+            };
+            !opts.freeAspectRatio && (pickFromGalleryOpts['aspectRatio'] = { x: 1, y: 1 });
+            !opts.freeMaxResultSize &&
+                (pickFromGalleryOpts['android']['maxResultSize'] = {
+                    width: PROFILE_IMAGE_DIMENSIONS.WIDTH,
+                    height: PROFILE_IMAGE_DIMENSIONS.HEIGHT
+                });
+            return Multimedia.pickFromGallery(pickFromGalleryOpts);
         });
-    }
-    else if (System.OS === System.OSType.IOS) {
-        return Multimedia.ios.requestGalleryAuthorization().then(() => { // TODO: Implement this
-            return new Promise((resolve, reject) => {
-                const pickFromGalleryOpts = {
-                    type: Multimedia.Type.IMAGE,
-                    allowsEditing: !opts.blockAllowsEditing,
-                    onSuccess: ({ image }) => {
-                        return compressImage(image, opts)
-                            .then((base64) => resolve(base64))
-                            .catch(reject);
-                    },
-                    onCancel: () => {
-                        // WORKAROUND: SUPDEV - 2198
-                        //@ts-ignore
-                        Contacts.onActivityResult = contactActivity;
-                        // END OF WORKAROUND
-                        reject();
-                    },
-                    onFailure: reject,
-                    android: {
-                        cropShape:
-                            opts.cropShape === 'RECTANGLE' ? Multimedia.Android.CropShape.RECTANGLE : Multimedia.Android.CropShape.OVAL,
-                        rotateText: global.lang.rotate,
-                        scaleText: global.lang.stretch,
-                        cropText: global.lang.crop,
-                        headerBarTitle: global.lang.photoEditHeaderTitle,
-                        hideBottomControls: false
-                    },
-                    page: Router.currentRouter.getState().view
-                };
-                !opts.freeAspectRatio && (pickFromGalleryOpts['aspectRatio'] = { x: 1, y: 1 });
-                !opts.freeMaxResultSize &&
-                    (pickFromGalleryOpts['android']['maxResultSize'] = {
-                        width: PROFILE_IMAGE_DIMENSIONS.WIDTH,
-                        height: PROFILE_IMAGE_DIMENSIONS.HEIGHT
-                    });
-                return Multimedia.pickFromGallery(pickFromGalleryOpts);
-            });
-        });
-    }
-
+    });
 };
 
 
