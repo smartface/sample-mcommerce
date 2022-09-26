@@ -4,12 +4,13 @@ import authRouteGenerator from './auth';
 import TabbarRoute from './tabbar';
 import launchScreen from './launch';
 import checkoutSuccessful from './checkoutSuccessful';
-import Network from '@smartface/native/device/network';
+import Network from "@smartface/native/device/network";
 import noConnection from './noConnection';
 import { ON_SHOW_TIMEOUT } from '../constants';
 import System from '@smartface/native/device/system';
+
 Application.on('backButtonPressed', () => {
-    Router.getActiveRouter()?.goBack();+2+
+    Router.getActiveRouter()?.goBack();
 });
 
 const router = Router.of({
