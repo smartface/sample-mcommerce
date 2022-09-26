@@ -1,6 +1,7 @@
-import isEmulator from '@smartface/extension-utils/lib/isEmulator';
-const IS_EMULATOR = isEmulator();
+import System from '@smartface/native/device/system';
 import { errorStackBySourceMap } from '@smartface/source-map'
+
+const IS_EMULATOR = System.isEmulator;
 
 export default function genericErrorHandler(error) {
     const detailedError = errorStackBySourceMap(error);

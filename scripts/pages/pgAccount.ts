@@ -152,7 +152,6 @@ export default class PgAccount extends withDismissAndBackButton(PgAccountDesign)
             this.addRightItem();
         } else {
             this.headerBar.setItems([]);
-            this.layout.applyLayout();
             this.unsubscribe();
         }
     }

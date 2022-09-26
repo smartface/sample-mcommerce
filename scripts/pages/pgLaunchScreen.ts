@@ -37,7 +37,6 @@ export default class PgLaunchScreen extends withDismissAndBackButton(PgLaunchScr
       imageFillType: ImageFillType.ASPECTFILL
     });
     this.launchDialog.layout.addChild(this.gifImageView);
-    this.launchDialog.layout.applyLayout();
   }
   public onShow() {
     super.onShow?.();

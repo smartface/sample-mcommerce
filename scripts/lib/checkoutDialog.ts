@@ -52,7 +52,6 @@ function initDialog(totalCost: string | number) {
 
   //@ts-ignore
   dialog.layout.addChild(component, 'checkoutDialogComp');
-  dialog.layout.applyLayout();
   return dialog;
 }
 

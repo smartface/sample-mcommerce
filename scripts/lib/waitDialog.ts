@@ -27,7 +27,6 @@ function initWaitDialog() {
   };
   //@ts-ignore
   dialog.layout.addChild(component, 'waitDialogComp');
-  dialog.layout.applyLayout();
   return dialog;
 }
 

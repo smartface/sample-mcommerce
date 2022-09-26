@@ -40,6 +40,5 @@ export default class FlCheck extends FlCheckDesign {
             });
             this.active = false;
         }
-        System.OS === System.OSType.IOS && this.applyLayout();
     }
 }

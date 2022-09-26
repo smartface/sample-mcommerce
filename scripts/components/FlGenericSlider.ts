@@ -17,9 +17,6 @@ export default class FlGenericSlider extends FlGenericSliderDesign {
     set images(value: string[]) {
         this.__images = value;
         this.dotIndicator.size = this.__images.length;
-        if (System.OS === System.OSType.IOS) {
-            this.applyLayout();
-        }
         this.initSlider();
     }
     private initSlider() {
@@ -34,8 +31,5 @@ export default class FlGenericSlider extends FlGenericSliderDesign {
             }
         });
         this.flSwipeViewLayout.addChild(swipeView, 'swipeView', '.grow-relative');
-        if (System.OS === System.OSType.IOS) {
-            this.flSwipeViewLayout.applyLayout();
-        }
     }
 }

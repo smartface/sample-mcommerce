@@ -41,7 +41,7 @@ export default class PgAddReview extends withDismissAndBackButton(PgAddReviewDes
         try {
             showWaitDialog();
             const response = await postProductReview(productId, star, comment);
-            this.router.goBack();
+            this.router.goBack();       // TODO: Check how to correct this. 
             alert({
                 title: global.lang.reviewHeader,
                 message: global.lang.reviewSent

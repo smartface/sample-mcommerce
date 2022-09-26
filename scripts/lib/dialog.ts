@@ -32,6 +32,5 @@ export default function (component: FlexLayout, opts?: DialogOpts): Dialog {
   };
   //@ts-ignore
   dialog.layout.addChild(component, 'genericDialogChild');
-  dialog.layout.applyLayout();
   return dialog;
 }

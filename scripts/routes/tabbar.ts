@@ -71,12 +71,7 @@ const getFavoritesCounter = () => {
         return '';
     }
 };
-const androidModalDismiss = (router, route) => {
-    const { view, action } = route.getState();
-    if (System.OS === System.OSType.ANDROID && view && action === 'POP') {
-        view.onShow && view.onShow();
-    }
-};
+
 
 function productDetailRouter(basePath: string) {
     return StackRouter.of({
@@ -156,7 +151,6 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgHome>({
                     path: `/btb/tab1/home`,
-                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgHome(router, route);
                         router.setState({ view: page });
@@ -174,7 +168,6 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     routes: [
                         Route.of<Pages.pgCategoryDetail>({
                             path: `/btb/tab1/categoryDetail/main`,
-                            routeDidEnter: androidModalDismiss,
                             build(router, route) {
                                 const page = new Pages.pgCategoryDetail(router, route);
                                 router.setState({ view: page });
@@ -212,7 +205,6 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
                     routes: [
                         Route.of<Pages.pgCategoryDetail>({
                             path: `/btb/tab2/categoryDetail/main`,
-                            routeDidEnter: androidModalDismiss,
                             build(router, route) {
                                 const page = new Pages.pgCategoryDetail(router, route);
                                 router.setState({ view: page });
@@ -233,7 +225,6 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgCart>({
                     path: `/btb/tab3/cart`,
-                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgCart(router, route);
                         router.setState({ view: page });
@@ -253,7 +244,6 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgFavorites>({
                     path: `/btb/tab4/favorites`,
-                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgFavorites(router, route);
                         router.setState({ view: page });
@@ -272,7 +262,6 @@ const bottomTabBarRouter = BottomTabBarRouter.of({
             routes: [
                 Route.of<Pages.pgAccount>({
                     path: `/btb/tab5/account`,
-                    routeDidEnter: androidModalDismiss,
                     build(router, route) {
                         const page = new Pages.pgAccount(router, route);
                         router.setState({ view: page });

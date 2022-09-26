@@ -59,11 +59,9 @@ export default class PgFavorites extends withDismissAndBackButton(PgFavoritesDes
         this.addSelectToHeaderBar();
         setVisibility(this.flCartCheckout, false);
       }
-      this.layout.applyLayout();
     } else {
       setVisibility(this.flCartCheckout, false);
       this.headerBar.setItems([]);
-      this.layout.applyLayout();
     }
   }
   addCancelToHeaderBar() {

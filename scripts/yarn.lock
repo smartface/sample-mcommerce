@@ -28,10 +28,10 @@
     "@smartface/styler" "^2.0.0"
     filtrex "^0.5.4"
 
-"@smartface/core@^5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@smartface/core/-/core-5.0.3.tgz#8b63e5fb4551c147351a53dada6a8420cc3fc36d"
-  integrity sha512-obOGFpJeO4CcK/rIaZpw82/DaT2FHreVqeW61S8mKjPHuTsZfgkTnwxU8r0nQDgWPes82ZrkMAMqjwNkW7vzTQ==
+"@smartface/core@^5.0.5-alpha.2":
+  version "5.0.5-alpha.2"
+  resolved "https://registry.yarnpkg.com/@smartface/core/-/core-5.0.5-alpha.2.tgz#c0c6d2c6b38dcc4540a24e29b86c0699e5557c19"
+  integrity sha512-1jXh6oyc8I6lJbwQAd7SOkXRCAgGnodHPPpSb4wun3ySpGC8XonQlgMnR4g6NbQbHSkPqGTeRH4Sg+bcetup5Q==
 
 "@smartface/extension-utils@^16.2.9":
   version "16.4.1"
@@ -54,12 +54,12 @@
   dependencies:
     html-parse-stringify "1.0.2"
 
-"@smartface/mixins@5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@smartface/mixins/-/mixins-5.0.3.tgz#25326de44559577ade5cafe9dc1df71af13fb1b4"
-  integrity sha512-hpwJkGlgf45ssx6zu7+OBrTltZtf8YkVuyOQyCx+ojGQ33xBakcraOTCoa98tS2kqvxyQRq/fBKvcCVzs4CvvQ==
+"@smartface/mixins@^5.0.5":
+  version "5.0.5-alpha.2"
+  resolved "https://registry.yarnpkg.com/@smartface/mixins/-/mixins-5.0.5-alpha.2.tgz#da33b1bc4030cfad71e80c02627732b3994be622"
+  integrity sha512-30quLkAoYZMf0YiAOvIFEA8PNCwh4/hHJgBcchHVCjSXjDmci4QFnaRcRX7CtegYC0cjxmHb7+hR6dg8Ey+TQg==
   dependencies:
-    "@smartface/core" "^5.0.3"
+    "@smartface/core" "^5.0.5-alpha.2"
 
 "@smartface/native@alpha":
   version "5.0.3-alpha.26"
@@ -77,10 +77,10 @@
     path-to-regexp "^2.4.0"
     resolve-pathname "^2.2.0"
 
-"@smartface/source-map@5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@smartface/source-map/-/source-map-5.0.3.tgz#5d885f4cf671472402017b09156a17726f66168f"
-  integrity sha512-qk2kzmqire+98T+19lePA7vgGL1F6nLibZE+spaK1O1s7TM5o2yeXvX4uPZvguQ2hrg1NXeYn7afa3fQ8y8aRg==
+"@smartface/source-map@^5.0.5":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@smartface/source-map/-/source-map-5.0.4.tgz#a2c2012860d326d2278e9f73f7b1fa61a07d26d1"
+  integrity sha512-x0jn3kCCbPUG8QcPRvm/MKhtS/H0VmQlINFOsBYPb27e1KHLz6XT0VzJtYZ3yUtG0Not6vjJ5oO80ak6JKeO4A==
   dependencies:
     source-map "0.6.1"
 
@@ -89,10 +89,10 @@
   resolved "https://registry.yarnpkg.com/@smartface/styler/-/styler-2.0.3.tgz#e144b4054faeffa4fa0432af0d84f48664dddee2"
   integrity sha512-GNYwWDQamYd6Qka9sI1kjZTsWbxEjPSRKlHOYLBaGT/CJfRXt7BOPyZS5yO8/6J/2LAdZE5VOko9By3fuJ+bWA==
 
-"@smartface/styling-context@5.0.3":
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/@smartface/styling-context/-/styling-context-5.0.3.tgz#7e954115ea55c0e8606c1560b7ae27b14313a5d3"
-  integrity sha512-aZcnTkH2rd1ifC+x3MPGQXU/Ya0eQxEmVNEo0OCIasa1bJMYU7+XerucGS401Yl3ZPBRf62KzaDpGkxdgWh/Pg==
+"@smartface/styling-context@^5.0.5":
+  version "5.0.5-alpha.2"
+  resolved "https://registry.yarnpkg.com/@smartface/styling-context/-/styling-context-5.0.5-alpha.2.tgz#c73277fd1345fd1d2e602f9614fb849affbdbde1"
+  integrity sha512-bI1bR+bCJ4vS17+bbguUu9fioje+ryCekEXt9af7QukdF8+aNN805nyC+UoSHENQzxn50TlvGlzrX8uNyTz2bw==
   dependencies:
     "@smartface/contx" "^4.2.0"
     "@smartface/styler" "^2.0.0"

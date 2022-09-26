@@ -7,16 +7,19 @@ import Blob from '@smartface/native/global/blob';
 const MenuItem = require('@smartface/native/ui/menuitem');
 import active from '@smartface/extension-utils/lib/router/active';
 import permissionUtil from '@smartface/extension-utils/lib/permission';
+import Permission from '@smartface/native/device/permission';
 import { PROFILE_IMAGE_DIMENSIONS } from '../constants';
 import dialog from 'lib/dialog';
 import FlPicture from 'components/FlPicture';
 import genericErrorHandler from './genericErrorHandler';
-
 // WORKAROUND : SUPDEV-2198 - Remove following lines when resolved
 import Contacts from '@smartface/native/device/contacts';
 import { NativeRouter as Router } from '@smartface/router';
 import { themeService } from 'theme';
 import { IImage } from '@smartface/native/ui/image/image';
+import { PermissionResult, Permissions } from '@smartface/native/device/permission/permission';
+import CallDetection from '@smartface/native/device/calldetection';
+import { OSType } from '@smartface/native/device/system/system';
 //@ts-ignore
 const contactActivity = Contacts.onActivityResult;
 //@ts-ignore
@@ -111,12 +114,8 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
 };
 
 export const onCameraSelect = (opts: IPhotoEdit = {}) => {
-    return permissionUtil
-        .getPermission({
-            androidPermission: Application.Android.Permissions.CAMERA as any,
-            permissionText: global.lang.cameraPermissionFail,
-            iosPermission: permissionUtil.IOS_PERMISSIONS.CAMERA
-        })
+
+    return Permission.requestPermission('CAMERA')
         .then(() => {
             return new Promise((resolve, reject) => {
                 const startCameraOpts = {
@@ -151,18 +150,21 @@ export const onCameraSelect = (opts: IPhotoEdit = {}) => {
                         width: PROFILE_IMAGE_DIMENSIONS.WIDTH,
                         height: PROFILE_IMAGE_DIMENSIONS.HEIGHT
                     });
-                return Multimedia.startCamera(startCameraOpts);
-            });
+                return Multimedia.capturePhoto(startCameraOpts)
+            })
+                .catch((err) => {
+                    alert({
+                        title: 'Camera Permission', // title of the alert dialog
+                        message: 'Camere permission is required to use this app', // message of the alert dialog
+                    });
+                    console.error('Permission failed ' + JSON.stringify(err));
+                });
         });
 };
 
 export const onGallerySelect = (opts: IPhotoEdit = {}) => {
-    return permissionUtil
-        .getPermission({
-            androidPermission: Application.Android.Permissions.READ_EXTERNAL_STORAGE as any,
-            permissionText: global.lang.galleryPermissionFail
-        })
-        .then(() => {
+    if (System.OS === System.OSType.ANDROID) {
+        return Permission.android.requestPermissions(Permissions.ANDROID.READ_EXTERNAL_STORAGE).then(() => {
             return new Promise((resolve, reject) => {
                 const pickFromGalleryOpts = {
                     type: Multimedia.Type.IMAGE,
@@ -200,7 +202,50 @@ export const onGallerySelect = (opts: IPhotoEdit = {}) => {
                 return Multimedia.pickFromGallery(pickFromGalleryOpts);
             });
         });
+    }
+    else if (System.OS === System.OSType.IOS) {
+        return Multimedia.ios.requestGalleryAuthorization().then(() => { // TODO: Implement this
+            return new Promise((resolve, reject) => {
+                const pickFromGalleryOpts = {
+                    type: Multimedia.Type.IMAGE,
+                    allowsEditing: !opts.blockAllowsEditing,
+                    onSuccess: ({ image }) => {
+                        return compressImage(image, opts)
+                            .then((base64) => resolve(base64))
+                            .catch(reject);
+                    },
+                    onCancel: () => {
+                        // WORKAROUND: SUPDEV - 2198
+                        //@ts-ignore
+                        Contacts.onActivityResult = contactActivity;
+                        // END OF WORKAROUND
+                        reject();
+                    },
+                    onFailure: reject,
+                    android: {
+                        cropShape:
+                            opts.cropShape === 'RECTANGLE' ? Multimedia.Android.CropShape.RECTANGLE : Multimedia.Android.CropShape.OVAL,
+                        rotateText: global.lang.rotate,
+                        scaleText: global.lang.stretch,
+                        cropText: global.lang.crop,
+                        headerBarTitle: global.lang.photoEditHeaderTitle,
+                        hideBottomControls: false
+                    },
+                    page: Router.currentRouter.getState().view
+                };
+                !opts.freeAspectRatio && (pickFromGalleryOpts['aspectRatio'] = { x: 1, y: 1 });
+                !opts.freeMaxResultSize &&
+                    (pickFromGalleryOpts['android']['maxResultSize'] = {
+                        width: PROFILE_IMAGE_DIMENSIONS.WIDTH,
+                        height: PROFILE_IMAGE_DIMENSIONS.HEIGHT
+                    });
+                return Multimedia.pickFromGallery(pickFromGalleryOpts);
+            });
+        });
+    }
+
 };
+
 
 const initPictureDialog = (imageUrl: string) => {
     const flPicture = new FlPicture();

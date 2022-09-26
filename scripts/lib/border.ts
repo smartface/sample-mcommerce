@@ -72,7 +72,6 @@ function setBordersForListViewItem({
             item.__nativeCell.marginLeft = 0;
             item.__nativeCell.marginRight = 0;
         }
-        item.applyLayout();
         let maskedBorders = 0;
         borders.includes('top') && (maskedBorders = maskedBorders | View.Border.TOP_LEFT | View.Border.TOP_RIGHT);
         borders.includes('bottom') && (maskedBorders = maskedBorders | View.Border.BOTTOM_LEFT | View.Border.BOTTOM_RIGHT);

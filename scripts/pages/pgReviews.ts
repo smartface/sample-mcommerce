@@ -46,7 +46,6 @@ export default class PgReviews extends withDismissAndBackButton(PgReviewsDesign)
             this.addRightItem();
         } else {
             this.headerBar.setItems([]);
-            this.layout.applyLayout();
         }
     }
 
