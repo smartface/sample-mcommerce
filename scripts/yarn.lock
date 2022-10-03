@@ -2,6 +2,13 @@
 # yarn lockfile v1
 
 
+"@babel/runtime@^7.17.2":
+  version "7.19.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.19.0.tgz#22b11c037b094d27a8a2504ea4dcff00f50e2259"
+  integrity sha512-eR8Lo9hnDS7tqkO7NsV+mKvCmv5boaXFSZ70DnfhcgiEne8hv9oCEd36Klw74EtizEqLsy4YnW8UWwpBVolHZA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.9.2":
   version "7.17.9"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.9.tgz#d19fbf802d01a8cb6cf053a64e472d42c434ba72"
@@ -53,6 +60,13 @@
   integrity sha512-yKoQY2nfWiVEfXKdqvtswxPTQjt+WeNZl8gqnUXxRzZcm/trzcyHx8KGzTQHdLysQCDtOQhyIZXPTaWlFaFzFg==
   dependencies:
     html-parse-stringify "1.0.2"
+
+"@smartface/i18n@^5.0.1":
+  version "5.0.4"
+  resolved "https://registry.yarnpkg.com/@smartface/i18n/-/i18n-5.0.4.tgz#b7df7dc0a6559c1a0e704e4a6f81039b5b95ad67"
+  integrity sha512-07Nivqe0HyO6FWQ83KU1r1gFz4qi8oRetjq7gADG2xbn7ZaNEumfeuOALHR7nyFWHs69RZo0SzOSsPRxISbmug==
+  dependencies:
+    i18next "21.6.15"
 
 "@smartface/mixins@^5.0.5":
   version "5.0.5-alpha.2"
@@ -152,6 +166,13 @@ html-parse-stringify@1.0.2:
   integrity sha1-EgjpjNdDCtfvsS4ees7pIU/SIoM=
   dependencies:
     void-elements "^1.0.0"
+
+i18next@21.6.15:
+  version "21.6.15"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-21.6.15.tgz#077e5798dbbd53d3aaa8ad66193758bd19836dbe"
+  integrity sha512-uMFyw5HGK9KSJ7ok/WUJfeNQj53VOR4NoITtErffWen2v2SjJfpCls7tKTLF1nTCdKRePY4lCoZMLKhRSj/1GA==
+  dependencies:
+    "@babel/runtime" "^7.17.2"
 
 is-extendable@^1.0.1:
   version "1.0.1"

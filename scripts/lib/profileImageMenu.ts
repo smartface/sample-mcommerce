@@ -15,7 +15,7 @@ import { NativeRouter as Router } from '@smartface/router';
 import { themeService } from 'theme';
 import { IImage } from '@smartface/native/ui/image/image';
 import { Permissions } from '@smartface/native/device/permission/permission';
-
+import { i18n } from '@smartface/i18n';
 //@ts-ignore
 const contactActivity = Contacts.onActivityResult;
 //@ts-ignore
@@ -67,11 +67,11 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
     return new Promise((resolve, reject) => {
         const menu = new Menu();
         const menuItems = [];
-        menu.headerTitle = params.title ? params.title : global.lang.updatePhoto;
+        menu.headerTitle = params.title ? params.title : `${i18n.instance.t('updatePhoto')}`;
         const pictureDialog = initPictureDialog(params.imageUrl);
         menuItems.push(
             new MenuItem({
-                title: global.lang.show,
+                title:`${i18n.instance.t('show')}`,
                 onSelected: () => {
                     pictureDialog.show();
                 }
@@ -79,7 +79,7 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
         );
         menuItems.push(
             new MenuItem({
-                title: global.lang.openCamera,
+                title: `${i18n.instance.t('openCamera')}`,
                 onSelected: () => {
                     onCameraSelect().then((base64: string) => {
                         resolve(base64);
@@ -89,7 +89,7 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
         );
         menuItems.push(
             new MenuItem({
-                title: global.lang.selectFromGallery,
+                title: `${i18n.instance.t('selectFromGallery')}`,
                 onSelected: () => {
                     onGallerySelect().then((base64: string) => {
                         resolve(base64);
@@ -99,7 +99,7 @@ const updateImage = (params: IPhotoMenu): Promise<string> => {
         );
         if (System.OS === System.OSType.IOS) {
             const cancelMenuItem = new MenuItem({
-                title: global.lang.cancel
+                title: `${i18n.instance.t('cancel')}`
             });
             cancelMenuItem.ios.style = MenuItem.ios.Style.CANCEL;
             menuItems.push(cancelMenuItem);
