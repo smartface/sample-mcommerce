@@ -9,6 +9,7 @@ import { getProductImageUrl } from 'service/commerce';
 import { Product } from 'types';
 import { HALF_OF_SCREEN_WIDTH } from '../constants';
 import { ShimmerHighlight } from '@smartface/native/ui/shimmerflexlayout/shimmerflexlayout';
+import { ScrollDirection } from '@smartface/native/ui/layoutmanager/layoutmanager';
 export default class LviHomeProducts extends LviHomeProductsDesign {
     pageName?: string | undefined;
     private __onProductClick: (product: any) => void;
@@ -50,7 +51,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     }
     private initGridView() {
         this.gvProducts.layoutManager.onItemLength = () => HALF_OF_SCREEN_WIDTH;
-        this.gvProducts.layoutManager.spanCount = 2;
+        this.gvProducts.layoutManager.scrollDirection = ScrollDirection.HORIZONTAL
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             const basketItem = store.getState().main.basket.find((bp) => bp._id === this.items[productIndex]._id);
             GridViewItem.itemTitleMaxWidth = HALF_OF_SCREEN_WIDTH;
