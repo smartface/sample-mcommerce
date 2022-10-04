@@ -1,4 +1,4 @@
-export default {
+SMF.i18n.defineLanguage('tr', {
     verificationCode: 'Doğrulama Kodu',
     productDetail: 'Ürün Detayı',
     goToCheckout: 'Ödemeye Git',
@@ -164,5 +164,10 @@ export default {
     onDelivery: 'Siparişiniz hazırlandı ve teslim edilmek üzere yola çıktı',
     trackOrder: 'Siparişi takip et',
     backHome: 'Anasayfaya geri dön',
-    checkoutLoginError: 'Ödeme sayfasına gitmek için giriş yapmalısınız.'
-};
+    checkoutLoginError: 'Ödeme sayfasına gitmek için giriş yapmalısınız.',
+    noConnection:'Bağlantı Yok',
+    checkConnection:'Lütfen internet bağlantınızı kontrol edin',
+    tryAgain:'Tekrar Deneyin',
+    noInternetConnection: 'İnternet bağlantısı yok'
+
+});

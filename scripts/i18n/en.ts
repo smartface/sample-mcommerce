@@ -1,4 +1,4 @@
-export default {
+SMF.i18n.defineLanguage('en', {
     verificationCode: 'Verification Code',
     productDetail: 'Product Detail',
     goToCheckout: 'Go to Checkout',
@@ -165,5 +165,9 @@ export default {
     onDelivery: 'Your items has been placed and is on it’s way to being processed',
     trackOrder: 'Track Order',
     backHome: 'Back to home',
-    checkoutLoginError: 'You must be logged in to go to the checkout page.'
-};
+    checkoutLoginError: 'You must be logged in to go to the checkout page.',
+    noConnection:'No Connection',
+    checkConnection:'Please check your internet connection',
+    tryAgain:'Try Again',
+    noInternetConnection:'No Internet Connection'
+});

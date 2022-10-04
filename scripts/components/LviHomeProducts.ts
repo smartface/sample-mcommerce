@@ -50,6 +50,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
     }
     private initGridView() {
         this.gvProducts.layoutManager.onItemLength = () => HALF_OF_SCREEN_WIDTH;
+        this.gvProducts.layoutManager.spanCount = 2;
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             const basketItem = store.getState().main.basket.find((bp) => bp._id === this.items[productIndex]._id);
             GridViewItem.itemTitleMaxWidth = HALF_OF_SCREEN_WIDTH;
