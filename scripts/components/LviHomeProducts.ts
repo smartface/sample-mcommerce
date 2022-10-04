@@ -50,7 +50,7 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
         this.__onProductClick = value;
     }
     private initGridView() {
-        this.gvProducts.layoutManager.onItemLength = () => HALF_OF_SCREEN_WIDTH;
+        this.gvProducts.layoutManager.onItemLength = () => 190;
         this.gvProducts.layoutManager.scrollDirection = ScrollDirection.HORIZONTAL
         this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             const basketItem = store.getState().main.basket.find((bp) => bp._id === this.items[productIndex]._id);
