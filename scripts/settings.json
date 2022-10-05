@@ -1,7 +1,7 @@
 {
 	"config": {
 		"theme": {
-			"currentTheme": "mCommerceDarkTheme",
+			"currentTheme": "mCommerceTheme",
 			"baseTheme": "baseTheme",
 			"themes": [
 				"defaultTheme",
