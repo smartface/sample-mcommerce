@@ -21,8 +21,8 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
         if (System.OS === System.OSType.ANDROID) {
             //Android item widths fails after theme change this fixes it
             themeService.onChange(() => {
-                this.gvProducts.itemCount = this.__items.length;
-                this.gvProducts.refreshData();
+                this.gvProductsView.itemCount = this.__items.length;
+                this.gvProductsView.refreshData();
             });
         }
     }
@@ -50,9 +50,9 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
         this.__onProductClick = value;
     }
     private initGridView() {
-        this.gvProducts.layoutManager.onItemLength = () => 190;
-        this.gvProducts.layoutManager.scrollDirection = ScrollDirection.HORIZONTAL
-        this.gvProducts.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
+        this.gvProductsView.layoutManager.onItemLength = () => 190;
+        this.gvProductsView.layoutManager.scrollDirection = ScrollDirection.HORIZONTAL
+        this.gvProductsView.onItemBind = (GridViewItem: GviProductItem, productIndex: number) => {
             const basketItem = store.getState().main.basket.find((bp) => bp._id === this.items[productIndex]._id);
             GridViewItem.itemTitleMaxWidth = HALF_OF_SCREEN_WIDTH;
             GridViewItem.itemTag = this.items[productIndex]?.labels[0]?.name;
@@ -92,18 +92,18 @@ export default class LviHomeProducts extends LviHomeProductsDesign {
             this.initialized ? GridViewItem.stopShimmering() : GridViewItem.startShimmering();
         };
         if (this.initialized) {
-            this.gvProducts.onItemSelected = (gridViewItem: GviProductItem, productIndex: number) => {
+            this.gvProductsView.onItemSelected = (gridViewItem: GviProductItem, productIndex: number) => {
                 this.onProductClick(this.items[productIndex]);
             };
         }
     }
     refreshGridView() {
-        this.gvProducts.itemCount = this.items.length;
+        this.gvProductsView.itemCount = this.items.length;
         if (this.initialized) { this.sflHomeProductContainer.stopShimmering() } else {
             this.sflHomeProductContainer.baseAlpha = 0.5;
             this.sflHomeProductContainer.android.build(ShimmerHighlight.AlphaHighlight);
             this.sflHomeProductContainer.startShimmering();
         }
-        this.gvProducts.refreshData();
+        this.gvProductsView.refreshData();
     }
 }

@@ -127,5 +127,21 @@
   },
   ".textCenter": {
     "textAlignment": "MIDCENTER"
+  },
+  ".gviProductItem1": {
+    "flexProps": {
+      "positionType": "RELATIVE"
+    },
+    "flex": {
+      "positionType": 0
+    }
+  },
+  ".gviHomeCategoryItem1": {
+    "flexProps": {
+      "positionType": "RELATIVE"
+    },
+    "flex": {
+      "positionType": 0
+    }
   }
 }

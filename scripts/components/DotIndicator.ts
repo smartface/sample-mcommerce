@@ -37,7 +37,7 @@ export default class DotIndicator extends DotIndicatorDesign {
         this.__lastActiveIndex = this.currentIndex;
         this.__currentIndex = value;
     }
-    set style(value: string) {
+    set setStyle(value: string) {
         this.__style = {
             activeClassName: `.dotIndicator-dot.${value}.active`,
             inActiveClassName: `.dotIndicator-dot.${value}.inactive`

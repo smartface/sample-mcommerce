@@ -233,7 +233,7 @@ export default class PgHome extends withDismissAndBackButton(PgHomeDesign) {
         setTimeout(() => {
             this.callServices();
         }, 3000);
-        //this.callServices();
+        this.callServices();
     }
     onLoad() {
         super.onLoad();

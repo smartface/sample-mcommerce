@@ -105,6 +105,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 page: opts.pageNumber,
                 categoryId: this.route.getState().routeData.dataId
             });
+            console.info(productResponse, ' => productResponse')
             this.totalCount = productResponse.metadata.totalCount;
             if (productResponse && productResponse?.products.length > 0) {
                 if (opts.pageNumber !== 1) {
@@ -120,7 +121,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
             this.initialized = true;
             this.paginating = false;
             hideWaitDialog();
-            this.gvProducts.stopRefresh();
+            this.gvProductsView.stopRefresh();
         }
     }
     async fetchShowcaseProducts() {
@@ -145,18 +146,18 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
     }
 
     initGridView() {
-        this.gvProducts.layoutManager.onItemLength = () => gridViewItemLength;
-        this.gvProducts.onPullRefresh = () => {
+        this.gvProductsView.layoutManager.onItemLength = () => gridViewItemLength;
+        this.gvProductsView.onPullRefresh = () => {
             if (!this.route.getState().routeData.isShowcase) {
                 this.pageNumber = 0;
                 this.paginating = false;
                 this.categoryProducts = [];
                 this.getCategoryProducts();
             } else {
-                this.gvProducts.stopRefresh();
+                this.gvProductsView.stopRefresh();
             }
         };
-        this.gvProducts.onItemBind = (gridViewItem: GviProductItem, productIndex: number) => {
+        this.gvProductsView.onItemBind = (gridViewItem: GviProductItem, productIndex: number) => {
             const selectedProduct = this.categoryProducts[productIndex];
             if (selectedProduct) {
                 gridViewItem.itemTagColor = selectedProduct?.labels[0]?.color;
@@ -197,7 +198,7 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
                 }
             }
         };
-        this.gvProducts.onItemSelected = (gridViewItem: GviProductItem, productIndex: number) => {
+        this.gvProductsView.onItemSelected = (gridViewItem: GviProductItem, productIndex: number) => {
             const product = this.categoryProducts[productIndex];
             this.router.push('productDetail', {
                 productId: product._id
@@ -205,9 +206,9 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         };
     }
     refreshGridView() {
-        this.gvProducts.itemCount = this.categoryProducts.length;
+        this.gvProductsView.itemCount = this.categoryProducts.length;
         this.checkIfListEmpty();
-        this.gvProducts.refreshData();
+        this.gvProductsView.refreshData();
     }
     initEmptyItem() {
         this.flEmptyItem.emptyImage = 'images://empty_category.png';
@@ -248,6 +249,9 @@ export default class PgCategoryDetail extends withDismissAndBackButton(PgCategor
         super.onLoad();
         this.headerBar.title = this.route.getState().routeData.title;
         this.initEmptyItem();
-        this.initGridView();
+        setTimeout(()=> {
+            this.initGridView();
+
+        },300)
     }
 }

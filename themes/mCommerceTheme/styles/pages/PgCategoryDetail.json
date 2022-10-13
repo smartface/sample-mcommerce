@@ -1,40 +1,48 @@
 {
-    "#pgCategoryDetail": {
-        "&-gvProducts": {
-            "flexProps": {
-                "flexGrow": 1
-            },
-            "layoutManager": {
-                "spanCount": 2,
-                "scrollDirection": "VERTICAL"
-            },
-            "testId": "Hh4ClTTsp"
-        },
-        "&-emptyItem": {
-            "bottom": 0,
-            "flex": {
-                "positionType": 0
-            },
-            "flexProps": {
-                "positionType": "ABSOLUTE",
-                "flexGrow": null
-            },
-            "height": null,
-            "left": 0,
-            "marginBottom": null,
-            "marginTop": null,
-            "right": 0,
-            "testId": "7PhV7r_K1",
-            "top": 0,
-            "visible": false,
-            "width": null
-        },
-        "&-flProductContainer": {
-            "&-gvProducts": {
-                "&-gviProductItem": {
-                    "height": 250
-                }
-            }
+  "#pgCategoryDetail": {
+    "&-gvProducts": {
+      "flexProps": {
+        "flexGrow": 1
+      },
+      "layoutManager": {
+        "spanCount": 2,
+        "scrollDirection": "VERTICAL"
+      },
+      "testId": "Hh4ClTTsp"
+    },
+    "&-emptyItem": {
+      "bottom": 0,
+      "flex": {
+        "positionType": 0
+      },
+      "flexProps": {
+        "positionType": "ABSOLUTE",
+        "flexGrow": null
+      },
+      "height": null,
+      "left": 0,
+      "marginBottom": null,
+      "marginTop": null,
+      "right": 0,
+      "testId": "7PhV7r_K1",
+      "top": 0,
+      "visible": false,
+      "width": null
+    },
+    "&-flProductContainer": {
+      "&-gvProducts": {
+        "&-gviProductItem": {
+          "height": 250
         }
+      }
+    },
+    "&-gviProductItem": {
+      "flexProps": {
+        "positionType": "RELATIVE"
+      },
+      "flex": {
+        "positionType": 0
+      }
     }
+  }
 }

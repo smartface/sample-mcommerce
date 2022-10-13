@@ -8,7 +8,7 @@
 				"children": [
 					"ba6d-523b-3d02-2fa2",
 					"6ae8-a3a8-d05b-899c",
-					"6341-e5f9-beee-727a"
+					"2b36-ab94-8c82-d960"
 				],
 				"name": "pgCategories",
 				"orientation": "PORTRAIT",
@@ -19,8 +19,7 @@
 			"userProps": {
 				"safeAreaEnabled": true
 			},
-			"version": "0.0.1.a",
-			"degree": 0
+			"version": "0.0.1.a"
 		},
 		{
 			"className": ".sf-statusBar",
@@ -32,8 +31,7 @@
 				"parent": "e257-a066-7008-14e9"
 			},
 			"type": "StatusBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
 			"className": ".sf-headerBar.main",
@@ -45,39 +43,41 @@
 				"parent": "e257-a066-7008-14e9"
 			},
 			"type": "HeaderBar",
-			"userProps": {},
-			"degree": 1
+			"userProps": {}
 		},
 		{
 			"className": ".sf-gridView #pgCategories-categoriesGrid",
-			"id": "6341-e5f9-beee-727a",
+			"id": "2b36-ab94-8c82-d960",
+			"oldName": "categoriesGrid",
 			"props": {
 				"children": [
-					"c13e-132d-8b99-2257"
+					"1cca-82ab-4ec7-d73f"
 				],
-				"itemLength": 250,
+				"itemCount": 2,
+				"itemLength": 227,
 				"layoutManager": {
 					"spanCount": 2
 				},
-				"name": "categoriesGrid",
-				"parent": "e257-a066-7008-14e9",
-				"usePageVariable": true
+				"name": "categoriesGridView",
+				"parent": "e257-a066-7008-14e9"
 			},
 			"type": "GridView",
 			"userProps": {
-				"itemLength": 250,
-				"testId": "exRYQvuHcn"
-			},
-			"degree": 1
+				"itemCount": 2,
+				"itemLength": 227,
+				"layoutManager": {
+					"spanCount": 2
+				}
+			}
 		},
 		{
-			"className": ".sf-gridViewItem .gviCategoryItem",
+			"className": ".sf-gridViewItem .gviCategoryItem #pgCategories-categoryGridViewItem",
 			"hiddenComponent": false,
-			"id": "c13e-132d-8b99-2257",
+			"id": "1cca-82ab-4ec7-d73f",
 			"props": {
 				"children": [],
 				"name": "categoryGridViewItem",
-				"parent": "6341-e5f9-beee-727a"
+				"parent": "2b36-ab94-8c82-d960"
 			},
 			"source": {
 				"page": "__library__",
@@ -85,8 +85,14 @@
 				"id": "8d80-6588-b9da-7b16"
 			},
 			"type": "GridViewItem",
-			"userProps": {},
-			"degree": 2
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				}
+			}
 		}
 	]
 }

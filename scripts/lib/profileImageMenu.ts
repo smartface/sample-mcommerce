@@ -15,7 +15,7 @@ import { NativeRouter as Router } from '@smartface/router';
 import { themeService } from 'theme';
 import { IImage } from '@smartface/native/ui/image/image';
 import { Permissions } from '@smartface/native/device/permission/permission';
-import { i18n } from '@smartface/i18n';
+import  i18n  from '@smartface/i18n';
 //@ts-ignore
 const contactActivity = Contacts.onActivityResult;
 //@ts-ignore

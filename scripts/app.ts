@@ -8,6 +8,10 @@ import Application from '@smartface/native/application';
 import { errorStackBySourceMap } from '@smartface/source-map';
 import System from '@smartface/native/device/system';
 import '@smartface/native';
+import { themeService } from 'theme';
+import Data from '@smartface/native/global/data';
+import { CURRENT_THEME } from 'constants/deviceVariables.json';
+
 
 // Set uncaught exception handler, all exceptions that are not caught will
 // trigger onUnhandledError callback.
@@ -22,6 +26,8 @@ Application.on('unhandledError', (e: UnhandledError) => {
     alert(JSON.stringify(message, null, 2), e.type || lang.applicationError);
   }
 });
+//themeService.changeTheme('mCommerceTheme');
+
 
 if (System.isEmulator) {
   router.push('/btb/tab1/home');

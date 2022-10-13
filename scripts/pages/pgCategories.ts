@@ -24,19 +24,19 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
         if (System.OS === System.OSType.ANDROID) {
             //Android item widths fails after theme change this fixes it
             themeService.onChange(() => {
-                this.categoriesGrid.itemCount = this.categories.length;
-                this.categoriesGrid.refreshData();
+                this.categoriesGridView.itemCount = this.categories.length;
+                this.categoriesGridView.refreshData();
             });
         }
         this.noConnection = Network.connectionType === Network.ConnectionType.NONE;
     }
     initCategoriesGrid() {
-        this.categoriesGrid.onPullRefresh = () => {
+        this.categoriesGridView.onPullRefresh = () => {
             this.categories = [];
             this.fetchCategories();
         };
-        this.categoriesGrid.scrollBarEnabled = false;
-        this.categoriesGrid.onItemBind = (GridViewItem: categoriesItem, index: number) => {
+        this.categoriesGridView.scrollBarEnabled = false;
+        this.categoriesGridView.onItemBind = (GridViewItem: categoriesItem, index: number) => {
             GridViewItem.flCategoryItemWrapper.borderWidth = 1;
             GridViewItem.flCategoryItemWrapperBorderColor = this.categories[index].borderColor;
             GridViewItem.flCategoryItemWrapperBackgroundColor = this.categories[index].menuColor;
@@ -44,7 +44,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
             GridViewItem.imageUrl = this.categories[index]._id;
             this.initialized ? GridViewItem.stopShimmering() : GridViewItem.startShimmering();
         };
-        this.categoriesGrid.onItemSelected = (GridViewItem: categoriesItem, index: number) => {
+        this.categoriesGridView.onItemSelected = (GridViewItem: categoriesItem, index: number) => {
             this.router.push('categoryDetail', {
                 dataId: this.categories[index]._id,
                 title: this.categories[index].title,
@@ -53,8 +53,8 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
         };
     }
     refreshGridView() {
-        this.categoriesGrid.itemCount = this.categories.length;
-        this.categoriesGrid.refreshData();
+        this.categoriesGridView.itemCount = this.categories.length;
+        this.categoriesGridView.refreshData();
     }
     async fetchCategories() {
         try {
@@ -67,7 +67,7 @@ export default class PgCategories extends withDismissAndBackButton(PgCategoriesD
                 alert(global.lang.categoriesServiceError);
             }
         } finally {
-            this.categoriesGrid.stopRefresh();
+            this.categoriesGridView.stopRefresh();
             this.initialized = true;
         }
     }

@@ -1,29 +1,37 @@
 {
-    ".lviHomeProducts": {
-        "height": 260,
-        "flexProps": {
-            "alignItems": "STRETCH",
-            "justifyContent": "CENTER",
-            "alignContent": "CENTER",
-            "flexWrap": "NOWRAP"
-        },
-        "testId": "Sct2y2MyI",
-        "width": "383",
-        "&-sflHomeContainer": {
-            "&-flProductContainer": {
-                "&-gvProducts": {
-                    "&-gviProductItem": {
-                        "flex": {
-                            "positionType": 0
-                        },
-                        "flexProps": {
-                            "positionType": "RELATIVE"
-                        },
-                        "left": 0,
-                        "top": 0
-                    }
-                }
-            }
+  ".lviHomeProducts": {
+    "height": 260,
+    "flexProps": {
+      "alignItems": "STRETCH",
+      "justifyContent": "CENTER",
+      "alignContent": "CENTER",
+      "flexWrap": "NOWRAP"
+    },
+    "testId": "Sct2y2MyI",
+    "width": "383",
+    "&-sflHomeContainer": {
+      "&-flProductContainer": {
+        "&-gvProducts": {
+          "&-gviProductItem": {
+            "flex": {
+              "positionType": 0
+            },
+            "flexProps": {
+              "positionType": "RELATIVE"
+            },
+            "left": 0,
+            "top": 0
+          }
         }
+      }
+    },
+    "&-gviProductItem": {
+      "flexProps": {
+        "positionType": "RELATIVE"
+      },
+      "flex": {
+        "positionType": 0
+      }
     }
+  }
 }

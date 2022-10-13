@@ -15,8 +15,8 @@ export default class LviHomeCategories extends LviHomeCategoriesDesign {
         if (System.OS === System.OSType.ANDROID) {
             //Android item widths fails after theme change this fixes it
             themeService.onChange(() => {
-                this.gvCategories.itemCount = this.__items.length;
-                this.gvCategories.refreshData();
+                this.gvCategoriesView.itemCount = this.__items.length;
+                this.gvCategoriesView.refreshData();
             });
         }
     }
@@ -38,20 +38,20 @@ export default class LviHomeCategories extends LviHomeCategoriesDesign {
         this.__onCategoryClick = value;
     }
     private initGridView() {
-        this.gvCategories.onItemBind = (GridViewItem: GviHomeCategoryItem, categoryIndex: number) => {
+        this.gvCategoriesView.onItemBind = (GridViewItem: GviHomeCategoryItem, categoryIndex: number) => {
             GridViewItem.categoryImage = getCategoryImage(this.items[categoryIndex]._id);
             GridViewItem.categoryName = this.items[categoryIndex].title;
             GridViewItem.categoryBackgroundColor = this.items[categoryIndex].menuColor;
             GridViewItem.categoryBorderColor = this.items[categoryIndex].borderColor;
         };
-        this.gvCategories.onItemSelected = (GridViewItem: GviHomeCategoryItem, index: number) => {
+        this.gvCategoriesView.onItemSelected = (GridViewItem: GviHomeCategoryItem, index: number) => {
             if (this.onCategoryClick) {
                 this.onCategoryClick(this.items[index]);
             }
         };
     }
     refreshGridView() {
-        this.gvCategories.itemCount = this.items.length;
-        this.gvCategories.refreshData();
+        this.gvCategoriesView.itemCount = this.items.length;
+        this.gvCategoriesView.refreshData();
     }
 }

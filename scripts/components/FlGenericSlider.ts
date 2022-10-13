@@ -9,7 +9,7 @@ export default class FlGenericSlider extends FlGenericSliderDesign {
     constructor(props?: any, pageName?: string) {
         super(props);
         this.pageName = pageName;
-        this.dotIndicator.style = 'main';
+        this.dotIndicator.setStyle = 'main';
     }
     get images(): string[] {
         return this.__images;

@@ -13,6 +13,14 @@
         "flexGrow": 1
       }
     },
-    "paddingTop": 10
+    "paddingTop": 10,
+    "&-gviHomeCategoryItem": {
+      "flexProps": {
+        "positionType": "RELATIVE"
+      },
+      "flex": {
+        "positionType": 0
+      }
+    }
   }
 }

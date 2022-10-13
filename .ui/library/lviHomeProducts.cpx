@@ -15,7 +15,10 @@
 				"page": "__library__"
 			},
 			"type": "ListViewItem",
-			"userProps": {}
+			"userProps": {
+				"left": 65.82,
+				"top": 184.81
+			}
 		},
 		{
 			"className": ".sf-shimmerFlexLayout .grow",
@@ -41,7 +44,7 @@
 			"id": "c484-1410-e185-066e",
 			"props": {
 				"children": [
-					"3173-e1b2-83c4-72e8"
+					"a933-503d-b217-3694"
 				],
 				"name": "flProductContainer",
 				"parent": "8131-b6d8-0f44-8ee6"
@@ -54,34 +57,41 @@
 		},
 		{
 			"className": ".sf-gridView .flProductContainer-gvProducts",
-			"hiddenComponent": false,
-			"id": "3173-e1b2-83c4-72e8",
+			"id": "a933-503d-b217-3694",
+			"oldName": "gridView1",
 			"props": {
 				"children": [
-					"0d0c-30da-929d-3ad5"
+					"c32f-0b20-02e8-ef0d"
 				],
+				"itemCount": 5,
+				"itemLength": 227,
 				"layoutManager": {
 					"spanCount": 1,
 					"scrollDirection": "HORIZONTAL"
 				},
-				"name": "gvProducts",
-				"parent": "c484-1410-e185-066e",
-				"usePageVariable": true
+				"name": "gvProductsView",
+				"parent": "c484-1410-e185-066e"
 			},
 			"source": {
 				"page": "__library__"
 			},
 			"type": "GridView",
-			"userProps": {}
+			"userProps": {
+				"itemCount": 5,
+				"itemLength": 227,
+				"layoutManager": {
+					"spanCount": 1
+				}
+			}
 		},
 		{
 			"className": ".sf-gridViewItem .gviProductItem .lviHomeProducts-sflHomeContainer-flProductContainer-gvProducts-gviProductItem",
 			"hiddenComponent": false,
-			"id": "0d0c-30da-929d-3ad5",
+			"id": "c32f-0b20-02e8-ef0d",
 			"props": {
 				"children": [],
 				"name": "gviProductItem",
-				"parent": "3173-e1b2-83c4-72e8"
+				"parent": "a933-503d-b217-3694"
 			},
 			"source": {
 				"page": "__library__",
@@ -89,7 +99,14 @@
 				"id": "7208-a5eb-9be3-319f"
 			},
 			"type": "GridViewItem",
-			"userProps": {}
+			"userProps": {
+				"flex": {
+					"positionType": 0
+				},
+				"flexProps": {
+					"positionType": "RELATIVE"
+				}
+			}
 		}
 	]
 }
